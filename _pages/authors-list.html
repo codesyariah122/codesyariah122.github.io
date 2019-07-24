@@ -13,7 +13,7 @@ permalink: "/authors-list.html"
             <div class="p-4 border rounded">
             <div class="row">
             <div class="col-md-3 mb-4 mb-md-0">
-<img alt="{{ author[1].name }}" src="{{site.url}}/{{ author[1].avatar }}" class="rounded-circle" height="80" width="80"></div>
+<img alt="{{ author[1].name }}" src="{{site.url}}{{ author[1].avatar }}" class="rounded-circle" height="80" width="80"></div>
             <div class="col-md-9">
             <a href="{{site.url}}/author-{{ author[1].name | slugify }}">
             <h4 class="text-dark mb-0"> {{ author[1].name }} </h4>
