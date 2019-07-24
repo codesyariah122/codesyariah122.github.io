@@ -24,8 +24,8 @@ authors:
     puji:
       name: Puji Ermanto
       site: https://codesyariah122.github.io
-      avatar:         /assets/images/bio/uji.jpg
-      bio:  "freelancer web developer dan pendiri dari codesyariah"
+      avatar: /assets/images/bio/uji.jpg
+      bio: "freelancer web developer dan pendiri dari codesyariah"
       email: pujiermanto@gmail.com
       twitter: https://twitter.com/pujiermanto
 
@@ -38,7 +38,7 @@ defaults:
     values:
       layout: post
       author: puji
-      avatar: /assets/images/avatar1.jpg
+      avatar: /assets/images/mypic.jpeg
 
   # all pages
   - scope:
