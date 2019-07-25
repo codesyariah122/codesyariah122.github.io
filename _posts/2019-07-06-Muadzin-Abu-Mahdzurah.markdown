@@ -4,7 +4,7 @@ title:  "Muadzin Abu Mahdzurah"
 author: puji
 categories: [ kajian islam, Sunnah  ]
 image: /assets/images/post/abu-mahdzurah.jpeg
-tags: [Blog]
+tags: [sticky]
 ---
 
 ### Kisah Muadzin Rasulullah (Abu Mahdzurah)
