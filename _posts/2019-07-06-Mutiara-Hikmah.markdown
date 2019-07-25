@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Mutiara Hati"
+title:  "Mutiara Hikmah"
 author: puji
 categories: [ kajian islam, Sunnah  ]
 image: /assets/images/post/mutiara-hikmah.jpeg
