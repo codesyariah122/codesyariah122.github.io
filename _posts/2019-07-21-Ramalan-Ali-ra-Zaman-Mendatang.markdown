@@ -3,8 +3,8 @@ layout: post
 title:  "Ramalan Ali ra tentang zaman mendatang "
 author: puji
 categories: [ kajian islam, Sunnah  ]
-image: assets/images/post/ali.jpeg
-tags: [kajian islam]
+image: /assets/images/post/ali.jpeg
+tags: [Blog]
 ---
 
 
