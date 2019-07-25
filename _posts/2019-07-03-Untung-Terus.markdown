@@ -3,7 +3,7 @@ layout: post
 title:  "Untung Terus"
 author: puji
 categories: [ kajian islam, Sunnah  ]
-image: assets/images/post/jazirah.jpeg
+image: /assets/images/post/jazirah.jpeg
 tags: [Blog]
 ---
 
