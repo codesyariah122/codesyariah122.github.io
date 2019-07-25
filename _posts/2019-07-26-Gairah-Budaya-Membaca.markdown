@@ -4,6 +4,7 @@ title:  "Gairah Budaya Membaca"
 author: sal
 categories: [ blog, writer ]
 image: assets/images/post/baca.jpeg
+tags: [Blog]
 ---
 
 #### Apa sih pentingnya Membaca itu  
