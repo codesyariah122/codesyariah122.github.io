@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Hal-hal keren yang dapat kalian lakukan dengan editor Markdown"
-author: sal
+author: puji
 categories: [ Jekyll, Blog, tutorial ]
 image: assets/images/post/photo-1.jpeg
 tags: [featured , Blog]
@@ -31,17 +31,18 @@ code kalian
 &#125;
 </pre>
 
-seperti ini ,. Contoh kode yang dapat ditampilkan di beberapa baris menggunakan &#180; :
+seperti ini ,. Contoh kode yang dapat ditampilkan di beberapa baris menggunakan simbol 
+( &#96;&#96;&#96; ) :
 
 <pre>
 
-&#96;
+&#96;&#96;&#96;
 
 .my-link &#123;
     text-decoration: underline;
 &#125;
 
-&#96;
+&#96;&#96;&#96;
 
 </pre>
 
