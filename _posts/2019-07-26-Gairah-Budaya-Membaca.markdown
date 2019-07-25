@@ -2,7 +2,7 @@
 layout: post
 title:  "Gairah Budaya Membaca"
 author: sal
-categories: [ Jekyll, tutorial ]
+categories: [ blog, writer ]
 image: assets/images/post/baca.jpeg
 ---
 
