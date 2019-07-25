@@ -31,8 +31,8 @@ code kalian
 &#125;
 </pre>
 
-seperti ini ,. Contoh kode yang dapat ditampilkan di beberapa baris menggunakan simbol 
-( &#96;&#96;&#96; ) :
+Contoh kode yang dapat ditampilkan di beberapa baris menggunakan simbol 
+Seperti ini ( &#96;&#96;&#96; ) berikut script lengkapnya :
 
 <pre>
 
@@ -68,4 +68,10 @@ Mungkin bagian terbaik dari markdown ini adalah bahwa Kalian tidak dinatasi hany
 
 <pre>
  &lt;p &gt; &lt; iframe style="width:100%;" height="315" src="https://www.youtube.com/embed/Cniqsc9QfDo?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen &gt; &lt;&#47;iframe &gt; &lt;&#47;p&gt;
-</pre>
+</pre>  
+
+Maka hasilnya seperti ini :  
+
+<p><iframe style="width:100%;" height="315" src="https://www.youtube.com/embed/Cniqsc9QfDo?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></p>
+
+Sama bukan hasilnya jika.kalian coba dengan markdown, ok sekian tulisan saya, salam {{site.authors.puji.name}}
