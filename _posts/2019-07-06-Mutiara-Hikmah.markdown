@@ -4,7 +4,7 @@ title:  "Mutiara Hati"
 author: puji
 categories: [ kajian islam, Sunnah  ]
 image: assets/images/post/mutiara-hikmah.jpeg
-tags: [kajian islam]
+tags: [Blog]
 ---
 
 #### Allah SWT berfirman:
