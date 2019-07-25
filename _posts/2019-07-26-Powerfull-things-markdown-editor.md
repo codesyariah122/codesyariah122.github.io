@@ -50,21 +50,22 @@ Atau jika kalian ingin keliatan lebih keren biar kaya hacker gitu, Kalian dapat 
 
 <pre>
 
-&#33;&#91;walking&#93; &#40;&#123;&#123;site.baseurl &#125;&#125;/assets/images/post/8.jpg&#41;
+&#33;&#91;walking&#93; &#40;&#123;&#123;site.url &#125;&#125;/assets/images/post/8.jpg&#41;
 </pre>  
 
 hasilnya seperti ini :  
 
-![walking]({{ site.baseurl }}/assets/images/post/8.jpg)  
+![walking]({{ site.url }}/assets/images/post/8.jpg)  
 
 
 ## Daftar Referensi
 
-Cara lain untuk menyisipkan tautan dalam markdown adalah menggunakan daftar referensi. Kalian mungkin ingin menggunakan gaya link seperti berikut untuk mengutip bahan referensi dari Wikipedia. Semua link tercantum di akhir dokumen, sehingga Kalian dapat mempertahankan pemisahan penuh antara konten dan sumber atau rujukannya.
+Cara lain untuk menyisipkan tautan dalam markdown adalah menggunakan daftar referensi. Kalian mungkin ingin menggunakan code link seperti diatas untuk mengutip bahan link referensi dari Wikipedia atau tautan situs lain.  
+Semua link tercantum di akhir dokumen, sehingga Kalian dapat memisahakan antara konten dan sumber atau rujukannya.
 
 ## Full HTML
 
-Mungkin bagian terbaik dari markdown ini adalah bahwa Kalian tidak dinatasi hanya pada markdown saja. Kalian dapat menulis HTML langsung di editor Markdown dan itu hanya akan berfungsi seperti HTML biasanya. Tanpa batas! Berikut adalah kode link YouTube standar sebagai contoh:
+Mungkin bagian terbaik dari markdown ini adalah Kalian tidak dibatasi hanya pada markdown saja. Kalian dapat menulis HTML langsung di editor Markdown dan itu hanya akan berfungsi seperti HTML biasanya. Tanpa batas! Berikut adalah kode link YouTube standar sebagai contoh:
 
 <pre>
  &lt;p &gt; &lt; iframe style="width:100%;" height="315" src="https://www.youtube.com/embed/Cniqsc9QfDo?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen &gt; &lt;&#47;iframe &gt; &lt;&#47;p&gt;
