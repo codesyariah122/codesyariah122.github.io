@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Gairah Budaya Membaca"
-author: sal
+author: puji
 categories: [ blog, writer ]
 image: assets/images/post/baca.jpeg
 tags: [Blog]
