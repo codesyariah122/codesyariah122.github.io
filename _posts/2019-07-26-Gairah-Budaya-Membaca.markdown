@@ -6,7 +6,7 @@ categories: [ Jekyll, tutorial ]
 image: assets/images/post/baca.jpeg
 ---
 
-#### Apa sih budaya Membaca itu  
+#### Apa sih pentingnya Membaca itu  
 
 
 Membaca adalah suatu cara mendapatkan informasi yang di tulis. Membaca dapat menjadi sesuatu yang dilakukan sendiri maupun dibaca keras-keras. Hal ini dapat menguntungkan pendengar lain, yang juga bisa membangun konsentrasi kita sendiri
