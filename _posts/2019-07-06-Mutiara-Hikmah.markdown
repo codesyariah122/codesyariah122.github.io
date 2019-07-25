@@ -3,7 +3,7 @@ layout: post
 title:  "Mutiara Hati"
 author: puji
 categories: [ kajian islam, Sunnah  ]
-image: assets/images/post/mutiara-hikmah.jpeg
+image: /assets/images/post/mutiara-hikmah.jpeg
 tags: [Blog]
 ---
 
