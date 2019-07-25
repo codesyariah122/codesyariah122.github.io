@@ -3,7 +3,7 @@ layout: post
 title:  "Hal-hal keren yang dapat kalian lakukan dengan editor Markdown"
 author: sal
 categories: [ Jekyll, Blog, tutorial ]
-image: assets/images/4.jpg
+image: assets/images/post/photo-1.jpg
 tags: [featured , Blog]
 ---
 
@@ -49,7 +49,13 @@ Atau jika kalian ingin keliatan lebih keren biar kaya hacker gitu, Kalian dapat 
 
 <pre>
 
-&#33;&#91;walking&#93; &#40;&#123;&#123;site.baseurl &#125;&#125;/assets/images/3.jpg&#41;
+&#33;&#91;walking&#93; &#40;&#123;&#123;site.baseurl &#125;&#125;/assets/images/post/8.jpg&#41;
+</pre>  
+
+hasilnya seperti ini :  
+
+![walking]({{ site.baseurl }}/assets/images/post/8.jpg)  
+
 
 ## Daftar Referensi
 
