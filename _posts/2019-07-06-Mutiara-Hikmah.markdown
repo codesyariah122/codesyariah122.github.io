@@ -4,7 +4,7 @@ title:  "Mutiara Hikmah"
 author: puji
 categories: [ kajian islam, Sunnah  ]
 image: /assets/images/post/mutiara-hikmah.jpeg
-tags: [ featured ]
+tags: [featured]
 ---
 
 #### Allah SWT berfirman:
