@@ -7,7 +7,9 @@ baseurl: ''
 url: 'https://codesyariah122.github.io'
 disqus: 'codesyariah122-github-io'
 email: 'codesyariah122@hotmail.com'
-repo: https://github.com/codesyariah122/codesyariah122.github.io
+repositories: 
+    repo1:
+      url: https://github.com/codesyariah122/codesyariah122.github.io
 
 mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
 
