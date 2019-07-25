@@ -11,7 +11,7 @@ email: 'codesyariah122@hotmail.com'
 mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
 
 include: ["_pages"]
-permalink: /blog/:categories/:title/
+permalink: /:title/
 
 # Plugins
 plugins:
@@ -22,7 +22,7 @@ plugins:
 
 authors:
     puji:
-      name: Puji Ermanto
+      name: PujiErmanto
       site: https://codesyariah122.github.io
       avatar: /assets/images/bio/uji.jpg
       bio: "freelancer web developer dan pendiri dari codesyariah"
