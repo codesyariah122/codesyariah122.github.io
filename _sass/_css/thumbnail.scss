@@ -1,17 +1,26 @@
 /*===================================== */
+$width: 250px;
+$height: auto;
+$overflow: hidden;
+$position: relative;
+$font-size: 15rem;
+$color: #fff;
+$widht-thumb: 100%;
+$position-thumb-hover: 
+
 .thumbnail {
-	width: 250px;
-	height: auto;
-	overflow: hidden;
-	position: relative;
-	font-size:25px;
+	width: $width;
+	height: $height;
+	overflow: $overflow;
+	position: $position;
+	font-size:$font-size;
 	color:#ffffff;
 }
 .thumbnail img {
-	width: 100%;
+	width: $width-thumb;
 }
 .thumbnail .thumb.hover {
-	position: absolute;
+	position: $position-thumb-hover;
 	top: 0;
 	bottom: 0;
 	right: 0;
