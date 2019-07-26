@@ -33,11 +33,12 @@ authors:
       twitter: https://twitter.com/pujiermanto
     amel:
       name: Amelia Wijayanti
+      site: https://amelia-headconf.github.io
+      avatar: /assets/images/bio/amel.jpeg
+      bio: author and contributor at codesyariah     
       email: mel_workhard@gmail.com
       twitter: http://twitter.com/amel_wijayanti
-      bio: author and contributor at codesyariah
-      image: /assets/images/bio/amel.jpeg
-
+      
 # Defaults
 defaults:
 
