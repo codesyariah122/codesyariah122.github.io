@@ -1,0 +1,20 @@
+{
+"puji":
+{
+"nama_lengkap": "Puji Ermanto",
+"situs": "https://codesyariah122.github.io",
+"avatar": "/assets/images/bio/uji.jpg",
+"bio": "Adalah seorang freelancer web developer, blogger dan pendiri dari codesyariah blogsite",
+"email": "pujiermanto@gmail.com",
+"twitter": "https://twitter.com/pujiermanto"
+},
+"amel":
+{
+"nama_lengkap": "Amelia Wijayanti",
+"situs": "https://amel-head-conf.github.io",
+"avatar": "/assets/images/bio/amel.jpeg",
+"bio": "Adalah Seorang web designer, blogger, vlogger dan juga author dan koresponden di codesyariah blogsite",
+"email": "amel_workhard@hotmaik.com",
+"twitter": "https://twitter.com/amel-headconf"
+}
+}
