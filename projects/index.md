@@ -41,7 +41,7 @@ data: nabilla bakery
    
             <div class="icon-block mt-3 d-flex justify-content-between">  
             <div>
-            <a target="_blank" href="{{ data.instagram }}"><i class="fab fa-twitter text-muted" aria-hidden="true"></i></a>  &nbsp;
+            <a target="_blank" href="{{ data.instagram }}"><i class="fab fa-instagram text-muted" aria-hidden="true"></i></a>  &nbsp;
             <a target="_blank" href="{{ data.website }}"><i class="fa fa-globe text-muted" aria-hidden="true"></i></a> &nbsp;
             </div>
             </div>
