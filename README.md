@@ -1,8 +1,16 @@
-## codesyariah122.github.io  
+<h2 style='color:forestgreen;'>codesyariah122.github.io</h2>
 
-Hai Kami Codesyariah Blog...
+<p style='color:mediumspringgreen;'>
+Hai Kami Codesyariah Blog...<br/>
+<span style='color:lightseagreen;'>Blog ini ditujukan untuk menyimpan catatan-catatan artikel pribadi seputar tips, trick, tutorial<br/>
+atau apapun yang bertujuan menambah khazanah informasi publik terutama publik awam seperti kami.<br/>
+kami selalu berusaha menyajikan informasi yang khas, terbaru dan inshaAllah dari sumber-sumber yang kredibel.<br/>
+Ikuti terus perjalanan catatan kami hanya di blog codesyariah.
+</p>
 <details>
-<summary>About Codesyariah Founder</summary>
+<summary style='color:DodgerBlue;'>
+About Codesyariah Founder
+</summary>
 <a href="https://m.facebook.com/strawberrywine">
 <img src="https://codesyariah122.github.io/assets/images/ss.png">
 </a>
