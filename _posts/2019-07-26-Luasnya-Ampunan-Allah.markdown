@@ -5,8 +5,8 @@ author: puji
 categories: [KajianIslam, Sunnah, Blog]
 image: assets/images/post/ampunan.jpeg
 tags: [Blog]
----
-بسم الله الرحمن الرحيم  
+opening_tags: بسم الله الرحمن الرحيم
+---  
 
 *Luasnya Ampunan Allah*
 
