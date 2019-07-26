@@ -1,26 +1,36 @@
 
 /*!
  * Mundana Jekyll Theme (https://www.wowthemes.net/mundana-jekyll-theme/)
+ * Modifi By: Puji Ermanto at codesyariah
  */
 $link: #03a87c;
+$overflow: hidden;
+$padding-top-body: 69.75px;
+$margin-top-content: 30px;
+$min-height-content: 400px;
+$margin-top-remove-content: -30px;
+$max-width-img: 100%;
+$relative-to-front: relative;
+$z-index-to-front: 1;
+/* -------------------------------------- */
 
 body {
-	overflow-x:hidden;
-	padding-top:69.75px;
+	overflow-x: $overflow;
+	padding-top: $padding-top-body;
 }
 .site-content {
-	margin-top:30px;
-	min-height:400px;
+	margin-top: $margin-top-content;
+	min-height: $min-height-content;
 }
 .remove-site-content-margin {
-	margin-top:-30px;
+	margin-top: $margin-top-remove-content;
 }
 img {
-	max-width:100%;
+	max-width: $max-width-img;
 }
 .tofront {
-	position:relative;
-	z-index:1;
+	position: $relative-to-front;
+	z-index: $z-index-to-front;
 }
 .full-width {
 	width:100vw;
