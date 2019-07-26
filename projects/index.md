@@ -5,7 +5,6 @@ permalink: "/projects/"
 ---
 <div class="container">
 <h4 class="font-weight-bold spanborder"><span>{{page.title}}</span></h4>
-{% assign project = site.projects[page.title] %}
     <div class="row gap-y listrecent listrecent listauthor">
     {% for project in site.projects %}
         <div class="col-lg-6 mb-4">
