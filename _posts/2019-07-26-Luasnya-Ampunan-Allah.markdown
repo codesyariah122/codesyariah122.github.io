@@ -8,6 +8,8 @@ tags: [Blog]
 opening_tags: بسم الله الرحمن الرحيم
 ---  
 
+<center>{{page.opening_tags}}</center>
+
 *Luasnya Ampunan Allah*
 
 Dari Anas rodhiyallahu 'anhu, "Aku mendengar Rosulullah ﷺ bersabda, "Allah ta'ala berfirman:
