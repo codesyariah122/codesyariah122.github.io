@@ -59,6 +59,11 @@ hasilnya seperti ini :
 
 ![walking]({{ site.url }}/assets/images/post/8.jpg)  
 
+atau bisa dengan syntax highlighter yaitu sebuah plugin dari jekyll  
+contoh penggunaan syntax highlighter :  
+<code>
+#&123;&percnt; highlight bahasa_program &percnt;&#125;  
+</code>  
 
 ## Daftar Referensi
 
