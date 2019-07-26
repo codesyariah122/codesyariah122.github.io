@@ -2,10 +2,13 @@
 title: "Projects"
 layout: default
 permalink: "/projects/"
+data: nabilla bakery
 ---
-<div class="container">
-<h4 class="font-weight-bold spanborder"><span>{{page.title}}</span></h4>
 {% assign data = site.data.projects[page.title] %}
+{% assign project_data = site.data.projects[page.data] %}
+
+<div class="container">
+<h4 class="font-weight-bold spanborder"><span>{{data.title}}</span></h4>
 
     <div class="row gap-y listrecent listrecent listauthor">
 
@@ -22,7 +25,7 @@ permalink: "/projects/"
             <a href="{{site.url}}/project-{{ data.name | slugify }}">
             <h4 class="text-dark mb-0"> {{ data.title }}</h4>
             <small class="d-inline-block mt-1 mb-3 font-weight-normal">
-                (View {{ data.name }})
+                (View {{ project_data.name }})
             </small>
             </a>
 
