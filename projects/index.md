@@ -25,7 +25,9 @@ permalink: "/projects/"
             <blockquote>
               {{ data.tagline }}
             </blockquote><br/>
+
               {{data.content }}
+
             </div>
             </a>
             <div class="icon-block mt-3 d-flex justify-content-between">  
