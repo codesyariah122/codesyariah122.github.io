@@ -1,5 +1,6 @@
 ---
 title: "Nabilla Bakery & Cake"
+name: "NabillaBakery"
 type: Food & Drink
 tagline: "Mengedepankan pelayanan dari kualitas terbaik kami"
 instagram: https://instagram.com/nabilla_bakery
