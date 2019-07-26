@@ -11,13 +11,16 @@
     {% assign latest_post = site.posts[0] %}
     <div class="col-md-6">
     <div class="card border-0 mb-4 box-shadow">
+<!-- adding image thumbnail hover -->
 <div class="thumbnail">
 <div class="thumb-hover">
     <a href="{{site.url}}{{latest_post.url}}">
-    <div class="topfirstimage" style="background-image: url({% if latest_post.image contains "://" %}{{ latest_post.image }}{% else %} {{site.url}}/{{ latest_post.image}}{% endif %}); height: 200px;    background-size: cover;    background-repeat: no-repeat;"></div>
+    <h2 class="h4 font-weight-bold">{{latest.post.title}}</h2>
     </a>
+    <div class="topfirstimage" style="background-image: url({% if latest_post.image contains "://" %}{{ latest_post.image }}{% else %} {{site.url}}/{{ latest_post.image}}{% endif %}); height: 200px;    background-size: cover;    background-repeat: no-repeat;"></div>
 </div>
 </div>
+
     <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
     <h2 class="h4 font-weight-bold">
     <a class="text-dark" href="{{site.url}}{{latest_post.url}}">{{ latest_post.title }}</a>
