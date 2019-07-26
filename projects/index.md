@@ -16,11 +16,14 @@ permalink: "/projects/"
             <div class="row">
             <div class="col-md-3 mb-4 mb-md-0">
             <img alt="{{ data.title }}" src="{{site.url}}{{ data.img_path }}" class="img-thumbnail">
-             </div>
+            </div>
+  
             <div class="col-md-9">
             <a href="{{site.url}}/project-{{ data.name | slugify }}">
-            <h4 class="text-dark mb-0"> {{ data.title }} </h4>
-            <small class="d-inline-block mt-1 mb-3 font-weight-normal">(View {{ data.name }})</small>
+            <h4 class="text-dark mb-0"> {{ data.title }}</h4>
+            <small class="d-inline-block mt-1 mb-3 font-weight-normal">
+                (View {{ data.name }})
+            </small>
             </a>
 
             <blockquote>
@@ -32,7 +35,7 @@ permalink: "/projects/"
               {{data.content }}
 
             </div>
-            </a>
+   
             <div class="icon-block mt-3 d-flex justify-content-between">  
             <div>
             <a target="_blank" href="{{ data.instagram }}"><i class="fab fa-twitter text-muted" aria-hidden="true"></i></a>  &nbsp;
