@@ -1,0 +1,20 @@
+{
+"amanah print":
+{
+"name": "Amanah Printing",
+"type": "Jasa & Percetakan",
+"website": "https://amanah-print.github.io",
+"tagline": "Melayani Jasa Digital Printing",
+"img_path": "/assets/images/project/printing.jpg",
+"alamat": "in progress"
+},
+"nabilla bakery":
+{
+"name": "Nabilla Bakery & Cake",
+"type": "Food & Drink",
+"website": "https://nabilla-bakery.github.io",
+"tagline": "Mengedepankan pelayanan dari kualitas terbaik kami",
+"img_path": "/assets/images/project/bakery.jpg",
+"alamat": "in progress"
+}
+} 
