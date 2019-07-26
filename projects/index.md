@@ -21,11 +21,13 @@ permalink: "/projects/"
             <a href="{{site.url}}/project-{{ data.name | slugify }}">
             <h4 class="text-dark mb-0"> {{ data.title }} </h4>
             <small class="d-inline-block mt-1 mb-3 font-weight-normal">(View {{ data.name }})</small>
-            <div class="excerpt">
+         
             <blockquote>
               {{ data.tagline }}
-            </blockquote><br/>
+            </blockquote>
 
+            <div class="excerpt">
+          
               {{data.content }}
 
             </div>
