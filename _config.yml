@@ -23,22 +23,6 @@ plugins:
   - jekyll-paginate
   - jekyll-seo-tag
 
-authors:
-    puji:
-      name: PujiErmanto
-      site: https://codesyariah122.github.io
-      avatar: /assets/images/bio/uji.jpg
-      bio: "freelancer web developer dan pendiri dari codesyariah"
-      email: pujiermanto@gmail.com
-      twitter: https://twitter.com/pujiermanto
-    amel:
-      name: AmeliaWijayanti
-      site: https://amelia-headconf.github.io
-      avatar: /assets/images/bio/amel.jpeg
-      bio: author and contributor at codesyariah     
-      email: mel_workhard@gmail.com
-      twitter: http://twitter.com/amel_wijayanti
-      
 # Defaults
 defaults:
 
