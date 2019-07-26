@@ -8,7 +8,7 @@ data: nabilla bakery
 {% assign project_data = site.data.projects[page.data] %}
 
 <div class="container">
-<h4 class="font-weight-bold spanborder"><span>{{data.title}}</span></h4>
+<h4 class="font-weight-bold spanborder"><span>{{page.title}}</span></h4>
 
     <div class="row gap-y listrecent listrecent listauthor">
 
