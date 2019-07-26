@@ -63,8 +63,8 @@ atau bisa dengan syntax highlighter yaitu sebuah plugin dari jekyll
 contoh penggunaan syntax highlighter :  
 <code>
 &#123;&percnt;  
-highlight bahasa_program &percnt;  
-&#125;  
+highlight bahasa_program  
+&percnt;&#125;  
 script_code disini ...  
 &#123;&percnt; endhighlight; &percnt;&#125;
 </code>  
