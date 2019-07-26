@@ -2,7 +2,7 @@
 layout: post
 title:  "Muadzin Abu Mahdzurah"
 author: puji
-categories: [ kajian islam, Sunnah  ]
+categories: [ KajianIslam, Sunnah  ]
 image: assets/images/post/abu-mahdzurah.jpeg
 tags: [sticky, Blog]
 ---
