@@ -9,7 +9,7 @@ tags: [featured , Blog]
 
 Ada banyak hal keren yang dapat Kalian lakukan dengan editor Markdown. Jika Kalian sudah cukup terbiasa dengan menulis di Markdown, maka Kalian dapat menikmati beberapa tips lebih lanjut tentang jenis hal yang dapat Kalian lakukan dengan Markdown!
 
-Seperti halnya postingan terakhir {{site.authors.puji.name}}(penulis), Kalian bisa mengedit postingan ini saat Kalian membacanya sehingga Kalian dapat melihat semua kode markdown yang penulis gunakan.
+Seperti halnya postingan terakhir {{site.authors.puji.name}} (penulis), Kalian bisa mengedit postingan ini saat Kalian membacanya sehingga Kalian dapat melihat semua kode markdown yang penulis gunakan.
 
 
 ## Special formatting
@@ -23,7 +23,8 @@ Selain huruf tebal dan miring, Kalian juga dapat menggunakan beberapa pemformata
 
 ## Menulis Baris Code
 
-Ada dua jenis elemen kode yang dapat dimasukkan dalam markdown, yang pertama adalah inline, dan yang lainnya adalah blok. Kode sebaris diformat dengan menambahkan kata apa saja atau kata-kata di dalam simbol
+Ada dua jenis elemen kode yang dapat dimasukkan dalam markdown, 
+yang pertama adalah inline, dan yang lainnya adalah blok. penulisan script code ditulis di dalam blok kode &#123; ... &#125; seperti berikut :
 
 <pre>
 &#123;
@@ -60,7 +61,7 @@ hasilnya seperti ini :
 
 ## Daftar Referensi
 
-Cara lain untuk menyisipkan tautan dalam markdown adalah menggunakan daftar referensi. Kalian mungkin ingin menggunakan code link seperti diatas untuk mengutip bahan link referensi dari Wikipedia atau tautan situs lain.  
+Cara lain untuk menyisipkan tautan dalam markdown adalah menggunakan daftar referensi. Kalian mungkin ingin menggunakan code link seperti diatas untuk mengutip sumber link referensi dari Wikipedia atau tautan situs lain.  
 Semua link tercantum di akhir dokumen, sehingga Kalian dapat memisahakan antara konten dan sumber atau rujukannya.
 
 ## Full HTML
