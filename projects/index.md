@@ -26,7 +26,7 @@ permalink: "/projects/"
             </small>
             </a>
 
-            <blockquote>
+            <blockquote style='color:lightskyblue;'>
               {{ data.tagline }}
             </blockquote>
 
