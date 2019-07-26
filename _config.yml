@@ -31,6 +31,12 @@ authors:
       bio: "freelancer web developer dan pendiri dari codesyariah"
       email: pujiermanto@gmail.com
       twitter: https://twitter.com/pujiermanto
+    amel:
+      name: Amelia Wijayanti
+      email: mel_workhard@gmail.com
+      twitter: http://twitter.com/amel_wijayanti
+      bio: author and contributor at codesyariah
+      image: /assets/images/bio/amel.jpeg
 
 # Defaults
 defaults:
