@@ -11,19 +11,19 @@ permalink: "/projects/"
             <div class="p-4 border rounded">
             <div class="row">
             <div class="col-md-3 mb-4 mb-md-0">
-<img alt="{{ project[1].title }}" src="{{site.url}}{{ project[1].img_path }}" class="img-thumbnail"></div>
+<img alt="{{ project.title }}" src="{{site.url}}{{ project.img_path }}" class="img-thumbnail"></div>
             <div class="col-md-9">
-            <a href="{{site.url}}/project-{{ project[1].project_name | slugify }}">
-            <h4 class="text-dark mb-0"> {{ project[1].title }} </h4>
+            <a href="{{site.url}}/project-{{ project.name | slugify }}">
+            <h4 class="text-dark mb-0"> {{ project.title }} </h4>
             <small class="d-inline-block mt-1 mb-3 font-weight-normal">(View Projects)</small>
             </a>
             <div class="excerpt">
-            {{ project[1].content }}</div>
+            {{ project.content }}</div>
 
             <div class="icon-block mt-3 d-flex justify-content-between">  
             <div>
-            <a target="_blank" href="{{ project[1].instagram }}"><i class="fa fa-instagram text-muted" aria-hidden="true"></i></a> &nbsp;
-            <a target="_blank" href="{{ project[1].website }}"><i class="fa fa-globe text-muted" aria-hidden="true"></i></a> &nbsp;
+            <a target="_blank" href="{{ project.instagram }}"><i class="fa fa-instagram text-muted" aria-hidden="true"></i></a> &nbsp;
+            <a target="_blank" href="{{ project.website }}"><i class="fa fa-globe text-muted" aria-hidden="true"></i></a> &nbsp;
             </div>
             </div>
             </div>
