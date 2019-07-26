@@ -5,9 +5,9 @@ permalink: "/projects/"
 ---
 <div class="container">
 <h4 class="font-weight-bold spanborder"><span>{{page.title}}</span></h4>
-{% assign data = site.data.projects[page.author] %}
+{% assign data = site.data.projects[page.title] %}
     <div class="row gap-y listrecent listrecent listauthor">
-    {% for data in site.data.projects %}
+    {% for data in site.projects %}
         <div class="col-lg-6 mb-4">
             <div class="p-4 border rounded">
             <div class="row">
