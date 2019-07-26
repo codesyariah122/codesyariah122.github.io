@@ -6,13 +6,17 @@ permalink: "/projects/"
 <div class="container">
 <h4 class="font-weight-bold spanborder"><span>{{page.title}}</span></h4>
 {% assign data = site.data.projects[page.title] %}
+
     <div class="row gap-y listrecent listrecent listauthor">
+
     {% for data in site.projects %}
+
         <div class="col-lg-6 mb-4">
             <div class="p-4 border rounded">
             <div class="row">
             <div class="col-md-3 mb-4 mb-md-0">
-<img alt="{{ data.title }}" src="{{site.url}}{{ data.img_path }}" class="img-thumbnail"></div>
+            <img alt="{{ data.title }}" src="{{site.url}}{{ data.img_path }}" class="img-thumbnail">
+             </div>
             <div class="col-md-9">
             <a href="{{site.url}}/project-{{ data.name | slugify }}">
             <h4 class="text-dark mb-0"> {{ data.title }} </h4>
@@ -20,8 +24,8 @@ permalink: "/projects/"
             <div class="excerpt">
             <blockquote>
               {{ data.tagline }}
-            </blockquote>
-              {{™data.content }}
+            </blockquote><br/>
+              {{data.content }}
             </div>
             </a>
             <div class="icon-block mt-3 d-flex justify-content-between">  
