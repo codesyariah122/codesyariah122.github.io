@@ -4,7 +4,7 @@ title: "Luasnya Ampunan Allah SWT"
 author: puji
 categories: [KajianIslam, Sunnah, Blog]
 image: assets/images/post/ampunan.jpeg
-tags: [Blog, featured]
+tags: [Blog]
 ---
 بسم الله الرحمن الرحيم  
 
