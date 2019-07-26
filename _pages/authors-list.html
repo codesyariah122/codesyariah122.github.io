@@ -7,7 +7,7 @@ permalink: "/authors-list.html"
 <h4 class="font-weight-bold spanborder"><span>{{page.title}}</span></h4>
 {% assign author = site.data.authors[page.author] %}
     <div class="row gap-y listrecent listrecent listauthor">
-    {% for author in site.authors %}
+    {% for author in site.data.authors %}
         <div class="col-lg-6 mb-4">
             <div class="p-4 border rounded">
             <div class="row">
