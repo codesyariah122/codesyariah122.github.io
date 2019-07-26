@@ -33,7 +33,8 @@ code kalian
 </pre>
 
 Contoh kode yang dapat ditampilkan di beberapa baris menggunakan simbol 
-Seperti ini ( &#96;&#96;&#96; ) berikut script lengkapnya :
+Seperti ini ( &#96;&#96;&#96; ), pada keyboard komputer atau laptop berada di atas esc tekan tombol ctrl kemudian (&#96;&#96;&#96;).  
+berikut script lengkapnya :
 
 <pre>
 
