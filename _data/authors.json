@@ -1,7 +1,8 @@
 {
 "puji":
 {
-"nama_lengkap": "PujiErmanto",
+"links": "PujiErmanto",
+"nama_lengkap": "Puji Ermanto",
 "situs": "https://codesyariah122.github.io",
 "avatar": "/assets/images/bio/uji.jpg",
 "bio": "Adalah seorang freelancer web developer, blogger dan pendiri dari codesyariah blogsite",
@@ -10,7 +11,8 @@
 },
 "amel":
 {
-"nama_lengkap": "AmeliaWijayanti",
+"links": "AmeliaWijayanti",
+"nama_lengkap": "Amelia Wijayanti",
 "situs": "https://amel-head-conf.github.io",
 "avatar": "/assets/images/bio/amel.jpeg",
 "bio": "Adalah Seorang web designer, blogger, vlogger dan juga author dan koresponden di codesyariah blogsite",
