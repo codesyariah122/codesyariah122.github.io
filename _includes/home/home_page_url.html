@@ -15,7 +15,7 @@
 <div class="thumbnail">
 <div class="thumb-hover">
     <a href="{{site.url}}{{latest_post.url}}">
-    <h2 class="h4 font-weight-bold">{{latest.post.title}}</h2>
+    <h2 class="h4 font-weight-bold">{{latest_post.title}}</h2>
     </a>
     <div class="topfirstimage" style="background-image: url({% if latest_post.image contains "://" %}{{ latest_post.image }}{% else %} {{site.url}}/{{ latest_post.image}}{% endif %}); height: 200px;    background-size: cover;    background-repeat: no-repeat;"></div>
 </div>
