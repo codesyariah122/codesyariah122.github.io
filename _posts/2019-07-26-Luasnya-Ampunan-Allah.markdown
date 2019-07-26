@@ -7,7 +7,6 @@ image: assets/images/post/ampunan.jpeg
 tags: [Blog]
 opening: بسم الله الرحمن الرحيم
 ---  
-
 <center>{{page.opening}}</center>
 
 *Luasnya Ampunan Allah*
