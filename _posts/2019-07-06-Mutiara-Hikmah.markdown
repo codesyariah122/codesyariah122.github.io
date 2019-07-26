@@ -2,8 +2,8 @@
 layout: post
 title:  "Mutiara Hikmah"
 author: puji
-categories: [ kajian islam, Sunnah  ]
-image: /assets/images/post/mutiara-hikmah.jpeg
+categories: [ KajianIslam, Sunnah  ]
+image: assets/images/post/mutiara-hikmah.jpeg
 tags: [Blog]
 ---
 
@@ -63,42 +63,4 @@ wallaziina shobarubtighooo`a waj-hi robbihim wa aqoomush-sholaata wa anfaquu mim
 (QS. Ar-Ra'd 13: Ayat 22)
 
 > Allah SWT berfirman:
-جَنّٰتُ عَدْنٍ يَّدْخُلُوْنَهَا وَمَنْ صَلَحَ مِنْ اٰبَآئِهِمْ وَاَزْوَاجِهِمْ وَذُرِّيّٰتِهِمْ وَا لْمَلٰٓئِكَةُ يَدْخُلُوْنَ عَلَيْهِمْ مِّنْ كُلِّ بَا بٍ ۚ
-jannaatu 'adniy yadkhuluunahaa wa man sholaha min aabaaa`ihim wa azwaajihim wa zurriyyaatihim wal-malaaa`ikatu yadkhuluuna 'alaihim ming kulli baab
-"(yaitu) surga-surga 'Adn, mereka masuk ke dalamnya bersama dengan orang yang saleh dari nenek moyangnya, pasangan-pasangannya dan anak cucunya, sedang para malaikat masuk ke tempat-tempat mereka dari semua pintu;"
-(QS. Ar-Ra'd 13: Ayat 23)
-
-> Allah SWT berfirman:
-سَلٰمٌ عَلَيْكُمْ بِمَا صَبَرْتُمْ فَنِعْمَ عُقْبَى الدَّارِ ۗ
-salaamun 'alaikum bimaa shobartum fa ni'ma 'uqbad-daar
-"(sambil mengucapkan), Selamat sejahtera atasmu karena kesabaranmu. Maka alangkah nikmatnya tempat kesudahan itu."
-(QS. Ar-Ra'd 13: Ayat 24)
-
-Jika kita beri nomor dari rincian ayat-ayat diatas, Ulul Al-Bab itu ada 9 macam kriteria, sebagai berikut :
-1. Orang-orang yang memenuhi janji Allah.
-2. Tidak merusak/tidak melanggar perjanjian.
-3. Orang-orang yang menghubungkan apa-apa yang Allah perintahkan supaya dihubungkan.
-4. Mereka takut kepada Tuhannya.
-5. Takut kepada hisab yang buruk.
-6. Dan orang-orang yang sabar karena mencari keridhaan Tuhannya.
-7. Mendirikan shalat.
-8. Menafkahkan sebagian rezeki yang Allah berikan kepada mereka, baik secara sembunyi maupun secara terang-terangan.
-9. Menolak kejahatan dengan kebaikan.
-
-#### Sesuatu yang harus dihubungkan, adalah :
-1. Hubungan tali persaudaraan, dan mukmin dengan mukmin lainnya adalah saudara.
-2. Menghubungkan dari ucapan kepada perbuatan, bukan hanya pintar bicara.
-3. Meneruskan dari mengimani nabi-nabi dengan mengimani Nabi Muhammad saw.
-
-_"Khasy-yah"_ ialah rasa takut yang disertai dengan ilmu terhadap yang ditakutinya.
-sedangkan perbedaan antara _"Khasy-yah"_ dengan _"Khauf"_ walaupun secara bahasa artinya sama yaitu takut,
-dapat dilihat dari penjelasan Ibnu al-Qayim yang membedakan maksud keduanya yaitu:  _"Khasy-yah"_ menunjukan atas agungnya yang ditakuti,
-sedangkan _"Khauf"_ menunjukan atas lemahnya yang merasa takut.
-
-Sabar sekalipun telah menjadi bahasa kita, tapi menurut istilah ialah : "menahan jiwa(diri) dari sesuatu yang tidak diinginkan/dibenci".
-Pahala untuk Ulul al-Bab yaitu Surga _'and'. Mereka masuk ke dalamnya bersama-sama dengan orang-orang yang saleh dari bapak-bapaknya, isteri-isterinya dan anak cucunya,
-sedang malaikat-malaikat masuk ke tempat-tenpat mereka dari semua pinyu; (sambil mengucapkan) : __"Salam 'alaikum bima shabartum"__. Maka Alangkah baiknya tempat kesudahan itu.
-
-
-
-
+جَنّٰ
