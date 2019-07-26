@@ -21,7 +21,8 @@ Kasbani juga mengatakan "belum da indikasi untuk erupsi magmatik yang lebih besa
 Peningkatan aktivitas sejak 21 Juli  
 
 [![BBC News](https://ichef-bbci-co-uk.cdn.ampproject.org/i/s/ichef.bbci.co.uk/news/485/cpsprodpb/C0C0/production/_108044394_antarafoto-peningkatan-aktivitas-vulkanik-gunung-tangkuban-parahu-230719-rai-3.jpg)](https://www.google.com/amp/s/www.bbc.com/indonesia/amp/indonesia-49128905)  
->  *ANTARA*  _Tangkuban Perahu Image caption Aktivitas Tangkuban Perahu sudah mulai sejak 21 Juli dengan 425 kali gempa hembusan._  
+>  *ANTARA*  
+> _Tangkuban Perahu Image caption Aktivitas Tangkuban Perahu sudah mulai sejak 21 Juli dengan 425 kali gempa hembusan._  
 
 Tangkuban Perahu meletus pada Jumat pukul 15:48 WIB, dengan abu mencapai ketinggian sekitar 200 meter di atas puncak dengan tinggi sekitar 2.284 meter dari permukaan laut.
 
@@ -32,7 +33,8 @@ Keterangan PVMBG menyebutkan kolom abu bewarna kelabu dan erupsi tercatat di sei
 Kepulan asap dari Kawah Ratu Gunung tercatat pada Selasa (23/07) dan pada 21 Juli petugas mencatat 425 kali gempa hembusan Gunung Tangkuban Perahu.  
 
 [![BBC News](https://ichef-bbci-co-uk.cdn.ampproject.org/i/s/ichef.bbci.co.uk/news/485/cpsprodpb/15D00/production/_108044398_6fac4a5a-21a4-4e0f-9d91-84b0af716fb5.jpg)](https://www.google.com/amp/s/www.bbc.com/indonesia/amp/indonesia-49128905)  
-> *PVBG*  _Catatan letusan Gunung Tangkuban Perahu._  
+> *PVBG*  
+> _Catatan letusan Gunung Tangkuban Perahu._  
 
 Letusan pertama Tangkuban Perahu tercatat pada 1829 dengan erupsi selama tiga hari tiga malam, menurut data yang dikirimkan pihak PVMBG.
 
