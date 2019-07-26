@@ -8,9 +8,9 @@ website: https://nabilla-bakery.me
 img_path: /assets/images/project/bakery.jpg
 data: nabilla bakery
 ---  
-{% assign data = site.data.projects[page.data] %}
+{% assign data = site.data.projects[page.title] %}
 
-### {{ data.data }}
+#### {{ data.data }}
 
 adalah outlet kue yang memproduksi berbagai varian kue.  
 selain pemesanan dengan system digital, kami juga memiliki outlet offline,  
