@@ -48,7 +48,7 @@ markdown: kramdown
 highlighter: rouge
 
 # Paginate
-paginate: 9
+paginate: 5
 
 
 
