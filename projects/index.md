@@ -3,6 +3,9 @@ title: "Projects"
 layout: default
 permalink: "/projects/"
 data: nabilla bakery
+product:
+  - cupcake
+  - cookies
 ---  
 {% assign data = site.data.projects[page.title] %}
 {% assign project_data = site.data.projects[page.data] %}
