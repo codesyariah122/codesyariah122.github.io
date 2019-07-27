@@ -2,9 +2,7 @@
 layout: default
 title: "Nabilla Bakery"
 permalink: "/project-nabillabakery/"
-product:
-  - cupcake
-  - cookie
+product: cupcake
 ---  
 {% assign data_product = site.data.products[page.product] %}
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
@@ -13,7 +11,6 @@ product:
   <blockquote>
    <b>1 pcs </b> {{ data_product.tags }} = 3 {{ data_product.name }}, Harga : Rp. {{ data_product.price }}
   </blockquote>
-</div>
 
 <details><summary style='color:DodgerBlue;'>
 View Our Product</summary>
@@ -29,3 +26,5 @@ View Our Product</summary>
 </div>
 
 </details>
+
+</div>
