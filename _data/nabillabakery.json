@@ -5,7 +5,8 @@
 {
     "name": "Cupcake",
     "image": "/assets/images/project/nabillabakery/cupcake.jpg",
-    "tags": "kue kecil yang dirancang untuk melayani satu orang, yang dapat dipanggang dalam kertas tipis atau cangkir aluminium. Seperti kue yang lebih besar, lapisan gula dan hiasan kue lainnya seperti buah dan permen dapat diaplikasikan."
+    "tags": "kue kecil yang dirancang untuk melayani satu orang, yang dapat dipanggang dalam kertas tipis atau cangkir aluminium. Seperti kue yang lebih besar, lapisan gula dan hiasan kue lainnya seperti buah dan permen dapat diaplikasikan.",
+    "price": "10k"
 },
   "cookie":
 {
