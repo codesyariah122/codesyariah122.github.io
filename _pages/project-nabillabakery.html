@@ -5,7 +5,7 @@ permalink: "/project-nabillabakery/"
 product: cupcake
 --- 
 {% for data in site.data.products %}
-<h1>{{ cupcake.name }}</h1>
+<h1>{{ data.cupcake.name }}</h1>
 {% endfor %}
 
 {% assign data_product = site.data.nabillabakery[page.product] %}
