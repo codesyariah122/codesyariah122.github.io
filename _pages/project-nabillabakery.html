@@ -10,13 +10,17 @@ product2: cookie
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <h1 class="display-4">{{ page.title }}</h1>
   <h4 class="lead">{{ data-product1.name }}</h4>
+  <blockquote>
+   <b>1 pcs </b> {{ data-project1.name }} = 3 {{ data-product1.name }}, Harga : Rp. {{ data.product1.price }} k
+  </blockquote>
 </div>
 
 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
     <div class="hovereffect">
         <img class="img-responsive" src="{{data-product1.image}}" alt="{{data-product1.name}}">
         <div class="overlay">
-           <h2>{{data-product1.image}}</h2>
+           <h2>{{data-product1.name}}</h2>
+            <h4>Idr : 10k/cup</h4>
            <a class="info" href="#">Lihat {{data-product1.name}}</a>
         </div>
     </div>
