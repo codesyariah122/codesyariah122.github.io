@@ -19,9 +19,8 @@ cupcake:
 {% for kue in page.cupcake %}
 {{ kue }}
 {% endfor %}
-{% assign data = site.data.cupcakes[page.cupcake] %}
 
-{% for data in site.data.cupcakes %}
+{% for data in site.data.cupcakes.chocolate %}
 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
     <div class="hovereffect">
         <img class="img-responsive" src="{{data.image}}" alt="{{data.name}}">
