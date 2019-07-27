@@ -2,34 +2,29 @@
 layout: default
 title: "Nabilla Bakery"
 permalink: "/project-nabillabakery/"
-product1-name: Cupcake
-product1-price: 10k
-cupcake:
+product:
   - chocolate
   - banana
 ---  
+{% assign data_product = site.data.products[page.cupcake] %}
+{% for data_product in site.data.products %}
+
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <h1 class="display-4">{{ page.title }}</h1>
-  <h4 class="lead">{{ page.product1-name }}</h4>
+  <h4 class="lead">{{ data_product.name }}</h4>
   <blockquote>
-   <b>1 pcs </b> {{ page.product1-name }} = 3 {{ page.product1-name }}, Harga : Rp. {{ page.product1-price }}
+   <b>1 pcs </b> {{ data_product.tags }} = 3 {{ data_product.name }}, Harga : Rp. {{ data_product.price }}
   </blockquote>
 </div>
 
-{% for item in site.data.cupcakes.chocolate %}
-{{ item.name }}
-{% endfor %}
-
-{% for data in site.data.cupcakes.chocolate %}
 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
     <div class="hovereffect">
-        <img class="img-responsive" src="{{data.image}}" alt="{{data.name}}">
+        <img class="img-responsive" src="{{data_product.image}}" alt="{{data_product.name}}">
         <div class="overlay">
-           <h2>{{data.name}}<br/>Idr : Rp. {{ data.price }}/pcs isi 3 cup</h2>
+           <h2>{{data_product.name}}<br/>Idr : Rp. {{ data_product.price }}/pcs isi 3 cup</h2>
            <a class="info">Lihat {{data-product1.name}}</a>
         </div>
     </div>
 </div>
+
 {% endfor %}
-
-
