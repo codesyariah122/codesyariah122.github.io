@@ -13,14 +13,14 @@ product: cupcake
   </blockquote>
 
 <details><summary style='color:DodgerBlue;'>
-View Our Product</summary>
+View {{data_product.name}}</summary>
 
 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
     <div class="hovereffect">
-        <img class="img-responsive" src="{{data_product.cupcake.image}}" alt="{{data_product.cupcake.name}}">
+        <img class="img-responsive" src="{{data_product.image}}" alt="{{data_product.name}}">
         <div class="overlay">
-           <h2>{{data_product.cupcake.name}}<br/>Idr : Rp. {{ data_product.cupcake.price }}/pcs isi 3 cup</h2>
-           <a class="info">Lihat {{data_product.cupcake.links}}</a>
+           <h2>{{data_product.name}}<br/>Idr : Rp. {{ data_product.price }}/pcs isi 3 cup</h2>
+           <a class="info">Lihat {{data_product.links}}</a>
         </div>
     </div>
 <blockquote><b>1 pcs </b> {{data_product.name}} <b>isi 3 </b> {{data_product.name}}</blockquote>
