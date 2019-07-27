@@ -6,6 +6,7 @@ product:
   - cupcake
   - cookies
 --- 
+<h1>{{ site.data.products[page.product].cupcake.name }}</h1>
 
 {% assign data_product = site.data.nabillabakery[page.product] %}
 {% for data_product in site.products %}
