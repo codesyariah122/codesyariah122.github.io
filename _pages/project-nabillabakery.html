@@ -19,9 +19,9 @@ varian1: chocolate
 {% for cupcake in site.data.cupcakes %}
 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
     <div class="hovereffect">
-        <img class="img-responsive" src="{{cupcake1.image}}" alt="{{data-product1.name}}">
+        <img class="img-responsive" src="{{cupcake.image}}" alt="{{cupcake.name}}">
         <div class="overlay">
-           <h2>{{cupcake1.name}}<br/>Idr : Rp. {{ cupcake1.price }}/pcs isi 3 cup</h2>
+           <h2>{{cupcake.name}}<br/>Idr : Rp. {{ cupcake.price }}/pcs isi 3 cup</h2>
            <a class="info">Lihat {{data-product1.name}}</a>
         </div>
     </div>
