@@ -4,9 +4,9 @@ title: "Nabilla Bakery"
 permalink: "/project-nabillabakery/"
 product: cookie
 ---  
-{% assign data_product = site.data.products[page.product] %}
-{% for data_product in site.data.products %}
-{{ data_product.name }}
+{% assign data = site.data.products[page.product] %}
+{% for data in site.data.products %}
+{{ data.name }}
 {% endfor %}
 
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
