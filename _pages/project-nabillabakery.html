@@ -8,7 +8,7 @@ product:
     cookies
 --- 
 
-{% assign data_product = site.data.nabillabakery[page.product.type.cupcake] %}
+{% assign data_product = site.data.nabillabakery[page.product.type] %}
 {% for data_product in site.products %}
 
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
