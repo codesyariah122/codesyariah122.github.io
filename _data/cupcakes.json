@@ -1,0 +1,16 @@
+{
+"chocolate":
+{
+"name": "Original Chocolate",
+"price": "10k",
+"image": "/assets/images/project/nabillabakery/cupcakes/chreamychocolate.jpg",
+"description": "Rich chocolate cupcake with chocolate"
+},
+"banana":
+{
+"name": "Chocolate Banana",
+"price": "10k",
+"image": "/assets/images/project/nabillabakery/cupcakes/chreamychocolate.jpg",
+"description": "Our delicious chocolate and banana cupcake."
+}
+}
