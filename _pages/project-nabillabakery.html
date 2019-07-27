@@ -3,10 +3,10 @@ layout: default
 title: "Nabilla Bakery"
 permalink: "/project-nabillabakery.html"
 product:
-  - cupcake
-  - cookies
+  - type1: cupcake
+  - type2: cookies
 --- 
-<h1>{{ site.data.products[page.product].cupcake.name }}</h1>
+<h1>{{ site.data.products[page.product.type1].cupcake.name }}</h1>
 
 {% assign data_product = site.data.nabillabakery[page.product] %}
 {% for data_product in site.products %}
