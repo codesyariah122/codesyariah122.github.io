@@ -1,6 +1,7 @@
 {
 "amanah print":
 {
+"links": "AmanahPrints",
 "name": "Amanah Printing",
 "type": "Jasa & Percetakan",
 "website": "https://amanah-print.github.io",
@@ -10,6 +11,7 @@
 },
 "nabilla bakery":
 {
+"links": "nabilabakery",
 "name": "Nabilla Bakery & Cake",
 "type": "Food & Drink",
 "website": "https://nabilla-bakery.github.io",
