@@ -16,7 +16,6 @@ varian1: chocolate
 </div>
 
 {% assign cupcake = site.data.cupcakes[page.varian1] %}
-{% for cupcake in site.data.cupcakes %}
 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
     <div class="hovereffect">
         <img class="img-responsive" src="{{cupcake.image}}" alt="{{cupcake.name}}">
@@ -26,4 +25,3 @@ varian1: chocolate
         </div>
     </div>
 </div>
-{% endfor %}
