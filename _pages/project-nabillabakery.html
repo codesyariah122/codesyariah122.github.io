@@ -4,9 +4,8 @@ title: "Nabilla Bakery"
 permalink: "/project-nabillabakery/"
 product: cupcake
 --- 
-{% for data in site.data.products %}
-<h1>{{ data.cupcake.name }}</h1>
-{% endfor %}
+{% assign data = site.data.products[page.product].cupcake %}
+<h1>{{data.name}}</h1>
 
 {% assign data_product = site.data.nabillabakery[page.product] %}
 {% for data_product in site.products %}
