@@ -11,7 +11,9 @@
   "cookie":
 {
     "name": "Cookie",
-    "image": "/assets/images/project/nabillabakery/cookie.jpg"
+    "image": "/assets/images/project/nabillabakery/cookie.jpg",
+    "tags": "Kue kering memiliki daya tahan yang cukup lama, Bahan yang umum digunakan utuk pembuatan kue kering diantaranya tepung beras, tepung ketan, terigu ataupun sagu, Kue kering yang dioven biasanya di sebut cookies. ... Roti tidaklah selalu sama dengan kue, sebab di Indonesia kadangkala roti dianggap sebagai makanan utama.",
+    "price": "10k"
 }
 
 }
