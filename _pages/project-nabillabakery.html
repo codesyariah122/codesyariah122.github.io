@@ -9,7 +9,7 @@ product: cupcake
   <h1 class="display-4">{{ page.title }}</h1>
   <h4 class="lead">{{ data_product.name }}</h4>
   <blockquote>
-   <b>1 pcs </b> {{ data_product.tags }} = 3 {{ data_product.name }}, Harga : Rp. {{ data_product.price }}
+   {{ data_product.tags }}
   </blockquote>
 
 <details><summary style='color:DodgerBlue;'>
@@ -23,6 +23,7 @@ View Our Product</summary>
            <a class="info">Lihat {{data_product.cupcake.links}}</a>
         </div>
     </div>
+<blockquote><b>1 pcs </b> {{data_product.name}} <b>isi 3 </b> {{data_product.name}}</blockquote>
 </div>
 
 </details>
