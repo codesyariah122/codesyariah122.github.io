@@ -5,26 +5,26 @@ permalink: "/project-nabillabakery/"
 product1: cupcake
 product2: cookie
 ---  
-
 {% assign data-product1 = site.data.products[page.product1] %}
-{% assign data-product2 = site.data.products[page.product2] %}
 
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-  <h1 class="display-4">{{ data-product1.name }}</h1>
-  <p class="lead">{{ data-product1.tags }}</p>
+  <h1 class="display-4">{{ page.title }}</h1>
+  <h4 class="lead">{{ data-product1.name }}</h4>
 </div>
 
 <div class="container">
   <div class="card-deck mb-3 text-center">
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-        <h4 class="my-0 font-weight-normal">{{ data-product1.name }}</h4>
-      </div>
-      <div class="card-body">
-        <h1 class="card-title pricing-card-title">Rp. {{ data-product1.price }} <small class="text-muted">/ mo</small></h1>
-        <img src="{{site.url}}{{ data-product1.image }}" clas="img-fluid">
-        <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button>
-      </div>
-    </div>
-   </div>
-  </div>
+    <div class="card col-md-4 shadow-sm">
+
+<div class="thumbnail">
+<div class="thumb hover">
+<a href="" class="button">
+{{ data-product1.name }}<br>{{ data-product1.price }}
+</a>
+</div>
+<img src="{{ data-product1.image }}" alt="{{ data-product1.name }}" />
+</div>
+
+</div>
+</div>
+</div>
