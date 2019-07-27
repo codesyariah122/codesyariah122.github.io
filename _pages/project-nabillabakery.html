@@ -3,7 +3,7 @@ layout: default
 title: "Nabilla Bakery"
 permalink: "/project-nabillabakery/"
 product1: cupcake
-product2: cookie
+varian1: chocolate
 ---  
 {% assign data-product1 = site.data.products[page.product1] %}
 
@@ -15,6 +15,7 @@ product2: cookie
   </blockquote>
 </div>
 
+{% assign cupcake = site.data.cupcakes[page.varian1] %}
 {% for cupcake in site.data.cupcakes %}
 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
     <div class="hovereffect">
