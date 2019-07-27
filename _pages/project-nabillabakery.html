@@ -12,16 +12,12 @@ product2: cookie
   <h4 class="lead">{{ data-product1.name }}</h4>
 </div>
 
-<div class="d-flex flex-row bd-highlight mb-3">
-<div class="p-2 bd-highlight">
-<div class="thumbnail">
-<div class="thumb hover">
-<a href="" class="button">
-{{ data-product1.name }}<br>{{ data-product1.price }}
-</a>
-</div>
-<img src="{{ data-product1.image }}" alt="{{ data-product1.name }}" />
-</div>
-</div>
-
+<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+    <div class="hovereffect">
+        <img class="img-responsive" src="{{data-product1.image}}" alt="{{data-product1.name}}">
+        <div class="overlay">
+           <h2>{{data-product1.image}}</h2>
+           <a class="info" href="#">Lihat {{data-product1.name}}</a>
+        </div>
+    </div>
 </div>
