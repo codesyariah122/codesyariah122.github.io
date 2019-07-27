@@ -6,9 +6,9 @@ product:
   - cupcake
   - cookie
 --- 
-{% assign data = site.data.products[page.product] %}
+{% assign data = site.data.products[page.product[0] %}
 {% for data in site.products %}
-<h1>{{data.name[1]}}</h1>
+<h1>{{data.name}}</h1>
 {% endfor %}
 
 {% assign data_product = site.data.nabillabakery[page.product] %}
