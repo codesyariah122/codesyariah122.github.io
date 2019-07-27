@@ -16,8 +16,8 @@ cupcake:
   </blockquote>
 </div>
 
-{% for kue in page.cupcake %}
-{{ kue }}
+{% for item in site.data.cupcakes.chocolate %}
+{{ item.name }}
 {% endfor %}
 
 {% for data in site.data.cupcakes.chocolate %}
