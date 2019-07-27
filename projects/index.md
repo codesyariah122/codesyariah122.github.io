@@ -22,7 +22,7 @@ data: nabilla bakery
             </div>
   
             <div class="col-md-9">
-            <a href="{{site.url}}/project-{{ data.name | slugify }}">
+            <a href="{{site.url}}/project-{{ project_data.links | slugify }}">
             <h4 class="text-dark mb-0"> {{ data.title }}</h4>
             <small class="d-inline-block mt-1 mb-3 font-weight-normal">
                 (View {{ project_data.name }})
