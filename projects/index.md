@@ -18,7 +18,7 @@ data: nabilla bakery
             <div class="p-4 border rounded">
             <div class="row">
             <div class="col-md-3 mb-4 mb-md-0">
-            <img alt="{{ data.title }}" src="{{site.url}}{{ data.img_path }}" class="img-thumbnail">
+            <img alt="{{ project_data. }}" src="{{site.url}}{{ data.img_path }}" class="img-thumbnail">
             </div>
   
             <div class="col-md-9">
