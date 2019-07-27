@@ -18,14 +18,14 @@ data: nabilla bakery
             <div class="p-4 border rounded">
             <div class="row">
             <div class="col-md-3 mb-4 mb-md-0">
-            <img alt="{{ project_data. }}" src="{{site.url}}{{ data.img_path }}" class="img-thumbnail">
+            <img alt="{{ data.img_path }}" src="{{site.url}}{{ data.img_path }}" class="img-thumbnail">
             </div>
   
             <div class="col-md-9">
             <a href="{{site.url}}/project-{{ project_data.links | slugify }}">
             <h4 class="text-dark mb-0"> {{ data.title }}</h4>
             <small class="d-inline-block mt-1 mb-3 font-weight-normal">
-                (View {{ data.name }})
+                ({{ data.title }} Products)
             </small>
             </a>
 
