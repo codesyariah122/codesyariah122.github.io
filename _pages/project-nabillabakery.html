@@ -3,8 +3,9 @@ layout: default
 title: "Nabilla Bakery"
 permalink: "/project-nabillabakery/"
 product1: cupcake
-varian1: chocolate
-varian2: banana
+cupcake:
+  - chocolate
+  - banana
 ---  
 {% assign data-product1 = site.data.products[page.product1] %}
 
@@ -16,9 +17,8 @@ varian2: banana
   </blockquote>
 </div>
 
-{% assign cupcake1 = site.data.cupcakes[page.varian1] %}
-{% assign cupcake2 = site.data.cupcakes[page.varian2] %}
-
+{% assign cupcake = site.data.cupcakes[page.cupcake] %}
+{% for cupcake in site.cupcakes %}
 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
     <div class="hovereffect">
         <img class="img-responsive" src="{{cupcake.image}}" alt="{{cupcake.name}}">
@@ -27,15 +27,6 @@ varian2: banana
            <a class="info">Lihat {{data-product1.name}}</a>
         </div>
     </div>
-
-  <div class="hovereffect">
-        <img class="img-responsive" src="{{cupcake2.image}}" alt="{{cupcake2.name}}">
-        <div class="overlay">
-           <h2>{{cupcake2.name}}<br/>Idr : Rp. {{ cupcake2.price }}/pcs isi 3 cup</h2>
-           <a class="info">Lihat {{data-product1.name}}</a>
-        </div>
-    </div>
-
 </div>
 
 
