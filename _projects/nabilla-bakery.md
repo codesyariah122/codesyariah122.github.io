@@ -7,6 +7,7 @@ instagram: https://instagram.com/nabilla_bakery
 website: https://nabilla-bakery.me
 img_path: /assets/images/project/bakery.jpg
 data: nabilla bakery
+product_type: cupcake
 ---  
 {% assign data = site.data.projects[page.data] %}
 
