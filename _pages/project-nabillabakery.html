@@ -7,9 +7,7 @@ product:
   - cookie
 --- 
 {% assign data = site.data.products[page.product] %}
-{% for data in site.products %}
-<h1>{{data.price}}</h1>
-{% endfor %}
+<h1>{{data.cupcake.price}}</h1>
 
 {% assign data_product = site.data.nabillabakery[page.product] %}
 {% for data_product in site.products %}
