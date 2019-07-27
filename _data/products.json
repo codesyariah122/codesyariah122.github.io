@@ -4,7 +4,7 @@
     "name": "Cupcake",
     "image": "/assets/images/project/nabillabakery/cupcakes/cupcake.jpg",
     "tags": "kue kecil yang dirancang untuk melayani satu orang, yang dapat dipanggang dalam kertas tipis atau cangkir aluminium. Seperti kue yang lebih besar, lapisan gula dan hiasan kue lainnya seperti buah dan permen dapat diaplikasikan.",
-    "price": "10k"
+    "price": "10k",
     "links": "https://nabilla-baking.github.io/cupcakes"
 },
   "cookie":
@@ -12,7 +12,7 @@
     "name": "Cookie",
     "image": "/assets/images/project/nabillabakery/cookie.jpg",
     "tags": "Kue kering memiliki daya tahan yang cukup lama, Bahan yang umum digunakan utuk pembuatan kue kering diantaranya tepung beras, tepung ketan, terigu ataupun sagu, Kue kering yang dioven biasanya di sebut cookies. ... Roti tidaklah selalu sama dengan kue, sebab di Indonesia kadangkala roti dianggap sebagai makanan utama.",
-    "price": "10k"
+    "price": "10k",
     "links": "https://nabilla-baking.github.io/cookies"
 }
 
