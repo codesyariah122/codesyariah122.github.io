@@ -10,26 +10,25 @@ product2: cookie
 <h1>{{data-product1.name}}</h1>
 <h1>{{data-product2.name}}</h1>
 
-{% assign data_product = site.data.nabillabakery[page.product] %}
-{% for data_product in site.products %}
+{% assign data-product1 = site.data.products[page.product1] %}
+{% assign data-product2 = site.data.products[page.product2] %}
 
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-  <h1 class="display-4">{{ data_product.name }}</h1>
-  <p class="lead">{{ data_product.tags }}</p>
+  <h1 class="display-4">{{ data-product1.name }}</h1>
+  <p class="lead">{{ data-product1.tags }}</p>
 </div>
 
 <div class="container">
   <div class="card-deck mb-3 text-center">
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
-        <h4 class="my-0 font-weight-normal">{{ data_product.name }}</h4>
+        <h4 class="my-0 font-weight-normal">{{ data-product1.name }}</h4>
       </div>
       <div class="card-body">
-        <h1 class="card-title pricing-card-title">Rp. {{ data_product.price }} <small class="text-muted">/ mo</small></h1>
-        <img src="{{ data_product.image }}" clas="img-fluid">
+        <h1 class="card-title pricing-card-title">Rp. {{ data-product1.price }} <small class="text-muted">/ mo</small></h1>
+        <img src="{{ data-product1.image }}" clas="img-fluid">
         <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button>
       </div>
     </div>
    </div>
   </div>
-{% endfor %}
