@@ -18,7 +18,7 @@ varian1: chocolate
 {% assign cupcake = site.data.cupcakes[page.varian1] %}
 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
     <div class="hovereffect">
-        <img class="img-responsive" src="{{cupcake.image}}" alt="{{cupcake.name}}">
+        <img class="img-responsive" src="{{site.url}}{{cupcake.image}}" alt="{{cupcake.name}}">
         <div class="overlay">
            <h2>{{cupcake.name}}<br/>Idr : Rp. {{ cupcake.price }}/pcs isi 3 cup</h2>
            <a class="info">Lihat {{data-product1.name}}</a>
