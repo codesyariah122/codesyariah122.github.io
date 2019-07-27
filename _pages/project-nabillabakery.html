@@ -1,10 +1,10 @@
 ---
 layout: default
 title: "Nabilla Bakery"
-permalink: "/project-nabillabakery.html"
-product: cupcake
+permalink: "/project-nabillabakery/"
+type: cupcake
 --- 
-<p>{{ site.data.products[page.product].cupcake.tags }}</p>
+<p>{{ site.data.products[page.type].cupcake.tags }}</p>
 
 {% assign data_product = site.data.nabillabakery[page.product] %}
 {% for data_product in site.products %}
