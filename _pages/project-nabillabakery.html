@@ -14,9 +14,8 @@ product2: cookie
    <b>1 pcs </b> {{ data-project1.name }} = 3 {{ data-product1.name }}, Harga : Rp. {{ data-product1.price }}
   </blockquote>
 </div>
-
+{% assign cupcake = site.data.cupcakes[page.product1] %}
 {% for cupcake in site.cupcakes %}
-{% assign cupcake1 = cupcake[1] %}
 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
     <div class="hovereffect">
         <img class="img-responsive" src="{{cupcake1.image}}" alt="{{data-product1.name}}">
