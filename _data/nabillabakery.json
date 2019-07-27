@@ -1,0 +1,16 @@
+{
+"product":
+{
+  "cupcake":
+{
+    "name": "Cupcake",
+    "image": "/assets/images/project/nabillabakery/cupcake.jpg"
+},
+  "cookie":
+{
+    "name": "Cookie",
+    "image": /assets/images/project/nabillabakery/cookie.jpg"
+}
+
+}
+}
