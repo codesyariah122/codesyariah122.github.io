@@ -6,7 +6,7 @@ product:
   - cupcake
   - cookie
 ---  
-{% for item page.product %}
+{% for item in page.product %}
 <h1>{{item}}</h1>
 {% endfor %}
 
