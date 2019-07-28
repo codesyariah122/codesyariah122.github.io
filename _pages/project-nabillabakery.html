@@ -15,40 +15,45 @@ product2: cookie
 
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <h1 class="display-4">{{ page.title }}</h1>
-  <h4 class="lead">{{ cupcake.name }}</h4>
+  <h3 class="lead">Our Product : </h3>
 
 <div class="card" style="width: 18rem;">
+  <h4 class="display">{{ cupcake.name }}</h4>
+
       <div class="hovereffect">
         <img class="img-responsive" src="{{site.url}}{{cupcake.image}}" alt="{{cupcake.name}}">
         <div class="overlay">
-           <h2>{{cupcake.name}}<br/>Idr : Rp. {{ cupcake.price }}/pcs isi 3 cup</h2>
+           <h2>{{cupcake.name}} <br/> Idr : Rp. {{ cupcake.price }}/pcs isi 3 cup</h2>
            <a class="info" href="{{cupcake.links}}">Beli {{cupcake.name}}</a>
         </div>
       </div>
 </div>
 
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-  <h4 class="lead">{{ cupcake.name }}</h4>
-
   <div class="card-body">
-    <h5 class="card-title">{{cupcake.name}}</h5>
+    <h4 class="card-title">{{ cupcake.name }}</h4>
     <p class="card-text">{{cupcake.tags}}</p>
     <a href="{{cupcake.links}}" class="btn btn-primary">Lihat Lebih banyak</a>
   </div>
+</div>
 
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
 <div class="card" style="width: 18rem;">
+  <h4 class="display">{{ cookie.name }}</h4>
+
       <div class="hovereffect">
-        <img class="img-responsive" src="{{site.url}}{{cookie.image}}" alt="{{cookie.name}}">
+        <img class="img-responsive" src="{{site.url}}{{cupcake.image}}" alt="{{cupcake.name}}">
         <div class="overlay">
-           <h2>{{cookie.name}}<br/>Idr : Rp. {{ cookie.price }}/pcs isi 20</h2>
+           <h2>{{cookie.name}} <br/> Idr : Rp. {{ cookie.price }}/pcs isi 20 {{ cookie.name }}</h2>
            <a class="info" href="{{cookie.links}}">Beli {{cookie.name}}</a>
         </div>
       </div>
+</div>
 
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <div class="card-body">
-    <h5 class="card-title">{{cookie.name}}</h5>
+    <h4 class="card-title">{{ cookie.name }}</h4>
     <p class="card-text">{{cookie.tags}}</p>
     <a href="{{cookie.links}}" class="btn btn-primary">Lihat Lebih banyak</a>
   </div>
-
 </div>
