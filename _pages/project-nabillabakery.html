@@ -10,7 +10,7 @@ product:
 <h1>{{item}}</h1>
 {% endfor %}
 
-{% assign data_product = site.data.products[page.product] %}
+{% assign data_product = site.data.products[page.product.cookie] %}
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <h1 class="display-4">{{ page.title }}</h1>
   <h4 class="lead">{{ data_product.name }}</h4>
