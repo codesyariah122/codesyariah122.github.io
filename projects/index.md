@@ -18,7 +18,7 @@ data: nabilla bakery
             <div class="row">
             <div class="col-md-3 mb-4 mb-md-0">
             <img alt="{{ data.img_path }}" src="{{site.url}}{{ data.img_path }}" class="img-thumbnail">
-            </div>
+        </div>
   
             <div class="col-md-9">
             <a href="{{site.url}}/project-{{ project_data.links | slugify }}">
@@ -27,10 +27,12 @@ data: nabilla bakery
                 (Our Products)
             </small>
             </a>
+            
 
             <blockquote style='color:lightskyblue;'>
               {{ data.tagline }}
             </blockquote>
+            </div>
 
             <div class="excerpt">
           
@@ -39,15 +41,9 @@ data: nabilla bakery
             </div>
    
             <div class="icon-block mt-3 d-flex justify-content-between">  
-            <div>
             <a target="_blank" href="{{ data.instagram }}"><i class="fab fa-instagram text-muted" aria-hidden="true"></i></a>  &nbsp;
             <a target="_blank" href="{{ data.website }}"><i class="fa fa-globe text-muted" aria-hidden="true"></i></a> &nbsp;
             </div>
-            </div>
-            </div>
-            </div>
-            </div>
-        </div>
     {% endfor %}
     </div>
 </div>
