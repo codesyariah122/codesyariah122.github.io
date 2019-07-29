@@ -12,8 +12,12 @@ data: nabilla bakery
     <div class="row gap-y listrecent listrecent listauthor">
 
     {% for data in site.projects %}
+
       <h4 class="text-dark mb-0"> {{ data.title }}</h4>
- 
+ </div>
+</div>
+
+     <div class="container">
         <div class="col-lg-6 mb-4">
             <div class="p-4 border rounded">
             <div class="row">
@@ -34,7 +38,7 @@ data: nabilla bakery
 
             <div class="excerpt">
           
-              {{ data.content | truncate: 168}}
+              {{ data.content}}
 
             </div>
    
@@ -43,5 +47,4 @@ data: nabilla bakery
             <a target="_blank" href="{{ data.website }}"><i class="fa fa-globe text-muted" aria-hidden="true"></i></a> &nbsp;
             </div>
     {% endfor %}
-    </div>
 </div>
