@@ -38,10 +38,11 @@ product2: cookie
 </div>
 
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-<div class="card" style="width: 18rem;">
+  <div class="container">
+     <div class="card" style="width: 18rem;">
+
   <h4 class="display">{{ cookie.name }}</h4>
 
-<div class="container">
       <div class="hovereffect">
         <img class="img-responsive" src="{{site.url}}{{cookie.image}}" alt="{{cookie.name}}">
         <div class="overlay">
@@ -50,11 +51,10 @@ product2: cookie
         </div>
       </div>
 
-  <div class="card-body">
+    <div class="card-body">
     <p class="card-text">{{cookie.tags}}</p>
     <a href="{{cookie.links}}" class="btn btn-primary">Lihat Lebih banyak</a>
+    </div>
   </div>
-
-</div>
 </div>
 
