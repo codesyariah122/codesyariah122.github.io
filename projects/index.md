@@ -4,4 +4,4 @@ layout: default
 permalink: "/projects/"
 data: nabilla bakery
 ---  
-{% include projects-home.html %}
+{% include project/index.html %}
