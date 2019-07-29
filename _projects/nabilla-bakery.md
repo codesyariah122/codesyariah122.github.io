@@ -7,15 +7,10 @@ instagram: https://instagram.com/nabilla_bakery
 website: https://nabilla-bakery.me
 img_path: /assets/images/project/bakery.jpg
 data: nabilla bakery
-product: 
-   - cupcake
-   - cookie
 ---  
 {% assign data = site.data.projects[page.data] %}
 
-#### {{ data.name }}  
-
-adalah outlet kue yang memproduksi berbagai varian kue.  
+*{{ data.name }}* adalah outlet kue yang memproduksi berbagai varian kue.  
 selain pemesanan dengan system digital, kami juga memiliki outlet offline,  
 yang berlokasi di..... <a href="https://nabilla-bakery.me">Check disini</a>.  
 
