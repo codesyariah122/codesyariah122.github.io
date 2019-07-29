@@ -3,11 +3,7 @@ title: "Projects"
 layout: default
 permalink: "/projects/"
 data: nabilla bakery
-product: 
-   - cupcake
-   - cookie
 ---  
-{% assign data = site.data.projects[page.title] %}
 {% assign project_data = site.data.projects[page.data] %}
 
 <div class="container">
@@ -28,7 +24,7 @@ product:
             <a href="{{site.url}}/project-{{ project_data.links | slugify }}">
             <h4 class="text-dark mb-0"> {{ data.title }}</h4>
             <small class="d-inline-block mt-1 mb-3 font-weight-normal">
-                ({{ data.title }} Products)
+                (Our Products)
             </small>
             </a>
 
@@ -38,7 +34,7 @@ product:
 
             <div class="excerpt">
           
-              {{ data.content }}
+              {{ data.content | truncate: 168}}
 
             </div>
    
