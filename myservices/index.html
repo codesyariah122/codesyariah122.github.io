@@ -3,6 +3,8 @@ layout: default
 title: "MyServices"
 permalink: "/myservices/"
 ---
+<div class="container">
+<h2>{{ page.title }}</h2>
 {% for service in site.myservices %}
 <div class="col-md-12 col-lg-8">
 <h3><a href="{{ service.url }}"> {{ service.title }} </a></h3>
@@ -10,3 +12,4 @@ permalink: "/myservices/"
 <article class="article-post">{{ service.content }}</article>
 </div>
 {% endfor %}
+</div>
