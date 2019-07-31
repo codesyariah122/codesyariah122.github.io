@@ -17,7 +17,7 @@ feedburner: 'https://feedburner.google.com/fb/a/mailverify'
 
 collections:
   - projects
-  - sastra
+  - myservice
 
 include: ["_pages"]
 permalink: /:categories/:title/
