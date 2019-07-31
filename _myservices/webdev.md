@@ -3,7 +3,7 @@ title: WebDeveloper
 name: Web Developer Service
 ---
 
-*{{ site.name }}* Webdeveloper
+**{{ site.name }}** Webdeveloper
 ---  
 kami Membuka jasa pembuatan Website untuk service :  
 - Website Instansi  
