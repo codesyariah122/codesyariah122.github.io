@@ -11,9 +11,9 @@ repositories:
     repo1:
       url: https://github.com/codesyariah122/codesyariah122-github-io-repo.git
 
-mailchimp-list: 'https://feedburner.google.com/fb/a/mailverify'
+mailchimp-list: ''
 
-feedburner:https://feedburner.google.com/fb/a/mailverify
+feedburner: 'https://feedburner.google.com/fb/a/mailverify'
 
 collections:
   - projects
