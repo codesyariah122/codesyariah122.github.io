@@ -13,6 +13,8 @@ repositories:
 
 mailchimp-list: 'https://feedburner.google.com/fb/a/mailverify'
 
+feedburner:https://feedburner.google.com/fb/a/mailverify
+
 collections:
   - projects
 
