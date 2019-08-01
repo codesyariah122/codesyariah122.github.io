@@ -1,0 +1,8 @@
+---
+layout: page
+---
+{% for room in site.myrooms %}
+<h4>{{ room.title }}</h4>
+<h5>{{ room.author }}</h4>
+{{ room.content }}
+{% endfor %}
