@@ -7,8 +7,7 @@ permalink: "/room/"
 {{ author.nama_lengkap }}
 {% for myroom in site.myrooms %}
 <h4>{{ myroom.title }}</h4>
-{% if myroom.author == site.data.authors[page.author] %}
-<h5>{{ author.nama_lengkap }}</h5>
-{% endif %}
+
+<h5>{{ myroom.date | date: "%d %B %Y" }}</h5>
 {{ myroom.content }}
 {% endfor %}
