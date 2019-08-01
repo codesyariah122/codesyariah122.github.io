@@ -8,7 +8,9 @@ layout: default
   <img class="card-img-top" src="{{myroom.img_path}}" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">{{myroom.title}}</h5>
-    <p class="card-text">{{myroom.content}}</p>
+    <p class="card-text">
+       {{ myroom.content | strip_html | strip_newlines | truncate: 156 }}
+    </p>
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>
