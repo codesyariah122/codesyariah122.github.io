@@ -1,11 +1,11 @@
 ---
-layout: myrooms
+layout: page
 title: "MyRoom"
 permalink: "/room/"
 ---
 {% assign author = site.data.authors[page.author] %}
 {% for myroom in site.myrooms %}
 <h4>{{ myroom.title }}</h4>
-<h5>{{ myroom.author.nama_lengkap }}</h5>
+<h5>{{ myroom.author }}</h5>
 {{ myroom.content }}
 {% endfor %}
