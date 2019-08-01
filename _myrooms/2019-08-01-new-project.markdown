@@ -1,4 +1,5 @@
 ---
+layout: myrooms
 title: "Projects Baru" 
 author: puji
 img_path: "/assets/images/data-archiving.jpg"
