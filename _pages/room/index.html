@@ -9,6 +9,6 @@ permalink: "/room/"
 <h4>{{ myroom.title }}</h4>
 {% if myroom.author == site.data.authors[page.author] %}
 <h5>{{ myroom.author }}</h5>
-{% endfor %}
+{% endif %}
 {{ myroom.content }}
 {% endfor %}
