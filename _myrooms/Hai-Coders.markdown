@@ -1,5 +1,4 @@
 ---
-layout: myrooms
 title: "Hai Coders" 
 author: puji
 img_path: "/assets/images/data-archiving.jpg"
