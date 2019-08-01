@@ -4,11 +4,11 @@ title: "MyRoom"
 permalink: "/room/"
 ---
 {% if myroom in site.myrooms %}
-{% assign author = site.data.authors[page.author] %}
-<h3 class="display-4 mb-4 article-headline">{{ page.title }}</h3>
+{% assign author = site.data.authors[myroom.author] %}
+<h3 class="display-4 mb-4 article-headline">{{ myroom.title }}</h3>
 
-<span class="text-mutted d-block mt-1">{{ page.date | date: "%d %B %Y" }} | <b>By: {{ author.nama_lengkap }}</b></span>
+<span class="text-mutted d-block mt-1">{{ myroom.date | date: "%d %B %Y" }} | <b>By: {{ author.nama_lengkap }}</b></span>
 <article class="article-post">  
-{{ content }}
+{{ myroom.content }}
 </article>
 {% endif %}
