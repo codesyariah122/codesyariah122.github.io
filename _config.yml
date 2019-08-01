@@ -17,7 +17,7 @@ feedburner: 'https://feedburner.google.com/fb/a/mailverify'
 
 collections:
   - projects
-  - myroom
+  - myrooms
 
 include: ["_pages"]
 permalink: /:categories/:title/
