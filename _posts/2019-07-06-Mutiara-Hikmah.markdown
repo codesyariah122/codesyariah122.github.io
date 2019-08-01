@@ -5,6 +5,7 @@ author: puji
 categories: [ KajianIslam, Sunnah  ]
 image: assets/images/post/mutiara-hikmah.jpeg
 tags: [Blog]
+opening: بسم الله الرحمن الرحيم
 ---
 
 #### Allah SWT berfirman:
