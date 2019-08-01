@@ -1,6 +1,5 @@
 ---
 layout: default
-permalink: "/myrooms/"
 ---
 <div class="container">
 <h1 class="font-weight-bold spanborder">{{ page.title }}</h1>
@@ -12,7 +11,7 @@ permalink: "/myrooms/"
     <p class="card-text">
        {{ myroom.content | strip_html | strip_newlines | truncate: 156 }}
     </p>
-    <a href="/room/{{ myroom.title }}" class="btn btn-primary">Go somewhere</a>
+    <a href="/room/{{ myroom.url }}" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>
 {% endfor %}
