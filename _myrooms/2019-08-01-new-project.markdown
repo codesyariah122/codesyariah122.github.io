@@ -1,6 +1,7 @@
 ---
-title: Projects Baru 
+title: "Projects Baru" 
 author: puji
+img_path: "/assets/images/data-archiving.jpg"
 ---  
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque gravida odio odio, ac consequat dolor fringilla sit amet. Sed eleifend, massa quis posuere tempus, dolor lorem ultricies tellus, et ultrices ex turpis sit amet ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec vitae lorem et orci aliquet sollicitudin. In justo nisl, blandit sed dignissim sed, ultrices nec magna. Vivamus consectetur condimentum ipsum non efficitur. Pellentesque rhoncus tempus neque, vel pretium tellus elementum non. Cras faucibus tellus ac elit condimentum bibendum. Vestibulum condimentum sem neque, ut venenatis diam hendrerit id. Fusce non ipsum at risus ultrices pellentesque. Morbi egestas accumsan nunc, sit amet consectetur ex aliquet nec.
