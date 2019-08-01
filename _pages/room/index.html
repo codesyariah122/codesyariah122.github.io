@@ -4,8 +4,11 @@ title: "MyRoom"
 permalink: "/room/"
 ---
 {% assign author = site.data.authors[page.author] %}
+{{ author.nama_lengkap }}
 {% for myroom in site.myrooms %}
 <h4>{{ myroom.title }}</h4>
+{% if myroom.author == site.data.authors[page.author] %}
 <h5>{{ myroom.author }}</h5>
+{% endfor %}
 {{ myroom.content }}
 {% endfor %}
