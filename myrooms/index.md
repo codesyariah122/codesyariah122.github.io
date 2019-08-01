@@ -1,5 +1,5 @@
 ---
 layout: myrooms
 title: "My Room"
-permalink: "/myrooms/"
+permalink: "/myrooms"
 ---
