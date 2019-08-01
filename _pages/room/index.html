@@ -3,7 +3,7 @@ layout: page
 title: "MyRoom"
 permalink: "/room/"
 ---
-
+{% if myroom in site.myrooms %}
 {% assign author = site.data.authors[page.author] %}
 <h3 class="display-4 mb-4 article-headline">{{ page.title }}</h3>
 
@@ -11,3 +11,4 @@ permalink: "/room/"
 <article class="article-post">  
 {{ content }}
 </article>
+{% endif %}
