@@ -6,7 +6,7 @@ permalink: "/room/"
 {% assign author = site.data.authors[page.author] %}
 {{ author.nama_lengkap }}
 {% for myroom in site.myrooms %}
-<h4>{{ myroom.title }}</h4>
+<span class="text-mutted">{{ myroom.title }} | <b>By: {{site.data.authors[page.author].nama_lengkap }}</b></span>
 
 <h5>{{ myroom.date | date: "%d %B %Y" }}</h5>
 {{ myroom.content }}
