@@ -1,6 +1,7 @@
 ---
 title: "Hai Coders" 
 author: puji
+date: "2019-08-01"
 img_path: "/assets/images/data-archiving.jpg"
 ---  
 
