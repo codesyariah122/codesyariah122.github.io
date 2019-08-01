@@ -3,7 +3,8 @@ layout: page
 title: "MyRoom"
 permalink: "/room/"
 ---
+{% assign myroom = site.myrooms %}
 {% assign author = site.data.authors[page.author] %}
-<h4>{{ page.title }}</h4>
+<h4>{{ myroom.title }}</h4>
 <h5>{{ author.nama_lengkap }}</h5>
-{{ content }}
+{{ myroom.content }}
