@@ -5,6 +5,7 @@ author: puji
 categories: [ KajianIslam, Sunnah  ]
 image: assets/images/post/abu-mahdzurah.jpeg
 tags: [sticky, Blog]
+opening: بسم الله الرحمن الرحيم
 ---
 
 ### Kisah Muadzin Rasulullah (Abu Mahdzurah)
