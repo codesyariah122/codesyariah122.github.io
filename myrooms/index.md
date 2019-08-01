@@ -1,0 +1,4 @@
+---
+layout: myrooms
+permalink: "/myrooms/"
+---
