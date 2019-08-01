@@ -9,5 +9,7 @@ permalink: "/room/"
 <h3 class="display-4 mb-4 article-headline">{{ myroom.title }}</h3>
 
 <span class="text-mutted d-block mt-1">{{ myroom.date | date: "%d %B %Y" }} | <b>By: {{ author.nama_lengkap }}</b></span>
+<article class="article-post">  
 {{ myroom.content }}
+</article>
 {% endfor %}
