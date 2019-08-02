@@ -20,11 +20,11 @@ layout: default
 
 
 <!-- Modal -->
-<div class="modal fade" id="{{myroom.title}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<div class="modal fade" id="{{myroom.title}}" tabindex="-1" role="dialog" aria-labelledby="{{myroom.title}}Title" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">{{ myroom.title }}</h5>
+        <h5 class="modal-title" id="{{myroom.title}}Title">{{ myroom.title }}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
