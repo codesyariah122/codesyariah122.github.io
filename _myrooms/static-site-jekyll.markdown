@@ -55,7 +55,7 @@ Sekarang kita perlu menginisialisasi folder sebagai repo baru dan menyetujui per
 #### Mengedarkan ke GitHub  
 
 Pindah ke GitHub via browser dan buat sebuah repo baru.  
-[![Repo Baru](https://cms-assets.tutsplus.com/uploads/users/30/posts/27256/image/new.png)]  
+![Repo Baru](https://cms-assets.tutsplus.com/uploads/users/30/posts/27256/image/new.png)  
 
 Kamu akan diberikan beberapa pilihan pada titik ini, jadi ambil perintah dimana kamu melihat **push an existing repository from the command line**. Command akan membaca sesuatu seperti:  
 {% highlight bash %}
@@ -69,9 +69,11 @@ Tempelkan perintah ini ke dalam terminal untuk mengedarkan repo lokal ke GitHub.
 
 Terakhir, di dalam Settings **repo GitHub**, pilih dan gunakan **master branch** for **GitHub Pages**, lalu tekan **Save**. 
 
-[![git settings](https://cms-assets.tutsplus.com/uploads/users/30/posts/27256/image/gh-pages.png)]  
+![git settings](https://cms-assets.tutsplus.com/uploads/users/30/posts/27256/image/gh-pages.png)  
 
-Jekyll sudah siap, dan websitemu siap dibangun!
+Jekyll sudah siap, dan websitemu siap dibangun!  
+
+
 
 
 
