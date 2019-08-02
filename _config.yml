@@ -18,6 +18,8 @@ feedburner: 'https://feedburner.google.com/fb/a/mailverify'
 collections:
   - projects
   - myrooms
+      output: true
+      permalink: /myrooms/:path/
 
 include: ["_pages"]
 permalink: /:categories/:title/
