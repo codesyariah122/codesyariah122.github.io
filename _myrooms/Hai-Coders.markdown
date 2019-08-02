@@ -4,6 +4,7 @@ title: "Hai Coders"
 author: puji
 date: "2019-08-01"
 img_path: "/assets/images/data-archiving.jpg"
+modal: HaiCoders
 ---  
 
 alhamdulillah setelah menunggu beberapa bulan dan hampir satu tahun, akhirnya ane dapet project baru  
