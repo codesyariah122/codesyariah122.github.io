@@ -45,7 +45,7 @@ Hello!
 
 Sekarang buat sebuah folder baru dengan memasukkan ```mkdir _layouts``` dan ubah direktori itu dengan ```cd _layouts```. Berikan dokumen template default ```vim default.html``` dan tambahkan konten berikut: 
 {% highlight bash %}
-{{ content }}
+&#123;&#123; content &#125;&#125; 
 {% endhighlight %}  
 
 #### Inisialisasi Repo Baru  
