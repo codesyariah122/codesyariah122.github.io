@@ -1,22 +1,5 @@
 ---
-layout: default
+layout: myrooms
 title: "My Room"
 permalink: "/myrooms"
 ---  
-
-<div class="container">
-<h1 class="font-weight-bold spanborder">{{ page.title }}</h1>
-{% for myroom in site.myrooms %}
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="{{myroom.img_path}}" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">{{myroom.title}}</h5>
-    <p class="card-text">
-       {{ myroom.content | strip_html | strip_newlines | truncate: 156 }}
-    </p>
-    <a href="{{myroom.url}}" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-
-{% endfor %}
-</div>
