@@ -4,6 +4,7 @@ title: "Static Site Dengan Jekyll"
 author: puji
 date: "2019-08-01"
 img_path: "/assets/images/myroom/jekyll.jpeg"
+modal: StaticSiteDenganJekyll
 ---  
 
 Jekyll dapat digunakan dengan Halaman GitHub untuk Membuat website yang simpel, sadar blog, statis. Video ini akan menunjukkanmu bagaimana mengatur inti struktur file Jekyll dalam 60 detik!
