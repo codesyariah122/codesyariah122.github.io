@@ -18,15 +18,16 @@ layout: default
 </div>
 
 </div>
-
+<br/><br/>
 
 <!-- Modal -->
 <div class="modal fade" id="{{myroom.modal}}" tabindex="-1" role="dialog" aria-labelledby="{{myroom.modal}}Title" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="{{myroom.modal}}Title">{{ myroom.title }}</h5>
-     <span class="text-muted d-block mt-1">{{ myroom.date | date: '%d %B %Y' }} · {% include meta-read-time.html %} | <b>{{ author.nama_lengkap }}</b> </span>
+        <h5 class="modal-title" id="{{myroom.modal}}Title">{{ myroom.title }} <br/> 
+          <span class="text-muted d-block mt-1">{{ myroom.date | date: '%d %B %Y' }} · {% include meta-read-time.html %} | <b>{{ author.nama_lengkap }}</b></span>
+        </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
