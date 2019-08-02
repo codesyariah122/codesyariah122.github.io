@@ -14,7 +14,7 @@ permalink: "/myrooms"
     <p class="card-text">
        {{ myroom.content | strip_html | strip_newlines | truncate: 156 }}
     </p>
-    <a href="/{{myroom.url}}" class="btn btn-primary">Go somewhere</a>
+    <a href="{{myroom.url}}" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>
 
