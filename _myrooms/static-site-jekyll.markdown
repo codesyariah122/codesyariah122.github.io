@@ -25,4 +25,43 @@ Ganti direktori ke folder baru ini dengan memasukkan ``` cd mysite–``` setelah
 
 {% highlight bash %}
 title: My Site
+{% endhighlight %}  
+
+Tekan **Esc** untuk keluar dari insert mode, lalu masukkan ```:x``` untuk menyimpan perubahan yang telah kamu buat.  
+
+#### Membuat Index  
+
+Selanjutnya kita perlu membuat dokumen index, jadi masukkan ```vim index.md``` dan mirip seperti yang kamu lakukan sebelumnya, tambahkan konten berikut:  
+{% highlight bash %}
+---
+title: Hello
+layout: default
+---
+ 
+Hello!
+{% endhighlight %}  
+
+#### Menambahkan Folder Layout  
+
+Sekarang buat sebuah folder baru dengan memasukkan ```mkdir _layouts``` dan ubah direktori itu dengan ```cd _layouts```. Berikan dokumen template default ```vim default.html``` dan tambahkan konten berikut: 
+{% highlight bash %}
+{{ content }}
+{% endhighlight %}  
+
+#### Inisialisasi Repo Baru  
+
+Sekarang kita perlu menginisialisasi folder sebagai repo baru dan menyetujui perubahan. Jadi mulailah dengan mengarahkan kembali ke root project kita dengan ```cd ...``` Kemudian masukkan ```git init```, diikuti dengan ```git add --all && git commit --all```.  
+
+#### Mengedarkan ke GitHub  
+
+Pindah ke GitHub via browser dan buat sebuah repo baru.  
+["repo baru"](https://cms-assets.tutsplus.com/uploads/users/30/posts/27256/image/new.png)  
+
+Kamu akan diberikan beberapa pilihan pada titik ini, jadi ambil perintah dimana kamu melihat **push an existing repository from the command line**. Command akan membaca sesuatu seperti:  
+{% highlight bash %}
+git remote add origin git@github.com:your_username/mysite.git
+git push -u origin master
 {% endhighlight %}
+
+
+
