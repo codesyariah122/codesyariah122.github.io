@@ -2,7 +2,6 @@
 layout: default
 ---
 <div class="container">
-<h1 class="font-weight-bold spanborder">{{ page.title }}</h1>
 {% for myroom in paginator.myrooms %}
 {% assign author = site.data.authors[myroom.author] %}
 <div class="card" style="width: 18rem;">
