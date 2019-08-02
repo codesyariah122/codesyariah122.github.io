@@ -9,7 +9,7 @@ layout: default
   <div class="card-body">
     <h5 class="card-title">{{myroom.title}}</h5>
     <p class="card-text">
-       {{ myroom.excerpt | strip_html | strip_newlines | truncate: 156 }}
+       {{ myroom.content | strip_html | strip_newlines | truncate: 156 }}
     </p>
     <a href="/room/?page={{myroom.url}}" class="btn btn-primary">Go somewhere</a>
   </div>
