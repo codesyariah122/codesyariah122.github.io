@@ -2,12 +2,14 @@
 layout: page
 title: "Hai-Coders"
 permalink: "/myrooms/Hai-Coders/"
----
-{% assign page = site.myrooms %}
-<h3 class="display-4 mb-4 article-headline">{{ page.title }}</h3>
+---  
+{% for data in site.myrooms %{
+{% assign author = site.data.authors[data.author] %}
+<h3 class="display-4 mb-4 article-headline">{{ data.title }}</h3>
 
-<span class="text-mutted d-block mt-1">{{ page.date | date: "%d %B %Y" }} | <b>By: {{ author.nama_lengkap }}</b></span>
+<span class="text-mutted d-block mt-1">{{ data.date | date: "%d %B %Y" }} | <b>By: {{ author.nama_lengkap }}</b></span>
 <article class="article-post">  
-{{ page.content }}
+{{ data.content }}
 </article>
+{% endfor %}
 
