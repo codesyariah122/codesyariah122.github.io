@@ -4,6 +4,7 @@ layout: default
 <div class="container">
 <h1 class="font-weight-bold spanborder">{{ page.title }}</h1>
 {% for myroom in site.myrooms %}
+{% assign author = site.data.authors[myroom.author] %}
 <div class="card" style="width: 18rem;">
   <img class="card-img-top" src="{{myroom.img_path}}" alt="Card image cap">
   <div class="card-body">
@@ -25,12 +26,15 @@ layout: default
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="{{myroom.modal}}Title">{{ myroom.title }}</h5>
+     <span class="text-muted d-block mt-1">{{ myroom.date | date: '%d %B %Y' }} · {% include meta-read-time.html %} | <b>{{ author.nama_lengkap }}</b> </span>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
+      <article class="article-post">
         {{ myroom.content }}
+      </article>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -39,5 +43,4 @@ layout: default
     </div>
   </div>
 </div>
-
 {% endfor %}
