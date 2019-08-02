@@ -11,7 +11,7 @@ layout: default
     <p class="card-text">
        {{ myroom.content | strip_html | strip_newlines | truncate: 156 }}
     </p>
-    <a href="/myrooms{{myroom.url}}" class="btn btn-primary">Go somewhere</a>
+    <a href="/myrooms/page{{myroom.url}}" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>
 
