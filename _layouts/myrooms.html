@@ -2,7 +2,7 @@
 layout: default
 ---
 <div class="container">
-{% for myroom in paginator.myrooms %}
+{% for myroom in site.myrooms %}
 {% assign author = site.data.authors[myroom.author] %}
 <div class="card" style="width: 18rem;">
   <img class="card-img-top" src="{{myroom.img_path}}" alt="Card image cap">
