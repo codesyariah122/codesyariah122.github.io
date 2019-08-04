@@ -14,7 +14,7 @@ Gemilang Citrus Berjaya adalah brand **OURCITRUS**, sebuah perusahaan Direct Sel
 
 Perusahaan profesional dan legal, produk sudah sertifikasi BPOM, pabrik milik sendiri yang sudah berpengalaman puluhan tahun di bidang premium produk beauty care dan personal care. Master stockist yang langsung tersebar di seluruh provinsi di Indonesia.
 
-Saat ini kami tengah bidding para Top Leader di seluruh Indonesia. Sebuah peluang bisnis dan kesempatan sukses ada dihadapan anda sekarang. Jangan lewatkan !
+Saat ini kami tengah bidding para Top Leader di seluruh Indonesia. Sebuah peluang bisnis dan kesempatan sukses ada dihadapan anda sekarang. Jangan lewatkan.  
 
 ## Head Office
 #### {{ data.name }}  
