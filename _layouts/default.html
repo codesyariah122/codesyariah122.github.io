@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
   
     {% seo %}
-
+    <script>
+    $('.carousel').carousel()
+    </script>
     <link href='{{site.url}}/feed.xml' rel='alternate' type='application/atom+xml'>
  
     <link rel="shortcut icon" type="image/x-icon" href="{{site.url}}/{{site.favicon}}">
@@ -95,17 +97,6 @@
         </div>
         </div>
     </footer>
-
-   <script>
-    $(function(){
-
-        $('.carousel-control').click(function(e){
-            e.preventDefault();
-            $('#myCarousel').carousel( $(this).data() );
-        });
-
-    });//END document.ready
-    </script>
 
     <!-- Scripts: popper, bootstrap, theme, lunr -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
