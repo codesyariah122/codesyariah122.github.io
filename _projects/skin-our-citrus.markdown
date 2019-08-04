@@ -1,1 +1,20 @@
+---
+title: "PT.Gemilang Citrus Berjaya"
+name: "SkinOC+"
+type: Healthy & treatment
+tagline: "Perusahaan profesional dan legal, produk sudah sertifikasi BPOM"
+instagram: https://instagram.com/skinoc
+website: https://nabilla-bakery.me
+img_path: /assets/images/project/skinoc.jpg
+data: skinoc
+---  
+{% assign data = site.data.projects[page.data] %}
 
+**{{data.name}}** dengan brand OURCITRUS, sebuah perusahaan Direct Selling (MLM) dipastikan segera menguasai pasar Indonesia dan Asia.
+
+Perusahaan profesional dan legal, produk sudah sertifikasi BPOM, pabrik milik sendiri yang sudah berpengalaman puluhan tahun di bidang premium produk beauty care dan personal care. Master stockist yang langsung tersebar di seluruh provinsi di Indonesia.
+
+Saat ini kami tengah bidding para Top Leader di seluruh Indonesia. Sebuah peluang bisnis dan kesempatan sukses ada dihadapan anda sekarang. Jangan lewatkan !
+
+Head Office
+PT. GEMILANG CITRUS BERJAYA Mutiara Regency Blok A1 No. 55 Sidoarjo – Jawa Timur INDONESIA
