@@ -8,11 +8,22 @@ caraousel: skinoc
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
   {% assign data = site.data.carousels[page.carousel] %}
-  {% for data in site.data.carousels %}
-    <div class="carousel-item">
-      <img src="{{data}}" class="d-block w-100" alt="...">
+    <div class="carousel-item active">
+      <img src="{{data.img1}}" class="d-block w-100" alt="...">
     </div>
-  {% endfor %}
+    <div class="carousel-item">
+      <img src="{{data.img2}}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{{data.img3}}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{{data.img4}}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{{data.img5}}" class="d-block w-100" alt="...">
+    </div>
+
   </div>
 
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
