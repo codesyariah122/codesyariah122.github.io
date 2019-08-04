@@ -17,4 +17,4 @@ Perusahaan profesional dan legal, produk sudah sertifikasi BPOM, pabrik milik se
 Saat ini kami tengah bidding para Top Leader di seluruh Indonesia. Sebuah peluang bisnis dan kesempatan sukses ada dihadapan anda sekarang. Jangan lewatkan !
 
 Head Office
-PT. GEMILANG CITRUS BERJAYA Mutiara Regency Blok A1 No. 55 Sidoarjo – Jawa Timur INDONESIA
+{{ data.name }} {{ data.address }}
