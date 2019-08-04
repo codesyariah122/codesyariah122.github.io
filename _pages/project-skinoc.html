@@ -11,16 +11,16 @@ carousel: skinoc
 <p class="lead">Go to skinoc links 👇</p>
 
 <div class="btn-group btn-group-toggle" data-toggle="buttons">
-  <label class="btn btn-secondary active">
-    <input type="radio" name="options" id="option1" autocomplete="off" checked href="skinoc.github.io">skinoc.github.io
+  <label>
+    <a href="skinoc.github.io" class="btn btn-secondary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">github pages</a>
   </label>
-  <label class="btn btn-secondary">
-    <input type="radio" name="options" id="option2" autocomplete="off" href="www.skinoc.id">skinoc.id
+  <label>
+    <a href="skinoc.id" class="btn btn-secondary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">skinoc.id</a>
   </label>
-  <label class="btn btn-secondary">
-    <input type="radio" name="options" id="option3" autocomplete="off" href="www.ourcitrus.com">ourcitrus.com
+  <label>
+    <a href="ourcitrus.com" class="btn btn-secondary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">old site</a>
   </label>
-</div>
+</div><br/><br/>
 
 {% assign data = site.data.carousels[page.carousel] %}
 
