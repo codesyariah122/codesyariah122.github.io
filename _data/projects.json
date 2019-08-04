@@ -18,5 +18,15 @@
 "tagline": "Mengedepankan pelayanan dari kualitas terbaik kami",
 "img_path": "/assets/images/project/bakery.jpg",
 "alamat": "in progress"
+},
+"skinoc":
+{
+"links": "skinoc",
+"name": "PT. Gemilang Citrus Berjaya",
+"type": "Healthy & Treatment",
+"website": "https://skinoc.github.io",
+"tagline": "Perusahaan profesional dan legal, produk sudah sertifikasi BPOM",
+"img_path": "/assets/images/project/skinoc.jpg",
+"alamat": "Mutiara Regency Blok A1 No. 55 Sidoarjo – Jawa Timur INDONESIA"
 }
 } 
