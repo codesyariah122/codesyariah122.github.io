@@ -16,6 +16,6 @@ Perusahaan profesional dan legal, produk sudah sertifikasi BPOM, pabrik milik se
 
 Saat ini kami tengah bidding para Top Leader di seluruh Indonesia. Sebuah peluang bisnis dan kesempatan sukses ada dihadapan anda sekarang. Jangan lewatkan.  
 
-## Head Office
-#### {{ data.name }}  
-   {{ data.alamat }}
+<h3>Head Office</h3>
+<h4> {{ data.name }} </h4>
+<p>{{ data.alamat }}</p>
