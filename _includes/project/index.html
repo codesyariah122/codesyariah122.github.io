@@ -38,3 +38,39 @@
             </div>
 </div>
  {% endfor %}
+
+
+
+<div class="container">
+<h4 class="font-weight-bold spanborder"><span>{{page.title}}</span></h4>
+{% assign project_data = site.data.projects[page.data] %}
+ {% for data in site.projects %}
+<div class="card" style="width: 18rem;">
+  <img alt="{{ data.title }}" src="{{site.url}}{{ data.img_path }}" class="img-thumbnail">
+    <a href="{{site.url}}/project-{{ project_data.links | slugify }}">
+
+             <small class="d-inline-block mt-1 mb-3 font-weight-normal">
+                (Our Products)
+            </small>
+            </a>
+            <blockquote style='color:lightskyblue;'>
+              {{ data.tagline }}
+            </blockquote>
+
+        <div class="card-body">
+    <h5 class="card-title">{{data.title}}</h5>
+    <article class="article-post">
+       {{ data.content | strip_html | strip_newlines }}
+     <br/>
+    <div class="icon-block mt-3 d-flex justify-content-between">  
+            <a target="_blank" href="{{ data.instagram }}"><i class="fab fa-instagram text-muted" aria-hidden="true"></i></a>  &nbsp;
+            <a target="_blank" href="{{ data.website }}"><i class="fa fa-globe text-muted" aria-hidden="true"></i></a> &nbsp;
+    </div>
+    </article>
+ <button type="button" class="btn btn-primary" href="{{data.links}}">
+  Look Here
+ </button>  
+</div>
+</div>
+<br/>
+{% endfor %}
