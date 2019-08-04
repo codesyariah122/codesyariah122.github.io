@@ -6,7 +6,7 @@
   <img alt="{{ data.title }}" src="{{site.url}}{{ data.img_path }}" class="img-thumbnail">
     <span class="text-muted d-block mt-1">{{ data.date | date: "%d %B %Y" }}<span class="reading-time">
 
-            <a href="{{data.website}}/project-{{ project_data.links | slugify }}">
+            <a href="{{site.url}}/project-{{ project_data.links | slugify }}">
             <small class="d-inline-block mt-1 mb-3 font-weight-normal">
                 (Our Products)
             </small>
