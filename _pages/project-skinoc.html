@@ -8,6 +8,18 @@ carousel: skinoc
 <div class="container">
 <h3 class="text-primary">{{ page.title }}</h3>
 <h4 class="lead text-info">{{ page.sub }}</h4>
+<p class="lead">Go to skinoc.id 👇</p>
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <label class="btn btn-secondary active">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked href="skinoc.github.io">skinoc.github.io
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option2" autocomplete="off" href="www.skinoc.id">skinoc.id
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option3" autocomplete="off" href="www.ourcitrus.com> ourcitrus.com
+  </label>
+</div>
 
 {% assign data = site.data.carousels[page.carousel] %}
 
