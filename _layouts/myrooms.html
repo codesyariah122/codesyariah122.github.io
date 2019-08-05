@@ -33,6 +33,13 @@ layout: default
       <div class="modal-body">
       <article class="article-post">
         {{ myroom.content }}
+      {% if page.video_path %}
+      <div class="embed-responsive embed-responsive-16by9">   
+      <video controls="controls">
+      <source type="video/mp4" src="{{page.video_path.vid1}}"></source>
+      </video>
+      </div>
+      {% endif %}
       </article>
       </div>
       <div class="modal-footer">
