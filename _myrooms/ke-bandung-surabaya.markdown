@@ -5,7 +5,7 @@ author: puji
 date: "2019-08-05"
 img_path: "/assets/images/myroom/IMG-20190805-WA0004.jpeg"
 video_path: 
-  - vid1: "/assets/images/myroom/VID-20190805-WA0006.mp4"
+  vid1: "/assets/images/myroom/VID-20190805-WA0006.mp4"
 modal: PerjalananBandungSurabaya
 ---  
 
@@ -15,7 +15,7 @@ Dan di bandung iklim cuacanya dingin, karena Bandung notaben nya dikelilingi ole
 yah mudah mudahan perjalanan nya selamat dan mendapat berkah dari perjalanan ini.  
 
 <video controls="controls">
-  <source type="video/mp4" src="{{page.video_path[vid1]}}"></source>
+  <source type="video/mp4" src="{{page.video_path.vid1}}"></source>
   <source type="video/webm" src="filename.webm"></source>
   <p>Your browser does not support the video element.</p>
 </video>
