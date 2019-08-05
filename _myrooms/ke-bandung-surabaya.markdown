@@ -13,4 +13,4 @@ Ibu kota jawa timur ini terkenal karena cuaca panas ekstrem nya hehe, maklum say
 Dan di bandung iklim cuacanya dingin, karena Bandung notaben nya dikelilingi oleh pegunungan dan bebukitan.  
 yah mudah mudahan perjalanan nya selamat dan mendapat berkah dari perjalanan ini.  
 
-![](page.video_path)
+![]({{page.video_path}})
