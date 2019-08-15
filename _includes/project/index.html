@@ -25,10 +25,7 @@
             <a target="_blank" href="{{ data.instagram }}"><i class="fab fa-instagram text-muted" aria-hidden="true"></i></a>  &nbsp;
             <a target="_blank" href="{{ data.website }}"><i class="fa fa-globe text-muted" aria-hidden="true"></i></a> &nbsp;
    </div>
- <button type="button" class="btn btn-primary" href="{{site.url}}/project-{{ ProjectData.links | slugify }}">
-  Look Here
- </button>  
-
+ <a class="btn btn-outline-secondary" href="{{site.url}}/project-{{ ProjectData.links | slugify }}">Come on</a>
 </div>
 <br/>
 {% endfor %}
