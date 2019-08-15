@@ -3,7 +3,7 @@ layout: post
 title:  "Kembang Dari Priangan"
 author: puji
 categories: [ Blog, story ]
-image: assets/images/post/photo-1.jpeg
+image: assets/images/project/skinoc/pic10.jpg
 tags: [featured , Blog]
 ---  
 
@@ -26,3 +26,4 @@ Demi menciptakan pembangunan. dan pembangunan itu apa manfaatnya untuk rakyat???
 
 Salam....
 {{site.title}}
+
