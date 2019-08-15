@@ -25,6 +25,6 @@ mungkin ada birokrasi yang tidak sesuai dengan nurani rakyat, atau ada hukum yan
 Demi menciptakan pembangunan. dan pembangunan itu apa manfaatnya untuk rakyat??? atau mereka mencari pujian dari pihak asing supaya menarik pihak asing untuk mengeksploitasi bumi nusantara terkhusus jawa barat.  
 titipan untuk jabar satu.
 
-Salam....
-{{site.title}}
+Salam....  
+**{{site.data.authors[page.author].nama_lengkap}}** Developer {{site.name}}
 
