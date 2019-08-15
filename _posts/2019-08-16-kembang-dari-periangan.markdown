@@ -22,7 +22,8 @@ katakanlah.. semua orang butuh listrik ! "jelas dong" sangat tidak relevansi den
 tapi ada catatan dibalik itu semua, mengapa semuanya serentak dilokasi yang sama yaitu **seputaran tanah priangan**. ada apa ditanah priangan, sebuah kebetulan belaka kah? atau sebuah  
 peringatan keras bagi para pemukim tanah priangan. sepertinya memang ini teguran keras dari sang maha pencipta, ada kebobrokan dan ketidak sinambungan di bumi jawa barat san tanah priangan  
 mungkin ada birokrasi yang tidak sesuai dengan nurani rakyat, atau ada hukum yang tebang pilih memangkas yang lemah, atau modal asing yang terus menerus mengeksploitasi kawasan priangan  
-Demi menciptakan pembangunan. dan pembangunan itu apa manfaatnya untuk rakyat??? atau mereka mencari pujian dari pihak asing supaya menarik pihak asing untuk mengeksploitasi bumi nusantara.
+Demi menciptakan pembangunan. dan pembangunan itu apa manfaatnya untuk rakyat??? atau mereka mencari pujian dari pihak asing supaya menarik pihak asing untuk mengeksploitasi bumi nusantara terkhusus jawa barat.  
+titipan untuk jabar satu.
 
 Salam....
 {{site.title}}
