@@ -4,7 +4,7 @@ name: "SkinOC+"
 type: Healthy & treatment
 tagline: "Perusahaan profesional dan legal, produk sudah sertifikasi BPOM"
 instagram: https://instagram.com/skinoc
-website: https://nabilla-bakery.me
+website: https://skinoc.id/
 img_path: /assets/images/project/skinoc.jpg
 data: skinoc
 ---  
