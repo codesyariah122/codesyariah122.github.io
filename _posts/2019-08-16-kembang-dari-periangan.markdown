@@ -7,7 +7,8 @@ image: assets/images/project/skinoc/pic10.jpg
 tags: [featured , Blog]
 ---  
 
-Tanah Priangan adalah kawasan gunung gemunung yang bermukim suku sunda. Adalah dataran yang sejuk dengan keindahan alam yang melingkupinya,  
+Tanah Priangan adalah kawasan gunung gemunung yang didalamnya menjadi tempat bermukim sebagian suku sunda dari berbagai kawasan di wilayah priangan lainnya.  
+Adalah merupakan dataran yang sejuk dengan keindahan alam yang melingkupinya,  
 mengampar kawasan kawasan hijau yang menyejukan mata yang sudah lama dijadikan sarana objek wisata oleh masyarakat banyak, dan sebagian kawasannya  
 dimanfaatkan untuk kegiatan pertanian, perkebunan dan peternakan yang notaben sebagai sumber kebutuhan masyarakat, dan memenuhi komoditas pasar lokal dan nasional.  
 
