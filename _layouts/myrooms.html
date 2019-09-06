@@ -8,7 +8,7 @@ layout: default
             </h1>
         </div><br/><br/>
 
-% for myroom in site.myrooms %}
+{% for myroom in site.myrooms %}
 {% assign author = site.data.authors[myroom.author] %}
 
 <section class="wrapper-pricing">
