@@ -1,15 +1,19 @@
 ---
 layout: default
 ---
-<section class="wrapper-pricing">
-    <div class="container-fostrap">
-
         <div>
             <img src="https://4.bp.blogspot.com/-7OHSFmygfYQ/VtLSb1xe8kI/AAAAAAAABjI/FxaRp5xW2JQ/s320/logo.png" class="fostrap-logo"/>
             <h1 class="heading">
                 Welcome in MyRoom
             </h1>
         </div><br/><br/>
+
+% for myroom in site.myrooms %}
+{% assign author = site.data.authors[myroom.author] %}
+
+<section class="wrapper-pricing">
+    <div class="container-fostrap">
+
 
         <div class="content-pricing">
             <div class="container">
@@ -19,20 +23,20 @@ layout: default
                     <div class="col-xs-12 col-sm-4">
                         <div class="card-pricing">
 
-                            <a class="img-card-pricing" href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">
-                            <img src="https://3.bp.blogspot.com/-bAsTyYC8U80/VtLZRKN6OlI/AAAAAAAABjY/kAoljiMALkQ/s400/material%2Bnavbar.jpg" />
+                            <a class="img-card-pricing" href="{{site.url}}/{{myroom.img_path}}">
+                            <img src="{{myroom.img_path}}" />
                           </a>
                             <div class="card-content-pricing">
                                 <h4 class="card-title-pricing">
-                                    <a href="http://www.fostrap.com/2016/02/awesome-material-design-responsive-menu.html"> Material Design Responsive Menu
+                                    <a href="" data-toggle="modal" data-target="#{{myroom.modal}}"> {{myroom.title}}
                                   </a>
                                 </h4>
                                 <p class="">
-                                    Material Design is a visual programming language made by Google. Language programming...
+                                    {{ myroom.content | strip_html | strip_newlines | truncate: 156 }}
                                 </p>
                             </div>
                             <div class="card-read-more-pricing">
-                                <a href="https://codepen.io/wisnust10/full/ZWERZK/" class="btn btn-link btn-block">
+                                <a href="" data-toggle="modal" data-target="#{{myroom.modal}}" class="btn btn-link btn-block">
                                     Read More
                                 </a>
                             </div>
@@ -47,3 +51,4 @@ layout: default
         </div>
     </div>
 </section>
+{% endfor %}
