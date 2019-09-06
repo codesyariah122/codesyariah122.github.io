@@ -1,18 +1,19 @@
 ---
 layout: default
 ---
+
+
+{% assign author = site.data.authors[myroom.author] %}
+
+<section class="wrapper-pricing">
+    <div class="container-fostrap">
+           
        <div>
             <img src="{{site.url}}/{{site.favicon}}" class="fostrap-logo"/>
             <h1 class="heading">
                 Welcome in MyRoom
             </h1>
         </div><br/><br/>
-
-{% assign author = site.data.authors[myroom.author] %}
-
-<section class="wrapper-pricing">
-    <div class="container-fostrap">
-
 
         <div class="content-pricing">
             <div class="container">
