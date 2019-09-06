@@ -3,21 +3,45 @@ layout: default
 ---
 {% for myroom in site.myrooms %}
 {% assign author = site.data.authors[myroom.author] %}
-<!-- not width device -->
-<div class="container">
-<div class="card">
-  <img class="card-img-top" src="{{myroom.img_path}}" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">{{myroom.title}}</h5>
-    <p class="card-text">
-       {{ myroom.content | strip_html | strip_newlines | truncate: 156 }}
-    </p>
- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{myroom.modal}}">
-  Look Here
-</button>  
-</div>
-</div>
-<br/>
+<section class="wrapper">
+
+    <div class="container-fostrap">
+        <div>
+            <img src="https://4.bp.blogspot.com/-7OHSFmygfYQ/VtLSb1xe8kI/AAAAAAAABjI/FxaRp5xW2JQ/s320/logo.png" class="fostrap-logo"/>
+            <h1 class="heading">
+                Bootstrap Card Responsive 
+            </h1>
+        </div>
+        <div class="content">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="card">
+                            <a class="img-card" href="{{site.url}}{{myroom.img_path}}">
+                            <img src="{{myroom.img_path}}" />
+                          </a>
+                            <div class="card-content">
+                                <h4 class="card-title">
+                                    <a href="" data-toggle="modal" data-target="#{{myroom.modal}}"> {{myroom.title}}
+                                  </a>
+                                </h4>
+                                <p class="">
+                                {{ myroom.content | strip_html | strip_newlines | truncate: 156 }}
+                                </p>
+                            </div>
+                            <div class="card-read-more">
+                                <a href="" data-toggle="modal" data-target="#{{myroom.modal}}" class="btn btn-link btn-block">
+                                    Read More
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
 
 <!-- Modal -->
 <div class="modal fade" id="{{myroom.modal}}" tabindex="-1" role="dialog" aria-labelledby="{{myroom.modal}}Title" aria-hidden="true">
@@ -49,5 +73,5 @@ layout: default
     </div>
   </div>
 </div>
-</div>
-{% endfor %}
+
+</section>
