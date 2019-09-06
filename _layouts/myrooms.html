@@ -1,17 +1,20 @@
 ---
 layout: default
 ---
-{% for myroom in site.myrooms %}
-{% assign author = site.data.authors[myroom.author] %}
-<section class="wrapper">
-
-    <div class="container-fostrap">
+<div class="container-fostrap">
+    
         <div>
             <img src="{{site.url}}/{{site.favicon}}" class="fostrap-logo"/>
             <h1 class="heading">
                 Welcome in MyRoom Page
             </h1>
         </div>
+    
+{% for myroom in site.myrooms %}
+{% assign author = site.data.authors[myroom.author] %}
+<section class="wrapper">
+
+    
         <div class="content">
             <div class="container">
                 <div class="row">
