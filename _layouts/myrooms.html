@@ -2,13 +2,12 @@
 layout: default
 ---
        <div>
-            <img src="https://4.bp.blogspot.com/-7OHSFmygfYQ/VtLSb1xe8kI/AAAAAAAABjI/FxaRp5xW2JQ/s320/logo.png" class="fostrap-logo"/>
+            <img src="{{site.url}}/{{site.favicon}}" class="fostrap-logo"/>
             <h1 class="heading">
                 Welcome in MyRoom
             </h1>
         </div><br/><br/>
 
-{% for myroom in site.myrooms %}
 {% assign author = site.data.authors[myroom.author] %}
 
 <section class="wrapper-pricing">
@@ -19,7 +18,7 @@ layout: default
             <div class="container">
                 <div class="row">
 
-
+{% for myroom in site.myrooms %}
                     <div class="col-xs-12 col-sm-4">
                         <div class="card-pricing">
 
@@ -43,12 +42,11 @@ layout: default
 
                         </div>
                     </div>
-
-                 
+{% endfor %}         
                     
                 </div>
             </div>
         </div>
     </div>
 </section>
-{% endfor %}
+
