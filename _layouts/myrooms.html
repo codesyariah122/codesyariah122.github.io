@@ -3,16 +3,11 @@ layout: default
 ---
 
 {% assign author = site.data.authors[myroom.author] %}
-
+ {% for myroom in site.myrooms %}
 <section class="wrapper">
     <div class="container-fostrap">
-        <div>
-            <img src="{{site.url}}/{{site.favicon}}" class="fostrap-logo"/>
-            <h1 class="heading">
-                Welcome in MyRoom
-            </h1>
-        </div>
-        {% for myroom in site.myrooms %}
+
+       
         <div class="content">
             <div class="container">
                 <div class="row">
@@ -39,42 +34,10 @@ layout: default
                         </div>
                     </div>
 
-<!-- Modal -->
-<div class="modal fade" id="{{myroom.modal}}" tabindex="-1" role="dialog" aria-labelledby="{{myroom.modal}}Title" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="{{myroom.modal}}Title">{{ myroom.title }} <br/> 
-          <span style="font-size:8px;" class="text-muted d-block mt-1">{{ myroom.date | date: '%d %B %Y' }} · {% include meta-read-time.html %} <br/> <b>by: {{ author.nama_lengkap }}</b></span>
-        </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <article class="article-post">
-        {{ myroom.content }}
-      {% if myroom.video_path %}
-      <div class="embed-responsive embed-responsive-16by9">   
-      <video controls="controls">
-      <source type="video/mp4" src="{{myroom.video_path.vid1}}"></source>
-      </video>
-      </div>
-      {% endif %}
-      </article>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-{% endfor %}
                 </div>
             </div>
         </div>
     </div>
 </section>
+{% endfor %}
 
