@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+<section class="wrapper">
 <div class="container-fostrap">
     
         <div>
@@ -13,18 +14,16 @@ layout: default
     
 {% for myroom in site.myrooms %}
 {% assign author = site.data.authors[myroom.author] %}
-<section class="wrapper">
 
     
         <div class="content">
-            <div class="container">
-                <div class="row">
-                    
                     <div class="col-xs-12 col-sm-4">
                         <div class="card">
+                            
                             <a class="img-card" href="{{site.url}}/{{myroom.img_path}}">
                             <img src="{{myroom.img_path}}" />
                           </a>
+                            
                             <div class="card-content">
                                 <h4 class="card-title">
                                     <a href="" data-toggle="modal" data-target="#{{myroom.modal}}"> {{myroom.title}}
@@ -34,19 +33,18 @@ layout: default
                                 {{ myroom.content | strip_html | strip_newlines | truncate: 156 }}
                                 </p>
                             </div>
+                            
                             <div class="card-read-more">
                                 <a href="" data-toggle="modal" data-target="#{{myroom.modal}}" class="btn btn-link btn-block">
                                     Read More
                                 </a>
-                            </div>
+                            </div>                            
                         </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+                        
+                    </div>                   
+               </div>
+          </div>
+
 
 <!-- Modal -->
 <div class="modal fade" id="{{myroom.modal}}" tabindex="-1" role="dialog" aria-labelledby="{{myroom.modal}}Title" aria-hidden="true">
@@ -60,16 +58,20 @@ layout: default
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+        
       <div class="modal-body">
+          
       <article class="article-post">
+          
         {{ myroom.content }}
       {% if myroom.video_path %}
       <div class="embed-responsive embed-responsive-16by9">   
       <video controls="controls">
       <source type="video/mp4" src="{{myroom.video_path.vid1}}"></source>
       </video>
-      </div>
+      </div>          
       {% endif %}
+          
       </article>
       </div>
       <div class="modal-footer">
@@ -81,3 +83,5 @@ layout: default
 
 
 {% endfor %}
+    </div>
+</section>
