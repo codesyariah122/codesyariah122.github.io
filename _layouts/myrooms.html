@@ -9,6 +9,7 @@ layout: default
                 Welcome in MyRoom Page
             </h1>
         </div>
+    <br/><br/>
     
 {% for myroom in site.myrooms %}
 {% assign author = site.data.authors[myroom.author] %}
@@ -19,7 +20,6 @@ layout: default
             <div class="container">
                 <div class="row">
 
-                    <div class="col-xs-6 col-sm-4">
                         <div class="card">
                             <a class="img-card" href="{{site.url}}/{{myroom.img_path}}">
                             <img src="{{myroom.img_path}}" />
@@ -39,7 +39,6 @@ layout: default
                                 </a>
                             </div>
                         </div>
-                    </div>
                     
                 </div>
             </div>
