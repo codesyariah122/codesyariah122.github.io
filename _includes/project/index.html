@@ -1,12 +1,10 @@
-{% assign ProjectData = site.data.projects[data.data] %}
-
 <section class="wrapper-pricing">
     <div class="container-fostrap">
            
        <div>
             <img src="{{site.url}}/{{site.favicon}}" class="fostrap-logo"/>
             <h1 class="heading">
-                Welcome in MyRoom
+                Welcome in MyProject
             </h1>
         </div><br/><br/>
 
@@ -15,6 +13,9 @@
                 <div class="row">
 
 {% for data in site.projects %}
+       {% assign ProjectData = site.data.projects[data.data] %}
+
+
                     <div class="col-xs-12 col-sm-4">
                         <div class="card-pricing">
 
@@ -29,7 +30,7 @@
                                 </blockquote>
 
                                 <p class="">
-                                    {{ data.content | strip_html | strip_newlines }}
+                                    {{ data.content | strip_html | strip_newlines | truncate: 156 }}
                                 </p>
 
                             </div>
@@ -40,7 +41,7 @@
                             </div>
 
                         </div>
-                    </div>                  
+                    </div> <br/>                 
 {% endfor %}         
                     
                 </div>
