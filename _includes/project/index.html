@@ -1,52 +1,50 @@
 {% assign ProjectData = site.data.projects[data.data] %}
-<section class="wrapper">
-    <div class="container-fostrap">
 
-        <div>
+<section class="wrapper-pricing">
+    <div class="container-fostrap">
+           
+       <div>
             <img src="{{site.url}}/{{site.favicon}}" class="fostrap-logo"/>
             <h1 class="heading">
-                Welcome in MyProjects
+                Welcome in MyRoom
             </h1>
         </div><br/><br/>
 
-        {% for data in site.projects %}
-        <div class="content">
+        <div class="content-pricing">
             <div class="container">
                 <div class="row">
 
+{% for data in site.projects %}
                     <div class="col-xs-12 col-sm-4">
-                        <div class="card">
+                        <div class="card-pricing">
 
-                            <a class="img-card" href="src="{{site.url}}/{{ data.img_path }}"">
-                                <img src="src="{{site.url}}/{{data.img_path }}"" />
-                            </a>
-
-                            <div class="card-content">
-                                <h4 class="card-title">{{data.title}}</h4>
-
+                            <a class="img-card-pricing" href="{{site.url}}/{{ data.img_path }}">
+                            <img src="{{ data.img_path }}" />
+                          </a>
+                            <div class="card-content-pricing">
+                            <h4 class="card-title">{{data.title}}</h4>
+                                                           
                                 <blockquote style='color:lightskyblue;'>
                                     {{ data.tagline }}
                                 </blockquote>
 
-                            <article class="article-post">
-                                {{ data.content | strip_html | strip_newlines }}
-                            </article>
-                            </div>
+                                <p class="">
+                                    {{ data.content | strip_html | strip_newlines }}
+                                </p>
 
-                            <div class="card-read-more">
-                                <a href="{{site.url}}/project-{{ ProjectData.links | slugify }}">
+                            </div>
+                            <div class="card-read-more-pricing">
+                                <a href="" href="{{site.url}}/project-{{ ProjectData.links | slugify }}" class="btn btn-link btn-block">
                                     Read More
                                 </a>
                             </div>
 
                         </div>
-                    </div>
-
+                    </div>                  
+{% endfor %}         
+                    
                 </div>
             </div>
         </div>
-
-        {% endfor %}
-
     </div>
 </section>
