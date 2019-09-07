@@ -1,3 +1,4 @@
+{% assign ProjectData = site.data.projects[data.data] %}
 <section class="wrapper">
     <div class="container-fostrap">
 
@@ -6,10 +7,9 @@
             <h1 class="heading">
                 Welcome in MyProjects
             </h1>
-        </div>
+        </div><br/><br/>
 
         {% for data in site.projects %}
-        {% assign ProjectData = site.data.projects[data.data] %}
         <div class="content">
             <div class="container">
                 <div class="row">
@@ -17,9 +17,9 @@
                     <div class="col-xs-12 col-sm-4">
                         <div class="card">
 
-                            <a class="img-card" href="src="{{site.url}}{{ data.img_path }}"">
-                            <img src="src="{{site.url}}{{ data.img_path }}"" />
-                          </a>
+                            <a class="img-card" href="src="{{site.url}}/{{ data.img_path }}"">
+                                <img src="src="{{site.url}}/{{data.img_path }}"" />
+                            </a>
 
                             <div class="card-content">
                                 <h4 class="card-title">{{data.title}}</h4>
