@@ -1,34 +1,52 @@
-<div class="container">
-<h4 class="font-weight-bold spanborder"><span>{{page.title}}</span></h4>
-{% for data in site.projects %}
-{% assign ProjectData = site.data.projects[data.data] %}
-<div class="card">
-  <img alt="{{ data.title }}" src="{{site.url}}{{ data.img_path }}" class="img-thumbnail">
-    <span class="text-muted d-block mt-1">{{ page.date | date: "%d %B %Y" }}<span class="reading-time">
+<section class="wrapper">
+    <div class="container-fostrap">
 
-            <a href="{{site.url}}/project-{{ ProjectData.links | slugify }}">
-            <small class="d-inline-block mt-1 mb-3 font-weight-normal">
-                (Our Products)
-            </small>
-            </a>
-            <blockquote style='color:lightskyblue;'>
-              {{ data.tagline }}
-            </blockquote>
+        <div>
+            <img src="{{site.url}}/{{site.favicon}}" class="fostrap-logo"/>
+            <h1 class="heading">
+                Welcome in MyProjects
+            </h1>
+        </div>
 
-        <div class="card-body">
-    <h5 class="card-title">{{data.title}}</h5>
-    <article class="article-post">
-       {{ data.content | strip_html | strip_newlines }}
-    </article>
-    <br/>
-   <div class="icon-block mt-3 d-flex justify-content-between">  
-            <a target="_blank" href="{{ data.instagram }}"><i class="fab fa-instagram text-muted" aria-hidden="true"></i></a>  &nbsp;
-            <a target="_blank" href="{{ data.website }}"><i class="fa fa-globe text-muted" aria-hidden="true"></i></a> &nbsp;
-   </div>
- <a class="btn btn-outline-secondary" href="{{site.url}}/project-{{ ProjectData.links | slugify }}">Come on</a>
-</div>
-<br/>
-{% endfor %}
-</div>
-<br/>
+        {% for data in site.projects %}
+        {% assign ProjectData = site.data.projects[data.data] %}
+        <div class="content">
+            <div class="container">
+                <div class="row">
 
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="card">
+
+                            <a class="img-card" href="src="{{site.url}}{{ data.img_path }}"">
+                            <img src="src="{{site.url}}{{ data.img_path }}"" />
+                          </a>
+
+                            <div class="card-content">
+                                <h4 class="card-title">{{data.title}}</h4>
+
+                                <blockquote style='color:lightskyblue;'>
+                                    {{ data.tagline }}
+                                </blockquote>
+
+                            <article class="article-post">
+                                {{ data.content | strip_html | strip_newlines }}
+                            </article>
+                            </div>
+
+                            <div class="card-read-more">
+                                <a href="{{site.url}}/project-{{ ProjectData.links | slugify }}">
+                                    Read More
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </div>
+</section>
