@@ -12,7 +12,7 @@ repositories:
     repo1:
       url: https://github.com/codesyariah122/codesyariah122-github-io-repo.git
 
-mailchimp-list: ''
+mailchimp-list: 'https://mailchi.mp/17de21ae541a/codesyariah-update-artikel'
 
 feedburner: 'https://feedburner.google.com/fb/a/mailverify'
 
