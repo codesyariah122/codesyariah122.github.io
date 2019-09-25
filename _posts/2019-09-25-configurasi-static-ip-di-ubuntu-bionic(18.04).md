@@ -15,8 +15,8 @@ ls
 ![untitled2]({{ site.url }}/assets/images/post/bionic/Untitled2.jpg)  
 kemudian teman-teman buka file 01-netcfg.yaml dengan editor favorit kalian, secara default sudah ada konfigurasinya seperti ini  
 ![untitled3]({{ site.url }}/assets/images/post/bionic/Untitled3.jpg)  
-kemudian teman teman insert dengan menggunakan keywoard **(i)** karena disini saya menggunakan editor *(vi)* lalu set konfigurasi default tadi sesuai jaringan di local network teman-teman  
 ![untitled4]({{ site.url }}/assets/images/post/bionic/Untitled4.jpg)  
+kemudian teman teman insert dengan menggunakan keywoard **(i)** karena disini saya menggunakan editor *(vi)* lalu set konfigurasi default tadi sesuai jaringan di local network teman-teman  
 ![untitled5]({{ site.url }}/assets/images/post/bionic/Untitled5.jpg)  
 
 **Keterangan:**
