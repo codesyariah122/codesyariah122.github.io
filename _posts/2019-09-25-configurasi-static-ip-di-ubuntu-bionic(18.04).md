@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Configurasi Static IP Ubuntu Bionic(18.04)"
+title:  "Konfigurasi Static IP Ubuntu Bionic(18.04)"
 author: puji
 categories: [ Technologies, Server  ]
 image: assets/images/post/bionic/bionic.jpg
