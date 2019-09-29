@@ -110,11 +110,11 @@ layout: default
 				<div class="row mt-5">
 					<div class="col-md-2 align-self-center">
                          {% if author.avatar %}
-                        <img class="rounded-circle" src="{{site.baseurl}}/{{author.avatar}}" alt="{{author.name}}" width="90"/>
+                        <img class="rounded-circle" src="{{site.url}}/{{author.avatar}}" alt="{{author.nama_lengkap}}" width="90"/>
                         {% endif %} 
 					</div>
 					<div class="col-md-10">		
-                        <h5 class="font-weight-bold">Written by {{ author.name }} {% if author.twitter %}<span><a target="_blank" href="{{ author.twitter }}" class="btn btn-outline-success btn-sm btn-round ml-2">Follow</a></span>{% endif %}</h5>
+                        <h5 class="font-weight-bold">Ditulis Oleh {{ author.nama_lengkap }} {% if author.twitter %}<span><a target="_blank" href="{{ author.twitter }}" class="btn btn-outline-success btn-sm btn-round ml-2">Follow</a></span>{% endif %}</h5>
 						{{ author.bio }}					
 					</div>
 				</div>				
