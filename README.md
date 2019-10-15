@@ -12,7 +12,6 @@ Ikuti terus perjalanan catatan kami hanya di blog codesyariah.
 About Codesyariah Founder
 </summary>
 <a href="https://m.facebook.com/strawberrywine">
-<img src="https://codesyariah122.github.io/assets/images/ss.png">
 </a>
 </details>  
 
