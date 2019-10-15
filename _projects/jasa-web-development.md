@@ -6,7 +6,7 @@ tagline: "Jasa Pembuatan Toko Online Website Instansi, Organisasi, Sekolah Dan L
 instagram: https://instagram.com/codesyariah
 website: https://codesyariah122.github.io/
 img_path: /assets/images/project/webdev.jpg
-data: skinoc
+data: codesyariah webdev
 ---  
 {% assign data = site.data.projects[page.data] %}
 
