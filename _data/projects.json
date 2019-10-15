@@ -1,12 +1,12 @@
 {
 "amanah print":
 {
-"links": "amanahprints",
-"name": "Amanah Printing",
-"type": "Jasa & Percetakan",
-"website": "https://amanah-print.github.io",
-"tagline": "Melayani Jasa Digital Printing",
-"img_path": "/assets/images/project/printing.jpg",
+"links": "codesyariah",
+"name": "Codesyariah WebDevelopment",
+"type": "Jasa Pembuatan Website Dan Toko Online",
+"website": "",
+"tagline": "Melayani Jasa pembuatan website untuk onlineshop, marketplace eccommerce dan lain-lain",
+"img_path": "/assets/images/project/webdev.jpg",
 "alamat": "in progress"
 },
 "nabilla bakery":
