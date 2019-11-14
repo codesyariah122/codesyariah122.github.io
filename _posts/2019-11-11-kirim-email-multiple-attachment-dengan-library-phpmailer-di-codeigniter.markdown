@@ -11,7 +11,7 @@ opening: بسم الله الرحمن الرحيم
 Kali ini kita (kita .. lu aja kali) maksudnya saya, kali ini saya akan membuat sebuah layanan email service dengan menggunakan library dari phpmailer dan codeigniter, ok langsung saja kita eksekusi.
 buat sebuah controller untuk view nya kita simpan di direktori Conttoller, save dengan nama *EmailService.php*.
 
-```
+{% highlight php %}
 <?php
 class EmailService extends CI_Controller {
 	
@@ -46,7 +46,7 @@ class EmailService extends CI_Controller {
 	}
 	
 }
-```
+{% endhighlight %}
 
 kemudian buat lagi file baru untuk templating nya di direktori view, email_service.php  
 
