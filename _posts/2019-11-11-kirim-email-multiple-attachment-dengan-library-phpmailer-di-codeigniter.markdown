@@ -125,7 +125,7 @@ kemudian buat lagi file baru untuk templating nya di direktori view, email_servi
 <br/><br/>
 ```
 
-lanjut lagi buat controller baru di direktori controller beri nama MailSend.php
+lanjut lagi buat controller baru yang berfungsi sebagai action nya di direktori controller beri nama MailSend.php
 ```
 <?php
 require_once(APPPATH. 'libraries/phpmailer/PHPMailerAutoload.php');
