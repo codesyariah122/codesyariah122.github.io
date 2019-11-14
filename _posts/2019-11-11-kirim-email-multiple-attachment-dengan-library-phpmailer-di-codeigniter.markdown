@@ -48,9 +48,9 @@ class EmailService extends CI_Controller {
 }
 {% endhighlight %}
 
-kemudian buat lagi file baru untuk templating nya di direktori view, email_service.php  
+kemudian buat lagi file baru untuk templating nya di direktori view, email_service.php , berhubung kita akan membuat multiple file attachment jadi di bagian form input di field bagian name fieldnya kita beri nama ```name=attachment[]``` dengan tambahan array.
 
-```
+{% highlight php %}
 
 <div class="jumbotron" style="background-color:#000000;">
   <h1 class="display-4 text-center text-white">OURCITRUS <br/> Email Service</h1>
@@ -123,7 +123,7 @@ kemudian buat lagi file baru untuk templating nya di direktori view, email_servi
 </div>
 </div>
 <br/><br/>
-```
+{% endhighlight %}
 
 lanjut lagi buat controller baru yang berfungsi sebagai action nya di direktori controller beri nama MailSend.php
 ```
