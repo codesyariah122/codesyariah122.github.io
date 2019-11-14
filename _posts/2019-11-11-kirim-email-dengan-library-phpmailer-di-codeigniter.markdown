@@ -130,7 +130,7 @@ lanjut lagi buat controller baru di direktori controller beri nama MailSend.php
 <?php
 require_once(APPPATH. 'libraries/phpmailer/PHPMailerAutoload.php');
 class MailSend extends CI_Controller {
-	private $emailSend = "ourcitrus@ourcitrus.id";
+	private $emailSend = "youremail@your.hosting";
 	public function index()
 	{
 		if(isset($_POST['add'])){
@@ -142,8 +142,8 @@ class MailSend extends CI_Controller {
 				$mail->SMTPAuth = TRUE;
 				$mail->SMTPSecure = "tls";
 				$mail->Port     = 587;  
-				$mail->Username = "ourcitrus2019@gmail.com";
-				$mail->Password = "OurCitrus_2019";
+				$mail->Username = "username@gmail.com";
+				$mail->Password = "password_login";
 				$mail->Host     = "smtp.googlemail.com";
 				$mail->Mailer   = "smtp";
 				
