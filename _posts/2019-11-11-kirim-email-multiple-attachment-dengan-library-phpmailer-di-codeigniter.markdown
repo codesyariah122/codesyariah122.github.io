@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Kirim Email dengan menggunakan library phpmailer di codeigniter"
+title:  "Kirim Email multiple attachment dengan menggunakan library phpmailer di codeigniter"
 author: puji
 categories: [ phpmailer, Codeigniter ]
 image: assets/images/post/phpmailer.png
