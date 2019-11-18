@@ -300,7 +300,7 @@ masih di direktori view buat file baru dengan nama message.php
  <?php endif; ?>
  ```
  untuk kekurangannya bisa dilihat di repository di bawah ini 
- <a href='github.com/codesyariah122/phpmailer_ourcitrus/tree/master/admin'>PhpMailer</a>
+ <a href='https://github.com/codesyariah122/phpmailer_ourcitrus'>PhpMailer</a>
  
  ok sekian dulu dari saya.
 
