@@ -3,7 +3,7 @@ layout: post
 title:  "pasang aplikasi chat di website yang menggunakan framework codeigniter"
 author: puji
 categories: [ live chat, Codeigniter ]
-image: assets/images/post/chat/chat.png
+image: assets/images/post/chat/chat.jpg
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---
