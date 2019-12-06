@@ -23,9 +23,7 @@ ok langsung saja create new file di direktori controllers save dengan nama ```Ch
 
 {% highlight php %}
 <?php
-class EmailService extends CI_Controller {
-	private $emailSend = "ourcitrus@ourcitrus.id";
-	
+class EmailService extends CI_Controller {	
 	
 	  public function index()
 	  {
