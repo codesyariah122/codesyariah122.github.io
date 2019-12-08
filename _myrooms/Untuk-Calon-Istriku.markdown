@@ -4,7 +4,7 @@ title: "Wordpress itu susah-susah gampang"
 author: puji
 date: "2019-12-08"
 img_path: "/assets/images/myroom/IMG-20191208-WA0020[1].jpg"
-modal: wordpress
+modal: calonku
 ---  
 
 # Untuk Calon Istriku
