@@ -3,7 +3,7 @@ layout: myrooms
 title: "Untuk Calon Istriku Inshaallah" 
 author: puji
 date: "2019-12-08"
-img_path: "/assets/images/myroom/IMG-20191208-WA0020[1].jpg"
+img_path: "/assets/images/myroom/neng_iim.jpg"
 modal: calonku
 ---  
 
