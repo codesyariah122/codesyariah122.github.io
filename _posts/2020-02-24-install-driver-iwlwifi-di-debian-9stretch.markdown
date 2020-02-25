@@ -2,7 +2,7 @@
 layout: post
 title:  "Install Driver iwlwifi di debian 9 stretch"
 author: puji
-categories: [ linux, server, debian ]
+categories: [ linux, server ]
 image: assets/images/post/debian9/install-driver-wifi-debian-thinkpad-iwlwifi-linux.jpg
 tags: [sysadmin]
 opening: بسم الله الرحمن الرحيم
