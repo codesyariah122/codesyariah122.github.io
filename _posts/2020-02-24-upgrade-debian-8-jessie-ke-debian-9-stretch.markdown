@@ -9,10 +9,11 @@ opening: بسم الله الرحمن الرحيم
 ---
 Sebelum melakukan proses upgrade ke Debian 9 Stretch, disarankan untuk memperbarui perangkat lunak Debian 8 Jessie sehingga dalam kondisi up to date (stable version). Buka terminal Debian lalu masuk sebagai root (ketik su lalu masukan password root).  
 Setelah itu ketik perintah di bawah ini :  
-{%highlight shell%}
+```
 apt update  
 apt upgrade  
-{%endhighlight%}  
+```  
+
 Jika proses upgrade software sudah selesai, lanjutkan ke tahap selanjutnya.  
 #Ubah Sumber Perangkat Lunak Dari Jessie ke Stretch  
 Untuk dapat melakukan upgrade Debian, ubah sumber perangkat lunak dari Debian 8 Jessie ke Debian 9 Stretch. Sebelumnya kita dapat melakukan backup sumber perangkat lunak Debian 8 Jessie dengan melakukan copy & paste atau bisa juga melalui terminal dengan mengetikan perintah teks di bawah ini:  
