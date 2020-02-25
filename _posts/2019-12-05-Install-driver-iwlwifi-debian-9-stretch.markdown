@@ -7,7 +7,7 @@ image: assets/images/post/debian9/install-driver-wifi-debian-thinkpad-iwlwifi-li
 tags: [Linux]
 opening: بسم الله الرحمن الرحيم
 ---
-![iwlwifi_missing]({{ site.url }}/assets/images/post/debian9/iwlwifi.jpeg)  
+![iwlwifi_missing]({{ site.url }}assets/images/post/debian9/iwlwifi.jpeg)  
 
 Notification diatas saya dapatkan di os debian 9 saya ketika awal penginstallan, biasanya hal ini terjadi akibat kita tidak menyertakanannya dalam media bootable  
 saat proses penginstallan debian 9 server ini saya menggunakan media USB Bootable sebagai media installasinya.  
