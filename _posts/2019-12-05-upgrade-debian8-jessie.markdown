@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Upgrade Debian 8 Jessie ke Debian 9 stretch"
+title:  "upgrade debian 8 jessie"
 author: puji
 categories: [ linux, server ]
 image: assets/images/post/debian9/Screenshot from 2020-02-24 19-20-15.png
