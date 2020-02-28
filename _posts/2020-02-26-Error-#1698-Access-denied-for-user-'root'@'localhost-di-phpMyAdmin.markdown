@@ -1,4 +1,12 @@
-
+---
+layout: post
+title:  "Error #1698 Access denied for user 'root'@'localhost di phpMyAdmin"
+author: puji
+categories: [ linux, server ]
+image: assets/images/post/nginx/err.png
+tags: [sysadmin]
+opening: بسم الله الرحمن الرحيم
+---
 Assalamualaikum wr. wb
 
 Pada kesempatan kali ini saya akan berbagi tentang bagaimana cara mengatasi error pada phpMyAdmin  
