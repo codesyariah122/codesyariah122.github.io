@@ -3,7 +3,7 @@ layout: post
 title:  "install secure phpmyadmin on debian9 stretch"
 author: puji
 categories: [ linux, server ]
-image: assets/images/post/phpmyadmin/Screenshot from 2020-02-28 07-00-00.png
+image: assets/images/post/phpmyadmin/login.png
 tags: [sysadmin]
 opening: بسم الله الرحمن الرحيم
 ---  
