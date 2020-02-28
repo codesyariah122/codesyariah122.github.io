@@ -1,12 +1,3 @@
----
-layout: post
-title:  "Error #1698 - Access denied for user 'root'@'localhost di phpMyAdmin"
-author: puji
-categories: [ linux, server, debian, nginx ]
-image: assets/images/post/nginx/err.png
-tags: [webdevelopment]
-opening: بسم الله الرحمن الرحيم
----  
 
 Assalamualaikum wr. wb
 
