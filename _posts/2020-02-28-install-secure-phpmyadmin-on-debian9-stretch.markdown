@@ -31,7 +31,7 @@ Instalasi phpMyAdmin Anda telah selesan dan bisa diakses. Untuk mengakses antarm
 di browser web Anda:  
 ![err_phpmyadmin]({{ site.url }}/assets/images/post/phpmyadmin/login.png)  
 
-** Step 2 — Menentukan lokasi direktori phpmyadmin **  
+* Step 2 — Menentukan lokasi direktori phpmyadmin *  
 
 Salah satu cara paling mendasar untuk melindungi instalasi phpMyAdmin Anda adalah dengan membuatnya lebih sulit ditemukan.  
 Bot akan memindai jalur umum, seperti phpmyadmin, pma, admin, mysql dan semacamnya. Mengubah URL antarmuka dari / phpmyadmin menjadi sesuatu yang tidak standar akan mempersulit  
