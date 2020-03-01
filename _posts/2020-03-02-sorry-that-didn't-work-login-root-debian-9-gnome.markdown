@@ -22,10 +22,16 @@ tingkat level paling atas. dan untuk mengatasi ini saya coba uncomment (#) scrip
 ```
 #auth   required        pam_succeed_if.so user != root quiet_success
 ```  
-setelah itu saya coba kembali untuk login dengan user root dan akhirnya bisa ....
-oke fix trouble kali ini .
-salam...
-pujiermanto
+setelah itu saya coba kembali untuk login dengan user root dan akhirnya bisa ....  
+![gnome_login]({{ site.url }}/assets/images/post/debian9/login-root.png)  
+![gnome_login_root]({{ site.url }}/assets/images/post/debian9/login-root_1.jpg) 
+![gnome_login_root]({{ site.url }}/assets/images/post/debian9/login-root_2.jpg)  
+oke fix trouble kali ini .  
+salam...  
+
+<details><summary>Penulis</summary>
+  <h1>pujiermanto</h1>
+</details>
 
 
 
