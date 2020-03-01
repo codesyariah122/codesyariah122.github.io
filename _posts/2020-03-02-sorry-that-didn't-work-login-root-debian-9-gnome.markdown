@@ -17,7 +17,7 @@ karena disini saya menggunakan lingkungan desktop gnome. dan permasalahan nya te
 ![gdm-password]({{ site.url }}/assets/images/post/debian9/gdm-password.png)  
 dari script yang saya highlight itulah masalah ini terjadi, sehingga saya tidak bisa login menggunakan user root. dimana user ini merupakan user dengan  
 tingkat level paling atas. dan untuk mengatasi ini saya coba uncomment (#) script yang saya highlight di gambar di file ``` /etc/pam.d/gdm-password```  
-![gdm-password]({{ site.url }}/assets/images/post/sublime/gdm-password_2.png)  
+![gdm-password]({{ site.url }}/assets/images/post/debian9/gdm-password_2.png)  
 
 ```
 #auth   required        pam_succeed_if.so user != root quiet_success
