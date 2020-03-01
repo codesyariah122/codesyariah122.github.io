@@ -31,6 +31,7 @@ salam...
 
 <details><summary>Penulis</summary>
   <h1>pujiermanto</h1>
+  <img src="{{ site.url }}/assets/images/post/debian9/2020-02-26-132527.jpg"/>
 </details>
 
 
