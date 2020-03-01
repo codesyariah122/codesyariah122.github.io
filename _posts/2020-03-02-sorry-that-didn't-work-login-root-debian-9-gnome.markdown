@@ -14,7 +14,7 @@ karena disini saya menggunakan lingkungan desktop gnome. dan permasalahan nya te
 ```
 /etc/pam.d/
 ```  
-![gdm-password]({{ site.url }}/assets/images/post/sublime/gdm-password.png)  
+![gdm-password]({{ site.url }}/assets/images/post/debian9/gdm-password.png)  
 dari script yang saya highlight itulah masalah ini terjadi, sehingga saya tidak bisa login menggunakan user root. dimana user ini merupakan user dengan  
 tingkat level paling atas. dan untuk mengatasi ini saya coba uncomment (#) script yang saya highlight di gambar di file ``` /etc/pam.d/gdm-password```  
 ![gdm-password]({{ site.url }}/assets/images/post/sublime/gdm-password_2.png)  
