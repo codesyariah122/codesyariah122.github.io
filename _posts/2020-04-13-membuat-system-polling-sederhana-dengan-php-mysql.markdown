@@ -9,7 +9,7 @@ opening: بسم الله الرحمن الرحيم
 ---  
 ![polling_php]({{ site.url }}/assets/images/post/tutor.jpg)  
 
-hai coders!...  
+# hai coders!...  
 bagaimana keadaanya semua, ditengah **pandemi** yang sedang melanda ini,  
 semoga kita semua selalu dalam lindungan allah, dan selalu di berikan nikmat sehat dan nikmat waktu luang untuk menjaga kesehatan.  
 
@@ -17,7 +17,7 @@ baiklah, kali ini saya mau iseng-iseng sedikit (.."iseng ko sedikit") ... lanjut
 iseng-iseng saya kali ini adalah membuat system polling sederhana yang sangat simple dan sederhana dengan php dan database mysql.  
 
 langsung ajah yuk , kita mulai coding ....
-#pertama  
+# pertama  
 kita siapkan dulu database untuk menampung value pollingnya...  
 masuk ke terminal atau cmd di windows, akses root ke aplikasi database nya disini saya menggunakan mysql
 *terminal*
@@ -35,6 +35,7 @@ describe polling;
 ![polling_php]({{ site.url }}/assets/images/post/tutor_mysql.jpg)  
 databse telah selesai dibuat, lanjut coding program nya yuk ah .... 
 
+# kedua
 siapkan directory di htdoc webserver kalian bebas untuk memberikan nama direktorinya.
 kemudian buat file baru di direktori kalian,  
 1 index.php
@@ -43,7 +44,7 @@ file utama kita adalah index.php, sedangkan file function.php berperan sebagai f
 susunan file nya, direktori nya saya beri nama tutor_polling :  
 ![polling_php]({{ site.url }}/assets/images/post/tutor_direktori.jpg)  
 
-##buka file index.php  
+# buka file index.php  
 *kemudian copy code di bawah ini*  
 
 {%highlight php%}
@@ -127,8 +128,9 @@ endif;
 <?php footer(); ?>  
 {%endhighlight%}  
 
-#lanjut buka file function.php  
-copy code di bawah ini  
+# lanjut buka file function.php  
+*copy code di bawah ini*  
+
 {%highlight php%}
 <?php 
 
