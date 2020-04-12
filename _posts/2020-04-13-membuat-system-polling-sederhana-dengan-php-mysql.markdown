@@ -52,11 +52,11 @@ require_once 'function.php';
 
 headernya("Halaman Utama");
 
-$query = query("SELECT * FROM polling");
+$query = query("SELECT * FROM polling"); //fungsi ini berada di file function.php untuk mengambil data dari table database.
 
 if(isset($_POST['submit'])):
 	
-	if(polling($_POST) > 0):
+	if(polling($_POST) > 0): //jalankan fungsi polling , check apakah ada penambahan data di table polling	
 		header('Location: index.php');
 	else:
 		echo "
@@ -68,6 +68,7 @@ if(isset($_POST['submit'])):
 
 endif;
 ?>
+
 <div class="jumbotron jumbotron-fluid">
   <div class="container justify-content-center">
     <h1 class="display-4">Polling Framework PHP</h1>
@@ -81,7 +82,7 @@ endif;
 		<p class="lead">Which one is Best PHP Framework</p>
       <hr>
 			<form action="" method="post">
-				<?php foreach($query as $row): ?>
+				<?php foreach($query as $row): ?> <!-- ambil data dari fungsi query kemudian looping -->
 				<div class="form-group ml-4">
 				  <input class="form-check-input" type="radio" name="id" id="<?=$row['framework']?>" value="<?=$row['id']?>">
 				  <label class="form-check-label" for="<?=$row['framework']?>">
@@ -124,8 +125,71 @@ endif;
 </div>
 
 <?php footer(); ?>  
-{%endhighlight%}
+{%endhighlight%}  
 
+#lanjut buka file function.php  
+copy code di bawah ini  
+{%highlight php%}
+<?php 
+
+$conn = mysqli_connect("localhost", "root", "", "tutorial_polling");
+
+if(!$conn) die(mysqli_connect_error());
+
+function headernya($title){
+	echo '<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>'.$title.'</title>
+  </head>
+  <body>';
+}
+
+function footer(){
+	echo '  <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>';
+}
+
+function query($query){
+  global $conn; //mengambil variable conn untuk melakukan connecti ke database, karena variable conn berada di luar fungsi
+  $result = mysqli_query($conn, $query);
+
+  $rows = []; //siapkan array kosong untuk menampung nilai variable dari value yang di kirim form input melalui method post
+	//lakukan looping untuk mengurai data di table polling 
+  while($row = mysqli_fetch_assoc($result)):
+    $rows[] = $row;
+  endwhile;
+
+  return $rows;
+}
+
+function polling($data){
+  global $conn;
+    $id = $data['id'];
+	//karena system polling ini berjalan melalui query update, lakukan update dan lakukan penambahan setiap tombol submit di click maka value akan bertambah 1 nilai jadi ( value+1 ) seperti itu seterusnya
+    $query = "UPDATE polling SET 
+                value=value+1 WHERE id = $id
+            ";
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+{%endhighlight%}  
+
+ok di setiap file di atas sudah saya beri sedikit penjelasan, mudah-mudahan bisa di mengerti yaa. mudah ko prinsip kerjanya sangat sederhana.  
+
+ok selamat mencoba. 
 
 
 
