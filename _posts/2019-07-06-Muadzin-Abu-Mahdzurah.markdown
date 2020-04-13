@@ -34,7 +34,7 @@ Setelah Abu Mahdzurah beriman, Rasulullah ﷺ mengajarinya adzan.
 Jadilah ia orang pertama yang mengumandakan adzan setelah Rasulullah meninggalkan Mekah menuju Madinah.
 Ia terus menjadi muadzin di Masjid al-Haram hingga akhir hayatnya. Kemudian dilanjutkan oleh keturan-keturunannya hingga waktu yang lama.
 Ada yang mengatakan hingga masa Imam asy-Syafi’i.
-</details>
+
 <br/>
 
 ## Lafadz adzan dari Hadist Abu Mahdzurah
