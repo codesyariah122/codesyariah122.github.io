@@ -1,8 +1,9 @@
 ---
 layout: post
 title:  "hidup adalah ilmu dan hidup dengan ilmu"
-author: pujiblog, story ]
-image: assets/images/post/tutor.jpg
+author: puji
+categories: [ blog,story ]
+image: assets/images/post/ilustrasi-mencari-ilmu.jpg
 tags: [blog]
 opening: بسم الله الرحمن الرحيم
 ---  
