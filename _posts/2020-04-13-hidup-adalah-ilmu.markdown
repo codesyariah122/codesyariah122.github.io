@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "membuat system polling sederhana dengan PHP"
+title:  "hidup adalah ilmu dan hidup dengan ilmu"
 author: pujiblog, story ]
 image: assets/images/post/tutor.jpg
 tags: [blog]
