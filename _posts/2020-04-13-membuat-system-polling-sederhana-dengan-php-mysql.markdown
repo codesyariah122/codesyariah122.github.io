@@ -4,7 +4,7 @@ title:  "membuat system polling sederhana dengan PHP"
 author: puji
 categories: [ php, mysql ]
 image: assets/images/post/tutor.jpg
-tags: [webdev]
+tags: [webdeveloper]
 opening: بسم الله الرحمن الرحيم
 ---  
 ![polling_php]({{ site.url }}/assets/images/post/tutor.jpg)  
