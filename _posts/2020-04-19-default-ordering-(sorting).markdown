@@ -3,7 +3,7 @@ layout: post
 title:  "Default ordering (sorting) datatables not working"
 author: puji
 categories: [ nativephp, vanilla javascript ]
-image: assets/images/post/Untitle2.jpg
+image: assets/images/post/Untitled2.jpg
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  
