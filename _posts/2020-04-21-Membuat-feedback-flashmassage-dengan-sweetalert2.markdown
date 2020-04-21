@@ -26,20 +26,9 @@ jadi di tips kali ini saya punya sebuah data dari database yang saya tampilkan d
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
-                                                <th>nama file</th>
-                                                <th>Gambar</th>
                                                 <th>Action</th>
-                                                <th>Last Update</th>
                                             </tr>
                                         </thead>
-                                        <tfoot>
-                                            <tr>
-                                                <th>Nama file</th>
-                                                <th>Gambar</th>
-                                                <th>Action</th>
-                                                <th>Last Update</th>
-                                            </tr>
-                                        </tfoot>
                                         <tbody>
                                             <tr> 
                                               <td>
