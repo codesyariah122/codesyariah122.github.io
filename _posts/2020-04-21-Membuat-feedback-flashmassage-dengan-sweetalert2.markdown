@@ -13,8 +13,8 @@ halo sobat coders semuanya, apa kabarnya di masa lockdown sekarang ini.
 kali ini saya akan berbagi tips, tentang mengganti notification alert bawaan browser kita.  
 agak sedikit tricky sih penggunaan sweet alert ini, ok langsung ajah kita praktekan.  
 
-#about sweet alert
-Package ini dibuat oleh uxweb, yang dapat anda temukan di packagist.org. Sweet alert sudah di design menarik dan mudah untuk digunakan, jadi anda dapat memberikan flash message pada user ketika tindakannya benar atau salah. secara garis besar fitur sweet alert adalah package dari javascript.  
+# about sweet alert  
+**Package ini dibuat oleh uxweb, yang dapat anda temukan di packagist.org. Sweet alert sudah di design menarik dan mudah untuk digunakan, jadi anda dapat memberikan flash message pada user ketika tindakannya benar atau salah. secara garis besar fitur sweet alert adalah package dari javascript.**  
 
 dalam tips kali ini saya asumsikan kalian sudah download sweetalert2 baik itu menggunakan npm ataupun pasang script cdn nya langsung ataupun download dist nya langsung di github nya sweetalert.  
 kalian bisa langsung meluncur ke link di bawah ini, untuk mendownloadnya dan di web ini sangat lengkap documentasi nya.  
