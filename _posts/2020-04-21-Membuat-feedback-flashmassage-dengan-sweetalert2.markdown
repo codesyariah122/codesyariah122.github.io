@@ -56,13 +56,13 @@ selanjutnya kita siapkan file javascriptnya kebetulan direktori yang saya gunaka
 buat file baru disini saya beri nama file jquernya dengan nama ```myscript.js```  
 kurang lebih isi code myscript.js adalah sebagai berikut...  
 
-{% highlight javascript %}
+```
 //tombol hapus
 $('.tombol-hapus').on('click', function(e) {
 
-	e.preventDefault();
+	e.preventDefault(); //matikan fungsi href nya terlebih dahulu dengan event
 
-	const href = $(this).attr('href');
+	const href = $(this).attr('href'); //kita ambil attribute dari html yang mau kita jadikan flashmassage disini adalah attribut href(link)
 
 	Swal.fire({
 		  title: 'APakah anda yakin?',
@@ -74,10 +74,12 @@ $('.tombol-hapus').on('click', function(e) {
 		  confirmButtonText: 'Hapus Data!'
 		}).then((result) => {
 		  if (result.value) {
-		  	document.location.href = href;
+		  	document.location.href = href; //kembalikan nilai true dengan redirect document ke halaman yang dituju
   		}
 	})
 
-});
-{% endhighlight %}
+});  
+
+```  
+
 
