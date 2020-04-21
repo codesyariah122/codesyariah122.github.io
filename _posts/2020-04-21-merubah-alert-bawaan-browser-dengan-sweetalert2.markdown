@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Default ordering (sorting) datatables not working"
+title:  "Membuat feedback flashmassage dengan sweetalert2"
 author: puji
 categories: [ nativephp, vanilla javascript ]
 image: assets/images/post/alert_1.png
