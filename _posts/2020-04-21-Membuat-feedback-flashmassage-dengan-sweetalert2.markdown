@@ -7,7 +7,7 @@ image: assets/images/post/alert_1.png
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  
-![default order datatables]({{ site.url }}/assets/images/post/alert_1.png)  
+![sweetalert2]({{ site.url }}/assets/images/post/alert_1.png)  
 
 halo sobat coders semuanya, apa kabarnya di masa lockdown sekarang ini.  
 kali ini saya akan berbagi tips, tentang mengganti notification alert bawaan browser kita.  
@@ -32,16 +32,14 @@ jadi di tips kali ini saya punya sebuah data dari database yang saya tampilkan d
                                         <tbody>
                                             <tr> 
                                               <td>
-      <a href="content/hapusSlider.php?id=<?=$slider['id']?>" class="btn btn-outline-primary btn-xs tombol-hapus">Hapus</a>
-                                              <td><?=waktu_lalu($slider['last_update'])?></td>
+      <a href="content/hapusSlider.php?id=1" class="btn btn-outline-primary btn-xs tombol-hapus">Hapus</a>
                                              </tr>
-                                            <?php endforeach; ?>
                                         </tbody>
                                     </table>
 {% endhighlight %}  
 
 table diatas kurang lebih tampilannya seperti ini  
-![default order datatables]({{ site.url }}/assets/images/post/test1.jpg)  
+![sweetalert2 js]({{ site.url }}/assets/images/post/test1.jpg)  
 dalam contoh ini saya ingin memberi feedback pada user berupa flash massage untuk user yang akan menghapus data  
 saya ambil bagian yang akan saya pasang sweetalert nya, yaitu di bagian tombol hapus  
 ```
