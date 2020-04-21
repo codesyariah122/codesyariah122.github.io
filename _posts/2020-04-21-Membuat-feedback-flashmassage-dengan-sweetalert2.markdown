@@ -41,13 +41,9 @@ jadi di tips kali ini saya punya sebuah data dari database yang saya tampilkan d
                                             </tr>
                                         </tfoot>
                                         <tbody>
-                                            <?php foreach($tampilSlider as $slider): ?>
                                             <tr> 
-                                                <td><?=$slider['nama']?></td>
-                                                 <td><img src="../../../img/<?=$slider['gambar']?>" width="250" height="150"/></td>
-                                                 <td>
-                                                    <a href="content/hapusSlider.php?id=<?=$slider['id']?>" class="btn btn-outline-primary btn-xs tombol-hapus">Hapus</a>&nbsp;&nbsp;
-                                                   <a href="content/updateSlider.php?id=<?=$slider['id']?>" class="btn btn-outline-success btn-xs">Ubah</a></td>
+                                              <td>
+      <a href="content/hapusSlider.php?id=<?=$slider['id']?>" class="btn btn-outline-primary btn-xs tombol-hapus">Hapus</a>
                                               <td><?=waktu_lalu($slider['last_update'])?></td>
                                              </tr>
                                             <?php endforeach; ?>
