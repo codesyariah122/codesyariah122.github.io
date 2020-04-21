@@ -22,8 +22,7 @@ kalian bisa langsung meluncur ke link di bawah ini, untuk mendownloadnya dan di 
 
 jadi di tips kali ini saya punya sebuah data dari database yang saya tampilkan dalam sebuah tabel html  
 
-{% hightlight PHP %}
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+```                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
                                                 <th>Action</th>
@@ -36,7 +35,7 @@ jadi di tips kali ini saya punya sebuah data dari database yang saya tampilkan d
                                              </tr>
                                         </tbody>
                                     </table>
-{% endhighlight %}  
+```  
 
 table diatas kurang lebih tampilannya seperti ini  
 ![sweetalert2 js]({{ site.url }}/assets/images/post/test1.jpg)  
