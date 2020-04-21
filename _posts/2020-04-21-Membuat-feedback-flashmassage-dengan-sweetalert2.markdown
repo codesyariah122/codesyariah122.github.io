@@ -44,7 +44,7 @@ dalam contoh ini saya ingin memberi feedback pada user berupa flash massage untu
 saya ambil bagian yang akan saya pasang sweetalert nya, yaitu di bagian tombol hapus  
 ```
 <td>
-<a href="content/hapusSlider.php?id=<?=$slider['id']?>" class="btn btn-outline-primary btn-xs tombol-hapus">Hapus</a>
+<a href="content/hapusSlider.php?id=1" class="btn btn-outline-primary btn-xs tombol-hapus">Hapus</a>
 </td>
 ```  
 di tombol hapus itu saya beri class baru yaitu <b>tombol-hapus</b>...coba perhatikan script href diatas. pada bagian class ada nama class dengan nama tombol-hapus, nah tombol hapus ini lah yang akan saya jadikan selector untuk jquery nya.  
