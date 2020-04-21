@@ -82,4 +82,12 @@ $('.tombol-hapus').on('click', function(e) {
 
 ```  
 
+kurang lebih seperti ini hasil dari sweetalert2 yang saya terapkan di website saya  
+![sweetalert2 2]({{ site.url }}/assets/images/post/test4.jpg)  
+![sweetalert2 3]({{ site.url }}/assets/images/post/test5.jpg)  
+![sweetalert2 4]({{ site.url }}/assets/images/post/test6.jpg)  
+
+ok sekian dari saya, semoga kalian semua selalu sehat para coders, jangan lupa titik koma, jangan lupa minum air putih yang banyak.
+
+
 
