@@ -38,7 +38,20 @@ $location = $city_name ."-". $regional;
 
 echo "<h1>".$location."</h1>";
 ```  
-berikut hasilnya, sory ip saya saya encrypt sementara demi keamanan.
 
-![vs_code]({{ site.url }}/assets/images/post/5.jpg)  
+Koordinatnya telah kita dapatkan yaitu :  
+
+```
+$lat = $dt['data']['geo']['latitude'];
+$lng = $dt['data']['geo']['longitude'];
+```  
+
+berikut hasil lokasi, sory ip saya saya encrypt sementara demi keamanan. dan kordinatnya sesuai dengan lokasi ipnya.
+
+![lokasi]({{ site.url }}/assets/images/post/ss_lokasi.jpg)  
+  
+
+![vs_code]({{ site.url }}/assets/images/post/5.jpg) 
+
+
 ok sekial dulu coders, **salam**
