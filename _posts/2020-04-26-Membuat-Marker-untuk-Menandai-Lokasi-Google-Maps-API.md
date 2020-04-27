@@ -24,13 +24,12 @@ Mari kita mulai…
 
 Marker merupakan sebuah objek yang bisa kita buat dengan kode berikut:  
 
-{%highlight javascript %}
+```
 var marker = new google.maps.Marker({
     position: new google.maps.LatLng(-8.5830695,116.3202515),
     map: peta
 });
-{%endhighlight%}  
-
+```
 Terdapat dua properti penting yang harus diberikan ke marker:
 
   1. **position** adalah posisi koordinat latitude dan longitude marker pada peta.
@@ -39,7 +38,7 @@ Terdapat dua properti penting yang harus diberikan ke marker:
 dalam Contoh kali ini saya akan menyambung dari blog saya sebelumnya mengenai menentukan lokasi berdasarkan ip address : <a href="https://codesyariah122.github.io/php/ip_location2/Menentukan-koordinat-dengan-ip-address/">Di mari</a>  
 
 nah dari script itu seperti berikut 
-{%highligh php%}
+```
 if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
     $ip = $_SERVER['HTTP_CLIENT_IP'];
     
@@ -62,8 +61,7 @@ $location = $city_name ."-". $regional;
 
 echo "<h1>".$location."</h1>";
 
-{%endhighlight%}  
-
+```
 dari script diatas saya kembangkan, saya menggunakan script diatas dengan asumsi data lokasi yang akan saya ambil untuk di kirim ke **database**, mungkin algoritma teman-teman lain lagi.  
 
 table database saya seperti ini, dalam contoh ini saya menamakan table nya dengan nama table user  
