@@ -15,7 +15,7 @@ Dunia internet sangatlah luas dan tidak terbatas termasuk dunia website tidak ak
 ![maps1]({{ site.url }}/assets/images/post/intl2.jpg)  
 
 Nah seperti yang teman – teman lihat pada gambar di atas ini, ketika di klik pada salah satu bendera negara maka di dalam input akan memberitahukan kode negaranya ini semua memakai plugins Jquery nya, kita akan menggunakannya untuk menghasilkan seperti gambar di atas ini. Baik, sekarnag kita implementasikan Cara Menggunakan Plugins Input Telepon International pertama – tama kalian download terlebih dahulu plugins nya atau bisa 
-***klik <a href="https://www.dropbox.com/s/y2mriu2o0cao8d3/PLUGINS.rar?dl=0">link</a> ini***, kemudian extract pada folder nya. Berikutnya buka text editornya dan copy script html nya di bawah ini.  
+***klik <a href="https://github.com/codesyariah122/international-phone-plugins.git">link</a> ini***, kemudian extract pada folder nya. Berikutnya buka text editornya dan copy script html nya di bawah ini.  
 
 ```
 <!DOCTYPE html>
