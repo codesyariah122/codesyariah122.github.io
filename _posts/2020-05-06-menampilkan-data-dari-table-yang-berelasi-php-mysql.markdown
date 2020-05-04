@@ -35,8 +35,9 @@ function tampilUser($query){
 
 	return $rows;
 }
+$username = $_SESSION['username'];
 //assign seluruh fetch data ke dalam variable $tampilUsers
-$tampilUsers = tampilUser("SELECT * FROM user, profile WHERE user.id_profile=profile.id_profile order by id DESC");
+$tampilUsers = tampilUser("SELECT * FROM user INNER JOIN profile on user.id_profile=profile.id_profile WHERE username = '$username'")
 
 //tampil kan data dengan looping foreach
 ?>
