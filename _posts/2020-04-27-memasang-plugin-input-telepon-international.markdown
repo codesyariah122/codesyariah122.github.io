@@ -3,7 +3,7 @@ layout: post
 title:  "Memasang Plugins Input Telepon International"
 author: puji
 categories: [ PHP, intlTelponinput ]
-image: assets/images/post/intl2.jpg
+image: assets/images/post/intl3.png
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  
