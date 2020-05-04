@@ -2,7 +2,7 @@
 layout: post
 title:  "Menampilkan data dari relasi 2 table di php"
 author: puji
-categories: [ PHP, explode ]
+categories: [ PHP, mysql_database ]
 image: assets/images/post/relasi/relasi8.png
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
