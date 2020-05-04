@@ -47,6 +47,5 @@ dan
 Laa Hawla wa Laa Quwwata Illa Billah aku akan selalu bersamamu mengarungi samudera dan aku akan berusaha menghalau gelombang apapun yang menerpamu.
 
 Untuk Calonku Tercinta
-Iim Marlina - Bandung 
 
 Puji Ermanto - Sidoarjo(2019)
