@@ -23,7 +23,6 @@ maka dari itu saya harus melakukan query dengan key ```INNER JOIN``` , maka scri
 
 ```
 <?php
-$tampilUsers = tampilUser("SELECT * FROM user, profile WHERE user.id_profile=profile.id_profile order by id DESC");
 function tampilUser($query){
 	$result = mysqli_query($conn, $query);
 
