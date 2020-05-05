@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Explode string untuk nomor telepon ke database"
+title:  "Explode string nomor telepon dari query database"
 author: puji
 categories: [ PHP, explode ]
 image: assets/images/post/explode_telp.png
