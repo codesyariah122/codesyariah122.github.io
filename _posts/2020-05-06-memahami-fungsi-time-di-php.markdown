@@ -76,7 +76,7 @@ dengan itu berarti kita telah mendapatkan nilai : jam, menit, detik nya, nah sup
 echo "hari lahi = ". date("l", mktime(0,0,0,3,19,1987));
 ```
 maka outputnya seperti ini :   
-![php_time4]({{ site.url }}/assets/images/post/php_time3.png)  
+![php_time4]({{ site.url }}/assets/images/post/php_time5.png)  
 
 hal diatas juga bisa dilakukan menggunakan fungsi dari date lainnya yaitu fungsi ```strtotime()```  , pada strtotime kita hanya perlu menambahkan format tanggal yang berupa string, contoh :  
 
