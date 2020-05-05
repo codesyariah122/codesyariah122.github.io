@@ -59,10 +59,15 @@ untuk mengetahui hari lahir kita, yaitu kita melakukan penghitungan waktu mundur
 kita bisa menggunakan fungsi mktime untuk membuat waktu kita sendiri. kayanya kalau menggunakan fungsi time() tidak memungkinkan karena fungsi ini bersifat relatif mau maju atau mundur berdasarkan EPOCH / timestamp, dan itu berarti kita harus menghitung dari awal waktu EPOCH yaitu dari 1 januari 1970 sampai tahun kelahiran kita. maka dari itu saya menggunakan fungsi ```mktime()`` , mktime() adalah fungsi untuk membuat waktu sendiri.  
 berikut contoh penggunaan fungsi mktime :  
 ```
-//format penulisannya ada 6 index
-//jam, menit, detik, bulan, tanggal, tahun
+/**
+* @use format penulisannya berisi 6 attribute yaitu : jam, menit, detik, bulan, tanggal, tahun
+*contoh nya :
+*/
+echo mktime(0,0,0,3,19,1987);
 ```  
-code diatas menghasilkan output sepert ini 
+
+code diatas menghasilkan output sepert ini  
+
 ```
 543085200
 ```  
