@@ -14,13 +14,15 @@ postingan kali akan berhubungan dengan fungsi date dan time di php.
 #  Fungsi Time Pada PHP
 Fungsi time() digunakan untuk mengambil waktu sekarang pada komputer server dalam format timestamp. Fungsi ini tidak memiliki argumen.
 Timestamp yang dihasilkan oleh fungsi time() selalu pada waktu UTC (GMT +  0), meskipun konfigurasi zone waktu berubah ubah. Lebih jauh tentang timezone, penetapan format timezone pada PHP bisa dilakukan dengan code berikut 
-```date_default_timezone_set("Asia/Jakarta");
+```
+date_default_timezone_set("Asia/Jakarta");
+
 ```  
 dikarenakan zona waktu saya ada di indonesia. Mungkin nanti dalam artikel tips and trick di new post mendatang saya akan ulas mengenai zona waktu.  
 ### menggunakan fungsi time()  
 fungsi time secara defaultnya menghasilkan nilai 1 januari 1970 berdasarkan unix timestamp / EPOCH time .
 ```
-<?=$date=date('d F Y, H:i:s', time());?>
+echo $date=date('d F Y, H:i:s', time());
 ```  
 outputnya seperti ini  : ``` 05 May 2020, 07:45:46 ``` 
 Fungsi time() ini bermanfaat untuk mendapatkan waktu kedepan atau kebelakang sejak waktu saat ini, misal:  
