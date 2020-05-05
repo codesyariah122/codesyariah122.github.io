@@ -20,12 +20,14 @@ date_default_timezone_set("Asia/Jakarta");
 ```  
 dikarenakan zona waktu saya ada di indonesia. Mungkin nanti dalam artikel tips and trick di new post mendatang saya akan ulas mengenai zona waktu.  
 ### menggunakan fungsi time()  
-fungsi time secara defaultnya menghasilkan nilai 1 januari 1970 berdasarkan unix timestamp / EPOCH time .
+fungsi time secara defaultnya menghasilkan nilai 1 januari 1970 berdasarkan unix timestamp / EPOCH time .  
+contoh penggunaan fungsi time yang di gabungkan dengan fungsi date().  
 ```
 echo $date=date('d F Y, H:i:s', time());
 ```  
-outputnya seperti ini  : ``` 05 May 2020, 07:45:46 ``` 
+code diatas menghasilkan output seperti ini  : ``` 05 May 2020, 07:45:46 ```  
 Fungsi time() ini bermanfaat untuk mendapatkan waktu kedepan atau kebelakang sejak waktu saat ini, misal:  
+contoh lain penggunaan fungsi date dan time :  
 ```
 echo 'Waktu sekarang: ' . date('Y-m-d H:i:s') . '<br/>';
 echo '1 menit kedepan: ' . date('Y-m-d H:i:s', time() + 60) . '<br/>';
