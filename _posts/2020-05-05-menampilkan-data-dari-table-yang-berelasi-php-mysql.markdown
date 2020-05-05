@@ -7,8 +7,8 @@ image: assets/images/post/relasi/relasi8.png
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  
-![relasi]({{ site.url }}/assets/images/post/relasi/relasi5.png)
-![relasi]({{ site.url }}/assets/images/post/relasi/relasi6.png)  
+![relasi]({{ site.url }}/assets/images/post/relasi5.png)
+![relasi]({{ site.url }}/assets/images/post/relasi6.png)  
 hallo para coders ! ... salam jumpa.  
 kali ini saya ingin berbagi tips dan trick seputar join table, inner join mysql mariaDB , php.  
 dari kedua gambar diatas adalah data dari front end halaman admin applikasi web yang saya kembangkan. kedua table diatas tersebut saya relasi kan.  
