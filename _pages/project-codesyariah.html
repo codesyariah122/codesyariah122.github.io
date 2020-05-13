@@ -7,13 +7,25 @@ product2: Web Replika
 product3: Wordpress WebDevelopment
 ---  
 {% assign cupcake = (site.data.webdevelopers[page.product1])%}
-
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="{{site.url}}{{WebDevelopment.image}}/100px180/" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">{{WebDevelopment.name}}</h5>
-    <p class="card-text">{{WebDevelopment.tags}}</p>
-    <small class="text-info">{{WebDevelopment.price}}</small>
-    <a href="{{WebDevelopment.links}}" class="btn btn-primary">Go somewhere</a>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3 class="text-center text-primary">{{page.title}}</h3>
+    </div>
   </div>
+  
+  <div class="row justify-content-center">
+    <div class="col-4 mt-2 mx-auto">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{site.url}}{{WebDevelopment.image}}/100px180/" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{WebDevelopment.name}}</h5>
+          <p class="card-text">{{WebDevelopment.tags}}</p>
+          <small class="text-info">{{WebDevelopment.price}}</small>
+          <a href="{{WebDevelopment.links}}" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 </div>
