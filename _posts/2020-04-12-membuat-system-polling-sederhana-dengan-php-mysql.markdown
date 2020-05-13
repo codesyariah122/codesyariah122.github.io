@@ -189,6 +189,9 @@ function polling($data){
 }
 {%endhighlight%}  
 
+untuk demo nya bisa download di repository di bawah ini :  
+<a href="https://github.com/codesyariah122/system_polling.git">System Polling </a>  
+
 ok di setiap file di atas sudah saya beri sedikit penjelasan, mudah-mudahan bisa di mengerti yaa. mudah ko prinsip kerjanya sangat sederhana.  
 
 ok selamat mencoba. 
