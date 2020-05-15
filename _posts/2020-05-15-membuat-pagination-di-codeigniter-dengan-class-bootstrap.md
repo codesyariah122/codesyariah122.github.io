@@ -108,7 +108,7 @@ class Post extends CI_Controller {
     }
 
 }
-    ```  
+```
 
 selanjutnya kita buat model untuk mengambil data dari table post di database coders, sepert ini config di model saya :  
 
