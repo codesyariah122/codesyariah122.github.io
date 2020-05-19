@@ -11,8 +11,8 @@ Ikuti terus perjalanan catatan kami hanya di blog codesyariah.
 <summary style='color:DodgerBlue;'>
 About Codesyariah Founder
 </summary>
-<a href="https://linkedin.com/pujiermanto">
- ***Puji Ermanto***
+<a href="https://id.linkedin.com/in/puji-ermanto-1b619782">
+Puji Ermanto As Founder Codesyariah
 </a>
 </details>  
 
