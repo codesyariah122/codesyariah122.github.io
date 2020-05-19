@@ -11,6 +11,7 @@ Ikuti terus perjalanan catatan kami hanya di blog codesyariah.
 <summary style='color:DodgerBlue;'>
 About Codesyariah Founder
 </summary>
+ [![Jpuji ermanto](IMG_20191224_051041.jpg)] 
 <a href="https://id.linkedin.com/in/puji-ermanto-1b619782">
 Puji Ermanto As Founder Codesyariah
 </a>
