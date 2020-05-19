@@ -11,7 +11,8 @@ Ikuti terus perjalanan catatan kami hanya di blog codesyariah.
 <summary style='color:DodgerBlue;'>
 About Codesyariah Founder
 </summary>
-<a href="https://m.facebook.com/strawberrywine">
+<a href="https://linkedin.com/pujiermanto">
+ ***Puji Ermanto***
 </a>
 </details>  
 
