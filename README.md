@@ -10,8 +10,8 @@ Ikuti terus perjalanan catatan kami hanya di blog codesyariah.
 <details>
 <summary style='color:DodgerBlue;'>
 About Codesyariah Founder
-</summary>
- [![puji ermanto]('https://codesyariah122.github.io/IMG_20191224_051041.jpg')] 
+</summary>  
+<img src="https://codesyariah122.github.io/IMG_20191224_051041.jpg"/><br/>
 <a href="https://id.linkedin.com/in/puji-ermanto-1b619782">
 Puji Ermanto As Founder Codesyariah
 </a>
