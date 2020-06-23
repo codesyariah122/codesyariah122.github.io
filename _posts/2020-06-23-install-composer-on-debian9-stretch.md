@@ -3,11 +3,12 @@ layout: post
 title:  "Install composer on debian 9 stretch"
 author: puji
 categories: [ PHP, Composer ]
-image: assets/images/post/pagination.png
+image: assets/images/post/composer.png
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  
-![composer]({{ site.url }}/assets/images/post/composer.png)  
+
+![composer]({{site.url}}/assets/images/post/composer.png)  
 
 # Prerequisites  
 
