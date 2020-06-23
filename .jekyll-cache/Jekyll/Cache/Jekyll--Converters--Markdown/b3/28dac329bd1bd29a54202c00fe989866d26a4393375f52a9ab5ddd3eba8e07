@@ -1,0 +1,44 @@
+I"X<h1 id="menentukan-lokasi-koordinat-berdasarkan-ip-address">Menentukan lokasi, koordinat berdasarkan ip address</h1>
+
+<p>Hallo para coders ! ….<br />
+Banyak cara yang dapat dilakukan untuk mendapatkan posisi koordinat khususnya latitude dan longitude Google dengan menggunakan IP. Beberapa diantaranya berbayar seperti IPStack dan juga IP2Location. Apakah ada yang gratis?</p>
+
+<p>Saya pernah membandingkan IPStack dan IP2Location, sayangnya database lokasi yang dimiliki keduanya masih kurang valid, saya cek IP komputer saya di Sumatra Utara IP menunjukan di Bandung, walaupun masih sama-sama milik PT. Telekomunikasi di Indonesia. Terakhir saya menggunakan layanan dari keycdn.com. Gratis dan lokasinya lebih valid. Caranya seperti berikut.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>f (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+    $ip = $_SERVER['HTTP_CLIENT_IP'];
+    
+} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+    $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+} else {
+    $ip = $_SERVER['REMOTE_ADDR'];
+}
+echo password_hash($ip, PASSWORD_DEFAULT)."&lt;br/&gt;";
+//Kemudian
+$url = "https://tools.keycdn.com/geo.json?host=$ip";
+$dt = file_get_contents($url);
+$dt = json_decode($dt, true);
+$lat = $dt['data']['geo']['latitude'];
+$lng = $dt['data']['geo']['longitude'];
+$regional = $dt['data']['geo']['region_name'];
+$city_name = $dt['data']['geo']['city'];
+
+$location = $city_name ."-". $regional;
+
+echo "&lt;h1&gt;".$location."&lt;/h1&gt;";
+</code></pre></div></div>
+
+<p>Koordinatnya telah kita dapatkan yaitu :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$lat = $dt['data']['geo']['latitude'];
+$lng = $dt['data']['geo']['longitude'];
+</code></pre></div></div>
+
+<p>berikut hasil lokasi, sory ip saya saya encrypt sementara demi keamanan. dan kordinatnya sesuai dengan lokasi ipnya.</p>
+
+<p><img src="{{ site.url }}/assets/images/post/ss_lokasi.jpg" alt="lokasi" /></p>
+
+<p><img src="{{ site.url }}/assets/images/post/5.jpg" alt="vs_code" /></p>
+
+<p>ok sekial dulu coders, <strong>salam</strong></p>
+:ET

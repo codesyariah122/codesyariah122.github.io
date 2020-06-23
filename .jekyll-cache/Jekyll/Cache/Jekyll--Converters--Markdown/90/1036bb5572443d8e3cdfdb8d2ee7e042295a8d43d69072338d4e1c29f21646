@@ -1,0 +1,3 @@
+I"E<p>Kali ini kita (kita .. lu aja kali) maksudnya saya, kali ini saya akan membuat sebuah layanan email service dengan menggunakan library dari phpmailer dan codeigniter, ok langsung saja kita eksekusi.
+buat sebuah controller untuk view nya kita simpan di direktori Controller, save dengan nama <em>EmailService.php</em>.</p>
+:ET

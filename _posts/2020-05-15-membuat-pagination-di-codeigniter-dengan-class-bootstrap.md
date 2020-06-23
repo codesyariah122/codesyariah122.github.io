@@ -53,7 +53,7 @@ dalam post kali ini saya hanya menjelaskan intinya langsung tentang penggunaan p
 dalam aplikasi saya saya, mempunyai sebuah halaman untuk menampilkan post atau blog di website saya, contoh nya seperti kedua gambar di awal post ini.  
 
 didalam controller kalian, buat sebuah configurasi seperti ini:  
-```
+{% highlight php %}
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Post extends CI_Controller {
@@ -108,11 +108,11 @@ class Post extends CI_Controller {
     }
 
 }
-```
+{% endhighlight %}
 
 selanjutnya kita buat model untuk mengambil data dari table post di database coders, sepert ini config di model saya :  
 
-``` 
+{% highlight php %}
 <?php
 class M_Data extends CI_Model {
 
@@ -128,18 +128,20 @@ class M_Data extends CI_Model {
     }
 
 }
-```  
+{% endhighlight %}
+  
 kemudian kita tinggal pasang pagination yang telah kita initialize di controller Post method infoterbaru di atas.  
 jadi di view nya seperti ini :  
 
-```
+{% highlight php %}
     <div class="row justify-content-center">
     	<div class="col-lg-6">
             <?= $pagination ?>
          </div>
     </div>
 
-```  
+{% endhighlight %}
+  
 ok coders silahkan di coba, mudah-mudahan bisa bermanfaat dan dapat berjalan dengan baik. saya cukupkan sampai di sini tips and trick kali ini, mengenai pagination di codeigniter dengan menambahkan class untuk bootstrap. 
 sekian coders . 
 <h3>Salam !</h3>

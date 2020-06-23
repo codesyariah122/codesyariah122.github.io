@@ -4,7 +4,30 @@ layout: default
 
 
 {% assign author = site.data.authors[myroom.author] %}
+<script type="text/javascript">
+let myroom = location.href;
+  
+if(myroom === "http://localhost:4000/myrooms"){
+    let secret_number=Math.floor((Math.random() * 10) + 1); 
+    let answer=prompt("Enter a number you want to try");
 
+    while(secret_number!==Number(answer))
+    {
+      if(answer===null || answer = ""){
+        break;
+      }
+
+      if(Number(answer)>secret_number){
+        answer = prompt("This number is too high!");
+      }else if(Number(answer)<secret_number){
+        answer = prompt("This number is too low!");
+      }else{
+        alert("You got it!");
+      }
+    }
+}
+
+</script>
 <section class="wrapper-pricing">
     <div class="container-fostrap">
            

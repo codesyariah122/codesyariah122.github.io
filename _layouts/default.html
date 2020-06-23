@@ -55,8 +55,9 @@
 
 </head>
 
-<body class="{% if page.url == "/" %} homefirstpage {% endif %}">
+<body class="{% if page.url == '/' %}homefirstpage{% endif %}">
 
+    
     
     <!-- Navbar -->
     <nav id="MagicMenu" class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top">
@@ -108,7 +109,8 @@
         </div>
         </div>
     </footer>
-    
+
+        
    <script>
 $(function () {
   var nua = navigator.userAgent
@@ -118,6 +120,7 @@ $(function () {
   }
 })
 </script>
+
     <!-- Scripts: popper, bootstrap, theme, lunr -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 

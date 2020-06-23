@@ -10,8 +10,8 @@ product2: cookie
 *tampilkan collections products 
 {% endcomment %}
 
-{% assign cupcake = (site.data.products[page.product1])%}
-{% assign cookie = (site.data.products[page.product2])%}
+{% assign cupcake = site.data.products[page.product1] %}
+{% assign cookie = site.data.products[page.product2] %}
 
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <h1 class="display-4">{{ page.title }}</h1>

@@ -1,0 +1,51 @@
+I"`<p>{% comment %}
+*tampilkan collections products 
+{% endcomment %}</p>
+
+<p>{% assign cupcake = site.data.products[page.product1] %}
+{% assign cookie = site.data.products[page.product2] %}</p>
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">{{ page.title }}</h1>
+  <h3 class="lead">Our Product : </h3>
+</div>
+
+<div class="container">
+<div class="card">
+  <h4 class="display">{{ cupcake.name }}</h4>
+
+      <div class="hovereffect">
+        <img class="img-responsive" src="{{site.url}}{{cupcake.image}}" alt="{{cupcake.name}}" />
+        <div class="overlay">
+           <h2>{{cupcake.name}} <br /> Idr : Rp. {{ cupcake.price }}/pcs isi 3 cup</h2>
+           <a class="info" href="{{cupcake.links}}">Beli {{cupcake.name}}</a>
+        </div>
+      </div>
+
+  <div class="card-body">
+    <p class="card-text">{{cupcake.tags}}</p>
+    <a href="{{cupcake.links}}" class="btn btn-primary">Lihat Lebih banyak</a>
+  </div>
+ </div>
+</div>
+<p><br /></p>
+<div class="container">
+     <div class="card">
+  <h4 class="display">{{ cookie.name }}</h4>
+
+      <div class="hovereffect">
+        <img class="img-responsive" src="{{site.url}}{{cookie.image}}" alt="{{cookie.name}}" />
+        <div class="overlay">
+           <h2>{{cookie.name}} <br /> Idr : Rp. {{ cookie.price }}/pcs isi 20 {{ cookie.name }}</h2>
+           <a class="info" href="{{cookie.links}}">Beli {{cookie.name}}</a>
+        </div>
+      </div>
+
+    <div class="card-body">
+    <p class="card-text">{{cookie.tags}}</p>
+    <a href="{{cookie.links}}" class="btn btn-primary">Lihat Lebih banyak</a>
+    </div>
+  </div>
+</div>
+
+:ET

@@ -1,0 +1,147 @@
+I"H<p><img src="{{ site.url }}/assets/images/post/pagination2.png" alt="pagination2" /><br />
+<img src="{{ site.url }}/assets/images/post/pagination3.png" alt="pagination3" /><br />
+assaalamualaikum ~<br />
+Halo para coders! tercinta mudah-mudahan selalu dalam keadaan baik-baik dan sehat semuanya.<br />
+kali ini coders akan berbagi trick dan tips seputar pagination di framework codeigniter, sederhana saja mungkin trick kali ini, mungkin sudah banyak yang tau tentang pagination yang tidak lain fungsi nya adalah sebagai custom link dalam membagi sebuah tampilan data, supaya tertata lebih rapi dan terorganisir dengan baik, dan client bisa nyaman dalam melihat dan mengambil data dari website kita.</p>
+
+<p>oke langsung saja….<br />
+dalam trick kali ini saya asumsikan coders sudah mengerti tentang mvc pada codeigniter minimal tentang routing dan controller.<br />
+contoh umum pagination ini sudah banyak di adaptasi oleh website-website besar salah satunya adalah raksasa teknologi google yang membuat system pagination dalam aplikasi mesin pencariannya yang terkenal itu. seperti ini pagination milik pencarian google.</p>
+
+<p><img src="{{ site.url }}/assets/images/post/pagination_google.jpg" alt="pagination3" /><br />
+Hal ini efektif untuk mempercepat penelusuran dan dapat memberikan pengalaman yang luar biasa bagi user (User Experience).</p>
+
+<p>Jadi, sangatlah penting untuk membuat pagination untuk mempercepat load page dan meningkatkan pengalaman user (User Experience).<br />
+Framework PHP Codeigniter memberikan kemudahan dalam membuat pagination. Hal ini dikarenakan codeigniter telah menyediakan library pagination yang siap digunakan.</p>
+
+<p>Akan tetapi, codeigniter tidak menyediakan style untuk pagination. Hanya berupa link biasa yang berbentuk nomor urut.</p>
+
+<p>Hal ini merupakan hal yang baik, karena codeigniter memberikan kebebasan kepada developer untuk berkreasi atas style dari pagination tersebut.</p>
+
+<p>Itulah kenapa kita membutuhkan BOOTSTRAP untuk mempercantik tampilan dari pagination.<br />
+Bootstrap merupakan framework yang berisi file CSS dan Javascript yang berfungsi untuk mempermudah developer untuk merancang UI (User Interface) suatu halaman website.</p>
+
+<p>Bootstrap sendiri bersifat responsive yang membuat halaman web merender dengan baik pada berbagai perangkat dan ukuran jendela atau layar.</p>
+
+<p>Nah, dengan mengkombinasikan Codeigniter dengan Bootstrap, maka akan didapatkan pagination yang cantik sekaligus responsive.</p>
+
+<p>Mari kita mulai!</p>
+
+<p>#persiapan<br />
+Apa saja yang perlu Anda persiapkan?</p>
+
+<p>Berikut listnya:</p>
+
+<ol>
+  <li>
+    <p>Codeiginter, jika anda belum memilikinya silahkan download di situs resminya www.codeigniter.com</p>
+  </li>
+  <li>
+    <p>Bootstrap, bootstrap ini berfungsi untuk mempercantik tampilan. Jika anda belum memilikinya, silahkan download di situs resminya www.getbootstrap.com</p>
+  </li>
+</ol>
+
+<p>Bootstrap yang digunakan adalah Bootstrap v4.0+.</p>
+<h1 id="step-ke-2">step ke 2</h1>
+<p>saya asumsikan coders semua sudah menyiapkan database nya, dan sudah menginstall codeigniter dan menggunakannya dalam aplikasi web anda.<br />
+dalam post kali ini saya hanya menjelaskan intinya langsung tentang penggunaan pagination di codeigniter.</p>
+
+<p>dalam aplikasi saya saya, mempunyai sebuah halaman untuk menampilkan post atau blog di website saya, contoh nya seperti kedua gambar di awal post ini.</p>
+
+<p>didalam controller kalian, buat sebuah configurasi seperti ini:<br />
+{% highlight php %}
+&lt;?php
+defined(‘BASEPATH’) OR exit(‘No direct script access allowed’);
+class Post extends CI_Controller {</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public function __construct()
+{
+    parent::__construct();
+    $this-&gt;load-&gt;model('M_Data', 'post');
+}
+
+public function index()
+{
+    $data['login'] = $this-&gt;session-&gt;userdata('email');
+    $data['index_title'] = "Ourcitrus News";
+    $config['base_url'] = base_url('post/index'); //site url
+    $config['total_rows'] = $this-&gt;M_Data-&gt;countAllpost(); //total row
+    $config['per_page'] = 3;  //show record per halaman
+    $config["uri_segment"] = 3;  // uri parameter
+    $choice = $config["total_rows"] / $config["per_page"];
+    $config["num_links"] = floor($choice);
+   
+    // Membuat Style pagination untuk BootStrap v4
+    $config['first_link']       = 'First';
+    $config['last_link']        = 'Last';
+    $config['next_link']        = 'Next';
+    $config['prev_link']        = 'Previous';
+    $config['full_tag_open']    = '&lt;div class="pagging text-center"&gt;&lt;nav&gt;&lt;ul class="pagination justify-content-center"&gt;';
+    $config['full_tag_close']   = '&lt;/ul&gt;&lt;/nav&gt;&lt;/div&gt;';
+    $config['num_tag_open']     = '&lt;li class="page-item"&gt;&lt;span class="page-link"&gt;';
+    $config['num_tag_close']    = '&lt;/span&gt;&lt;/li&gt;';
+    $config['cur_tag_open']     = '&lt;li class="page-item active"&gt;&lt;span class="page-link"&gt;';
+    $config['cur_tag_close']    = '&lt;span class="sr-only"&gt;(current)&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;';
+    $config['next_tag_open']    = '&lt;li class="page-item"&gt;&lt;span class="page-link"&gt;';
+    $config['next_tagl_close']  = '&lt;span aria-hidden="true"&gt;&amp;raquo;&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;';
+    $config['prev_tag_open']    = '&lt;li class="page-item"&gt;&lt;span class="page-link"&gt;';
+    $config['prev_tagl_close']  = '&lt;/span&gt;Next&lt;/li&gt;';
+    $config['first_tag_open']   = '&lt;li class="page-item"&gt;&lt;span class="page-link"&gt;';
+    $config['first_tagl_close'] = '&lt;/span&gt;&lt;/li&gt;';
+    $config['last_tag_open']    = '&lt;li class="page-item"&gt;&lt;span class="page-link"&gt;';
+    $config['last_tagl_close']  = '&lt;/span&gt;&lt;/li&gt;';
+ 
+    $this-&gt;pagination-&gt;initialize($config);
+    $data['page'] = ($this-&gt;uri-&gt;segment(3)) ? $this-&gt;uri-&gt;segment(3) : 0;
+ 
+    //panggil function dari model untuk query table post. 
+    $data['post'] = $this-&gt;post-&gt;infoterbaru($config["per_page"], $data['page']);           
+ 
+    $data['pagination'] = $this-&gt;pagination-&gt;create_links();
+
+	//$this-&gt;template-&gt;myLayout('post/index', $data); ini layout yang saya buat dari tambahan fungsi di libraries codeigniter, jika dalam standar codeigniter maka harusnya seperti ini  
+	$this-&gt;load-&gt;view('post/index', $data)
+}
+</code></pre></div></div>
+
+<p>}
+{% endhighlight %}</p>
+
+<p>selanjutnya kita buat model untuk mengambil data dari table post di database coders, sepert ini config di model saya :</p>
+
+<p>{% highlight php %}
+&lt;?php
+class M_Data extends CI_Model {</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    public function infoterbaru($limit, $start)
+{
+    $this-&gt;db-&gt;order_by('id', 'DESC');
+    return $this-&gt;db-&gt;get('info_terbaru', $limit, $start)-&gt;result();
+}
+
+    public function countAllpost()
+{
+    return $this-&gt;db-&gt;get('info_terbaru')-&gt;num_rows();
+}
+</code></pre></div></div>
+
+<p>}
+{% endhighlight %}</p>
+
+<p>kemudian kita tinggal pasang pagination yang telah kita initialize di controller Post method infoterbaru di atas.<br />
+jadi di view nya seperti ini :</p>
+
+<p>{% highlight php %}
+    &lt;div class="row justify-content-center"&gt;
+    	&lt;div class="col-lg-6"&gt;
+            <?= $pagination ?>
+         &lt;/div&gt;
+    &lt;/div&gt;</p>
+
+<p>{% endhighlight %}</p>
+
+<p>ok coders silahkan di coba, mudah-mudahan bisa bermanfaat dan dapat berjalan dengan baik. saya cukupkan sampai di sini tips and trick kali ini, mengenai pagination di codeigniter dengan menambahkan class untuk bootstrap. 
+sekian coders .</p>
+<h3>Salam !</h3>
+
+:ET

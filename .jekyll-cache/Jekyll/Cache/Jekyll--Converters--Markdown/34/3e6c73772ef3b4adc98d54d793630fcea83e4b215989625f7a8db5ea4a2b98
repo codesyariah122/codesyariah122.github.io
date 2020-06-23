@@ -1,0 +1,115 @@
+I"°<p><img src="http://localhost:4000/assets/images/post/googlemaps2.jpg" alt="maps1" /></p>
+
+<h1 id="menentukan-titik-google-maps">menentukan titik google maps</h1>
+<p>Marker sering digunakan untuk menandai sebuah lokasi. Biasanya sering digunakan dalam membuat aplikasi Geolocation.</p>
+
+<p>Pada kesempatan ini, kita akan belajar membuat marker di Google Maps dan melakukan beberapa modifikasi.</p>
+
+<p>Kamu bisa menggunakan contoh kode sebelumnya untuk uji coba.</p>
+
+<p>Sudah siap?</p>
+
+<p>Mari kita mulaiâ€¦</p>
+
+<h1 id="mengenal-objek-marker">Mengenal Objek Marker</h1>
+
+<p>Marker merupakan sebuah objek yang bisa kita buat dengan kode berikut:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var marker = new google.maps.Marker({
+    position: new google.maps.LatLng(-8.5830695,116.3202515),
+    map: peta
+});
+</code></pre></div></div>
+<p>Terdapat dua properti penting yang harus diberikan ke marker:</p>
+
+<ol>
+  <li><strong>position</strong> adalah posisi koordinat latitude dan longitude marker pada peta.</li>
+  <li><strong>map</strong> objek dari peta (Google Map).</li>
+</ol>
+
+<p>dalam Contoh kali ini saya akan menyambung dari blog saya sebelumnya mengenai menentukan lokasi berdasarkan ip address : <a href="https://codesyariah122.github.io/php/ip_location2/Menentukan-koordinat-dengan-ip-address/">Di mari</a></p>
+
+<p>nah dari script itu seperti berikut</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+    $ip = $_SERVER['HTTP_CLIENT_IP'];
+    
+} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+    $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+} else {
+    $ip = $_SERVER['REMOTE_ADDR'];
+}
+echo password_hash($ip, PASSWORD_DEFAULT)."&lt;br/&gt;";
+//Kemudian
+$url = "https://tools.keycdn.com/geo.json?host=$ip";
+$dt = file_get_contents($url);
+$dt = json_decode($dt, true);
+$lat = $dt['data']['geo']['latitude'];
+$lng = $dt['data']['geo']['longitude'];
+$regional = $dt['data']['geo']['region_name'];
+$city_name = $dt['data']['geo']['city'];
+
+$location = $city_name ."-". $regional;
+
+echo "&lt;h1&gt;".$location."&lt;/h1&gt;";
+
+</code></pre></div></div>
+<p>dari script diatas saya kembangkan, saya menggunakan script diatas dengan asumsi data lokasi yang akan saya ambil untuk di kirim ke <strong>database</strong>, mungkin algoritma teman-teman lain lagi.</p>
+
+<p>table database saya seperti ini, dalam contoh ini saya menamakan table nya dengan nama table user</p>
+
+<p><img src="http://localhost:4000/assets/images/post/googlemaps1.jpg" alt="maps2" /></p>
+
+<p>saya akan mengirimkan nilai latitude dan longitude untuk dimanfaatkan dalam pembuatan API googlemaps kali ini.<br />
+jadi script lengkapnya menjadi seperti ini :<br />
+dan didalam database nya type data untuk nilai latitude dan longitude nya adalah type <strong>FLOAT</strong> , seperti berikut struktur type data nya.<br />
+<img src="http://localhost:4000/assets/images/post/googlemaps3.jpg" alt="maps3" /><br />
+<img src="http://localhost:4000/assets/images/post/googlemaps4.jpg" alt="maps4" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+&lt;?php
+//script ini untuk pemanfaatan session jika tidak menggunakan session harap di sesuaikan
+
+if(isset($_SESSION['login'])):
+//jika dalam penggunaan query silahkan disesuaikan dengan kebutuhan
+//untuk query insertnya disesuaikan
+
+$data=query("SELECT * FROM user INNER JOIN profile ON user.id_profile=profile.id_profile WHERE username = '$username'");
+
+endif;
+$nologin=query("SELECT * FROM user, profile WHERE user.id_profile=profile.id_profile AND username = '$userOwner'"); 
+
+?&gt;
+
+&lt;script src="http://maps.googleapis.com/maps/api/js"&gt;&lt;/script&gt; &lt;!-- api dari google maps --&gt;
+&lt;script&gt;
+function initialize() {
+  var propertiPeta = {
+    center:new google.maps.LatLng(&lt;?php if(isset($_SESSION['login'])):echo $data[0]['lat'].",".$data[0]['lng']; else: echo $nologin[0]['lat'].",".$nologin[0]['lng']; endif;?&gt; ),
+    zoom:9,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  
+  var peta = new google.maps.Map(document.getElementById("googleMap"), propertiPeta);
+  
+  // membuat Marker
+  var marker=new google.maps.Marker({
+      position: new google.maps.LatLng(&lt;?php if(isset($_SESSION['login'])):echo $data[0]['lat'].",".$data[0]['lng']; else: echo $nologin[0]['lat'].",".$nologin[0]['lng']; endif;?&gt; ),
+      map: peta
+  });
+
+}
+
+// event jendela di-load  
+google.maps.event.addDomListener(window, 'load', initialize);
+&lt;/script&gt;
+
+  &lt;h1&gt;Titik lokasi google maps anda : &lt;/h1&gt;
+
+  &lt;div class="map"&gt;
+        &lt;div id="googleMap" style="width:100%;height:380px;"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+</code></pre></div></div>
+<p>ok sobat coders untuk script diatas disesuaikan saja dengan kondisi, struktur dan algoritma teman teman coders semuanya. dirasa cukup tips kali ini, selamat menjalankan ibadah puasa ramadhan. 
+<strong>salam</strong></p>
+
+:ET

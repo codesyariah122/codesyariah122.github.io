@@ -1,0 +1,36 @@
+I"	<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+        <h1 class="font-weight-bold title h6 text-uppercase mb-4">Tags</h1>
+            
+         
+        <h4 class="font-weight-bold spanborder text-capitalize" id="blog"><span>Blog</span></h4>
+            
+        
+        
+        
+          
+         
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/blog/story/kembang-dari-periangan/">Kembang Dari Priangan</a>
+	</h2>
+	<p class="excerpt">
+	   Tanah Priangan adalah kawasan gunung gemunung yang didalamnya menjadi tempat bermukim sebagian suku sunda dari berbagai kawasan di wilayah priangan lainnya.Adalah merupakan dataran ya...
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">Blog</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#story">story</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		16 August 2019
+	</small>
+</div>
+</div></div></div></div>
+:ET
