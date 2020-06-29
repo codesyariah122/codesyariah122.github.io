@@ -37,11 +37,13 @@ databse telah selesai dibuat, lanjut coding program nya yuk ah ....
 
 # kedua
 siapkan directory di htdoc webserver kalian bebas untuk memberikan nama direktorinya.
-kemudian buat file baru di direktori kalian,  
-1 index.php
-2 function.php  
-file utama kita adalah index.php, sedangkan file function.php berperan sebagai file action untuk program systemnya. Dan untuk update artikel kali ini saya menggunakan teknik PDO (PHP data object), dan kali ini saya menggunakan framework css materialize. 
-susunan file nya, direktori nya saya beri nama tutor_polling :  
+kemudian buat beberapa file baru di direktori kalian,
+1. index.php
+2. config.php
+3. functions.php
+
+file utama kita adalah index.php, sedangkan file function.php berperan sebagai file action untuk program systemnya. dan file config merupakan constant untuk configurasi database programm kita kali ini.  Dan untuk update artikel kali ini saya menggunakan teknik PDO (PHP data object), dan kali ini saya menggunakan framework css materialize. 
+susunan file nya, direktori nya saya beri nama system_polling :  
 ![polling_php]({{site.url}}/assets/images/post/direktori.png)  
 
 ### buat file config.php  
