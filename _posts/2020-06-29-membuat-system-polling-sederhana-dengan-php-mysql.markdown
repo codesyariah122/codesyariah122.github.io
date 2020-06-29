@@ -65,7 +65,6 @@ define('DB_NAME', 'polling');
 
 <?php
 require 'config.php';
-$dir = 'contents';
 
 function html($direktori, $layout, $ext='.ext', $title){
   global $dir;
@@ -126,7 +125,7 @@ return $stmt->rowCount();
 ```  
 ***Copy code dibawah simpan ke file dengan nama ```index.php```***  
 ```
-<?php require_once 'functions.php';?>
+<?php require_once 'functions.php'; $dir = 'contents';?>
 
   <!DOCTYPE html>
   <html>
@@ -157,7 +156,7 @@ return $stmt->rowCount();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script> 
     <script type="text/javascript" src="assets/MyJs.js"></script>
 </body>
-  </html>  
+  </html>
 
 ```  
 
