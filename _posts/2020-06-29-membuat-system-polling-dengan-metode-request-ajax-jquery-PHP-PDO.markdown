@@ -44,7 +44,7 @@ kemudian buat beberapa file baru di direktori kalian,
 
 file utama kita adalah index.php, sedangkan file function.php berperan sebagai file action untuk program systemnya. dan file config merupakan constant untuk configurasi database programm kita kali ini.  Dan untuk update artikel kali ini saya menggunakan teknik PDO (PHP data object), dan kali ini saya menggunakan framework css materialize. 
 susunan file nya, direktori nya saya beri nama system_polling :  
-![polling_php]({{site.url}}/public/images/post/system_polling_direktori.png)  
+![polling_php]({{site.url}}/assets/images/post/system_polling_direktori.png)  
 
 ### buat file config.php  
 *kemudian copy code di bawah ini*  
