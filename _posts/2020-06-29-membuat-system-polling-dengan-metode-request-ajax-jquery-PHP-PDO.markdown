@@ -7,7 +7,7 @@ image: assets/images/post/system_polling.png
 tags: [webdeveloper]
 opening: بسم الله الرحمن الرحيم
 ---  
-![polling_php]({{site.url}}/assets/images/post/system_polling.png)  
+![polling_php]({{site.url}}/public/images/post/system_polling.png)  
 
 # hai coders!...  
 bagaimana keadaanya semua, ditengah **pandemi** yang sedang melanda ini,  
@@ -32,7 +32,7 @@ use polling;
 create table polling ( id int(11) primary key auto_increment, framework varchar(100) not null, value int(11) yes null );
 describe polling;
 ```
-![polling_php]({{site.url}}/assets/images/post/tutor_mysql.jpg)  
+![polling_php]({{site.url}}/public/images/post/system_polling_database.png)  
 databse telah selesai dibuat, lanjut coding program nya yuk ah .... 
 
 # kedua
@@ -44,7 +44,7 @@ kemudian buat beberapa file baru di direktori kalian,
 
 file utama kita adalah index.php, sedangkan file function.php berperan sebagai file action untuk program systemnya. dan file config merupakan constant untuk configurasi database programm kita kali ini.  Dan untuk update artikel kali ini saya menggunakan teknik PDO (PHP data object), dan kali ini saya menggunakan framework css materialize. 
 susunan file nya, direktori nya saya beri nama system_polling :  
-![polling_php]({{site.url}}/assets/images/post/direktori.png)  
+![polling_php]({{site.url}}/public/images/post/system_polling_direktori.png)  
 
 ### buat file config.php  
 *kemudian copy code di bawah ini*  
@@ -272,9 +272,3 @@ untuk file assets dan file lengkap lainnya bisa clone langsung atau download ke 
 ok di setiap file di atas sudah saya beri sedikit penjelasan, mudah-mudahan bisa di mengerti yaa. mudah ko prinsip kerjanya sangat sederhana.  
 
 ok selamat mencoba. 
-
-
-
-
-
-
