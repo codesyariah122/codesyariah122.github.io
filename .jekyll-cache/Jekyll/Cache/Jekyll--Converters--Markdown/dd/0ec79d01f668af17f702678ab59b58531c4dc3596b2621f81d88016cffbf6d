@@ -1,0 +1,42 @@
+I"§	<p><img src="{{ site.url }}/assets/images/post/phpmyadmin/b.png" alt="phpmyadmin" /></p>
+
+<p>Halo coders ! â€¦. bertemu lagi dengan tulisan saya.<br />
+kali ini seperti biasanya saya akan berbagi tentang troubleshooting di server saya.<br />
+lagi-lagi masalah, sepertinya masalah tidak pernah bisa lepas dari para pengguna linux.<br />
+ok! cukup curhat nya.</p>
+
+<p>kali ini permasalahan saya terdapat pada phpmyadmin, error yang kudapati seperti ini adanya<br />
+<img src="{{ site.url }}/assets/images/post/phpmyadmin/b.png" alt="phpmyadmin" /><br />
+setiap kali saya melakukan query ke database mariaDB selalu muncul notif itu ketika mengakses front end dari mariaDB yaitu phpmyadmin.</p>
+
+<p>sontak saya pun kebingungan dibuatnya alhasil saya mencoba untuk mencari akar dari permasalahan ini, karena membuat malam saya terganggu, dipenuhi racun kegelisahan.</p>
+
+<p><img src="{{ site.url }}/assets/images/post/phpmyadmin/b.png" alt="phpmyadmin" /></p>
+
+<p>ok sobat coders, trick nya cukup simple saja. pertama saya buka file configurasi sql library yang berada di direktori berikut.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /usr/share/phpmyadmin/libraries/sql.lib.php
+</code></pre></div></div>
+<p>ok sekarang kita buka dengan code editor andalan kita, apapun itu saya sederhana saja hanya menggunakan nano editor. ok langsung kita mulai.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> nano /usr/share/phpmyadmin/libraries/sql.lib.php
+
+ //kemudian cari code berikut
+ //yang terdapat pada line 613
+
+ || (count($analyzed_sql_results['select_expr'] == 1)
+</code></pre></div></div>
+
+<p>kemudian ubah menjadi seperti ini</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ((count($analyzed_sql_results['select_expr']) == 1)
+</code></pre></div></div>
+
+<p>simple kan hanya sedikit penambahan tanda kurung diawal dan menutupnya sebelum value kondisi programnya. kemudian kita restart webserver nya. 
+ kali ini saya menggunakan apache2 , back to basic, malas untuk konfigurasi macem-macem karena kondisi dompet sedang menipis. hehehe biasa tengah bulan</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl restart apache2.service
+</code></pre></div></div>
+
+<p>setelah itu coba aksesk kembali phpmyadmin di browser. mudah-mudahan bisa yah.</p>
+
+:ET

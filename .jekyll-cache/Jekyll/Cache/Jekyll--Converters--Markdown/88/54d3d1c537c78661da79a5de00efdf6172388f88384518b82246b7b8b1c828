@@ -1,0 +1,38 @@
+I"�<p><img src="{{ site.url }}/assets/images/post/intl3.png" alt="maps1" /></p>
+
+<p>Dunia internet sangatlah luas dan tidak terbatas termasuk dunia website tidak akan pernah ada habis nya jika kita mau upgrade skill untuk membuat sesuatu yang baru dan membuat website kita lebih bagus dan inovasi baru. Banyak design website sekarang ini selalu mencari apa yang baru untuk tampilan yang gimik, di dorong dari hal baru lah semua orang banyak mencari – cari agar website tidak mirip dengan yang lainnya dan kinerja website lebih cepat dan tidak ada load sama sekali. Jquery ataupun Javascript merupakan bahasa yang tidak dapat di pisahkan dengan HTML/CSS karena Jquery/Javascript merupakan pendukung kinerja website menggunakan plugins ataun native. Di artikel kali ini saya akan memberikan tips dan trik tentang Cara Menggunakan Plugins Input Telepon International dimana kita akan menggunakan plugins Jquery yang memang sudah di sediakan. Tinggal kita copy saja script untuk kita tempat di dalam website kita, tentu nya hasil yang di dapatkan sangatlah bagus. Selain bagus website yang kita berikan beberapa plugins tentunya memiliki kelas tersendiri. Kali ini saya akan mencoba membuat input nomor telepon internasional, dimana ketika kita pilih suatu negara maka form akan memberitahukan user kode telepon sesuai negaranya. Di bawah ini adalah screnn shoot nya yang nanti kita akan buat.</p>
+
+<p><img src="{{ site.url }}/assets/images/post/intl2.jpg" alt="maps1" /></p>
+
+<p>Nah seperti yang teman – teman lihat pada gambar di atas ini, ketika di klik pada salah satu bendera negara maka di dalam input akan memberitahukan kode negaranya ini semua memakai plugins Jquery nya, kita akan menggunakannya untuk menghasilkan seperti gambar di atas ini. Baik, sekarnag kita implementasikan Cara Menggunakan Plugins Input Telepon International pertama – tama kalian download terlebih dahulu plugins nya atau bisa 
+<strong><em>klik <a href="https://github.com/codesyariah122/international-phone-plugins.git">link</a> ini</em></strong>, kemudian extract pada folder nya. Berikutnya buka text editornya dan copy script html nya di bawah ini.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+	<span class="nt">&lt;title&gt;</span>Input telepon dengan code negara<span class="nt">&lt;/title&gt;</span>
+	   <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"PLUGINS/css/intlTelInput.css"</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"PLUGINS/css/demo.css"</span><span class="nt">&gt;</span> 
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+
+<span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">""</span> <span class="na">method=</span><span class="s">"post"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"phone"</span><span class="nt">&gt;</span>Phone : <span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"tel"</span> <span class="na">name=</span><span class="s">"phone"</span> <span class="na">id=</span><span class="s">"phone"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">name=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"PLUGINS/js/intlTelInput.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+ <span class="nt">&lt;script&gt;</span>
+<span class="err">   </span> <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#phone</span><span class="dl">"</span><span class="p">).</span><span class="nx">intlTelInput</span><span class="p">({</span>
+<span class="err">     </span> <span class="na">utilsScript</span><span class="p">:</span> <span class="dl">"</span><span class="s2">PLUGINS/js/utils.js</span><span class="dl">"</span>
+<span class="err">   </span> <span class="p">});</span>  
+<span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+<p>jika sudak dicopy save dengan nama terserah kalian, dan coba lihat ada icon bendera muncul disamping kiri input telpon nya.<br />
+ok sekian dulu yah coders. 
+<strong>Salam</strong></p>
+:ET

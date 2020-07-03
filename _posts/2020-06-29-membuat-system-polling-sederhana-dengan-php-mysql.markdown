@@ -21,7 +21,7 @@ langsung ajah yuk , kita mulai coding ....
 kita siapkan dulu database untuk menampung value pollingnya...  
 masuk ke terminal atau cmd di windows, akses root ke aplikasi database nya disini saya menggunakan mysql
 *terminal*
-```
+```sql
 mysql -u root -p
 #masukan password root login anda
 #lanjut buat database
@@ -49,7 +49,7 @@ susunan file nya, direktori nya saya beri nama system_polling :
 ### buat file config.php  
 *kemudian copy code di bawah ini*  
 
-```
+```php
 <?php
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
@@ -61,7 +61,7 @@ define('DB_NAME', 'polling');
 ### lanjut buat file functions.php  
 **copy code di bawah ini**  
 
-```
+```php
 
 <?php
 require 'config.php';
@@ -124,7 +124,7 @@ return $stmt->rowCount();
 }
 ```  
 ***Copy code dibawah simpan ke file dengan nama ```index.php```***  
-```
+```php
 <?php require_once 'functions.php'; $dir = 'contents';?>
 
   <!DOCTYPE html>
@@ -165,7 +165,7 @@ direktori content ini akan menyimpan tampilan utama programm kita.
 ***buat file baru di direktori contents***  
 
 buat file dengan ```polling.php```  kemudian copy code dibawah ini : 
-```
+```php
 <div class="divider"></div>
   <div class="container">
     <div class="divider"></div>

@@ -21,20 +21,19 @@ Biasanya digunakan dalam hal penentuan ukuran kolom (Grid System), mari kita int
 
 #### Semantic UI  
 
-{% highlight css %}
+```css
 	.ui[class*="six column"].grid > .row > .column,
   	.ui[class*="six column"].grid > .column:not(.row) {
     width: 16.66666667%;
   }
-{% endhighlight %}  
-
+```
 #### Bootstrap  
 
-{% highlight css %}
+```css
   .col-xs-6 {
     width: 50%;
   }
-{% endhighlight %}  
+```  
 
 Namun satuan ini juga baik digunakan dalam penentuan ukuran header atau h1, h2, h3, dst. dalam beberapa kasus, seperti ingin mempermudah pengerjaan situs yang responsif.  
 
@@ -48,12 +47,12 @@ Satuan rem dan em bisa dikatakan 16 kali dari satuan px, jadi 1rem/em = 16px, na
 
 Salah satu contoh kasus yang satuan em terasa sangat bermanfaat adalah pada padding untuk elemen yang font-sizenya mudah berubah-ubah, contoh seperti :  
 
-{% highlight css %}
+```css
   .button{
     font-size: 1em;
     padding: 5em 10em;
   }
-{% endhighlight %}  
+```  
 
 Dikarenakan induk yang mempunyai property font-size dari element .button tidak ada, maka property font-size bernilai 1em = 16px, namun pada padding 5em dan 10em terpengaruh oleh nilai dari font-size, jadi 5em 16px = 80px, dan 10em 16px = 160px.
 
@@ -69,14 +68,14 @@ Satuan ini bergantung pada induk elemennya, jika induk elemen mempunyai ukuran 3
 
 Jika induk dari element adalah 100% atau tak terhingga, maka 100vh bergantung pada ukuran layar.  
 
-{% highlight css %}
+```css
   body{
     height: 100%;
   }
   body .screen.cover{
     height: 100vh;
   }
-{% endhighlight %}  
+```  
 
 Teknik ini sangat bermanfaat jika kita ingin membuat fullscreen elemen, dan saya sangat sering menggunakannya terutama membuat cover untuk front page.  
 
@@ -86,21 +85,21 @@ Satuan ini mirip dengan vw dan vh, bedanya jika kita menentukan 100vmin satuan i
 
 Misalnya induk elemen memiliki ukuran 1000px x 1200px, jika anak elemen memakai :  
 
-{% highlight css %}
+```css
   .anak{
     height: 100vmin;
     width: 100vmin;
   }
-{% endhighlight %}  
+```  
 
 Maka hasil yang akan ditampilkan seperti :  
 
-{% highlight css %}
+```css
   .anak{
     height: 1000px;
     width: 1000px;
   }
-{% endhighlight %}  
+```  
 
 Begitu juga sebaliknya.  
 

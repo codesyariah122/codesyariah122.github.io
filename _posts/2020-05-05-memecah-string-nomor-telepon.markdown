@@ -14,14 +14,14 @@ postingan kali akan berhubungan dengan string di PHP. ok langsung saja kita ekse
 dalam postingan ini asumsikan saya memiliki data di table seperti di gambar diatas tadi, nilai dari field nomor telpon diatas beruba varchar. jadi penginputan nomor telepon di lakukan saat user mengedit informasi profile nya. pada saat update, kita sertakan insert phone ke database ke field phone.  
 
 ok contoh nya : 
-```
+```php
 //saya punya string beriku 
 $telp = "6288222668778";
 ``` 
 di string nomor telpon diatas terlihat string nya belum ada whitespace dan tanpa simbol apapun, dikarenakan saya ingin memudahkan user dalam penginputan nomor teleponnya, maka string harus saya pecah-pecah agar terlihat mudah untuk di baca dan di inputkan oleh user.  
 ok langsung saja kita pecah string nomor telepon diatas :  
 
-```
+```php
 //potong string jadi beberapa bagian
 $tel = str_replace("62", "0", $tel);
 $fix1 = substr($tel, 0, 4);

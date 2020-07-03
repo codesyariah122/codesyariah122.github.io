@@ -1,0 +1,56 @@
+I"]<h3 id="crud-dengan-php-ekstensi-pdo-dengan-pemanfaatan-api-jquery-ajax">crud dengan php ekstensi pdo dengan pemanfaatan api jquery ajax</h3>
+
+<p>pada dokumentasi kali ini saya membuat dokumentasi crud data dengan php menggunakan ekstensi pdo dan menggunakan fitur apijquery ajax http request.<br />
+crud adalah program pengolahan data paling basic yang harus di pelajari dalam pemrogramman. ok langsung saja disimak…
+selamat menyimak :</p>
+
+<video width="320" height="240" controls="">
+  <source src="{{site.url}}assets/imagespost/crud_pdo.mp4" type="video/mp4" />
+  <source src="{{site.url}}assets/imagespost/crud_pdo.ogg" type="video/ogg" />
+  Your browser does not support the video tag.
+</video>
+
+<h4 id="ajax-rule">ajax rule</h4>
+<p>setiap request ke database dari client side di redirect ke ajax sebelum di kembalikan ke clientside :<br />
+contoh penerapan ajaxnya :</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//ketika tombol add di click maka client akan merequest data ke server disini ajax jadi mengambil alih server side</span>
+<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#cruddata</span><span class="dl">'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">#add</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+	<span class="c1">//ambil value dari html input</span>
+	<span class="kd">const</span> <span class="nx">productCode</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#productcode</span><span class="dl">'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span> <span class="c1">//value dari inputan</span>
+	<span class="kd">const</span> <span class="nx">productName</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#productname</span><span class="dl">'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+	<span class="kd">const</span> <span class="nx">productPrice</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#productprice</span><span class="dl">'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+
+	<span class="c1">//validasi inputan yang direquest client diambil alih ajax</span>
+	<span class="k">if</span><span class="p">(</span><span class="nx">productCode</span> <span class="o">==</span> <span class="dl">''</span> <span class="o">||</span> <span class="nx">productName</span> <span class="o">==</span> <span class="dl">''</span> <span class="o">||</span> <span class="nx">productPrice</span> <span class="o">==</span> <span class="dl">''</span><span class="p">){</span>
+		<span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Form data is empty, please try again</span><span class="dl">"</span><span class="p">);</span>
+	<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+		<span class="c1">//menggunakan metode http request dari apijquery</span>
+		<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+			<span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">contents/add.php?page=add</span><span class="dl">'</span><span class="p">,</span> <span class="c1">//url untuk mentrigger data ke database server</span>
+			<span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">post</span><span class="dl">'</span><span class="p">,</span> <span class="c1">//metode yang akan digunakan untk mentrigger data</span>
+			<span class="c1">//kemudian deligasikan format datanya </span>
+			<span class="na">data</span><span class="p">:</span> <span class="dl">'</span><span class="s1">productcode=</span><span class="dl">'</span><span class="o">+</span><span class="nx">productCode</span><span class="o">+</span><span class="dl">'</span><span class="s1">&amp;productname=</span><span class="dl">'</span><span class="o">+</span><span class="nx">productName</span><span class="o">+</span><span class="dl">'</span><span class="s1">&amp;productprice=</span><span class="dl">'</span><span class="o">+</span><span class="nx">productPrice</span><span class="p">,</span>
+			<span class="c1">//kembalikan response dari server ke client side</span>
+			<span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+				<span class="k">if</span><span class="p">(</span><span class="nx">response</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">success</span><span class="dl">'</span><span class="p">){</span>
+					<span class="c1">//load kembali view data dari server ke client</span>
+					<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#viewdata</span><span class="dl">'</span><span class="p">).</span><span class="nx">load</span><span class="p">(</span><span class="dl">'</span><span class="s1">contents/view.php?page=add</span><span class="dl">'</span><span class="p">).</span><span class="nx">fadeIn</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+					<span class="c1">//reload html inputannya </span>
+					<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#cruddata</span><span class="dl">'</span><span class="p">).</span><span class="nx">hide</span><span class="p">(</span><span class="dl">'</span><span class="s1">slow</span><span class="dl">'</span><span class="p">).</span><span class="nx">fadeOut</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+					<span class="c1">//kembali lakukan reload halaman keseluruhan untuk menghindari url yang ambigu</span>
+					<span class="nx">location</span><span class="p">.</span><span class="nx">reload</span><span class="p">();</span>
+				<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+					<span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Failed add new product</span><span class="dl">"</span><span class="p">);</span>
+				<span class="p">}</span>
+			<span class="p">}</span>
+		<span class="p">});</span>
+	<span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>code diatas adalah api ajax untuk meredirect request data dari client side. masih banyak metode yang bisa di lakukan javascript dalam menangani request method dari client side, tapi dalam dokumentasi kali ini penulis hanya menjabarkan sedikit basicnya saja, mungkin di lain kesempatan, akan penulis ulas kembali secara keseluruhan. 
+ok sekian dulu dirasa penulis cukupkan dokumentasi crud data dengan pdo yang ditangani oleh ajax jquery. terima kasih. 
+salam .</p>
+
+:ET

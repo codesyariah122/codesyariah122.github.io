@@ -25,7 +25,7 @@ sontak saya pun kebingungan dibuatnya alhasil saya mencoba untuk mencari akar da
 
 ok sobat coders, trick nya cukup simple saja. pertama saya buka file configurasi sql library yang berada di direktori berikut.  
 
-```
+```sh
  /usr/share/phpmyadmin/libraries/sql.lib.php
  ```  
  ok sekarang kita buka dengan code editor andalan kita, apapun itu saya sederhana saja hanya menggunakan nano editor. ok langsung kita mulai.  
@@ -41,13 +41,13 @@ ok sobat coders, trick nya cukup simple saja. pertama saya buka file configurasi
 
  kemudian ubah menjadi seperti ini  
  ```
-  || ((count($analyzed_sql_results['select_expr']) == 1)
+ ((count($analyzed_sql_results['select_expr']) == 1)
  ```  
 
  simple kan hanya sedikit penambahan tanda kurung diawal dan menutupnya sebelum value kondisi programnya. kemudian kita restart webserver nya. 
  kali ini saya menggunakan apache2 , back to basic, malas untuk konfigurasi macem-macem karena kondisi dompet sedang menipis. hehehe biasa tengah bulan
 
-```
+```sh
 systemctl restart apache2.service
 ```  
 

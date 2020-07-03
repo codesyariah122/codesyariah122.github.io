@@ -23,14 +23,14 @@ pada config virtual host diatas ada script yang saya highlight, nah di config lo
 dan akhirnya saya edit bagian location root virtual host nginx saya, menjadi seperti ini :  
 ![sublime_newourcitrus]({{ site.url }}/assets/images/post/nginx/nginx_2_default.png)  
 
-```
+```sh
         location /new_ourcitrus {
                 try_files $uri $uri/ /new_ourcitrus/index.php;
                 #autoindex on;
         }
 ```  
 setelah itu restart service nginx 
-```
+```sh
 root@debian:~#systemctl restart nginx.service
 ```  
 

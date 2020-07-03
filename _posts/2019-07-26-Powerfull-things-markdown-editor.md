@@ -57,7 +57,7 @@ Atau jika kalian ingin keliatan lebih keren biar kaya hacker gitu, Kalian dapat 
 
 hasilnya seperti ini :  
 
-![walking]({{ site.url }}/assets/images/post/8.jpg)  
+![walking]({{site.url}}/assets/images/post/8.jpg)  
 
 atau bisa dengan syntax highlighter yaitu sebuah plugin dari jekyll  
 contoh penggunaan syntax highlighter :  

@@ -1,0 +1,65 @@
+I"�<p><img src="http://localhost:4000/assets/images/post/phpmyadmin/Screenshot from 2020-02-28 07-00-00.png" alt="err_phpmyadmin" /><br />
+<strong>Step 1 — Installing phpMyAdmin</strong></p>
+
+<p>pertama-tama kita update distro linux kita dilanjutkan langsung install phpmyadmin nya</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt update <span class="o">&amp;&amp;</span> apt upgrade <span class="nt">-y</span>  
+apt <span class="nb">install </span>phpmyadmin  
+</code></pre></div></div>
+<p>Selama proses instalasi, Anda akan diminta untuk memilih server web (baik Apache atau Lighthttp) untuk dikonfigurasi.<br />
+karena kami menggunakan Nginx sebagai server web, kami tidak boleh membuat pilihan di sini. Tekan tab lalu OK untuk melanjutkan ke langkah berikutnya.<br />
+selanjutnya, Anda akan diminta untuk menggunakan dbconfig-common untuk mengonfigurasi basis data aplikasi.<br />
+Pilih (Yes/Y) untuk mengatur basis data internal dan pengguna administratif untuk phpMyAdmin. Anda akan diminta menentukan kata sandi baru untuk pengguna MySQL phpmyadmin. <br />
+Anda juga dapat membiarkannya kosong dan membiarkan phpMyAdmin membuat kata sandi secara acak. dan Instalasi phpmyadmin pun selesai.<br />
+Agar web server Nginx kita menemukan direktori web file phpMyAdmin dengan benar, kita perlu membuat tautan simbolis dari file instalasi ke direktori root dokumen Nginx:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ln</span> <span class="nt">-s</span> /usr/share/phpmyadmin /var/www/html/phpmyadmin
+</code></pre></div></div>
+<p>Instalasi phpMyAdmin Anda telah selesan dan bisa diakses. Untuk mengakses antarmuka, buka nama domain server Anda atau alamat IP diikuti oleh (http://localhost/phpmyadmin)<br />
+di browser web Anda:<br />
+<img src="http://localhost:4000/assets/images/post/phpmyadmin/login.png" alt="err_phpmyadmin" /></p>
+
+<p><strong>Step 2 — Menentukan lokasi direktori phpmyadmin</strong></p>
+
+<p>Salah satu cara paling mendasar untuk melindungi instalasi phpMyAdmin Anda adalah dengan membuatnya lebih sulit ditemukan.<br />
+Bot akan memindai jalur umum, seperti phpmyadmin, pma, admin, mysql dan semacamnya. Mengubah URL antarmuka dari / phpmyadmin menjadi sesuatu yang tidak standar akan mempersulit<br />
+skrip otomatis untuk menemukan instalasi phpMyAdmin Anda dan mencoba serangan brute-force.<br />
+Dari proses installasi kita tadi, kita telah membuat tautan simbolis untuk root direktori phpmyadmin kita dari /usr/share/phpmyadmin, direktori root default dari phpmyadmin.<br />
+Untuk mengubah URL phpMyAdmin kita, kita akan mengganti nama tautan simbolis sebelumnya.</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /var/www/html/
+<span class="nb">ls</span> <span class="nt">-l</span>
+
+Output
+total 8
+<span class="nt">-rw-r--r--</span> 1 root root 612 Apr  8 13:30 index.nginx-debian.html
+lrwxrwxrwx 1 root root  21 Apr  8 15:36 phpmyadmin -&gt; /usr/share/phpmyadmin
+</code></pre></div></div>
+
+<p>Outputnya menunjukkan bahwa kita memiliki tautan simbolik yang disebut phpmyadmin dalam direktori ini.<br />
+Kita dapat mengubah nama tautan ini menjadi apa pun yang kita suka.<br />
+Ini untuk mengubah URL akses phpMyAdmin kita, yang dapat membantu mengaburkan titik akhir dari root dikodekan untuk mencari nama titik akhir yang umum.<br />
+Pertama, mari kita bernavigasi ke direktori root dokumen Nginx dan lihat daftar file yang ada didalamnya untuk memahami perubahan yang akan kita buat:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /var/www/html
+<span class="nb">mv </span>phpmyadmin nothingtosee
+<span class="nb">ls</span> <span class="nt">-l</span>
+
+output  
+total 28
+drwxr-xr-x 4 root     root     4096 Feb 24 17:04 belajar_php
+drwxr-xr-x 3 root     root     4096 Feb 26 13:30 CodeIgniter
+<span class="nt">-rw-r--r--</span> 1 www-data www-data  612 Feb 24 08:07 index.nginx-debian.html
+<span class="nt">-rw-r--r--</span> 1 www-data www-data   19 Feb 24 08:17 info.php
+drwxr-xr-x 5 root     root     4096 Feb 24 13:13 myweb
+drwxr-xr-x 7 root     root     4096 Feb 27 02:29 new_ourcitrus
+lrwxrwxrwx 1 www-data www-data   21 Feb 24 08:26 nothingtosee -&gt; /usr/share/phpmyadmin
+drwxr-xr-x 6 www-data www-data 4096 Feb 26 10:35 ourcitrus
+</code></pre></div></div>
+<p>Sekarang, jika Anda membuka URL lama, Anda akan mendapatkan kesalahan 404<br />
+<img src="http://localhost:4000/assets/images/post/phpmyadmin/nginx_notfound.png" alt="err_phpmyadmin" /><br />
+Antarmuka phpMyAdmin Anda sekarang akan tersedia di URL baru yang baru saja kita konfigurasikan tadi:</p>
+<font color="red">http://server_domain_or_IP/nothingtosee</font>
+<p><img src="http://localhost:4000/assets/images/post/phpmyadmin/login.png" alt="err_phpmyadmin" /></p>
+
+<p>Dengan mengaburkan lokasi asli phpMyAdmin di server, Anda telah mengamankan antarmuka terhadap pemindaian otomatis dan upaya brute-force manual.</p>
+:ET

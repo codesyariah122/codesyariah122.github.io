@@ -1,0 +1,217 @@
+I"�_<p><img src="http://localhost:4000/assets/images/post/materialize.png" alt="polling_php" /></p>
+
+<h1 id="hai-coders">hai coders!…</h1>
+<p>bagaimana keadaanya semua, ditengah <strong>pandemi</strong> yang sedang melanda ini,<br />
+semoga kita semua selalu dalam lindungan allah, dan selalu di berikan nikmat sehat dan nikmat waktu luang untuk menjaga kesehatan.</p>
+
+<p>baiklah, kali ini saya mau iseng-iseng sedikit (..”iseng ko sedikit”) … lanjut.<br />
+iseng-iseng saya kali ini adalah membuat system polling sederhana yang sangat simple dan sederhana dengan php dan database mysql.</p>
+
+<p>langsung ajah yuk , kita mulai coding ….</p>
+<h1 id="pertama">pertama</h1>
+<p>kita siapkan dulu database untuk menampung value pollingnya…<br />
+masuk ke terminal atau cmd di windows, akses root ke aplikasi database nya disini saya menggunakan mysql
+<em>terminal</em></p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mysql</span> <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">-</span><span class="n">p</span>
+<span class="o">#</span><span class="n">masukan</span> <span class="n">password</span> <span class="n">root</span> <span class="n">login</span> <span class="n">anda</span>
+<span class="o">#</span><span class="n">lanjut</span> <span class="n">buat</span> <span class="k">database</span>
+
+<span class="k">create</span> <span class="k">database</span> <span class="n">polling</span><span class="p">;</span>
+<span class="n">use</span> <span class="n">polling</span><span class="p">;</span>
+
+<span class="k">create</span> <span class="k">table</span> <span class="n">polling</span> <span class="p">(</span> <span class="n">id</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">primary</span> <span class="k">key</span> <span class="n">auto_increment</span><span class="p">,</span> <span class="n">framework</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span> <span class="n">value</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="n">yes</span> <span class="k">null</span> <span class="p">);</span>
+<span class="k">describe</span> <span class="n">polling</span><span class="p">;</span>
+</code></pre></div></div>
+<p><img src="http://localhost:4000/assets/images/post/tutor_mysql.jpg" alt="polling_php" /><br />
+databse telah selesai dibuat, lanjut coding program nya yuk ah ….</p>
+
+<h1 id="kedua">kedua</h1>
+<p>siapkan directory di htdoc webserver kalian bebas untuk memberikan nama direktorinya.
+kemudian buat beberapa file baru di direktori kalian,</p>
+<ol>
+  <li>index.php</li>
+  <li>config.php</li>
+  <li>functions.php</li>
+</ol>
+
+<p>file utama kita adalah index.php, sedangkan file function.php berperan sebagai file action untuk program systemnya. dan file config merupakan constant untuk configurasi database programm kita kali ini.  Dan untuk update artikel kali ini saya menggunakan teknik PDO (PHP data object), dan kali ini saya menggunakan framework css materialize. 
+susunan file nya, direktori nya saya beri nama system_polling :<br />
+<img src="http://localhost:4000/assets/images/post/direktori.png" alt="polling_php" /></p>
+
+<h3 id="buat-file-configphp">buat file config.php</h3>
+<p><em>kemudian copy code di bawah ini</em></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="nb">define</span><span class="p">(</span><span class="s1">'DB_HOST'</span><span class="p">,</span> <span class="s1">'localhost'</span><span class="p">);</span>
+<span class="nb">define</span><span class="p">(</span><span class="s1">'DB_USER'</span><span class="p">,</span> <span class="s1">'root'</span><span class="p">);</span>
+<span class="nb">define</span><span class="p">(</span><span class="s1">'DB_PASS'</span><span class="p">,</span> <span class="s1">'1'</span><span class="p">);</span>
+<span class="nb">define</span><span class="p">(</span><span class="s1">'DB_NAME'</span><span class="p">,</span> <span class="s1">'polling'</span><span class="p">);</span> 
+
+</code></pre></div></div>
+
+<h3 id="lanjut-buat-file-functionsphp">lanjut buat file functions.php</h3>
+<p><strong>copy code di bawah ini</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cp">&lt;?php</span>
+<span class="k">require</span> <span class="s1">'config.php'</span><span class="p">;</span>
+
+<span class="k">function</span> <span class="nf">html</span><span class="p">(</span><span class="nv">$direktori</span><span class="p">,</span> <span class="nv">$layout</span><span class="p">,</span> <span class="nv">$ext</span><span class="o">=</span><span class="s1">'.ext'</span><span class="p">,</span> <span class="nv">$title</span><span class="p">){</span>
+  <span class="k">global</span> <span class="nv">$dir</span><span class="p">;</span>
+
+  <span class="k">if</span><span class="p">(</span><span class="nb">file_exists</span><span class="p">(</span><span class="nv">$dir</span><span class="o">.</span><span class="s1">'/'</span><span class="o">.</span><span class="nv">$layout</span><span class="o">.</span><span class="nv">$ext</span><span class="p">)){</span>
+    <span class="nv">$title</span> <span class="o">=</span> <span class="p">(</span><span class="nv">$layout</span> <span class="o">===</span> <span class="s1">'footer'</span><span class="p">)</span> <span class="o">?</span> <span class="s1">''</span> <span class="o">:</span> <span class="nv">$title</span><span class="p">;</span>
+    <span class="k">require_once</span> <span class="nv">$dir</span><span class="o">.</span><span class="s1">'/'</span><span class="o">.</span><span class="nv">$layout</span><span class="o">.</span><span class="nv">$ext</span><span class="p">;</span>
+  <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"&lt;h1 class='text-red'&gt;Layout tidak tersedia&lt;/h1&gt;"</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="k">function</span> <span class="nf">connect</span><span class="p">(){</span>
+  <span class="nv">$server</span> <span class="o">=</span> <span class="nx">DB_HOST</span><span class="p">;</span>
+  <span class="nv">$user</span> <span class="o">=</span> <span class="nx">DB_USER</span><span class="p">;</span>
+  <span class="nv">$pass</span> <span class="o">=</span> <span class="nx">DB_PASS</span><span class="p">;</span>
+  <span class="nv">$db</span> <span class="o">=</span> <span class="nx">DB_NAME</span><span class="p">;</span>
+
+  <span class="k">try</span><span class="p">{</span>
+    <span class="nv">$conn</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PDO</span><span class="p">(</span><span class="s2">"mysql:host=</span><span class="nv">$server</span><span class="s2">;dbname=</span><span class="nv">$db</span><span class="s2">"</span><span class="p">,</span> <span class="nv">$user</span><span class="p">,</span> <span class="nv">$pass</span><span class="p">);</span>
+    <span class="nv">$conn</span><span class="o">-&gt;</span><span class="na">setAttribute</span><span class="p">(</span><span class="nx">PDO</span><span class="o">::</span><span class="na">ATTR_ERRMODE</span><span class="p">,</span> <span class="nx">PDO</span><span class="o">::</span><span class="na">ERRMODE_EXCEPTION</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nv">$conn</span><span class="p">;</span>
+    <span class="c1">//echo "Connect Successfully";</span>
+  <span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="nx">PDOException</span> <span class="nv">$e</span><span class="p">){</span>
+    <span class="k">echo</span> <span class="s2">"Conection Failed : "</span><span class="o">.</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">function</span> <span class="nf">framework</span><span class="p">(</span><span class="nv">$query</span><span class="p">){</span>
+<span class="nv">$dbh</span> <span class="o">=</span> <span class="nx">connect</span><span class="p">();</span>
+<span class="nv">$result</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="na">prepare</span><span class="p">(</span><span class="nv">$query</span><span class="p">);</span>
+<span class="nv">$result</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
+
+<span class="nv">$rows</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="k">while</span><span class="p">(</span><span class="nv">$row</span> <span class="o">=</span> <span class="nv">$result</span><span class="o">-&gt;</span><span class="na">fetch</span><span class="p">(</span><span class="nx">PDO</span><span class="o">::</span><span class="na">FETCH_OBJ</span><span class="p">))</span><span class="o">:</span>
+  <span class="nv">$rows</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$row</span><span class="p">;</span>
+<span class="k">endwhile</span><span class="p">;</span>
+
+<span class="k">return</span> <span class="nv">$rows</span><span class="p">;</span>
+
+<span class="p">}</span>
+
+
+<span class="k">function</span> <span class="nf">polling</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span><span class="nv">$table</span><span class="p">){</span>
+<span class="nv">$framework</span> <span class="o">=</span> <span class="nv">$data</span><span class="p">[</span><span class="s1">'framework'</span><span class="p">];</span>
+<span class="c1">// echo $framework; die;</span>
+<span class="nv">$conn</span> <span class="o">=</span> <span class="nx">connect</span><span class="p">();</span>
+<span class="nv">$conn</span><span class="o">-&gt;</span><span class="na">setAttribute</span><span class="p">(</span><span class="nx">PDO</span><span class="o">::</span><span class="na">ATTR_ERRMODE</span><span class="p">,</span> <span class="nx">PDO</span><span class="o">::</span><span class="na">ERRMODE_EXCEPTION</span><span class="p">);</span>
+<span class="nv">$sql</span> <span class="o">=</span> <span class="s2">"UPDATE `</span><span class="nv">$table</span><span class="s2">` SET value=value+1 WHERE `id` = </span><span class="nv">$framework</span><span class="s2">"</span><span class="p">;</span>
+<span class="nv">$stmt</span> <span class="o">=</span> <span class="nv">$conn</span><span class="o">-&gt;</span><span class="na">prepare</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
+
+<span class="nv">$stmt</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
+
+<span class="k">return</span> <span class="nv">$stmt</span><span class="o">-&gt;</span><span class="na">rowCount</span><span class="p">();</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+<p><strong><em>Copy code dibawah simpan ke file dengan nama <code class="language-plaintext highlighter-rouge">index.php</code></em></strong></p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span> <span class="k">require_once</span> <span class="s1">'functions.php'</span><span class="p">;</span> <span class="nv">$dir</span> <span class="o">=</span> <span class="s1">'contents'</span><span class="p">;</span><span class="cp">?&gt;</span>
+
+  <span class="cp">&lt;!DOCTYPE html&gt;</span>
+  <span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+      <span class="c">&lt;!--Import Google Icon Font--&gt;</span>
+      <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"https://fonts.googleapis.com/icon?family=Material+Icons"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span><span class="nt">&gt;</span>
+      <span class="c">&lt;!--Import materialize.css--&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"assets/style.css"</span><span class="nt">&gt;</span>
+
+      <span class="c">&lt;!--Let browser know website is optimized for mobile--&gt;</span>
+      <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0"</span><span class="nt">/&gt;</span>
+      
+      <span class="nt">&lt;title&gt;</span>Polling css Framework<span class="nt">&lt;/title&gt;</span>
+
+    <span class="nt">&lt;/head&gt;</span>
+
+  <span class="nt">&lt;body&gt;</span>
+
+    <span class="cp">&lt;?php</span> <span class="nx">html</span><span class="p">(</span><span class="nv">$dir</span><span class="p">,</span> <span class="s1">'header'</span><span class="p">,</span> <span class="s1">'.php'</span><span class="p">,</span> <span class="s1">'Polling Framework css'</span><span class="p">);</span> <span class="cp">?&gt;</span>
+
+    <span class="cp">&lt;?php</span> <span class="nx">html</span><span class="p">(</span><span class="nv">$dir</span><span class="p">,</span> <span class="s1">'polling'</span><span class="p">,</span> <span class="s1">'.php'</span><span class="p">,</span> <span class="s1">'Polling Framework css'</span><span class="p">);</span><span class="cp">?&gt;</span>
+
+  
+      <span class="c">&lt;!--Import jQuery before materialize.js--&gt;</span>
+      <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"https://code.jquery.com/jquery-3.2.1.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span> 
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"assets/MyJs.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+  <span class="nt">&lt;/html&gt;</span>
+
+</code></pre></div></div>
+
+<h3 id="buat-direktori-contents">Buat direktori contents</h3>
+<p>direktori content ini akan menyimpan tampilan utama programm kita.<br />
+<strong><em>buat file baru di direktori contents</em></strong></p>
+
+<p>buat file dengan <code class="language-plaintext highlighter-rouge">polling.php</code>  kemudian copy code dibawah ini :</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"divider"</span><span class="nt">&gt;&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"divider"</span><span class="nt">&gt;&lt;/div&gt;</span>
+  <span class="cp">&lt;?php</span> <span class="nv">$id</span><span class="o">=</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'p'</span><span class="p">];</span> <span class="cp">?&gt;</span>
+    <span class="cp">&lt;?php</span> <span class="k">if</span><span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'p'</span><span class="p">]))</span><span class="o">:</span> <span class="k">if</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'p'</span><span class="p">]</span> <span class="o">===</span> <span class="nv">$id</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
+      <span class="cp">&lt;?php</span> <span class="nv">$framework</span> <span class="o">=</span> <span class="nx">framework</span><span class="p">(</span><span class="s2">"SELECT * FROM `polling` WHERE `id` = </span><span class="nv">$id</span><span class="s2">"</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span> <span class="cp">?&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-panel green accent-2 red-text"</span><span class="nt">&gt;</span>
+              Terimakasih anda sudah memberikan polling untuk framework <span class="nt">&lt;b&gt;&lt;font</span> <span class="na">color=</span><span class="s">"blue"</span><span class="nt">&gt;</span><span class="cp">&lt;?=</span><span class="nv">$framework</span><span class="o">-&gt;</span><span class="na">framework</span><span class="cp">?&gt;</span><span class="nt">&lt;/font&gt;&lt;/b&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+          <span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="k">endif</span><span class="p">;</span><span class="cp">?&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col s6"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;h4&gt;</span>Framework favorit anda<span class="nt">&lt;/h4&gt;</span>
+    <span class="cp">&lt;?php</span> <span class="nv">$data</span> <span class="o">=</span> <span class="nx">framework</span><span class="p">(</span><span class="s2">"SELECT * FROM polling"</span><span class="p">);</span>  <span class="cp">?&gt;</span>
+          <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">""</span> <span class="na">method=</span><span class="s">"post"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;ul&gt;</span>
+              <span class="cp">&lt;?php</span> <span class="k">foreach</span><span class="p">(</span><span class="nv">$data</span> <span class="k">as</span> <span class="nv">$d</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
+              <span class="nt">&lt;li&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"with-gap"</span> <span class="na">name=</span><span class="s">"framework"</span> <span class="na">value=</span><span class="s">"</span><span class="cp">&lt;?=</span><span class="nv">$d</span><span class="o">-&gt;</span><span class="na">id</span><span class="cp">?&gt;</span><span class="s">"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">id=</span><span class="s">"</span><span class="cp">&lt;?=</span><span class="nv">$d</span><span class="o">-&gt;</span><span class="na">framework</span><span class="cp">?&gt;</span><span class="s">"</span><span class="nt">/&gt;</span>
+              <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"</span><span class="cp">&lt;?=</span><span class="nv">$d</span><span class="o">-&gt;</span><span class="na">framework</span><span class="cp">?&gt;</span><span class="s">"</span><span class="nt">&gt;</span><span class="cp">&lt;?=</span><span class="nv">$d</span><span class="o">-&gt;</span><span class="na">framework</span><span class="cp">?&gt;</span><span class="nt">&lt;/label&gt;</span>
+              <span class="nt">&lt;/li&gt;</span>
+              <span class="cp">&lt;?php</span> <span class="k">endforeach</span><span class="p">;</span><span class="cp">?&gt;</span>
+              <span class="nt">&lt;li&gt;</span>
+                  <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn waves-effect waves-light"</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">name=</span><span class="s">"polling"</span><span class="nt">&gt;</span>Polling
+                <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"material-icons right"</span><span class="nt">&gt;</span>send<span class="nt">&lt;/i&gt;</span>
+              <span class="nt">&lt;/button&gt;</span>
+              <span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;/ul&gt;</span>
+          <span class="nt">&lt;/form&gt;</span>
+           
+        <span class="nt">&lt;/div&gt;</span>
+<span class="cp">&lt;?php</span> 
+<span class="k">if</span><span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s1">'polling'</span><span class="p">])){</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">polling</span><span class="p">(</span><span class="nv">$_REQUEST</span><span class="p">,</span> <span class="s1">'polling'</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+    <span class="nb">header</span><span class="p">(</span><span class="s1">'Location: index.php?p='</span><span class="o">.</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s1">'framework'</span><span class="p">]);</span>
+  <span class="p">}</span>
+  <span class="nv">$error</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>        
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col s6"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;h4&gt;</span>Framework Polling<span class="nt">&lt;/h4&gt;</span>
+        <span class="cp">&lt;?php</span> <span class="k">foreach</span><span class="p">(</span><span class="nv">$data</span> <span class="k">as</span> <span class="nv">$p</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"progress blue lighten-4 tooltipped"</span> <span class="na">data-position=</span><span class="s">"top"</span> <span class="na">data-tooltip=</span><span class="s">"Progress bar was at </span><span class="cp">&lt;?=</span><span class="nv">$p</span><span class="o">-&gt;</span><span class="na">value</span><span class="cp">?&gt;</span><span class="s"> % when tested"</span><span class="nt">&gt;&lt;/div&gt;&lt;span&gt;</span><span class="cp">&lt;?=</span><span class="nb">ucwords</span><span class="p">(</span><span class="nv">$p</span><span class="o">-&gt;</span><span class="na">framework</span><span class="p">)</span><span class="cp">?&gt;</span><span class="nt">&lt;/span&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"determinate blue"</span> <span class="na">style=</span><span class="s">"width:</span><span class="cp">&lt;?=</span><span class="nv">$p</span><span class="o">-&gt;</span><span class="na">value</span><span class="cp">?&gt;</span><span class="s">%;"</span><span class="nt">&gt;</span><span class="cp">&lt;?=</span><span class="nv">$p</span><span class="o">-&gt;</span><span class="na">value</span><span class="cp">?&gt;</span>%<span class="nt">&lt;/div&gt;</span>
+        <span class="cp">&lt;?php</span> <span class="k">endforeach</span><span class="cp">?&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+
+
+</code></pre></div></div>
+
+<p>untuk file assets dan file lengkap lainnya bisa clone langsung atau download ke repository dibawah ini :<br />
+<a href="https://github.com/codesyariah122/system_polling.git">System Polling </a></p>
+
+<p>ok di setiap file di atas sudah saya beri sedikit penjelasan, mudah-mudahan bisa di mengerti yaa. mudah ko prinsip kerjanya sangat sederhana.</p>
+
+<p>ok selamat mencoba.</p>
+
+:ET

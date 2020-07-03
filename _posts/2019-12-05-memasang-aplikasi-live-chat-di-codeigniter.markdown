@@ -21,7 +21,7 @@ pakai framework lain, atau dengan cara native pun bisa, hanya mungkin sedikit be
 pertama kita siapkan dulu file baru di direktori controllers, untuk itu pastikan kalian sudah memahami framework codeigniter atau object oriented dari PHP. 
 ok langsung saja create new file di direktori controllers save dengan nama ```Chat.php```  
 
-{% highlight php %}
+```php
 <?php
 class EmailService extends CI_Controller {	
 	
@@ -34,7 +34,7 @@ class EmailService extends CI_Controller {
   
   }
   ?>
-{% endhighlight %}  
+```  
 
 kemudian buat lagi sebuah file baru untuk templating nya, atau view nya create new file di direktori views beri nama ```chat.php```  
 kali ini saya menggunakan layanan chat aplikasi dari tawkto, pastikan kalian mempunyai akun di tawkto jika belum daftar silahkan lakukan pendaftaran terlebih dahulu di website resminya tawkto di sini:  
@@ -45,7 +45,7 @@ kemudian copy script yang ada di samping layar, silahkan di copy.
 
 kemudian kita buka file view yang tadi kita buat di direktori views, yaitu file ```chat.php```, kemudian tempelkan script dari tawkto tadi ke file chat.php  
 
-{%highlight php%}
+```javascript
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -59,7 +59,7 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
-{%endhighlight%}  
+```  
 
 ok selesai sudah, sekarang fitur live chat sudah terpasang di website kalian, silahkan di organisasi untuk service customer anda di live chat.
 sekian dan terima kasih.  

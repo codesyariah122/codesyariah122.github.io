@@ -21,7 +21,7 @@ nah di field ini lah saya akan menghubungkan kedua table yang di relasi tersebut
 dari table diatas saya membutuhkan data dari kedua table diatas. table1 saya asumsikan sebagai table user dan table2 saya asumsikan sebagai table profile. keduanya saling terhubung melalui foreign key di  field id_profile table user. dan di relasikan di table profile.  
 maka dari itu saya harus melakukan query dengan key ```INNER JOIN``` , maka script yang saya gunakan menjadi sepert ini :  
 
-```
+```php
 <?php
 function tampilUser($query){
 	$result = mysqli_query($conn, $query);

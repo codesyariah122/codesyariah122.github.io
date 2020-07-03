@@ -1,0 +1,55 @@
+I"¬<p>Akhir-akhir ini perkembangan website sudah sangat berkembang pesat, banyak fitur yang bisa memudahkan kita untuk mendapatkan sebuah informasi digital yang akurat.<br />
+salah satu layanan aplikasi yang ingin saya bahas kali ini adalah live chat, live chat biasa digunakan untuk layanan live support untuk melayani langsung customer atau client<br />
+dari sebuah website. live chat ini sangat bermanfaat untuk digunakan bagi kalian yang mempunyai website eccomerce, marketing digital atau bisnis digital lainnya, untuk melayani<br />
+customer atau calon customer yang mengunjungi website atau toko online kita.</p>
+
+<p>kali ini saya akan mempraktekan pemasangan aplikasi chat dari tawk.to yang akan saya pasang di website yang menggunakan framework codeigniter, ini saya terapkan di salah satu website client saya,<br />
+yaitu sebuah perusahaan yang bergerak di bidang distribusi kosmetik dan nutrisi, yang cukup terkenal di seputaran jawa timur dan akan merambah dunia bisnis nasional. yaitu <a href="https://ourcitrus.id">OURCITRUS | PT.Gemilang Citrus Berjaya</a>.</p>
+
+<p>ok cukup sekian pembukaan nya langsung saja kita praktekan sekarang. pertama tama disini saya menggunakan framework codeigniter untuk kerangka kerja website saya,<br />
+pakai framework lain, atau dengan cara native pun bisa, hanya mungkin sedikit berbeda di routing dan layouting nya.<br />
+pertama kita siapkan dulu file baru di direktori controllers, untuk itu pastikan kalian sudah memahami framework codeigniter atau object oriented dari PHP. 
+ok langsung saja create new file di direktori controllers save dengan nama <code class="language-plaintext highlighter-rouge">Chat.php</code></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="kd">class</span> <span class="nc">EmailService</span> <span class="k">extends</span> <span class="nx">CI_Controller</span> <span class="p">{</span>	
+	
+	  <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
+	  <span class="p">{</span>
+		  <span class="nv">$data</span><span class="p">[</span><span class="s1">'title'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"live chat di codeigniter"</span><span class="p">;</span>
+		  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">'layout_kamu.php'</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+		  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">'chat.php'</span><span class="p">);</span>
+	  <span class="p">}</span>
+  
+  <span class="p">}</span>
+  <span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>kemudian buat lagi sebuah file baru untuk templating nya, atau view nya create new file di direktori views beri nama <code class="language-plaintext highlighter-rouge">chat.php</code><br />
+kali ini saya menggunakan layanan chat aplikasi dari tawkto, pastikan kalian mempunyai akun di tawkto jika belum daftar silahkan lakukan pendaftaran terlebih dahulu di website resminya tawkto di sini:<br />
+<a href="https://dashboard.tawk.to/login">tawk.to</a> jika belum daftar silahkan klik link create free account dibawah tombol login, jika sudah login kalian masuk ke bagian admin<br />
+<img src="http://localhost:4000/assets/images/post/chat/ss1.jpg" alt="untitled8" /><br />
+kemudian copy script yang ada di samping layar, silahkan di copy.
+<img src="http://localhost:4000/assets/images/post/chat/ss2.jpg" alt="untitled6" /></p>
+
+<p>kemudian kita buka file view yang tadi kita buat di direktori views, yaitu file <code class="language-plaintext highlighter-rouge">chat.php</code>, kemudian tempelkan script dari tawkto tadi ke file chat.php</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!--</span><span class="nx">Start</span> <span class="k">of</span> <span class="nx">Tawk</span><span class="p">.</span><span class="nx">to</span> <span class="nx">Script</span><span class="o">--&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text/javascript</span><span class="dl">"</span><span class="o">&gt;</span>
+<span class="kd">var</span> <span class="nx">Tawk_API</span><span class="o">=</span><span class="nx">Tawk_API</span><span class="o">||</span><span class="p">{},</span> <span class="nx">Tawk_LoadStart</span><span class="o">=</span><span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+<span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+<span class="kd">var</span> <span class="nx">s1</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">script</span><span class="dl">"</span><span class="p">),</span><span class="nx">s0</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="dl">"</span><span class="s2">script</span><span class="dl">"</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+<span class="nx">s1</span><span class="p">.</span><span class="k">async</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span>
+<span class="nx">s1</span><span class="p">.</span><span class="nx">src</span><span class="o">=</span><span class="dl">'</span><span class="s1">https://embed.tawk.to/5d96b76c6c1dde20ed04eedb/default</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">s1</span><span class="p">.</span><span class="nx">charset</span><span class="o">=</span><span class="dl">'</span><span class="s1">UTF-8</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">s1</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="dl">'</span><span class="s1">crossorigin</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">*</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">s0</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">s1</span><span class="p">,</span><span class="nx">s0</span><span class="p">);</span>
+<span class="p">})();</span>
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span><span class="c">&lt;!--</span><span class="nx">End</span> <span class="k">of</span> <span class="nx">Tawk</span><span class="p">.</span><span class="nx">to</span> <span class="nx">Script</span><span class="o">--&gt;</span>
+</code></pre></div></div>
+
+<p>ok selesai sudah, sekarang fitur live chat sudah terpasang di website kalian, silahkan di organisasi untuk service customer anda di live chat.
+sekian dan terima kasih.</p>
+
+:ET
