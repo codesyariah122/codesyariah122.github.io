@@ -3,11 +3,14 @@ layout: post
 title:  "membuat system polling dengan metode request ajax jquery PHP PDO"
 author: puji
 categories: [ php, mysql ]
-image: assets/images/post/system_polling.png
+image: assets/images/post/system_polling1.png
 tags: [webdeveloper]
 opening: بسم الله الرحمن الرحيم
 ---  
-![system_polling_php]({{site.url}}/assets/images/post/system_polling.png)  
+![system_polling_php]({{site.url}}/assets/images/post/system_polling2.png)  
+![system_polling_php]({{site.url}}/assets/images/post/system_polling3.png) 
+![system_polling_php]({{site.url}}/assets/images/post/system_polling4.png) 
+![system_polling_php]({{site.url}}/assets/images/post/system_polling5.png) 
 
 # hai coders!...  
 bagaimana keadaanya semua, ditengah **pandemi** yang sedang melanda ini,  
@@ -119,6 +122,18 @@ function polling($data, $table){
   $stmt->execute();
   return $stmt->rowCount();
 }
+
+function resetPolling($data){
+  $framework = @$data['framework'];
+
+  $dbh = connect();
+  $sql = "UPDATE `framework` SET value = 0/value, win = win+1 WHERE `framework` = '$framework'";
+  $stmt = $dbh->prepare($sql);
+  $stmt->bindParam(':value', $framework);
+  $stmt->bindParam(':total', $framework);
+  $stmt->execute();
+  return $stmt->rowCount();
+}
 ```  
 ***Copy code dibawah simpan ke file dengan nama ```index.php```***  
 ```php
@@ -131,6 +146,8 @@ function polling($data, $table){
       <!--Import materialize.css-->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
       <link rel="stylesheet" type="text/css" href="assets/style.css">
+      <link rel="stylesheet" type="text/css" href="assets/package/dist/sweetalert2.min.css">
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -144,8 +161,11 @@ function polling($data, $table){
 
     <body>
       <!--Import jQuery before materialize.js-->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+      <!-- sweet alert 2 -->
+      <script src="assets/package/dist/sweetalert2.min.js"></script>
 
       <script type="text/javascript" src="assets/MyJs.js"></script>
 
@@ -162,36 +182,27 @@ buat file dengan ```polling.php```  kemudian copy code dibawah ini :
 ```php
 <?php 
 $framework = json_decode(framework("SELECT * FROM `framework`"));
+// var_dump($framework); 
+// echo $framework[0]->value."<br/><br/>";
+// die;
 ?>
 
 <div class="row">
-<?php 
-if(isset($_GET['p'])):
-  $data=$_GET['p']; 
-  if($_GET['p'] === $data):
-    $frameworkdata = framework("SELECT * FROM `framework` WHERE `framework` = '$data'");
-    $frameworkdata = json_decode($frameworkdata, true);
-    // var_dump($frameworkdata); die;
-?>
-
-<div class="card-panel teal lighten-2">Anda baru saja memberikan polling untuk framework <b><font color="blue">
-  <?=$frameworkdata[0]['framework']?></font></b>
-</div>
-<?php endif;endif;?>
   <div class="col s6">
     <h4>Framework List : </h4>
       <ul>
       <?php foreach($framework as $f): ?>
+
         <li>
           <input class="polling-input with-gap" name="framework" value="<?=$f->framework?>" type="radio" id="<?=$f->framework?>">
           <label for="<?=$f->framework?>"><?=$f->framework?></label>
         </li>
       <?php endforeach; ?>
-        <li>
+<!--        <li>
           <button class="polling-btn btn waves-effect waves-light" id="polling-btn">Polling
               <i class="material-icons right">send</i>
           </button>
-        </li>
+        </li> -->
       </ul>
   </div>
 
@@ -204,59 +215,134 @@ if(isset($_GET['p'])):
 dalam update artikel kali ini penulis menambahkan fungsi ajax sebagai metode request untuk meload data dari clientside tanpa mereload halaman secara keseluruhan : 
 ```javascript
 $(document).ready(function(){
+
   $('#view-data').hide().load('contents/view_data.php').fadeIn(1000);
 
-  $('#polling-btn').on("click", function(e){
-    const frameworkValue = $('input[type=radio][name=framework]:checked').val();
+  $('input[type=radio]').on("click", function(e){
+    const framework = $('input[name=framework]:checked').val();
 
-    if(!frameworkValue){
-      alert("Nothing framework selected");
-      e.preventDefault();
-    }else{
+    // alert(framework);
 
+    switch(framework){
+      case "Bootstrap":
+      icon = 'bootstrap.png';
+      break;
+      case "Materialize":
+      icon = 'materialize.png'
+      break;
+      case "Foundation":
+      icon = 'foundation.png';
+      break;
+      case "Bulma":
+      icon = 'bulma.png';
+      break;
+    }
+
+    const value = $('#progress').attr('aria-valuenow');
+
+
+    if(framework){
       $.ajax({
         url: 'contents/view_data.php?p=polling',
         type: 'post',
-        data: 'framework='+frameworkValue,
+        data: 'framework='+framework,
         success: function(response){
-          if(response == 'success'){
-            $('#view-data').load('contents/view_data.php');
-            //reset input radio button
-            $('input[type=radio][name=framework]').prop('checked', false);
+          if(response){
+            $('#view-data').load('contents/view_data.php').fadeIn(1000);
+
+            $('input[type=radio]').prop("checked", false);
+            swal.fire({
+              title: framework,
+              text: 'Your framework choice : '+framework,
+              imageUrl: location.href+'/assets/images/'+icon,
+              imageWidth: 150,
+              imageHeight: 130,
+              imageAlt: framework,
+              timer: 2000
+            });
           }else{
-            alert("You not selected framework polling");
+            swal.fire("Nothing framework selected");
             e.preventDefault();
           }
+          
         }
-      }) 
-
+      })
     }
 
+    if(value >= 99){
+    $('#view-data').hide().load('contents/view_data.php').fadeIn(1000);
+      $.ajax({
+        url: 'contents/view_data.php?p=reset',
+        type: 'post',
+        data: 'framework='+framework,
+        success: function(response){
+          if(response){
+              Swal.fire({
+                title: framework+' is Winner <i class="fas fa-medal"></i>',
+                text: framework+" has 100%",
+                imageUrl: location.href+'/assets/images/'+icon,
+                imageWidth: 150,
+                imageHeight: 130,
+                imageAlt: framework,  
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yeahh, next polling again!'
+              }).then((result) => {
+                if (result.value) {
+                  Swal.fire(
+                    'Ok !',
+                    'See you next Polling',
+                    location.href+'/assets/images/'+icon,
+                  '150',
+                  '130',
+                  framework,
+                  );
+                  setTimeout(function(){
+                    $('#view-data').load('contents/view_data.php').fadeIn(1000);
+                  }, 1500);
+                }
+              })
+            }
+          }
+      });
+    }
 
-  })
-
+  });
 });
+
+
 ```  
 save code diatas dengan nama MyJs.js di direktori assets, secara keseluruhan code diatas akan meload halaman view yang telah direquest oleh clientside dan menampilkan keseluruhan data terupdate setelah query data selesai dilakukan oleh serverside : 
 ```php
 <?php 
 require_once '../functions.php';
-
+$medal = '<i class="fas fa-fw fa-lg fa-medal blue-text"></i>';
 if(@$_GET['p'] == 'polling'):
   if(polling($_POST, 'framework') > 0):
-    echo "success";
+    echo @$_POST['framework'];
   endif;
+elseif(@$_GET['p'] == 'reset'):
+  resetPolling(@$_POST);
+  echo @$_POST['framework'];
 else:
 $framework = framework("SELECT * FROM `framework`");
 $framework = json_decode($framework, true); 
-// var_dump($framework); die;
+//var_dump($framework); die;
 ?>
 
   <div class="col s6">
     <h4>Framework Polling</h4>
-  <?php for($i=0; $i <= count($framework[0]); $i++): ?>
-    <div class="tootltipped progress blue lighten-4" data-position="left" data-tooltip="I am a tooltip"></div><span><?=$framework[$i]['framework']?></span>
-    <div id="progress" class="determinate blue"  aria-valuenow="<?=$framework[$i]['value']?>" aria-valuemin="0" aria-valuemax="100" style="width: <?=$framework[$i]['value']?>%"><?=$framework[$i]['value']?>%
+  <?php for($i=0; $i <= count($framework[0])-1; $i++): ?>
+  <div class="col s5">
+    <p class="orange-text">Win : <?php for($j=1; $j <= $framework[$i]['win']; $j++): echo $medal; endfor;?> </p>
+
+  </div>
+    <div class="tootltipped progress blue lighten-4" data-position="left" data-tooltip="I am a tooltip"></div>
+    <span id="framework" data-name="<?=$framework[$i]['framework']?>">
+      <?=$framework[$i]['framework']?>  
+    </span>
+    <div id="progress" class="determinate blue"  aria-valuenow="<?=$framework[$i]['value']?>" aria-valuemin="0" aria-valuemax="100" value="<?=$framework[$i]['value']?>" style="width: <?=$framework[$i]['value']?>%"><?=$framework[$i]['value']?>%
     </div>
   <?php endfor;?>
   </div>
