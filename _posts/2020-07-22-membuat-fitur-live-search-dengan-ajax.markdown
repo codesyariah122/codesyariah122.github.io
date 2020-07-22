@@ -156,7 +156,7 @@ dari file tersebutlah inputan dari keyword akan dikelola dan dikirim keserver da
 2. ```@$_POST``` -> untuk mengirim data yang berasal dari input keyword.  
 
 keseluruhan struktur direktori dan source code bisa disimak dan diteliti lebih lanjut pada link berikut :  
-Crud data ajax jquery](https://github.com/codesyariah122/crud-data-with-php-PDO-Jquery-ajax/tree/master/assets "Crud data sederhana dengan ajax jquery") 
+[Crud data ajax jquery](https://github.com/codesyariah122/crud-data-with-php-PDO-Jquery-ajax/tree/master/assets "Crud data sederhana dengan ajax jquery") 
 
 ***akhir kata ...*** 
 semoga bisa bermanfaat, sampai bertemu diartikel selanjutnya dan selanjutnya...
