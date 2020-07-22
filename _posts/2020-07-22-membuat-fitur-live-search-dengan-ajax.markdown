@@ -16,7 +16,7 @@ halo coders semuanya ....
 ini masih melanjutkan edisi crud data dengan ajax jquery dengan menggunakan metode php pdo ekstension sebagai sql universal interfacenya.  dalam artikel kali ini gout mau menambahkan fitur live search ala-ala google atau live search lain dimedia atau aplikasi berbasis web maupun mobile lainnya, masih dengan php disisi beckend nya. apa daya cuma itu yang baru gout bisa.  
 ok tan[p]a berlama lama kita langsung ajah ke codingan nya :  
 
-*** menyambung dari artikel crud data ajax jquery, di artikel sebelumnya ***  
+***menyambung dari artikel crud data ajax jquery, di artikel sebelumnya***  
 
 [Crud data ajax jquery](https://github.com/codesyariah122/crud-data-with-php-PDO-Jquery-ajax/tree/master/assets "Crud data sederhana dengan ajax jquery")  
 
@@ -36,7 +36,7 @@ function searchData($keyword){
 ```  
 dari fungsi diatas terdapat baris code berikut :  ```return view()``` code ini adalah fungsi callback dalam modularisasi program, yakni memanggil fungsi sebelumnya yang sudah dibuat, karena di code sebelumnya di dalam file ```functions.php``` tersebut terdapat fungsi ```view``` yakni sebuah fungsi untuk melakukan query data dari database untuk disajikan ke view frontend.  
 
-***selanjutnya ... ***  
+***selanjutnya ...***  
 
 berikutnya kita buka file ```view.php``` di direktori ```contents/``` : kemudian ubah semua baris code tersebut menjadi seperti ini :  
 
@@ -88,7 +88,7 @@ berikutnya kita buka file ```view.php``` di direktori ```contents/``` : kemudian
 ```  
 dari code diatas saya ubah semua struktur content viewnya, untuk memodularisasikan data request dari frontend ke database server. dalam file ```view.php``` tersebut seluruh data di table data dibagian ```<tbody></tbody>``` saya pindahkan ke file lain 'masih di direktori yang sama direktori contents/' yaitu file ```product_data.php``` kemudian ```<tbody>``` nya saya jadikan selector untuk jquery sebagai reverse data dari file ```product_data.php``` dibagian akhir file ```view.php``` terdapat tag ```<script>``` baru, script tersebut fungsinya untuk meload data difile ```product_data.php``` dengan kata lain ini menggantikan fungsi require ataupun include, supaya codingan kita tertata lebih rapi dan mudah untuk di maintenance di lain waktu. fungsi file view ini hanya sebagai reverse dari file product_data.php. di file view.php ini kita tambahkan sebuah inputan baru untuk mengirim input dari keyword yang di ketikan oleh client disisi frontend.
 
-***kemudian ... ***  
+***kemudian ...***  
 
 difile lainya yakni file ```product_data.php``` jika belum ada buat file baru di direktori yang sama dengan file view.php yaitu direktori contents/, buat file baru dengan nama ```product_data.php``` kemudian copy code berikut :  
 
