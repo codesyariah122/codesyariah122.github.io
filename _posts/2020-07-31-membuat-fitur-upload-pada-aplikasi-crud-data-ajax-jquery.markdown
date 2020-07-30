@@ -32,6 +32,7 @@ terlihat ada 2 item baru yaitu column dengan nama
 * ```product_description```  
 kedua item baru ini akan ditambahkan juga di file ```add.php``` dan file ```edit.php``` , untuk item ```product_image``` akan kita gunakan ```<input type="file">``` sedangkan untuk item ```product_description``` akan kita gunakan element input ```<textarea></textarea>```. sehingga keseluruhan codenya gout rubah menjadi seperti berikut : 
 ***file ```contents/add.php```***  
+
 ```php
 <?php 
 require_once '../functions.php';
@@ -107,6 +108,7 @@ else:
 untuk fungsi insert data nya masih menggunakan fungsi ```addAjax()``` dari file ```functions.php``` namun gout menambahkan  satu parameter baru yaitu super global variable ```$_FILES``` untuk menampung nilai input dari file input di element form html. terdapat 2 item baru ditambahkan di element form add ini yaitu ```<input type="file">``` dan ```<textarea></textarea>``` . sedangkan untuk file ```edit.php``` tidak jauh berbeda isinya gout menambahkan 2 item baru tersebut di element form edit, sehingga menjadi seperti dibawah ini : 
 
 ***file ```contents/edit.php```***  
+
 ```php
 <?php  
 require_once '../functions.php';
@@ -361,6 +363,7 @@ function upload($file, $dir){
 
 }
 ```  
+
 nah terlihat bukan perbedaannya dari file ```functions.php``` dari artikel sebelumnya, struktur alur data pada fungsi ```addAjax(){}``` dan ```editAjax(){}``` ada sedikit penambahan. dan pada baris paling bawah ditambahkan juga fungsi yang paling krusialnya yaitu fungsi ```upload(){}``` yang bertindak sebagai root program di artikel gout kali ini.  
 
 *untuk keseluruhan* source code dan kelengkapan data yang lebih detail agan-agan dan coders semua bisa meluncur ke repositori crudajax di link dibawah ini : 
