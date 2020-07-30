@@ -13,14 +13,14 @@ opening: بسم الله الرحمن الرحيم
 ![live_search_ajax]({{site.url}}/assets/images/post/crud_ajax_live_search.gif)  
 
 halo coders semuanya ....  
-ini masih melanjutkan edisi crud data dengan ajax jquery dengan menggunakan metode php pdo ekstension sebagai sql universal interfacenya.  dalam artikel kali ini gout mau menambahkan fitur live search ala-ala google atau live search lain dimedia atau aplikasi berbasis web maupun mobile lainnya, masih dengan php disisi beckend nya. apa daya cuma itu yang baru gout bisa.  
+ini masih melanjutkan edisi crud data dengan ajax jquery dengan menggunakan metode php pdo ekstension sebagai sql universal interfacenya.  dalam artikel kali ini gout mau menerapkan sebuah fitur live search ala-ala google atau live search lain dimedia atau aplikasi berbasis web maupun mobile lainnya, masih dengan php disisi beckend nya. apa daya cuma itu yang baru gout bisa.  
 ok tan[p]a berlama lama kita langsung ajah ke codingan nya :  
 
 ***menyambung dari artikel crud data ajax jquery, di artikel sebelumnya***  
 
 [Crud data ajax jquery](https://github.com/codesyariah122/crud-data-with-php-PDO-Jquery-ajax/tree/master/assets "Crud data sederhana dengan ajax jquery")  
 
-dari code-code sebelumnya ana hanya menambahkan satu fungsi baru sebagai sebuah metode untuk menjalankan program live search.  
+dari code-code sebelumnya gout hanya menambahkan satu fungsi baru sebagai sebuah metode untuk menjalankan program live search.  
 didalam file function.php, tambahkan fungsi baru di baris paling bawah, kemudian copy code dibawah ini:  
 
 ```php
@@ -34,7 +34,7 @@ function searchData($keyword){
 	return view($query);
 }
 ```  
-dari fungsi diatas terdapat baris code berikut :  ```return view()``` code ini adalah fungsi callback yang reusable program, memanggil fungsi dari fungsi sebelumnya yang sudah dibuat, karena di code sebelumnya di dalam file ```functions.php``` tersebut terdapat fungsi ```view``` yakni sebuah fungsi untuk melakukan query data dari database untuk disajikan ke view frontend.  
+dari fungsi diatas terdapat baris code berikut :  ```return view()``` code ini adalah fungsi callback yang merupakan bagian reusable program dari aplikasi cruddata sederhana ini, atau bahasa manusianya memanggil fungsi dari sebuah fungsi yang sebelumnya sudah dibuat, karena di code sebelumnya di dalam file ```functions.php``` tersebut terdapat fungsi ```view``` yakni sebuah fungsi untuk melakukan query (mengambil data) dari database untuk disajikan ke view frontend.  
 
 ***selanjutnya ...***  
 

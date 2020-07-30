@@ -19,8 +19,12 @@ ini masih melanjutkan edisi crud data dengan ajax jquery dengan menggunakan meto
 
 [Crud data ajax jquery](https://github.com/codesyariah122/crud-data-with-php-PDO-Jquery-ajax/tree/master/assets "Crud data sederhana dengan ajax jquery")  
 
-dari code-code sebelumnya ana hanya menambahkan satu fungsi baru sebagai sebuah metode untuk menjalankan program live search.  
-dalam artikel kali ini gout mau menambahkan fitur untuk upload image atau foto, dimana dalam fitur upload itu kita membutuhkan sebuah element html yaitu ```<form>``` yang berisi attribut ```enctype```, dan enctype ini berisi nilai =```"multipart/form-data"``` nilai ini merupakan keharusan jika kita ingin melakukan pengolahan file dengan serverside php di beckendnya.  
+dalam artikel sebelumnya tentang implementasi sebuah metode untuk live search.  sudah gout bahas beberapa minggu yang lalu. dari fitur live search tersebut sudah gout push juga ke repository gout yaitu di link dibawah ini :  
+[Crud data ajax jquery master](https://github.com/codesyariah122/crud-data-with-php-PDO-Jquery-ajax "Crud data sederhana dengan ajax jquery")  
+
+
+
+Dan kali ini dalam artikel terbaru ini gout mau mengimplementasikan fitur untuk upload image atau foto, dimana dalam fitur upload itu kita dapat menambahkan file yang berekstensi gambar untuk mempercantik tampilan frontend layout crudajax ini, dalam fitur upload tersebut kita membutuhkan sebuah element html yaitu ```<form>``` yang berisi attribut ```enctype```, dimana enctype ini berisi nilai =```"multipart/form-data"``` nilai ini merupakan keharusan jika kita ingin melakukan pengolahan file dengan serverside php di beckendnya.  
 maka untuk itu gout akan merubah struktur source code di bagian file ```contents/add.php``` dan file ```contents/edit.php``` dimana kedua file tersebut kan berisi form input data dari frontend nya.  
 
 oh iya ... dibagian database juga gout harus menambahkan 2 item baru, salah satunya untuk menampung nilai dari input file yang dipilih ketika melakukan process input data, sehingga didapatkan struktur table baru di database crudajax menjadi seperti ini :  
