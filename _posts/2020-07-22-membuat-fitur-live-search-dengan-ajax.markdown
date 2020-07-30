@@ -34,7 +34,7 @@ function searchData($keyword){
 	return view($query);
 }
 ```  
-dari fungsi diatas terdapat baris code berikut :  ```return view()``` code ini adalah fungsi callback dalam modularisasi program, yakni memanggil fungsi sebelumnya yang sudah dibuat, karena di code sebelumnya di dalam file ```functions.php``` tersebut terdapat fungsi ```view``` yakni sebuah fungsi untuk melakukan query data dari database untuk disajikan ke view frontend.  
+dari fungsi diatas terdapat baris code berikut :  ```return view()``` code ini adalah fungsi callback yang reusable program, memanggil fungsi dari fungsi sebelumnya yang sudah dibuat, karena di code sebelumnya di dalam file ```functions.php``` tersebut terdapat fungsi ```view``` yakni sebuah fungsi untuk melakukan query data dari database untuk disajikan ke view frontend.  
 
 ***selanjutnya ...***  
 

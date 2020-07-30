@@ -1,0 +1,152 @@
+I")O<h3 id="fitur-live-search-dengan-ajax-jquery">Fitur live search dengan ajax jquery</h3>
+<p><img src="{{site.url}}/assets/images/post/crud_ajax_live_search.gif" alt="live_search_ajax" /></p>
+
+<p>halo coders semuanya ….<br />
+ini masih melanjutkan edisi crud data dengan ajax jquery dengan menggunakan metode php pdo ekstension sebagai sql universal interfacenya.  dalam artikel kali ini gout mau menambahkan fitur live search ala-ala google atau live search lain dimedia atau aplikasi berbasis web maupun mobile lainnya, masih dengan php disisi beckend nya. apa daya cuma itu yang baru gout bisa.<br />
+ok tan[p]a berlama lama kita langsung ajah ke codingan nya :</p>
+
+<p><strong><em>menyambung dari artikel crud data ajax jquery, di artikel sebelumnya</em></strong></p>
+
+<p><a href="https://github.com/codesyariah122/crud-data-with-php-PDO-Jquery-ajax/tree/master/assets" title="Crud data sederhana dengan ajax jquery">Crud data ajax jquery</a></p>
+
+<p>dari code-code sebelumnya ana hanya menambahkan satu fungsi baru sebagai sebuah metode untuk menjalankan program live search.<br />
+didalam file function.php, tambahkan fungsi baru di baris paling bawah, kemudian copy code dibawah ini:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="nf">searchData</span><span class="p">(</span><span class="nv">$keyword</span><span class="p">){</span>
+	<span class="nv">$query</span> <span class="o">=</span> <span class="s2">"SELECT * FROM `product` WHERE 
+				`product_code` LIKE '%</span><span class="nv">$keyword</span><span class="s2">%' OR
+				`product_name` LIKE '%</span><span class="nv">$keyword</span><span class="s2">%' OR
+				`product_price` LIKE '%</span><span class="nv">$keyword</span><span class="s2">%'
+				ORDER BY `id` DESC
+	"</span><span class="p">;</span>
+	<span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="nv">$query</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>dari fungsi diatas terdapat baris code berikut :  <code class="language-plaintext highlighter-rouge">return view()</code> code ini adalah fungsi callback yang reusable program, memanggil fungsi dari fungsi sebelumnya yang sudah dibuat, karena di code sebelumnya di dalam file <code class="language-plaintext highlighter-rouge">functions.php</code> tersebut terdapat fungsi <code class="language-plaintext highlighter-rouge">view</code> yakni sebuah fungsi untuk melakukan query data dari database untuk disajikan ke view frontend.</p>
+
+<p><strong><em>selanjutnya …</em></strong></p>
+
+<p>berikutnya kita buka file <code class="language-plaintext highlighter-rouge">view.php</code> di direktori <code class="language-plaintext highlighter-rouge">contents/</code> : kemudian ubah semua baris code tersebut menjadi seperti ini :</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="nc">.loader</span><span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span><span class="m">150px</span><span class="p">;</span>
+    <span class="nl">position</span><span class="p">:</span><span class="nb">absolute</span><span class="p">;</span>
+    <span class="nl">top</span><span class="p">:</span><span class="m">-2rem</span><span class="p">;</span>
+    <span class="nl">margin-left</span><span class="p">:</span> <span class="m">-2rem</span><span class="p">;</span>
+    <span class="nl">z-index</span><span class="p">:</span><span class="m">-1</span><span class="p">;</span>
+    <span class="nl">display</span><span class="p">:</span><span class="nb">none</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nt">&lt;/style&gt;</span>
+
+<span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"text-primary text-center mt-4 pt-4"</span><span class="nt">&gt;</span>Product Table<span class="nt">&lt;/h1&gt;</span>
+    
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-12"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"keyword"</span> <span class="na">name=</span><span class="s">"keyword"</span> <span class="na">placeholder=</span><span class="s">"Type keywords to search the product ... "</span> <span class="na">autocomplete=</span><span class="s">"off"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"assets/img/animated.gif"</span> <span class="na">class=</span><span class="s">"loader"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>  
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table table-hover"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;thead&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>#<span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Product Code<span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Product Name<span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Product Price<span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Operation Table<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/thead&gt;</span>
+  <span class="nt">&lt;tbody</span> <span class="na">id=</span><span class="s">"product-data"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+  
+  <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#product-data</span><span class="dl">'</span><span class="p">).</span><span class="nx">load</span><span class="p">(</span><span class="dl">'</span><span class="s1">contents/product_data.php</span><span class="dl">'</span><span class="p">).</span><span class="nx">fadeIn</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+
+<span class="nt">&lt;/script&gt;</span>
+
+</code></pre></div></div>
+<p>dari code diatas saya ubah semua struktur content viewnya, untuk memodularisasikan data request dari frontend ke database server. dalam file <code class="language-plaintext highlighter-rouge">view.php</code> tersebut seluruh data di table data dibagian <code class="language-plaintext highlighter-rouge">&lt;tbody&gt;&lt;/tbody&gt;</code> saya pindahkan ke file lain ‘masih di direktori yang sama direktori contents/’ yaitu file <code class="language-plaintext highlighter-rouge">product_data.php</code> kemudian <code class="language-plaintext highlighter-rouge">&lt;tbody&gt;</code> nya saya jadikan selector untuk jquery sebagai reverse data dari file <code class="language-plaintext highlighter-rouge">product_data.php</code> dibagian akhir file <code class="language-plaintext highlighter-rouge">view.php</code> terdapat tag <code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> baru, script tersebut fungsinya untuk meload data difile <code class="language-plaintext highlighter-rouge">product_data.php</code> dengan kata lain ini menggantikan fungsi require ataupun include, supaya codingan kita tertata lebih rapi dan mudah untuk di maintenance di lain waktu. fungsi file view ini hanya sebagai reverse dari file product_data.php. di file view.php ini kita tambahkan sebuah inputan baru untuk mengirim input dari keyword yang di ketikan oleh client disisi frontend.</p>
+
+<p><strong><em>kemudian …</em></strong></p>
+
+<p>difile lainya yakni file <code class="language-plaintext highlighter-rouge">product_data.php</code> jika belum ada buat file baru di direktori yang sama dengan file view.php yaitu direktori contents/, buat file baru dengan nama <code class="language-plaintext highlighter-rouge">product_data.php</code> kemudian copy code berikut :</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>  
+<span class="k">require_once</span> <span class="s1">'../functions.php'</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span><span class="o">@</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'keyword'</span><span class="p">]</span> <span class="o">==</span> <span class="o">@</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'keyword'</span><span class="p">])</span><span class="o">:</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">searchData</span><span class="p">(</span><span class="o">@</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'keyword'</span><span class="p">]))</span><span class="o">:</span>
+      <span class="nb">usleep</span><span class="p">(</span><span class="mi">700000</span><span class="p">);</span>
+      <span class="nv">$viewData</span> <span class="o">=</span> <span class="nx">searchData</span><span class="p">(</span><span class="o">@</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'keyword'</span><span class="p">]);</span>
+    <span class="k">endif</span><span class="p">;</span>
+<span class="k">endif</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+
+
+<span class="cp">&lt;?php</span> <span class="k">if</span><span class="p">(</span><span class="nb">empty</span><span class="p">(</span><span class="nv">$viewData</span><span class="p">))</span><span class="o">:</span> <span class="cp">?&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td</span> <span class="na">colspan=</span><span class="s">"3"</span><span class="nt">&gt;</span>No data on this table product<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+<span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span>
+
+ <span class="cp">&lt;?php</span> <span class="nv">$no</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="k">foreach</span><span class="p">(</span><span class="nv">$viewData</span> <span class="k">as</span> <span class="nv">$view</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span><span class="cp">&lt;?=</span><span class="nv">$no</span><span class="cp">?&gt;</span><span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;td&gt;</span><span class="cp">&lt;?=</span><span class="nv">$view</span><span class="p">[</span><span class="s1">'product_code'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span><span class="cp">&lt;?=</span><span class="nv">$view</span><span class="p">[</span><span class="s1">'product_name'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span><span class="cp">&lt;?=</span><span class="nv">$view</span><span class="p">[</span><span class="s1">'product_price'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"</span><span class="cp">&lt;?=</span><span class="nv">$view</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="s">"</span> <span class="na">class=</span><span class="s">"edit btn btn-danger btn-sm"</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">'fas fa-edit'</span><span class="nt">&gt;&lt;/i&gt;&lt;/button&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"</span><span class="cp">&lt;?=</span><span class="nv">$view</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="s">"</span> <span class="na">class=</span><span class="s">"del btn btn-info btn-sm"</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">'fas fa-eraser'</span><span class="nt">&gt;&lt;/i&gt;&lt;/button&gt;</span>
+      <span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+<span class="cp">&lt;?php</span> <span class="nv">$no</span><span class="o">++</span><span class="p">;</span> <span class="k">endforeach</span><span class="p">;</span> <span class="cp">?&gt;</span>
+</code></pre></div></div>
+<p>dari file diatas inilah setiap data yang direquest akan ditampung, diambil nilainya yang berupa method <code class="language-plaintext highlighter-rouge">@$_GET</code> dan <code class="language-plaintext highlighter-rouge">@$_POST</code>, setiap data yang direquest di tampung ke dalam sebuah variable global php, dan kemudian bisa disimpan kedalam variabel baru, dan variabel baru ini diberinama <code class="language-plaintext highlighter-rouge">$viewData</code> yakni variabel yang berisi sebuah fungsi yakni fungsi baru yang dibuat di file <code class="language-plaintext highlighter-rouge">functions.php</code> yaitu fungsi <code class="language-plaintext highlighter-rouge">searchData()</code> dan fungsi searchData sendiri memiliki nilai parameter, kemudian nilai parameternya itu kita isi dari sebuah input di file <code class="language-plaintext highlighter-rouge">view.php</code> yaitu dibagian ini :</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"keyword"</span> <span class="na">name=</span><span class="s">"keyword"</span> <span class="na">placeholder=</span><span class="s">"Type keywords to search the product ... "</span> <span class="na">autocomplete=</span><span class="s">"off"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+<p>input tersebut akan mengirim data menggunakan sebuah method dalam program ini yaitu method <code class="language-plaintext highlighter-rouge">post</code> sedangkan method <code class="language-plaintext highlighter-rouge">get</code> digunakan ketika data ditangani oleh ajax dalam parameter fungsi nya. 
+jadi setiap inputan tersebut akan dikelola terlebih dahulu oleh ajax di file javascript, sebelum dikirim ke server di sisi beckend. dan seperti inilah fungsi ajax yang menangani setiap request data dari inputan tersebut :</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#viewdata</span><span class="dl">'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">keyup</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">#keyword</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+	<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">.loader</span><span class="dl">'</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
+	<span class="c1">//variable untuk menampung nilai input dari keyword</span>
+	<span class="kd">const</span> <span class="nx">keyword</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#keyword</span><span class="dl">'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+
+	<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+		<span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">contents/product_data.php?keyword=</span><span class="dl">'</span><span class="o">+</span><span class="nx">keyword</span><span class="p">,</span>
+		<span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">post</span><span class="dl">'</span><span class="p">,</span>
+		<span class="na">data</span><span class="p">:</span> <span class="dl">'</span><span class="s1">keyword=</span><span class="dl">'</span><span class="o">+</span><span class="nx">keyword</span><span class="p">,</span>
+		<span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+			<span class="k">if</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+				<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">.loader</span><span class="dl">'</span><span class="p">).</span><span class="nx">hide</span><span class="p">(</span><span class="dl">'</span><span class="s1">slow</span><span class="dl">'</span><span class="p">).</span><span class="nx">fadeOut</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+				<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#product-data</span><span class="dl">'</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+			<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+				<span class="nx">Swal</span><span class="p">.</span><span class="nx">fire</span><span class="p">(</span><span class="dl">"</span><span class="s2">Data no found</span><span class="dl">"</span><span class="p">);</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+	<span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+<p>dari file tersebutlah inputan dari keyword akan dikelola dan dikirim keserver dalam sebuah parameter global variable php yaitu</p>
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">@$_GET</code> -&gt; untuk menangani request url</li>
+  <li><code class="language-plaintext highlighter-rouge">@$_POST</code> -&gt; untuk mengirim data yang berasal dari input keyword.</li>
+</ol>
+
+<p>keseluruhan struktur direktori dan source code bisa disimak dan diteliti lebih lanjut pada link berikut :<br />
+<a href="https://github.com/codesyariah122/crud-data-with-php-PDO-Jquery-ajax/tree/master/assets" title="Crud data sederhana dengan ajax jquery">Crud data ajax jquery</a></p>
+
+<p><strong><em>akhir kata …</em></strong> 
+semoga bisa bermanfaat, sampai bertemu diartikel selanjutnya dan selanjutnya…
+salam</p>
+
+<p>puji ermanto / webdeveloper ourcitrus / PT. Gemilang Citrus Berjaya</p>
+:ET
