@@ -1,0 +1,47 @@
+I"`<h3 id="warning-message-module-already-loaded">Warning Message: Module already loaded</h3>
+<p><img src="http://localhost:4000/assets/images/post/error_php_codeigniter.gif" alt="error_php_codeigniter" /></p>
+
+<p>Ketika mengembangkan sebuah aplikasi menggunakan CodeIgniter pada localhost, peringatan error atau warning tidak akan muncul jika kita telah menulis kode dengan benar.</p>
+
+<p>Namun biasanya ketika kita upload pada hosting muncul sebuah pesan warning seperti ini:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">A</span> <span class="nx">PHP</span> <span class="nx">Error</span> <span class="nx">was</span> <span class="nx">encountered</span>
+<span class="nx">Severity</span><span class="o">:</span> <span class="nx">Core</span> <span class="nx">Warning</span>
+<span class="nx">Message</span><span class="o">:</span> <span class="nx">Module</span> <span class="s1">'pdo_mysql'</span> <span class="nx">already</span> <span class="nx">loaded</span> 
+<span class="nx">Filename</span><span class="o">:</span> <span class="nx">Unknown</span> 
+<span class="nx">Line</span> <span class="nx">Number</span><span class="o">:</span> <span class="mi">0</span> 
+<span class="nx">Backtrace</span><span class="o">:</span>  
+</code></pre></div></div>
+<p>Pesan di atas menginformasikan bahwa kita mencoba meload sebuah modul yang sudah termuat sebelumnya atau ada modul yang belum tersedia namun coba dimuat.</p>
+
+<p>Atau bisa juga muncul karena terdapat perbedaan modul pada localhost dan hosting. Alhasil, muncullah peringatan warning tersebut.</p>
+
+<p>Munculnya pesan tersebut tidak berarti aplikasi kita error, akan tetapi membuat aplikasi kita “terlihat error” dan tidak profesional.</p>
+
+<p>Untuk menyembunyikan peringatan tersebut, kita harus mengubah environment aplikasi yang sedang kita kembangkan. Berikut tata caranya:</p>
+
+<ul>
+  <li>Silahkan edit file index.php di direktori root codeigniter</li>
+  <li>kemudian cari kode berikut :</li>
+</ul>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">define</span><span class="p">(</span><span class="s1">'ENVIRONMENT'</span><span class="p">,</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'CI_ENV'</span><span class="p">])</span> <span class="o">?</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'CI_ENV'</span><span class="p">]</span> <span class="o">:</span> <span class="s1">'development'</span><span class="p">);</span>
+</code></pre></div></div>
+<ul>
+  <li>kemudian ganti menjadi seperti ini :
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">define</span><span class="p">(</span><span class="s1">'ENVIRONMENT'</span><span class="p">,</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'CI_ENV'</span><span class="p">])</span> <span class="o">?</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'CI_ENV'</span><span class="p">]</span> <span class="o">:</span> <span class="s1">'production'</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li>simpan dan refresh halaman web</li>
+</ul>
+
+<p>Dengan cara di atas maka pesan warning module already loaded akan hilang.</p>
+
+<p>Development environment CodeIgniter ada 3, diantaranya:</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">development</code> merupakan konfigurasi default environment CodeIgniter dalam tahap pengembangan. Pada tahap ini apabila terjadi error atau warning akan tampil pada browser.</li>
+  <li><code class="language-plaintext highlighter-rouge">testing</code> merupakan konfigurasi pada tahap pengujian aplikasi. Error atau warning pada tahap ini tidak akan tampil.</li>
+  <li><code class="language-plaintext highlighter-rouge">production</code> merupakan konfigurasi pada aplikasi yang siap untuk digunakan oleh end user. Pada tahap produksi error atau warning tidak akan tampil.</li>
+</ol>
+:ET

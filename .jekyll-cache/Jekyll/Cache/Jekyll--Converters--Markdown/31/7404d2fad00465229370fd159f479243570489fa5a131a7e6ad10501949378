@@ -1,5 +1,5 @@
-I"�z<h3 id="fitur-upload-gambar-dengan-metode-pdo-dan-jquery-ajax">Fitur upload gambar dengan metode PDO dan jquery-ajax</h3>
-<p><img src="{{site.url}}/assets/images/post/crud_ajax_with_upload.gif" alt="upload_ajax" /></p>
+I"��<h3 id="fitur-upload-gambar-dengan-metode-pdo-dan-jquery-ajax">Fitur upload gambar dengan metode PDO dan jquery-ajax</h3>
+<p><img src="http://localhost:4000/assets/images/post/crud_ajax_with_upload.gif" alt="upload_ajax" /></p>
 
 <p>halo coders semuanya ….<br />
 ini masih melanjutkan edisi crud data dengan ajax jquery dengan menggunakan metode php pdo ekstension sebagai sql universal interfacenya.  dalam artikel kali ini gout mau menambahkan fitur upload gambar kedalam aplikasi crud data sederhana menggunakan metode pdo dan ajax-jquery :</p>
@@ -14,164 +14,165 @@ maka untuk itu gout akan merubah struktur source code di bagian file <code class
 
 <p>oh iya … dibagian database juga gout harus menambahkan 2 item baru, salah satunya untuk menampung nilai dari input file yang dipilih ketika melakukan process input data, sehingga didapatkan struktur table baru di database crudajax menjadi seperti ini :</p>
 
-<p><img src="{{site.url}}/assets/images/post/database_upload_crud_ajax.png" alt="upload_ajax2" /></p>
+<p><img src="http://localhost:4000/assets/images/post/database_upload_crud_ajax.png" alt="upload_ajax2" /></p>
 
 <p>terlihat ada 2 item baru yaitu column dengan nama</p>
 <ul>
   <li><code class="language-plaintext highlighter-rouge">product_image</code></li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">product_description</code><br />
+  <li><code class="language-plaintext highlighter-rouge">product_description</code><br />
 kedua item baru ini akan ditambahkan juga di file <code class="language-plaintext highlighter-rouge">add.php</code> dan file <code class="language-plaintext highlighter-rouge">edit.php</code> , untuk item <code class="language-plaintext highlighter-rouge">product_image</code> akan kita gunakan <code class="language-plaintext highlighter-rouge">&lt;input type="file"&gt;</code> sedangkan untuk item <code class="language-plaintext highlighter-rouge">product_description</code> akan kita gunakan element input <code class="language-plaintext highlighter-rouge">&lt;textarea&gt;&lt;/textarea&gt;</code>. sehingga keseluruhan codenya gout rubah menjadi seperti berikut : 
-<strong><em>file <code class="language-plaintext highlighter-rouge">contents/add.php</code></em></strong><br />
-```php
-&lt;?php 
-require_once ‘../functions.php’;
-if(@$_GET[‘page’] == ‘add’):</p>
-
-    <p>//addAjax($_POST, $_FILES, ‘product’);
-if(addAjax($_POST, $_FILES, ‘product’) &gt; 0):
-  //usleep(700000);
-  echo “success”;
-endif;</p>
-  </li>
+<strong><em>file <code class="language-plaintext highlighter-rouge">contents/add.php</code></em></strong></li>
 </ul>
 
-<p>else:</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span> 
+<span class="k">require_once</span> <span class="s1">'../functions.php'</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span><span class="o">@</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'page'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'add'</span><span class="p">)</span><span class="o">:</span>
 
-<p>?&gt;</p>
+  <span class="c1">//addAjax($_POST, $_FILES, 'product');</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">addAjax</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">,</span> <span class="nv">$_FILES</span><span class="p">,</span> <span class="s1">'product'</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">:</span>
+    <span class="c1">//usleep(700000);</span>
+    <span class="k">echo</span> <span class="s2">"success"</span><span class="p">;</span>
+  <span class="k">endif</span><span class="p">;</span>
 
-<style type="text/css">
-  li{
-    list-style: none;
-  }
-  #close{
-    margin-top: -0.7rem;
-  }
-</style>
-
-<fieldset class="card mt-5 mb-5">
-
-  <div class="row justify-content-end">
-    <button id="close" class="btn btn-lg"><i class="far fa-fw fa-lg fa-window-close"></i></button>  
-  </div>
-
-  <h4 class="text-primary text-center mt-2">Add New Product</h4>
-
-<div class="col mx-auto">
-  <ul>
-    <form method="post" enctype="multipart/form-data">
-      <li>
-        <label for="productcode">Product Code</label>
-        <input type="text" id="productcode" class="form-control" />
-      </li>
-      <li>
-        <div class="form-group">
-           <label for="productimage">Choose file</label>
-           <input type="file" class="form-control-file" id="productimage" />
-         </div>
-      </li>
-      <li>
-        <label for="productname">Product Name</label>
-        <input type="text" id="productname" class="form-control" />
-      </li>
-      <li>
-        <label for="productdescription">Product Description</label>
-          <textarea class="form-control" id="productdescription" cols="5" rows="3"></textarea>
-      </li>
-      <li>
-        <label for="productprice">Product Price</label>
-        <input type="number" id="productprice" class="form-control" />
-      </li>
-    </form>   
-    <li>
-      <button id="add" class="mt-5 btn btn-primary btn-lg">Add Product</button>
-    </li>
-  </ul>
-</div>
+<span class="k">else</span><span class="o">:</span>
 
 
-</fieldset>
 
-<p>&lt;?php endif; ?&gt;</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-untuk fungsi insert data nya masih menggunakan fungsi ```addAjax()``` dari file ```functions.php``` namun gout menambahkan  satu parameter baru yaitu super global variable ```$_FILES``` untuk menampung nilai input dari file input di element form html. terdapat 2 item baru ditambahkan di element form add ini yaitu ```&lt;input type="file"&gt;``` dan ```&lt;textarea&gt;&lt;/textarea&gt;``` . sedangkan untuk file ```edit.php``` tidak jauh berbeda isinya gout menambahkan 2 item baru tersebut di element form edit, sehingga menjadi seperti dibawah ini : 
+<span class="cp">?&gt;</span>
 
-***file ```contents/edit.php```***  
-```php
-&lt;?php  
-require_once '../functions.php';
+<span class="nt">&lt;style </span><span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
+  <span class="nt">li</span><span class="p">{</span>
+    <span class="nl">list-style</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nf">#close</span><span class="p">{</span>
+    <span class="nl">margin-top</span><span class="p">:</span> <span class="m">-0.7rem</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
 
-$id = @$_POST['id'];
+<span class="nt">&lt;fieldset</span> <span class="na">class=</span><span class="s">"card mt-5 mb-5"</span><span class="nt">&gt;</span>
 
-$viewById = view("SELECT * FROM `product` WHERE `id` = '$id'");
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row justify-content-end"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"close"</span> <span class="na">class=</span><span class="s">"btn btn-lg"</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">"far fa-fw fa-lg fa-window-close"</span><span class="nt">&gt;&lt;/i&gt;&lt;/button&gt;</span>  
+  <span class="nt">&lt;/div&gt;</span>
 
-//var_dump($viewById);
+  <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"text-primary text-center mt-2"</span><span class="nt">&gt;</span>Add New Product<span class="nt">&lt;/h4&gt;</span>
 
-if(@$_GET['page'] == 'edit'):
-
-  if(editAjax($_POST, $_FILES, 'product') &gt; 0):
-    echo "success"; 
-  endif;
-
-else:
-?&gt;
-&lt;style type="text/css"&gt;
-  li{
-    list-style: none;
-  }
-  #close{
-    margin-top:-0.7rem;
-  }
-&lt;/style&gt;
-
-&lt;fieldset class="card mt-5 mb-5"&gt;
-
-  &lt;div class="row justify-content-end"&gt;
-    &lt;button id="close" class="btn btn-lg"&gt;&lt;i class="far fa-fw fa-lg fa-window-close"&gt;&lt;/i&gt;&lt;/button&gt;
-  &lt;/div&gt;
-
-  &lt;h4 class="text-info text-center mt-2"&gt;&lt;b&gt;Edit Product Data&lt;/b&gt;&lt;/h4&gt;
-
-&lt;div class="col mx-auto"&gt;
-  &lt;ul&gt;
-    &lt;form method="post" enctype="multipart/form-data"&gt;
-      &lt;input type="hidden" id="productid" value="&lt;?=$viewById[0]['id']?&gt;"&gt;
-      &lt;li&gt;        
-        &lt;label for="productcode"&gt;Product Code&lt;/label&gt;
-        &lt;input type="text" id="productcode" class="form-control" value="&lt;?=$viewById[0]['product_code']?&gt;"&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;img src="assets/images/&lt;?=$viewById[0]['product_image']?&gt;" width="200" height="200" class="img-responsive mt-2"&gt;
-        &lt;div class="form-group"&gt;
-           &lt;label for="productimage"&gt;Choose file for upload&lt;/label&gt;
-           &lt;input type="file" class="form-control-file" id="productimage" value="&lt;?=$viewById[0]['product_image']?&gt;"&gt;
-         &lt;/div&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;label for="productname"&gt;Product Name&lt;/label&gt;
-        &lt;input type="text" id="productname" class="form-control" value="&lt;?=$viewById[0]['product_name']?&gt;"&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;label for="productdescription"&gt;Product Description&lt;/label&gt;
-          &lt;textarea class="form-control" id="productdescription" cols="5" rows="3"&gt;
-            &lt;?=$viewById[0]['product_description']?&gt;
-          &lt;/textarea&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;label for="productprice"&gt;Product Price&lt;/label&gt;
-        &lt;input type="number" id="productprice" class="form-control" value="&lt;?=$viewById[0]['product_price']?&gt;"&gt;
-      &lt;/li&gt;
-    &lt;/form&gt;
-    &lt;li&gt;
-      &lt;button id="edit" class="mt-5 btn btn-primary btn-lg"&gt;Edit Product&lt;/button&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col mx-auto"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">method=</span><span class="s">"post"</span> <span class="na">enctype=</span><span class="s">"multipart/form-data"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"productcode"</span><span class="nt">&gt;</span>Product Code<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"productcode"</span> <span class="na">class=</span><span class="s">"form-control"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+           <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"productimage"</span><span class="nt">&gt;</span>Choose file<span class="nt">&lt;/label&gt;</span>
+           <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"file"</span> <span class="na">class=</span><span class="s">"form-control-file"</span> <span class="na">id=</span><span class="s">"productimage"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"productname"</span><span class="nt">&gt;</span>Product Name<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"productname"</span> <span class="na">class=</span><span class="s">"form-control"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"productdescription"</span><span class="nt">&gt;</span>Product Description<span class="nt">&lt;/label&gt;</span>
+          <span class="nt">&lt;textarea</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"productdescription"</span> <span class="na">cols=</span><span class="s">"5"</span> <span class="na">rows=</span><span class="s">"3"</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"productprice"</span><span class="nt">&gt;</span>Product Price<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"number"</span> <span class="na">id=</span><span class="s">"productprice"</span> <span class="na">class=</span><span class="s">"form-control"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>   
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"add"</span> <span class="na">class=</span><span class="s">"mt-5 btn btn-primary btn-lg"</span><span class="nt">&gt;</span>Add Product<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 
 
-&lt;/fieldset&gt;
+<span class="nt">&lt;/fieldset&gt;</span>
 
-&lt;?php endif; ?&gt;
+<span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>untuk fungsi insert data nya masih menggunakan fungsi <code class="language-plaintext highlighter-rouge">addAjax()</code> dari file <code class="language-plaintext highlighter-rouge">functions.php</code> namun gout menambahkan  satu parameter baru yaitu super global variable <code class="language-plaintext highlighter-rouge">$_FILES</code> untuk menampung nilai input dari file input di element form html. terdapat 2 item baru ditambahkan di element form add ini yaitu <code class="language-plaintext highlighter-rouge">&lt;input type="file"&gt;</code> dan <code class="language-plaintext highlighter-rouge">&lt;textarea&gt;&lt;/textarea&gt;</code> . sedangkan untuk file <code class="language-plaintext highlighter-rouge">edit.php</code> tidak jauh berbeda isinya gout menambahkan 2 item baru tersebut di element form edit, sehingga menjadi seperti dibawah ini :</p>
+
+<p><strong><em>file <code class="language-plaintext highlighter-rouge">contents/edit.php</code></em></strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>  
+<span class="k">require_once</span> <span class="s1">'../functions.php'</span><span class="p">;</span>
+
+<span class="nv">$id</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'id'</span><span class="p">];</span>
+
+<span class="nv">$viewById</span> <span class="o">=</span> <span class="nx">view</span><span class="p">(</span><span class="s2">"SELECT * FROM `product` WHERE `id` = '</span><span class="nv">$id</span><span class="s2">'"</span><span class="p">);</span>
+
+<span class="c1">//var_dump($viewById);</span>
+
+<span class="k">if</span><span class="p">(</span><span class="o">@</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'page'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'edit'</span><span class="p">)</span><span class="o">:</span>
+
+  <span class="k">if</span><span class="p">(</span><span class="nx">editAjax</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">,</span> <span class="nv">$_FILES</span><span class="p">,</span> <span class="s1">'product'</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">:</span>
+    <span class="k">echo</span> <span class="s2">"success"</span><span class="p">;</span> 
+  <span class="k">endif</span><span class="p">;</span>
+
+<span class="k">else</span><span class="o">:</span>
+<span class="cp">?&gt;</span>
+<span class="nt">&lt;style </span><span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
+  <span class="nt">li</span><span class="p">{</span>
+    <span class="nl">list-style</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nf">#close</span><span class="p">{</span>
+    <span class="nl">margin-top</span><span class="p">:</span><span class="m">-0.7rem</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+
+<span class="nt">&lt;fieldset</span> <span class="na">class=</span><span class="s">"card mt-5 mb-5"</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row justify-content-end"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"close"</span> <span class="na">class=</span><span class="s">"btn btn-lg"</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">"far fa-fw fa-lg fa-window-close"</span><span class="nt">&gt;&lt;/i&gt;&lt;/button&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"text-info text-center mt-2"</span><span class="nt">&gt;&lt;b&gt;</span>Edit Product Data<span class="nt">&lt;/b&gt;&lt;/h4&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col mx-auto"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">method=</span><span class="s">"post"</span> <span class="na">enctype=</span><span class="s">"multipart/form-data"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">id=</span><span class="s">"productid"</span> <span class="na">value=</span><span class="s">"</span><span class="cp">&lt;?=</span><span class="nv">$viewById</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'id'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="s">"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;li&gt;</span>        
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"productcode"</span><span class="nt">&gt;</span>Product Code<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"productcode"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">value=</span><span class="s">"</span><span class="cp">&lt;?=</span><span class="nv">$viewById</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'product_code'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="s">"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"assets/images/</span><span class="cp">&lt;?=</span><span class="nv">$viewById</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'product_image'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="s">"</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span> <span class="na">class=</span><span class="s">"img-responsive mt-2"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+           <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"productimage"</span><span class="nt">&gt;</span>Choose file for upload<span class="nt">&lt;/label&gt;</span>
+           <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"file"</span> <span class="na">class=</span><span class="s">"form-control-file"</span> <span class="na">id=</span><span class="s">"productimage"</span> <span class="na">value=</span><span class="s">"</span><span class="cp">&lt;?=</span><span class="nv">$viewById</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'product_image'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="s">"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"productname"</span><span class="nt">&gt;</span>Product Name<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"productname"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">value=</span><span class="s">"</span><span class="cp">&lt;?=</span><span class="nv">$viewById</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'product_name'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="s">"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"productdescription"</span><span class="nt">&gt;</span>Product Description<span class="nt">&lt;/label&gt;</span>
+          <span class="nt">&lt;textarea</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"productdescription"</span> <span class="na">cols=</span><span class="s">"5"</span> <span class="na">rows=</span><span class="s">"3"</span><span class="nt">&gt;</span>
+            <span class="cp">&lt;?=</span><span class="nv">$viewById</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'product_description'</span><span class="p">]</span><span class="cp">?&gt;</span>
+          <span class="nt">&lt;/textarea&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"productprice"</span><span class="nt">&gt;</span>Product Price<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"number"</span> <span class="na">id=</span><span class="s">"productprice"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">value=</span><span class="s">"</span><span class="cp">&lt;?=</span><span class="nv">$viewById</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'product_price'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="s">"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"edit"</span> <span class="na">class=</span><span class="s">"mt-5 btn btn-primary btn-lg"</span><span class="nt">&gt;</span>Edit Product<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+
+<span class="nt">&lt;/fieldset&gt;</span>
+
+<span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span>
 </code></pre></div></div>
 <p>hampir sama dengan file <code class="language-plaintext highlighter-rouge">add.php</code> hanya saja untuk edit ini seperti biasa nilai nya sudah di definisikan dari data yang ada di database. sehingga di tiap bagian input ditambahkan attribute <code class="language-plaintext highlighter-rouge">value="&lt;?=$viewById[0]['field_database']?&gt;"</code>, sedangkan untuk penggunaan fungsi update masih sama dari sebelumnya yakni masih menggunakaan fungsi <code class="language-plaintext highlighter-rouge">editAjax()</code> dan gout menambahkan satu parameter baru sama seperti file <code class="language-plaintext highlighter-rouge">add.php</code> yang tidak lain adalah parameter <code class="language-plaintext highlighter-rouge">$_FILES</code> sebagai super global yang menangani inputan data berupa file browser.</p>
 
@@ -350,6 +351,7 @@ else:
 
 <span class="p">}</span>
 </code></pre></div></div>
+
 <p>nah terlihat bukan perbedaannya dari file <code class="language-plaintext highlighter-rouge">functions.php</code> dari artikel sebelumnya, struktur alur data pada fungsi <code class="language-plaintext highlighter-rouge">addAjax(){}</code> dan <code class="language-plaintext highlighter-rouge">editAjax(){}</code> ada sedikit penambahan. dan pada baris paling bawah ditambahkan juga fungsi yang paling krusialnya yaitu fungsi <code class="language-plaintext highlighter-rouge">upload(){}</code> yang bertindak sebagai root program di artikel gout kali ini.</p>
 
 <p><em>untuk keseluruhan</em> source code dan kelengkapan data yang lebih detail agan-agan dan coders semua bisa meluncur ke repositori crudajax di link dibawah ini : 

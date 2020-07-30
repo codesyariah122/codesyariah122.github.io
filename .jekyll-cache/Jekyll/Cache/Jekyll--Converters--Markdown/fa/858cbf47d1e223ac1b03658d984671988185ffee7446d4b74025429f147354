@@ -1,0 +1,42 @@
+I"�<p><img src="http://localhost:4000/assets/images/post/Untitled2.jpg" alt="default order datatables" /></p>
+
+<p>Assalamualaikum, coders…<br />
+datatables adalah sebuah plugin untuk memudahkan para developer web dalam mengelola data, banyak sekali manfaat dari plugin ini.<br />
+kita tidak perlu membuat sebuah struktur html baru untuk table data kita, hanya cukup menginstall plugin nya saja.<br />
+pada dasarnya penginstallan nya sama seperti memasang source untuk javascript kita hanya perlu memanggil link dari data tables nya saja.</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>atau kalian bisa langsung download source nya di website nya databales langsung.<br />
+<a href="https://datatables.net/">Data tables</a></p>
+
+<p>pada kesempatan ini saya ingin berbagi mengenai default sorting dari datatables yang tidak berjalan, jadi ceritanya saya ingin menampilkan data<br />
+yang saya kelola dari database, dan saya ingin menampilkan nya secara descending atau mengurut dari sebuah id yang terbesar. 
+query database saya seperti ini :</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>            <span class="nv">$tampilUser</span> <span class="o">=</span> <span class="nx">tampilUser</span><span class="p">(</span><span class="s2">"SELECT * FROM user ORDER BY id DESC"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>seharusnya table data yang disorting adalah mulai dari yang terbesar berada di row teratas, tapi bila kita menggunakan datatables secara default tidak berjalan<br />
+karena secara default plugin datatables menset sorting secara ascending atau dimulai dari 0 atau yang terkecil id atau uniqid nya.</p>
+
+<p>secara basic mudah untuk merubah defaultnya karena jika kita mendownload secara keseluruhan plugin datatables kita akan menemukan konfigurasi defaultnya, dan di konfigurasi default itulah kita kasih perubahan.<br />
+kita tambahkan code berikut di code default datatables nya, nama filenya datatables-demo.js</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">order</span><span class="dl">"</span><span class="p">:</span> <span class="p">[[</span> <span class="mi">3</span><span class="p">,</span> <span class="dl">"</span><span class="s2">desc</span><span class="dl">"</span> <span class="p">]]</span>
+</code></pre></div></div>
+<p>keseluruhan scriptnya adalah seperti ini :</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#dataTable</span><span class="dl">'</span><span class="p">).</span><span class="nx">DataTable</span><span class="p">(</span>
+  		<span class="p">{</span>
+			<span class="dl">"</span><span class="s2">order</span><span class="dl">"</span><span class="p">:</span> <span class="p">[[</span> <span class="mi">3</span><span class="p">,</span> <span class="dl">"</span><span class="s2">desc</span><span class="dl">"</span> <span class="p">]]</span>  		
+		<span class="p">}</span>
+  	<span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>ok akhirnya data di tables sudah terurut secara descending sesuai query yang saya inginkan dari database. 
+sekian dulu gansss…</p>
+
+:ET
