@@ -1,0 +1,15 @@
+I"l<h3 id="fitur-upload-gambar-dengan-metode-pdo-dan-jquery-ajax">Fitur upload gambar dengan metode PDO dan jquery-ajax</h3>
+<p><img src="{{site.url}}/assets/images/post/crud_ajax_with_upload.gif" alt="upload_ajax" /></p>
+
+<p>halo coders semuanya ….<br />
+ini masih melanjutkan edisi crud data dengan ajax jquery dengan menggunakan metode php pdo ekstension sebagai sql universal interfacenya.  dalam artikel kali ini gout mau menambahkan fitur upload gambar kedalam aplikasi crud data sederhana menggunakan metode pdo dan ajax-jquery :</p>
+
+<p><strong><em>menyambung dari artikel crud data ajax jquery, di artikel sebelumnya</em></strong></p>
+
+<p><a href="https://github.com/codesyariah122/crud-data-with-php-PDO-Jquery-ajax/tree/master/assets" title="Crud data sederhana dengan ajax jquery">Crud data ajax jquery</a></p>
+
+<p>dalam artikel sebelumnya tentang implementasi sebuah metode upload file.  sudah gout bahas beberapa minggu yang lalu. dari fitur live search tersebut sudah gout push juga ke repository gout yaitu di link dibawah ini :<br />
+<a href="https://github.com/codesyariah122/crud-data-with-php-PDO-Jquery-ajax" title="Crud data sederhana dengan ajax jquery">Crud data ajax jquery master</a></p>
+
+<p>Dan kali ini dalam artikel terbaru ini gout mau mengimplementasikan fitur untuk upload image atau foto, dimana dalam fitur upload itu kita dapat menambahkan file yang</p>
+:ET

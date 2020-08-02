@@ -17,10 +17,10 @@ ini masih melanjutkan edisi crud data dengan ajax jquery dengan menggunakan meto
 
 ***menyambung dari artikel crud data ajax jquery, di artikel sebelumnya***  
 
-[Crud data ajax jquery](https://github.com/codesyariah122/crud-data-with-php-PDO-Jquery-ajax/tree/master/assets "Crud data sederhana dengan ajax jquery")  
+[Crud data ajax jquery](https://codesyariah122.github.io/php/pdo/ajax/jquery/crud-data-dengan-jquery-ajax/ "Crud data sederhana dengan ajax jquery")  
 
 dalam artikel sebelumnya tentang implementasi sebuah metode untuk live search.  sudah gout bahas beberapa minggu yang lalu. dari fitur live search tersebut sudah gout push juga ke repository gout yaitu di link dibawah ini :  
-[Crud data ajax jquery master](https://github.com/codesyariah122/crud-data-with-php-PDO-Jquery-ajax "Crud data sederhana dengan ajax jquery")  
+[Crud data ajax jquery master](https://github.com/codesyariah122/crud-data-with-php-PDO-Jquery-ajax/tree/master "Crud data sederhana dengan ajax jquery")  
 
 
 
