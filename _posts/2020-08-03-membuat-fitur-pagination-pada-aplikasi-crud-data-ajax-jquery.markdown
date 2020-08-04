@@ -3,7 +3,7 @@ layout: post
 title:  "Membuat fitur pagination pada aplikasi crud data ajax jquery"
 author: puji
 categories: [ php, ajax, jquery ]
-image: assets/images/post/paging.png
+image: assets/images/post/pagination-explanation.png
 tags: [webdeveloper]
 opening: بسم الله الرحمن الرحيم
 ---  
@@ -17,13 +17,13 @@ ini masih melanjutkan edisi crud data dengan ajax jquery dengan menggunakan meto
 
 [Crud data ajax jquery](https://codesyariah122.github.io/php/pdo/ajax/jquery/crud-data-dengan-jquery-ajax/ "Crud data sederhana dengan ajax jquery")  
 
-dalam artikel sebelumnya tentang implementasi sebuah metode upload file.  sudah gout bahas beberapa hari yang lalu. dari fitur live search tersebut sudah gout push juga ke repository gout yaitu di link dibawah ini :  
+dalam artikel sebelumnya tentang implementasi sebuah metode upload file.  sudah gout bahas beberapa hari yang lalu. dari fitur upload tersebut sudah gout push juga ke repository gout yaitu di link dibawah ini :  
 [Crud data ajax jquery master](https://github.com/codesyariah122/crud-data-with-php-PDO-Jquery-ajax/tree/with_upload "Crud data sederhana dengan ajax jquery")  
 
 Dan kali ini dalam artikel terbaru ini gout mau mengimplementasikan fitur pagination atau pengindeksan tampilan atau view dalam penyajian data disuatu halaman.  
 pagination ini merupakan fitur yang sangat membantu dalam pengolahan sebuah data yang akan disajikan. sehingga tampilan data tidak berantai sampai ke baris bawah. terutama jika data yang ingin diquery itu berisi ratusan atau ribuan data, kebayang dong harus scroll halaman berapa kali.  
 
-ok tanpa berpanjang-panjang dalam mukodimah di artikel kali ini, kita langsung ajah ke inti permasalahannya. sebelum coding dimulai, kita sedikit flashback ke artikel sebelumnya dimana gout menambahkan fitur untuk upload image.  
+ok tanpa berpanjang-panjang dalam mukoddimah di artikel kali ini, kita langsung ajah ke inti permasalahannya. sebelum coding dimulai, kita sedikit flashback ke artikel sebelumnya dimana gout menambahkan fitur untuk upload image.  
 diartikel membuat pagination ini struktur file masih sama, hanya struktur coding atau penulisan codenya yang mengalami perombakan , diantaranya beberapa coding yang gout rubah :  
 * file ```contents/view.php```  
 
@@ -136,7 +136,7 @@ function searchData($keyword, $limitStart, $limit){
         `product_name` LIKE '%$keyword%' OR 
         `product_price` LIKE '%$keyword%' 
         ORDER BY `id` DESC
-        LIMIT $limitStart, $limit";
+        LIMIT $limitStart, $limit"; // ini dibutuhkan untuk membatasi data yang akan di select
 
   return view($query);
 }
@@ -153,6 +153,7 @@ $jmlData = count(view("SELECT * FROM `product`"));
 $jmlHalaman = ceil($jmlData / $limit);
 $aktifPage = ((int)@$_GET['page']) ? @$_GET['page'] : 1;
 $limitStart = ($aktifPage - 1)*$limit;
+//validasi parameter dari url
 switch(@$_GET['page']):
   case @$_POST['keyword']:
   $keyword = @$_POST['keyword'];
