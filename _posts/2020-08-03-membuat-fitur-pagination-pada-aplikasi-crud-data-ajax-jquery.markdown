@@ -9,7 +9,7 @@ opening: بسم الله الرحمن الرحيم
 ---  
 
 
-### Fitur upload gambar dengan metode PDO dan jquery-ajax  
+### Fitur pagination dalam crud data with ajax jquery  
 halo coders semuanya ....  
 ini masih melanjutkan edisi crud data dengan ajax jquery dengan menggunakan metode php pdo ekstension sebagai sql universal interfacenya.  dalam artikel kali ini gout mau menambahkan fitur pagination atau pengindeksan sebuah halaman/page, kedalam aplikasi crud data sederhana menggunakan metode pdo dan ajax-jquery yang sempat di bahas diartikel beberapa minggu yang lalu, masih hot-hot pop lah.  
 
