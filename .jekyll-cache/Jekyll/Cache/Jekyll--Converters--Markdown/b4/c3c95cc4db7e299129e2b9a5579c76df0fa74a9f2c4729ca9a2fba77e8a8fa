@@ -1,0 +1,340 @@
+I"��<h3 id="membuat-reaction-button-dengan-jquery-ajax">Membuat reaction button dengan jquery ajax</h3>
+
+<p><img src="{{site.url}}/assets/images/post/crud_ajax_with_button_reaction.gif" alt="crud_ajax_with_button_reaction" /></p>
+
+<p>halo para coders ! apa kabarnya ? …<br />
+mudah-mudahan kalian semua selalu diberikan nikmat sehat selalu.</p>
+
+<p>ok dalam artikel kali ini gout mau membagikan tips and trick mungkin yah, hehehe. trick sederhana membuat reaction button kaya yang di medsos, medsos itu loh.<br />
+tapi sebelum ke intinya, gout mau berbagi sedikit cerita. ini ada hubungannya dengan tujuan gout menulis artikel kali ini, karena berdasarkan pengalaman yang pernah gout alami. dari pengalaman tersebut yahh sekitar setahun yang lalu, gout sebagai web developer untuk sebuah perusahaan distributor kosmetik, dan disalah satu halaman webnya gout pasang sebuah button reaction untuk mendapatkan review dari pengalaman pengunjung setelah melihat-lihat list product, nah di aplikasi button reaction itu adalah pihak ketiga yang disediakan sebuah layanan media advertise online yaitu <a href="https://www.addthis.com/social-buttons/">Add this</a> , dari layanan button di media milik Add this itu, sayangnya belum bisa di custom secara bebas, fitur yang tersedia terbatas hanya yang mereka sediakan saja.</p>
+
+<p>tapi sayangnya sibos gout pengen button yang sesuai dengan yang ia inginkan, dari tugas itulah gout terpaksa deh membuat custom button reaction sendiri dengan seadanya, dengan bahasa pemrogramman yang tersedia yaitu <code class="language-plaintext highlighter-rouge">php7.0</code> yah akhirnya ane mencoba untuk berkreasi sendiri, jadilah button reaction ini gout gabungkan dengan platform lainnya yah salah satunya adalah jquery dan ajax dari javasript.</p>
+
+<p>nah berdasarkan kisah diatas, sekarang gout bermaksud mau berbagi pengalaman dan gout akan share sedikit tips dan trick tersebut. dalam artikel ini masih berkelanjutan dari artikel sebelumnya yang berjudul : <a href="https://codesyariah122.github.io/php/pdo/ajax/jquery/crud-data-dengan-jquery-ajax/">Membuat crud data dengan ajax jquery</a> di artikel yang terupdate kemaren yaitu penambahan fitur : <a href="https://codesyariah122.github.io/php/ajax/jquery/membuat-fitur-pagination-pada-aplikasi-crud-data-ajax-jquery/">Fitur Pagination</a>.  jadi di artikel ini kurang lebih source codenya masih sama, hanya mungkin ada sedikit perombakan dan penambahan file saja.
+ok, kita langsung ajah mulai codingnya : 
+pertama yang mengalami perubahan adalah table <code class="language-plaintext highlighter-rouge">product</code> di database utama kita yaitu database crudajax :</p>
+
+<p>sekarang kita akses terminal kemudian masuk ke config database dari terminal dengan command :</p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mysql</span> <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">-</span><span class="n">p</span>
+<span class="c1">-- kemudian gunakan databse crudajax</span>
+<span class="n">use</span> <span class="n">crudajax</span><span class="p">;</span>
+<span class="c1">-- lihat list table</span>
+<span class="k">show</span> <span class="n">tables</span><span class="p">;</span>
+<span class="c1">-- tambahkan column baru untuk menghubungkan table product dengan table yang nanti akan dibuat untuk menampung nilai reaction</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">product</span> <span class="k">add</span> <span class="k">column</span> <span class="n">id_react</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">after</span> <span class="n">product_price</span><span class="p">;</span>
+<span class="c1">-- lihat kembali struktur table setelah penambahan column baru</span>
+<span class="k">describe</span> <span class="n">product</span><span class="p">;</span>
+<span class="c1">-- kemudian buat key untuk field id_react</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="nv">`product`</span> <span class="k">ADD</span> <span class="k">KEY</span> <span class="nv">`id_react`</span> <span class="p">(</span><span class="nv">`id_react`</span><span class="p">);</span>
+<span class="c1">-- ///////////////////////////////////////////////////////////////</span>
+<span class="c1">-- sekarang kita buat table baru untuk fitur reaction di artikel kali ini</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`reaction`</span> <span class="p">(</span>
+  <span class="nv">`id_react`</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="nv">`love`</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="nv">`likes`</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="nv">`clapping`</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="nv">`cool`</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span>
+<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span><span class="p">;</span>
+</code></pre></div></div>
+<p>di command database diatas kita punya satu table baru yang akan terhubung ke field/column <code class="language-plaintext highlighter-rouge">id_reat</code> di table <code class="language-plaintext highlighter-rouge">product</code>. kemudian selanjutnya kita langsung buka code editor untuk mengubah beberapa codingan yang antara lain sebagai berikut :<br />
+file pertama yang akan dirubah adalah file <code class="language-plaintext highlighter-rouge">contents/detail.php</code> , sehingga file tersebut gout rubah jadi seperti dibawah ini :</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style </span><span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
+  <span class="nc">.polygon</span><span class="p">{</span>
+    <span class="nl">clip-path</span><span class="p">:</span> <span class="n">polygon</span><span class="p">(</span><span class="m">47%</span> <span class="m">41%</span><span class="p">,</span> <span class="m">75%</span> <span class="m">0%</span><span class="p">,</span> <span class="m">94%</span> <span class="m">49%</span><span class="p">,</span> <span class="m">75%</span> <span class="m">100%</span><span class="p">,</span> <span class="m">18%</span> <span class="m">78%</span><span class="p">,</span> <span class="m">0</span> <span class="m">30%</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="cp">&lt;?php</span>  
+<span class="k">require_once</span> <span class="s1">'../functions.php'</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span><span class="o">@</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'detail'</span><span class="p">])</span><span class="o">:</span>
+  <span class="nv">$dataId</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'detail'</span><span class="p">];</span>
+  <span class="nv">$detailData</span> <span class="o">=</span> <span class="nx">view</span><span class="p">(</span><span class="s2">"SELECT * FROM `product` WHERE `id` = '</span><span class="nv">$dataId</span><span class="s2">'"</span><span class="p">);</span>
+<span class="k">endif</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+<span class="cp">&lt;?php</span> <span class="k">foreach</span><span class="p">(</span><span class="nv">$detailData</span> <span class="k">as</span> <span class="nv">$data</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row justify-content-center"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card"</span> <span class="na">style=</span><span class="s">"width: 18rem;"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;img</span> <span class="na">id=</span><span class="s">"setan"</span> <span class="na">src=</span><span class="s">"assets/images/</span><span class="cp">&lt;?=</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'product_image'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="s">"</span> <span class="na">class=</span><span class="s">"card-img-top polygon"</span> <span class="na">alt=</span><span class="s">"</span><span class="cp">&lt;?=</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'product_name'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="s">"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-body"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h3</span> <span class="na">class=</span><span class="s">"text-primary"</span><span class="nt">&gt;</span><span class="cp">&lt;?=</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'product_name'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="nt">&lt;/h3&gt;</span>
+        <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"card-text"</span><span class="nt">&gt;</span>
+          IDR - <span class="cp">&lt;?=</span><span class="nb">number_format</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'product_price'</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span><span class="cp">?&gt;</span>
+        <span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"blockquote-footer"</span><span class="nt">&gt;</span>
+          <span class="cp">&lt;?=</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'product_description'</span><span class="p">]</span><span class="cp">?&gt;</span>
+        <span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"reaction"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">id=</span><span class="s">"id_react"</span> <span class="na">name=</span><span class="s">"id_react"</span> <span class="na">value=</span><span class="s">"</span><span class="cp">&lt;?=</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'id_react'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="s">"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="cp">&lt;?php</span> <span class="k">endforeach</span><span class="p">;</span> <span class="cp">?&gt;</span>
+
+
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"assets/js/getReaction.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+<p>di file tersebut untuk javascript nya gout pisah ke file tersendiri sehingga file javascriptnya ada di direktori <code class="language-plaintext highlighter-rouge">assets/js/</code> dengan nama file <code class="language-plaintext highlighter-rouge">getReaction.js</code> , berikut code di file <code class="language-plaintext highlighter-rouge">getReaction.js</code> :</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// file getReaction.js</span>
+<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#reaction</span><span class="dl">'</span><span class="p">).</span><span class="nx">load</span><span class="p">(</span><span class="dl">'</span><span class="s1">contents/reaction.php</span><span class="dl">'</span><span class="p">);</span>
+  <span class="c1">// $('.polygon').mouseenter(function(){</span>
+ <span class="c1">//       $(this).removeClass('polygon');</span>
+  <span class="c1">// });</span>
+  <span class="c1">// $('.polygon').mouseleave(function(){</span>
+  <span class="c1">//  $(this).addClass('polygon');</span>
+  <span class="c1">// })</span>
+<span class="kd">var</span> <span class="nx">image</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.polygon</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="nx">image</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">mouseenter</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+  <span class="nx">image</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="dl">'</span><span class="s1">polygon</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nx">image</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">mouseleave</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+  <span class="nx">image</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">polygon</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">});</span>
+
+
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+  <span class="kd">const</span> <span class="nx">reactId</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">input[type=hidden][name=id_react]</span><span class="dl">'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+  <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">contents/reaction.php?react_id=</span><span class="dl">'</span><span class="o">+</span><span class="nx">reactId</span><span class="p">,</span>
+    <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">post</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">data</span><span class="p">:</span> <span class="dl">'</span><span class="s1">reactId=</span><span class="dl">'</span><span class="o">+</span><span class="nx">reactId</span><span class="p">,</span>
+    <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+      <span class="k">if</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+        <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#reactId</span><span class="dl">'</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">value</span><span class="dl">"</span><span class="p">,</span><span class="nx">reactId</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+<span class="p">})</span>
+</code></pre></div></div>
+<p>kemudian di file berikutnya adalah file tambahan baru yang gout beri nama <code class="language-plaintext highlighter-rouge">reaction.php</code> di direktori <code class="language-plaintext highlighter-rouge">contents/reaction.php</code> berikut isi codingan file <code class="language-plaintext highlighter-rouge">reaction.php</code> :</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>  <span class="k">require_once</span> <span class="s1">'../functions.php'</span><span class="p">;</span><span class="cp">?&gt;</span>
+
+<span class="nt">&lt;style </span><span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
+  <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"checkbox"</span><span class="o">]</span><span class="p">{</span>
+      <span class="nl">display</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nc">.emoji-label</span><span class="p">{</span>
+      <span class="nl">cursor</span><span class="p">:</span> <span class="nb">pointer</span><span class="p">;</span>
+      <span class="nl">font-size</span><span class="p">:</span> <span class="m">3rem</span><span class="p">;</span>
+      <span class="nl">margin-left</span><span class="p">:</span><span class="m">0.3rem</span><span class="p">;</span>
+      <span class="nl">margin-top</span><span class="p">:</span><span class="m">-1rem</span><span class="p">;</span>
+      <span class="nl">animation</span><span class="p">:</span> <span class="n">shake</span> <span class="m">0.5s</span><span class="p">;</span>
+        <span class="nl">animation-iteration-count</span><span class="p">:</span> <span class="n">infinite</span><span class="p">;</span> 
+    <span class="p">}</span>
+    <span class="nc">.emoji-label</span><span class="nd">:hover</span><span class="p">{</span>
+      <span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">scaleX</span><span class="p">(</span><span class="m">-1</span><span class="p">);</span>
+        <span class="nl">transform</span><span class="p">:</span> <span class="n">scaleX</span><span class="p">(</span><span class="m">-1</span><span class="p">);</span>
+        <span class="nl">animation</span><span class="p">:</span> <span class="n">shake</span> <span class="m">0.5s</span><span class="p">;</span>
+        <span class="nl">animation-iteration-count</span><span class="p">:</span> <span class="n">infinite</span><span class="p">;</span> 
+    <span class="p">}</span>
+    <span class="nc">.display</span><span class="p">{</span>
+      <span class="nl">display</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="nt">&lt;/style&gt;</span>
+<span class="cp">&lt;?php</span> 
+<span class="k">if</span><span class="p">(</span><span class="o">@</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'react_id'</span><span class="p">])</span><span class="o">:</span>
+  <span class="nv">$dataId</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'react_id'</span><span class="p">];</span> 
+<span class="k">endif</span><span class="p">;</span> 
+<span class="cp">?&gt;</span>
+
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-small btn-primary mb-3"</span> <span class="na">id=</span><span class="s">"react-onclick"</span> <span class="na">onclick=</span><span class="s">"emojiReact(emoji)"</span><span class="nt">&gt;</span>Push Reaction<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;br/&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"reactId"</span> <span class="na">id=</span><span class="s">"reactId"</span> <span class="na">value=</span><span class="s">"</span><span class="cp">&lt;?=</span><span class="o">@</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'react_id'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="s">"</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"love"</span> <span class="na">value=</span><span class="s">"love"</span> <span class="na">name=</span><span class="s">"reactemoji"</span> <span class="na">class=</span><span class="s">"reaction"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"love"</span> <span class="na">class=</span><span class="s">"emoji-label display"</span><span class="nt">&gt;</span>love<span class="nt">&lt;/label&gt;</span>
+
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"likes"</span> <span class="na">value=</span><span class="s">"likes"</span> <span class="na">name=</span><span class="s">"reactemoji"</span> <span class="na">class=</span><span class="s">"reaction"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"likes"</span> <span class="na">class=</span><span class="s">"emoji-label display"</span><span class="nt">&gt;</span>like<span class="nt">&lt;/label&gt;</span>
+
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"clapping"</span> <span class="na">value=</span><span class="s">"clapping"</span> <span class="na">name=</span><span class="s">"reactemoji"</span> <span class="na">class=</span><span class="s">"reaction"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"clapping"</span> <span class="na">class=</span><span class="s">"emoji-label display"</span><span class="nt">&gt;</span>clapping<span class="nt">&lt;/label&gt;</span>
+
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"cool"</span> <span class="na">value=</span><span class="s">"cool"</span> <span class="na">name=</span><span class="s">"reactemoji"</span> <span class="na">class=</span><span class="s">"reaction"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"cool"</span> <span class="na">class=</span><span class="s">"emoji-label display"</span><span class="nt">&gt;</span>cool<span class="nt">&lt;/label&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"react-value"</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"assets/js/reaction.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+</code></pre></div></div>
+<p>masih menggunakan fungsi yang sama, yang ada di file <code class="language-plaintext highlighter-rouge">functions.php</code> direktori root, aplikasi crud data ajax jquery.  di file <code class="language-plaintext highlighter-rouge">contents/reaction.php</code> tersebut file javascript nya juga gout pisah di direktori lain, sepertinya dalam artikel kali ini semua file javascript gout pisahkan ke direktori <code class="language-plaintext highlighter-rouge">assets/js</code> di file <code class="language-plaintext highlighter-rouge">reaction.php</code> ini file javascriptnya gout kasih nama <code class="language-plaintext highlighter-rouge">reaction.js</code> dan berikut isi codingan file <code class="language-plaintext highlighter-rouge">reaction.js</code> :</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// file reaction.js</span>
+<span class="kd">function</span> <span class="nx">emojiReact</span><span class="p">(</span><span class="nx">emoji</span><span class="p">){</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">react-onclick</span><span class="dl">'</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span><span class="o">=</span><span class="dl">'</span><span class="s1">none</span><span class="dl">'</span><span class="p">;</span>
+  <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;=</span><span class="nx">emoji</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">.emoji-label</span><span class="dl">'</span><span class="p">).</span><span class="nx">eq</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">emoji</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+    <span class="kd">let</span> <span class="nx">emojiLabel</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.emoji-label</span><span class="dl">'</span><span class="p">)[</span><span class="nx">i</span><span class="p">];</span>
+    <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">.emoji-label</span><span class="dl">'</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">(</span><span class="dl">'</span><span class="s1">display</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">emoji</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">🥰</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">&amp;#128077;</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">&amp;#128079;&amp;#127996;</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">&amp;#127882;</span><span class="dl">'</span><span class="p">];</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+  <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#react-value</span><span class="dl">'</span><span class="p">).</span><span class="nx">load</span><span class="p">(</span><span class="dl">'</span><span class="s1">contents/react_data.php</span><span class="dl">'</span><span class="p">);</span>
+
+  <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">input[type=checkbox]</span><span class="dl">'</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="kd">const</span> <span class="nx">reactEmoji</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">input[name=reactemoji]:checked</span><span class="dl">'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+    <span class="kd">const</span> <span class="nx">reactId</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">input[type=hidden][name=reactId]</span><span class="dl">'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">reactEmoji</span><span class="p">){</span>
+      <span class="k">switch</span><span class="p">(</span><span class="nx">reactEmoji</span><span class="p">){</span>
+        <span class="k">case</span> <span class="dl">"</span><span class="s2">love</span><span class="dl">"</span><span class="p">:</span>
+        <span class="nx">emoji</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">🥰</span><span class="dl">"</span><span class="p">;</span>
+        <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="dl">"</span><span class="s2">likes</span><span class="dl">"</span><span class="p">:</span>
+        <span class="nx">emoji</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">&amp;#128077;</span><span class="dl">"</span><span class="p">;</span>
+        <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="dl">"</span><span class="s2">clapping</span><span class="dl">"</span><span class="p">:</span>
+        <span class="nx">emoji</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">&amp;#128079;&amp;#127996;</span><span class="dl">"</span><span class="p">;</span>
+        <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="dl">"</span><span class="s2">cool</span><span class="dl">"</span><span class="p">:</span>
+        <span class="nx">emoji</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">&amp;#127882;</span><span class="dl">"</span><span class="p">;</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+        <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">contents/react_data.php?reactemoji=</span><span class="dl">'</span><span class="o">+</span><span class="nx">reactEmoji</span><span class="o">+</span><span class="dl">'</span><span class="s1">&amp;reactid=</span><span class="dl">'</span><span class="o">+</span><span class="nx">reactId</span><span class="p">,</span>
+        <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">post</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">data</span><span class="p">:</span> <span class="dl">'</span><span class="s1">reactEmoji=</span><span class="dl">'</span><span class="o">+</span><span class="nx">reactEmoji</span><span class="o">+</span><span class="dl">'</span><span class="s1">&amp;reactId=</span><span class="dl">'</span><span class="o">+</span><span class="nx">reactId</span><span class="p">,</span>
+        <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+          <span class="k">if</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+            <span class="c1">//Swal.fire(response);</span>
+            <span class="nx">Swal</span><span class="p">.</span><span class="nx">fire</span><span class="p">(</span><span class="dl">"</span><span class="s2">Your reaction : </span><span class="dl">"</span><span class="o">+</span><span class="nx">emoji</span><span class="p">);</span>
+            <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#react-value</span><span class="dl">'</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+            <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">input[name=reactemoji]</span><span class="dl">'</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="dl">'</span><span class="s1">checked</span><span class="dl">'</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+      <span class="p">});</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+<p>berikutnya adalah file <code class="language-plaintext highlighter-rouge">functions.php</code> di file tersebut perubahan yang gout tambahkan yakni di fungsi <code class="language-plaintext highlighter-rouge">addAjax(){}</code> , dan di fungsi tersebut juga gout bahas di artikel terakhir kemarin mengenai insert data ke 2 table berbeda dalam satu statement yaitu di artikel berikut : 
+<a href="https://codesyariah122.github.io/php/ajax/jquery/Menjalankan-dua-query-berbeda-dalam-satu-statement-menggunakan-PDOExtention/">Menjalankan dua query berbeda dalam satu statement</a>.<br />
+berikut fungsi <code class="language-plaintext highlighter-rouge">addAjax(){}</code> yang sudah gout ubah :</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// file functions.php</span>
+<span class="k">function</span> <span class="nf">addAjax</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="nv">$file</span><span class="p">,</span> <span class="nv">$table1</span><span class="p">,</span> <span class="nv">$table2</span><span class="p">){</span>
+  <span class="c1">// var_dump(@$file);</span>
+  <span class="c1">// var_dump(@$data);</span>
+
+  <span class="nv">$dbh</span> <span class="o">=</span> <span class="nx">connect</span><span class="p">();</span>
+  <span class="nv">$productCode</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'productcode'</span><span class="p">];</span>
+  <span class="nv">$productImage</span> <span class="o">=</span> <span class="nx">upload</span><span class="p">(</span><span class="nv">$file</span><span class="p">,</span> <span class="s1">'../assets/images/'</span><span class="p">);</span>
+  <span class="nv">$productName</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'productname'</span><span class="p">];</span>
+  <span class="nv">$productDesc</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'productdescription'</span><span class="p">];</span>
+  <span class="nv">$productPrice</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'productprice'</span><span class="p">];</span>
+
+  <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nv">$productImage</span><span class="p">){</span>
+    <span class="nv">$productImage</span> <span class="o">=</span> <span class="s1">'no-product-image.png'</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nv">$sql</span> <span class="o">=</span> <span class="s2">"INSERT INTO `</span><span class="nv">$table1</span><span class="s2">` (id, product_code, product_image, product_name, product_description, product_price, id_react) VALUES ('', ?, ?, ?, ?, ?, '')"</span><span class="p">;</span>
+  <span class="nv">$insertProduct</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="na">prepare</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
+
+  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="na">bindParam</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nv">$productCode</span><span class="p">);</span>
+  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="na">bindParam</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nv">$productImage</span><span class="p">);</span>
+  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="na">bindParam</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="nv">$productName</span><span class="p">);</span>
+  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="na">bindParam</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="nv">$productDesc</span><span class="p">);</span>
+  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="na">bindParam</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="nv">$productPrice</span><span class="p">);</span>
+
+  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
+  
+    <span class="c1">// update id_react table product</span>
+  <span class="nv">$lastId</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="na">lastInsertId</span><span class="p">();</span>
+  <span class="nv">$sql</span> <span class="o">=</span> <span class="s2">"
+    UPDATE `</span><span class="nv">$table1</span><span class="s2">` SET id_react = </span><span class="nv">$lastId</span><span class="s2"> WHERE `id` = </span><span class="nv">$lastId</span><span class="s2">;
+    INSERT INTO `</span><span class="nv">$table2</span><span class="s2">` (id_react, love, likes, clapping, cool) VALUES(</span><span class="nv">$lastId</span><span class="s2">, '', '', '', '');
+  "</span><span class="p">;</span>
+  <span class="nv">$stmt</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="na">prepare</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nv">$stmt</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+<p>berikut ini fungsi lain yaitu fungsi untuk insert reaction dari buttonnya : gout beri nama fungsi <code class="language-plaintext highlighter-rouge">reactEmoji(){}</code></p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// file functions.php</span>
+<span class="k">function</span> <span class="nf">reactEmoji</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="nv">$table</span><span class="p">){</span>
+  <span class="nv">$reactEmoji</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'reactemoji'</span><span class="p">];</span>
+  <span class="nv">$reactId</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'reactid'</span><span class="p">];</span>
+
+  <span class="nv">$dbh</span> <span class="o">=</span> <span class="nx">connect</span><span class="p">();</span>
+
+  <span class="k">switch</span><span class="p">(</span><span class="nv">$reactEmoji</span><span class="p">){</span>
+    <span class="k">case</span> <span class="s2">"love"</span><span class="o">:</span>
+      <span class="nv">$sql</span> <span class="o">=</span> <span class="s2">"UPDATE `</span><span class="nv">$table</span><span class="s2">` SET love=love+1 WHERE `id_react` = '</span><span class="nv">$reactId</span><span class="s2">'"</span><span class="p">;</span>
+      <span class="nv">$reaction</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="na">prepare</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
+      <span class="nv">$reaction</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
+      <span class="k">return</span> <span class="nv">$reaction</span><span class="o">-&gt;</span><span class="na">rowCount</span><span class="p">();</span>
+    <span class="k">break</span><span class="p">;</span>
+
+    <span class="k">case</span> <span class="s2">"likes"</span><span class="o">:</span>
+      <span class="nv">$sql</span> <span class="o">=</span> <span class="s2">"UPDATE `</span><span class="nv">$table</span><span class="s2">` SET likes=likes+1 WHERE `id_react` = '</span><span class="nv">$reactId</span><span class="s2">'"</span><span class="p">;</span>
+      <span class="nv">$reaction</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="na">prepare</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
+      <span class="nv">$reaction</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
+      <span class="k">return</span> <span class="nv">$reaction</span><span class="o">-&gt;</span><span class="na">rowCount</span><span class="p">();</span>
+    <span class="k">break</span><span class="p">;</span>
+
+    <span class="k">case</span> <span class="s2">"clapping"</span><span class="o">:</span>
+      <span class="nv">$sql</span> <span class="o">=</span> <span class="s2">"UPDATE `</span><span class="nv">$table</span><span class="s2">` SET clapping=clapping+1 WHERE `id_react` = '</span><span class="nv">$reactId</span><span class="s2">'"</span><span class="p">;</span>
+      <span class="nv">$reaction</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="na">prepare</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
+      <span class="nv">$reaction</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
+      <span class="k">return</span> <span class="nv">$reaction</span><span class="o">-&gt;</span><span class="na">rowCount</span><span class="p">();</span>
+    <span class="k">break</span><span class="p">;</span>
+
+    <span class="k">case</span> <span class="s2">"cool"</span><span class="o">:</span>
+      <span class="nv">$sql</span> <span class="o">=</span> <span class="s2">"UPDATE `</span><span class="nv">$table</span><span class="s2">` SET cool=cool+1 WHERE `id_react` = '</span><span class="nv">$reactId</span><span class="s2">'"</span><span class="p">;</span>
+      <span class="nv">$reaction</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="na">prepare</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
+      <span class="nv">$reaction</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
+      <span class="k">return</span> <span class="nv">$reaction</span><span class="o">-&gt;</span><span class="na">rowCount</span><span class="p">();</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="p">}</span>
+  
+<span class="p">}</span>
+</code></pre></div></div>
+<p>berikutnya adalah file yang gout beri nama <code class="language-plaintext highlighter-rouge">react_data.php</code> file tersebut berfungsi untuk menampung nilai value yang terlah mengalami update dari reaction yang telah di input di file <code class="language-plaintext highlighter-rouge">reaction.php</code> berikut ini isi codingan di file <code class="language-plaintext highlighter-rouge">react_data.php</code> :</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// file contents/react_data.php
+<span class="nt">&lt;style </span><span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
+  <span class="nc">.react-ul</span><span class="p">{</span>
+      <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+      <span class="nl">padding</span><span class="p">:</span><span class="m">2px</span><span class="p">;</span>
+      <span class="nl">margin-top</span><span class="p">:</span><span class="m">-2rem</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="nc">.react-list</span><span class="p">{</span>
+      <span class="nl">list-style</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+      <span class="nl">padding</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+      <span class="nl">font-size</span><span class="p">:</span> <span class="m">1.5rem</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="cp">&lt;?php</span>
+<span class="k">require_once</span> <span class="s1">'../functions.php'</span><span class="p">;</span>
+
+<span class="k">if</span><span class="p">(</span><span class="o">@</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'reactemoji'</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="o">@</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'reactid'</span><span class="p">])</span><span class="o">:</span>
+  <span class="nx">reactEmoji</span><span class="p">(</span><span class="o">@</span><span class="nv">$_GET</span><span class="p">,</span> <span class="s1">'reaction'</span><span class="p">);</span>
+<span class="nv">$emoji</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'reactemoji'</span><span class="p">];</span>
+<span class="nv">$idEmoji</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'reactid'</span><span class="p">];</span>
+<span class="nv">$emojiValue</span> <span class="o">=</span> <span class="nx">view</span><span class="p">(</span><span class="s2">"SELECT * FROM `reaction` WHERE `id_react` = </span><span class="nv">$idEmoji</span><span class="s2">"</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+<span class="cp">?&gt;</span>
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"react-ul"</span> <span class="na">class=</span><span class="s">"ml-4"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"react-list </span><span class="cp">&lt;?=</span><span class="p">(</span><span class="nv">$emojiValue</span><span class="p">[</span><span class="s1">'love'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">?</span> <span class="s1">'text-primary'</span> <span class="o">:</span> <span class="s1">'text-danger'</span><span class="p">;</span><span class="cp">?&gt;</span><span class="s">"</span><span class="nt">&gt;</span><span class="cp">&lt;?=</span><span class="nv">$emojiValue</span><span class="p">[</span><span class="s1">'love'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"react-list </span><span class="cp">&lt;?=</span><span class="p">(</span><span class="nv">$emojiValue</span><span class="p">[</span><span class="s1">'likes'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">?</span> <span class="s1">'text-primary'</span> <span class="o">:</span> <span class="s1">'text-danger'</span><span class="p">;</span><span class="cp">?&gt;</span><span class="s">"</span> <span class="na">style=</span><span class="s">"margin-left:2rem;"</span><span class="nt">&gt;</span><span class="cp">&lt;?=</span><span class="nv">$emojiValue</span><span class="p">[</span><span class="s1">'likes'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"react-list </span><span class="cp">&lt;?=</span><span class="p">(</span><span class="nv">$emojiValue</span><span class="p">[</span><span class="s1">'clapping'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">?</span> <span class="s1">'text-primary'</span> <span class="o">:</span> <span class="s1">'text-danger'</span><span class="p">;</span><span class="cp">?&gt;</span><span class="s">"</span> <span class="na">style=</span><span class="s">"margin-left:2rem;"</span><span class="nt">&gt;</span><span class="cp">&lt;?=</span><span class="nv">$emojiValue</span><span class="p">[</span><span class="s1">'clapping'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"react-list </span><span class="cp">&lt;?=</span><span class="p">(</span><span class="nv">$emojiValue</span><span class="p">[</span><span class="s1">'cool'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">?</span> <span class="s1">'text-primary'</span> <span class="o">:</span> <span class="s1">'text-danger'</span><span class="p">;</span><span class="cp">?&gt;</span><span class="s">"</span> <span class="na">style=</span><span class="s">"margin-left:1.7rem;"</span><span class="nt">&gt;</span><span class="cp">&lt;?=</span><span class="nv">$emojiValue</span><span class="p">[</span><span class="s1">'cool'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span>
+</code></pre></div></div>
+<p>file <code class="language-plaintext highlighter-rouge">react_data.php</code> tersebut akan diload hanya ketika saat button telah di click atau dengan kata lain ada event yang di minta lalu script akan mengirim query ke database dan kemudian nilai atau value di database di update dengan fungsi <code class="language-plaintext highlighter-rouge">reactEmoji(){}</code> di file <code class="language-plaintext highlighter-rouge">functions.php</code>. jadi file <code class="language-plaintext highlighter-rouge">react_data.php</code> ini menyajikan data dari value yang telah terupdate di database.</p>
+
+<p>ok codingan yang mengalami perubahan hanya itu saja, untuk source code lengkap dapat kalian simak di link dibawah ini :<br />
+<a href="https://github.com/codesyariah122/crud-data-with-php-PDO-Jquery-ajax/tree/with_react_button">crud ajax jquery dengan branch with_react_button</a>. akhir kata gout mengucapkan terima kasih kepada para pembaca, mudah2an bisa jadi manfaat dari artikel gout ini. akhir kata gout ucapkan.</p>
+
+<p>waasalamm….</p>
+
+<p><strong><em>puji ermanto</em></strong></p>
+
+:ET
