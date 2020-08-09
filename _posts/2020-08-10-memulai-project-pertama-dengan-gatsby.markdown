@@ -30,6 +30,7 @@ ribet sih kebayangnya harus menyesuaikan ukuran gambar sesuai dengan versi mobil
 gout sih sebenernya gak secara keseluruhan migrasi ke gatsby, yah sekedar memperluas wawasan saja, yah mengikuti serangan pasar yang akhir-akhir ini di dominasi oleh javascript. tidak ada salahnya kan sedikit bisa.  
 
 ***membuat project pertama gatsby***  
+
 ```shell
 //install paket npm gatsby nya 
 npm install -g gatsby-cli@2.4.17  // ini jika ingin beserta versinya
@@ -43,7 +44,7 @@ seperti ini susunan direktori dari project gatsby gout :
 
 ![gatsbyJS]({{site.url}}/assets/images/post/gatsby_direktori.png)  
 
-buka file ```package.json``` difile tersebut semnua dependencies dari applikasi gatsby kita. jika kita ingin menggunakan salah satu dependencies nya tinggal kita import aja ke file ```page``` kita.  contohnya ini, gout mau menggunakan salah satu dependencies yang telah tersedia yaitu ```"gatsby": "^2.24.37",```. gout mau menggunakan package ```LINK``` untuk templating dan untuk route navigasi di halaman awal. buka file root di direktori ```src/index.js```  kemudian ubah codingan menjadi sepert dibawah ini :  
+buka file ```package.json``` difile tersebut semnua dependencies dari applikasi gatsby kita. jika kita ingin menggunakan salah satu dependencies nya tinggal kita import aja ke file ```page``` kita.  contohnya ini, gout mau menggunakan salah satu dependencies yang telah tersedia yaitu ```"gatsby": "^2.24.37",``` . gout mau menggunakan package ```LINK``` untuk templating dan untuk route navigasi di halaman awal. buka file root di direktori ```src/index.js```  kemudian ubah codingan menjadi sepert dibawah ini :  
 
 ```javascript
 import React from 'react'
@@ -89,9 +90,13 @@ const Layout = (props)=>{
 
 export default Layout
 ```  
-file layout.js ini lah sebagai base templating di file tersebut terdapat tag ```<header/><footer/>``` tag tersebut juga merupakan state yang terhubung di file lainnya. buat file baru lagi di directori ```src/components```  
+file layout.js ini lah sebagai base templating di file tersebut terdapat tag  
+
+```<header/><footer/>``` tag tersebut juga merupakan state yang terhubung di file lainnya. buat file baru lagi di directori ```src/components```  
+
 * components/header.js
 buka file header.js, kemudian copy code berikut :  
+
 ```javascript
 import React from 'react'
 import { Link } from 'gatsby'
@@ -128,14 +133,18 @@ const Header = () => {
 }
 export default Header
 ```  
-file header ini adalah sebuah navigasi bar untuk mengubungkan antar halaman di file tersebut juga gout sudah menambah style dan manambah class untuk styling dengan sass (scss), di applikasi ini gout sudah menginstall plugin untuk package sass gatsby : 
+
+file header ini adalah sebuah navigasi bar untuk mengubungkan antar halaman di file tersebut juga gout sudah menambah style dan manambah class untuk styling dengan sass (scss), di applikasi ini gout sudah menginstall plugin untuk package sass gatsby :  
+
 ```shell
  // install plugin sass
  npm install --save node-sass gatsby-plugin-sass
 ```  
+
 berikut dokumentasi dari plugin sass gatsby : 
 <a href="https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-sass">gatsby-plugin-sass</a>  
 kemudian kita bisa buat file untuk styling kita beri nama ```header.module.scss```  
+
 ```scss
 .header{
   padding: 1rem 0 3rem;
