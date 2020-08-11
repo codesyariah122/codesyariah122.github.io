@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Membangun project static site dengan gatsbyJS"
+title:  "Menambahkan package plugin emojis di gatsby"
 author: puji
 categories: [ GatsbyJS, React, Javascript ]
 image: assets/images/post/gatsby-remark-emojis.png
