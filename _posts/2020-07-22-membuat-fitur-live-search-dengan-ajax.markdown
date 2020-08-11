@@ -3,14 +3,15 @@ layout: post
 title:  "Membuat fitur live search engine dengan ajax jquery"
 author: puji
 categories: [ php, ajax, jquery ]
-image: assets/images/post/live_search.png
+image: assets/images/post/crud_ajax_live_search.gif
 tags: [webdeveloper]
 opening: بسم الله الرحمن الرحيم
 ---  
 
 
 ### Fitur live search dengan ajax jquery  
-![live_search_ajax]({{site.url}}/assets/images/post/crud_ajax_live_search.gif)  
+ 
+![live_search_ajax]({{site.url}}/assets/images/post/live_search.png)  
 
 halo coders semuanya ....  
 ini masih melanjutkan edisi crud data dengan ajax jquery dengan menggunakan metode php pdo ekstension sebagai sql universal interfacenya.  dalam artikel kali ini gout mau menerapkan sebuah fitur live search ala-ala google atau live search lain dimedia atau aplikasi berbasis web maupun mobile lainnya, masih dengan php disisi beckend nya. apa daya cuma itu yang baru gout bisa.  
@@ -151,9 +152,12 @@ $('#viewdata').on('keyup', '#keyword', function(){
 	});
 });
 ```  
+
 dari file tersebutlah inputan dari keyword akan dikelola dan dikirim keserver dalam sebuah parameter global variable php yaitu 
 1. ```@$_GET``` -> untuk menangani request url  
 2. ```@$_POST``` -> untuk mengirim data yang berasal dari input keyword.  
+
+![live_search_ajax]({{site.url}}/assets/images/post/crud_ajax_live_search.gif) 
 
 keseluruhan struktur direktori dan source code bisa disimak dan diteliti lebih lanjut pada link berikut :  
 [Crud data ajax jquery](https://github.com/codesyariah122/crud-data-with-php-PDO-Jquery-ajax/tree/master/assets "Crud data sederhana dengan ajax jquery") 
