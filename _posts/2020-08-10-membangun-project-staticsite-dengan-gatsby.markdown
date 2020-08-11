@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Memulai project pertama dengan gatsbyJS"
+title:  "Membangun project static site dengan gatsbyJS"
 author: puji
 categories: [ GatsbyJS, React ]
 image: assets/images/post/gatsby.png
