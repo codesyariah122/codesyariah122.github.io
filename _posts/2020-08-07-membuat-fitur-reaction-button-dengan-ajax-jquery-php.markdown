@@ -3,7 +3,7 @@ layout: post
 title:  "Membuat fitur reaction button dengan ajax jquery php"
 author: puji
 categories: [ php, ajax, jquery ]
-image: assets/images/post/button_reaction_crud_ajax.png
+image: assets/images/post/crud_ajax_with_button_reaction.gif
 tags: [webdeveloper]
 opening: بسم الله الرحمن الرحيم
 ---  
