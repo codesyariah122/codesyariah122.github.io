@@ -2,7 +2,7 @@
 layout: post
 title:  "Membangun project static site dengan gatsbyJS"
 author: puji
-categories: [ GatsbyJS, React ]
+categories: [ GatsbyJS, React, Javascript ]
 image: assets/images/post/gatsby.png
 tags: [fullstack_developer]
 opening: بسم الله الرحمن الرحيم

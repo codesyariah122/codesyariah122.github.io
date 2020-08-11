@@ -4,7 +4,7 @@ title:  "Install NodeJS debian 9 stretch linux"
 author: puji
 categories: [ NodeJS, Javascript ]
 image: assets/images/post/Node-js-Logo.png
-tags: [webdevelopment]
+tags: [fullstack_developer]
 opening: بسم الله الرحمن الرحيم
 ---  
 
