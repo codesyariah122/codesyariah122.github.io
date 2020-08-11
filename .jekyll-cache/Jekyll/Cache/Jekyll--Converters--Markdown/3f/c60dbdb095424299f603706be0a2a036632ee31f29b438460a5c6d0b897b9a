@@ -1,0 +1,24 @@
+I"´<p>open _config.yml file on root directori :<br />
+adding new plugin config.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="ss">plugins:
+  </span><span class="o">-</span> <span class="n">jekyll</span><span class="o">-</span><span class="n">paginate</span></code></pre></figure>
+
+<p>at same file on _config.yml, adding pagginate configuration :</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="ss">paginate: </span><span class="mi">6</span>
+<span class="ss">paginate_path: </span><span class="sr">/page:num/</span></code></pre></figure>
+
+<p>open gemfile on the root directori :</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">group</span> <span class="ss">:jekyll_plugins</span> <span class="k">do</span>
+  <span class="n">gem</span> <span class="s2">"jekyll-feed"</span><span class="p">,</span> <span class="s2">"~&gt; 0.6"</span>
+  <span class="n">gem</span> <span class="s2">"jekyll-paginate"</span>
+  <span class="n">gem</span> <span class="s2">"jekyll-coffeescript"</span>
+  <span class="n">gem</span> <span class="s1">'jekyll-sass-converter'</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>and than open new terminal, and installing plugin :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install jekyll-paginate
+</code></pre></div></div>
+:ET

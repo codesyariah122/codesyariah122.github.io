@@ -1,0 +1,88 @@
+I"�#<p>open _config.yml file on root directori :<br />
+adding new plugin config.
+{% highlight ruby %}
+plugins:</p>
+<ul>
+  <li>jekyll-paginate
+{% endhighlight %}<br />
+at same file on _config.yml, adding pagginate configuration :<br />
+{% highlight ruby %}
+paginate: 6
+paginate_path: /page:num/
+{% endhighlight %}<br />
+open gemfile on the root directori :<br />
+{% highlight ruby %}
+group :jekyll_plugins do
+  gem “jekyll-feed”, “~&gt; 0.6”
+  gem “jekyll-paginate”
+  gem “jekyll-coffeescript”
+  gem ‘jekyll-sass-converter’
+end
+{% endhighlight %}<br />
+and than open new terminal, and installing plugin :
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install jekyll-paginate
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="create-paginate-post-list-with-css-class-bootstrap-v-43">create paginate post list with css class bootstrap v-4.3</h3>
+
+<p>and this is in my layout post list on jekyll :</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="o">=</span><span class="s2">"row justify-content-end"</span><span class="o">&gt;</span>
+	<span class="o">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="o">=</span><span class="s2">"col-xs-12"</span><span class="o">&gt;</span>
+		
+		
+	<span class="o">&lt;</span><span class="n">ul</span> <span class="k">class</span><span class="o">=</span><span class="s2">"post-list"</span><span class="o">&gt;</span> 
+	<span class="p">{</span><span class="sx">% for </span><span class="n">post</span> <span class="k">in</span> <span class="n">paginator</span><span class="p">.</span><span class="nf">posts</span> <span class="sx">%}   
+		&lt;li class="post"&gt;
+		&lt;h1 class="post-title" id="post-title" style="color:#e5e7e9;"&gt;
+		  &lt;a class="post-link" href="{{ post.url }</span><span class="p">}</span><span class="s2">"&gt;{{ post.title }}&lt;/a&gt;
+		&lt;/h1&gt;
+				  &lt;span class="</span><span class="n">post</span><span class="o">-</span><span class="n">meta</span> <span class="n">post</span><span class="o">-</span><span class="n">date</span><span class="s2">"&gt;{{ post.date | date: '%B %d, %Y'}}
+				 &lt;p&gt; {{ post.content | strip_html | truncatewords: 50 }}&lt;/p&gt;
+				 {% if post_excerpt == post.description or excerpt_words != content_words %}
+			&lt;p class="</span><span class="n">more</span><span class="o">-</span><span class="n">link</span><span class="s2">"&gt; ... &lt;a href="</span><span class="p">{{</span> <span class="n">post</span><span class="p">.</span><span class="nf">url</span> <span class="o">|</span> <span class="ss">prepend: </span><span class="n">site</span><span class="p">.</span><span class="nf">baseurl</span> <span class="p">}}</span><span class="s2">"&gt;read more &amp;raquo;&lt;/a&gt;&lt;/p&gt;
+		{% endif %}
+	  &lt;/li&gt;
+	{% endfor %}
+	&lt;/ul&gt;
+	
+		  &lt;div class="</span><span class="n">container</span><span class="s2">"&gt;
+			&lt;div class="</span><span class="n">row</span> <span class="n">justify</span><span class="o">-</span><span class="n">content</span><span class="o">-</span><span class="n">center</span><span class="s2">"&gt;
+			  &lt;div class="</span><span class="n">col</span><span class="o">-</span><span class="n">xs</span><span class="o">-</span><span class="mi">6</span><span class="s2">"&gt;
+				  &lt;!-- pagination --&gt;
+				  &lt;nav aria-label="</span><span class="no">Page</span> <span class="n">navigation</span> <span class="n">example</span><span class="s2">"&gt;
+					  &lt;ul class="</span><span class="n">pagination</span> <span class="n">pagination</span><span class="o">-</span><span class="n">sm</span><span class="s2">"&gt;
+							{% if paginator.previous_page %}
+						&lt;li class="</span><span class="n">page</span><span class="o">-</span><span class="n">item</span> <span class="n">active</span><span class="s2">"&gt;
+						  &lt;a class="</span><span class="n">page</span><span class="o">-</span><span class="n">link</span><span class="s2">" href="</span><span class="p">{{</span> <span class="n">paginator</span><span class="p">.</span><span class="nf">previous_page_path</span> <span class="o">|</span> <span class="ss">prepend: </span><span class="n">site</span><span class="p">.</span><span class="nf">baseurl</span> <span class="o">|</span> <span class="ss">replace: </span><span class="s1">'//'</span><span class="p">,</span> <span class="s1">'/'</span> <span class="p">}}</span><span class="s2">"&gt;&lt;i class="</span><span class="n">fas</span> <span class="n">fa</span><span class="o">-</span><span class="n">fw</span> <span class="n">fa</span><span class="o">-</span><span class="n">chevron</span><span class="o">-</span><span class="n">left</span><span class="s2">"&gt;&lt;/i&gt; Prev&lt;/a&gt;&lt;/li&gt;
+					  {% else %}
+						&lt;li class="</span><span class="n">page</span><span class="o">-</span><span class="n">item</span> <span class="n">disabled</span><span class="s2">"&gt;&lt;a class="</span><span class="n">page</span><span class="o">-</span><span class="n">link</span><span class="s2">"&gt;&lt;i class="</span><span class="n">fas</span> <span class="n">fa</span><span class="o">-</span><span class="n">fw</span> <span class="n">fa</span><span class="o">-</span><span class="n">chevron</span><span class="o">-</span><span class="n">left</span><span class="s2">"&gt;&lt;/i&gt; Prev&lt;/a&gt;&lt;/li&gt;
+					  {% endif %}
+	
+	  &lt;!--                 {% for page in (1..paginator.total_pages) %}
+						{% if page == paginator.page %}
+						  &lt;li class="</span><span class="n">page</span><span class="o">-</span><span class="n">item</span> <span class="n">disabled</span><span class="s2">"&gt;&lt;a class="</span><span class="n">page</span><span class="o">-</span><span class="n">link</span><span class="s2">" href="</span><span class="p">{{</span><span class="n">page</span><span class="p">}}</span><span class="s2">"&gt;{{ page }}&lt;/a&gt;&lt;/li&gt;
+						{% elsif page == 1 %}
+						  &lt;li class="</span><span class="n">page</span><span class="o">-</span><span class="n">item</span><span class="s2">"&gt;&lt;a class="</span><span class="n">page</span><span class="o">-</span><span class="n">link</span><span class="s2">" href="</span><span class="o">/</span><span class="s2">"&gt;{{ page }}&lt;/a&gt;&lt;/li&gt;
+						{% else %}
+						  &lt;li class="</span><span class="n">page</span><span class="o">-</span><span class="n">item</span><span class="s2">"&gt;&lt;a class="</span><span class="n">page</span><span class="o">-</span><span class="n">link</span><span class="s2">" href="</span><span class="p">{{</span> <span class="n">site</span><span class="p">.</span><span class="nf">paginate_path</span> <span class="o">|</span> <span class="ss">prepend: </span><span class="n">site</span><span class="p">.</span><span class="nf">baseurl</span> <span class="o">|</span> <span class="ss">replace: </span><span class="s1">'//'</span><span class="p">,</span> <span class="s1">'/'</span> <span class="o">|</span> <span class="ss">replace: </span><span class="s1">':num'</span><span class="p">,</span> <span class="n">page</span> <span class="p">}}</span><span class="s2">"&gt;{{ page }}&lt;/a&gt;&lt;/li&gt;
+						{% endif %}
+					  {% endfor %} --&gt;
+	
+					  {% if paginator.next_page %}
+						&lt;li class="</span><span class="n">page</span><span class="o">-</span><span class="n">item</span> <span class="n">active</span><span class="s2">"&gt;&lt;a class="</span><span class="n">page</span><span class="o">-</span><span class="n">link</span><span class="s2">" href="</span><span class="p">{{</span> <span class="n">paginator</span><span class="p">.</span><span class="nf">next_page_path</span> <span class="o">|</span> <span class="ss">prepend: </span><span class="n">site</span><span class="p">.</span><span class="nf">baseurl</span> <span class="o">|</span> <span class="ss">replace: </span><span class="s1">'//'</span><span class="p">,</span> <span class="s1">'/'</span> <span class="p">}}</span><span class="s2">"&gt;Next &lt;i class="</span><span class="n">fas</span> <span class="n">fa</span><span class="o">-</span><span class="n">chevron</span><span class="o">-</span><span class="n">right</span><span class="s2">"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+					  {% else %}
+						&lt;li class="</span><span class="n">page</span><span class="o">-</span><span class="n">item</span> <span class="n">disabled</span><span class="s2">"&gt;&lt;a class="</span><span class="n">page</span><span class="o">-</span><span class="n">link</span><span class="s2">"&gt; Next &lt;i class="</span><span class="n">fas</span> <span class="n">fa</span><span class="o">-</span><span class="n">chevron</span><span class="o">-</span><span class="n">right</span><span class="s2">"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+					  {% endif %}
+				  &lt;/ul&gt;
+				&lt;/nav&gt;
+			  &lt;/div&gt;
+			&lt;/div&gt;
+		  &lt;/div&gt;
+	
+		&lt;/div&gt;
+	  &lt;/div&gt;
+</span></code></pre></div></div>
+:ET
