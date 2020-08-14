@@ -1,4 +1,4 @@
-I"»À<h3 id="membuat-reaction-button-dengan-jquery-ajax">Membuat reaction button dengan jquery ajax</h3>
+I"∆À<h3 id="membuat-reaction-button-dengan-jquery-ajax">Membuat reaction button dengan jquery ajax</h3>
 
 <p><img src="{{site.url}}/assets/images/post/crud_ajax_with_button_reaction.gif" alt="crud_ajax_with_button_reaction" /></p>
 
@@ -47,7 +47,7 @@ file pertama yang akan dirubah adalah file <code class="language-plaintext highl
 <span class="k">require_once</span> <span class="s1">'../functions.php'</span><span class="p">;</span>
 <span class="k">if</span><span class="p">(</span><span class="o">@</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'detail'</span><span class="p">])</span><span class="o">:</span>
   <span class="nv">$dataId</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'detail'</span><span class="p">];</span>
-  <span class="nv">$detailData</span> <span class="o">=</span> <span class="nx">view</span><span class="p">(</span><span class="s2">"SELECT * FROM `product` WHERE `id` = '</span><span class="nv">$dataId</span><span class="s2">'"</span><span class="p">);</span>
+  <span class="nv">$detailData</span> <span class="o">=</span> <span class="nf">view</span><span class="p">(</span><span class="s2">"SELECT * FROM `product` WHERE `id` = '</span><span class="nv">$dataId</span><span class="s2">'"</span><span class="p">);</span>
 <span class="k">endif</span><span class="p">;</span>
 <span class="cp">?&gt;</span>
 <span class="cp">&lt;?php</span> <span class="k">foreach</span><span class="p">(</span><span class="nv">$detailData</span> <span class="k">as</span> <span class="nv">$data</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
@@ -218,13 +218,13 @@ file pertama yang akan dirubah adalah file <code class="language-plaintext highl
 berikut fungsi <code class="language-plaintext highlighter-rouge">addAjax(){}</code> yang sudah gout ubah :</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// file functions.php</span>
-<span class="k">function</span> <span class="nf">addAjax</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="nv">$file</span><span class="p">,</span> <span class="nv">$table1</span><span class="p">,</span> <span class="nv">$table2</span><span class="p">){</span>
+<span class="k">function</span> <span class="n">addAjax</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="nv">$file</span><span class="p">,</span> <span class="nv">$table1</span><span class="p">,</span> <span class="nv">$table2</span><span class="p">){</span>
   <span class="c1">// var_dump(@$file);</span>
   <span class="c1">// var_dump(@$data);</span>
 
-  <span class="nv">$dbh</span> <span class="o">=</span> <span class="nx">connect</span><span class="p">();</span>
+  <span class="nv">$dbh</span> <span class="o">=</span> <span class="nf">connect</span><span class="p">();</span>
   <span class="nv">$productCode</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'productcode'</span><span class="p">];</span>
-  <span class="nv">$productImage</span> <span class="o">=</span> <span class="nx">upload</span><span class="p">(</span><span class="nv">$file</span><span class="p">,</span> <span class="s1">'../assets/images/'</span><span class="p">);</span>
+  <span class="nv">$productImage</span> <span class="o">=</span> <span class="nf">upload</span><span class="p">(</span><span class="nv">$file</span><span class="p">,</span> <span class="s1">'../assets/images/'</span><span class="p">);</span>
   <span class="nv">$productName</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'productname'</span><span class="p">];</span>
   <span class="nv">$productDesc</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'productdescription'</span><span class="p">];</span>
   <span class="nv">$productPrice</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'productprice'</span><span class="p">];</span>
@@ -234,62 +234,62 @@ berikut fungsi <code class="language-plaintext highlighter-rouge">addAjax(){}</c
   <span class="p">}</span>
 
   <span class="nv">$sql</span> <span class="o">=</span> <span class="s2">"INSERT INTO `</span><span class="nv">$table1</span><span class="s2">` (id, product_code, product_image, product_name, product_description, product_price, id_react) VALUES ('', ?, ?, ?, ?, ?, '')"</span><span class="p">;</span>
-  <span class="nv">$insertProduct</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="na">prepare</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
+  <span class="nv">$insertProduct</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="nf">prepare</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
 
-  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="na">bindParam</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nv">$productCode</span><span class="p">);</span>
-  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="na">bindParam</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nv">$productImage</span><span class="p">);</span>
-  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="na">bindParam</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="nv">$productName</span><span class="p">);</span>
-  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="na">bindParam</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="nv">$productDesc</span><span class="p">);</span>
-  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="na">bindParam</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="nv">$productPrice</span><span class="p">);</span>
+  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="nf">bindParam</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nv">$productCode</span><span class="p">);</span>
+  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="nf">bindParam</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nv">$productImage</span><span class="p">);</span>
+  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="nf">bindParam</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="nv">$productName</span><span class="p">);</span>
+  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="nf">bindParam</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="nv">$productDesc</span><span class="p">);</span>
+  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="nf">bindParam</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="nv">$productPrice</span><span class="p">);</span>
 
-  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
+  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="nf">execute</span><span class="p">();</span>
   
     <span class="c1">// update id_react table product</span>
-  <span class="nv">$lastId</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="na">lastInsertId</span><span class="p">();</span>
+  <span class="nv">$lastId</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="nf">lastInsertId</span><span class="p">();</span>
   <span class="nv">$sql</span> <span class="o">=</span> <span class="s2">"
     UPDATE `</span><span class="nv">$table1</span><span class="s2">` SET id_react = </span><span class="nv">$lastId</span><span class="s2"> WHERE `id` = </span><span class="nv">$lastId</span><span class="s2">;
     INSERT INTO `</span><span class="nv">$table2</span><span class="s2">` (id_react, love, likes, clapping, cool) VALUES(</span><span class="nv">$lastId</span><span class="s2">, '', '', '', '');
   "</span><span class="p">;</span>
-  <span class="nv">$stmt</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="na">prepare</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
-  <span class="k">return</span> <span class="nv">$stmt</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
+  <span class="nv">$stmt</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="nf">prepare</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nv">$stmt</span><span class="o">-&gt;</span><span class="nf">execute</span><span class="p">();</span>
 
 <span class="p">}</span>
 </code></pre></div></div>
 <p>berikut ini fungsi lain yaitu fungsi untuk insert reaction dari buttonnya : gout beri nama fungsi <code class="language-plaintext highlighter-rouge">reactEmoji(){}</code></p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// file functions.php</span>
-<span class="k">function</span> <span class="nf">reactEmoji</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="nv">$table</span><span class="p">){</span>
+<span class="k">function</span> <span class="n">reactEmoji</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="nv">$table</span><span class="p">){</span>
   <span class="nv">$reactEmoji</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'reactemoji'</span><span class="p">];</span>
   <span class="nv">$reactId</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'reactid'</span><span class="p">];</span>
 
-  <span class="nv">$dbh</span> <span class="o">=</span> <span class="nx">connect</span><span class="p">();</span>
+  <span class="nv">$dbh</span> <span class="o">=</span> <span class="nf">connect</span><span class="p">();</span>
 
   <span class="k">switch</span><span class="p">(</span><span class="nv">$reactEmoji</span><span class="p">){</span>
     <span class="k">case</span> <span class="s2">"love"</span><span class="o">:</span>
       <span class="nv">$sql</span> <span class="o">=</span> <span class="s2">"UPDATE `</span><span class="nv">$table</span><span class="s2">` SET love=love+1 WHERE `id_react` = '</span><span class="nv">$reactId</span><span class="s2">'"</span><span class="p">;</span>
-      <span class="nv">$reaction</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="na">prepare</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
-      <span class="nv">$reaction</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
-      <span class="k">return</span> <span class="nv">$reaction</span><span class="o">-&gt;</span><span class="na">rowCount</span><span class="p">();</span>
+      <span class="nv">$reaction</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="nf">prepare</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
+      <span class="nv">$reaction</span><span class="o">-&gt;</span><span class="nf">execute</span><span class="p">();</span>
+      <span class="k">return</span> <span class="nv">$reaction</span><span class="o">-&gt;</span><span class="nf">rowCount</span><span class="p">();</span>
     <span class="k">break</span><span class="p">;</span>
 
     <span class="k">case</span> <span class="s2">"likes"</span><span class="o">:</span>
       <span class="nv">$sql</span> <span class="o">=</span> <span class="s2">"UPDATE `</span><span class="nv">$table</span><span class="s2">` SET likes=likes+1 WHERE `id_react` = '</span><span class="nv">$reactId</span><span class="s2">'"</span><span class="p">;</span>
-      <span class="nv">$reaction</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="na">prepare</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
-      <span class="nv">$reaction</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
-      <span class="k">return</span> <span class="nv">$reaction</span><span class="o">-&gt;</span><span class="na">rowCount</span><span class="p">();</span>
+      <span class="nv">$reaction</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="nf">prepare</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
+      <span class="nv">$reaction</span><span class="o">-&gt;</span><span class="nf">execute</span><span class="p">();</span>
+      <span class="k">return</span> <span class="nv">$reaction</span><span class="o">-&gt;</span><span class="nf">rowCount</span><span class="p">();</span>
     <span class="k">break</span><span class="p">;</span>
 
     <span class="k">case</span> <span class="s2">"clapping"</span><span class="o">:</span>
       <span class="nv">$sql</span> <span class="o">=</span> <span class="s2">"UPDATE `</span><span class="nv">$table</span><span class="s2">` SET clapping=clapping+1 WHERE `id_react` = '</span><span class="nv">$reactId</span><span class="s2">'"</span><span class="p">;</span>
-      <span class="nv">$reaction</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="na">prepare</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
-      <span class="nv">$reaction</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
-      <span class="k">return</span> <span class="nv">$reaction</span><span class="o">-&gt;</span><span class="na">rowCount</span><span class="p">();</span>
+      <span class="nv">$reaction</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="nf">prepare</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
+      <span class="nv">$reaction</span><span class="o">-&gt;</span><span class="nf">execute</span><span class="p">();</span>
+      <span class="k">return</span> <span class="nv">$reaction</span><span class="o">-&gt;</span><span class="nf">rowCount</span><span class="p">();</span>
     <span class="k">break</span><span class="p">;</span>
 
     <span class="k">case</span> <span class="s2">"cool"</span><span class="o">:</span>
       <span class="nv">$sql</span> <span class="o">=</span> <span class="s2">"UPDATE `</span><span class="nv">$table</span><span class="s2">` SET cool=cool+1 WHERE `id_react` = '</span><span class="nv">$reactId</span><span class="s2">'"</span><span class="p">;</span>
-      <span class="nv">$reaction</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="na">prepare</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
-      <span class="nv">$reaction</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
-      <span class="k">return</span> <span class="nv">$reaction</span><span class="o">-&gt;</span><span class="na">rowCount</span><span class="p">();</span>
+      <span class="nv">$reaction</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="nf">prepare</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
+      <span class="nv">$reaction</span><span class="o">-&gt;</span><span class="nf">execute</span><span class="p">();</span>
+      <span class="k">return</span> <span class="nv">$reaction</span><span class="o">-&gt;</span><span class="nf">rowCount</span><span class="p">();</span>
     <span class="k">break</span><span class="p">;</span>
   <span class="p">}</span>
   
@@ -314,10 +314,10 @@ berikut fungsi <code class="language-plaintext highlighter-rouge">addAjax(){}</c
 <span class="k">require_once</span> <span class="s1">'../functions.php'</span><span class="p">;</span>
 
 <span class="k">if</span><span class="p">(</span><span class="o">@</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'reactemoji'</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="o">@</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'reactid'</span><span class="p">])</span><span class="o">:</span>
-  <span class="nx">reactEmoji</span><span class="p">(</span><span class="o">@</span><span class="nv">$_GET</span><span class="p">,</span> <span class="s1">'reaction'</span><span class="p">);</span>
+  <span class="nf">reactEmoji</span><span class="p">(</span><span class="o">@</span><span class="nv">$_GET</span><span class="p">,</span> <span class="s1">'reaction'</span><span class="p">);</span>
 <span class="nv">$emoji</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'reactemoji'</span><span class="p">];</span>
 <span class="nv">$idEmoji</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'reactid'</span><span class="p">];</span>
-<span class="nv">$emojiValue</span> <span class="o">=</span> <span class="nx">view</span><span class="p">(</span><span class="s2">"SELECT * FROM `reaction` WHERE `id_react` = </span><span class="nv">$idEmoji</span><span class="s2">"</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+<span class="nv">$emojiValue</span> <span class="o">=</span> <span class="nf">view</span><span class="p">(</span><span class="s2">"SELECT * FROM `reaction` WHERE `id_react` = </span><span class="nv">$idEmoji</span><span class="s2">"</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
 <span class="cp">?&gt;</span>
 <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"react-ul"</span> <span class="na">class=</span><span class="s">"ml-4"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"react-list </span><span class="cp">&lt;?=</span><span class="p">(</span><span class="nv">$emojiValue</span><span class="p">[</span><span class="s1">'love'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">?</span> <span class="s1">'text-primary'</span> <span class="o">:</span> <span class="s1">'text-danger'</span><span class="p">;</span><span class="cp">?&gt;</span><span class="s">"</span><span class="nt">&gt;</span><span class="cp">&lt;?=</span><span class="nv">$emojiValue</span><span class="p">[</span><span class="s1">'love'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="nt">&lt;/li&gt;</span>

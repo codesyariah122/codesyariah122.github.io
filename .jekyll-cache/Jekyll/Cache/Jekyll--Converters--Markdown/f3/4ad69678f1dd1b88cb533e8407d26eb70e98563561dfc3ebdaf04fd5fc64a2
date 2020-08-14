@@ -1,4 +1,4 @@
-I"/<p><img src="{{ site.url }}/assets/images/post/explode_telp1.png" alt="explode" /><br />
+I"0<p><img src="{{ site.url }}/assets/images/post/explode_telp1.png" alt="explode" /><br />
 Halo para coders semuanya !<br />
 selamat menjalankan ibadah puasanya, semoga berkah ibadah di bulan ramadhan tahun ini.<br />
 postingan kali akan berhubungan dengan string di PHP. ok langsung saja kita eksekusi.<br />
@@ -23,7 +23,7 @@ ok langsung saja kita pecah string nomor telepon diatas :</p>
 <span class="nv">$tel</span> <span class="o">=</span> <span class="p">[</span><span class="nv">$fix1</span><span class="p">,</span> <span class="nv">$fix2</span><span class="p">,</span> <span class="nv">$fix3</span><span class="p">];</span>
 <span class="nv">$tel</span> <span class="o">=</span> <span class="nb">implode</span><span class="p">(</span><span class="s2">"-"</span><span class="p">,</span> <span class="nv">$tel</span><span class="p">);</span>
 
-<span class="k">echo</span> <span class="s2">"Phone = "</span><span class="o">.</span> <span class="nv">$tel</span><span class="p">;</span>
+<span class="k">echo</span> <span class="s2">"Phone = "</span><span class="mf">.</span> <span class="nv">$tel</span><span class="p">;</span>
 </code></pre></div></div>
 
 <p>ok silahkan disesuaikan dengan rule dan algoritma ditempat agan masing-masing. dirasa sudah cukup postingan kali ini, saya harap mudah di fahami. 

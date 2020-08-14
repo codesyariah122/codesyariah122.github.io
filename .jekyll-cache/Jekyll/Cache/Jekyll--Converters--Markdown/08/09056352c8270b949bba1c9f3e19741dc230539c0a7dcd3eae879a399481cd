@@ -14,7 +14,7 @@ pada dasarnya penginstallan nya sama seperti memasang source untuk javascript ki
 <p>pada kesempatan ini saya ingin berbagi mengenai default sorting dari datatables yang tidak berjalan, jadi ceritanya saya ingin menampilkan data<br />
 yang saya kelola dari database, dan saya ingin menampilkan nya secara descending atau mengurut dari sebuah id yang terbesar. 
 query database saya seperti ini :</p>
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>            <span class="nv">$tampilUser</span> <span class="o">=</span> <span class="nx">tampilUser</span><span class="p">(</span><span class="s2">"SELECT * FROM user ORDER BY id DESC"</span><span class="p">);</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>            <span class="nv">$tampilUser</span> <span class="o">=</span> <span class="nf">tampilUser</span><span class="p">(</span><span class="s2">"SELECT * FROM user ORDER BY id DESC"</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>seharusnya table data yang disorting adalah mulai dari yang terbesar berada di row teratas, tapi bila kita menggunakan datatables secara default tidak berjalan<br />

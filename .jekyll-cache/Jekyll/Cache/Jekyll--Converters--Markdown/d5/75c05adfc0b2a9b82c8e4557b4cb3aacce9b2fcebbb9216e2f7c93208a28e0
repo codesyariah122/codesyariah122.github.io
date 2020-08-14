@@ -1,4 +1,4 @@
-I"ÔO<h3 id="fitur-live-search-dengan-ajax-jquery">Fitur live search dengan ajax jquery</h3>
+I"ÓO<h3 id="fitur-live-search-dengan-ajax-jquery">Fitur live search dengan ajax jquery</h3>
 
 <p><img src="{{site.url}}/assets/images/post/live_search.png" alt="live_search_ajax" /></p>
 
@@ -13,14 +13,14 @@ ok tan[p]a berlama lama kita langsung ajah ke codingan nya :</p>
 <p>dari code-code sebelumnya gout hanya menambahkan satu fungsi baru sebagai sebuah metode untuk menjalankan program live search.<br />
 didalam file function.php, tambahkan fungsi baru di baris paling bawah, kemudian copy code dibawah ini:</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="nf">searchData</span><span class="p">(</span><span class="nv">$keyword</span><span class="p">){</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="n">searchData</span><span class="p">(</span><span class="nv">$keyword</span><span class="p">){</span>
 	<span class="nv">$query</span> <span class="o">=</span> <span class="s2">"SELECT * FROM `product` WHERE 
 				`product_code` LIKE '%</span><span class="nv">$keyword</span><span class="s2">%' OR
 				`product_name` LIKE '%</span><span class="nv">$keyword</span><span class="s2">%' OR
 				`product_price` LIKE '%</span><span class="nv">$keyword</span><span class="s2">%'
 				ORDER BY `id` DESC
 	"</span><span class="p">;</span>
-	<span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="nv">$query</span><span class="p">);</span>
+	<span class="k">return</span> <span class="nf">view</span><span class="p">(</span><span class="nv">$query</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 <p>dari fungsi diatas terdapat baris code berikut :  <code class="language-plaintext highlighter-rouge">return view()</code> code ini adalah fungsi callback yang merupakan bagian reusable program dari aplikasi cruddata sederhana ini, atau bahasa manusianya memanggil fungsi dari sebuah fungsi yang sebelumnya sudah dibuat, karena di code sebelumnya di dalam file <code class="language-plaintext highlighter-rouge">functions.php</code> tersebut terdapat fungsi <code class="language-plaintext highlighter-rouge">view</code> yakni sebuah fungsi untuk melakukan query (mengambil data) dari database untuk disajikan ke view frontend.</p>
@@ -83,9 +83,9 @@ didalam file function.php, tambahkan fungsi baru di baris paling bawah, kemudian
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>  
 <span class="k">require_once</span> <span class="s1">'../functions.php'</span><span class="p">;</span>
 <span class="k">if</span><span class="p">(</span><span class="o">@</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'keyword'</span><span class="p">]</span> <span class="o">==</span> <span class="o">@</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'keyword'</span><span class="p">])</span><span class="o">:</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">searchData</span><span class="p">(</span><span class="o">@</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'keyword'</span><span class="p">]))</span><span class="o">:</span>
+    <span class="k">if</span><span class="p">(</span><span class="nf">searchData</span><span class="p">(</span><span class="o">@</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'keyword'</span><span class="p">]))</span><span class="o">:</span>
       <span class="nb">usleep</span><span class="p">(</span><span class="mi">700000</span><span class="p">);</span>
-      <span class="nv">$viewData</span> <span class="o">=</span> <span class="nx">searchData</span><span class="p">(</span><span class="o">@</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'keyword'</span><span class="p">]);</span>
+      <span class="nv">$viewData</span> <span class="o">=</span> <span class="nf">searchData</span><span class="p">(</span><span class="o">@</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'keyword'</span><span class="p">]);</span>
     <span class="k">endif</span><span class="p">;</span>
 <span class="k">endif</span><span class="p">;</span>
 <span class="cp">?&gt;</span>

@@ -1,4 +1,4 @@
-I"G¬<h3 id="fitur-upload-gambar-dengan-metode-pdo-dan-jquery-ajax">Fitur upload gambar dengan metode PDO dan jquery-ajax</h3>
+I"t¬<h3 id="fitur-upload-gambar-dengan-metode-pdo-dan-jquery-ajax">Fitur upload gambar dengan metode PDO dan jquery-ajax</h3>
 <p><img src="{{site.url}}/assets/images/post/crud_ajax_with_upload.gif" alt="upload_ajax" /></p>
 
 <p>halo coders semuanya â€¦.<br />
@@ -31,7 +31,7 @@ kedua item baru ini akan ditambahkan juga di file <code class="language-plaintex
 <span class="k">if</span><span class="p">(</span><span class="o">@</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'page'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'add'</span><span class="p">)</span><span class="o">:</span>
 
   <span class="c1">//addAjax($_POST, $_FILES, 'product');</span>
-  <span class="k">if</span><span class="p">(</span><span class="nx">addAjax</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">,</span> <span class="nv">$_FILES</span><span class="p">,</span> <span class="s1">'product'</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">:</span>
+  <span class="k">if</span><span class="p">(</span><span class="nf">addAjax</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">,</span> <span class="nv">$_FILES</span><span class="p">,</span> <span class="s1">'product'</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">:</span>
     <span class="c1">//usleep(700000);</span>
     <span class="k">echo</span> <span class="s2">"success"</span><span class="p">;</span>
   <span class="k">endif</span><span class="p">;</span>
@@ -106,13 +106,13 @@ kedua item baru ini akan ditambahkan juga di file <code class="language-plaintex
 
 <span class="nv">$id</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'id'</span><span class="p">];</span>
 
-<span class="nv">$viewById</span> <span class="o">=</span> <span class="nx">view</span><span class="p">(</span><span class="s2">"SELECT * FROM `product` WHERE `id` = '</span><span class="nv">$id</span><span class="s2">'"</span><span class="p">);</span>
+<span class="nv">$viewById</span> <span class="o">=</span> <span class="nf">view</span><span class="p">(</span><span class="s2">"SELECT * FROM `product` WHERE `id` = '</span><span class="nv">$id</span><span class="s2">'"</span><span class="p">);</span>
 
 <span class="c1">//var_dump($viewById);</span>
 
 <span class="k">if</span><span class="p">(</span><span class="o">@</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'page'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'edit'</span><span class="p">)</span><span class="o">:</span>
 
-  <span class="k">if</span><span class="p">(</span><span class="nx">editAjax</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">,</span> <span class="nv">$_FILES</span><span class="p">,</span> <span class="s1">'product'</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">:</span>
+  <span class="k">if</span><span class="p">(</span><span class="nf">editAjax</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">,</span> <span class="nv">$_FILES</span><span class="p">,</span> <span class="s1">'product'</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">:</span>
     <span class="k">echo</span> <span class="s2">"success"</span><span class="p">;</span> 
   <span class="k">endif</span><span class="p">;</span>
 
@@ -187,57 +187,57 @@ kedua item baru ini akan ditambahkan juga di file <code class="language-plaintex
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 <span class="k">require_once</span> <span class="s1">'config.php'</span><span class="p">;</span>
 
-<span class="k">function</span> <span class="nf">layout</span><span class="p">(</span><span class="nv">$dir</span><span class="p">,</span> <span class="nv">$file</span><span class="p">,</span> <span class="nv">$ext</span><span class="p">){</span>
+<span class="k">function</span> <span class="n">layout</span><span class="p">(</span><span class="nv">$dir</span><span class="p">,</span> <span class="nv">$file</span><span class="p">,</span> <span class="nv">$ext</span><span class="p">){</span>
   <span class="c1">//global $dir;</span>
-  <span class="k">if</span><span class="p">(</span><span class="nb">file_exists</span><span class="p">(</span><span class="nv">$dir</span><span class="o">.</span><span class="s1">'/'</span><span class="o">.</span><span class="nv">$file</span><span class="o">.</span><span class="nv">$ext</span><span class="p">)){</span>
-    <span class="k">require_once</span> <span class="nv">$dir</span><span class="o">.</span><span class="s1">'/'</span><span class="o">.</span><span class="nv">$file</span><span class="o">.</span><span class="nv">$ext</span><span class="p">;</span>
+  <span class="k">if</span><span class="p">(</span><span class="nb">file_exists</span><span class="p">(</span><span class="nv">$dir</span><span class="mf">.</span><span class="s1">'/'</span><span class="mf">.</span><span class="nv">$file</span><span class="mf">.</span><span class="nv">$ext</span><span class="p">)){</span>
+    <span class="k">require_once</span> <span class="nv">$dir</span><span class="mf">.</span><span class="s1">'/'</span><span class="mf">.</span><span class="nv">$file</span><span class="mf">.</span><span class="nv">$ext</span><span class="p">;</span>
   <span class="p">}</span><span class="k">else</span><span class="p">{</span>
     <span class="k">echo</span> <span class="s2">"&lt;h1 class='text-danger text-center'&gt;Layout Not Found&lt;/h1&gt;"</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="k">function</span> <span class="nf">connect</span><span class="p">(){</span>
-  <span class="nv">$dbhost</span> <span class="o">=</span> <span class="nx">DB_HOST</span><span class="p">;</span>
-  <span class="nv">$dbname</span> <span class="o">=</span> <span class="nx">DB_NAME</span><span class="p">;</span>
-  <span class="nv">$dbuser</span> <span class="o">=</span> <span class="nx">DB_USER</span><span class="p">;</span>
-  <span class="nv">$dbpass</span> <span class="o">=</span> <span class="nx">DB_PASS</span><span class="p">;</span>
+<span class="k">function</span> <span class="n">connect</span><span class="p">(){</span>
+  <span class="nv">$dbhost</span> <span class="o">=</span> <span class="no">DB_HOST</span><span class="p">;</span>
+  <span class="nv">$dbname</span> <span class="o">=</span> <span class="no">DB_NAME</span><span class="p">;</span>
+  <span class="nv">$dbuser</span> <span class="o">=</span> <span class="no">DB_USER</span><span class="p">;</span>
+  <span class="nv">$dbpass</span> <span class="o">=</span> <span class="no">DB_PASS</span><span class="p">;</span>
 
   <span class="k">try</span><span class="p">{</span>
-    <span class="nv">$conn</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PDO</span><span class="p">(</span><span class="s2">"mysql:host=</span><span class="nv">$dbhost</span><span class="s2">;dbname=</span><span class="nv">$dbname</span><span class="s2">"</span><span class="p">,</span> <span class="nv">$dbuser</span><span class="p">,</span> <span class="nv">$dbpass</span><span class="p">);</span>
-    <span class="nv">$conn</span><span class="o">-&gt;</span><span class="na">setAttribute</span><span class="p">(</span><span class="nx">PDO</span><span class="o">::</span><span class="na">ATTR_ERRMODE</span><span class="p">,</span> <span class="nx">PDO</span><span class="o">::</span><span class="na">ERRMODE_EXCEPTION</span><span class="p">);</span>
+    <span class="nv">$conn</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PDO</span><span class="p">(</span><span class="s2">"mysql:host=</span><span class="nv">$dbhost</span><span class="s2">;dbname=</span><span class="nv">$dbname</span><span class="s2">"</span><span class="p">,</span> <span class="nv">$dbuser</span><span class="p">,</span> <span class="nv">$dbpass</span><span class="p">);</span>
+    <span class="nv">$conn</span><span class="o">-&gt;</span><span class="nf">setAttribute</span><span class="p">(</span><span class="no">PDO</span><span class="o">::</span><span class="no">ATTR_ERRMODE</span><span class="p">,</span> <span class="no">PDO</span><span class="o">::</span><span class="no">ERRMODE_EXCEPTION</span><span class="p">);</span>
     <span class="c1">//echo "Connection succesfully added";</span>
     <span class="k">return</span> <span class="nv">$conn</span><span class="p">;</span>
-  <span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="nx">PDOException</span> <span class="nv">$e</span><span class="p">){</span>
-    <span class="k">echo</span> <span class="s2">"Connection failed "</span><span class="o">.</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">();</span>
+  <span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="nc">PDOException</span> <span class="nv">$e</span><span class="p">){</span>
+    <span class="k">echo</span> <span class="s2">"Connection failed "</span><span class="mf">.</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="nf">getMessage</span><span class="p">();</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
 
-<span class="k">function</span> <span class="nf">view</span><span class="p">(</span><span class="nv">$query</span><span class="p">){</span>
-  <span class="nv">$dbh</span> <span class="o">=</span> <span class="nx">connect</span><span class="p">();</span>
+<span class="k">function</span> <span class="n">view</span><span class="p">(</span><span class="nv">$query</span><span class="p">){</span>
+  <span class="nv">$dbh</span> <span class="o">=</span> <span class="nf">connect</span><span class="p">();</span>
   <span class="k">try</span><span class="p">{</span>
-    <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="na">setAttribute</span><span class="p">(</span><span class="nx">PDO</span><span class="o">::</span><span class="na">ATTR_ERRMODE</span><span class="p">,</span> <span class="nx">PDO</span><span class="o">::</span><span class="na">ERRMODE_EXCEPTION</span><span class="p">);</span>
-    <span class="nv">$sql</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="nv">$query</span><span class="p">);</span>
+    <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="nf">setAttribute</span><span class="p">(</span><span class="no">PDO</span><span class="o">::</span><span class="no">ATTR_ERRMODE</span><span class="p">,</span> <span class="no">PDO</span><span class="o">::</span><span class="no">ERRMODE_EXCEPTION</span><span class="p">);</span>
+    <span class="nv">$sql</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="nf">query</span><span class="p">(</span><span class="nv">$query</span><span class="p">);</span>
     <span class="nv">$rows</span><span class="o">=</span><span class="p">[];</span>
 
-    <span class="k">while</span><span class="p">(</span><span class="nv">$row</span> <span class="o">=</span> <span class="nv">$sql</span><span class="o">-&gt;</span><span class="na">fetch</span><span class="p">(</span><span class="nx">PDO</span><span class="o">::</span><span class="na">FETCH_ASSOC</span><span class="p">))</span><span class="o">:</span>
+    <span class="k">while</span><span class="p">(</span><span class="nv">$row</span> <span class="o">=</span> <span class="nv">$sql</span><span class="o">-&gt;</span><span class="nf">fetch</span><span class="p">(</span><span class="no">PDO</span><span class="o">::</span><span class="no">FETCH_ASSOC</span><span class="p">))</span><span class="o">:</span>
       <span class="nv">$rows</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$row</span><span class="p">;</span>
     <span class="k">endwhile</span><span class="p">;</span>
 
     <span class="k">return</span> <span class="nv">$rows</span><span class="p">;</span>
-  <span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="nx">PDOException</span> <span class="nv">$e</span><span class="p">){</span>
-    <span class="k">echo</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">();</span>
+  <span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="nc">PDOException</span> <span class="nv">$e</span><span class="p">){</span>
+    <span class="k">echo</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="nf">getMessage</span><span class="p">();</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
 
-<span class="k">function</span> <span class="nf">addAjax</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="nv">$file</span><span class="p">,</span> <span class="nv">$table</span><span class="p">){</span>
+<span class="k">function</span> <span class="n">addAjax</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="nv">$file</span><span class="p">,</span> <span class="nv">$table</span><span class="p">){</span>
   <span class="c1">// var_dump(@$file);</span>
   <span class="c1">// var_dump(@$data);</span>
 
-  <span class="nv">$dbh</span> <span class="o">=</span> <span class="nx">connect</span><span class="p">();</span>
+  <span class="nv">$dbh</span> <span class="o">=</span> <span class="nf">connect</span><span class="p">();</span>
   <span class="nv">$productCode</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'productcode'</span><span class="p">];</span>
-  <span class="nv">$productImage</span> <span class="o">=</span> <span class="nx">upload</span><span class="p">(</span><span class="nv">$file</span><span class="p">,</span> <span class="s1">'../assets/images/'</span><span class="p">);</span>
+  <span class="nv">$productImage</span> <span class="o">=</span> <span class="nf">upload</span><span class="p">(</span><span class="nv">$file</span><span class="p">,</span> <span class="s1">'../assets/images/'</span><span class="p">);</span>
   <span class="nv">$productName</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'productname'</span><span class="p">];</span>
   <span class="nv">$productDesc</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'productdescription'</span><span class="p">];</span>
   <span class="nv">$productPrice</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'productprice'</span><span class="p">];</span>
@@ -246,19 +246,19 @@ kedua item baru ini akan ditambahkan juga di file <code class="language-plaintex
     <span class="nv">$productImage</span> <span class="o">=</span> <span class="s1">'no-product-image.png'</span><span class="p">;</span>
   <span class="p">}</span>
 
-  <span class="nv">$insertProduct</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="na">prepare</span><span class="p">(</span><span class="s2">"INSERT INTO `</span><span class="nv">$table</span><span class="s2">` (id, product_code, product_image, product_name, product_description, product_price) VALUES ('', ?, ?, ?, ?, ?)"</span><span class="p">);</span>
-  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="na">bindParam</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nv">$productCode</span><span class="p">);</span>
-  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="na">bindParam</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nv">$productImage</span><span class="p">);</span>
-  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="na">bindParam</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="nv">$productName</span><span class="p">);</span>
-  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="na">bindParam</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="nv">$productDesc</span><span class="p">);</span>
-  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="na">bindParam</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="nv">$productPrice</span><span class="p">);</span>
+  <span class="nv">$insertProduct</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="nf">prepare</span><span class="p">(</span><span class="s2">"INSERT INTO `</span><span class="nv">$table</span><span class="s2">` (id, product_code, product_image, product_name, product_description, product_price) VALUES ('', ?, ?, ?, ?, ?)"</span><span class="p">);</span>
+  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="nf">bindParam</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nv">$productCode</span><span class="p">);</span>
+  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="nf">bindParam</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nv">$productImage</span><span class="p">);</span>
+  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="nf">bindParam</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="nv">$productName</span><span class="p">);</span>
+  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="nf">bindParam</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="nv">$productDesc</span><span class="p">);</span>
+  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="nf">bindParam</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="nv">$productPrice</span><span class="p">);</span>
 
-  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
+  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="nf">execute</span><span class="p">();</span>
 
-  <span class="k">return</span> <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="na">rowCount</span><span class="p">();</span>
+  <span class="k">return</span> <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="nf">rowCount</span><span class="p">();</span>
 <span class="p">}</span>
 
-<span class="k">function</span> <span class="nf">editAjax</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="nv">$file</span><span class="p">,</span> <span class="nv">$table</span><span class="p">){</span>
+<span class="k">function</span> <span class="n">editAjax</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="nv">$file</span><span class="p">,</span> <span class="nv">$table</span><span class="p">){</span>
   <span class="nv">$productCode</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'productcode'</span><span class="p">];</span>
   <span class="nv">$productImage</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'productimage'</span><span class="p">];</span>
   <span class="nv">$productName</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'productname'</span><span class="p">];</span>
@@ -267,32 +267,32 @@ kedua item baru ini akan ditambahkan juga di file <code class="language-plaintex
   <span class="nv">$productId</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'productid'</span><span class="p">];</span>
 
   <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nv">$productImage</span><span class="p">){</span>
-    <span class="nv">$productImage</span> <span class="o">=</span> <span class="nx">upload</span><span class="p">(</span><span class="nv">$file</span><span class="p">,</span> <span class="s1">'../assets/images/'</span><span class="p">);</span>
+    <span class="nv">$productImage</span> <span class="o">=</span> <span class="nf">upload</span><span class="p">(</span><span class="nv">$file</span><span class="p">,</span> <span class="s1">'../assets/images/'</span><span class="p">);</span>
   <span class="p">}</span><span class="k">elseif</span><span class="p">(</span><span class="nb">empty</span><span class="p">(</span><span class="nv">$productImage</span><span class="p">)){</span>
     <span class="nv">$productImage</span> <span class="o">=</span> <span class="s1">'no-product-image.png'</span><span class="p">;</span>
   <span class="p">}</span>
 
 
-  <span class="nv">$dbh</span> <span class="o">=</span> <span class="nx">connect</span><span class="p">();</span>
+  <span class="nv">$dbh</span> <span class="o">=</span> <span class="nf">connect</span><span class="p">();</span>
 
-  <span class="nv">$edit</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="na">prepare</span><span class="p">(</span><span class="s2">"UPDATE `</span><span class="nv">$table</span><span class="s2">` SET product_code = ?, product_image = ?, product_name = ?, product_description = ?, product_price = ? WHERE `id` = ?"</span><span class="p">);</span>
-  <span class="nv">$edit</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">([</span><span class="nv">$productCode</span><span class="p">,</span> <span class="nv">$productImage</span><span class="p">,</span> <span class="nv">$productName</span><span class="p">,</span> <span class="nv">$productDesc</span><span class="p">,</span> <span class="nv">$productPrice</span><span class="p">,</span> <span class="nv">$productId</span><span class="p">]);</span>
+  <span class="nv">$edit</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="nf">prepare</span><span class="p">(</span><span class="s2">"UPDATE `</span><span class="nv">$table</span><span class="s2">` SET product_code = ?, product_image = ?, product_name = ?, product_description = ?, product_price = ? WHERE `id` = ?"</span><span class="p">);</span>
+  <span class="nv">$edit</span><span class="o">-&gt;</span><span class="nf">execute</span><span class="p">([</span><span class="nv">$productCode</span><span class="p">,</span> <span class="nv">$productImage</span><span class="p">,</span> <span class="nv">$productName</span><span class="p">,</span> <span class="nv">$productDesc</span><span class="p">,</span> <span class="nv">$productPrice</span><span class="p">,</span> <span class="nv">$productId</span><span class="p">]);</span>
 
-  <span class="k">return</span> <span class="nv">$edit</span><span class="o">-&gt;</span><span class="na">rowCount</span><span class="p">();</span>
+  <span class="k">return</span> <span class="nv">$edit</span><span class="o">-&gt;</span><span class="nf">rowCount</span><span class="p">();</span>
 <span class="p">}</span>
 
-<span class="k">function</span> <span class="nf">deleteAjax</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="nv">$table</span><span class="p">){</span>
-  <span class="nv">$dbh</span> <span class="o">=</span> <span class="nx">connect</span><span class="p">();</span>
+<span class="k">function</span> <span class="n">deleteAjax</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="nv">$table</span><span class="p">){</span>
+  <span class="nv">$dbh</span> <span class="o">=</span> <span class="nf">connect</span><span class="p">();</span>
   <span class="nv">$id</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'id'</span><span class="p">];</span>
-  <span class="nv">$delete</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="na">prepare</span><span class="p">(</span><span class="s2">"DELETE FROM `</span><span class="nv">$table</span><span class="s2">` WHERE `id` = :id"</span><span class="p">);</span>
-  <span class="nv">$delete</span><span class="o">-&gt;</span><span class="na">bindParam</span><span class="p">(</span><span class="s2">":id"</span><span class="p">,</span> <span class="nv">$id</span><span class="p">);</span>
+  <span class="nv">$delete</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="nf">prepare</span><span class="p">(</span><span class="s2">"DELETE FROM `</span><span class="nv">$table</span><span class="s2">` WHERE `id` = :id"</span><span class="p">);</span>
+  <span class="nv">$delete</span><span class="o">-&gt;</span><span class="nf">bindParam</span><span class="p">(</span><span class="s2">":id"</span><span class="p">,</span> <span class="nv">$id</span><span class="p">);</span>
 
-  <span class="nv">$delete</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
+  <span class="nv">$delete</span><span class="o">-&gt;</span><span class="nf">execute</span><span class="p">();</span>
 
-  <span class="k">return</span> <span class="nv">$delete</span><span class="o">-&gt;</span><span class="na">rowCount</span><span class="p">();</span>
+  <span class="k">return</span> <span class="nv">$delete</span><span class="o">-&gt;</span><span class="nf">rowCount</span><span class="p">();</span>
 <span class="p">}</span>
 
-<span class="k">function</span> <span class="nf">searchData</span><span class="p">(</span><span class="nv">$keyword</span><span class="p">){</span>
+<span class="k">function</span> <span class="n">searchData</span><span class="p">(</span><span class="nv">$keyword</span><span class="p">){</span>
   <span class="nv">$query</span> <span class="o">=</span> <span class="s2">"SELECT * FROM `product` WHERE 
         `product_code` LIKE '%</span><span class="nv">$keyword</span><span class="s2">' OR
         `product_name` LIKE '%</span><span class="nv">$keyword</span><span class="s2">%' OR 
@@ -300,10 +300,10 @@ kedua item baru ini akan ditambahkan juga di file <code class="language-plaintex
         ORDER BY `id` DESC
   "</span><span class="p">;</span>
 
-  <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="nv">$query</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nf">view</span><span class="p">(</span><span class="nv">$query</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="k">function</span> <span class="nf">upload</span><span class="p">(</span><span class="nv">$file</span><span class="p">,</span> <span class="nv">$dir</span><span class="p">){</span>
+<span class="k">function</span> <span class="n">upload</span><span class="p">(</span><span class="nv">$file</span><span class="p">,</span> <span class="nv">$dir</span><span class="p">){</span>
   <span class="nv">$namaFile</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$file</span><span class="p">[</span><span class="s1">'productimage'</span><span class="p">][</span><span class="s1">'name'</span><span class="p">];</span>
   <span class="nv">$ukuranFile</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$file</span><span class="p">[</span><span class="s1">'productimage'</span><span class="p">][</span><span class="s1">'size'</span><span class="p">];</span>
   <span class="nv">$error</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$file</span><span class="p">[</span><span class="s1">'productimage'</span><span class="p">][</span><span class="s1">'error'</span><span class="p">];</span>
@@ -312,7 +312,7 @@ kedua item baru ini akan ditambahkan juga di file <code class="language-plaintex
   <span class="c1">// validasi error</span>
   <span class="k">if</span><span class="p">(</span><span class="nv">$error</span> <span class="o">===</span> <span class="mi">4</span><span class="p">){</span>
     <span class="nv">$empty</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-    <span class="k">if</span><span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$empty</span><span class="p">)){</span>
+    <span class="k">if</span><span class="p">(</span><span class="k">isset</span><span class="p">(</span><span class="nv">$empty</span><span class="p">)){</span>
       <span class="k">echo</span> <span class="s2">"Image not upload"</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
@@ -326,7 +326,7 @@ kedua item baru ini akan ditambahkan juga di file <code class="language-plaintex
 
     <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nb">in_array</span><span class="p">(</span><span class="nv">$ekstensiGambar</span><span class="p">,</span> <span class="nv">$ekstensiValid</span><span class="p">)){</span>
       <span class="nv">$noEkstensi</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-      <span class="k">if</span><span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$noEkstensi</span><span class="p">)){</span>
+      <span class="k">if</span><span class="p">(</span><span class="k">isset</span><span class="p">(</span><span class="nv">$noEkstensi</span><span class="p">)){</span>
         <span class="k">echo</span> <span class="s2">"File no image"</span><span class="p">;</span>
       <span class="p">}</span>
     <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
@@ -334,7 +334,7 @@ kedua item baru ini akan ditambahkan juga di file <code class="language-plaintex
   <span class="c1">// cek ukuran gambar</span>
     <span class="k">if</span><span class="p">(</span><span class="nv">$ukuranFile</span> <span class="o">&gt;</span> <span class="mi">700000</span><span class="p">){</span>
       <span class="nv">$sizeError</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-      <span class="k">if</span><span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$sizeError</span><span class="p">)){</span>
+      <span class="k">if</span><span class="p">(</span><span class="k">isset</span><span class="p">(</span><span class="nv">$sizeError</span><span class="p">)){</span>
         <span class="k">echo</span> <span class="s2">"File image is too big"</span><span class="p">;</span>
       <span class="p">}</span>
       <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
@@ -343,11 +343,11 @@ kedua item baru ini akan ditambahkan juga di file <code class="language-plaintex
   <span class="c1">// lolos pengecekan</span>
 
   <span class="nv">$namaFileBaru</span> <span class="o">=</span> <span class="nb">uniqid</span><span class="p">();</span>
-  <span class="nv">$namaFileBaru</span> <span class="o">.=</span> <span class="s1">'.'</span><span class="p">;</span>
-  <span class="nv">$namaFileBaru</span> <span class="o">.=</span> <span class="nv">$ekstensiGambar</span><span class="p">;</span>
+  <span class="nv">$namaFileBaru</span> <span class="mf">.</span><span class="o">=</span> <span class="s1">'.'</span><span class="p">;</span>
+  <span class="nv">$namaFileBaru</span> <span class="mf">.</span><span class="o">=</span> <span class="nv">$ekstensiGambar</span><span class="p">;</span>
 
   <span class="c1">// lakukan process upload</span>
-  <span class="nb">move_uploaded_file</span><span class="p">(</span><span class="nv">$tmpName</span><span class="p">,</span> <span class="nv">$dir</span><span class="o">.</span><span class="nv">$namaFileBaru</span><span class="p">);</span>
+  <span class="nb">move_uploaded_file</span><span class="p">(</span><span class="nv">$tmpName</span><span class="p">,</span> <span class="nv">$dir</span><span class="mf">.</span><span class="nv">$namaFileBaru</span><span class="p">);</span>
 
   <span class="k">return</span> <span class="nv">$namaFileBaru</span><span class="p">;</span>
 

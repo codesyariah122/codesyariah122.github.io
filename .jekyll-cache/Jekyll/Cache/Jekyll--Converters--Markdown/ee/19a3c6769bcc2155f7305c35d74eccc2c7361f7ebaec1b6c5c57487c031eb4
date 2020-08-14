@@ -1,4 +1,4 @@
-I"b<h3 id="fitur-pagination-dalam-crud-data-with-ajax-jquery">Fitur pagination dalam crud data with ajax jquery</h3>
+I"	b<h3 id="fitur-pagination-dalam-crud-data-with-ajax-jquery">Fitur pagination dalam crud data with ajax jquery</h3>
 <p>halo coders semuanya ….<br />
 ini masih melanjutkan edisi crud data dengan ajax jquery dengan menggunakan metode php pdo ekstension sebagai sql universal interfacenya.  dalam artikel kali ini gout mau menambahkan fitur pagination atau pengindeksan sebuah halaman/page, kedalam aplikasi crud data sederhana menggunakan metode pdo dan ajax-jquery yang sempat di bahas diartikel beberapa minggu yang lalu, masih hot-hot pop lah.</p>
 
@@ -120,7 +120,7 @@ diartikel membuat pagination ini struktur file masih sama, hanya struktur coding
 
 <p>selanjutnya di file root kita <code class="language-plaintext highlighter-rouge">functions.php</code> ada sedikit penambahan di fungsi <code class="language-plaintext highlighter-rouge">searchData(){}</code> seperti ini perubahan di bagian fungsi <code class="language-plaintext highlighter-rouge">searchData(){}</code> tersebut :</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="nf">searchData</span><span class="p">(</span><span class="nv">$keyword</span><span class="p">,</span> <span class="nv">$limitStart</span><span class="p">,</span> <span class="nv">$limit</span><span class="p">){</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="n">searchData</span><span class="p">(</span><span class="nv">$keyword</span><span class="p">,</span> <span class="nv">$limitStart</span><span class="p">,</span> <span class="nv">$limit</span><span class="p">){</span>
   <span class="nv">$query</span> <span class="o">=</span> <span class="s2">"SELECT * FROM `product` WHERE 
         `product_code` LIKE '%</span><span class="nv">$keyword</span><span class="s2">' OR
         `product_name` LIKE '%</span><span class="nv">$keyword</span><span class="s2">%' OR 
@@ -128,7 +128,7 @@ diartikel membuat pagination ini struktur file masih sama, hanya struktur coding
         ORDER BY `id` DESC
         LIMIT </span><span class="nv">$limitStart</span><span class="s2">, </span><span class="nv">$limit</span><span class="s2">"</span><span class="p">;</span> <span class="c1">// ini dibutuhkan untuk membatasi data yang akan di select</span>
 
-  <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="nv">$query</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nf">view</span><span class="p">(</span><span class="nv">$query</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -138,18 +138,18 @@ diartikel membuat pagination ini struktur file masih sama, hanya struktur coding
 <span class="k">require_once</span> <span class="s1">'../functions.php'</span><span class="p">;</span>
   <span class="c1">//echo "?page=".@$_GET['page'];</span>
 <span class="nv">$limit</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-<span class="nv">$jmlData</span> <span class="o">=</span> <span class="nb">count</span><span class="p">(</span><span class="nx">view</span><span class="p">(</span><span class="s2">"SELECT * FROM `product`"</span><span class="p">));</span>
+<span class="nv">$jmlData</span> <span class="o">=</span> <span class="nb">count</span><span class="p">(</span><span class="nf">view</span><span class="p">(</span><span class="s2">"SELECT * FROM `product`"</span><span class="p">));</span>
 <span class="nv">$jmlHalaman</span> <span class="o">=</span> <span class="nb">ceil</span><span class="p">(</span><span class="nv">$jmlData</span> <span class="o">/</span> <span class="nv">$limit</span><span class="p">);</span>
-<span class="nv">$aktifPage</span> <span class="o">=</span> <span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="o">@</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'page'</span><span class="p">])</span> <span class="o">?</span> <span class="o">@</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'page'</span><span class="p">]</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nv">$aktifPage</span> <span class="o">=</span> <span class="p">((</span><span class="n">int</span><span class="p">)</span><span class="o">@</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'page'</span><span class="p">])</span> <span class="o">?</span> <span class="o">@</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'page'</span><span class="p">]</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
 <span class="nv">$limitStart</span> <span class="o">=</span> <span class="p">(</span><span class="nv">$aktifPage</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="nv">$limit</span><span class="p">;</span>
 <span class="c1">//validasi parameter dari url</span>
 <span class="k">switch</span><span class="p">(</span><span class="o">@</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'page'</span><span class="p">])</span><span class="o">:</span>
   <span class="k">case</span> <span class="o">@</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'keyword'</span><span class="p">]</span><span class="o">:</span>
   <span class="nv">$keyword</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'keyword'</span><span class="p">];</span>
-  <span class="nv">$viewData</span> <span class="o">=</span> <span class="nx">searchData</span><span class="p">(</span><span class="nv">$keyword</span><span class="p">,</span> <span class="nv">$limitStart</span><span class="p">,</span> <span class="nv">$limit</span><span class="p">);</span>
+  <span class="nv">$viewData</span> <span class="o">=</span> <span class="nf">searchData</span><span class="p">(</span><span class="nv">$keyword</span><span class="p">,</span> <span class="nv">$limitStart</span><span class="p">,</span> <span class="nv">$limit</span><span class="p">);</span>
   <span class="k">break</span><span class="p">;</span>
   <span class="k">default</span><span class="o">:</span>
-  <span class="nv">$viewData</span> <span class="o">=</span> <span class="nx">view</span><span class="p">(</span><span class="s2">"SELECT * FROM `product` ORDER BY `id` DESC LIMIT </span><span class="nv">$limitStart</span><span class="s2">, </span><span class="nv">$limit</span><span class="s2">"</span><span class="p">);</span>
+  <span class="nv">$viewData</span> <span class="o">=</span> <span class="nf">view</span><span class="p">(</span><span class="s2">"SELECT * FROM `product` ORDER BY `id` DESC LIMIT </span><span class="nv">$limitStart</span><span class="s2">, </span><span class="nv">$limit</span><span class="s2">"</span><span class="p">);</span>
 <span class="k">endswitch</span><span class="p">;</span>
 <span class="cp">?&gt;</span>
 

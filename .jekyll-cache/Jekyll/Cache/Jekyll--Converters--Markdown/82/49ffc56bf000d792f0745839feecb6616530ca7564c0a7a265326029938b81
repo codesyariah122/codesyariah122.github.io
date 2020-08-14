@@ -1,4 +1,4 @@
-I"7C<p><img src="{{ site.url }}/assets/images/post/pagination2.png" alt="pagination2" /><br />
+I")C<p><img src="{{ site.url }}/assets/images/post/pagination2.png" alt="pagination2" /><br />
 <img src="{{ site.url }}/assets/images/post/pagination3.png" alt="pagination3" /><br />
 assaalamualaikum ~<br />
 Halo para coders! tercinta mudah-mudahan selalu dalam keadaan baik-baik dan sehat semuanya.<br />
@@ -51,20 +51,20 @@ dalam post kali ini saya hanya menjelaskan intinya langsung tentang penggunaan p
 <p>didalam controller kalian, buat sebuah configurasi seperti ini:</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 <span class="nb">defined</span><span class="p">(</span><span class="s1">'BASEPATH'</span><span class="p">)</span> <span class="k">OR</span> <span class="k">exit</span><span class="p">(</span><span class="s1">'No direct script access allowed'</span><span class="p">);</span>
-<span class="kd">class</span> <span class="nc">Post</span> <span class="k">extends</span> <span class="nx">CI_Controller</span> <span class="p">{</span>
+<span class="kd">class</span> <span class="nc">Post</span> <span class="kd">extends</span> <span class="nc">CI_Controller</span> <span class="p">{</span>
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">();</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">model</span><span class="p">(</span><span class="s1">'M_Data'</span><span class="p">,</span> <span class="s1">'post'</span><span class="p">);</span>
+        <span class="k">parent</span><span class="o">::</span><span class="nf">__construct</span><span class="p">();</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">load</span><span class="o">-&gt;</span><span class="nf">model</span><span class="p">(</span><span class="s1">'M_Data'</span><span class="p">,</span> <span class="s1">'post'</span><span class="p">);</span>
     <span class="p">}</span>
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">index</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="nv">$data</span><span class="p">[</span><span class="s1">'login'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">userdata</span><span class="p">(</span><span class="s1">'email'</span><span class="p">);</span>
+        <span class="nv">$data</span><span class="p">[</span><span class="s1">'login'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">session</span><span class="o">-&gt;</span><span class="nf">userdata</span><span class="p">(</span><span class="s1">'email'</span><span class="p">);</span>
         <span class="nv">$data</span><span class="p">[</span><span class="s1">'index_title'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Ourcitrus News"</span><span class="p">;</span>
-        <span class="nv">$config</span><span class="p">[</span><span class="s1">'base_url'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">base_url</span><span class="p">(</span><span class="s1">'post/index'</span><span class="p">);</span> <span class="c1">//site url</span>
-        <span class="nv">$config</span><span class="p">[</span><span class="s1">'total_rows'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">M_Data</span><span class="o">-&gt;</span><span class="na">countAllpost</span><span class="p">();</span> <span class="c1">//total row</span>
+        <span class="nv">$config</span><span class="p">[</span><span class="s1">'base_url'</span><span class="p">]</span> <span class="o">=</span> <span class="nf">base_url</span><span class="p">(</span><span class="s1">'post/index'</span><span class="p">);</span> <span class="c1">//site url</span>
+        <span class="nv">$config</span><span class="p">[</span><span class="s1">'total_rows'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">M_Data</span><span class="o">-&gt;</span><span class="nf">countAllpost</span><span class="p">();</span> <span class="c1">//total row</span>
         <span class="nv">$config</span><span class="p">[</span><span class="s1">'per_page'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>  <span class="c1">//show record per halaman</span>
         <span class="nv">$config</span><span class="p">[</span><span class="s2">"uri_segment"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>  <span class="c1">// uri parameter</span>
         <span class="nv">$choice</span> <span class="o">=</span> <span class="nv">$config</span><span class="p">[</span><span class="s2">"total_rows"</span><span class="p">]</span> <span class="o">/</span> <span class="nv">$config</span><span class="p">[</span><span class="s2">"per_page"</span><span class="p">];</span>
@@ -90,16 +90,16 @@ dalam post kali ini saya hanya menjelaskan intinya langsung tentang penggunaan p
         <span class="nv">$config</span><span class="p">[</span><span class="s1">'last_tag_open'</span><span class="p">]</span>    <span class="o">=</span> <span class="s1">'&lt;li class="page-item"&gt;&lt;span class="page-link"&gt;'</span><span class="p">;</span>
         <span class="nv">$config</span><span class="p">[</span><span class="s1">'last_tagl_close'</span><span class="p">]</span>  <span class="o">=</span> <span class="s1">'&lt;/span&gt;&lt;/li&gt;'</span><span class="p">;</span>
  
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">pagination</span><span class="o">-&gt;</span><span class="na">initialize</span><span class="p">(</span><span class="nv">$config</span><span class="p">);</span>
-        <span class="nv">$data</span><span class="p">[</span><span class="s1">'page'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">uri</span><span class="o">-&gt;</span><span class="na">segment</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span> <span class="o">?</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">uri</span><span class="o">-&gt;</span><span class="na">segment</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">pagination</span><span class="o">-&gt;</span><span class="nf">initialize</span><span class="p">(</span><span class="nv">$config</span><span class="p">);</span>
+        <span class="nv">$data</span><span class="p">[</span><span class="s1">'page'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">uri</span><span class="o">-&gt;</span><span class="nf">segment</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span> <span class="o">?</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">uri</span><span class="o">-&gt;</span><span class="nf">segment</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
  
         <span class="c1">//panggil function dari model untuk query table post. </span>
-        <span class="nv">$data</span><span class="p">[</span><span class="s1">'post'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">post</span><span class="o">-&gt;</span><span class="na">infoterbaru</span><span class="p">(</span><span class="nv">$config</span><span class="p">[</span><span class="s2">"per_page"</span><span class="p">],</span> <span class="nv">$data</span><span class="p">[</span><span class="s1">'page'</span><span class="p">]);</span>           
+        <span class="nv">$data</span><span class="p">[</span><span class="s1">'post'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">post</span><span class="o">-&gt;</span><span class="nf">infoterbaru</span><span class="p">(</span><span class="nv">$config</span><span class="p">[</span><span class="s2">"per_page"</span><span class="p">],</span> <span class="nv">$data</span><span class="p">[</span><span class="s1">'page'</span><span class="p">]);</span>           
  
-        <span class="nv">$data</span><span class="p">[</span><span class="s1">'pagination'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">pagination</span><span class="o">-&gt;</span><span class="na">create_links</span><span class="p">();</span>
+        <span class="nv">$data</span><span class="p">[</span><span class="s1">'pagination'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">pagination</span><span class="o">-&gt;</span><span class="nf">create_links</span><span class="p">();</span>
 
 		<span class="c1">//$this-&gt;template-&gt;myLayout('post/index', $data); ini layout yang saya buat dari tambahan fungsi di libraries codeigniter, jika dalam standar codeigniter maka harusnya seperti ini  </span>
-		<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">'post/index'</span><span class="p">,</span> <span class="nv">$data</span><span class="p">)</span>
+		<span class="nv">$this</span><span class="o">-&gt;</span><span class="n">load</span><span class="o">-&gt;</span><span class="nf">view</span><span class="p">(</span><span class="s1">'post/index'</span><span class="p">,</span> <span class="nv">$data</span><span class="p">)</span>
     <span class="p">}</span>
 
 <span class="p">}</span>
@@ -108,17 +108,17 @@ dalam post kali ini saya hanya menjelaskan intinya langsung tentang penggunaan p
 <p>selanjutnya kita buat model untuk mengambil data dari table post di database coders, sepert ini config di model saya :</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-<span class="kd">class</span> <span class="nc">M_Data</span> <span class="k">extends</span> <span class="nx">CI_Model</span> <span class="p">{</span>
+<span class="kd">class</span> <span class="nc">M_Data</span> <span class="kd">extends</span> <span class="nc">CI_Model</span> <span class="p">{</span>
 
-	    <span class="k">public</span> <span class="k">function</span> <span class="nf">infoterbaru</span><span class="p">(</span><span class="nv">$limit</span><span class="p">,</span> <span class="nv">$start</span><span class="p">)</span>
+	    <span class="k">public</span> <span class="k">function</span> <span class="n">infoterbaru</span><span class="p">(</span><span class="nv">$limit</span><span class="p">,</span> <span class="nv">$start</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">order_by</span><span class="p">(</span><span class="s1">'id'</span><span class="p">,</span> <span class="s1">'DESC'</span><span class="p">);</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'info_terbaru'</span><span class="p">,</span> <span class="nv">$limit</span><span class="p">,</span> <span class="nv">$start</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">result</span><span class="p">();</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">db</span><span class="o">-&gt;</span><span class="nf">order_by</span><span class="p">(</span><span class="s1">'id'</span><span class="p">,</span> <span class="s1">'DESC'</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">db</span><span class="o">-&gt;</span><span class="nf">get</span><span class="p">(</span><span class="s1">'info_terbaru'</span><span class="p">,</span> <span class="nv">$limit</span><span class="p">,</span> <span class="nv">$start</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">result</span><span class="p">();</span>
     <span class="p">}</span>
 
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">countAllpost</span><span class="p">()</span>
+        <span class="k">public</span> <span class="k">function</span> <span class="n">countAllpost</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'info_terbaru'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">num_rows</span><span class="p">();</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">db</span><span class="o">-&gt;</span><span class="nf">get</span><span class="p">(</span><span class="s1">'info_terbaru'</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">num_rows</span><span class="p">();</span>
     <span class="p">}</span>
 
 <span class="p">}</span>

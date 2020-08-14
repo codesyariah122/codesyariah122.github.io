@@ -1,4 +1,4 @@
-I"ž<p>Akhir-akhir ini perkembangan website sudah sangat berkembang pesat, banyak fitur yang bisa memudahkan kita untuk mendapatkan sebuah informasi digital yang akurat.<br />
+I"œ<p>Akhir-akhir ini perkembangan website sudah sangat berkembang pesat, banyak fitur yang bisa memudahkan kita untuk mendapatkan sebuah informasi digital yang akurat.<br />
 salah satu layanan aplikasi yang ingin saya bahas kali ini adalah live chat, live chat biasa digunakan untuk layanan live support untuk melayani langsung customer atau client<br />
 dari sebuah website. live chat ini sangat bermanfaat untuk digunakan bagi kalian yang mempunyai website eccomerce, marketing digital atau bisnis digital lainnya, untuk melayani<br />
 customer atau calon customer yang mengunjungi website atau toko online kita.</p>
@@ -12,13 +12,13 @@ pertama kita siapkan dulu file baru di direktori controllers, untuk itu pastikan
 ok langsung saja create new file di direktori controllers save dengan nama <code class="language-plaintext highlighter-rouge">Chat.php</code></p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-<span class="kd">class</span> <span class="nc">EmailService</span> <span class="k">extends</span> <span class="nx">CI_Controller</span> <span class="p">{</span>	
+<span class="kd">class</span> <span class="nc">EmailService</span> <span class="kd">extends</span> <span class="nc">CI_Controller</span> <span class="p">{</span>	
 	
-	  <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
+	  <span class="k">public</span> <span class="k">function</span> <span class="n">index</span><span class="p">()</span>
 	  <span class="p">{</span>
 		  <span class="nv">$data</span><span class="p">[</span><span class="s1">'title'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"live chat di codeigniter"</span><span class="p">;</span>
-		  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">'layout_kamu.php'</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
-		  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">'chat.php'</span><span class="p">);</span>
+		  <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">load</span><span class="o">-&gt;</span><span class="nf">view</span><span class="p">(</span><span class="s1">'layout_kamu.php'</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+		  <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">load</span><span class="o">-&gt;</span><span class="nf">view</span><span class="p">(</span><span class="s1">'chat.php'</span><span class="p">);</span>
 	  <span class="p">}</span>
   
   <span class="p">}</span>

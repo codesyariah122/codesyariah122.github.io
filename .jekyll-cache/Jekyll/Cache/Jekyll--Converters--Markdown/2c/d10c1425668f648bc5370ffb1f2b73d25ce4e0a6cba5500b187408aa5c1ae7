@@ -1,35 +1,35 @@
-I"W�<p>Kali ini kita (kita .. lu aja kali) maksudnya saya, kali ini saya akan membuat sebuah layanan email service dengan menggunakan library dari phpmailer dan codeigniter, ok langsung saja kita eksekusi.
+I"<�<p>Kali ini kita (kita .. lu aja kali) maksudnya saya, kali ini saya akan membuat sebuah layanan email service dengan menggunakan library dari phpmailer dan codeigniter, ok langsung saja kita eksekusi.
 buat sebuah controller untuk view nya kita simpan di direktori Controller, save dengan nama <em>EmailService.php</em>.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-<span class="kd">class</span> <span class="nc">EmailService</span> <span class="k">extends</span> <span class="nx">CI_Controller</span> <span class="p">{</span>
+<span class="kd">class</span> <span class="nc">EmailService</span> <span class="kd">extends</span> <span class="nc">CI_Controller</span> <span class="p">{</span>
 	
-	<span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
+	<span class="k">public</span> <span class="k">function</span> <span class="n">index</span><span class="p">()</span>
 	<span class="p">{</span>
 		
 		<span class="nv">$service</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">stdClass</span><span class="p">();</span>
-		<span class="nv">$service</span><span class="o">-&gt;</span><span class="na">id</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-		<span class="nv">$service</span><span class="o">-&gt;</span><span class="na">nama</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-		<span class="nv">$service</span><span class="o">-&gt;</span><span class="na">email</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-		<span class="nv">$service</span><span class="o">-&gt;</span><span class="na">subject</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-		<span class="nv">$service</span><span class="o">-&gt;</span><span class="na">pesan</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+		<span class="nv">$service</span><span class="o">-&gt;</span><span class="n">id</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+		<span class="nv">$service</span><span class="o">-&gt;</span><span class="n">nama</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+		<span class="nv">$service</span><span class="o">-&gt;</span><span class="n">email</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+		<span class="nv">$service</span><span class="o">-&gt;</span><span class="n">subject</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+		<span class="nv">$service</span><span class="o">-&gt;</span><span class="n">pesan</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
 		
 		<span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
 					<span class="s1">'service'</span> <span class="o">=&gt;</span> <span class="nv">$service</span> <span class="c1">//mengambil dari data $unit diatas</span>
 		<span class="p">];</span>
 		<span class="nv">$data</span><span class="p">[</span><span class="s1">'title'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"OURCITRUS | Admin"</span><span class="p">;</span>
 		
-		<span class="nv">$data</span><span class="p">[</span><span class="s1">'row'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">admin_m</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">();</span>
+		<span class="nv">$data</span><span class="p">[</span><span class="s1">'row'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">admin_m</span><span class="o">-&gt;</span><span class="nf">get</span><span class="p">();</span>
 		
-		<span class="nv">$data</span><span class="p">[</span><span class="s1">'subject'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'unit'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">result</span><span class="p">();</span>
+		<span class="nv">$data</span><span class="p">[</span><span class="s1">'subject'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">db</span><span class="o">-&gt;</span><span class="nf">get</span><span class="p">(</span><span class="s1">'unit'</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">result</span><span class="p">();</span>
 		
-		<span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">()</span> <span class="o">==</span> <span class="kc">FALSE</span><span class="p">)</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">form_validation</span><span class="o">-&gt;</span><span class="nf">run</span><span class="p">()</span> <span class="o">==</span> <span class="kc">FALSE</span><span class="p">)</span>
                 <span class="p">{</span>
-                        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">view</span><span class="o">-&gt;</span><span class="na">load</span><span class="p">(</span><span class="s1">'email_service'</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+                        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">view</span><span class="o">-&gt;</span><span class="nf">load</span><span class="p">(</span><span class="s1">'email_service'</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
                 <span class="p">}</span>
                 <span class="k">else</span>
                 <span class="p">{</span>
-                        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">'formsuccess'</span><span class="p">);</span>
+                        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">load</span><span class="o">-&gt;</span><span class="nf">view</span><span class="p">(</span><span class="s1">'formsuccess'</span><span class="p">);</span>
                 <span class="p">}</span>
 		
 	<span class="p">}</span>
@@ -56,9 +56,9 @@ buat sebuah controller untuk view nya kita simpan di direktori Controller, save 
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mx-auto"</span><span class="nt">&gt;</span>
 
-<span class="cp">&lt;?php</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">'message.php'</span><span class="p">);</span> <span class="cp">?&gt;</span>
+<span class="cp">&lt;?php</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">view</span><span class="p">(</span><span class="s1">'message.php'</span><span class="p">);</span> <span class="cp">?&gt;</span>
 
-<span class="cp">&lt;?=</span> <span class="nx">form_open_multipart</span><span class="p">(</span><span class="s1">'MailSend'</span><span class="p">)</span> <span class="cp">?&gt;</span> <span class="c">&lt;!-- controller MailSend --&gt;</span>
+<span class="cp">&lt;?=</span> <span class="nf">form_open_multipart</span><span class="p">(</span><span class="s1">'MailSend'</span><span class="p">)</span> <span class="cp">?&gt;</span> <span class="c">&lt;!-- controller MailSend --&gt;</span>
 
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-8"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
@@ -81,7 +81,7 @@ buat sebuah controller untuk view nya kita simpan di direktori Controller, save 
 	<span class="nt">&lt;select</span> <span class="na">required</span> <span class="na">id=</span><span class="s">"subject"</span> <span class="na">name=</span><span class="s">"subject"</span>  <span class="na">class=</span><span class="s">"demoInputBox form-control"</span><span class="nt">&gt;</span>
 	<span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"- pilih -"</span><span class="nt">&gt;</span>- Pilih -<span class="nt">&lt;/option&gt;</span>
 	<span class="cp">&lt;?php</span> <span class="k">foreach</span><span class="p">(</span><span class="nv">$subject</span> <span class="k">as</span> <span class="nv">$row</span><span class="p">)</span><span class="o">:</span><span class="cp">?&gt;</span>
-	<span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"</span><span class="cp">&lt;?=</span><span class="nv">$row</span><span class="o">-&gt;</span><span class="na">name</span><span class="cp">?&gt;</span><span class="s">"</span><span class="nt">&gt;</span><span class="cp">&lt;?=</span><span class="nv">$row</span><span class="o">-&gt;</span><span class="na">name</span><span class="cp">?&gt;</span><span class="nt">&lt;/option&gt;</span>
+	<span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"</span><span class="cp">&lt;?=</span><span class="nv">$row</span><span class="o">-&gt;</span><span class="n">name</span><span class="cp">?&gt;</span><span class="s">"</span><span class="nt">&gt;</span><span class="cp">&lt;?=</span><span class="nv">$row</span><span class="o">-&gt;</span><span class="n">name</span><span class="cp">?&gt;</span><span class="nt">&lt;/option&gt;</span>
 	<span class="cp">&lt;?php</span> <span class="k">endforeach</span><span class="p">;</span><span class="cp">?&gt;</span>
 	<span class="nt">&lt;/select&gt;</span>  
 	<span class="nt">&lt;/div&gt;</span>
@@ -106,7 +106,7 @@ buat sebuah controller untuk view nya kita simpan di direktori Controller, save 
 	<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">name=</span><span class="s">"add"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span><span class="nt">&gt;</span>Send Now<span class="nt">&lt;/button&gt;</span>
 	<span class="nt">&lt;/div&gt;</span>
 	<span class="nt">&lt;/div&gt;</span>
-<span class="cp">&lt;?=</span> <span class="nx">form_close</span><span class="p">()</span> <span class="cp">?&gt;</span>
+<span class="cp">&lt;?=</span> <span class="nf">form_close</span><span class="p">()</span> <span class="cp">?&gt;</span>
 
 <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
@@ -115,45 +115,45 @@ buat sebuah controller untuk view nya kita simpan di direktori Controller, save 
 
 <p>lanjut lagi buat controller baru yang berfungsi sebagai action nya di direktori controller beri nama MailSend.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-<span class="k">require_once</span><span class="p">(</span><span class="nx">APPPATH</span><span class="o">.</span> <span class="s1">'libraries/phpmailer/PHPMailerAutoload.php'</span><span class="p">);</span>
-<span class="kd">class</span> <span class="nc">MailSend</span> <span class="k">extends</span> <span class="nx">CI_Controller</span> <span class="p">{</span>
+<span class="k">require_once</span><span class="p">(</span><span class="no">APPPATH</span><span class="mf">.</span> <span class="s1">'libraries/phpmailer/PHPMailerAutoload.php'</span><span class="p">);</span>
+<span class="kd">class</span> <span class="nc">MailSend</span> <span class="kd">extends</span> <span class="nc">CI_Controller</span> <span class="p">{</span>
 	<span class="k">private</span> <span class="nv">$emailSend</span> <span class="o">=</span> <span class="s2">"youremail@your.hosting"</span><span class="p">;</span>
-	<span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
+	<span class="k">public</span> <span class="k">function</span> <span class="n">index</span><span class="p">()</span>
 	<span class="p">{</span>
-		<span class="k">if</span><span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'add'</span><span class="p">])){</span>
+		<span class="k">if</span><span class="p">(</span><span class="k">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'add'</span><span class="p">])){</span>
 		
-			<span class="nv">$mail</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PHPMailer</span><span class="p">();</span>
-			<span class="nv">$post</span><span class="o">=</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="kc">TRUE</span><span class="p">);</span>
-				<span class="nv">$mail</span><span class="o">-&gt;</span><span class="na">IsSMTP</span><span class="p">();</span>
-				<span class="nv">$mail</span><span class="o">-&gt;</span><span class="na">SMTPDebug</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-				<span class="nv">$mail</span><span class="o">-&gt;</span><span class="na">SMTPAuth</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">;</span>
-				<span class="nv">$mail</span><span class="o">-&gt;</span><span class="na">SMTPSecure</span> <span class="o">=</span> <span class="s2">"tls"</span><span class="p">;</span>
-				<span class="nv">$mail</span><span class="o">-&gt;</span><span class="na">Port</span>     <span class="o">=</span> <span class="mi">587</span><span class="p">;</span>  
-				<span class="nv">$mail</span><span class="o">-&gt;</span><span class="na">Username</span> <span class="o">=</span> <span class="s2">"username@gmail.com"</span><span class="p">;</span>
-				<span class="nv">$mail</span><span class="o">-&gt;</span><span class="na">Password</span> <span class="o">=</span> <span class="s2">"password_login"</span><span class="p">;</span>
-				<span class="nv">$mail</span><span class="o">-&gt;</span><span class="na">Host</span>     <span class="o">=</span> <span class="s2">"smtp.googlemail.com"</span><span class="p">;</span>
-				<span class="nv">$mail</span><span class="o">-&gt;</span><span class="na">Mailer</span>   <span class="o">=</span> <span class="s2">"smtp"</span><span class="p">;</span>
+			<span class="nv">$mail</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PHPMailer</span><span class="p">();</span>
+			<span class="nv">$post</span><span class="o">=</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">input</span><span class="o">-&gt;</span><span class="nf">post</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="kc">TRUE</span><span class="p">);</span>
+				<span class="nv">$mail</span><span class="o">-&gt;</span><span class="nf">IsSMTP</span><span class="p">();</span>
+				<span class="nv">$mail</span><span class="o">-&gt;</span><span class="nc">SMTPDebug</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+				<span class="nv">$mail</span><span class="o">-&gt;</span><span class="nc">SMTPAuth</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">;</span>
+				<span class="nv">$mail</span><span class="o">-&gt;</span><span class="nc">SMTPSecure</span> <span class="o">=</span> <span class="s2">"tls"</span><span class="p">;</span>
+				<span class="nv">$mail</span><span class="o">-&gt;</span><span class="nc">Port</span>     <span class="o">=</span> <span class="mi">587</span><span class="p">;</span>  
+				<span class="nv">$mail</span><span class="o">-&gt;</span><span class="nc">Username</span> <span class="o">=</span> <span class="s2">"username@gmail.com"</span><span class="p">;</span>
+				<span class="nv">$mail</span><span class="o">-&gt;</span><span class="nc">Password</span> <span class="o">=</span> <span class="s2">"password_login"</span><span class="p">;</span>
+				<span class="nv">$mail</span><span class="o">-&gt;</span><span class="nc">Host</span>     <span class="o">=</span> <span class="s2">"smtp.googlemail.com"</span><span class="p">;</span>
+				<span class="nv">$mail</span><span class="o">-&gt;</span><span class="nc">Mailer</span>   <span class="o">=</span> <span class="s2">"smtp"</span><span class="p">;</span>
 				
-				<span class="nv">$mail</span><span class="o">-&gt;</span><span class="na">SetFrom</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">emailSend</span><span class="p">,</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nb">strtolower</span><span class="p">(</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">" "</span><span class="p">,</span><span class="s2">""</span><span class="p">,</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s2">"userName"</span><span class="p">]))));</span>
-				<span class="nv">$mail</span><span class="o">-&gt;</span><span class="na">AddAddress</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'userEmail'</span><span class="p">]);</span>
-				<span class="nv">$mail</span><span class="o">-&gt;</span><span class="na">AddReplyTo</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s2">"userEmail"</span><span class="p">],</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nb">strtolower</span><span class="p">(</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">" "</span><span class="p">,</span><span class="s2">""</span><span class="p">,</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s2">"userName"</span><span class="p">]))));</span>
+				<span class="nv">$mail</span><span class="o">-&gt;</span><span class="nf">SetFrom</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">emailSend</span><span class="p">,</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nb">strtolower</span><span class="p">(</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">" "</span><span class="p">,</span><span class="s2">""</span><span class="p">,</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s2">"userName"</span><span class="p">]))));</span>
+				<span class="nv">$mail</span><span class="o">-&gt;</span><span class="nf">AddAddress</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'userEmail'</span><span class="p">]);</span>
+				<span class="nv">$mail</span><span class="o">-&gt;</span><span class="nf">AddReplyTo</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s2">"userEmail"</span><span class="p">],</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nb">strtolower</span><span class="p">(</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">" "</span><span class="p">,</span><span class="s2">""</span><span class="p">,</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s2">"userName"</span><span class="p">]))));</span>
 					
-				<span class="nv">$mail</span><span class="o">-&gt;</span><span class="na">Subject</span> <span class="o">=</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nv">$post</span><span class="p">[</span><span class="s2">"subject"</span><span class="p">]);</span>
-				<span class="nv">$mail</span><span class="o">-&gt;</span><span class="na">WordWrap</span>   <span class="o">=</span> <span class="mi">80</span><span class="p">;</span>
-				<span class="nv">$mail</span><span class="o">-&gt;</span><span class="na">MsgHTML</span><span class="p">(</span><span class="nv">$post</span><span class="p">[</span><span class="s2">"content"</span><span class="p">]);</span>
+				<span class="nv">$mail</span><span class="o">-&gt;</span><span class="nc">Subject</span> <span class="o">=</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nv">$post</span><span class="p">[</span><span class="s2">"subject"</span><span class="p">]);</span>
+				<span class="nv">$mail</span><span class="o">-&gt;</span><span class="nc">WordWrap</span>   <span class="o">=</span> <span class="mi">80</span><span class="p">;</span>
+				<span class="nv">$mail</span><span class="o">-&gt;</span><span class="nf">MsgHTML</span><span class="p">(</span><span class="nv">$post</span><span class="p">[</span><span class="s2">"content"</span><span class="p">]);</span>
 				<span class="k">foreach</span> <span class="p">(</span><span class="nv">$_FILES</span><span class="p">[</span><span class="s2">"attachment"</span><span class="p">][</span><span class="s2">"name"</span><span class="p">]</span> <span class="k">as</span> <span class="nv">$k</span> <span class="o">=&gt;</span> <span class="nv">$v</span><span class="p">)</span> <span class="p">{</span>
-					<span class="nv">$mail</span><span class="o">-&gt;</span><span class="na">AddAttachment</span><span class="p">(</span> <span class="nv">$_FILES</span><span class="p">[</span><span class="s2">"attachment"</span><span class="p">][</span><span class="s2">"tmp_name"</span><span class="p">][</span><span class="nv">$k</span><span class="p">],</span> <span class="nv">$_FILES</span><span class="p">[</span><span class="s2">"attachment"</span><span class="p">][</span><span class="s2">"name"</span><span class="p">][</span><span class="nv">$k</span><span class="p">]</span> <span class="p">);</span>
+					<span class="nv">$mail</span><span class="o">-&gt;</span><span class="nf">AddAttachment</span><span class="p">(</span> <span class="nv">$_FILES</span><span class="p">[</span><span class="s2">"attachment"</span><span class="p">][</span><span class="s2">"tmp_name"</span><span class="p">][</span><span class="nv">$k</span><span class="p">],</span> <span class="nv">$_FILES</span><span class="p">[</span><span class="s2">"attachment"</span><span class="p">][</span><span class="s2">"name"</span><span class="p">][</span><span class="nv">$k</span><span class="p">]</span> <span class="p">);</span>
 				<span class="p">}</span>
 
-				<span class="nv">$mail</span><span class="o">-&gt;</span><span class="na">IsHTML</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+				<span class="nv">$mail</span><span class="o">-&gt;</span><span class="nf">IsHTML</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
 
-				<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nv">$mail</span><span class="o">-&gt;</span><span class="na">Send</span><span class="p">())</span> <span class="p">{</span>
-					<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">set_flashdata</span><span class="p">(</span><span class="s1">'error'</span><span class="p">,</span> <span class="s1">'Gagal Mengirim Email!'</span><span class="p">);</span>
-					<span class="nx">redirect</span><span class="p">(</span><span class="s1">'MailSend/err_page?id=err'</span><span class="p">);</span>
+				<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nv">$mail</span><span class="o">-&gt;</span><span class="nf">Send</span><span class="p">())</span> <span class="p">{</span>
+					<span class="nv">$this</span><span class="o">-&gt;</span><span class="n">session</span><span class="o">-&gt;</span><span class="nf">set_flashdata</span><span class="p">(</span><span class="s1">'error'</span><span class="p">,</span> <span class="s1">'Gagal Mengirim Email!'</span><span class="p">);</span>
+					<span class="nf">redirect</span><span class="p">(</span><span class="s1">'MailSend/err_page?id=err'</span><span class="p">);</span>
 				<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-				<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">set_flashdata</span><span class="p">(</span><span class="s1">'success'</span><span class="p">,</span> <span class="s1">'Data Berhasil disimpan ke database ourcitrus'</span><span class="p">);</span>
+				<span class="nv">$this</span><span class="o">-&gt;</span><span class="n">session</span><span class="o">-&gt;</span><span class="nf">set_flashdata</span><span class="p">(</span><span class="s1">'success'</span><span class="p">,</span> <span class="s1">'Data Berhasil disimpan ke database ourcitrus'</span><span class="p">);</span>
 				<span class="k">echo</span> <span class="s2">"&lt;script&gt;
-					alert('Hai "</span><span class="o">.</span><span class="nv">$post</span><span class="p">[</span><span class="s1">'userName'</span><span class="p">]</span><span class="o">.</span><span class="s2">"</span><span class="se">\\</span><span class="s2">nTerima kasih sudah menghubungi kami </span><span class="se">\\</span><span class="s2">nEmail Anda : "</span><span class="o">.</span><span class="nv">$post</span><span class="p">[</span><span class="s1">'userEmail'</span><span class="p">]</span><span class="o">.</span><span class="s2">"</span><span class="se">\\</span><span class="s2">nkami telah merespon email anda dan akan segera diproses oleh management kami </span><span class="se">\\</span><span class="s2">nby ourcitrus team.');
+					alert('Hai "</span><span class="mf">.</span><span class="nv">$post</span><span class="p">[</span><span class="s1">'userName'</span><span class="p">]</span><span class="mf">.</span><span class="s2">"</span><span class="se">\\</span><span class="s2">nTerima kasih sudah menghubungi kami </span><span class="se">\\</span><span class="s2">nEmail Anda : "</span><span class="mf">.</span><span class="nv">$post</span><span class="p">[</span><span class="s1">'userEmail'</span><span class="p">]</span><span class="mf">.</span><span class="s2">"</span><span class="se">\\</span><span class="s2">nkami telah merespon email anda dan akan segera diproses oleh management kami </span><span class="se">\\</span><span class="s2">nby ourcitrus team.');
 					window.location.href='MailSend/success_page?id=success';
 					&lt;/script&gt;"</span><span class="p">;</span>
 					
@@ -165,18 +165,18 @@ buat sebuah controller untuk view nya kita simpan di direktori Controller, save 
         
 <span class="p">}</span>
 	
-	<span class="k">public</span> <span class="k">function</span> <span class="nf">success_page</span><span class="p">()</span>
+	<span class="k">public</span> <span class="k">function</span> <span class="n">success_page</span><span class="p">()</span>
 	<span class="p">{</span>
 		<span class="nv">$data</span><span class="p">[</span><span class="s1">'title'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Success Page"</span><span class="p">;</span>
 	
-		<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">'success_page'</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+		<span class="nv">$this</span><span class="o">-&gt;</span><span class="n">load</span><span class="o">-&gt;</span><span class="nf">view</span><span class="p">(</span><span class="s1">'success_page'</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
 	<span class="p">}</span>
 	
-	<span class="k">public</span> <span class="k">function</span> <span class="nf">err_page</span><span class="p">()</span>
+	<span class="k">public</span> <span class="k">function</span> <span class="n">err_page</span><span class="p">()</span>
 	<span class="p">{</span>
 		<span class="nv">$data</span><span class="p">[</span><span class="s1">'title'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"error Page"</span><span class="p">;</span>
 		
-		<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">'err_page'</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+		<span class="nv">$this</span><span class="o">-&gt;</span><span class="n">load</span><span class="o">-&gt;</span><span class="nf">view</span><span class="p">(</span><span class="s1">'err_page'</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
 
 	<span class="p">}</span>
 	
@@ -197,12 +197,12 @@ buat sebuah controller untuk view nya kita simpan di direktori Controller, save 
 <span class="nt">&lt;/div&gt;</span>
 
 
-<span class="nt">&lt;b&gt;</span><span class="cp">&lt;?php</span> <span class="k">if</span><span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$filenames</span><span class="p">))</span> <span class="k">echo</span> <span class="s2">"Successfully uploaded "</span><span class="o">.</span><span class="nb">count</span><span class="p">(</span><span class="nv">$filenames</span><span class="p">)</span><span class="o">.</span><span class="s2">" files"</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="nt">&lt;/b&gt;</span>
+<span class="nt">&lt;b&gt;</span><span class="cp">&lt;?php</span> <span class="k">if</span><span class="p">(</span><span class="k">isset</span><span class="p">(</span><span class="nv">$filenames</span><span class="p">))</span> <span class="k">echo</span> <span class="s2">"Successfully uploaded "</span><span class="mf">.</span><span class="nb">count</span><span class="p">(</span><span class="nv">$filenames</span><span class="p">)</span><span class="mf">.</span><span class="s2">" files"</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="nt">&lt;/b&gt;</span>
     
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
   <span class="cp">&lt;?php</span> <span class="k">if</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"success"</span><span class="p">)</span><span class="o">:</span><span class="cp">?&gt;</span>
-    <span class="cp">&lt;?php</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">'message.php'</span><span class="p">);</span> <span class="cp">?&gt;</span>
+    <span class="cp">&lt;?php</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">view</span><span class="p">(</span><span class="s1">'message.php'</span><span class="p">);</span> <span class="cp">?&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"alert alert-warning alert-dismissible fade show"</span> <span class="na">role=</span><span class="s">"alert"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;strong&gt;</span>Dear Member<span class="nt">&lt;/strong&gt;</span> Terima kasih sudah menghubungi kami, selanjutnya pesan anda akan segera di proses oleh team management kami.
   <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"close"</span> <span class="na">data-dismiss=</span><span class="s">"alert"</span> <span class="na">aria-label=</span><span class="s">"Close"</span><span class="nt">&gt;</span>
@@ -229,7 +229,7 @@ buat sebuah controller untuk view nya kita simpan di direktori Controller, save 
       <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-body"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;h5</span> <span class="na">class=</span><span class="s">"card-title"</span><span class="nt">&gt;</span>Kembali Ke Halaman Mail Service<span class="nt">&lt;/h5&gt;</span>
         <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"card-text"</span><span class="nt">&gt;</span>Untuk kembali ke halaman mail service silahkan klik tombol di bawah.<span class="nt">&lt;/p&gt;</span>
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"</span><span class="cp">&lt;?=</span><span class="nx">base_url</span><span class="p">()</span><span class="cp">?&gt;</span><span class="s">EmailService"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span><span class="nt">&gt;</span>Back To Message<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"</span><span class="cp">&lt;?=</span><span class="nf">base_url</span><span class="p">()</span><span class="cp">?&gt;</span><span class="s">EmailService"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span><span class="nt">&gt;</span>Back To Message<span class="nt">&lt;/a&gt;</span>
       <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
@@ -242,43 +242,43 @@ buat sebuah controller untuk view nya kita simpan di direktori Controller, save 
 <p>kemudian buat file err_page.php</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span> <span class="k">if</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"err"</span><span class="p">)</span><span class="o">:</span><span class="cp">?&gt;</span>
-<span class="cp">&lt;?php</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">'message.php'</span><span class="p">);</span> <span class="cp">?&gt;</span>
+<span class="cp">&lt;?php</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">view</span><span class="p">(</span><span class="s1">'message.php'</span><span class="p">);</span> <span class="cp">?&gt;</span>
 <span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span><span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>masih di direktori view buat file baru dengan nama message.php</p>
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span> <span class="k">if</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">has_userdata</span><span class="p">(</span><span class="s1">'success'</span><span class="p">))</span><span class="o">:</span><span class="cp">?&gt;</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span> <span class="k">if</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">session</span><span class="o">-&gt;</span><span class="nf">has_userdata</span><span class="p">(</span><span class="s1">'success'</span><span class="p">))</span><span class="o">:</span><span class="cp">?&gt;</span>
        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"alert alert-success alert-dismissible"</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"close"</span> <span class="na">data-dismiss=</span><span class="s">"alert"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>×<span class="nt">&lt;/button&gt;</span>
-                <span class="nt">&lt;h4&gt;&lt;i</span> <span class="na">class=</span><span class="s">"icon fa fa-check"</span><span class="nt">&gt;&lt;/i&gt;</span> <span class="cp">&lt;?=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">flashdata</span><span class="p">(</span><span class="s1">'success'</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="nt">&lt;/h4&gt;</span>
+                <span class="nt">&lt;h4&gt;&lt;i</span> <span class="na">class=</span><span class="s">"icon fa fa-check"</span><span class="nt">&gt;&lt;/i&gt;</span> <span class="cp">&lt;?=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">session</span><span class="o">-&gt;</span><span class="nf">flashdata</span><span class="p">(</span><span class="s1">'success'</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="nt">&lt;/h4&gt;</span>
               <span class="nt">&lt;/div&gt;</span>
 
- <span class="cp">&lt;?php</span> <span class="k">elseif</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">has_userdata</span><span class="p">(</span><span class="s1">'del'</span><span class="p">))</span><span class="o">:</span> <span class="cp">?&gt;</span>
+ <span class="cp">&lt;?php</span> <span class="k">elseif</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">session</span><span class="o">-&gt;</span><span class="nf">has_userdata</span><span class="p">(</span><span class="s1">'del'</span><span class="p">))</span><span class="o">:</span> <span class="cp">?&gt;</span>
  	       <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"alert alert-success alert-dismissible"</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"close"</span> <span class="na">data-dismiss=</span><span class="s">"alert"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>×<span class="nt">&lt;/button&gt;</span>
-                <span class="nt">&lt;h4&gt;&lt;i</span> <span class="na">class=</span><span class="s">"icon fa fa-check"</span><span class="nt">&gt;&lt;/i&gt;</span> <span class="cp">&lt;?=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">flashdata</span><span class="p">(</span><span class="s1">'del'</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="nt">&lt;/h4&gt;</span>
+                <span class="nt">&lt;h4&gt;&lt;i</span> <span class="na">class=</span><span class="s">"icon fa fa-check"</span><span class="nt">&gt;&lt;/i&gt;</span> <span class="cp">&lt;?=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">session</span><span class="o">-&gt;</span><span class="nf">flashdata</span><span class="p">(</span><span class="s1">'del'</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="nt">&lt;/h4&gt;</span>
               <span class="nt">&lt;/div&gt;</span>
- <span class="cp">&lt;?php</span> <span class="k">elseif</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">has_userdata</span><span class="p">(</span><span class="s1">'wrong'</span><span class="p">))</span><span class="o">:</span><span class="cp">?&gt;</span>
+ <span class="cp">&lt;?php</span> <span class="k">elseif</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">session</span><span class="o">-&gt;</span><span class="nf">has_userdata</span><span class="p">(</span><span class="s1">'wrong'</span><span class="p">))</span><span class="o">:</span><span class="cp">?&gt;</span>
  		       <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"alert alert-danger alert-dismissible"</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"close"</span> <span class="na">data-dismiss=</span><span class="s">"alert"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>×<span class="nt">&lt;/button&gt;</span>
-                <span class="nt">&lt;h4&gt;&lt;i</span> <span class="na">class=</span><span class="s">"icon fa fa-ban"</span><span class="nt">&gt;&lt;/i&gt;</span>  <span class="cp">&lt;?=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">flashdata</span><span class="p">(</span><span class="s1">'wrong'</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="nt">&lt;/h4&gt;</span>
+                <span class="nt">&lt;h4&gt;&lt;i</span> <span class="na">class=</span><span class="s">"icon fa fa-ban"</span><span class="nt">&gt;&lt;/i&gt;</span>  <span class="cp">&lt;?=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">session</span><span class="o">-&gt;</span><span class="nf">flashdata</span><span class="p">(</span><span class="s1">'wrong'</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="nt">&lt;/h4&gt;</span>
               <span class="nt">&lt;/div&gt;</span>
-<span class="cp">&lt;?php</span> <span class="k">elseif</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">has_userdata</span><span class="p">(</span><span class="s1">'error'</span><span class="p">))</span><span class="o">:</span><span class="cp">?&gt;</span>
+<span class="cp">&lt;?php</span> <span class="k">elseif</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">session</span><span class="o">-&gt;</span><span class="nf">has_userdata</span><span class="p">(</span><span class="s1">'error'</span><span class="p">))</span><span class="o">:</span><span class="cp">?&gt;</span>
            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"alert alert-danger alert-dismissible"</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"close"</span> <span class="na">data-dismiss=</span><span class="s">"alert"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>×<span class="nt">&lt;/button&gt;</span>
                 <span class="nt">&lt;h4&gt;&lt;i</span> <span class="na">class=</span><span class="s">"icon fa fa-ban"</span><span class="nt">&gt;&lt;/i&gt;</span>  
-                  <span class="cp">&lt;?=</span> <span class="nb">strip_tags</span><span class="p">(</span><span class="nb">str_replace</span><span class="p">(</span><span class="s1">'&lt;/p&gt;'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">flashdata</span><span class="p">(</span><span class="s1">'error'</span><span class="p">)));</span> <span class="cp">?&gt;</span>
+                  <span class="cp">&lt;?=</span> <span class="nb">strip_tags</span><span class="p">(</span><span class="nb">str_replace</span><span class="p">(</span><span class="s1">'&lt;/p&gt;'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">session</span><span class="o">-&gt;</span><span class="nf">flashdata</span><span class="p">(</span><span class="s1">'error'</span><span class="p">)));</span> <span class="cp">?&gt;</span>
                 <span class="nt">&lt;/h4&gt;</span>
               <span class="nt">&lt;/div&gt;</span>
-<span class="cp">&lt;?php</span> <span class="k">elseif</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">has_userdata</span><span class="p">(</span><span class="s1">'empty-subject'</span><span class="p">))</span><span class="o">:</span><span class="cp">?&gt;</span>
+<span class="cp">&lt;?php</span> <span class="k">elseif</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">session</span><span class="o">-&gt;</span><span class="nf">has_userdata</span><span class="p">(</span><span class="s1">'empty-subject'</span><span class="p">))</span><span class="o">:</span><span class="cp">?&gt;</span>
  		       <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"alert alert-danger alert-dismissible"</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"close"</span> <span class="na">data-dismiss=</span><span class="s">"alert"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>×<span class="nt">&lt;/button&gt;</span>
-                <span class="nt">&lt;h4&gt;&lt;i</span> <span class="na">class=</span><span class="s">"icon fa fa-ban"</span><span class="nt">&gt;&lt;/i&gt;</span>  <span class="cp">&lt;?=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">flashdata</span><span class="p">(</span><span class="s1">'empty-subject'</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="nt">&lt;/h4&gt;</span>
+                <span class="nt">&lt;h4&gt;&lt;i</span> <span class="na">class=</span><span class="s">"icon fa fa-ban"</span><span class="nt">&gt;&lt;/i&gt;</span>  <span class="cp">&lt;?=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">session</span><span class="o">-&gt;</span><span class="nf">flashdata</span><span class="p">(</span><span class="s1">'empty-subject'</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="nt">&lt;/h4&gt;</span>
               <span class="nt">&lt;/div&gt;</span>
-<span class="cp">&lt;?php</span> <span class="k">elseif</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">has_userdata</span><span class="p">(</span><span class="s1">'statusMsg'</span><span class="p">))</span><span class="o">:</span><span class="cp">?&gt;</span>
+<span class="cp">&lt;?php</span> <span class="k">elseif</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">session</span><span class="o">-&gt;</span><span class="nf">has_userdata</span><span class="p">(</span><span class="s1">'statusMsg'</span><span class="p">))</span><span class="o">:</span><span class="cp">?&gt;</span>
  		       <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"alert alert-danger alert-dismissible"</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"close"</span> <span class="na">data-dismiss=</span><span class="s">"alert"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>×<span class="nt">&lt;/button&gt;</span>
-                <span class="nt">&lt;h4&gt;&lt;i</span> <span class="na">class=</span><span class="s">"icon fa fa-ban"</span><span class="nt">&gt;&lt;/i&gt;</span>  <span class="cp">&lt;?=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">flashdata</span><span class="p">(</span><span class="s1">'empty-subject'</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="nt">&lt;/h4&gt;</span>
+                <span class="nt">&lt;h4&gt;&lt;i</span> <span class="na">class=</span><span class="s">"icon fa fa-ban"</span><span class="nt">&gt;&lt;/i&gt;</span>  <span class="cp">&lt;?=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">session</span><span class="o">-&gt;</span><span class="nf">flashdata</span><span class="p">(</span><span class="s1">'empty-subject'</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="nt">&lt;/h4&gt;</span>
               <span class="nt">&lt;/div&gt;</span>
 			  
  <span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span>

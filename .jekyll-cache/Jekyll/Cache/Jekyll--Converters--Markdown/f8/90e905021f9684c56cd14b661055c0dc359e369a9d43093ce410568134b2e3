@@ -1,4 +1,4 @@
-I"÷.<p><img src="{{ site.url }}/assets/images/post/relasi5.png" alt="relasi" />
+I"ö.<p><img src="{{ site.url }}/assets/images/post/relasi5.png" alt="relasi" />
 <img src="{{ site.url }}/assets/images/post/relasi6.png" alt="relasi" /><br />
 hallo para coders ! â€¦ salam jumpa.<br />
 kali ini saya ingin berbagi tips dan trick seputar join table, inner join mysql mariaDB , php.<br />
@@ -13,12 +13,12 @@ dari table diatas saya membutuhkan data dari kedua table diatas. table1 saya asu
 maka dari itu saya harus melakukan query dengan key <code class="language-plaintext highlighter-rouge">INNER JOIN</code> , maka script yang saya gunakan menjadi sepert ini :</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-<span class="k">function</span> <span class="nf">tampilUser</span><span class="p">(</span><span class="nv">$query</span><span class="p">){</span>
-	<span class="nv">$result</span> <span class="o">=</span> <span class="nx">mysqli_query</span><span class="p">(</span><span class="nv">$conn</span><span class="p">,</span> <span class="nv">$query</span><span class="p">);</span>
+<span class="k">function</span> <span class="n">tampilUser</span><span class="p">(</span><span class="nv">$query</span><span class="p">){</span>
+	<span class="nv">$result</span> <span class="o">=</span> <span class="nf">mysqli_query</span><span class="p">(</span><span class="nv">$conn</span><span class="p">,</span> <span class="nv">$query</span><span class="p">);</span>
 
 	<span class="nv">$rows</span> <span class="o">=</span> <span class="p">[];</span>
 
-	<span class="k">while</span><span class="p">(</span><span class="nv">$row</span> <span class="o">=</span> <span class="nx">mysqli_fetch_assoc</span><span class="p">(</span><span class="nv">$result</span><span class="p">))</span><span class="o">:</span>
+	<span class="k">while</span><span class="p">(</span><span class="nv">$row</span> <span class="o">=</span> <span class="nf">mysqli_fetch_assoc</span><span class="p">(</span><span class="nv">$result</span><span class="p">))</span><span class="o">:</span>
 		<span class="nv">$rows</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$row</span><span class="p">;</span>
 	<span class="k">endwhile</span><span class="p">;</span>
 	<span class="c1">//print_r($rows);</span>
@@ -27,7 +27,7 @@ maka dari itu saya harus melakukan query dengan key <code class="language-plaint
 <span class="p">}</span>
 <span class="nv">$username</span> <span class="o">=</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'username'</span><span class="p">];</span>
 <span class="c1">//assign seluruh fetch data ke dalam variable $tampilUsers</span>
-<span class="nv">$tampilUsers</span> <span class="o">=</span> <span class="nx">tampilUser</span><span class="p">(</span><span class="s2">"SELECT * FROM user INNER JOIN profile on user.id_profile=profile.id_profile WHERE username = '</span><span class="nv">$username</span><span class="s2">'"</span><span class="p">)</span>
+<span class="nv">$tampilUsers</span> <span class="o">=</span> <span class="nf">tampilUser</span><span class="p">(</span><span class="s2">"SELECT * FROM user INNER JOIN profile on user.id_profile=profile.id_profile WHERE username = '</span><span class="nv">$username</span><span class="s2">'"</span><span class="p">)</span>
 
 <span class="c1">//tampil kan data dengan looping foreach</span>
 <span class="cp">?&gt;</span>

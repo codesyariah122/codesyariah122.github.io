@@ -1,4 +1,4 @@
-I"<h1 id="menentukan-lokasi-koordinat-berdasarkan-ip-address">Menentukan lokasi, koordinat berdasarkan ip address</h1>
+I"<h1 id="menentukan-lokasi-koordinat-berdasarkan-ip-address">Menentukan lokasi, koordinat berdasarkan ip address</h1>
 
 <p>Hallo para coders ! ….<br />
 Banyak cara yang dapat dilakukan untuk mendapatkan posisi koordinat khususnya latitude dan longitude Google dengan menggunakan IP. Beberapa diantaranya berbayar seperti IPStack dan juga IP2Location. Apakah ada yang gratis?</p>
@@ -14,7 +14,7 @@ Banyak cara yang dapat dilakukan untuk mendapatkan posisi koordinat khususnya la
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="nv">$ip</span> <span class="o">=</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'REMOTE_ADDR'</span><span class="p">];</span>
 <span class="p">}</span>
-<span class="k">echo</span> <span class="nb">password_hash</span><span class="p">(</span><span class="nv">$ip</span><span class="p">,</span> <span class="nx">PASSWORD_DEFAULT</span><span class="p">)</span><span class="o">.</span><span class="s2">"&lt;br/&gt;"</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nb">password_hash</span><span class="p">(</span><span class="nv">$ip</span><span class="p">,</span> <span class="no">PASSWORD_DEFAULT</span><span class="p">)</span><span class="mf">.</span><span class="s2">"&lt;br/&gt;"</span><span class="p">;</span>
 <span class="c1">//Kemudian</span>
 <span class="nv">$url</span> <span class="o">=</span> <span class="s2">"https://tools.keycdn.com/geo.json?host=</span><span class="nv">$ip</span><span class="s2">"</span><span class="p">;</span>
 <span class="nv">$dt</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="nv">$url</span><span class="p">);</span>
@@ -24,9 +24,9 @@ Banyak cara yang dapat dilakukan untuk mendapatkan posisi koordinat khususnya la
 <span class="nv">$regional</span> <span class="o">=</span> <span class="nv">$dt</span><span class="p">[</span><span class="s1">'data'</span><span class="p">][</span><span class="s1">'geo'</span><span class="p">][</span><span class="s1">'region_name'</span><span class="p">];</span>
 <span class="nv">$city_name</span> <span class="o">=</span> <span class="nv">$dt</span><span class="p">[</span><span class="s1">'data'</span><span class="p">][</span><span class="s1">'geo'</span><span class="p">][</span><span class="s1">'city'</span><span class="p">];</span>
 
-<span class="nv">$location</span> <span class="o">=</span> <span class="nv">$city_name</span> <span class="o">.</span><span class="s2">"-"</span><span class="o">.</span> <span class="nv">$regional</span><span class="p">;</span>
+<span class="nv">$location</span> <span class="o">=</span> <span class="nv">$city_name</span> <span class="mf">.</span><span class="s2">"-"</span><span class="mf">.</span> <span class="nv">$regional</span><span class="p">;</span>
 
-<span class="k">echo</span> <span class="s2">"&lt;h1&gt;"</span><span class="o">.</span><span class="nv">$location</span><span class="o">.</span><span class="s2">"&lt;/h1&gt;"</span><span class="p">;</span>
+<span class="k">echo</span> <span class="s2">"&lt;h1&gt;"</span><span class="mf">.</span><span class="nv">$location</span><span class="mf">.</span><span class="s2">"&lt;/h1&gt;"</span><span class="p">;</span>
 </code></pre></div></div>
 
 <p>Koordinatnya telah kita dapatkan yaitu :</p>

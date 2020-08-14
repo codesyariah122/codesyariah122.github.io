@@ -1,4 +1,4 @@
-I"I<h3 id="menjalankan-dua-query-berbeda-secara-bersamaan-dalam-satu-statement">Menjalankan dua query berbeda secara bersamaan dalam satu statement</h3>
+I"H<h3 id="menjalankan-dua-query-berbeda-secara-bersamaan-dalam-satu-statement">Menjalankan dua query berbeda secara bersamaan dalam satu statement</h3>
 
 <p>masih mengenai PDOExtention seperti base method dari aplikasi crud data sederhana ajax, di artikel sebelum-sebelumnya yang pernah ada di blogg ini.<br />
 ketika sebuah aplikasi semakin berkembang dinamika process data menjadi semakin komplek, ada banyak table data yang berhubungan satu dengan lainnya. Algoritma menjadi semakin komplek dibutuhkan penanganan yang praktis, cepat dan mudah dimengerti untuk selanjutnya di maintenance.</p>
@@ -12,28 +12,28 @@ dalam kasus tersebut gout berhadapan dengan table yang terkait dengan table lain
 dari diskusi di forum tersebut akhirnya solved dengan code yang beberapa kali gout debugging, dan akhirnya fix menjadi seperti ini :</li>
 </ul>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="nf">addData</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="nv">$table1</span><span class="p">,</span> <span class="nv">$table2</span><span class="p">){</span>
-  <span class="nv">$dbh</span> <span class="o">=</span> <span class="nx">connect</span><span class="p">();</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="n">addData</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="nv">$table1</span><span class="p">,</span> <span class="nv">$table2</span><span class="p">){</span>
+  <span class="nv">$dbh</span> <span class="o">=</span> <span class="nf">connect</span><span class="p">();</span>
   <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$dataExample</span><span class="p">;</span>
   <span class="nv">$sql</span> <span class="o">=</span> <span class="s2">"
       INSERT INTO `</span><span class="nv">$table1</span><span class="s2">` (id1_primarykey, data_exapmple, id2_foreignkey) VALUES ('', ?, '');
   "</span><span class="p">;</span>
-  <span class="nv">$insertProduct</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="na">prepare</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
+  <span class="nv">$insertProduct</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="nf">prepare</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
 
-  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="na">bindParam</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="nf">bindParam</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
 
-  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
+  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="nf">execute</span><span class="p">();</span>
   
     <span class="c1">// update id_react table product</span>
-  <span class="nv">$lastId</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="na">lastInsertId</span><span class="p">();</span>
+  <span class="nv">$lastId</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="nf">lastInsertId</span><span class="p">();</span>
   <span class="nv">$sql</span> <span class="o">=</span> <span class="s2">"
     UPDATE `</span><span class="nv">$table1</span><span class="s2">` SET id2_foreignkey = </span><span class="nv">$lastId</span><span class="s2"> WHERE `id1_primarykey` = </span><span class="nv">$lastId</span><span class="s2">;
     INSERT INTO `</span><span class="nv">$table2</span><span class="s2">` (id2_primarykey, data) VALUES(</span><span class="nv">$lastId</span><span class="s2">, ?);
   "</span><span class="p">;</span>
-  <span class="nv">$stmt</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="na">prepare</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
-  <span class="nv">$stmt</span><span class="o">-&gt;</span><span class="na">bindParam</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+  <span class="nv">$stmt</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="nf">prepare</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
+  <span class="nv">$stmt</span><span class="o">-&gt;</span><span class="nf">bindParam</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
 
-  <span class="k">return</span> <span class="nv">$stmt</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
+  <span class="k">return</span> <span class="nv">$stmt</span><span class="o">-&gt;</span><span class="nf">execute</span><span class="p">();</span>
 
 </code></pre></div></div>
 
