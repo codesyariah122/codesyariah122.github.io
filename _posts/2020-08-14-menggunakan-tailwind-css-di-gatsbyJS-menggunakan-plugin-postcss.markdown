@@ -130,6 +130,8 @@ const IndexPage = ({ data }) => {
 	)
 }
 ```  
+![tailwind-gatsby]({{site.url}}/assets/images/post/gatsby-tailwind.gif)  
+
 coders semua bisa lihat dokumentasi mengenai <a href="https://github.com/ben-rogerson/twin.macro/blob/master/docs/emotion/gatsby.md"/>Twin + Gatsby + Emotion installation guide </a> untuk melihat detaik informasi mengenai penggunaan twin.macro gatsby.  
 
 **berikutnya** ***menggunakan sass di gatsby***  
