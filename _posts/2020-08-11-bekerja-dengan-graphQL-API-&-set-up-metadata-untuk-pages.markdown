@@ -197,6 +197,7 @@ selanjutnya ..... mulailah untuk membaca dokumentasinya, karena dalam artikel ka
           export default BlogPage
       ```
       file tersebut akan menampilkan daftar baris post di link ```/blog/``` seperti dibawah ini : 
+
       ![graphQL]({{site.url}}/assets/images/post/post-list-gatsby.png)  
 
 
@@ -204,7 +205,7 @@ selanjutnya ..... mulailah untuk membaca dokumentasinya, karena dalam artikel ka
   selanjutnya, setelah edit page ```blog.js``` kita kembali ke direktori root gatsby kita, kemudian buat satu file baru di root direktori, beri nama ```gatsby-node.js``` .  
   seperti ini : 
   
-  ![graphQL]({{site.url}}/assets/images/post/gatsby-direktori1.png)  
+  ![graphQL]({{site.url}}/assets/images/post/gatsby-direktori-1.png)  
 
   kemudian buka file ```gatsby-node.js``` copy baris code berikut :  
 
