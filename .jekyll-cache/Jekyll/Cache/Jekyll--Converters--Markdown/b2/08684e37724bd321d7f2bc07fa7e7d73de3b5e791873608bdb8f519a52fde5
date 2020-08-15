@@ -1,0 +1,27 @@
+I"Š<style type="text/css">
+img{
+  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+}
+a:hover{
+  color: coral;
+}
+</style>
+
+<p>{% assign WebDevelopment = site.data.webdevelopers[page.product1]%}</p>
+<div class="card">
+  <div class="card-body">
+    <h3 class="text-center text-primary">{{page.title}}</h3>
+    <img class="card-img-top img-responsive" width="350" height="500" src="{{site.url}}{{WebDevelopment.image}}" alt="Card image cap" />
+        <div class="card-body">
+          <h5 class="card-title">{{WebDevelopment.name}}</h5>
+          <p class="card-text text-justify">{{WebDevelopment.tags}}</p>
+          <h3 class="text-success">{{WebDevelopment.price}}</h3><br />
+          <div class="alert alert-danger" role="alert">
+            Untuk info lebih lanjut silahkan hubungi contact dibawah ini : 
+          </div>
+          <a href="https://wa.me/{{WebDevelopment.whatsapp}}?text=Hai%20kak%20saya%20membutuhkan%20jasa%20web%20development" class="btn btn-primary text-white">whatsap</a>
+          <a href="https://instagram.com/{{Webdevelopment.instagram}}" class="btn btn-primary text-white">Instagram</a>
+  </div>
+</div>
+</div>
+:ET

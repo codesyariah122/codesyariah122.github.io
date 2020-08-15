@@ -1,0 +1,45 @@
+I"½
+<style type="text/css">
+img{
+  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+</style>
+
+<div class="card">
+  <div class="card-body">
+    <h3 class="text-center text-primary">Codesyariah Webdevelopment</h3>
+    <img class="card-img-top img-responsive" src="http://localhost:4000/assets/images/project/codesyariah/devlopment-vector.png" alt="Card image cap" />
+        <div class="card-body">
+          <h5 class="card-title">Web Development</h5>
+          <p class="card-text text-justify">Jasa Pembuatan website untuk beberapa layanan yang bisa anda request. seperti : <ul><li>website official sekolah</li><li>portal berita</li><li>website instansi pemerintahan</li><li>portfolio perusahaan</li><li>website untuk toko online</li> web replika dengan service role member&lt;/li&gt;</ul>. manfaat dari jasa web development adalah untuk mempermudah system promosi, meningkatkan kinerja untuk system berbasis promosi, edukasi, dan penjualan. jasa web development kami memberikan layanan jasa yang baik, harga terjangkau, pengerjaan yang cepat, dan bisa menerima request dari anda.</p>
+          <h3 class="text-success blockquote-footer">IDR - 3,000.000</h3><br />
+          <hr class="text-info" />
+          <a href="https://codesyariah122.github.io" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col">
+      <h3 class="text-center text-primary">Codesyariah Webdevelopment</h3>
+    </div>
+  </div>
+  
+  <div class="row justify-content-center">
+    <div class="col-4 mt-2 mx-auto">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="http://localhost:4000/assets/images/project/codesyariah/devlopment-vector.png" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Web Development</h5>
+          <p class="card-text text-justify">Jasa Pembuatan website untuk beberapa layanan yang bisa anda request. seperti : <ul><li>website official sekolah</li><li>portal berita</li><li>website instansi pemerintahan</li><li>portfolio perusahaan</li><li>website untuk toko online</li> web replika dengan service role member</li></ul>. manfaat dari jasa web development adalah untuk mempermudah system promosi, meningkatkan kinerja untuk system berbasis promosi, edukasi, dan penjualan. jasa web development kami memberikan layanan jasa yang baik, harga terjangkau, pengerjaan yang cepat, dan bisa menerima request dari anda.</p>
+          <small class="text-success blockquote-footer">IDR - 3,000.000</small><br/>
+          <hr class="text-info">
+          <a href="https://codesyariah122.github.io" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div> -->
+</div>
+:ET
