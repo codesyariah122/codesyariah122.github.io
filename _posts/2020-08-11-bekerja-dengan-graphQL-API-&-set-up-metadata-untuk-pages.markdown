@@ -325,7 +325,7 @@ selanjutnya ..... mulailah untuk membaca dokumentasinya, karena dalam artikel ka
   ```  
   kita telah menambahkan beberapa configurasi untuk metadata dan path direktori untuk page. dalam artikel ini tujuannya untuk menyajikan post kita dalam sebuah halaman (page). baik itu untuk order list posts dan single page posts nya.  
   agan-agan bisa lihat demo link nya di link berikut : 
-  <a href="https://pujiermanto.netlify.app/blog/" target="_blank">Blog</a>
+  <a href="https://pujermanto.netlify.app/blog/" target="_blank">Blog</a>
 
 ***untuk bagian ```gatsby-config.js``` silahkan disesuaikan dengan yang agan-agan buat***. akhir kata gout ucapkan terima kasih telah berkunjung dan membaca artikel ini dan tak lupa gout doakan semoga agan-agan semua selalu diberi nikmat sehat dan nikmat waktu luang. akhir kata ...... 
 
