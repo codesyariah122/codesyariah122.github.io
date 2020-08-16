@@ -45,7 +45,7 @@ buat beberapa file , diantaranya adalah :
 
 setelah menyiapkan semua file yang ada di daftar tersebut. 
 
-***dalam artikel kali ini : *** source data ```API``` dari link berikut : <a href="https://data.covid19.go.id/public/api/prov.json">Update data covid19 per provinsi</a>  
+***dalam artikel kali ini : *** source data ```API``` dari link berikut : <a href="https://data.covid19.go.id/public/api/prov.json" target="_blank">Update data covid19 per provinsi</a>  
 
 ### file curl.php
 buka file curl.php kemudian copy baris code berikut , isinya adalah fungsi untuk menjalankan curl di php : 
@@ -70,12 +70,6 @@ file ```curl.php``` ini mengembalikan json_decode yaitu menerjemahkan string dat
 selanjutnya buka file index.php yang merupakan file utama di root direktori aplikasi kita, copykan code dibawah ini : 
 
 ```php
-<!-- 
-source-code : 	https://github.com/codesyariah122/Learn-WebDev/blob/master/updateCovid19_Indonesia/readme.md
-author  : Puji Eramnto
-update : aug-2020
-Semoga lekas sembuh semuanya
- -->
 <?php require_once 'curl.php'; ?>
 <!DOCTYPE html>
 <html>
@@ -264,7 +258,6 @@ if(is_numeric(@$_GET['key'])):
 
 <?php endif; ?>
 ```  
-
 ### file detail.js
 file ```detail.js``` ini sama seperti file jquery sebelumnya yaitu file ```script.js``` yaitu untuk menjalankan fungsi ajax, menangkap data dari input select kemudian di kirim ke file yang akan menangkap dalam bagian ini adalah file ```detail.php``` yang akan menangkap data ajax dari file fungsi ```$.ajax(){}```, di file ```detail.js```, berikut isi coding dari file ```detail.js``` :  
 
@@ -286,7 +279,7 @@ $('.detail').on('click', function(){
 })
 ```
 sepertinya semua code telah di salin ke dalam susunan algorithma di aplikasi fetching data covid19 ini, jika ada file yang kurang , silahkan buka di repo berikut : 
-<a href="https://github.com/codesyariah122/Learn-WebDev/tree/master/updateCovid19_Indonesia">updateCovid19_Indonesia</a>  
+<a href="https://github.com/codesyariah122/Learn-WebDev/tree/master/updateCovid19_Indonesia" target="_blank">updateCovid19_Indonesia</a>  
 
 setelah semua code sudah disalin, coba buka di browser ```localhost/testAPI```, dan hasil akhirnya sepert ini 
 
