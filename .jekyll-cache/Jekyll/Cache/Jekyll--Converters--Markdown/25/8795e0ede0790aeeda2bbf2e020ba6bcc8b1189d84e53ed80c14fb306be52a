@@ -1,0 +1,6 @@
+I"Æ<p>Sebelum melakukan proses upgrade ke Debian 9 Stretch, disarankan untuk memperbarui perangkat lunak Debian 8 Jessie sehingga dalam kondisi up to date (stable version). Buka terminal Debian lalu masuk sebagai root (ketik su lalu masukan password root).<br />
+Setelah itu ketik perintah di bawah ini :</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt update  
+apt upgrade  
+</code></pre></div></div>
+:ET

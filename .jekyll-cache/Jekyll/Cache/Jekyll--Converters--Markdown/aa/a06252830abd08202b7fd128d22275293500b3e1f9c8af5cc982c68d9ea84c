@@ -1,0 +1,278 @@
+I"Ԍ<h3 id="parsing-data-json-upadte-data-covid19-dengan-php-curl">Parsing data JSON upadte data covid19 dengan PHP CURL</h3>
+
+<p>Hai gaes, halo para coders, happy weekend. semoga sehat-sehat terus sampai week end kali ini. salam jumpa di artikel terbaru gout.<br />
+kali ini gout mau membahas mengenai <code class="language-plaintext highlighter-rouge">pandemi</code> yang masih terus berlangsung, semoga cepat berakhir dan semoga tidak bertambah lagi suspek-suspek lainnya. Aamiin.</p>
+
+<p><strong><em>parsing data JSON with CURL</em></strong>
+apa itu curl ? 
+<em>Curl</em> adalah sebuah program dan library untuk mengirim dan mengambil data melalui URL.</p>
+
+<p>Curl adalah sebuah program:</p>
+
+<p>Aritnya curl adalah sebuah program atau tools yang digunakan pada command line (CMD).</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl https://codesyariah122.github.io
+</code></pre></div></div>
+<p><strong><em>Curl adalah sebuah libarary:</em></strong></p>
+
+<p>Artinya sekumpulan fungsi-fungsi curl yang dibungkus dalam paket libcurl dan bisa digunakan dalam berbagai macam bahasa pemrograman.</p>
+
+<h2 id="curl-di-php">CURL di PHP</h2>
+<p>dalam artikel ini gout hanya membahas penggunaan library curl di bahasa pemrograman PHP dan berbasi web. dalam studi kasusnya yaitu mengambil sebuah data dari informasi mengenai covid19 untuk wilayah indonesia, format data sumber adalah <code class="language-plaintext highlighter-rouge">JSON</code>.  mungkin tanpa berpanjang-panjang langsung ajah ke prakteknya.</p>
+
+<p>dalam hal ini gout bikin direktori baru di root webserver <code class="language-plaintext highlighter-rouge">/var/www/html</code> gout buat direktori dengan nama <code class="language-plaintext highlighter-rouge">testAPI</code> di webserver <code class="language-plaintext highlighter-rouge">apache2</code>. kemudian buka direktori <code class="language-plaintext highlighter-rouge">testAPI</code> di code editor.</p>
+
+<p>buat beberapa file , diantaranya adalah :</p>
+<ol>
+  <li>index.php (ini file utama nya)</li>
+  <li>curl.php (file ini berisi fungsi untuk menjalankan fungsi curl di php)</li>
+  <li>dataProcess.php (file berfungsi untuk mengambil alih prosess dari ajax saat mengirim data dari input)</li>
+  <li>detail.php (file ini bertugas menampilkan detail data keseluruhan yang tidak masuk ke table)</li>
+  <li>script.js (file jquery yang akan melakukan pengiriman dan pengambilan data dari server)</li>
+  <li>detail.js (file jquery juga file ini akan mengambil sebuah id=key di tag &lt;td&gt;)</li>
+  <li>jquery.min.js ( bisa di download di link berikut : <a href="https://raw.githubusercontent.com/codesyariah122/Learn-WebDev/master/updateCovid19_Indonesia/jquery.min.js">jquery</a>)</li>
+</ol>
+
+<p>setelah menyiapkan semua file yang ada di daftar tersebut.</p>
+
+<p><em>**dalam artikel kali ini : **</em> source data <code class="language-plaintext highlighter-rouge">API</code> dari link berikut : <a href="https://data.covid19.go.id/public/api/prov.json" target="_blank">Update data covid19 per provinsi</a></p>
+
+<h3 id="file-curlphp">file curl.php</h3>
+<p>buka file curl.php kemudian copy baris code berikut , isinya adalah fungsi untuk menjalankan curl di php :</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>  
+<span class="k">function</span> <span class="n">curl</span><span class="p">(</span><span class="nv">$url</span><span class="p">){</span>
+	<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+	<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="no">CURLOPT_URL</span><span class="p">,</span> <span class="nv">$url</span><span class="p">);</span>
+	<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="no">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+	<span class="nv">$result</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+	<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$result</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+<p>file <code class="language-plaintext highlighter-rouge">curl.php</code> ini mengembalikan json_decode yaitu menerjemahkan string data berformat JSON, <code class="language-plaintext highlighter-rouge">json_decode</code> ini adalah sebuah fungsi <code class="language-plaintext highlighter-rouge">php</code> untuk menterjemahkan string JSON agar bisa di assignment ke dalam suatu variable.</p>
+
+<h3 id="file-indexphp">file index.php</h3>
+<p>selanjutnya buka file index.php yang merupakan file utama di root direktori aplikasi kita, copykan code dibawah ini :</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span> <span class="k">require_once</span> <span class="s1">'curl.php'</span><span class="p">;</span> <span class="cp">?&gt;</span>
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+	<span class="nt">&lt;title&gt;</span>Update Covid19 Indonesia<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;style </span><span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
+	<span class="nt">table</span><span class="p">{</span>
+		<span class="nl">margin-top</span><span class="p">:</span> <span class="m">5rem</span><span class="p">;</span>
+		<span class="nl">border-collapse</span><span class="p">:</span> <span class="nb">collapse</span><span class="p">;</span>
+		<span class="nl">border</span><span class="p">:</span> <span class="m">0px</span> <span class="nb">solid</span> <span class="no">black</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="nt">th</span><span class="p">{</span>
+		<span class="nl">background</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="m">50</span><span class="p">,</span> <span class="m">115</span><span class="p">,</span> <span class="m">220</span><span class="p">);</span>
+		<span class="nl">color</span><span class="p">:</span> <span class="n">hsla</span><span class="p">(</span><span class="m">185</span><span class="p">,</span> <span class="m">49%</span><span class="p">,</span> <span class="m">89%</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
+		<span class="nl">padding</span><span class="p">:</span> <span class="m">.8rem</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="nt">td</span><span class="p">{</span>
+		<span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+		<span class="nl">color</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
+		<span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
+		<span class="nl">padding</span><span class="p">:</span> <span class="m">.8rem</span><span class="p">;</span>
+		<span class="nl">background</span><span class="p">:</span> <span class="n">hsla</span><span class="p">(</span><span class="m">212</span><span class="p">,</span> <span class="m">68%</span><span class="p">,</span> <span class="m">6%</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="nt">td</span><span class="nd">:hover</span><span class="p">{</span>
+		<span class="nl">background</span><span class="p">:</span> <span class="no">coral</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="nt">select</span><span class="p">{</span>
+		<span class="nl">margin-top</span><span class="p">:</span> <span class="m">.9rem</span><span class="p">;</span>
+		<span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">-1.9rem</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="nc">.detail</span><span class="p">{</span>
+		<span class="nl">color</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
+		<span class="nl">background</span><span class="p">:</span> <span class="n">hsla</span><span class="p">(</span><span class="m">355</span><span class="p">,</span> <span class="m">90%</span><span class="p">,</span> <span class="m">57%</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
+		<span class="nl">cursor</span><span class="p">:</span> <span class="nb">pointer</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="nc">.detail</span><span class="nd">:hover</span><span class="p">{</span>
+		<span class="nl">background</span><span class="p">:</span><span class="n">hsla</span><span class="p">(</span><span class="m">290</span><span class="p">,</span> <span class="m">62%</span><span class="p">,</span> <span class="m">37%</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
+		<span class="nl">color</span><span class="p">:</span><span class="m">#fff</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="nf">#detail</span><span class="p">{</span>
+		<span class="nl">margin-top</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span>
+		<span class="nl">width</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+
+<span class="cp">&lt;?php</span>  
+<span class="nv">$data</span> <span class="o">=</span> <span class="nf">curl</span><span class="p">(</span><span class="s1">'https://data.covid19.go.id/public/api/prov.json'</span><span class="p">)[</span><span class="s1">'list_data'</span><span class="p">];</span>
+<span class="nv">$lastUpdate</span> <span class="o">=</span> <span class="nf">curl</span><span class="p">(</span><span class="s1">'https://data.covid19.go.id/public/api/prov.json'</span><span class="p">)[</span><span class="s1">'last_date'</span><span class="p">];</span>
+<span class="cp">?&gt;</span>
+<span class="cp">&lt;?php</span> <span class="c1">//var_dump($data); die; ?&gt;</span>
+
+<span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="nc">Update</span> <span class="nc">Covid</span> <span class="mi">19</span> <span class="nc">Indonesia</span> <span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">h3</span><span class="o">&gt;</span><span class="nc">Last</span> <span class="nc">Update</span> <span class="o">:</span> <span class="o">&lt;?=</span><span class="nv">$lastUpdate</span><span class="cp">?&gt;</span><span class="nt">&lt;/h3&gt;</span>
+<span class="nt">&lt;select&gt;</span>
+	<span class="nt">&lt;option&gt;</span>-Pilih Provinsi-<span class="nt">&lt;/option&gt;</span>
+<span class="cp">&lt;?php</span>  <span class="nv">$i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="k">do</span><span class="p">{</span> <span class="cp">?&gt;</span>	
+	<span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"</span><span class="cp">&lt;?=</span><span class="nv">$i</span><span class="cp">?&gt;</span><span class="s">"</span><span class="nt">&gt;</span><span class="cp">&lt;?=</span><span class="nv">$data</span><span class="p">[</span><span class="nv">$i</span><span class="p">][</span><span class="s1">'key'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="nt">&lt;/option&gt;</span>
+<span class="cp">&lt;?php</span> <span class="nv">$i</span><span class="o">++</span><span class="p">;</span> <span class="p">}</span><span class="k">while</span><span class="p">(</span><span class="nv">$i</span> <span class="o">&lt;=</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$data</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span> <span class="cp">?&gt;</span>	
+<span class="nt">&lt;/select&gt;</span>
+
+	<span class="nt">&lt;table&gt;</span>
+		<span class="nt">&lt;tr&gt;</span>
+			<span class="nt">&lt;th&gt;</span>Provinsi<span class="nt">&lt;/th&gt;</span>
+			<span class="nt">&lt;th&gt;</span>Jumlah Kasus<span class="nt">&lt;/th&gt;</span>
+			<span class="nt">&lt;th&gt;</span>Sembuh<span class="nt">&lt;/th&gt;</span>
+			<span class="nt">&lt;th&gt;</span>Meninggal<span class="nt">&lt;/th&gt;</span>
+			<span class="nt">&lt;th&gt;</span>Dirawat<span class="nt">&lt;/th&gt;</span>
+			<span class="nt">&lt;th&gt;</span>Aksi<span class="nt">&lt;/th&gt;</span>
+		<span class="nt">&lt;/tr&gt;</span>
+		<span class="nt">&lt;tr</span> <span class="na">id=</span><span class="s">"result"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;/tr&gt;</span>
+	<span class="nt">&lt;/table&gt;</span>
+
+
+	<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"detail"</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"script.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+<p>file <code class="language-plaintext highlighter-rouge">index.php</code> ini berisi input berupa select, option untuk memilih provinsi yang akan di kirim ke server.</p>
+
+<h3 id="file-scriptjs">file script.js</h3>
+<p>kemudian selanjutnya, buka file script.js, yang akan menjalankan api ajax dengan jquery, copykan code berikut :</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+		<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">select</span><span class="dl">'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">change</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+			<span class="kd">let</span> <span class="nx">provinsi</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+
+			<span class="k">if</span><span class="p">(</span><span class="nx">provinsi</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">-Pilih Provinsi-</span><span class="dl">"</span><span class="p">){</span>
+				<span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Pilih provinsi terlebih dahulu</span><span class="dl">"</span><span class="p">);</span>
+				<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">select</span><span class="dl">'</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
+			<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+				<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+					<span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">dataProcess.php?provinsi=</span><span class="dl">'</span><span class="o">+</span><span class="nx">provinsi</span><span class="p">,</span>
+					<span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">post</span><span class="dl">'</span><span class="p">,</span>
+					<span class="na">data</span><span class="p">:</span> <span class="dl">'</span><span class="s1">provinsi=</span><span class="dl">'</span><span class="o">+</span><span class="nx">provinsi</span><span class="p">,</span>
+					<span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+						<span class="k">if</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+							<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">select</span><span class="dl">'</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="dl">"</span><span class="s2">-Pilih Provinsi-</span><span class="dl">"</span><span class="p">);</span>
+							<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+							<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#result</span><span class="dl">'</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+						<span class="p">}</span>
+					<span class="p">}</span>
+				<span class="p">})</span>
+			<span class="p">}</span>
+			
+		<span class="p">});</span>
+
+	<span class="p">});</span>
+</code></pre></div></div>
+<p>fungsi <code class="language-plaintext highlighter-rouge">$.ajax({})</code> ini akan melakukan pengiriman data dari input select yang di pilih dan click user kemudian mengirimkan informasi data (value) ke file <code class="language-plaintext highlighter-rouge">dataProcess.php</code></p>
+
+<h3 id="file-dataprocessphp">file dataProcess.php</h3>
+<p>buka file dataProcess.php, file ini yang akan menangkap informasi data yang dikirim oleh fungsi <code class="language-plaintext highlighter-rouge">$ajax({})</code> diatas, yang merupakan data(value) dari input yang di click atau dipilih oleh user.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// file dataProcess.php
+<span class="cp">&lt;?php</span>
+<span class="nb">session_start</span><span class="p">();</span>
+<span class="k">require_once</span> <span class="s1">'curl.php'</span><span class="p">;</span>
+
+<span class="k">if</span><span class="p">(</span> <span class="nb">is_numeric</span><span class="p">(</span><span class="o">@</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'provinsi'</span><span class="p">])</span> <span class="p">){</span>
+	<span class="nv">$provinsi</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'provinsi'</span><span class="p">];</span>
+	<span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'key'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$provinsi</span><span class="p">;</span>
+	<span class="nv">$data</span> <span class="o">=</span> <span class="nf">curl</span><span class="p">(</span><span class="s1">'https://data.covid19.go.id/public/api/prov.json'</span><span class="p">)[</span><span class="s1">'list_data'</span><span class="p">][</span><span class="nv">$provinsi</span><span class="p">];</span>
+	<span class="c1">// echo count($data); die;</span>
+<span class="cp">?&gt;</span>
+	<span class="nt">&lt;td</span> <span class="na">id=</span><span class="s">"key"</span> <span class="na">data-key=</span><span class="s">"</span><span class="cp">&lt;?=</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'key'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="s">"</span><span class="nt">&gt;</span><span class="cp">&lt;?=</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'key'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="nt">&lt;/td&gt;</span>
+	<span class="nt">&lt;td&gt;</span><span class="cp">&lt;?=</span><span class="nb">number_format</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'jumlah_kasus'</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span><span class="cp">?&gt;</span><span class="nt">&lt;/td&gt;</span>
+	<span class="nt">&lt;td&gt;</span><span class="cp">&lt;?=</span><span class="nb">number_format</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'jumlah_sembuh'</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span><span class="cp">?&gt;</span><span class="nt">&lt;/td&gt;</span>
+	<span class="nt">&lt;td&gt;</span><span class="cp">&lt;?=</span><span class="nb">number_format</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'jumlah_meninggal'</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span><span class="cp">?&gt;</span><span class="nt">&lt;/td&gt;</span>
+	<span class="nt">&lt;td&gt;</span><span class="cp">&lt;?=</span><span class="nb">number_format</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'jumlah_dirawat'</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span><span class="cp">?&gt;</span><span class="nt">&lt;/td&gt;</span>
+	<span class="nt">&lt;td&gt;&lt;button</span> <span class="na">class=</span><span class="s">"detail"</span> <span class="na">id=</span><span class="s">"</span><span class="cp">&lt;?=</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'key'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="s">"</span><span class="nt">&gt;</span>Detail Lainnya<span class="nt">&lt;/button&gt;&lt;/td&gt;</span>
+
+<span class="cp">&lt;?php</span> <span class="p">}</span><span class="cp">?&gt;</span>
+
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"detail.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+</code></pre></div></div>
+<p>difile <code class="language-plaintext highlighter-rouge">dataProcess.php</code> tersebut gout menangkap <code class="language-plaintext highlighter-rouge">session</code> dari field data yang dikirim oleh ajax kemudian di assignment kedalam variable global session.</p>
+
+<h3 id="file-detailphp">file detail.php</h3>
+<p>selanjutnya file <code class="language-plaintext highlighter-rouge">detail.php</code> file ini bertugas untuk menyajikan data secara keseluruhan yang tidak dimuat di table. maka code <code class="language-plaintext highlighter-rouge">detail.php</code> adalah sebagai berikut :</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span> 
+<span class="nb">session_start</span><span class="p">();</span>
+<span class="k">require_once</span> <span class="s1">'curl.php'</span><span class="p">;</span> 
+<span class="k">if</span><span class="p">(</span><span class="nb">is_numeric</span><span class="p">(</span><span class="o">@</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'key'</span><span class="p">]))</span><span class="o">:</span>
+	<span class="nv">$key</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'key'</span><span class="p">];</span>
+	<span class="nv">$data</span> <span class="o">=</span> <span class="nf">curl</span><span class="p">(</span><span class="s1">'https://data.covid19.go.id/public/api/prov.json'</span><span class="p">)[</span><span class="s1">'list_data'</span><span class="p">][</span><span class="nv">$key</span><span class="p">];</span>
+	<span class="nb">unset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'key'</span><span class="p">]);</span>
+	<span class="nb">session_destroy</span><span class="p">();</span>
+<span class="cp">?&gt;</span>
+
+<span class="nt">&lt;fieldset&gt;</span>
+	<span class="nt">&lt;legend&gt;</span>Detail data <span class="nt">&lt;b&gt;</span><span class="cp">&lt;?=</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'key'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="nt">&lt;/b&gt;&lt;/legend&gt;</span>
+	<span class="nt">&lt;h3&gt;</span>Penambahan kasus : <span class="nt">&lt;/h3&gt;</span>
+	<span class="nt">&lt;ul&gt;</span>
+		<span class="nt">&lt;li&gt;</span>Positif : <span class="cp">&lt;?=</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'penambahan'</span><span class="p">][</span><span class="s1">'positif'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="nt">&lt;/li&gt;</span>
+		<span class="nt">&lt;li&gt;</span>Sembuh : <span class="cp">&lt;?=</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'penambahan'</span><span class="p">][</span><span class="s1">'sembuh'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="nt">&lt;/li&gt;</span>
+		<span class="nt">&lt;li&gt;</span>Meninggal : <span class="cp">&lt;?=</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'penambahan'</span><span class="p">][</span><span class="s1">'meninggal'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="nt">&lt;/li&gt;</span>
+	<span class="nt">&lt;/ul&gt;</span>
+
+	<span class="nt">&lt;h3&gt;</span>Detail berdasarkan jenis kelamin : <span class="nt">&lt;/h3&gt;</span>
+	<span class="nt">&lt;ul&gt;</span>
+		<span class="nt">&lt;li&gt;</span>Laki-laki : <span class="cp">&lt;?=</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'jenis_kelamin'</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">'doc_count'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="nt">&lt;/li&gt;</span>
+		<span class="nt">&lt;li&gt;</span>Perempuan : <span class="cp">&lt;?=</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'jenis_kelamin'</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="s1">'doc_count'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="nt">&lt;/li&gt;</span>
+	<span class="nt">&lt;/ul&gt;</span>
+
+	<span class="nt">&lt;h3&gt;</span>Detail berdasarkan kelompok umur : <span class="nt">&lt;/h3&gt;</span>
+	<span class="nt">&lt;ul&gt;</span>
+		<span class="nt">&lt;li&gt;</span><span class="cp">&lt;?=</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'kelompok_umur'</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">'key'</span><span class="p">]</span><span class="cp">?&gt;</span> Tahun : <span class="cp">&lt;?=</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'kelompok_umur'</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">'doc_count'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="nt">&lt;/li&gt;</span>
+		<span class="nt">&lt;li&gt;</span><span class="cp">&lt;?=</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'kelompok_umur'</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="s1">'key'</span><span class="p">]</span><span class="cp">?&gt;</span> Tahun : <span class="cp">&lt;?=</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'kelompok_umur'</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="s1">'doc_count'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="nt">&lt;/li&gt;</span>
+		<span class="nt">&lt;li&gt;</span><span class="cp">&lt;?=</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'kelompok_umur'</span><span class="p">][</span><span class="mi">2</span><span class="p">][</span><span class="s1">'key'</span><span class="p">]</span><span class="cp">?&gt;</span> Tahun : <span class="cp">&lt;?=</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'kelompok_umur'</span><span class="p">][</span><span class="mi">2</span><span class="p">][</span><span class="s1">'doc_count'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="nt">&lt;/li&gt;</span>
+		<span class="nt">&lt;li&gt;</span><span class="cp">&lt;?=</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'kelompok_umur'</span><span class="p">][</span><span class="mi">3</span><span class="p">][</span><span class="s1">'key'</span><span class="p">]</span><span class="cp">?&gt;</span> Tahun : <span class="cp">&lt;?=</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'kelompok_umur'</span><span class="p">][</span><span class="mi">3</span><span class="p">][</span><span class="s1">'doc_count'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="nt">&lt;/li&gt;</span>
+		<span class="nt">&lt;li&gt;</span><span class="cp">&lt;?=</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'kelompok_umur'</span><span class="p">][</span><span class="mi">4</span><span class="p">][</span><span class="s1">'key'</span><span class="p">]</span><span class="cp">?&gt;</span> Tahun : <span class="cp">&lt;?=</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'kelompok_umur'</span><span class="p">][</span><span class="mi">4</span><span class="p">][</span><span class="s1">'doc_count'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="nt">&lt;/li&gt;</span>
+		<span class="nt">&lt;li&gt;</span><span class="cp">&lt;?=</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'kelompok_umur'</span><span class="p">][</span><span class="mi">5</span><span class="p">][</span><span class="s1">'key'</span><span class="p">]</span><span class="cp">?&gt;</span> Tahun : <span class="cp">&lt;?=</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'kelompok_umur'</span><span class="p">][</span><span class="mi">5</span><span class="p">][</span><span class="s1">'doc_count'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="nt">&lt;/li&gt;</span>
+	<span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/fieldset&gt;</span>
+
+<span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span>
+</code></pre></div></div>
+<h3 id="file-detailjs">file detail.js</h3>
+<p>file <code class="language-plaintext highlighter-rouge">detail.js</code> ini sama seperti file jquery sebelumnya yaitu file <code class="language-plaintext highlighter-rouge">script.js</code> yaitu untuk menjalankan fungsi ajax, menangkap data dari input select kemudian di kirim ke file yang akan menangkap dalam bagian ini adalah file <code class="language-plaintext highlighter-rouge">detail.php</code> yang akan menangkap data ajax dari file fungsi <code class="language-plaintext highlighter-rouge">$.ajax(){}</code>, di file <code class="language-plaintext highlighter-rouge">detail.js</code>, berikut isi coding dari file <code class="language-plaintext highlighter-rouge">detail.js</code> :</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">.detail</span><span class="dl">'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+	<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#detail</span><span class="dl">'</span><span class="p">).</span><span class="nx">load</span><span class="p">(</span><span class="dl">'</span><span class="s1">detail.php</span><span class="dl">'</span><span class="p">).</span><span class="nx">fadeIn</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+	<span class="kd">let</span> <span class="nx">key</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#key</span><span class="dl">'</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="dl">'</span><span class="s1">key</span><span class="dl">'</span><span class="p">);</span>
+	<span class="c1">// alert(key);</span>
+	<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+		<span class="na">url</span><span class="p">:</span><span class="dl">'</span><span class="s1">detail.php?key=</span><span class="dl">'</span><span class="o">+</span><span class="nx">key</span><span class="p">,</span>
+		<span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">post</span><span class="dl">'</span><span class="p">,</span>
+		<span class="na">data</span><span class="p">:</span> <span class="dl">'</span><span class="s1">key=</span><span class="dl">'</span><span class="o">+</span><span class="nx">key</span><span class="p">,</span>
+		<span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
+			<span class="k">if</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
+				<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#detail</span><span class="dl">'</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">data</span><span class="p">).</span><span class="nx">fadeIn</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+	<span class="p">})</span>	
+<span class="p">})</span>
+</code></pre></div></div>
+<p>sepertinya semua code telah di salin ke dalam susunan algorithma di aplikasi fetching data covid19 ini, jika ada file yang kurang , silahkan buka di repo berikut : 
+<a href="https://github.com/codesyariah122/Learn-WebDev/tree/master/updateCovid19_Indonesia" target="_blank">updateCovid19_Indonesia</a></p>
+
+<p>setelah semua code sudah disalin, coba buka di browser <code class="language-plaintext highlighter-rouge">localhost/testAPI</code>, dan hasil akhirnya sepert ini</p>
+
+<p><img src="{{site.url}}/assets/images/post/curl_php_covid19.gif" alt="CURL_PHP" /></p>
+
+<p>akhirnya gout cukupkan sampai disini artikel ini, nanti mungkin di lanjut mengenai <code class="language-plaintext highlighter-rouge">CURL_PHP</code>, <code class="language-plaintext highlighter-rouge">JQUERY AJAX</code> , ok sekian dulu artikel kali ini, akhir kata gout ucapkan terima kasih, semoga coders semua selalu diberikan nikmat, sehat, dan nikmat waktu luang. jangan lupa jaga stabilitas kesehatan diri kita. ok sekian.</p>
+
+<p>waasalamm….</p>
+
+<p><strong><em>puji ermanto</em></strong></p>
+
+:ET

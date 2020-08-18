@@ -1,0 +1,159 @@
+I"�:<h3 id="menggunakan-tailwind-css-di-gatsby">Menggunakan tailwind css di gatsby</h3>
+<p>salam jumpa lagi para coders ! semoga selalu sehat, udah mulai musim penghujan sepertinya, jangan lupa jaga kesehatan. jangan banyak begadang yah coders ! …. hehehehe.</p>
+
+<p>dalam artikel kali gout berkesempatan untuk membahas tailwind css, apa itu tailwind ?</p>
+
+<p>dalam hal ini gout asumsikan para coders sudah mengenal basic css (cascading stylesheet) standart, contohnya :</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+	<span class="nt">&lt;title&gt;&lt;/title&gt;</span>
+
+<span class="c">&lt;!-- ini contoh penulisan css internal --&gt;</span>
+<span class="nt">&lt;style&gt;</span>
+	<span class="nt">h1</span><span class="p">{</span>
+		<span class="nl">color</span><span class="p">:</span> <span class="no">coral</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+
+<span class="c">&lt;!-- dan ini contoh css external ( dipisah di file lain ) --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"style.css"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span><span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/head&gt;</span>
+
+<span class="nt">&lt;body&gt;</span>
+
+	<span class="c">&lt;!-- ini contoh penulisan css inline didalam sebuah tag html --&gt;</span>
+	<span class="nt">&lt;h1</span> <span class="na">style=</span><span class="s">"color:coral;"</span><span class="nt">&gt;</span>Ini Warna Merah<span class="nt">&lt;/h1&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;!</span><span class="nt">--</span> <span class="nt">ini</span> <span class="nt">file</span> <span class="nt">css</span> <span class="nt">external</span> <span class="nt">nya</span> <span class="nt">--</span><span class="o">&gt;</span>
+<span class="nt">h1</span><span class="p">{</span>
+	<span class="nl">color</span><span class="p">:</span> <span class="no">coral</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>code diatas menghasilkan efek yang sama jika dijalankan di browser, itu adalah basic standart css, tentunya tidak cuma hanya mengganti warna dari text saja, namun banyak element-element yang bisa dimanipulasi dengan css ini. diartikel ini gout tidak akan membahas secara detail, silahkan coders explore sendiri.</p>
+
+<p><strong><em>tailwind css</em></strong><br />
+dalam artikel ini gout akan langsung saja membahas penggunaan tailwind di gatsbyJS, melanjutkan artikel mengenai gatsby yang sebelumnya. ok langsung aja kita eksekusi di instruksi berikut :</p>
+
+<p>pertama kita install dulu plugin tailwindcss di gatsby :</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install </span>tailwindcss <span class="nt">--save-dev</span>
+</code></pre></div></div>
+<p>setelah terinstall coba coders check file <code class="language-plaintext highlighter-rouge">package.json</code> cek apakah tailwindcss sudah terinstall .</p>
+
+<p>seperti ini file package.json jika tailwindcss berhasil di install.</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"devDependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+	</span><span class="nl">"tailwindcss"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^1.6.2"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p><em>selanjutnya</em> kita eksekusi code berikut untuk mengaktifkan package tailwind</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npx tailwindcss init
+</code></pre></div></div>
+
+<p><strong><em>kemudian</em></strong> install package postCSS plugin gatsby :</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">--save</span> gatsby-plugin-postcss
+</code></pre></div></div>
+
+<p>setelah itu buka file <code class="language-plaintext highlighter-rouge">gatsby-config.js</code> dan tambahkan package plugin postcss yang tadi telah diinstall  dengan configurasi sebagai berikut :</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+	<span class="nl">resolve</span><span class="p">:</span> <span class="dl">'</span><span class="s1">gatsby-plugin-postcss</span><span class="dl">'</span><span class="p">,</span>
+		<span class="nx">options</span><span class="p">:</span> <span class="p">{</span>
+		<span class="nl">postCssPlugins</span><span class="p">:</span> <span class="p">[</span>
+			<span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">tailwindcss</span><span class="dl">"</span><span class="p">),</span>
+			<span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">autoprefixer</span><span class="dl">"</span><span class="p">),</span>
+			<span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">./tailwind.config.js</span><span class="dl">"</span><span class="p">),</span>
+		<span class="p">],</span>
+	<span class="p">},</span>
+<span class="p">},</span>
+</code></pre></div></div>
+<p>selanjutnya perhatikan directory root, jika ada file  <code class="language-plaintext highlighter-rouge">postcss-config.js</code> , buka file tersebut kemudian tambahkan configurasi berikut ini :</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+	<span class="na">plugins</span><span class="p">:</span> <span class="p">[</span><span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">tailwindcss</span><span class="dl">"</span><span class="p">)],</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>selanjutnya perintah ini untuk menambahkan librari css di javascript yang sudah di install :</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">-D</span> twin.macro @emotion/core @emotion/styled gatsby-plugin-emotion
+</code></pre></div></div>
+<p>import tailwindcss ke component style : 
+buat file baru di direktori root dengan nama <code class="language-plaintext highlighter-rouge">gatsby-browser.js</code> kemudian import css tailwind :</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="dl">"</span><span class="s2">./src/styles/globals.css</span><span class="dl">"</span>
+</code></pre></div></div>
+<p>aktifkan gatsby emotion plugin di file <code class="language-plaintext highlighter-rouge">gatsby-config.js</code> :</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">'</span><span class="s1">gatsby-plugin-emotion</span><span class="dl">'</span><span class="p">,</span>
+</code></pre></div></div>
+<p>selanjutnya untuk mengaktifkan component styling gunakan <code class="language-plaintext highlighter-rouge">twin.macro</code> :</p>
+
+<p>contohnya sepert ini :</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">IndexPage</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">data</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+	<span class="kd">let</span> <span class="nx">Button</span> <span class="o">=</span> <span class="nx">styled</span><span class="p">.</span><span class="nx">button</span><span class="s2">`</span><span class="p">${</span><span class="nx">tw</span><span class="s2">`bg-blue-500 hover:bg-blue-800 text-white p-2 rounded`</span><span class="p">}</span><span class="s2">`</span> 
+
+	<span class="k">return</span> <span class="p">(</span>
+		<span class="o">&lt;</span><span class="nx">Layout</span><span class="o">&gt;</span>
+			<span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Welcome</span> <span class="k">in</span> <span class="nx">my</span> <span class="o">&lt;</span><span class="nx">Emoji</span> <span class="nx">symbol</span><span class="o">=</span><span class="dl">"</span><span class="s2">🏕</span><span class="dl">"</span><span class="o">/&gt;</span> <span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>				<span class="o">&lt;</span><span class="nx">Img</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">indexStyles</span><span class="p">.</span><span class="nx">imgHeader</span><span class="p">}</span> <span class="nx">fixed</span><span class="o">=</span><span class="p">{</span><span class="nx">data</span><span class="p">.</span><span class="nx">file</span><span class="p">.</span><span class="nx">childImageSharp</span><span class="p">.</span><span class="nx">fixed</span><span class="p">}</span> <span class="nx">alt</span><span class="o">=</span><span class="dl">""</span> <span class="o">/&gt;</span>
+					<span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="nx">I</span><span class="dl">'</span><span class="s1">am Puji Ermanto &lt;br/&gt;Just ! .... &lt;br/&gt; 
+					&lt;Emoji symbol="🏗"/&gt; a full-stack developer&lt;/h2&gt;
+				&lt;p&gt;Are you need a developer ? &lt;Link class="text-red-400" to="/contact"&gt;&lt;Button&gt;Contact Me&lt;/Button&gt;&lt;/Link&gt;&lt;/p&gt;
+
+		&lt;/Layout&gt;
+	)
+}
+</span></code></pre></div></div>
+<p><img src="http://localhost:4000/assets/images/post/gatsby-tailwind.gif" alt="tailwind-gatsby" /></p>
+
+<p>coders semua bisa lihat dokumentasi mengenai <a href="https://github.com/ben-rogerson/twin.macro/blob/master/docs/emotion/gatsby.md"></a>Twin + Gatsby + Emotion installation guide&lt;/a&gt;, untuk melihat detaik informasi mengenai penggunaan twin.macro gatsby.</p>
+
+<p><strong>berikutnya</strong> <strong><em>menggunakan sass di gatsby</em></strong><br />
+Install the Gatsby SCSS plugin :</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">--save</span> node-sass gatsby-plugin-sass
+</code></pre></div></div>
+<p>untuk dapat menggunakan class tailwind di css kita, tambahkan paket tailwindcss ke dalam parameter postCSS plugins di file <code class="language-plaintext highlighter-rouge">gatsby-config.js</code>  :</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+	<span class="nl">resolve</span><span class="p">:</span> <span class="dl">'</span><span class="s1">gatsby-plugin-postcss</span><span class="dl">'</span><span class="p">,</span>
+		<span class="nx">options</span><span class="p">:</span> <span class="p">{</span>
+			<span class="nl">postCssPlugins</span><span class="p">:</span> <span class="p">[</span>
+				<span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">tailwindcss</span><span class="dl">"</span><span class="p">),</span>
+				<span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">autoprefixer</span><span class="dl">"</span><span class="p">),</span>
+				<span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">./tailwind.config.js</span><span class="dl">"</span><span class="p">),</span>
+			<span class="p">],</span>
+	<span class="p">},</span>
+<span class="p">},</span>
+</code></pre></div></div>
+<p><em>Note:</em> Secara opsional, Anda dapat menambahkan file konfigurasi yang sesuai (secara default adalah tailwind.config.js). Jika Anda menambahkan konfigurasi khusus, Anda harus memuatnya setelah tailwindcss.</p>
+
+<p><strong><em>selanjutnya tambahkan parameter tailwind</em></strong><br />
+kita bisa mengkostumisasi class class tailwind dengan class yang kita inginkan, untuk dapat menggunakan tailwind import tailwind ke css yang kita gunakan : 
+buat file baru jika belum ada, di artikel ini gout menggunakan file dengan nama <code class="language-plaintext highlighter-rouge">globals.scss</code> :</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@tailwind</span> <span class="nt">base</span><span class="p">;</span>
+<span class="k">@tailwind</span> <span class="nt">components</span><span class="p">;</span>
+<span class="k">@tailwind</span> <span class="nt">utilities</span><span class="p">;</span>
+</code></pre></div></div>
+<p>sekarang kita bisa menggunakan class tailwindcss secara langsung di tag html dalam state kita. atau coders bisa menambahkan class baru di file <code class="language-plaintext highlighter-rouge">globals.scss</code> :</p>
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@import</span> <span class="n">popup</span><span class="o">.</span><span class="n">css</span> <span class="n">body</span> <span class="p">{</span>
+  <span class="k">@apply</span> <span class="nt">bg-purple-200</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>kemudian buat file baru di root jika belum ada file <code class="language-plaintext highlighter-rouge">gatsby-browser.js</code>, import rule css dari file globals.scss :</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="dl">"</span><span class="s2">./src/css/index.css</span><span class="dl">"</span>
+</code></pre></div></div>
+<p>ok coders kalian, bisa explore tailwindcss.</p>
+
+<p>akhirnya gout cukupkan sampai disini artikel ini, nanti mungkin di lanjut mengenai <code class="language-plaintext highlighter-rouge">purgecss</code>, ok sekian dulu artikel kali ini, akhir kata gout ucapkan terima kasih, semoga coders semua selalu diberikan nikmat, sehat, dan nikmat waktu luang. jangan lupa jaga stabilitas kesehatan diri kita. ok sekian.</p>
+
+<p>waasalamm….</p>
+
+<p><strong><em>puji ermanto</em></strong></p>
+
+:ET

@@ -1,0 +1,61 @@
+I"<p>open _config.yml file on root directori :<br />
+adding new plugin config.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="ss">plugins:
+  </span><span class="o">-</span> <span class="n">jekyll</span><span class="o">-</span><span class="n">paginate</span></code></pre></figure>
+
+<p>at same file on _config.yml, adding pagginate configuration :</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="ss">paginate: </span><span class="mi">6</span>
+<span class="ss">paginate_path: </span><span class="sr">/page:num/</span></code></pre></figure>
+
+<p>open gemfile on the root directori :</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">group</span> <span class="ss">:jekyll_plugins</span> <span class="k">do</span>
+  <span class="n">gem</span> <span class="s2">"jekyll-feed"</span><span class="p">,</span> <span class="s2">"~&gt; 0.6"</span>
+  <span class="n">gem</span> <span class="s2">"jekyll-paginate"</span>
+  <span class="n">gem</span> <span class="s2">"jekyll-coffeescript"</span>
+  <span class="n">gem</span> <span class="s1">'jekyll-sass-converter'</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>and than open new terminal, and installing plugin :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install jekyll-paginate
+</code></pre></div></div>
+
+<h3 id="create-paginate-post-list-with-css-class-bootstrap-v-43">create paginate post list with css class bootstrap v-4.3</h3>
+
+<p>and this is in my layout post list on jekyll :</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="o">=</span><span class="s2">"row justify-content-end"</span><span class="o">&gt;</span>
+	<span class="o">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="o">=</span><span class="s2">"col-xs-12"</span><span class="o">&gt;</span>
+		
+		
+	<span class="o">&lt;</span><span class="n">ul</span> <span class="k">class</span><span class="o">=</span><span class="s2">"post-list"</span><span class="o">&gt;</span> 
+	
+	<span class="o">&lt;</span><span class="sr">/ul&gt;
+	
+		  &lt;div class="container"&gt;
+			&lt;div class="row justify-content-center"&gt;
+			  &lt;div class="col-xs-6"&gt;
+				  &lt;!-- pagination --&gt;
+				  &lt;nav aria-label="Page navigation example"&gt;
+					  &lt;ul class="pagination pagination-sm"&gt;
+							
+						&lt;li class="page-item disabled"&gt;&lt;a class="page-link"&gt;&lt;i class="fas fa-fw fa-chevron-left"&gt;&lt;/i</span><span class="o">&gt;</span> <span class="no">Prev</span><span class="o">&lt;</span><span class="sr">/a&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+					  
+	
+	  <span class="o">&lt;!--</span>                  <span class="o">--&gt;</span>
+	
+					  
+						<span class="o">&lt;</span><span class="n">li</span> <span class="k">class</span><span class="o">=</span><span class="s2">"page-item disabled"</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="k">class</span><span class="o">=</span><span class="s2">"page-link"</span><span class="o">&gt;</span> <span class="no">Next</span> <span class="o">&lt;</span><span class="n">i</span> <span class="k">class</span><span class="o">=</span><span class="s2">"fas fa-chevron-right"</span><span class="o">&gt;&lt;</span><span class="sr">/i&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;</span><span class="sr">/li&gt;
+					  
+				  &lt;/u</span><span class="n">l</span><span class="o">&gt;</span>
+				<span class="o">&lt;</span><span class="sr">/nav&gt;
+			  &lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+			<span class="o">&lt;</span><span class="sr">/div&gt;
+		  &lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+	
+		<span class="o">&lt;</span><span class="sr">/div&gt;
+	  &lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</code></pre></div></div>
+:ET
