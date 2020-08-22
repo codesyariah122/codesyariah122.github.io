@@ -96,7 +96,7 @@ http://localhost:5000
 
 seperti ini ketika aplikasi Express kita running :  
 
-![express-demo-1]({{site.url}}/assets/images/post/express-demo1.gif)  
+![express-demo-1]({{site.url}}/assets/images/post/express-demo-1.gif)  
 
 perhatikan code berikut :  
 
