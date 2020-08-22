@@ -1,3 +1,13 @@
+const myAudio = document.querySelector('#myAudio');
+function playAudio(){
+	myAudio.play();
+}
+
+function pauseAudio(){
+	myAudio.pause()
+}
+	
+
 $(document).ready(function(){
 // 	$('myAudio').removeAttr('autoplay');
 	
@@ -31,7 +41,8 @@ $(document).ready(function(){
 		$('input[type=checkbox][name=day]').on('click',  function(){
 			
 		$('#myAudio').attr('autoplay');
-		$('#myAudio').attr('loop');	
+		
+		playAudio();
 			
 		Swal.fire({
 			position: 'top-end',
@@ -82,7 +93,8 @@ $(document).ready(function(){
 	$('input[type=checkbox][name=night]').on('click',  function(){
 		
 		$('#myAudio').removeAttr('autoplay');
-		$('#myAudio').removeAttr('loop');
+		pauseAudio();
+		
 		Swal.fire({
 			position: 'top-end',
 		  	icon: 'success',
