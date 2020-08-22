@@ -28,6 +28,8 @@ $(document).ready(function(){
 
 		$('input[type=checkbox][name=day]').on('click',  function(){
 		
+		$('audio').attr('autoplay', 'true');
+			
 		Swal.fire({
 			position: 'top-end',
 		  	icon: 'success',
@@ -75,8 +77,9 @@ $(document).ready(function(){
 	})
 
 	$('input[type=checkbox][name=night]').on('click',  function(){
-
-
+		
+		$('audio').attr('autoplay', 'false');
+		
 		Swal.fire({
 			position: 'top-end',
 		  	icon: 'success',
