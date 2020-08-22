@@ -80,6 +80,7 @@ $(document).ready(function(){
 
 	$('input[type=checkbox][name=night]').on('click',  function(){
 		
+		$('myAudio').stop(true);
 		$('myAudio').removeAttr('autoplay');
 		
 		Swal.fire({
