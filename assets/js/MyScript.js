@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$('myAudio').removeAttr('autoplay');
+// 	$('myAudio').removeAttr('autoplay');
 	
 	$(window).scroll(function(){
 		if($(this).scrollTop() > 300){
