@@ -17,7 +17,8 @@ $(document).ready(function(){
 				'display':'',
 				'margin-top':'',
 				'margin-left': '',
-				'font-size': ''
+				'font-size': '',
+				'z-index':'1'
 			})
 			$('.mode-label').show('slow').fadeIn(1000);
 		}
