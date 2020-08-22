@@ -3,12 +3,12 @@ layout: post
 title:  "Mencicipi Express Framework untuk NodeJS"
 author: puji
 categories: [ NodeJS, Javascript ]
-image: assets/images/post/express-demo-1.gif
+image: assets/images/post/express.jpg
 tags: [fullstack_developer]
 opening: بسم الله الرحمن الرحيم
 ---  
 
-![express-demo-1]({{site.url}}/assets/images/post/express.jpg)  
+![express-demo-1]({{site.url}}/assets/images/post/express-demo-1.png)  
   
 
 ### Express: Framework untuk NodeJS  
@@ -96,7 +96,7 @@ http://localhost:5000
 
 seperti ini ketika aplikasi Express kita running :  
 
-![express-demo-1]({{site.url}}/assets/images/post/express-demo1.png)  
+![express-demo-1]({{site.url}}/assets/images/post/express-demo1.gif)  
 
 perhatikan code berikut :  
 
