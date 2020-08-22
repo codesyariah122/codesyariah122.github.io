@@ -7,7 +7,8 @@ $(document).ready(function(){
 				'display': 'inline-block',
 				'margin-top': '7rem',
 				'margin-left': '-1.2rem',
-				'font-size': '3rem'
+				'font-size': '3rem',
+				'z-index': '1'
 			})
 		}else{
 			console.log("top");
