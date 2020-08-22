@@ -3,12 +3,13 @@ layout: post
 title:  "Mencicipi Express Framework untuk NodeJS"
 author: puji
 categories: [ NodeJS, Javascript ]
-image: assets/images/post/express.jpg
+image: assets/images/post/express-demo-1.gif
 tags: [fullstack_developer]
 opening: بسم الله الرحمن الرحيم
 ---  
 
-![nodeJS_webserver]({{site.url}}/assets/images/post/javascript.jpg)  
+![express-demo-1]({{site.url}}/assets/images/post/express.jpg)  
+  
 
 ### Express: Framework untuk NodeJS  
 
@@ -91,7 +92,7 @@ root@codesyariah:/home/puji122/MyApp# npm start
 ```  
 kemudian buka browser kita (google chrome, firefox) kemudian akses aplikasi express kita di url :  
 
-```localhos:5000```  
+http://localhost:5000 
 
 seperti ini ketika aplikasi Express kita running :  
 
