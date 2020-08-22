@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Mengaktifkan script npm start dengan nodemon"
+title:  "Mencicipi Express Framework untuk NodeJS"
 author: puji
 categories: [ NodeJS, Javascript ]
 image: assets/images/post/express.jpg
