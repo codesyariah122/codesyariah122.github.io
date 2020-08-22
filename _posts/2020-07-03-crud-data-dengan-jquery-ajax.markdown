@@ -22,7 +22,7 @@ selamat menyimak :
 setiap request ke database dari client side di redirect ke ajax sebelum di kembalikan ke clientside :  
 contoh penerapan ajaxnya :  
 
-```javascript
+```
 //ketika tombol add di click maka client akan merequest data ke server disini ajax jadi mengambil alih server side
 $('#add').click(function(){
 	//Swal.fire("Hallo world");

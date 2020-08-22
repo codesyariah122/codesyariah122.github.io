@@ -11,7 +11,7 @@ opening: بسم الله الرحمن الرحيم
 Kali ini kita (kita .. lu aja kali) maksudnya saya, kali ini saya akan membuat sebuah layanan email service dengan menggunakan library dari phpmailer dan codeigniter, ok langsung saja kita eksekusi.
 buat sebuah controller untuk view nya kita simpan di direktori Controller, save dengan nama *EmailService.php*.
 
-```php
+```
 <?php
 class EmailService extends CI_Controller {
 	
@@ -50,7 +50,7 @@ class EmailService extends CI_Controller {
 
 kemudian buat lagi file baru untuk templating nya di direktori view, email_service.php , berhubung kita akan membuat multiple file attachment jadi di bagian form input di field bagian name fieldnya kita beri nama ```name=attachment[]``` dengan tambahan array.
 
-```php
+```
 
 <div class="jumbotron" style="background-color:#000000;">
   <h1 class="display-4 text-center text-white">OURCITRUS <br/> Email Service</h1>
@@ -126,7 +126,8 @@ kemudian buat lagi file baru untuk templating nya di direktori view, email_servi
 ```
 
 lanjut lagi buat controller baru yang berfungsi sebagai action nya di direktori controller beri nama MailSend.php
-```php
+
+```
 <?php
 require_once(APPPATH. 'libraries/phpmailer/PHPMailerAutoload.php');
 class MailSend extends CI_Controller {
@@ -198,7 +199,7 @@ class MailSend extends CI_Controller {
 
 ini untuk halaman tambahan simpan di direktori view dengan success_page.php dan err_page.php
 
-```php
+```
 <div class="jumbotron">
   <h1 class="display-4 text-center">OURCITRUS <br/> Email Service</h1>
   <p class="lead text-center">Selamat Datang Dihalaman mail service <br/> OURCITRUS | PT. GEMILANG CITRUS BERJAYA</p>
@@ -255,14 +256,14 @@ ini untuk halaman tambahan simpan di direktori view dengan success_page.php dan 
 ```
 kemudian buat file err_page.php
 
-```php
+```
 <?php if($_GET['id'] == "err"):?>
 <?php $this->view('message.php'); ?>
 <?php endif;?>
 ```
 
 masih di direktori view buat file baru dengan nama message.php
-```php
+```
 <?php if($this->session->has_userdata('success')):?>
        <div class="alert alert-success alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>

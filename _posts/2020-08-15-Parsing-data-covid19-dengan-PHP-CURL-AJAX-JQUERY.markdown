@@ -22,7 +22,7 @@ Curl adalah sebuah program:
 
 Aritnya curl adalah sebuah program atau tools yang digunakan pada command line (CMD).  
 
-```shell
+```
 curl https://codesyariah122.github.io
 ```  
 ***Curl adalah sebuah libarary:***  
@@ -50,7 +50,7 @@ setelah menyiapkan semua file yang ada di daftar tersebut.
 ### file curl.php
 buka file curl.php kemudian copy baris code berikut , isinya adalah fungsi untuk menjalankan curl di php : 
 
-```php
+```
 <?php  
 function curl($url){
 	$curl = curl_init();
@@ -69,7 +69,7 @@ file ```curl.php``` ini mengembalikan json_decode yaitu menerjemahkan string dat
 ### file index.php
 selanjutnya buka file index.php yang merupakan file utama di root direktori aplikasi kita, copykan code dibawah ini : 
 
-```php
+```
 <?php require_once 'curl.php'; ?>
 <!DOCTYPE html>
 <html>
@@ -158,7 +158,7 @@ file ```index.php``` ini berisi input berupa select, option untuk memilih provin
 
 ### file script.js
 kemudian selanjutnya, buka file script.js, yang akan menjalankan api ajax dengan jquery, copykan code berikut : 
-```javascript
+```
 	$(document).ready(function(){
 		$('select').on('change', function(e){
 			let provinsi = $(this).val();
@@ -190,7 +190,7 @@ fungsi ```$.ajax({})``` ini akan melakukan pengiriman data dari input select yan
 ### file dataProcess.php  
 buka file dataProcess.php, file ini yang akan menangkap informasi data yang dikirim oleh fungsi ```$ajax({})``` diatas, yang merupakan data(value) dari input yang di click atau dipilih oleh user.
 
-```php
+```
 // file dataProcess.php
 <?php
 session_start();
@@ -219,7 +219,7 @@ difile ```dataProcess.php``` tersebut gout menangkap ```session``` dari field da
 ### file detail.php  
 selanjutnya file ```detail.php``` file ini bertugas untuk menyajikan data secara keseluruhan yang tidak dimuat di table. maka code ```detail.php``` adalah sebagai berikut :  
 
-```php
+```
 <?php 
 session_start();
 require_once 'curl.php'; 
@@ -261,7 +261,7 @@ if(is_numeric(@$_GET['key'])):
 ### file detail.js
 file ```detail.js``` ini sama seperti file jquery sebelumnya yaitu file ```script.js``` yaitu untuk menjalankan fungsi ajax, menangkap data dari input select kemudian di kirim ke file yang akan menangkap dalam bagian ini adalah file ```detail.php``` yang akan menangkap data ajax dari file fungsi ```$.ajax(){}```, di file ```detail.js```, berikut isi coding dari file ```detail.js``` :  
 
-```javascript
+```
 $('.detail').on('click', function(){
 	$('#detail').load('detail.php').fadeIn(1000);
 	let key = $('#key').data('key');

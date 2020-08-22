@@ -16,21 +16,21 @@ Visual Studio Code adalah editor kode lintas-platform gratis dan open-source yan
 Dalam tutorial kali ini saya akan menginstal visual studio code di distro linux debian 9 stretch saya. ok kita mulai aja langsung.  
 pertama-tama update dulu debian 9 nya  
 
-```sh
+```
 apt update
 apt install software-properties-common apt-transport-https curl
 ```  
 kemudian import GPG key microsofnya menggunakan command curl  
 
-```sh
+```
 curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 ```
 kemudian tambahkan source visual studio code ke dalam repository debian 9 stretch  
-```sh
+```
 add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 ```  
 setelah source repository visual studio ditambahkan, kemudian kita install visual studio code nya dan ambil updatean terbaru.  
-```sh
+```
 apt update
 apt install code
 ```  

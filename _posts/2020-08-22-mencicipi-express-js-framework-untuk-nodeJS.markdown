@@ -30,44 +30,44 @@ Express masih mengizinkan kita untuk memasang modul-modul tambahan sesuai kebutu
 #### Instalasi Express  
 Express perlu dipasang secara manual menggunakan command berikut : 
 
-```shell
+```
 npm install express
 ```  
 Cara diatas akan memasang Express secara global. Cara lain yang sering digunakan untuk melakukan instalasi Express adalah pada saat membuat aplikasi menggunakan command berikut :  
-```shell
+```
 npm install express --save
 ```  
 perintah diatas perlu ditulis dari direktori aplikasi yang sudah disiapkan sebelumnya. Instalasi Express menggunakan cara kedua bersifat lokal. Artinya, modul Express hanya akan dikenal oleh aplikasi yang sedang dibuat. jika anda ingin membuat aplikasi baru ( didalam direktori lain ), maka installasi Express perlu di lakukan lagi untuk aplikasi bersangkutan.  
 
 setelah Express terpasang, kita dapat mengimport modul tersebut kedalam aplikasi yang kita buat melalui perintah berikut :  
 
-```javascript
+```
 const express = require('express')
 ```  
 
 #### Membuat aplikasi sederhana dengan Express  
 untuk membuat aplikasi dengan framework Express, ikuti langkah-langkah berikut:  
 1. Aktifkan direktori kerja anda, misalnya seperti berikut  
-```shell
+```
 root@codesyariah:/home/puji122# 
 ```  
 2. Buat sub-direktori baru di dalam direktori kerja untuk menempatkan aplikasi, misalnya dengan nama ***MyApp***  
-```shell
+```
 root@codesyariah:/home/puji122# mkdir MyApp
 ```  
 3. Aktifkan sub-direktori ***MyApp***, lalu buat file ***package.json*** dengan menjalankan command berikut:  
-```shell
+```
 root@codesyariah:/home/puji122#cd MyApp
 root@codesyariah:/home/puji122/MyApp# npm init
 ```  
 4. Isi beberapa data untuk field data file **package.json**  
 5. Jika anda tidak memasang Express secara global, lakukan instalasi Express pada tahap ini dengan command berikut:  
-```shell
+```
 root@codesyariah:/home/puji122/MyApp# npm install express --save
 ```  
 6. Buat file baru disini gout membuat file dengan nama ```index.js``` dan tempatkan file tersebut di dalam root direktori ***MyApp/***. kode untuk file tersebut dapat dilihat di script code dibawah ini :  
 
-```javascript
+```
 // file : index.js
 const express = require('express')
 const app = express()
@@ -80,14 +80,14 @@ app.get('/', (req, res) => {
 ```  
 dari artikel sebelumnya kita sudah menambahkan ```scripts``` seperti berikut : 
 
-```json
+```
   "scripts": {
     "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
 ```  
 jadi kita bisa menjalankan aplikasi kita dengan command :  
-```shell
+```
 root@codesyariah:/home/puji122/MyApp# npm start
 ```  
 kemudian buka browser kita (google chrome, firefox) kemudian akses aplikasi express kita di url :  
@@ -100,12 +100,12 @@ seperti ini ketika aplikasi Express kita running :
 
 perhatikan code berikut :  
 
-```javascript
+```
 const express = require('express')
 ```  
 Baris code diatas berfungsi untuk mengimpor modul Express di Node.js.  
 
-```javascript
+```
 const app = express()
 ```  
 ***Fungsi express()*** merupakan fungsi global di dalam Express yang berguna untuk membuat objek aplikasi. Dalam Express, objek aplikasi dapat melakukan pekerjaan-pekerjaan berikut:  
@@ -115,14 +115,14 @@ const app = express()
 - Menghasilkan ```render``` tampilan ***HTML***  
 - Mendaftarkan mesin pembuat ```template (***template engine***)```.  
 
-```javascript
+```
 app.get('/', (req, res) => {
 	res.send('<h1>Hello World</h1>')
 })
 ```  
 Kode diatas digunakan untuk menangani permintaan rute ```URL```. tersebut yang dikirim melalui method ```GET```. ketika permintaan terjadi, aplikasi akan menjalankan fungsi ***callback***. Fungsi ***callback*** memiliki dua parameter. yaitu object ```request(req) dan response(res)```. Didalam fungsi tersebut, kita mengirim respon(berupa text, (```'<h1>Hello World</h1>'```) ke browser atau client melalui pemanggilan method ```send()``` dari object request.  
 
-```javascript
+```
 listen(5000, () => {
 	console.log("Server running on port 5000")
 })

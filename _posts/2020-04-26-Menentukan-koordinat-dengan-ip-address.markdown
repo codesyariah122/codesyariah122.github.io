@@ -15,7 +15,7 @@ Banyak cara yang dapat dilakukan untuk mendapatkan posisi koordinat khususnya la
 
 Saya pernah membandingkan IPStack dan IP2Location, sayangnya database lokasi yang dimiliki keduanya masih kurang valid, saya cek IP komputer saya di Sumatra Utara IP menunjukan di Bandung, walaupun masih sama-sama milik PT. Telekomunikasi di Indonesia. Terakhir saya menggunakan layanan dari keycdn.com. Gratis dan lokasinya lebih valid. Caranya seperti berikut.  
 
-```php
+```
 <?php
 if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
     $ip = $_SERVER['HTTP_CLIENT_IP'];
@@ -42,7 +42,7 @@ echo "<h1>".$location."</h1>";
 
 Koordinatnya telah kita dapatkan yaitu :  
 
-```php
+```
 $lat = $dt['data']['geo']['latitude'];
 $lng = $dt['data']['geo']['longitude'];
 ```  

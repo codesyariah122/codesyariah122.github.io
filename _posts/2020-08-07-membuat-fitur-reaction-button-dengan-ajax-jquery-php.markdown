@@ -26,7 +26,7 @@ ok, kita langsung ajah mulai codingnya :
 pertama yang mengalami perubahan adalah table ```product``` di database utama kita yaitu database crudajax : 
 
 sekarang kita akses terminal kemudian masuk ke config database dari terminal dengan command : 
-```sql
+```
 mysql -u root -p
 -- kemudian gunakan databse crudajax
 use crudajax;
@@ -50,7 +50,7 @@ CREATE TABLE `reaction` (
 ```  
 di command database diatas kita punya satu table baru yang akan terhubung ke field/column ```id_reat``` di table ```product```. kemudian selanjutnya kita langsung buka code editor untuk mengubah beberapa codingan yang antara lain sebagai berikut :  
 file pertama yang akan dirubah adalah file ```contents/detail.php``` , sehingga file tersebut gout rubah jadi seperti dibawah ini :   
-```php
+```
 <style type="text/css">
   .polygon{
     clip-path: polygon(47% 41%, 75% 0%, 94% 49%, 75% 100%, 18% 78%, 0 30%);
@@ -88,7 +88,7 @@ endif;
 ```  
 di file tersebut untuk javascript nya gout pisah ke file tersendiri sehingga file javascriptnya ada di direktori ```assets/js/``` dengan nama file ```getReaction.js``` , berikut code di file ```getReaction.js``` : 
 
-```javascript
+```
 // file getReaction.js
 $('#reaction').load('contents/reaction.php');
   // $('.polygon').mouseenter(function(){
@@ -123,7 +123,7 @@ $(document).ready(function(){
 ```  
 kemudian di file berikutnya adalah file tambahan baru yang gout beri nama ```reaction.php``` di direktori ```contents/reaction.php``` berikut isi codingan file ```reaction.php``` :  
 
-```php
+```
 <?php  require_once '../functions.php';?>
 
 <style type="text/css">
@@ -179,7 +179,7 @@ endif;
 ```  
 masih menggunakan fungsi yang sama, yang ada di file ```functions.php``` direktori root, aplikasi crud data ajax jquery.  di file ```contents/reaction.php``` tersebut file javascript nya juga gout pisah di direktori lain, sepertinya dalam artikel kali ini semua file javascript gout pisahkan ke direktori ```assets/js``` di file ```reaction.php``` ini file javascriptnya gout kasih nama ```reaction.js``` dan berikut isi codingan file ```reaction.js``` : 
 
-```javascript
+```
 // file reaction.js
 function emojiReact(emoji){
   document.getElementById('react-onclick').style.display='none';
@@ -233,7 +233,7 @@ berikutnya adalah file ```functions.php``` di file tersebut perubahan yang gout 
 <a href="https://codesyariah122.github.io/php/ajax/jquery/Menjalankan-dua-query-berbeda-dalam-satu-statement-menggunakan-PDOExtention/">Menjalankan dua query berbeda dalam satu statement</a>.  
 berikut fungsi ```addAjax(){}``` yang sudah gout ubah : 
 
-```php
+```
 // file functions.php
 function addAjax($data, $file, $table1, $table2){
   // var_dump(@$file);
@@ -273,7 +273,7 @@ function addAjax($data, $file, $table1, $table2){
 }
 ```  
 berikut ini fungsi lain yaitu fungsi untuk insert reaction dari buttonnya : gout beri nama fungsi ```reactEmoji(){}``` 
-```php
+```
 // file functions.php
 function reactEmoji($data, $table){
   $reactEmoji = @$data['reactemoji'];
@@ -315,7 +315,7 @@ function reactEmoji($data, $table){
 ```  
 berikutnya adalah file yang gout beri nama ```react_data.php``` file tersebut berfungsi untuk menampung nilai value yang terlah mengalami update dari reaction yang telah di input di file ```reaction.php``` berikut ini isi codingan di file ```react_data.php``` : 
 
-```php
+```
 // file contents/react_data.php
 <style type="text/css">
   .react-ul{

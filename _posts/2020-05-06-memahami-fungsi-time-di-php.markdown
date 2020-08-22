@@ -22,13 +22,13 @@ dikarenakan zona waktu saya ada di indonesia. Mungkin nanti dalam artikel tips a
 ### menggunakan fungsi time()  
 fungsi time secara defaultnya menghasilkan nilai 1 januari 1970 berdasarkan unix timestamp / EPOCH time .  
 contoh penggunaan fungsi time yang di gabungkan dengan fungsi date().  
-```php
+```
 echo $date=date('d F Y, H:i:s', time());
 ```  
 code diatas menghasilkan output seperti ini  : ``` 05 May 2020, 07:45:46 ```  
 Fungsi time() ini bermanfaat untuk mendapatkan waktu kedepan atau kebelakang sejak waktu saat ini, misal:  
 contoh lain penggunaan fungsi date dan time :  
-```php
+```
 echo 'Waktu sekarang: ' . date('Y-m-d H:i:s') . '<br/>';
 echo '1 menit kedepan: ' . date('Y-m-d H:i:s', time() + 60) . '<br/>';
 echo '1 jam kedepan: ' . date('Y-m-d H:i:s', time() + (60 * 60)) . '<br/>';
@@ -47,7 +47,7 @@ Meskipun dapat mengkalkulasi waktu kedepan dan kebelakang, fungsi ini maksimal h
 
 # Manipulasi fungsi time menghitung waktu maju dan mundur  
 **menghitung maju 100 hari kedepan**
-```php
+```
 echo "hari ini  = ".date("l", time())."<br/>";
 echo "100 Hari kedepan hari = ".date("l", time()+60*60*24*100);
 ```  
@@ -58,7 +58,7 @@ outputnya seperti ini :
 untuk mengetahui hari lahir kita, yaitu kita melakukan penghitungan waktu mundur.  
 kita bisa menggunakan fungsi mktime untuk membuat waktu kita sendiri. kayanya kalau menggunakan fungsi time() tidak memungkinkan karena fungsi ini bersifat relatif mau maju atau mundur berdasarkan EPOCH / timestamp, dan itu berarti kita harus menghitung dari awal waktu EPOCH yaitu dari 1 januari 1970 sampai tahun kelahiran kita. maka dari itu saya menggunakan fungsi ```mktime()``` , mktime() adalah fungsi untuk membuat waktu sendiri.  
 berikut contoh penggunaan fungsi mktime :  
-```php
+```
 /**
 * @use format penulisannya berisi 6 attribute yaitu : jam, menit, detik, bulan, tanggal, tahun
 *contoh nya :
@@ -68,11 +68,11 @@ echo mktime(0,0,0,3,19,1987);
 
 code diatas menghasilkan output sepert ini  
 
-```php
+```
 543085200
 ```  
 dengan itu berarti kita telah mendapatkan nilai : jam, menit, detik nya, nah supaya kita bisa tahu hari nya hari apa. kita tinggal menambahkan fungsi date("l") untuk mendapatkan nama hari.  
-```php
+```
 echo "hari lahi = ". date("l", mktime(0,0,0,3,19,1987));
 ```
 maka outputnya seperti ini :   
@@ -80,7 +80,7 @@ maka outputnya seperti ini :
 
 hal diatas juga bisa dilakukan menggunakan fungsi dari date lainnya yaitu fungsi ```strtotime()```  , pada strtotime kita hanya perlu menambahkan format tanggal yang berupa string, contoh :  
 
-```php
+```
 echo "hari lahir = ".date("l", strtotime("19 march 1987"));
 ```  
 maka outputnya sepert ini :  

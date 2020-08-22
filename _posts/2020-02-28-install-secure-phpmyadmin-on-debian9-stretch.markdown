@@ -13,7 +13,7 @@ __Step 1 — Installing phpMyAdmin__
 
 pertama-tama kita update distro linux kita dilanjutkan langsung install phpmyadmin nya  
   
-```sh
+```
 apt update && apt upgrade -y  
 apt install phpmyadmin  
 ```  
@@ -24,7 +24,7 @@ Pilih (Yes/Y) untuk mengatur basis data internal dan pengguna administratif untu
 Anda juga dapat membiarkannya kosong dan membiarkan phpMyAdmin membuat kata sandi secara acak. dan Instalasi phpmyadmin pun selesai.  
 Agar web server Nginx kita menemukan direktori web file phpMyAdmin dengan benar, kita perlu membuat tautan simbolis dari file instalasi ke direktori root dokumen Nginx:  
 
-```sh  
+```
 ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
 ```  
 Instalasi phpMyAdmin Anda telah selesan dan bisa diakses. Untuk mengakses antarmuka, buka nama domain server Anda atau alamat IP diikuti oleh (http://localhost/phpmyadmin)  
@@ -38,7 +38,7 @@ Bot akan memindai jalur umum, seperti phpmyadmin, pma, admin, mysql dan semacamn
 skrip otomatis untuk menemukan instalasi phpMyAdmin Anda dan mencoba serangan brute-force.  
 Dari proses installasi kita tadi, kita telah membuat tautan simbolis untuk root direktori phpmyadmin kita dari /usr/share/phpmyadmin, direktori root default dari phpmyadmin.  
 Untuk mengubah URL phpMyAdmin kita, kita akan mengganti nama tautan simbolis sebelumnya.  
-```sh
+```
 cd /var/www/html/
 ls -l
 
@@ -53,7 +53,7 @@ Kita dapat mengubah nama tautan ini menjadi apa pun yang kita suka.
 Ini untuk mengubah URL akses phpMyAdmin kita, yang dapat membantu mengaburkan titik akhir dari root dikodekan untuk mencari nama titik akhir yang umum.  
 Pertama, mari kita bernavigasi ke direktori root dokumen Nginx dan lihat daftar file yang ada didalamnya untuk memahami perubahan yang akan kita buat:  
 
-```sh
+```
 cd /var/www/html
 mv phpmyadmin nothingtosee
 ls -l

@@ -37,7 +37,7 @@ terlihat ada 2 item baru yaitu column dengan nama
 kedua item baru ini akan ditambahkan juga di file ```add.php``` dan file ```edit.php``` , untuk item ```product_image``` akan kita gunakan ```<input type="file">``` sedangkan untuk item ```product_description``` akan kita gunakan element input ```<textarea></textarea>```. sehingga keseluruhan codenya gout rubah menjadi seperti berikut : 
 ***file ```contents/add.php```***  
 
-```php
+```
 <?php 
 require_once '../functions.php';
 if(@$_GET['page'] == 'add'):
@@ -113,7 +113,7 @@ untuk fungsi insert data nya masih menggunakan fungsi ```addAjax()``` dari file 
 
 ***file ```contents/edit.php```***  
 
-```php
+```
 <?php  
 require_once '../functions.php';
 
@@ -197,7 +197,7 @@ didalam file functions.php gout merubah algorithma data pada bagian fungsi ```fu
 
 ***file ```functions.php```***  
 
-```php
+```
 <?php
 require_once 'config.php';
 

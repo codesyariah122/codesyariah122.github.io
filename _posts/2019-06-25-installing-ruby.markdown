@@ -9,7 +9,7 @@ opening: بسم الله الرحمن الرحيم
 ---  
 ![rails2]({{site.url}}/public/images/post/ruby.png)  
 ## installing ruby on debian  
-```ruby
+```
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
@@ -52,13 +52,13 @@ Rbenv is a lightweight Ruby version management tool which allows you to easily s
 
 To install Ruby using the Rbenv script, follow these steps: 
 - First, update the packages index and install the packages required for the ruby-build tool to build Ruby from source: 
-```shell
+```
 apt update
 apt install git curl libssl-dev libreadline-dev zlib1g-dev autoconf bison build-essential libyaml-dev libreadline-dev libncurses5-dev libffi-dev libgdbm-dev
 ```  
 
 - Next, run the following curl command to install both rbenv and ruby-build:  
-```bash
+```
 curl -sL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-installer | bash -
 ```  
 

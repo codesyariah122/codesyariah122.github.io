@@ -19,7 +19,7 @@ jadi pada intinya NodeJS dimanfaatkan sebagai bahasa ```beckend```, sama halnya 
 #### installasi nodeJS
 dalam artikel ini gout akan menjalankan installasi node js di operating system linux, kebetulan disto linux yang sedang gout gunakan adalah ```Debian GNU/Linux 9.13 (stretch)```. Ok langsung ajah kita buka terminal linux :  
 
-```shell
+```
 cd /home/user/
 # wget https://nodejs.org/dist/v12.18.3/node-v12.18.3-linux-x64.tar.xz
 # tar -xf node-v12.18.3.linux-x64.tar.xz
@@ -41,7 +41,7 @@ buat lagi ```symbolic link``` untuk npm di ```usr/bin``` agar program npm (node 
 ```  
 Untuk mengecek instalasi Node.js sudah dijalankan dengan benar atau belum tuliskan command ```node -v``` dan ```npm -v``` di terminal linux kita. seperti berikut :  
 
-```shell
+```
 root@codesyariah:/home/puji122/pujiermanto.github.io# node -v
 v10.22.0
 root@codesyariah:/home/puji122/pujiermanto.github.io# npm -v
@@ -60,7 +60,7 @@ Node JS dilengkapi dengan node interaktif. Mode ini disebut terminal ```REPL```,
 
 ## Menjalankan terminal REPL  
 untuk menggunakan Node.ks secara interactive, tulis node ke dalam terminal. 
-```shell
+```
 # node
 > 1 + 1
 2

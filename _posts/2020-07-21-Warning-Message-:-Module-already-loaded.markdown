@@ -16,7 +16,7 @@ Ketika mengembangkan sebuah aplikasi menggunakan CodeIgniter pada localhost, per
 
 Namun biasanya ketika kita upload pada hosting muncul sebuah pesan warning seperti ini:  
 
-```php
+```
 A PHP Error was encountered
 Severity: Core Warning
 Message: Module 'pdo_mysql' already loaded 
@@ -35,11 +35,11 @@ Untuk menyembunyikan peringatan tersebut, kita harus mengubah environment aplika
 - Silahkan edit file index.php di direktori root codeigniter
 - kemudian cari kode berikut :  
 
-```php  
+```  
 define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
 ```  
 - kemudian ganti menjadi seperti ini : 
-```php
+```
 define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'production');
 ```  
 - simpan dan refresh halaman web  

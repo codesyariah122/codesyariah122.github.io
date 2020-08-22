@@ -13,7 +13,7 @@ Assalamualaikum, coders...
 datatables adalah sebuah plugin untuk memudahkan para developer web dalam mengelola data, banyak sekali manfaat dari plugin ini.  
 kita tidak perlu membuat sebuah struktur html baru untuk table data kita, hanya cukup menginstall plugin nya saja.  
 pada dasarnya penginstallan nya sama seperti memasang source untuk javascript kita hanya perlu memanggil link dari data tables nya saja.  
-```php
+```
         <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
 ```  
@@ -24,7 +24,7 @@ atau kalian bisa langsung download source nya di website nya databales langsung.
 pada kesempatan ini saya ingin berbagi mengenai default sorting dari datatables yang tidak berjalan, jadi ceritanya saya ingin menampilkan data  
 yang saya kelola dari database, dan saya ingin menampilkan nya secara descending atau mengurut dari sebuah id yang terbesar. 
 query database saya seperti ini : 
-```php
+```
             $tampilUser = tampilUser("SELECT * FROM user ORDER BY id DESC");
 ```  
 
@@ -34,13 +34,13 @@ karena secara default plugin datatables menset sorting secara ascending atau dim
 secara basic mudah untuk merubah defaultnya karena jika kita mendownload secara keseluruhan plugin datatables kita akan menemukan konfigurasi defaultnya, dan di konfigurasi default itulah kita kasih perubahan.  
 kita tambahkan code berikut di code default datatables nya, nama filenya datatables-demo.js  
 
-```javascript
+```
 "order": [[ 3, "desc" ]]
 ```  
 keseluruhan scriptnya adalah seperti ini :  
 
 
-```javascript
+```
 $(document).ready(function() {
   $('#dataTable').DataTable(
   		{

@@ -16,7 +16,7 @@ dalam artikel kali gout berkesempatan untuk membahas tailwind css, apa itu tailw
 
 dalam hal ini gout asumsikan para coders sudah mengenal basic css (cascading stylesheet) standart, contohnya : 
 
-```html
+```
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,7 +42,7 @@ dalam hal ini gout asumsikan para coders sudah mengenal basic css (cascading sty
 </body>
 </html>
 ```
-```css
+```
 <!-- ini file css external nya -->
 h1{
 	color: coral;
@@ -54,30 +54,30 @@ code diatas menghasilkan efek yang sama jika dijalankan di browser, itu adalah b
 dalam artikel ini gout akan langsung saja membahas penggunaan tailwind di gatsbyJS, melanjutkan artikel mengenai gatsby yang sebelumnya. ok langsung aja kita eksekusi di instruksi berikut : 
 
 pertama kita install dulu plugin tailwindcss di gatsby : 
-```shell
+```
 npm install tailwindcss --save-dev
 ```  
 setelah terinstall coba coders check file ```package.json``` cek apakah tailwindcss sudah terinstall .
 
 seperti ini file package.json jika tailwindcss berhasil di install.
-```json
+```
 "devDependencies": {
 	"tailwindcss": "^1.6.2",
 }
 ```  
 *selanjutnya* kita eksekusi code berikut untuk mengaktifkan package tailwind
-```shell
+```
 npx tailwindcss init
 ```  
 
 ***kemudian*** install package postCSS plugin gatsby : 
-```shell
+```
 npm install --save gatsby-plugin-postcss
 ```  
 
 setelah itu buka file ```gatsby-config.js``` dan tambahkan package plugin postcss yang tadi telah diinstall  dengan configurasi sebagai berikut : 
 
-```javascript
+```
 {
 	resolve: 'gatsby-plugin-postcss',
 		options: {
@@ -90,30 +90,30 @@ setelah itu buka file ```gatsby-config.js``` dan tambahkan package plugin postcs
 },
 ```  
 selanjutnya perhatikan directory root, jika ada file  ```postcss-config.js``` , buka file tersebut kemudian tambahkan configurasi berikut ini :  
-```javascript
+```
 module.exports = () => {
 	plugins: [require("tailwindcss")],
 }
 ```  
 selanjutnya perintah ini untuk menambahkan librari css di javascript yang sudah di install : 
 
-```shell
+```
 npm install -D twin.macro @emotion/core @emotion/styled gatsby-plugin-emotion
 ```  
 import tailwindcss ke component style : 
 buat file baru di direktori root dengan nama ```gatsby-browser.js``` kemudian import css tailwind : 
 
-```javascript
+```
 import "./src/styles/globals.css"
 ```  
 aktifkan gatsby emotion plugin di file ```gatsby-config.js``` :  
-```javascript
+```
 'gatsby-plugin-emotion',
 ```  
 selanjutnya untuk mengaktifkan component styling gunakan ```twin.macro``` :  
 
 contohnya sepert ini : 
-```javascript
+```
 const IndexPage = ({ data }) => {
 
 	let Button = styled.button`${tw`bg-blue-500 hover:bg-blue-800 text-white p-2 rounded`}` 
@@ -137,12 +137,12 @@ coders semua bisa lihat dokumentasi mengenai <a href="https://github.com/ben-rog
 **berikutnya** ***menggunakan sass di gatsby***  
 Install the Gatsby SCSS plugin : 
 
-```shell
+```
 npm install --save node-sass gatsby-plugin-sass
 ```  
 untuk dapat menggunakan class tailwind di css kita, tambahkan paket tailwindcss ke dalam parameter postCSS plugins di file ```gatsby-config.js```  : 
 
-```javascript
+```
 {
 	resolve: 'gatsby-plugin-postcss',
 		options: {
@@ -160,20 +160,20 @@ untuk dapat menggunakan class tailwind di css kita, tambahkan paket tailwindcss 
 kita bisa mengkostumisasi class class tailwind dengan class yang kita inginkan, untuk dapat menggunakan tailwind import tailwind ke css yang kita gunakan : 
 buat file baru jika belum ada, di artikel ini gout menggunakan file dengan nama ```globals.scss``` : 
 
-```scss
+```
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 ```  
 sekarang kita bisa menggunakan class tailwindcss secara langsung di tag html dalam state kita. atau coders bisa menambahkan class baru di file ```globals.scss``` : 
-```scss
+```
 @import popup.css body {
   @apply bg-purple-200;
 }
 ```  
 kemudian buat file baru di root jika belum ada file ```gatsby-browser.js```, import rule css dari file globals.scss :  
 
-```javascript
+```
 import "./src/css/index.css"
 ```  
 ok coders kalian, bisa explore tailwindcss. 

@@ -34,7 +34,7 @@ sebelum melakukan testing query untuk binding data di gatsby, kita mau ubah view
 
 ***stop service gatsbyny terlebih dahulu ```ctrl+c```*** kemudian install packagenya :  
 
-```shell
+```
 npm install --save-dev cross-env env-cmd
 ```  
 kemudian tambahkan package yang tadi di install, ke file ```package.json``` di direktori root  
@@ -74,7 +74,7 @@ seperti inilah tampilan graphql dengan package user interface playground:
 lakukan query diataranya untuk binding data dan melakukan slug untuk data di page posts nanti yang akan kita buat di bagian selanjutnya : 
 gout melakukan beberapa query sepert dibawah ini, tambahkan query di box sebelah kiti : 
 
-```graphql
+```
 // query untuk metadata
 query{
   site{
@@ -143,7 +143,7 @@ selanjutnya ..... mulailah untuk membaca dokumentasinya, karena dalam artikel ka
 
     * buka file ```blog.js```
       tambahkan baris code berikut : 
-      ```javascript
+      ```
           import React from 'react'
 
           import { graphql, useStaticQuery } from 'gatsby'
@@ -209,7 +209,7 @@ selanjutnya ..... mulailah untuk membaca dokumentasinya, karena dalam artikel ka
 
   kemudian buka file ```gatsby-node.js``` copy baris code berikut :  
 
-  ```javascript
+  ```
       const path = require('path')
 
       module.exports.onCreateNode = ({ node, actions }) => {
@@ -263,7 +263,7 @@ selanjutnya ..... mulailah untuk membaca dokumentasinya, karena dalam artikel ka
 * selanjutnya create post page  
   untuk menampilkan post kita di gatsby kita buat satu direktori baru di direktori ```src``` beri nama ```templates```, kemudian buat file baru di direktori ```templates``` beri nama ```blog.js```. page ini nanti yang akan menampilkan single page untuk post kita. kemudian buka file ```templates/blog.js``` copy baris code berikut :  
 
-  ```javascript
+  ```
       import React from 'react'
 
       import Layout from '../components/layout'
@@ -297,7 +297,7 @@ selanjutnya ..... mulailah untuk membaca dokumentasinya, karena dalam artikel ka
   buka kembali file ```gatsby-config.js``` di direktori root applikasi gatsbyJS kita :  
   kemudian ubah baris script nya menjadi sepert dibawah ini :  
 
-  ```javascript
+  ```
       // module.exports = {
       //   /* Your site config here */
       //   plugins: [],

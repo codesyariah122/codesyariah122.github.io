@@ -7,27 +7,31 @@ image: assets/images/post/jekyll_pagination.png
 tags: [jekyll]
 opening: بسم الله الرحمن الرحيم
 ---  
-open _config.yml file on root directori :  
-adding new plugin config.
-{% highlight ruby %}
+open ```_config.yml``` file on root directori :  adding new plugin config.
+
+```
 plugins:
   - jekyll-paginate
-{% endhighlight %}  
-at same file on _config.yml, adding pagginate configuration :  
-{% highlight ruby %}
+```  
+at same file on ```_config.yml```, adding pagginate configuration :  
+
+```
 paginate: 6
 paginate_path: /page:num/
-{% endhighlight %}  
+```  
+
 open gemfile on the root directori :  
-{% highlight ruby %}
+```
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.6"
   gem "jekyll-paginate"
   gem "jekyll-coffeescript"
   gem 'jekyll-sass-converter'
 end
-{% endhighlight %}  
+```  
+
 and than open new terminal, and installing plugin :  
+
 ```
 gem install jekyll-paginate
 ```  
@@ -36,7 +40,7 @@ gem install jekyll-paginate
 
 and this is in my layout post list on jekyll : 
 
-```ruby
+```
 <div class="row justify-content-end">
 	<div class="col-xs-12">
 		

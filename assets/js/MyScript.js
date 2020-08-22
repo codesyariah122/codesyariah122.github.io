@@ -10,7 +10,7 @@ function pauseAudio(){
 
 $(document).ready(function(){
 // 	$('myAudio').removeAttr('autoplay');
-	
+	$('.day-text').hide();
 	$(window).scroll(function(){
 		if($(this).scrollTop() > 300){
 			console.log("down");
@@ -38,8 +38,11 @@ $(document).ready(function(){
 	
 	$('#night-mode').hide();
 
-		$('input[type=checkbox][name=day]').on('click',  function(){
-			
+	$('input[type=checkbox][name=day]').on('click',  function(){
+
+		$('.day-text').show('slow');
+		$('.night-text').hide('slow');
+
 		$('#myAudio').attr('autoplay');
 		
 		playAudio();
@@ -91,7 +94,13 @@ $(document).ready(function(){
 	})
 
 	$('input[type=checkbox][name=night]').on('click',  function(){
-		
+		$('.night-text').show('slow');
+		$('.night-text').css({
+			'color': '#FFEACD'
+		});
+
+		$('.day-text').hide('slow');
+
 		$('#myAudio').removeAttr('autoplay');
 		pauseAudio();
 		

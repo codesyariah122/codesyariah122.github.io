@@ -15,12 +15,13 @@ dalam artikel ini sebetulnya pembahasan nya bukan sesuatu yang serius, pembahasa
 #### Gatsby Remark Emojis  
 langsung ajah buka terminal baru atau jika menggunakan ```visual studio code``` bisa langsung aktifkan terminal editornya.  
 langsung kita install package emoji nya : 
-```shell
+```
 npm install --save gatsby-transformer-remark
 npm install --save gatsby-remark-emojis 
 ```   
 cek file ```package.json``` di bagian ```"dependencies"``` jika ada bagian ini ```"gatsby-remark-emojis": "^0.4.3,"``` dan ```"gatsby-transformer-remark": "^2.3.8",```, berarti package *Gatsby Remark Emojis* sudah berhasil terinstall, kita tinggal melanjutkan dari sisi configurasi dan kemudian menggunakan nya di state yang kita inginkan.  
-***buka file ```gatsby-config.js```* kemudian tambahkan configurasi untuk dependencies ***Gatsby Remark Emojis*** dibawah , seperti ini :  
+
+***buka file ```gatsby-config.js``` kemudian tambahkan configurasi untuk dependencies ***Gatsby Remark Emojis*** dibawah , seperti ini :  
 
 ```
  {
@@ -55,9 +56,9 @@ cek file ```package.json``` di bagian ```"dependencies"``` jika ada bagian ini `
 ```  
 ***selanjutnya!*** kita bisa gunakan di state page kita yang berada di direktori ```src/```, buka file page kita disini gout akan menggunakan nya di halaman ```index.js```.  
 
-*buat file baru untuk menangkap nilai emojis ```src/emoji.js* :  
+*buat file baru untuk menangkap nilai emojis ```src/emoji.js```* :  
 
-```javascript
+```  
 // file emoji.js : 
 import React from 'react'
 
@@ -71,7 +72,8 @@ const Emoji = props => (
 export default Emoji
 ```  
 *Kemudian buka file ```index.js```:*  
-```javascript
+
+```
 import React from 'react'
 import { Link } from 'gatsby'
 
