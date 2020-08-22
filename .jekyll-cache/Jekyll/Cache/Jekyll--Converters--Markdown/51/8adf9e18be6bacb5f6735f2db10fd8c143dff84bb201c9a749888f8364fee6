@@ -1,5 +1,0 @@
-I"ä<p><img src="http://localhost:4000/public/images/post/ruby.png" alt="rails2" /></p>
-<h2 id="installing-ruby-on-debian">installing ruby on debian</h2>
-<p>```ruby
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -</p>
-:ET

@@ -1,0 +1,44 @@
+I"*<p><img src="{{site.url}}/assets/images/post/nodejs-part2.png" alt="nodeJS_webserver" /></p>
+
+<p>Hallo Coders !</p>
+
+<p>apa kabarnya. dalam artikel kali ini gout mau berbagi sedikit tips, mengenai script untuk menjalankan server nodejs. sebelumnya kita mungkin menjalankan aplikasi server dengan command script</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>node server.js
+</code></pre></div></div>
+<p>dengan command diatas aplikasi kita sudah jalan di port yang kita setting di code berikut :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// file server.js di direktori root
+let http = require('http');
+
+let server = http.createServer(function (req, res){
+	res.writeHead(200, {'Content-Type': 'text/html'});
+	res.write('Hello &lt;b&gt;World&lt;/b&gt;');
+	res.end();
+});
+
+server.listen(8999);
+</code></pre></div></div>
+<p>tapi dengan script <code class="language-plaintext highlighter-rouge">node server.js</code>. jika kita melakukan perubahan code tidak secara langsung merubah keseluruhan view server, kita tetap harus menonaktifkan terlebih dahulu script server kita. kemudian menjalankan ulang dengan comman <code class="language-plaintext highlighter-rouge">node server.js</code>.<br />
+ada cara lain seperti tadi di awal artikel ini dijelaskan, kita bisa menambahkan field script di file <code class="language-plaintext highlighter-rouge">package.json</code> supaya server melakukan update ketika kita melakukan perubahan pada code kita, kita bisa menggunakan <code class="language-plaintext highlighter-rouge">nodemon</code> untuk eksekusi aplikasi kita.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; npm install nodemon --save
+</code></pre></div></div>
+<p>dengan <code class="language-plaintext highlighter-rouge">nodemon</code> status server menjadi monitoring, dan akan secara langsung melakukan perubahan ketika ada perubahan di struktur code kita.<br />
+dan untuk lebih flexibel lagi kita tambahkan ini ke field scripts di file <code class="language-plaintext highlighter-rouge">package.json</code>, buka file <code class="language-plaintext highlighter-rouge">package.json</code> kemudian copy baris code berikut :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  "scripts": {
+    "start": "nodemon server.js", //tambahkan bagian ini
+    "test": "echo \"Error: no test specified\" &amp;&amp; exit 1"
+  },  
+</code></pre></div></div>
+<p>untuk menjalankan kembali server kita kita bisa menggunakan comman <code class="language-plaintext highlighter-rouge">npm start</code>, coba lakukan perubahan di file <code class="language-plaintext highlighter-rouge">server.js</code> kemudian lihat di browser server akan terus merespon setiap perubahan di code kita.</p>
+
+<p>ok cukup sekian mengenai lanjutan artikel nodeJS kali ini, mudah-mudahan bermanfaat.</p>
+
+<p>akhir kata gout ucapkan …</p>
+
+<p>wassalaam</p>
+
+<p><strong><em>Puji Ermanto</em></strong></p>
+
+:ET

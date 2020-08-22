@@ -1,0 +1,278 @@
+I"5<h3 id="parsing-data-json-upadte-data-covid19-dengan-php-curl">Parsing data JSON upadte data covid19 dengan PHP CURL</h3>
+
+<p>Hai gaes, halo para coders, happy weekend. semoga sehat-sehat terus sampai week end kali ini. salam jumpa di artikel terbaru gout.<br />
+kali ini gout mau membahas mengenai <code class="language-plaintext highlighter-rouge">pandemi</code> yang masih terus berlangsung, semoga cepat berakhir dan semoga tidak bertambah lagi suspek-suspek lainnya. Aamiin.</p>
+
+<p><strong><em>parsing data JSON with CURL</em></strong>
+apa itu curl ? 
+<em>Curl</em> adalah sebuah program dan library untuk mengirim dan mengambil data melalui URL.</p>
+
+<p>Curl adalah sebuah program:</p>
+
+<p>Aritnya curl adalah sebuah program atau tools yang digunakan pada command line (CMD).</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl https://codesyariah122.github.io
+</code></pre></div></div>
+<p><strong><em>Curl adalah sebuah libarary:</em></strong></p>
+
+<p>Artinya sekumpulan fungsi-fungsi curl yang dibungkus dalam paket libcurl dan bisa digunakan dalam berbagai macam bahasa pemrograman.</p>
+
+<h2 id="curl-di-php">CURL di PHP</h2>
+<p>dalam artikel ini gout hanya membahas penggunaan library curl di bahasa pemrograman PHP dan berbasi web. dalam studi kasusnya yaitu mengambil sebuah data dari informasi mengenai covid19 untuk wilayah indonesia, format data sumber adalah <code class="language-plaintext highlighter-rouge">JSON</code>.  mungkin tanpa berpanjang-panjang langsung ajah ke prakteknya.</p>
+
+<p>dalam hal ini gout bikin direktori baru di root webserver <code class="language-plaintext highlighter-rouge">/var/www/html</code> gout buat direktori dengan nama <code class="language-plaintext highlighter-rouge">testAPI</code> di webserver <code class="language-plaintext highlighter-rouge">apache2</code>. kemudian buka direktori <code class="language-plaintext highlighter-rouge">testAPI</code> di code editor.</p>
+
+<p>buat beberapa file , diantaranya adalah :</p>
+<ol>
+  <li>index.php (ini file utama nya)</li>
+  <li>curl.php (file ini berisi fungsi untuk menjalankan fungsi curl di php)</li>
+  <li>dataProcess.php (file berfungsi untuk mengambil alih prosess dari ajax saat mengirim data dari input)</li>
+  <li>detail.php (file ini bertugas menampilkan detail data keseluruhan yang tidak masuk ke table)</li>
+  <li>script.js (file jquery yang akan melakukan pengiriman dan pengambilan data dari server)</li>
+  <li>detail.js (file jquery juga file ini akan mengambil sebuah id=key di tag &lt;td&gt;)</li>
+  <li>jquery.min.js ( bisa di download di link berikut : <a href="https://raw.githubusercontent.com/codesyariah122/Learn-WebDev/master/updateCovid19_Indonesia/jquery.min.js">jquery</a>)</li>
+</ol>
+
+<p>setelah menyiapkan semua file yang ada di daftar tersebut.</p>
+
+<p><em>**dalam artikel kali ini : **</em> source data <code class="language-plaintext highlighter-rouge">API</code> dari link berikut : <a href="https://data.covid19.go.id/public/api/prov.json" target="_blank">Update data covid19 per provinsi</a></p>
+
+<h3 id="file-curlphp">file curl.php</h3>
+<p>buka file curl.php kemudian copy baris code berikut , isinya adalah fungsi untuk menjalankan curl di php :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?php  
+function curl($url){
+	$curl = curl_init();
+	curl_setopt($curl, CURLOPT_URL, $url);
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+	$result = curl_exec($curl);
+
+	curl_close($curl);
+
+	return json_decode($result, 1);
+}
+?&gt;
+</code></pre></div></div>
+<p>file <code class="language-plaintext highlighter-rouge">curl.php</code> ini mengembalikan json_decode yaitu menerjemahkan string data berformat JSON, <code class="language-plaintext highlighter-rouge">json_decode</code> ini adalah sebuah fungsi <code class="language-plaintext highlighter-rouge">php</code> untuk menterjemahkan string JSON agar bisa di assignment ke dalam suatu variable.</p>
+
+<h3 id="file-indexphp">file index.php</h3>
+<p>selanjutnya buka file index.php yang merupakan file utama di root direktori aplikasi kita, copykan code dibawah ini :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?php require_once 'curl.php'; ?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;title&gt;Update Covid19 Indonesia&lt;/title&gt;
+&lt;style type="text/css"&gt;
+	table{
+		margin-top: 5rem;
+		border-collapse: collapse;
+		border: 0px solid black;
+	}
+	th{
+		background: rgb(50, 115, 220);
+		color: hsla(185, 49%, 89%, 1);
+		padding: .8rem;
+	}
+	td{
+		text-align: center;
+		color: #fff;
+		font-weight: bold;
+		padding: .8rem;
+		background: hsla(212, 68%, 6%, 1);
+	}
+	td:hover{
+		background: coral;
+	}
+	select{
+		margin-top: .9rem;
+		margin-bottom: -1.9rem;
+	}
+	.detail{
+		color: #fff;
+		background: hsla(355, 90%, 57%, 1);
+		cursor: pointer;
+	}
+	.detail:hover{
+		background:hsla(290, 62%, 37%, 1);
+		color:#fff;
+	}
+	#detail{
+		margin-top: 2rem;
+		width: 50%;
+	}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;?php  
+$data = curl('https://data.covid19.go.id/public/api/prov.json')['list_data'];
+$lastUpdate = curl('https://data.covid19.go.id/public/api/prov.json')['last_date'];
+?&gt;
+&lt;?php //var_dump($data); die; ?&gt;
+
+&lt;h1&gt;Update Covid 19 Indonesia &lt;/h1&gt;
+&lt;h3&gt;Last Update : &lt;?=$lastUpdate?&gt;&lt;/h3&gt;
+&lt;select&gt;
+	&lt;option&gt;-Pilih Provinsi-&lt;/option&gt;
+&lt;?php  $i=0; do{ ?&gt;	
+	&lt;option value="&lt;?=$i?&gt;"&gt;&lt;?=$data[$i]['key']?&gt;&lt;/option&gt;
+&lt;?php $i++; }while($i &lt;= count($data)-1); ?&gt;	
+&lt;/select&gt;
+
+	&lt;table&gt;
+		&lt;tr&gt;
+			&lt;th&gt;Provinsi&lt;/th&gt;
+			&lt;th&gt;Jumlah Kasus&lt;/th&gt;
+			&lt;th&gt;Sembuh&lt;/th&gt;
+			&lt;th&gt;Meninggal&lt;/th&gt;
+			&lt;th&gt;Dirawat&lt;/th&gt;
+			&lt;th&gt;Aksi&lt;/th&gt;
+		&lt;/tr&gt;
+		&lt;tr id="result"&gt;
+		&lt;/tr&gt;
+	&lt;/table&gt;
+
+
+	&lt;div id="detail"&gt;&lt;/div&gt;
+
+&lt;script type="text/javascript" src="jquery.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="script.js"&gt;&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div></div>
+<p>file <code class="language-plaintext highlighter-rouge">index.php</code> ini berisi input berupa select, option untuk memilih provinsi yang akan di kirim ke server.</p>
+
+<h3 id="file-scriptjs">file script.js</h3>
+<p>kemudian selanjutnya, buka file script.js, yang akan menjalankan api ajax dengan jquery, copykan code berikut :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	$(document).ready(function(){
+		$('select').on('change', function(e){
+			let provinsi = $(this).val();
+
+			if(provinsi == "-Pilih Provinsi-"){
+				alert("Pilih provinsi terlebih dahulu");
+				$('select').val('');
+			}else{
+				$.ajax({
+					url: 'dataProcess.php?provinsi='+provinsi,
+					method: 'post',
+					data: 'provinsi='+provinsi,
+					success: function(response){
+						if(response){
+							$('select').val("-Pilih Provinsi-");
+							console.log(response);
+							$('#result').html(response);
+						}
+					}
+				})
+			}
+			
+		});
+
+	});
+</code></pre></div></div>
+<p>fungsi <code class="language-plaintext highlighter-rouge">$.ajax({})</code> ini akan melakukan pengiriman data dari input select yang di pilih dan click user kemudian mengirimkan informasi data (value) ke file <code class="language-plaintext highlighter-rouge">dataProcess.php</code></p>
+
+<h3 id="file-dataprocessphp">file dataProcess.php</h3>
+<p>buka file dataProcess.php, file ini yang akan menangkap informasi data yang dikirim oleh fungsi <code class="language-plaintext highlighter-rouge">$ajax({})</code> diatas, yang merupakan data(value) dari input yang di click atau dipilih oleh user.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// file dataProcess.php
+&lt;?php
+session_start();
+require_once 'curl.php';
+
+if( is_numeric(@$_GET['provinsi']) ){
+	$provinsi = @$_POST['provinsi'];
+	$_SESSION['key'] = $provinsi;
+	$data = curl('https://data.covid19.go.id/public/api/prov.json')['list_data'][$provinsi];
+	// echo count($data); die;
+?&gt;
+	&lt;td id="key" data-key="&lt;?=$_SESSION['key']?&gt;"&gt;&lt;?=$data['key']?&gt;&lt;/td&gt;
+	&lt;td&gt;&lt;?=number_format($data['jumlah_kasus'], 0)?&gt;&lt;/td&gt;
+	&lt;td&gt;&lt;?=number_format($data['jumlah_sembuh'], 0)?&gt;&lt;/td&gt;
+	&lt;td&gt;&lt;?=number_format($data['jumlah_meninggal'], 0)?&gt;&lt;/td&gt;
+	&lt;td&gt;&lt;?=number_format($data['jumlah_dirawat'], 0)?&gt;&lt;/td&gt;
+	&lt;td&gt;&lt;button class="detail" id="&lt;?=$data['key']?&gt;"&gt;Detail Lainnya&lt;/button&gt;&lt;/td&gt;
+
+&lt;?php }?&gt;
+
+&lt;script type="text/javascript" src="detail.js"&gt;&lt;/script&gt;
+
+</code></pre></div></div>
+<p>difile <code class="language-plaintext highlighter-rouge">dataProcess.php</code> tersebut gout menangkap <code class="language-plaintext highlighter-rouge">session</code> dari field data yang dikirim oleh ajax kemudian di assignment kedalam variable global session.</p>
+
+<h3 id="file-detailphp">file detail.php</h3>
+<p>selanjutnya file <code class="language-plaintext highlighter-rouge">detail.php</code> file ini bertugas untuk menyajikan data secara keseluruhan yang tidak dimuat di table. maka code <code class="language-plaintext highlighter-rouge">detail.php</code> adalah sebagai berikut :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?php 
+session_start();
+require_once 'curl.php'; 
+if(is_numeric(@$_GET['key'])):
+	$key = @$_POST['key'];
+	$data = curl('https://data.covid19.go.id/public/api/prov.json')['list_data'][$key];
+	unset($_SESSION['key']);
+	session_destroy();
+?&gt;
+
+&lt;fieldset&gt;
+	&lt;legend&gt;Detail data &lt;b&gt;&lt;?=$data['key']?&gt;&lt;/b&gt;&lt;/legend&gt;
+	&lt;h3&gt;Penambahan kasus : &lt;/h3&gt;
+	&lt;ul&gt;
+		&lt;li&gt;Positif : &lt;?=$data['penambahan']['positif']?&gt;&lt;/li&gt;
+		&lt;li&gt;Sembuh : &lt;?=$data['penambahan']['sembuh']?&gt;&lt;/li&gt;
+		&lt;li&gt;Meninggal : &lt;?=$data['penambahan']['meninggal']?&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+
+	&lt;h3&gt;Detail berdasarkan jenis kelamin : &lt;/h3&gt;
+	&lt;ul&gt;
+		&lt;li&gt;Laki-laki : &lt;?=$data['jenis_kelamin'][0]['doc_count']?&gt;&lt;/li&gt;
+		&lt;li&gt;Perempuan : &lt;?=$data['jenis_kelamin'][1]['doc_count']?&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+
+	&lt;h3&gt;Detail berdasarkan kelompok umur : &lt;/h3&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;?=$data['kelompok_umur'][0]['key']?&gt; Tahun : &lt;?=$data['kelompok_umur'][0]['doc_count']?&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;?=$data['kelompok_umur'][1]['key']?&gt; Tahun : &lt;?=$data['kelompok_umur'][1]['doc_count']?&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;?=$data['kelompok_umur'][2]['key']?&gt; Tahun : &lt;?=$data['kelompok_umur'][2]['doc_count']?&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;?=$data['kelompok_umur'][3]['key']?&gt; Tahun : &lt;?=$data['kelompok_umur'][3]['doc_count']?&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;?=$data['kelompok_umur'][4]['key']?&gt; Tahun : &lt;?=$data['kelompok_umur'][4]['doc_count']?&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;?=$data['kelompok_umur'][5]['key']?&gt; Tahun : &lt;?=$data['kelompok_umur'][5]['doc_count']?&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/fieldset&gt;
+
+&lt;?php endif; ?&gt;
+</code></pre></div></div>
+<h3 id="file-detailjs">file detail.js</h3>
+<p>file <code class="language-plaintext highlighter-rouge">detail.js</code> ini sama seperti file jquery sebelumnya yaitu file <code class="language-plaintext highlighter-rouge">script.js</code> yaitu untuk menjalankan fungsi ajax, menangkap data dari input select kemudian di kirim ke file yang akan menangkap dalam bagian ini adalah file <code class="language-plaintext highlighter-rouge">detail.php</code> yang akan menangkap data ajax dari file fungsi <code class="language-plaintext highlighter-rouge">$.ajax(){}</code>, di file <code class="language-plaintext highlighter-rouge">detail.js</code>, berikut isi coding dari file <code class="language-plaintext highlighter-rouge">detail.js</code> :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$('.detail').on('click', function(){
+	$('#detail').load('detail.php').fadeIn(1000);
+	let key = $('#key').data('key');
+	// alert(key);
+	$.ajax({
+		url:'detail.php?key='+key,
+		type: 'post',
+		data: 'key='+key,
+		success: function(data){
+			if(data){
+				$('#detail').html(data).fadeIn(1000);
+			}
+		}
+	})	
+})
+</code></pre></div></div>
+<p>sepertinya semua code telah di salin ke dalam susunan algorithma di aplikasi fetching data covid19 ini, jika ada file yang kurang , silahkan buka di repo berikut : 
+<a href="https://github.com/codesyariah122/Learn-WebDev/tree/master/updateCovid19_Indonesia" target="_blank">updateCovid19_Indonesia</a></p>
+
+<p>setelah semua code sudah disalin, coba buka di browser <code class="language-plaintext highlighter-rouge">localhost/testAPI</code>, dan hasil akhirnya sepert ini</p>
+
+<p><img src="{{site.url}}/assets/images/post/curl_php_covid19.gif" alt="CURL_PHP" /></p>
+
+<p>akhirnya gout cukupkan sampai disini artikel ini, nanti mungkin di lanjut mengenai <code class="language-plaintext highlighter-rouge">CURL_PHP</code>, <code class="language-plaintext highlighter-rouge">JQUERY AJAX</code> , ok sekian dulu artikel kali ini, akhir kata gout ucapkan terima kasih, semoga coders semua selalu diberikan nikmat, sehat, dan nikmat waktu luang. jangan lupa jaga stabilitas kesehatan diri kita. ok sekian.</p>
+
+<p>waasalamm….</p>
+
+<p><strong><em>puji ermanto</em></strong></p>
+
+:ET

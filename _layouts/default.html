@@ -10,6 +10,7 @@
     <script>
     $('.carousel').carousel()
     </script>
+
     <link href='{{site.url}}/feed.xml' rel='alternate' type='application/atom+xml'>
  
     <link rel="shortcut icon" type="image/x-icon" href="{{site.url}}/{{site.favicon}}">
@@ -140,6 +141,12 @@ $(function () {
     {% include tracking-footer.html %}
 
     <script type="text/javascript" src="{{site.url}}/assets/js/MyScript.js"></script>
+
+    <script type="text/javascript" src="{{site.url}}/assets/js/MyJs.js"></script>
+
+    <script type="text/javascript">
+        askYou('{{site.url}}');
+    </script>
 
 </body>
 

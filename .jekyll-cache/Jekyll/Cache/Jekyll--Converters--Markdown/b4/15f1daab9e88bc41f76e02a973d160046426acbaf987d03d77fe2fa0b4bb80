@@ -1,0 +1,52 @@
+I"s<h1 id="gambar-table-user-dan-table-profile">gambar table user dan table profile</h1>
+<p><img src="{{ site.url }}/assets/images/post/1.jpg" alt="Table1" />
+<img src="{{ site.url }}/assets/images/post/2.jpg" alt="Table2" /></p>
+
+<h1 id="delete-2-table-dengan-satu-query">Delete 2 table dengan satu query</h1>
+
+<p>Halo sobat coders semuanya ! ….<br />
+kali ini saya akan membagikan trick seputar Database mysql, dalam tips kali ini saya mempunyai 2 table dalam satu database yang sama.<br />
+seperti pada gambar table diatas, table1 itu saya asumsikan sebagai table user dan table2 saya asumsikan dengan table profile.</p>
+
+<p>di table user diatas terdapat foreign key untuk nilai <strong>id_profile</strong>, nah foreign key ini saya hubungkan ke primary key dari table profile dengan nilai yang sama yaitu <strong>id_profile</strong>. nilai ini yang akan saya ambil untuk dijadikan kunci pembuka query antar table.</p>
+
+<p><img src="{{ site.url }}/assets/images/post/3.jpg" alt="foreign" /></p>
+
+<p>untuk tips kali ini saya asumsikan 2 table yaitu table user dan table profile.<br />
+dan berikut query untuk delete nya :</p>
+
+<p>jadi rule data saya adalah, dimana saya membuat system untuk aktivasi user, dan aktivasi user dilakukan melalui user role admin … ( biar admin! ada kerjaan). sebelum melakukan delete kita cek isi table dengan nilai <strong>id_profile</strong> sebagai acuan atau kunci.<br />
+algoritma saya jika <strong>id_profile</strong> ini bernilai <em>0</em> berarti nilai nya belum di kirim dan itu berarti statusnya belum aktif. dan selanjutnya melalui user role admin yang bertugas meng aktifasi setiap user yang terdaftar diawal.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//ini adalah query untuk mengambil data
+$conn = mysqli_connect("localhost", "user", "password", "database");
+$dataJoin = mysqli_query($conn, "SELECT * FROM $table1 INNER JOIN $table2 ON $table1.id = $table2.id_profile WHERE $table1.id = $id")[0];
+
+if( $dataJoin['id_profile'] != 0 ):
+		//echo true." = Benar "; die;
+
+	mysqli_query($conn, "DELETE $table1, $table2 FROM $table1 INNER JOIN $table2 ON $table1.id_profile=$table2.id_profile WHERE $table1.id_profile = $id");
+
+		return mysqli_affected_rows($conn);
+	else:
+			mysqli_query($conn, "DELETE FROM $table1 WHERE id = $id");
+			return mysqli_affected_rows($conn);
+	endif; 
+</code></pre></div></div>
+
+<p>sebetulnya sih untuk menghapus dari 2 table ini bisa dilakukan dua kali query, namun dirasa kurang efektif maka digabungkan dalam satu query. agar server tidak 2 kali kerja.</p>
+
+<p>jika 2 kali query akan seperti ini :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysqli_query($conn, "DELETE FROM $table1 WHERE id_profile = $id");
+mysqli_query($conn, "DELETE FROM $table2 WHERE id_profile = $id");
+</code></pre></div></div>
+
+<p>dengan itu berarti server harus mengulang query delete 2 kali. berikut tampilan system aktivasi user yang saya buat</p>
+
+<p><img src="{{site.url}}/assets/images/post/4.jpg" alt="aktivasi" /></p>
+
+<p>ok sekian dulu dari saya, semoga bermanfaat.</p>
+
+<p><strong>salam</strong></p>
+
+:ET

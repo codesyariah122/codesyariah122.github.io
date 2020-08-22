@@ -1,0 +1,79 @@
+I"�<p><img src="{{site.url}}/public/images/post/ruby.png" alt="rails2" /></p>
+<h2 id="installing-ruby-on-debian">installing ruby on debian</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+
+apt-get update
+
+apt-get install git-core zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev nodejs yarn
+
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' &gt;&gt; ~/.bashrc
+
+echo 'eval "$(rbenv init -)"' &gt;&gt; ~/.bashrc
+
+exec $SHELL
+
+git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+
+echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' &gt;&gt; ~/.bashrc
+
+exec $SHELL
+
+rbenv install 2.4.2
+
+rbenv global 2.4.2
+
+gem install bundler
+
+gem install rails
+
+rbenv rehash 
+</code></pre></div></div>
+<p>gem update –system</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>### installing ruby using rbenv  
+
+Rbenv is a lightweight Ruby version management tool which allows you to easily switch Ruby versions. By default Rbenv doesn’t handle installing Ruby versions so we also need to install ruby-build which is a tool that helps you to install any version of Ruby you may need. It is available as a standalone program and as a plugin for rbenv.
+
+To install Ruby using the Rbenv script, follow these steps: 
+- First, update the packages index and install the packages required for the ruby-build tool to build Ruby from source: 
+</code></pre></div></div>
+<p>apt update
+apt install git curl libssl-dev libreadline-dev zlib1g-dev autoconf bison build-essential libyaml-dev libreadline-dev libncurses5-dev libffi-dev libgdbm-dev</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+- Next, run the following curl command to install both rbenv and ruby-build:  
+</code></pre></div></div>
+<p>curl -sL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-installer | bash -</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+- Add $HOME/.rbenv/bin to the user PATH.
+
+If you are using Bash, run:  
+
+</code></pre></div></div>
+<p>echo ‘export PATH=”$HOME/.rbenv/bin:$PATH”’ » ~/.bashrc
+echo ‘eval “$(rbenv init -)”’ » ~/.bashrc
+source ~/.bashrc</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>If you are using Zsh run: 
+ 
+</code></pre></div></div>
+<p>echo ‘export PATH=”$HOME/.rbenv/bin:$PATH”’ » ~/.zshrc
+echo ‘eval “$(rbenv init -)”’ » ~/.zshrc
+source ~/.zshrc</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+- Install the latest stable version of Ruby and set it as a default version with  
+</code></pre></div></div>
+<p>rbenv install 2.5.1
+rbenv global 2.5.1</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>To list all available Ruby versions you can use: ```rbenv install -l```  
+Verify that Ruby was properly installed by printing the version number:  
+</code></pre></div></div>
+<p>ruby -v</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code></code></pre></div></div>
+<p>output: 
+ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-linux]
+```</p>
+:ET

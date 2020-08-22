@@ -1,0 +1,34 @@
+I"j<p>error 404 ini saya alami ketika saya menggunakan framework codeigniter, permasalahan ini kemungkinan terjadi akibat nginx tidak mengenali<br />
+direktori root dari virtualhot project kita yang menggunakan codeigniter.<br />
+setting config codeigniter saya sengaja di buat untuk clean url, berikut script config dan autoload codeigniter yang saya gunakan,</p>
+
+<p><img src="{{ site.url }}/assets/images/post/sublime/sublime.png" alt="sublime_newourcitrus" /><br />
+<img src="{{ site.url }}/assets/images/post/sublime/sublime_2.png" alt="sublime_newourcitrus" /></p>
+
+<p>dan ini config default virtual host nginx yang saya gunakan :</p>
+
+<p><img src="{{ site.url }}/assets/images/post/nginx/nginx_default.png" alt="sublime_newourcitrus" /></p>
+
+<p>pada config virtual host diatas ada script yang saya highlight, nah di config location root virtualhost itulah permasalahan nya,</p>
+
+<p>dan akhirnya saya edit bagian location root virtual host nginx saya, menjadi seperti ini :<br />
+<img src="{{ site.url }}/assets/images/post/nginx/nginx_2_default.png" alt="sublime_newourcitrus" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        location /new_ourcitrus {
+                try_files $uri $uri/ /new_ourcitrus/index.php;
+                #autoindex on;
+        }
+</code></pre></div></div>
+<p>setelah itu restart service nginx</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@debian:~#systemctl restart nginx.service
+</code></pre></div></div>
+
+<p>dan akhirnya bisa akses nama controller codeigniter di webserver nginx<br />
+<img src="{{ site.url }}/assets/images/post/newourcitrus_2.png" alt="sublime_newourcitrus" /><br />
+<img src="{{ site.url }}/assets/images/post/newourcitrus_1.png" alt="sublime_newourcitrus" /></p>
+
+<p>ok selesai ….
+salam ….
+puji ermanto</p>
+
+:ET
