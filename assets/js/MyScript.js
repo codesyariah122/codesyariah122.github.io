@@ -29,8 +29,9 @@ $(document).ready(function(){
 	$('#night-mode').hide();
 
 		$('input[type=checkbox][name=day]').on('click',  function(){
-		$('#myAudio').attr('autoplay', 'true');
 			
+		$('#myAudio').attr('autoplay');
+		$('#myAudio').attr('loop');	
 			
 		Swal.fire({
 			position: 'top-end',
@@ -81,7 +82,7 @@ $(document).ready(function(){
 	$('input[type=checkbox][name=night]').on('click',  function(){
 		
 		$('#myAudio').removeAttr('autoplay');
-		
+		$('#myAudio').removeAttr('loop');
 		Swal.fire({
 			position: 'top-end',
 		  	icon: 'success',
