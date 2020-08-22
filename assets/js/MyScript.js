@@ -29,7 +29,7 @@ $(document).ready(function(){
 	$('#night-mode').hide();
 
 		$('input[type=checkbox][name=day]').on('click',  function(){
-		
+		$('myAudio').play();
 		$('myAudio').attr('autoplay', 'true');
 			
 		Swal.fire({
@@ -80,7 +80,7 @@ $(document).ready(function(){
 
 	$('input[type=checkbox][name=night]').on('click',  function(){
 		
-		$('myAudio').stop(true);
+		$('myAudio').pause();
 		$('myAudio').removeAttr('autoplay');
 		
 		Swal.fire({
