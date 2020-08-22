@@ -1,4 +1,6 @@
 $(document).ready(function(){
+	$('audio').attr('autoplay', 'false');
+	
 	$(window).scroll(function(){
 		if($(this).scrollTop() > 300){
 			console.log("down");
