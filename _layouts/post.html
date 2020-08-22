@@ -3,15 +3,15 @@ layout: default
 ---
 {% assign author = site.data.authors[page.author] %}
 <div class="container">
-	<audio id="myAudio">
+	<audio id="myAudio" loop>
 	  <source src="{{site.url}}/assets/Night-sounds.mp3" type="audio/mpeg" >
 	</audio>
 	<ul id="day-mode">
-            <input type="checkbox" id="day" name="day">
+            <input type="checkbox" id="day" name="day" onclick="playAudio()">
             <label for="day" id="day-label" class="mode-label">🌤</label>
         </ul>
 		<ul id="night-mode">
-            <input type="checkbox" id="night" name="night">
+            <input type="checkbox" id="night" name="night" onclick="pauseAudio()">
             <label for="night" id="night-label" class="mode-label">🌙</label>
         </ul>
 
