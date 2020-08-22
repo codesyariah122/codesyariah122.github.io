@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$('audio').removeAttr('autoplay');
+	$('myAudio').removeAttr('autoplay');
 	
 	$(window).scroll(function(){
 		if($(this).scrollTop() > 300){
@@ -30,7 +30,7 @@ $(document).ready(function(){
 
 		$('input[type=checkbox][name=day]').on('click',  function(){
 		
-		$('audio').attr('autoplay', 'true');
+		$('myAudio').attr('autoplay', 'true');
 			
 		Swal.fire({
 			position: 'top-end',
@@ -80,7 +80,7 @@ $(document).ready(function(){
 
 	$('input[type=checkbox][name=night]').on('click',  function(){
 		
-		$('audio').removeAttr('autoplay');
+		$('myAudio').removeAttr('autoplay');
 		
 		Swal.fire({
 			position: 'top-end',
