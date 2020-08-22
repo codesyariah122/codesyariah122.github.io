@@ -8,7 +8,7 @@ tags: [fullstack_developer]
 opening: بسم الله الرحمن الرحيم
 ---  
 
-![express-demo-1]({{site.url}}/assets/images/post/express-demo-1.png)  
+![express-demo-1]({{site.url}}/assets/images/post/express-demo1.png)  
   
 
 ### Express: Framework untuk NodeJS  

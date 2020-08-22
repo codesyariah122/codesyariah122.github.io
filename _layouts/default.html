@@ -70,6 +70,9 @@
     <nav id="MagicMenu" class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top">
     <div class="container">
         <a class="navbar-brand" style="color:mediumseagreen;" href="{{ site.url }}/index.html"><strong>{{site.name}}</strong></a>
+
+
+
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -102,16 +105,16 @@
                 <span>Copyright © <script>document.write(new Date().getFullYear())</script>.</span>
 
                 <!--  Github Repo Star Btn-->
-                <a class="text-dark ml-1" target="_blank" href="{{site.repositories.repo1.url}}"><i class="fab fa-github"></i>
+                <a class="ml-1" target="_blank" href="{{site.repositories.repo1.url}}"><i class="fab fa-github"></i>
                 {{site.name}}</a>
 
             </div>
             <div>
-                Made with : <br/>
-{% assign dev = site.data.developers.puji %}
-<a target="_blank" class="text-dark font-weight-bold" href="{{site.url}}">{{site.name}} | {{site.description}}</a><br/>
- by : <a style="color:salmon;" class="text-dark" target="_blank" href="https://codesyariah122.github.io">
- <b>{{ dev.nama_lengkap }}</b></a>.
+               <span> Made with : </span><br/>
+                {% assign dev = site.data.developers.puji %}
+                <a target="_blank" class="font-weight-bold" href="{{site.url}}">{{site.name}} | {{site.description}}</a><br/>
+                 by : <a style="color:salmon;" target="_blank" href="https://codesyariah122.github.io">
+                 <b>{{ dev.nama_lengkap }}</b></a>.
             </div>
         </div>
         </div>
@@ -127,15 +130,16 @@ $(function () {
   }
 })
 </script>
-
     <!-- Scripts: popper, bootstrap, theme, lunr -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="{{site.url}}/assets/js/theme.js"></script>
     
     {% include tracking-footer.html %}
+
+    <script type="text/javascript" src="{{site.url}}/assets/js/MyScript.js"></script>
 
 </body>
 

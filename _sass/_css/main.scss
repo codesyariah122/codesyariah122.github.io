@@ -75,6 +75,41 @@ body {
 [tabindex="-1"]:focus {
   outline: 0 !important; }
 
+input[type="checkbox"]{
+  display: none;
+}
+
+
+// for night mode
+#night-label{
+  font-size:2.3rem;
+  cursor:pointer;
+  margin-top:.5rem; 
+  animation: shake 0.5s;
+  animation-iteration-count: infinite; 
+}
+#night-label:hover{
+  -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        animation: shake 0.5s;
+        animation-iteration-count: infinite; 
+}
+
+#day-label{
+  font-size:2.3rem;
+  margin-top:.5rem;
+  cursor:pointer;
+  margin-top: .5rem;
+}
+#day-label:hover{
+    -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        animation: shake 0.5s;
+        animation-iteration-count: infinite; 
+}
+
+// end night mode
+
 hr {
   box-sizing: content-box;
   height: 0;

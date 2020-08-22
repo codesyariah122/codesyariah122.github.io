@@ -1,0 +1,125 @@
+I"<1<p><img src="http://localhost:4000/assets/images/post/express-demo1.png" alt="express-demo-1" /></p>
+
+<h3 id="express-framework-untuk-nodejs">Express: Framework untuk NodeJS</h3>
+
+<p>Meskipun proses pembuatan web menggunakan NodeJS dapat dilakukan secara manual tanpa <strong><em>framework</em></strong>, tapi untuk mempercepat dan mempermudah proses tersebut kita dapat menggunakan salah satu <strong><em>framework</em></strong> yang dirancang secara khusus untuke Node.js.<br />
+Beberapa <strong><em>framework</em></strong> yang sering digunakan oleh pengguna Node.js adalah :</p>
+<ul>
+  <li>Express</li>
+  <li>Sails</li>
+  <li>Koa</li>
+  <li>Meteor<br />
+meskipun sebenarnya masih banyak lagi pilihan lain. Dalam artikel kali ini gout hanya akan membahas tentang dasar-dasar penggunaan <strong><em>Express</em></strong>.</li>
+</ul>
+
+<h4 id="sekilas-tentang-express">Sekilas tentang Express</h4>
+<p><code class="language-plaintext highlighter-rouge">Express.js</code> atau lebih dikenal dengan sebutan singkat, <strong><em>Express</em></strong>, adalah <code class="language-plaintext highlighter-rouge">web framework</code> untuk Node.js. Express merupakan framework minimalis yang awalnya dibuat oleh <strong><em>TJ Holowaychuk</em></strong>.  Express dirilis pertama kali pada 16 November 2010. Menurut pembuatnya, pembentukan Express terinspirasi oleh sinatra, yaitu <strong><em>web framework</em></strong> minimalis untuk bahasa pemrograman <strong><em>Ruby</em></strong>.</p>
+
+<p>kata <strong>Minimalis</strong> di sini bukan berarti Express tidak dapat digunakan untuk membuat aplikasi web berskala besar, tapi lebih mengarah ke isi dari Express itu sendiri. Express hanya berisi modul-modul inti untuk memudahkan pengguna <strong><em>Node.js</em></strong> dalam membuat aplikasi web.<br />
+Express masih mengizinkan kita untuk memasang modul-modul tambahan sesuai kebutuhan.</p>
+
+<h4 id="instalasi-express">Instalasi Express</h4>
+<p>Express perlu dipasang secara manual menggunakan command berikut :</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install </span>express
+</code></pre></div></div>
+<p>Cara diatas akan memasang Express secara global. Cara lain yang sering digunakan untuk melakukan instalasi Express adalah pada saat membuat aplikasi menggunakan command berikut :</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install </span>express <span class="nt">--save</span>
+</code></pre></div></div>
+<p>perintah diatas perlu ditulis dari direktori aplikasi yang sudah disiapkan sebelumnya. Instalasi Express menggunakan cara kedua bersifat lokal. Artinya, modul Express hanya akan dikenal oleh aplikasi yang sedang dibuat. jika anda ingin membuat aplikasi baru ( didalam direktori lain ), maka installasi Express perlu di lakukan lagi untuk aplikasi bersangkutan.</p>
+
+<p>setelah Express terpasang, kita dapat mengimport modul tersebut kedalam aplikasi yang kita buat melalui perintah berikut :</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">express</span><span class="dl">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="membuat-aplikasi-sederhana-dengan-express">Membuat aplikasi sederhana dengan Express</h4>
+<p>untuk membuat aplikasi dengan framework Express, ikuti langkah-langkah berikut:</p>
+<ol>
+  <li>Aktifkan direktori kerja anda, misalnya seperti berikut
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@codesyariah:/home/puji122# 
+</code></pre></div>    </div>
+  </li>
+  <li>Buat sub-direktori baru di dalam direktori kerja untuk menempatkan aplikasi, misalnya dengan nama <strong><em>MyApp</em></strong>
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@codesyariah:/home/puji122# <span class="nb">mkdir </span>MyApp
+</code></pre></div>    </div>
+  </li>
+  <li>Aktifkan sub-direktori <strong><em>MyApp</em></strong>, lalu buat file <strong><em>package.json</em></strong> dengan menjalankan command berikut:
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@codesyariah:/home/puji122#cd MyApp
+root@codesyariah:/home/puji122/MyApp# npm init
+</code></pre></div>    </div>
+  </li>
+  <li>Isi beberapa data untuk field data file <strong>package.json</strong></li>
+  <li>Jika anda tidak memasang Express secara global, lakukan instalasi Express pada tahap ini dengan command berikut:
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@codesyariah:/home/puji122/MyApp# npm <span class="nb">install </span>express <span class="nt">--save</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Buat file baru disini gout membuat file dengan nama <code class="language-plaintext highlighter-rouge">index.js</code> dan tempatkan file tersebut di dalam root direktori <strong><em>MyApp/</em></strong>. kode untuk file tersebut dapat dilihat di script code dibawah ini :</li>
+</ol>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// file : index.js</span>
+<span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">express</span><span class="dl">'</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">()</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+	<span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;h1&gt;Hello World&lt;/h2&gt;</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}).</span><span class="nx">listen</span><span class="p">(</span><span class="mi">5000</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Server running on port 5000</span><span class="dl">"</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre></div></div>
+<p>dari artikel sebelumnya kita sudah menambahkan <code class="language-plaintext highlighter-rouge">scripts</code> seperti berikut :</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nodemon server.js"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"echo </span><span class="se">\"</span><span class="s2">Error: no test specified</span><span class="se">\"</span><span class="s2"> &amp;&amp; exit 1"</span><span class="w">
+  </span><span class="p">}</span><span class="err">,</span><span class="w">
+</span></code></pre></div></div>
+<p>jadi kita bisa menjalankan aplikasi kita dengan command :</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@codesyariah:/home/puji122/MyApp# npm start
+</code></pre></div></div>
+<p>kemudian buka browser kita (google chrome, firefox) kemudian akses aplikasi express kita di url :</p>
+
+<p>http://localhost:5000</p>
+
+<p>seperti ini ketika aplikasi Express kita running :</p>
+
+<p><img src="http://localhost:4000/assets/images/post/express-demo1.gif" alt="express-demo-1" /></p>
+
+<p>perhatikan code berikut :</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">express</span><span class="dl">'</span><span class="p">)</span>
+</code></pre></div></div>
+<p>Baris code diatas berfungsi untuk mengimpor modul Express di Node.js.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">()</span>
+</code></pre></div></div>
+<p><strong><em>Fungsi express()</em></strong> merupakan fungsi global di dalam Express yang berguna untuk membuat objek aplikasi. Dalam Express, objek aplikasi dapat melakukan pekerjaan-pekerjaan berikut:</p>
+
+<ul>
+  <li>Menangani permintaan berdasarkan metode <code class="language-plaintext highlighter-rouge">HTTP</code> dan rute <code class="language-plaintext highlighter-rouge">URL</code> yang dikirim oleh komputer client.</li>
+  <li>Menentukan konfigurasi <code class="language-plaintext highlighter-rouge">middleware</code></li>
+  <li>Menghasilkan <code class="language-plaintext highlighter-rouge">render</code> tampilan <strong><em>HTML</em></strong></li>
+  <li>Mendaftarkan mesin pembuat <code class="language-plaintext highlighter-rouge">template (***template engine***)</code>.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+	<span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;h1&gt;Hello World&lt;/h1&gt;</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre></div></div>
+<p>Kode diatas digunakan untuk menangani permintaan rute <code class="language-plaintext highlighter-rouge">URL</code>. tersebut yang dikirim melalui method <code class="language-plaintext highlighter-rouge">GET</code>. ketika permintaan terjadi, aplikasi akan menjalankan fungsi <strong><em>callback</em></strong>. Fungsi <strong><em>callback</em></strong> memiliki dua parameter. yaitu object <code class="language-plaintext highlighter-rouge">request(req) dan response(res)</code>. Didalam fungsi tersebut, kita mengirim respon(berupa text, (<code class="language-plaintext highlighter-rouge">'&lt;h1&gt;Hello World&lt;/h1&gt;'</code>) ke browser atau client melalui pemanggilan method <code class="language-plaintext highlighter-rouge">send()</code> dari object request.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">listen</span><span class="p">(</span><span class="mi">5000</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Server running on port 5000</span><span class="dl">"</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre></div></div>
+<p>Baris kode diatas menyatakan bahwa aplikasi menerima permintaan yang datang melalui port <strong>5000</strong>.</p>
+
+<p>ok cukup sekian mengenai lanjutan artikel nodeJS kali ini, mudah-mudahan bermanfaat. nanti di artikel berikut nya gout akan membahas <code class="language-plaintext highlighter-rouge">routing</code> di Express.js.</p>
+
+<p>akhir kata gout ucapkan …</p>
+
+<p>wassalaam</p>
+
+<p><strong><em>Puji Ermanto</em></strong></p>
+
+:ET
