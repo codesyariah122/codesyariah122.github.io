@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$('audio').attr('autoplay', 'false');
+	$('audio').removeAttr('autoplay');
 	
 	$(window).scroll(function(){
 		if($(this).scrollTop() > 300){
@@ -80,7 +80,7 @@ $(document).ready(function(){
 
 	$('input[type=checkbox][name=night]').on('click',  function(){
 		
-		$('audio').attr('autoplay', 'false');
+		$('audio').removeAttr('autoplay');
 		
 		Swal.fire({
 			position: 'top-end',
