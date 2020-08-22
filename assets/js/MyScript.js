@@ -2,7 +2,16 @@ $(document).ready(function(){
 	$('#night-mode').hide();
 
 		$('input[type=checkbox][name=day]').on('click',  function(){
-		Swal.fire('Good Night ...');
+		
+		Swal.fire({
+			position: 'top-end',
+		  	icon: 'success',
+		  	title: 'Good Night',
+		  	html: '<h1>🌒</h1>',
+		  	showConfirmButton: false,
+		  	timer: 1500
+		});
+
 
 		const dayMode = $(this).attr('id');
 
@@ -42,7 +51,15 @@ $(document).ready(function(){
 
 	$('input[type=checkbox][name=night]').on('click',  function(){
 
-		Swal.fire('Good Morning');
+
+		Swal.fire({
+			position: 'top-end',
+		  	icon: 'success',
+		  	title: 'Good Morning',
+		  	html: '<h1>🌤</h1>',
+		  	showConfirmButton: false,
+		  	timer: 1500
+		});
 
 		const nightMode = $(this).attr('id');
 		$('#night-mode').hide('slow').slideUp(1000);
