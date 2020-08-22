@@ -1,17 +1,19 @@
 $(document).ready(function(){
-	$('#day-mode').hide();
+	$('#night-mode').hide();
 
-	$('input[type=checkbox][name=night]').on('click',  function(){
+		$('input[type=checkbox][name=day]').on('click',  function(){
+		Swal.fire('Good Night ...');
 
-		Swal.fire('Welcome in Night Mode');
+		const dayMode = $(this).attr('id');
 
-		const nightMode = $(this).attr('id');
-		$('#night-mode').hide('slow').slideUp(1000);
-		$('#day-mode').show('slow').fadeIn(1000);
+		$('#day-mode').hide('slow').slideUp(1000);
+
+		$('#night-mode').show('slow').fadeIn(1000);
 
 		$('body').attr('data-theme', 'dark');
 		$('nav').removeClass('bg-white');
 		$('nav').addClass('bg-dark');
+
 		$('#anjing').css({
 			'color': 'mediumseagreen!important'
 		});
@@ -34,20 +36,23 @@ $(document).ready(function(){
 			'color': '#FFFACD',
 		})
 		$('a').css('color','#FFFACD');
-		$('input[name=night]').prop('checked', false);
+	
+		$('input[name=day]').prop('checked', false);
 	})
 
-	$('input[type=checkbox][name=day]').on('click',  function(){
-		Swal.fire('Goodbye ! Night Mode');
+	$('input[type=checkbox][name=night]').on('click',  function(){
 
-		const dayMode = $(this).attr('id');
+		Swal.fire('Good Morning');
 
-		$('#day-mode').hide('slow').slideUp(1000);
-		$('#night-mode').show('slow').fadeIn(1000);
+		const nightMode = $(this).attr('id');
+		$('#night-mode').hide('slow').slideUp(1000);
+		$('#day-mode').show('slow').fadeIn(1000);
 
 		$('body').attr('data-theme', 'day');
 		$('nav').removeClass('bg-dark');
 		$('nav').addClass('bg-white');
+
+
 		$('#anjing').css({
 			'color':'mediumseagreen!important'
 		});
@@ -72,7 +77,7 @@ $(document).ready(function(){
 		})
 		$('a').css('color','#000');
 
-		$('input[name=day]').prop('checked', false);
+		$('input[name=night]').prop('checked', false);
 	})
 
 })

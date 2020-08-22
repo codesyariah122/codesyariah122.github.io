@@ -84,9 +84,9 @@ input[type="checkbox"]{
 #night-label{
   font-size:2.3rem;
   cursor:pointer;
-  margin-top:.5rem; 
-  animation: shake 0.5s;
-  animation-iteration-count: infinite; 
+  margin-top:.5rem;
+  display: inline-block;
+  position: relative;
 }
 #night-label:hover{
   -webkit-transform: scaleX(-1);
@@ -100,6 +100,8 @@ input[type="checkbox"]{
   margin-top:.5rem;
   cursor:pointer;
   margin-top: .5rem;
+  display: inline-block;
+  position: relative;
 }
 #day-label:hover{
     -webkit-transform: scaleX(-1);

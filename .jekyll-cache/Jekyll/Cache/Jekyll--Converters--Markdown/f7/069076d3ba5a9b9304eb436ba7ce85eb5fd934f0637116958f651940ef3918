@@ -1,4 +1,4 @@
-I"<1<p><img src="http://localhost:4000/assets/images/post/express-demo1.png" alt="express-demo-1" /></p>
+I"=1<p><img src="http://localhost:4000/assets/images/post/express-demo1.png" alt="express-demo-1" /></p>
 
 <h3 id="express-framework-untuk-nodejs">Express: Framework untuk NodeJS</h3>
 
@@ -83,7 +83,7 @@ root@codesyariah:/home/puji122/MyApp# npm init
 
 <p>seperti ini ketika aplikasi Express kita running :</p>
 
-<p><img src="http://localhost:4000/assets/images/post/express-demo1.gif" alt="express-demo-1" /></p>
+<p><img src="http://localhost:4000/assets/images/post/express-demo-1.gif" alt="express-demo-1" /></p>
 
 <p>perhatikan code berikut :</p>
 

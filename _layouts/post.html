@@ -3,13 +3,13 @@ layout: default
 ---
 {% assign author = site.data.authors[page.author] %}
 <div class="container">
+		<ul id="day-mode">
+            <input type="checkbox" id="day" name="day">
+            <label for="day" id="day-label">🌤</label>
+        </ul>
 		<ul id="night-mode">
             <input type="checkbox" id="night" name="night">
             <label for="night" id="night-label">🌒</label>
-        </ul>
-        <ul id="day-mode">
-            <input type="checkbox" id="day" name="day">
-            <label for="day" id="day-label">🌤</label>
         </ul>
 
 <div class="jumbotron jumbotron-fluid mb-3 pl-0 pt-0 pb-0 bg-white position-relative">
