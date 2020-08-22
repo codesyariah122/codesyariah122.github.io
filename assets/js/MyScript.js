@@ -1,4 +1,27 @@
 $(document).ready(function(){
+	$(window).scroll(function(){
+		if($(this).scrollTop() > 300){
+			console.log("down");
+			$('.mode-label').css({
+				'position':'fixed',
+				'display': 'inline-block',
+				'margin-top': '7rem',
+				'margin-left': '-1.2rem',
+				'font-size': '3rem'
+			})
+		}else{
+			console.log("top");
+			$('.mode-label').css({
+				'position': '',
+				'display':'',
+				'margin-top':'',
+				'margin-left': '',
+				'font-size': ''
+			})
+			$('.mode-label').show('slow').fadeIn(1000);
+		}
+	})
+	
 	$('#night-mode').hide();
 
 		$('input[type=checkbox][name=day]').on('click',  function(){
