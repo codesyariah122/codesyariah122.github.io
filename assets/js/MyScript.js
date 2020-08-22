@@ -29,8 +29,13 @@ $(document).ready(function(){
 	$('#night-mode').hide();
 
 		$('input[type=checkbox][name=day]').on('click',  function(){
-		$('myAudio').play();
-		$('myAudio').attr('autoplay', 'true');
+// 		$('myAudio').play();
+// 		$('myAudio').attr('autoplay', 'true');
+			
+		
+		$('audio').each(function() {
+			$(this).play();
+		});
 			
 		Swal.fire({
 			position: 'top-end',
@@ -80,8 +85,12 @@ $(document).ready(function(){
 
 	$('input[type=checkbox][name=night]').on('click',  function(){
 		
-		$('myAudio').pause();
-		$('myAudio').removeAttr('autoplay');
+// 		$('myAudio').pause();
+// 		$('myAudio').removeAttr('autoplay');
+		
+		$('audio').each(function() {
+			$(this).pause();
+		});
 		
 		Swal.fire({
 			position: 'top-end',
