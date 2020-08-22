@@ -34,7 +34,7 @@ $(document).ready(function(){
 			
 		
 		$('audio').each(function() {
-			$(this).play();
+			$('#myAudio').play();
 		});
 			
 		Swal.fire({
@@ -89,7 +89,7 @@ $(document).ready(function(){
 // 		$('myAudio').removeAttr('autoplay');
 		
 		$('audio').each(function() {
-			$(this).pause();
+			$('#myAudio').pause();
 		});
 		
 		Swal.fire({
