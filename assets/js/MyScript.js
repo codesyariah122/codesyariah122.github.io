@@ -60,6 +60,7 @@ $(document).ready(function(){
 		$('.night-text').hide('slow');
 
 		$('#myAudio').attr('autoplay');
+		$('#myAudio').attr('loop', 'true');
 		
 		playAudio();
 			
@@ -120,6 +121,7 @@ $(document).ready(function(){
 		$('.day-text').hide('slow');
 
 		$('#myAudio').removeAttr('autoplay');
+		$('#myAudio').removeAttr('loop');
 		pauseAudio();
 		
 		Swal.fire({

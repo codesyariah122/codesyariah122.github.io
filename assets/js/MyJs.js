@@ -2,7 +2,7 @@ function askYou(url){
 	const baseUrl = url+"/myrooms";
 
 	if(location.href === baseUrl){
-		let tanya = parseInt(prompt("0.15 * 29 / 100 = ? "));
+		let tanya = parseInt(prompt("Jawab Pertanyaan Berikut : \n0.15 * 29 / 100 = ? "));
 		let hasil = Math.ceil(0.15 * 29 / 100)
 		if(tanya == hasil ){
 			Swal.fire({
