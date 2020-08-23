@@ -18,9 +18,17 @@ $(document).ready(function(){
 				'position':'fixed',
 				'display': 'inline-block',
 				'margin-top': '7rem',
-				'margin-left': '-1.2rem',
+				'margin-left': '4.7rem',
 				'font-size': '3rem',
 				'z-index': '1'
+			})
+			$('#text-mode').css({
+				'position':'fixed',
+				'display': 'inline-block',
+				'margin-top': '11rem',
+				'margin-left': '-3.5rem',
+				'z-index':'1',
+				'transform': 'rotate(90deg)'
 			})
 		}else{
 			console.log("top");
@@ -31,6 +39,14 @@ $(document).ready(function(){
 				'margin-left': '',
 				'font-size': '',
 				'z-index':'1'
+			})
+			$('#text-mode').css({
+				'position':'',
+				'display': '',
+				'margin-top': '',
+				'margin-left': '',
+				'z-index':'1',
+				'transform': ''
 			})
 			$('.mode-label').show('slow').fadeIn(1000);
 		}
@@ -98,6 +114,8 @@ $(document).ready(function(){
 		$('.night-text').css({
 			'color': '#FFEACD'
 		});
+
+		$('#text-mode').show('slow');
 
 		$('.day-text').hide('slow');
 

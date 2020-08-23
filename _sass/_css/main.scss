@@ -75,12 +75,12 @@ body {
 [tabindex="-1"]:focus {
   outline: 0 !important; }
 
+
+// for night mode
 input[type="checkbox"]{
   display: none;
 }
 
-
-// for night mode
 #night-label{
   font-size:3.3rem;
   cursor:pointer;
@@ -102,11 +102,12 @@ input[type="checkbox"]{
   font-size:1.5rem;
   display: inline-block;
   margin-left:1rem;
+  margin-top:-1rem;
   width: 15%;
-  text-align: center;
+  text-align: center;;
 }
 .night-text:hover{
-  background: rgba(255, 0.3, 0, 0.7);
+  background: rgb(189,183,107);
   color:#FFF;
 }
 
@@ -125,16 +126,17 @@ input[type="checkbox"]{
 }
 .day-text{
   color:gold;
-  background: rgba(167, 179, 200, 1);
+  background: rgba(0, 0.3, 0, 222);
   font-size:1.5rem;
   cursor:url;
   display: inline-block;
   margin-left:1rem;
+  margin-top:-1rem;
   width:15%;
   text-align: center;
 }
 .day-text:hover{
-  background: rgba(148, 79, 176, 0.97);
+  background: rgb(189,183,107);
   color:#FFFADE;
 }
 
@@ -3364,6 +3366,7 @@ input[type="button"].btn-block {
     justify-content: space-between; }
 
 .navbar-brand {
+  color:mediumseagreen!important;
   display: inline-block;
   padding-top: 0.68rem;
   padding-bottom: 0.68rem;
