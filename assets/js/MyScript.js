@@ -18,7 +18,7 @@ $(document).ready(function(){
 				'position':'fixed',
 				'display': 'inline-block',
 				'margin-top': '7rem',
-				'margin-left': '4.7rem',
+				'margin-left': '-3.7rem',
 				'font-size': '3rem',
 				'z-index': '1'
 			})
