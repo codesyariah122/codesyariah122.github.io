@@ -79,7 +79,6 @@ $(document).ready(function(){
 		$('#day-mode').hide('slow').slideUp(1000);
 
 		$('#night-mode').show('slow').fadeIn(1000);
-
 		$('body').attr('data-theme', 'dark');
 		$('nav').removeClass('bg-white');
 		$('nav').addClass('bg-dark');
