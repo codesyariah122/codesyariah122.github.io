@@ -1,4 +1,4 @@
-I"Ä¸<div class="container">
+I"eÁ<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
         <h1 class="font-weight-bold title h6 text-uppercase mb-4">Categories</h1>
@@ -4060,6 +4060,42 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/nodejs/sass/memulai-sass-di-nodejs/">Memulai SASS di NodeJS</a>
+	</h2>
+	<p class="excerpt">
+	   
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#nodejs">NodeJS</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#sass">SASS</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		25 August 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/nodejs/sass/memulai-sass-di-nodejs/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/sass.png" alt="Memulai SASS di NodeJS" />
+	</a>
+	</div>
+
+</div>
+
+          
+        
+        
+        
+          
+         
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
 	<a class="text-dark" href="http://localhost:4000/nodejs/javascript/mencicipi-express-js-framework-untuk-nodeJS/">Mencicipi Express Framework untuk NodeJS</a>
 	</h2>
 	<p class="excerpt">
@@ -4940,6 +4976,50 @@
 	<div class="col-md-3 pr-0 text-right">
 	<a href="http://localhost:4000/gatsbyjs/react/javascript/tailwindcss/menggunakan-tailwind-css-di-gatsbyJS-menggunakan-plugin-postcss/">
 	<img class="w-100" src="http://localhost:4000/assets/images/post/tailwindcss.png" alt="Menggunakan plugin tailwind css dan plugin postcss untuk styling di gatsbyJS" />
+	</a>
+	</div>
+
+</div>
+
+          
+        
+        
+        
+        
+
+         
+        <h4 class="font-weight-bold spanborder text-capitalize" id="sass"><span>SASS</span></h4>
+            
+        
+        
+        
+          
+         
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/nodejs/sass/memulai-sass-di-nodejs/">Memulai SASS di NodeJS</a>
+	</h2>
+	<p class="excerpt">
+	   
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#nodejs">NodeJS</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#sass">SASS</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		25 August 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/nodejs/sass/memulai-sass-di-nodejs/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/sass.png" alt="Memulai SASS di NodeJS" />
 	</a>
 	</div>
 

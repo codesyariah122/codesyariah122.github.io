@@ -1,4 +1,4 @@
-I"J@<div class="container">
+I"5D<div class="container">
 
  <!--endif page url is / -->
 
@@ -10,6 +10,39 @@
     <div class="col-md-8 main-loop">
 
         <h4 class="font-weight-bold spanborder"><span>All Stories</span></h4>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/blog/writer/Gairah-Budaya-Membaca/">Gairah Budaya Membaca</a>
+	</h2>
+	<p class="excerpt">
+	   Apa sih pentingnya Membaca itu
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">blog</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#writer">writer</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		26 July 2019
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/blog/writer/Gairah-Budaya-Membaca/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/baca.jpeg" alt="Gairah Budaya Membaca" />
+	</a>
+	</div>
+
+</div>
 
 
         

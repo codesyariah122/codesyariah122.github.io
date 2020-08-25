@@ -1,4 +1,263 @@
-I"FJ<div class="container">
+I"Ìd<div class="container">
+
+
+
+
+
+<!-- Begin post excerpts, let's highlight the first 4 posts on top -->
+<div class="row remove-site-content-margin">
+
+    <!-- latest post -->
+    
+    <div class="col-md-6">
+    <div class="card border-0 mb-4 box-shadow">
+<!-- adding image thumbnail hover -->
+
+    <a href="http://localhost:4000/nodejs/sass/memulai-sass-di-nodejs/">
+    <div class="topfirstimage" style="background-image: url( http://localhost:4000/assets/images/post/sass.png); height: 200px;    background-size: cover;    background-repeat: no-repeat;"></div>
+    </a>
+
+    <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
+    <h2 class="h4 font-weight-bold">
+    <a class="text-dark" href="http://localhost:4000/nodejs/sass/memulai-sass-di-nodejs/">Memulai SASS di NodeJS</a>
+    </h2>
+    <p class="excerpt">
+        
+    </p>
+    <div>
+        <small class="d-block text-muted">
+            In <span class="catlist">
+                
+                <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#nodejs">NodeJS</a><span class="sep">, </span>
+                
+                <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#sass">SASS</a><span class="sep">, </span>
+                
+                </span>
+        </small>
+        <small class="text-muted">
+            25 August, 2020
+        </small>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <div class="col-md-6">
+
+        <!-- second latest post --><div class="mb-3 d-flex align-items-center">
+                
+                <div class="col-md-4">
+                <a href="http://localhost:4000/nodejs/javascript/mencicipi-express-js-framework-untuk-nodeJS/">
+                 <img class="w-100" src="http://localhost:4000/assets/images/post/express.jpg" alt="Mencicipi Express Framework untuk NodeJS" />
+                </a>
+                </div>
+                
+                <div>
+                    <h2 class="mb-2 h6 font-weight-bold">
+                    <a class="text-dark" href="http://localhost:4000/nodejs/javascript/mencicipi-express-js-framework-untuk-nodeJS/">Mencicipi Express Framework untuk NodeJS</a>
+                    </h2>
+                    <small class="d-block text-muted">
+                        In <span class="catlist">
+                        
+                        <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#nodejs">NodeJS</a><span class="sep">, </span>
+                        
+                        <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
+                        
+                        </span>
+                    </small>
+                    <small class="text-muted">
+                        22 August 2020
+                    </small>
+                </div>
+            </div>
+
+        <!-- third latest post --><div class="mb-3 d-flex align-items-center">
+                
+                <div class="col-md-4">
+                <a href="http://localhost:4000/nodejs/javascript/mengaktifkan-script-npm-start-dengan-nodemon/">
+                 <img class="w-100" src="http://localhost:4000/assets/images/post/nodemon.png" alt="Mengaktifkan script npm start dengan nodemon" />
+                </a>
+                </div>
+                
+                <div>
+                    <h2 class="mb-2 h6 font-weight-bold">
+                    <a class="text-dark" href="http://localhost:4000/nodejs/javascript/mengaktifkan-script-npm-start-dengan-nodemon/">Mengaktifkan script npm start dengan nodemon</a>
+                    </h2>
+                    <small class="d-block text-muted">
+                        In <span class="catlist">
+                        
+                        <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#nodejs">NodeJS</a><span class="sep">, </span>
+                        
+                        <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
+                        
+                        </span>
+                    </small>
+                    <small class="text-muted">
+                        20 August 2020
+                    </small>
+                </div>
+            </div>
+
+        <!-- fourth latest post --><div class="mb-3 d-flex align-items-center">
+                
+                <div class="col-md-4">
+                <a href="http://localhost:4000/nodejs/javascript/selanjutnya-dengan-Node-JS/">
+                <img class="w-100" src="http://localhost:4000/assets/images/post/nodejs-part2.png" alt="Selanjutnya dengan Node JS" />
+                </a>
+                </div>
+                
+                <div>
+                    <h2 class="mb-2 h6 font-weight-bold">
+                    <a class="text-dark" href="http://localhost:4000/nodejs/javascript/selanjutnya-dengan-Node-JS/">Selanjutnya dengan Node JS</a>
+                    </h2>
+                    <small class="d-block text-muted">
+                        In <span class="catlist">
+                        
+                        <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#nodejs">NodeJS</a><span class="sep">, </span>
+                        
+                        <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
+                        
+                        </span>
+                    </small>
+                    <small class="text-muted">
+                        18 August 2020
+                    </small>
+                </div>
+            </div>
+
+    </div>
+
+</div>
+
+<!-- Sticky - add sticky tag to the post you want to highlight here - tags: [sticky] -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jumbotron jumbotron-fluid jumbotron-home pt-0 pb-0 mt-3 mb-2rem bg-lightblue position-relative">
+    <div class="pl-4 pr-0 h-100 tofront">
+        <div class="row justify-content-between">
+            <div class="col-md-6 pt-6 pb-6 pr-lg-4 align-self-center">
+                <h1 class="mb-3">Muadzin Abu Mahdzurah</h1>
+                <p class="mb-3 lead">
+                    Kisah Muadzin Rasulullah (Abu Mahdzurah)
+                </p>
+                <a href="http://localhost:4000/kajianislam/sunnah/Muadzin-Abu-Mahdzurah/" class="btn btn-dark">Read More</a>
+            </div>
+            <div class="col-md-6 d-none d-md-block pr-0" style="background-size:cover;background-image:url(http://localhost:4000/assets/images/post/abu-mahdzurah.jpeg);">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
 
  <!--endif page url is / -->
 
@@ -17,7 +276,7 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/linux/server/sorry-that-didn't-work-login-root-debian-9-gnome/">sorry that didn't work login root debian 9 gnome</a>
+	<a class="text-dark" href="http://localhost:4000/nodejs/sass/memulai-sass-di-nodejs/">Memulai SASS di NodeJS</a>
 	</h2>
 	<p class="excerpt">
 	   
@@ -25,20 +284,20 @@
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#linux">linux</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#nodejs">NodeJS</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#server">server</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#sass">SASS</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		02 March 2020
+		25 August 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/linux/server/sorry-that-didn't-work-login-root-debian-9-gnome/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/debian9/IMG_20200201_005454.jpg" alt="sorry that didn't work login root debian 9 gnome" />
+	<a href="http://localhost:4000/nodejs/sass/memulai-sass-di-nodejs/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/sass.png" alt="Memulai SASS di NodeJS" />
 	</a>
 	</div>
 
@@ -50,106 +309,7 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/linux/server/error-404-nginx-saat-menggunakan-framework-codeigniter/">Error 404 nginx saat menggunakan codeigniter</a>
-	</h2>
-	<p class="excerpt">
-	   error 404 ini saya alami ketika saya menggunakan framework codeigniter, permasalahan ini kemungkinan terjadi akibat nginx tidak mengenalidirektori root dari virtualhot project kita ya...
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#linux">linux</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#server">server</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		02 March 2020
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/linux/server/error-404-nginx-saat-menggunakan-framework-codeigniter/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/nginx/nginx_404.png" alt="Error 404 nginx saat menggunakan codeigniter" />
-	</a>
-	</div>
-
-</div>
-
-
-        
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/linux/server/install-secure-phpmyadmin-on-debian9-stretch/">install secure phpmyadmin on debian9 stretch</a>
-	</h2>
-	<p class="excerpt">
-	   Step 1 â€” Installing phpMyAdmin
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#linux">linux</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#server">server</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		28 February 2020
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/linux/server/install-secure-phpmyadmin-on-debian9-stretch/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/phpmyadmin/login.png" alt="install secure phpmyadmin on debian9 stretch" />
-	</a>
-	</div>
-
-</div>
-
-
-        
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/linux/server/Error-1698-Access-denied-for-user-'root'@'localhost-di-phpMyAdmin/">Error #1698 Access denied for user 'root'@'localhost di phpMyAdmin</a>
-	</h2>
-	<p class="excerpt">
-	   Assalamualaikum wr. wb
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#linux">linux</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#server">server</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		26 February 2020
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/linux/server/Error-1698-Access-denied-for-user-'root'@'localhost-di-phpMyAdmin/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/nginx/err.png" alt="Error #1698 Access denied for user 'root'@'localhost di phpMyAdmin" />
-	</a>
-	</div>
-
-</div>
-
-
-        
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/linux/server/install-driver-iwlwifi-debian9/">install-driver-iwlwifi-debian9</a>
+	<a class="text-dark" href="http://localhost:4000/nodejs/javascript/mencicipi-express-js-framework-untuk-nodeJS/">Mencicipi Express Framework untuk NodeJS</a>
 	</h2>
 	<p class="excerpt">
 	   
@@ -157,20 +317,20 @@
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#linux">linux</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#nodejs">NodeJS</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#server">server</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		24 February 2020
+		22 August 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/linux/server/install-driver-iwlwifi-debian9/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/debian9/install-driver-wifi-debian-thinkpad-iwlwifi-linux.jpg" alt="install-driver-iwlwifi-debian9" />
+	<a href="http://localhost:4000/nodejs/javascript/mencicipi-express-js-framework-untuk-nodeJS/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/express.jpg" alt="Mencicipi Express Framework untuk NodeJS" />
 	</a>
 	</div>
 
@@ -182,28 +342,28 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/linux/server/upgrade-debian8-jessie/">upgrade debian 8 jessie</a>
+	<a class="text-dark" href="http://localhost:4000/nodejs/javascript/mengaktifkan-script-npm-start-dengan-nodemon/">Mengaktifkan script npm start dengan nodemon</a>
 	</h2>
 	<p class="excerpt">
-	   Sebelum melakukan proses upgrade ke Debian 9 Stretch, disarankan untuk memperbarui perangkat lunak Debian 8 Jessie sehingga dalam kondisi up to date (stable version). Buka terminal De...
+	   
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#linux">linux</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#nodejs">NodeJS</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#server">server</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		25 December 2019
+		20 August 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/linux/server/upgrade-debian8-jessie/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/debian9/Screenshot from 2020-02-24 19-20-15.png" alt="upgrade debian 8 jessie" />
+	<a href="http://localhost:4000/nodejs/javascript/mengaktifkan-script-npm-start-dengan-nodemon/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/nodemon.png" alt="Mengaktifkan script npm start dengan nodemon" />
 	</a>
 	</div>
 
@@ -215,28 +375,133 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/live%20chat/codeigniter/memasang-aplikasi-live-chat-di-codeigniter/">pasang aplikasi chat di website yang menggunakan framework codeigniter</a>
+	<a class="text-dark" href="http://localhost:4000/nodejs/javascript/selanjutnya-dengan-Node-JS/">Selanjutnya dengan Node JS</a>
 	</h2>
 	<p class="excerpt">
-	   Akhir-akhir ini perkembangan website sudah sangat berkembang pesat, banyak fitur yang bisa memudahkan kita untuk mendapatkan sebuah informasi digital yang akurat.salah satu layanan ap...
+	   
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#live chat">live chat</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#nodejs">NodeJS</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#codeigniter">Codeigniter</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		05 December 2019
+		18 August 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/live%20chat/codeigniter/memasang-aplikasi-live-chat-di-codeigniter/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/chat/chat.jpg" alt="pasang aplikasi chat di website yang menggunakan framework codeigniter" />
+	<a href="http://localhost:4000/nodejs/javascript/selanjutnya-dengan-Node-JS/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/nodejs-part2.png" alt="Selanjutnya dengan Node JS" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/nodejs/javascript/membuat-aplikasi-Node-js-pertama/">Membuat aplikasi NodeJS pertama</a>
+	</h2>
+	<p class="excerpt">
+	   
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#nodejs">NodeJS</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		18 August 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/nodejs/javascript/membuat-aplikasi-Node-js-pertama/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/repl-node.jpe" alt="Membuat aplikasi NodeJS pertama" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/php/ajax/jquery/Parsing-data-covid19-dengan-PHP-CURL-AJAX-JQUERY/">Parsing data covid 19 dengan PHP CURL, Ajax Jquery</a>
+	</h2>
+	<p class="excerpt">
+	   Parsing data JSON upadte data covid19 dengan PHP CURL
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">php</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#ajax">ajax</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jquery">jquery</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		15 August 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/php/ajax/jquery/Parsing-data-covid19-dengan-PHP-CURL-AJAX-JQUERY/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/covid.png" alt="Parsing data covid 19 dengan PHP CURL, Ajax Jquery" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/gatsbyjs/react/javascript/tailwindcss/menggunakan-tailwind-css-di-gatsbyJS-menggunakan-plugin-postcss/">Menggunakan plugin tailwind css dan plugin postcss untuk styling di gatsbyJS</a>
+	</h2>
+	<p class="excerpt">
+	   Menggunakan tailwind css di gatsbysalam jumpa lagi para coders ! semoga selalu sehat, udah mulai musim penghujan sepertinya, jangan lupa jaga kesehatan. jangan banyak begadang yah cod...
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#gatsbyjs">GatsbyJS</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#react">React</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#tailwindcss">tailwindcss</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		14 August 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/gatsbyjs/react/javascript/tailwindcss/menggunakan-tailwind-css-di-gatsbyJS-menggunakan-plugin-postcss/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/tailwindcss.png" alt="Menggunakan plugin tailwind css dan plugin postcss untuk styling di gatsbyJS" />
 	</a>
 	</div>
 
@@ -250,12 +515,12 @@
             
             <ul class="pagination">
               
-                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page5">&laquo; Prev</a></li>
+                <li class="page-item disabled"><span class="prev page-link">&laquo;</span></li>
               
 
               
                 
-                <li class="page-item"><a class="page-link" href="http://localhost:4000/">1</a></li>
+                <li class="page-item disabled"><span class="webjeda page-link">1</span></li>
                 
               
                 
@@ -275,7 +540,7 @@
                 
               
                 
-                <li class="page-item disabled"><span class="webjeda page-link">6</span></li>
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page6">6</a></li>
                 
               
                 
@@ -288,7 +553,7 @@
               
 
               
-                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page7">Next &raquo;</a></li>
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page2">Next &raquo;</a></li>
               
             </ul>
             

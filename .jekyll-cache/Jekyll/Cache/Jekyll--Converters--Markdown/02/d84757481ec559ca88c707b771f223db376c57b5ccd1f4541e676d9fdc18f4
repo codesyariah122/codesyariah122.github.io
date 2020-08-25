@@ -1,4 +1,4 @@
-I"òN<div class="container">
+I"°I<div class="container">
 
  <!--endif page url is / -->
 
@@ -17,30 +17,28 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/gatsbyjs/react/javascript/bekerja-dengan-graphQL-API-&amp;-set-up-metadata-untuk-pages/">Bekerja dengan graphQL API untuk query metadata page</a>
+	<a class="text-dark" href="http://localhost:4000/blog/story/hidup-adalah-ilmu/">hidup adalah ilmu dan hidup dengan ilmu</a>
 	</h2>
 	<p class="excerpt">
-	   Apa itu graphQLGraphQL adalah sebuah konsep baru dalam  membangun api. GraphQL (Query Language) yang di develop oleh facebook.di implementasikan pada sisi server. Meskipun sebuah quer...
+	   apa sih sebenarnya hidup ini??sebuah pertanyaan bagi saya dan diri saya pribadi, mengapa ada bagian saya dan diri saya. apa hakikatnya, apakah ini dengungan dari sebuah istilah lahir ...
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#gatsbyjs">GatsbyJS</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">blog</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#react">React</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#story">story</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		11 August 2020
+		13 April 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/gatsbyjs/react/javascript/bekerja-dengan-graphQL-API-&amp;-set-up-metadata-untuk-pages/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/graphQL-base.png" alt="Bekerja dengan graphQL API untuk query metadata page" />
+	<a href="http://localhost:4000/blog/story/hidup-adalah-ilmu/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/ilustrasi-mencari-ilmu.jpg" alt="hidup adalah ilmu dan hidup dengan ilmu" />
 	</a>
 	</div>
 
@@ -52,182 +50,7 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/gatsbyjs/react/javascript/membangun-project-staticsite-dengan-gatsby/">Membangun project static site dengan gatsbyJS</a>
-	</h2>
-	<p class="excerpt">
-	   Membuat project dengan gatsbytidak ada salahnya memang menjadi kekinianâ€¦ hehe ini hanya sekedar basa basi di awal artikel ini. untuk menyambut para coders.apa kabarnya nih para coders...
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#gatsbyjs">GatsbyJS</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#react">React</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		10 August 2020
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/gatsbyjs/react/javascript/membangun-project-staticsite-dengan-gatsby/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/gatsby.png" alt="Membangun project static site dengan gatsbyJS" />
-	</a>
-	</div>
-
-</div>
-
-
-        
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/php/ajax/jquery/membuat-fitur-reaction-button-dengan-ajax-jquery-php/">Membuat fitur reaction button dengan ajax jquery php</a>
-	</h2>
-	<p class="excerpt">
-	   Membuat reaction button dengan jquery ajax
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">php</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#ajax">ajax</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jquery">jquery</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		07 August 2020
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/php/ajax/jquery/membuat-fitur-reaction-button-dengan-ajax-jquery-php/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/crud_ajax_with_button_reaction.gif" alt="Membuat fitur reaction button dengan ajax jquery php" />
-	</a>
-	</div>
-
-</div>
-
-
-        
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/php/ajax/jquery/Menjalankan-dua-query-berbeda-dalam-satu-statement-menggunakan-PDOExtention/">Menjalankan dua query berbeda dalam satu statement menggunakan PDOExtention</a>
-	</h2>
-	<p class="excerpt">
-	   Menjalankan dua query berbeda secara bersamaan dalam satu statement
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">php</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#ajax">ajax</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jquery">jquery</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		04 August 2020
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/php/ajax/jquery/Menjalankan-dua-query-berbeda-dalam-satu-statement-menggunakan-PDOExtention/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/pdo.png" alt="Menjalankan dua query berbeda dalam satu statement menggunakan PDOExtention" />
-	</a>
-	</div>
-
-</div>
-
-
-        
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/php/ajax/jquery/membuat-fitur-pagination-pada-aplikasi-crud-data-ajax-jquery/">Membuat fitur pagination pada aplikasi crud data ajax jquery</a>
-	</h2>
-	<p class="excerpt">
-	   Fitur pagination dalam crud data with ajax jqueryhalo coders semuanya â€¦.ini masih melanjutkan edisi crud data dengan ajax jquery dengan menggunakan metode php pdo ekstension sebagai s...
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">php</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#ajax">ajax</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jquery">jquery</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		03 August 2020
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/php/ajax/jquery/membuat-fitur-pagination-pada-aplikasi-crud-data-ajax-jquery/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/pagination-explanation.png" alt="Membuat fitur pagination pada aplikasi crud data ajax jquery" />
-	</a>
-	</div>
-
-</div>
-
-
-        
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/php/ajax/jquery/membuat-fitur-upload-pada-aplikasi-crud-data-ajax-jquery/">Membuat fitur upload pada aplikasi crud data ajax jquery</a>
-	</h2>
-	<p class="excerpt">
-	   Fitur upload gambar dengan metode PDO dan jquery-ajax
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">php</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#ajax">ajax</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jquery">jquery</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		31 July 2020
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/php/ajax/jquery/membuat-fitur-upload-pada-aplikasi-crud-data-ajax-jquery/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/upload.png" alt="Membuat fitur upload pada aplikasi crud data ajax jquery" />
-	</a>
-	</div>
-
-</div>
-
-
-        
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/nodejs/javascript/install-nodeJS-on-linux-debian9-stretch/">Install NodeJS debian 9 stretch linux</a>
+	<a class="text-dark" href="http://localhost:4000/linux/server/sorry-that-didn't-work-login-root-debian-9-gnome/">sorry that didn't work login root debian 9 gnome</a>
 	</h2>
 	<p class="excerpt">
 	   
@@ -235,20 +58,185 @@
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#nodejs">NodeJS</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#linux">linux</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#server">server</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		29 July 2020
+		02 March 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/nodejs/javascript/install-nodeJS-on-linux-debian9-stretch/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/Node-js-Logo.png" alt="Install NodeJS debian 9 stretch linux" />
+	<a href="http://localhost:4000/linux/server/sorry-that-didn't-work-login-root-debian-9-gnome/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/debian9/IMG_20200201_005454.jpg" alt="sorry that didn't work login root debian 9 gnome" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/linux/server/error-404-nginx-saat-menggunakan-framework-codeigniter/">Error 404 nginx saat menggunakan codeigniter</a>
+	</h2>
+	<p class="excerpt">
+	   error 404 ini saya alami ketika saya menggunakan framework codeigniter, permasalahan ini kemungkinan terjadi akibat nginx tidak mengenalidirektori root dari virtualhot project kita ya...
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#linux">linux</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#server">server</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		02 March 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/linux/server/error-404-nginx-saat-menggunakan-framework-codeigniter/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/nginx/nginx_404.png" alt="Error 404 nginx saat menggunakan codeigniter" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/linux/server/install-secure-phpmyadmin-on-debian9-stretch/">install secure phpmyadmin on debian9 stretch</a>
+	</h2>
+	<p class="excerpt">
+	   Step 1 â€” Installing phpMyAdmin
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#linux">linux</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#server">server</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		28 February 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/linux/server/install-secure-phpmyadmin-on-debian9-stretch/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/phpmyadmin/login.png" alt="install secure phpmyadmin on debian9 stretch" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/linux/server/Error-1698-Access-denied-for-user-'root'@'localhost-di-phpMyAdmin/">Error #1698 Access denied for user 'root'@'localhost di phpMyAdmin</a>
+	</h2>
+	<p class="excerpt">
+	   Assalamualaikum wr. wb
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#linux">linux</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#server">server</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		26 February 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/linux/server/Error-1698-Access-denied-for-user-'root'@'localhost-di-phpMyAdmin/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/nginx/err.png" alt="Error #1698 Access denied for user 'root'@'localhost di phpMyAdmin" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/linux/server/install-driver-iwlwifi-debian9/">install-driver-iwlwifi-debian9</a>
+	</h2>
+	<p class="excerpt">
+	   
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#linux">linux</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#server">server</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		24 February 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/linux/server/install-driver-iwlwifi-debian9/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/debian9/install-driver-wifi-debian-thinkpad-iwlwifi-linux.jpg" alt="install-driver-iwlwifi-debian9" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/linux/server/upgrade-debian8-jessie/">upgrade debian 8 jessie</a>
+	</h2>
+	<p class="excerpt">
+	   Sebelum melakukan proses upgrade ke Debian 9 Stretch, disarankan untuk memperbarui perangkat lunak Debian 8 Jessie sehingga dalam kondisi up to date (stable version). Buka terminal De...
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#linux">linux</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#server">server</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		25 December 2019
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/linux/server/upgrade-debian8-jessie/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/debian9/Screenshot from 2020-02-24 19-20-15.png" alt="upgrade debian 8 jessie" />
 	</a>
 	</div>
 
@@ -262,7 +250,7 @@
             
             <ul class="pagination">
               
-                <li class="page-item"><a class="page-link" href="http:/localhost:4000/">&laquo; Prev</a></li>
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page5">&laquo; Prev</a></li>
               
 
               
@@ -271,7 +259,7 @@
                 
               
                 
-                <li class="page-item disabled"><span class="webjeda page-link">2</span></li>
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page2">2</a></li>
                 
               
                 
@@ -287,7 +275,7 @@
                 
               
                 
-                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page6">6</a></li>
+                <li class="page-item disabled"><span class="webjeda page-link">6</span></li>
                 
               
                 
@@ -300,7 +288,7 @@
               
 
               
-                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page3">Next &raquo;</a></li>
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page7">Next &raquo;</a></li>
               
             </ul>
             

@@ -1,4 +1,4 @@
-I"lM<div class="container">
+I"nP<div class="container">
 
  <!--endif page url is / -->
 
@@ -17,28 +17,30 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/phpmailer/codeigniter/kirim-email-multiple-attachment-dengan-library-phpmailer-di-codeigniter/">Kirim Email multiple attachment dengan menggunakan library phpmailer di codeigniter</a>
+	<a class="text-dark" href="http://localhost:4000/gatsbyjs/react/javascript/menambahkan-package-plugin-emojis-di-gatsby/">Menambahkan package plugin emojis di gatsby</a>
 	</h2>
 	<p class="excerpt">
-	   Kali ini kita (kita .. lu aja kali) maksudnya saya, kali ini saya akan membuat sebuah layanan email service dengan menggunakan library dari phpmailer dan codeigniter, ok langsung saja...
+	   Menggunakan package emojis dari gatsby reactdalam artikel ini sebetulnya pembahasan nya bukan sesuatu yang serius, pembahasan kali ini hanya sekedar sebuah hal sederhana, simple dan m...
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#phpmailer">phpmailer</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#gatsbyjs">GatsbyJS</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#codeigniter">Codeigniter</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#react">React</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		11 November 2019
+		12 August 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/phpmailer/codeigniter/kirim-email-multiple-attachment-dengan-library-phpmailer-di-codeigniter/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/phpmailer.png" alt="Kirim Email multiple attachment dengan menggunakan library phpmailer di codeigniter" />
+	<a href="http://localhost:4000/gatsbyjs/react/javascript/menambahkan-package-plugin-emojis-di-gatsby/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/gatsby-remark-emojis.png" alt="Menambahkan package plugin emojis di gatsby" />
 	</a>
 	</div>
 
@@ -50,28 +52,30 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/technologies/server/configurasi-static-ip-di-ubuntu-bionic(18.04)/">Konfigurasi Static IP Ubuntu Bionic(18.04)</a>
+	<a class="text-dark" href="http://localhost:4000/gatsbyjs/react/javascript/bekerja-dengan-graphQL-API-&amp;-set-up-metadata-untuk-pages/">Bekerja dengan graphQL API untuk query metadata page</a>
 	</h2>
 	<p class="excerpt">
-	   konfigurasi static ip ubuntu server Bionic(18.04)  kini sudah berbeda dibandingkan dengan Ubuntu Server 16.04 ke bawah.Versi Ubuntu sebelumnya, konfigurasi dilakukan dengan memodifika...
+	   Apa itu graphQLGraphQL adalah sebuah konsep baru dalam  membangun api. GraphQL (Query Language) yang di develop oleh facebook.di implementasikan pada sisi server. Meskipun sebuah quer...
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#technologies">Technologies</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#gatsbyjs">GatsbyJS</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#server">Server</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#react">React</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		25 September 2019
+		11 August 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/technologies/server/configurasi-static-ip-di-ubuntu-bionic(18.04)/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/bionic/bionic.jpg" alt="Konfigurasi Static IP Ubuntu Bionic(18.04)" />
+	<a href="http://localhost:4000/gatsbyjs/react/javascript/bekerja-dengan-graphQL-API-&amp;-set-up-metadata-untuk-pages/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/graphQL-base.png" alt="Bekerja dengan graphQL API untuk query metadata page" />
 	</a>
 	</div>
 
@@ -83,28 +87,30 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/blog/story/kembang-dari-periangan/">Kembang Dari Priangan</a>
+	<a class="text-dark" href="http://localhost:4000/gatsbyjs/react/javascript/membangun-project-staticsite-dengan-gatsby/">Membangun project static site dengan gatsbyJS</a>
 	</h2>
 	<p class="excerpt">
-	   Tanah Priangan adalah kawasan gunung gemunung yang didalamnya menjadi tempat bermukim sebagian suku sunda dari berbagai kawasan di wilayah priangan lainnya.Adalah merupakan dataran ya...
+	   Membuat project dengan gatsbytidak ada salahnya memang menjadi kekinian… hehe ini hanya sekedar basa basi di awal artikel ini. untuk menyambut para coders.apa kabarnya nih para coders...
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">Blog</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#gatsbyjs">GatsbyJS</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#story">story</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#react">React</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		16 August 2019
+		10 August 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/blog/story/kembang-dari-periangan/">
-	<img class="w-100" src="http://localhost:4000/assets/images/project/skinoc/pic10.jpg" alt="Kembang Dari Priangan" />
+	<a href="http://localhost:4000/gatsbyjs/react/javascript/membangun-project-staticsite-dengan-gatsby/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/gatsby.png" alt="Membangun project static site dengan gatsbyJS" />
 	</a>
 	</div>
 
@@ -116,30 +122,30 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/news/blog/writer/Tangkuban-Perahu-Erupsi/">Tangkuban Perahu meletus dengan erupsi diperkirakan 'satu minggu' dan masyarakat diminta 'berwaspada letusan tiba-tiba'</a>
+	<a class="text-dark" href="http://localhost:4000/php/ajax/jquery/membuat-fitur-reaction-button-dengan-ajax-jquery-php/">Membuat fitur reaction button dengan ajax jquery php</a>
 	</h2>
 	<p class="excerpt">
-	   Gede Suantika, Kepala Bidang Mitigasi Gunung Api. Pusat Vulkanologi dan Mitigasi Bencana Geologi (PVMBG) memperkirakan letusan yang terjadi kali ini “hampir sama” dengan letusan pada ...
+	   Membuat reaction button dengan jquery ajax
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#news">News</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">php</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">Blog</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#ajax">ajax</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#writer">Writer</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jquery">jquery</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		26 July 2019
+		07 August 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/news/blog/writer/Tangkuban-Perahu-Erupsi/">
-	<img class="w-100" src="https://ichef-bbci-co-uk.cdn.ampproject.org/i/s/ichef.bbci.co.uk/news/485/cpsprodpb/2480/production/_108044390_35d62e98-2316-4be6-9fb5-e6af4cf53d6e.jpg" alt="Tangkuban Perahu meletus dengan erupsi diperkirakan 'satu minggu' dan masyarakat diminta 'berwaspada letusan tiba-tiba'" />
+	<a href="http://localhost:4000/php/ajax/jquery/membuat-fitur-reaction-button-dengan-ajax-jquery-php/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/crud_ajax_with_button_reaction.gif" alt="Membuat fitur reaction button dengan ajax jquery php" />
 	</a>
 	</div>
 
@@ -151,30 +157,30 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/jekyll/blog/tutorial/Powerfull-things-markdown-editor/">Hal-hal keren yang dapat kalian lakukan dengan editor Markdown</a>
+	<a class="text-dark" href="http://localhost:4000/php/ajax/jquery/Menjalankan-dua-query-berbeda-dalam-satu-statement-menggunakan-PDOExtention/">Menjalankan dua query berbeda dalam satu statement menggunakan PDOExtention</a>
 	</h2>
 	<p class="excerpt">
-	   Ada banyak hal keren yang dapat Kalian lakukan dengan editor Markdown. Jika Kalian sudah cukup terbiasa dengan menulis di Markdown, maka Kalian dapat menikmati beberapa tips lebih lan...
+	   Menjalankan dua query berbeda secara bersamaan dalam satu statement
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jekyll">Jekyll</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">php</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">Blog</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#ajax">ajax</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#tutorial">tutorial</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jquery">jquery</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		26 July 2019
+		04 August 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/jekyll/blog/tutorial/Powerfull-things-markdown-editor/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/photo-1.jpeg" alt="Hal-hal keren yang dapat kalian lakukan dengan editor Markdown" />
+	<a href="http://localhost:4000/php/ajax/jquery/Menjalankan-dua-query-berbeda-dalam-satu-statement-menggunakan-PDOExtention/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/pdo.png" alt="Menjalankan dua query berbeda dalam satu statement menggunakan PDOExtention" />
 	</a>
 	</div>
 
@@ -186,30 +192,30 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/kajianislam/sunnah/blog/Luasnya-Ampunan-Allah/">Luasnya Ampunan Allah SWT</a>
+	<a class="text-dark" href="http://localhost:4000/php/ajax/jquery/membuat-fitur-pagination-pada-aplikasi-crud-data-ajax-jquery/">Membuat fitur pagination pada aplikasi crud data ajax jquery</a>
 	</h2>
 	<p class="excerpt">
-	   Luasnya Ampunan Allah
+	   Fitur pagination dalam crud data with ajax jqueryhalo coders semuanya ….ini masih melanjutkan edisi crud data dengan ajax jquery dengan menggunakan metode php pdo ekstension sebagai s...
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#kajianislam">KajianIslam</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">php</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#sunnah">Sunnah</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#ajax">ajax</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">Blog</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jquery">jquery</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		26 July 2019
+		03 August 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/kajianislam/sunnah/blog/Luasnya-Ampunan-Allah/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/ampunan.jpeg" alt="Luasnya Ampunan Allah SWT" />
+	<a href="http://localhost:4000/php/ajax/jquery/membuat-fitur-pagination-pada-aplikasi-crud-data-ajax-jquery/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/pagination-explanation.png" alt="Membuat fitur pagination pada aplikasi crud data ajax jquery" />
 	</a>
 	</div>
 
@@ -221,28 +227,30 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/blog/writer/Gairah-Budaya-Membaca/">Gairah Budaya Membaca</a>
+	<a class="text-dark" href="http://localhost:4000/php/ajax/jquery/membuat-fitur-upload-pada-aplikasi-crud-data-ajax-jquery/">Membuat fitur upload pada aplikasi crud data ajax jquery</a>
 	</h2>
 	<p class="excerpt">
-	   Apa sih pentingnya Membaca itu
+	   Fitur upload gambar dengan metode PDO dan jquery-ajax
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">blog</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">php</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#writer">writer</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#ajax">ajax</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jquery">jquery</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		26 July 2019
+		31 July 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/blog/writer/Gairah-Budaya-Membaca/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/baca.jpeg" alt="Gairah Budaya Membaca" />
+	<a href="http://localhost:4000/php/ajax/jquery/membuat-fitur-upload-pada-aplikasi-crud-data-ajax-jquery/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/upload.png" alt="Membuat fitur upload pada aplikasi crud data ajax jquery" />
 	</a>
 	</div>
 
@@ -256,7 +264,7 @@
             
             <ul class="pagination">
               
-                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page6">&laquo; Prev</a></li>
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/">&laquo; Prev</a></li>
               
 
               
@@ -265,7 +273,7 @@
                 
               
                 
-                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page2">2</a></li>
+                <li class="page-item disabled"><span class="webjeda page-link">2</span></li>
                 
               
                 
@@ -285,7 +293,7 @@
                 
               
                 
-                <li class="page-item disabled"><span class="webjeda page-link">7</span></li>
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page7">7</a></li>
                 
               
                 
@@ -294,7 +302,7 @@
               
 
               
-                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page8">Next &raquo;</a></li>
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page3">Next &raquo;</a></li>
               
             </ul>
             

@@ -1,4 +1,4 @@
-I"DI<div class="container">
+I"�N<div class="container">
 
  <!--endif page url is / -->
 
@@ -17,30 +17,28 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/php/ajax/jquery/membuat-fitur-live-search-dengan-ajax/">Membuat fitur live search engine dengan ajax jquery</a>
+	<a class="text-dark" href="http://localhost:4000/live%20chat/codeigniter/memasang-aplikasi-live-chat-di-codeigniter/">pasang aplikasi chat di website yang menggunakan framework codeigniter</a>
 	</h2>
 	<p class="excerpt">
-	   Fitur live search dengan ajax jquery
+	   Akhir-akhir ini perkembangan website sudah sangat berkembang pesat, banyak fitur yang bisa memudahkan kita untuk mendapatkan sebuah informasi digital yang akurat.salah satu layanan ap...
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">php</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#live chat">live chat</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#ajax">ajax</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jquery">jquery</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#codeigniter">Codeigniter</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		22 July 2020
+		05 December 2019
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/php/ajax/jquery/membuat-fitur-live-search-dengan-ajax/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/crud_ajax_live_search.gif" alt="Membuat fitur live search engine dengan ajax jquery" />
+	<a href="http://localhost:4000/live%20chat/codeigniter/memasang-aplikasi-live-chat-di-codeigniter/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/chat/chat.jpg" alt="pasang aplikasi chat di website yang menggunakan framework codeigniter" />
 	</a>
 	</div>
 
@@ -52,28 +50,28 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/php/codeigniter/Warning-Message-Module-already-loaded/">Warning Message: Module already loaded</a>
+	<a class="text-dark" href="http://localhost:4000/phpmailer/codeigniter/kirim-email-multiple-attachment-dengan-library-phpmailer-di-codeigniter/">Kirim Email multiple attachment dengan menggunakan library phpmailer di codeigniter</a>
 	</h2>
 	<p class="excerpt">
-	   Warning Message: Module already loaded
+	   Kali ini kita (kita .. lu aja kali) maksudnya saya, kali ini saya akan membuat sebuah layanan email service dengan menggunakan library dari phpmailer dan codeigniter, ok langsung saja...
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">php</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#phpmailer">phpmailer</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#codeigniter">codeigniter</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#codeigniter">Codeigniter</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		21 July 2020
+		11 November 2019
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/php/codeigniter/Warning-Message-Module-already-loaded/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/error_php_codeigniter.png" alt="Warning Message: Module already loaded" />
+	<a href="http://localhost:4000/phpmailer/codeigniter/kirim-email-multiple-attachment-dengan-library-phpmailer-di-codeigniter/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/phpmailer.png" alt="Kirim Email multiple attachment dengan menggunakan library phpmailer di codeigniter" />
 	</a>
 	</div>
 
@@ -85,32 +83,28 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/php/pdo/ajax/jquery/crud-data-dengan-jquery-ajax/">crud data dengan jquery ajax</a>
+	<a class="text-dark" href="http://localhost:4000/technologies/server/configurasi-static-ip-di-ubuntu-bionic(18.04)/">Konfigurasi Static IP Ubuntu Bionic(18.04)</a>
 	</h2>
 	<p class="excerpt">
-	   crud dengan php ekstensi pdo dengan pemanfaatan api jquery ajax
+	   konfigurasi static ip ubuntu server Bionic(18.04)  kini sudah berbeda dibandingkan dengan Ubuntu Server 16.04 ke bawah.Versi Ubuntu sebelumnya, konfigurasi dilakukan dengan memodifika...
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">php</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#technologies">Technologies</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#pdo">pdo</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#ajax">ajax</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jquery">jquery</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#server">Server</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		03 July 2020
+		25 September 2019
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/php/pdo/ajax/jquery/crud-data-dengan-jquery-ajax/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/ajax.jpeg" alt="crud data dengan jquery ajax" />
+	<a href="http://localhost:4000/technologies/server/configurasi-static-ip-di-ubuntu-bionic(18.04)/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/bionic/bionic.jpg" alt="Konfigurasi Static IP Ubuntu Bionic(18.04)" />
 	</a>
 	</div>
 
@@ -122,28 +116,28 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/php/mysql/membuat-system-polling-dengan-metode-request-ajax-jquery-PHP-PDO/">membuat system polling dengan metode request ajax jquery PHP PDO</a>
+	<a class="text-dark" href="http://localhost:4000/blog/story/kembang-dari-periangan/">Kembang Dari Priangan</a>
 	</h2>
 	<p class="excerpt">
-	     
+	   Tanah Priangan adalah kawasan gunung gemunung yang didalamnya menjadi tempat bermukim sebagian suku sunda dari berbagai kawasan di wilayah priangan lainnya.Adalah merupakan dataran ya...
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">php</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">Blog</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#mysql">mysql</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#story">story</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		29 June 2020
+		16 August 2019
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/php/mysql/membuat-system-polling-dengan-metode-request-ajax-jquery-PHP-PDO/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/system_polling1.png" alt="membuat system polling dengan metode request ajax jquery PHP PDO" />
+	<a href="http://localhost:4000/blog/story/kembang-dari-periangan/">
+	<img class="w-100" src="http://localhost:4000/assets/images/project/skinoc/pic10.jpg" alt="Kembang Dari Priangan" />
 	</a>
 	</div>
 
@@ -155,28 +149,30 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/css/webdev/Satuan-pada-css/">Satuan Pada Css</a>
+	<a class="text-dark" href="http://localhost:4000/news/blog/writer/Tangkuban-Perahu-Erupsi/">Tangkuban Perahu meletus dengan erupsi diperkirakan 'satu minggu' dan masyarakat diminta 'berwaspada letusan tiba-tiba'</a>
 	</h2>
 	<p class="excerpt">
-	   
+	   Gede Suantika, Kepala Bidang Mitigasi Gunung Api. Pusat Vulkanologi dan Mitigasi Bencana Geologi (PVMBG) memperkirakan letusan yang terjadi kali ini “hampir sama” dengan letusan pada ...
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#css">css</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#news">News</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#webdev">webdev</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">Blog</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#writer">Writer</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		28 June 2020
+		26 July 2019
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/css/webdev/Satuan-pada-css/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/css.png" alt="Satuan Pada Css" />
+	<a href="http://localhost:4000/news/blog/writer/Tangkuban-Perahu-Erupsi/">
+	<img class="w-100" src="https://ichef-bbci-co-uk.cdn.ampproject.org/i/s/ichef.bbci.co.uk/news/485/cpsprodpb/2480/production/_108044390_35d62e98-2316-4be6-9fb5-e6af4cf53d6e.jpg" alt="Tangkuban Perahu meletus dengan erupsi diperkirakan 'satu minggu' dan masyarakat diminta 'berwaspada letusan tiba-tiba'" />
 	</a>
 	</div>
 
@@ -188,61 +184,65 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/php/composer/install-composer-on-debian9-stretch/">Install composer on debian 9 stretch</a>
+	<a class="text-dark" href="http://localhost:4000/jekyll/blog/tutorial/Powerfull-things-markdown-editor/">Hal-hal keren yang dapat kalian lakukan dengan editor Markdown</a>
 	</h2>
 	<p class="excerpt">
-	   
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">PHP</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#composer">Composer</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		23 June 2020
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/php/composer/install-composer-on-debian9-stretch/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/composer.png" alt="Install composer on debian 9 stretch" />
-	</a>
-	</div>
-
-</div>
-
-
-        
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/jekyll/ruby/create-pagination-on-jekyll-posts-list-and-post-single-page/">Create pagination on jekyll posts list and post single page</a>
-	</h2>
-	<p class="excerpt">
-	   open _config.yml file on root directori :  adding new plugin config.
+	   Ada banyak hal keren yang dapat Kalian lakukan dengan editor Markdown. Jika Kalian sudah cukup terbiasa dengan menulis di Markdown, maka Kalian dapat menikmati beberapa tips lebih lan...
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
 		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jekyll">Jekyll</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#ruby">ruby</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">Blog</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#tutorial">tutorial</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		27 May 2020
+		26 July 2019
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/jekyll/ruby/create-pagination-on-jekyll-posts-list-and-post-single-page/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/jekyll_pagination.png" alt="Create pagination on jekyll posts list and post single page" />
+	<a href="http://localhost:4000/jekyll/blog/tutorial/Powerfull-things-markdown-editor/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/photo-1.jpeg" alt="Hal-hal keren yang dapat kalian lakukan dengan editor Markdown" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/kajianislam/sunnah/blog/Luasnya-Ampunan-Allah/">Luasnya Ampunan Allah SWT</a>
+	</h2>
+	<p class="excerpt">
+	   Luasnya Ampunan Allah
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#kajianislam">KajianIslam</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#sunnah">Sunnah</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">Blog</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		26 July 2019
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/kajianislam/sunnah/blog/Luasnya-Ampunan-Allah/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/ampunan.jpeg" alt="Luasnya Ampunan Allah SWT" />
 	</a>
 	</div>
 
@@ -256,7 +256,7 @@
             
             <ul class="pagination">
               
-                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page2">&laquo; Prev</a></li>
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page6">&laquo; Prev</a></li>
               
 
               
@@ -269,7 +269,7 @@
                 
               
                 
-                <li class="page-item disabled"><span class="webjeda page-link">3</span></li>
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page3">3</a></li>
                 
               
                 
@@ -285,7 +285,7 @@
                 
               
                 
-                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page7">7</a></li>
+                <li class="page-item disabled"><span class="webjeda page-link">7</span></li>
                 
               
                 
@@ -294,7 +294,7 @@
               
 
               
-                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page4">Next &raquo;</a></li>
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page8">Next &raquo;</a></li>
               
             </ul>
             
