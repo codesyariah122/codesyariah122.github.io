@@ -1,3 +1,7 @@
+// Author : pujiermanto
+// company : Codesyariah
+// update : 25 august 2020
+// No Fruity for Today
 function askYou(url){
 	const baseUrl = url+"/myrooms";
 
