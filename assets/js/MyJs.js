@@ -2,11 +2,11 @@
 // company : Codesyariah
 // update : 25 august 2020
 // No Fruity for Today
-function playAudio(audio){
+function playSound(audio){
 	audio.play();
 }
 
-function pauseAudio(audio){
+function pauseSound(audio){
 	audio.pause()
 }
 
@@ -44,18 +44,18 @@ function askYou(url){
 					})
 					let myAudio = document.querySelector('#crowded');
 
-					playAudio(myAudio);
+					playSound(myAudio);
 					setTimeout(function(){
-						pauseAudio(myAudio);
+						pauseSound(myAudio);
 					}, 1500)
 					$('#MyModal').modal('hide');
 					// document.location.href=url;
 				}else{
 					let myAudio = document.querySelector('#booring');
 
-					playAudio(myAudio);
+					playSound(myAudio);
 					setTimeout(function(){
-						pauseAudio(myAudio);
+						pauseSound(myAudio);
 					}, 1500)
 
 					Swal.fire({
@@ -78,7 +78,7 @@ function askYou(url){
 						    $('#jawaban').trigger('focus');
 						  });
 						});
-						
+
 					  }else{
 					  	Swal.fire('Byee ! ');
 					  	document.location.href=url;
