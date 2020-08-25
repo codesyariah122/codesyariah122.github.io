@@ -4,7 +4,7 @@
 // No Fruity for Today
 function askYou(url){
 	const baseUrl = url+"/myrooms";
-
+	
 	if(location.href === baseUrl){
 		$('#MyModal').modal({
 			show: true,
@@ -12,6 +12,12 @@ function askYou(url){
 			keyboard: false
 		})
 		$('.close').hide();
+		
+		$(document).ready(function() {
+		  $('#MyModal').on('shown.bs.modal', function() {
+		    $('#jawaban').trigger('focus');
+		  });
+		});
 		// document.querySelector('.close').style.display = "none";
 
 		const submit = document.querySelector('#submit');
