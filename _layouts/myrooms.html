@@ -28,13 +28,19 @@ if(myroom === "http://localhost:4000/myrooms"){
 }
 
 </script> -->
+  <audio id="crowded" loop>
+      <source src="{{site.url}}/assets/crowded.mp3" type="audio/mpeg" >
+    </audio>
 
+    <audio id="booring" loop>
+      <source src="{{site.url}}/assets/booring.mp3" type="audio/mpeg" >
+    </audio>
 <!-- Modal -->
 <div class="modal fade" id="MyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Javascript Quiz</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

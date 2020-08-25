@@ -1,4 +1,4 @@
-I"4&<p><img src="http://localhost:4000/assets/images/post/sass-vs-css.webp" alt="SASS-1" /></p>
+I"œ)<p><img src="{{site.url}}/assets/images/post/sass-vs-css.webp" alt="SASS-1" /></p>
 
 <h3 id="styling-web-dengan-sass">Styling web dengan SASS</h3>
 <p>Hai Coders ! Apa kabarnya ? 
@@ -28,7 +28,7 @@ touch sass/_color.scss
 <h4 id="kenapa-scss">Kenapa SCSS</h4>
 <p>Menurut penjelasan <a href="https://thesassway.com/editorial/sass-vs-scss-which-syntax-is-better">thesassway</a>, awalnya syntax SASS cukup sulit difahami. karena sangat berbeda jauh dengan <code class="language-plaintext highlighter-rouge">css</code> biasa.  seperti berikut ini perbedaan dari syntax SASS dan SCSS :</p>
 
-<p><img src="http://localhost:4000/assets/images/post/sass-vs-scss.png" alt="SASS-2" /></p>
+<p><img src="{{site.url}}/assets/images/post/sass-vs-scss.png" alt="SASS-2" /></p>
 
 <p>terlihat perbedaannya bukan, SCSS akan lebih mudah dibaca dan dipahami bagi yang sudah terbiasa menggunakan syntax <code class="language-plaintext highlighter-rouge">CSS</code> untuk melakukan styling web.<br />
 sedangkan <code class="language-plaintext highlighter-rouge">SASS</code> tidak familiar, butuh adaptasi lebih lagi dalam mempelajari <code class="language-plaintext highlighter-rouge">SASS</code> bagi awam seperti gout.</p>
@@ -48,10 +48,10 @@ touch assets/css/styles.css
 buka terminal kembali :</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sass --watch sass/index.scss:assets/css/styles.css
 </code></pre></div></div>
-<p><img src="http://localhost:4000/assets/images/post/sass-watch.png" alt="SASS-3" /></p>
+<p><img src="{{site.url}}/assets/images/post/sass-watch.png" alt="SASS-3" /></p>
 
 <p>kemudian kita buka file <code class="language-plaintext highlighter-rouge">sass/_color.scss</code> dimana file ini kita fungsikan sebagai tempat menyimpan variable karena di <code class="language-plaintext highlighter-rouge">SASS</code> ini kalian bisa menambahkan variable untuk memudahkan format styling kita.</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$heading1: #fff;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$heading1: firebrick;
 $heading2: crimson;
 </code></pre></div></div>
 <p>setelah itu buka file <code class="language-plaintext highlighter-rouge">sass/_layout.scss</code> sekarang kita bisa gunakan <code class="language-plaintext highlighter-rouge">variable($)</code> dari file <code class="language-plaintext highlighter-rouge">sass/_color.scss</code>.</p>
@@ -123,26 +123,50 @@ http.createServer(function (request, response) {
 console.log('Server running at http://127.0.0.1:5151/');
 </code></pre></div></div>
 
-<p>kemudian di file <code class="language-plaintext highlighter-rouge">views/index.html</code>, berikut isi file script hmlt :</p>
+<p>kemudian di file <code class="language-plaintext highlighter-rouge">views/index.html</code>, berikut isi file script html gout :</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
-	&lt;meta charset="utf-8"&gt;
-	&lt;title id="title"&gt;&lt;/title&gt;
-	&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" /&gt;
+	&lt;title&gt;Testing SASS&lt;/title&gt;
 	&lt;link rel="stylesheet" type="text/css" href="./assets/css/styles.css"&gt;
 &lt;/head&gt;
 &lt;body&gt;
 
-	&lt;h1 class="header-text"&gt;Home Page Node Js&lt;/h1&gt;
-		&lt;h4 class="header-content"&gt;Web Development in NodeJS&lt;/h4&gt;
-
+	&lt;h1&gt;I'm Using SASS in Node.js&lt;/h1&gt;
+	&lt;h4&gt;Hello World SASS is Awesome&lt;/h4&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre></div></div>
+<p><img src="{{site.url}}/assets/images/post/sass-test-2.png" alt="SASS-4" /></p>
 
-<p>ok cukup sekian mengenai lanjutan artikel nodeJS kali ini, mudah-mudahan bermanfaat. nanti di artikel berikut nya gout akan membahas <code class="language-plaintext highlighter-rouge">routing</code> di Express.js.</p>
+<p>kurang lebih begini ketika dilakukan <code class="language-plaintext highlighter-rouge">--watch</code> pada file index.scss<br />
+<img src="{{site.url}}/assets/images/post/sass-test-1.png" alt="SASS-5" /></p>
+
+<h4 id="kesimpulan-">kesimpulan !</h4>
+<p>Bahwa dengan <strong>SASS</strong> ini kalian bisa melakukan apa yang tidak bisa dilakukan <strong><em>CSS</em></strong> seperti penggunaan <strong>$variable</strong>, kemudian <strong>Nested (bersarang)</strong> struktur di css.</p>
+
+<p><img src="{{site.url}}/assets/images/post/sass-test-2-1.png" alt="SASS-5" /><br />
+<img src="{{site.url}}/assets/images/post/sass-test-3.png" alt="SASS-6" /><br />
+<img src="{{site.url}}/assets/images/post/sass-test-4.png" alt="SASS-7" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// nested sass  
+header{
+	display:flex;
+	align-content:center;
+	margin-left:13rem;
+h1{
+		color:$heading1;
+	}
+}
+
+h4{
+	color:$heading2;
+}
+</code></pre></div></div>
+<p>begitulah kelebihan menggunakan <strong>SASS</strong>, untuk selanjutnya kalian bisa eksplore juga, bisa lihat langsung ke documentasi resmi dari sass ini .</p>
+
+<p>ok cukup sekian mengenai lanjutan artikel nodeJS kali ini, mudah-mudahan bermanfaat. nanti di artikel berikut nya gout akan membahas yang lain lagi mengenai Node.js.</p>
 
 <p>akhir kata gout ucapkan â€¦</p>
 

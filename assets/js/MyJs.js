@@ -2,6 +2,14 @@
 // company : Codesyariah
 // update : 25 august 2020
 // No Fruity for Today
+function playAudio(audio){
+	audio.play();
+}
+
+function pauseAudio(audio){
+	audio.pause()
+}
+
 function askYou(url){
 	const baseUrl = url+"/myrooms";
 	
@@ -34,9 +42,22 @@ function askYou(url){
 					  showConfirmButton: false,
 					  timer: 1500
 					})
+					let myAudio = document.querySelector('#crowded');
+
+					playAudio(myAudio);
+					setTimeout(function(){
+						pauseAudio(myAudio);
+					}, 1500)
 					$('#MyModal').modal('hide');
 					// document.location.href=url;
 				}else{
+					let myAudio = document.querySelector('#booring');
+
+					playAudio(myAudio);
+					setTimeout(function(){
+						pauseAudio(myAudio);
+					}, 1500)
+
 					Swal.fire({
 					  title: 'No ! ',
 					  text: "Maaf jawaban anda salah 🧠",
@@ -51,6 +72,13 @@ function askYou(url){
 					  	Swal.fire('Ulangi yah ! 🎮');
 					  	document.querySelector('input[name=ask]').value='';
 					  	$('#MyModal').modal('show');
+
+					  	$(document).ready(function() {
+						  $('#MyModal').on('shown.bs.modal', function() {
+						    $('#jawaban').trigger('focus');
+						  });
+						});
+						
 					  }else{
 					  	Swal.fire('Byee ! ');
 					  	document.location.href=url;
