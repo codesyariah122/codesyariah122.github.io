@@ -16,6 +16,7 @@ function askYou(url){
 			let hasil = Math.ceil(0.15 * 29 / 100);
 
 				if(tanya == hasil ){
+					document.querySelector('input[name=ask]').value='';
 					Swal.fire({
 					  position: 'top-end',
 					  icon: 'success',
@@ -23,7 +24,6 @@ function askYou(url){
 					  showConfirmButton: false,
 					  timer: 1500
 					})
-					tanya.value="";
 					$('#MyModal').modal('hide');
 					// document.location.href=url;
 				}else{
