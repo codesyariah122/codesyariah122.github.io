@@ -19,7 +19,7 @@ function askYou(url){
 					Swal.fire({
 					  position: 'top-end',
 					  icon: 'success',
-					  title: 'Jawaban anda benar. Welcome in My Rooms',
+					  title: 'Jawaban anda benar. Welcome in My Rooms <br/>🎉🎇🎁',
 					  showConfirmButton: false,
 					  timer: 1500
 					})
@@ -29,17 +29,21 @@ function askYou(url){
 				}else{
 					Swal.fire({
 					  title: 'No ! ',
-					  text: "Maaf jawaban anda salah",
+					  text: "Maaf jawaban anda salah 🧠",
 					  icon: 'warning',
-					  showCancelButton: false,
+					  showCancelButton: true,
 					  confirmButtonColor: '#3085d6',
 					  cancelButtonColor: '#d33',
-					  confirmButtonText: 'Ok bye ... !'
+					  confirmButtonText: 'Ulangi 🚀',
+					  cancelButtonText: 'Tinggalkan 📚'
 					}).then((result) => {
 					  if (result.value) {
-					  	Swal.fire('Ulangi yah !');
+					  	Swal.fire('Ulangi yah ! 🎮');
 					  	document.querySelector('input[name=ask]').value='';
 					  	$('#MyModal').modal('show');
+					  }else{
+					  	Swal.fire('Byee ! ');
+					  	document.location.href=url;
 					  }
 					})
 
