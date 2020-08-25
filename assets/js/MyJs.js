@@ -8,12 +8,13 @@ function askYou(url){
 			keyboard: false
 		})
 		$('.close').hide();
+		// document.querySelector('.close').style.display = "none";
 
 		const submit = document.querySelector('#submit');
 		submit.addEventListener('click', function(e){
 			const tanya = document.querySelector('input[name=ask]').value;
 			let hasil = Math.ceil(0.15 * 29 / 100);
-			
+
 				if(tanya == hasil ){
 					Swal.fire({
 					  position: 'top-end',
@@ -22,7 +23,10 @@ function askYou(url){
 					  showConfirmButton: false,
 					  timer: 1500
 					})
-				}else if(tanya !== hasil){
+					tanya.value="";
+					$('#MyModal').modal('hide');
+					// document.location.href=url;
+				}else{
 					Swal.fire({
 					  title: 'No ! ',
 					  text: "Maaf jawaban anda salah",
@@ -33,26 +37,12 @@ function askYou(url){
 					  confirmButtonText: 'Ok bye ... !'
 					}).then((result) => {
 					  if (result.value) {
-					    document.location.href=url;
-					  }else{
-					  	document.location.href=url;
+					  	Swal.fire('Ulangi yah !');
+					  	document.querySelector('input[name=ask]').value='';
+					  	$('#MyModal').modal('show');
 					  }
 					})
 
-				}else {
-					Swal.fire({
-						title: 'Error !',
-						text: 'Anda tidak mengisi jawaban',
-						icon: 'danger',
-						confirmButtonText: 'Ok Bye ! ',
-					}).then((result)=>{
-						if(result.value){
-							return tanya;
-						}else{
-							return tanya;
-						}
-						
-					})
 				}
 
 		})
