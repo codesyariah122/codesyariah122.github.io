@@ -1,0 +1,474 @@
+I"QI<div class="container">
+
+ <!--endif page url is / -->
+
+
+<!-- Now the rest of the posts with the usual loop but with an offset:4 on the first page so we can skeep the first 4 posts displayed above -->
+
+<div class="row mt-3">
+
+    <div class="col-md-8 main-loop">
+
+        <h4 class="font-weight-bold spanborder"><span>All Stories</span></h4>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/nativephp/vanilla%20javascript/default-ordering-(sorting)/">Default ordering (sorting) datatables not working</a>
+	</h2>
+	<p class="excerpt">
+	   
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#nativephp">nativephp</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#vanilla javascript">vanilla javascript</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		19 April 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/nativephp/vanilla%20javascript/default-ordering-(sorting)/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/Untitled2.jpg" alt="Default ordering (sorting) datatables not working" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/blog/story/hidup-adalah-ilmu/">hidup adalah ilmu dan hidup dengan ilmu</a>
+	</h2>
+	<p class="excerpt">
+	   apa sih sebenarnya hidup ini??sebuah pertanyaan bagi saya dan diri saya pribadi, mengapa ada bagian saya dan diri saya. apa hakikatnya, apakah ini dengungan dari sebuah istilah lahir ...
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">blog</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#story">story</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		13 April 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/blog/story/hidup-adalah-ilmu/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/ilustrasi-mencari-ilmu.jpg" alt="hidup adalah ilmu dan hidup dengan ilmu" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/linux/server/sorry-that-didn't-work-login-root-debian-9-gnome/">sorry that didn't work login root debian 9 gnome</a>
+	</h2>
+	<p class="excerpt">
+	   
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#linux">linux</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#server">server</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		02 March 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/linux/server/sorry-that-didn't-work-login-root-debian-9-gnome/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/debian9/IMG_20200201_005454.jpg" alt="sorry that didn't work login root debian 9 gnome" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/linux/server/error-404-nginx-saat-menggunakan-framework-codeigniter/">Error 404 nginx saat menggunakan codeigniter</a>
+	</h2>
+	<p class="excerpt">
+	   error 404 ini saya alami ketika saya menggunakan framework codeigniter, permasalahan ini kemungkinan terjadi akibat nginx tidak mengenalidirektori root dari virtualhot project kita ya...
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#linux">linux</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#server">server</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		02 March 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/linux/server/error-404-nginx-saat-menggunakan-framework-codeigniter/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/nginx/nginx_404.png" alt="Error 404 nginx saat menggunakan codeigniter" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/linux/server/install-secure-phpmyadmin-on-debian9-stretch/">install secure phpmyadmin on debian9 stretch</a>
+	</h2>
+	<p class="excerpt">
+	   Step 1 — Installing phpMyAdmin
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#linux">linux</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#server">server</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		28 February 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/linux/server/install-secure-phpmyadmin-on-debian9-stretch/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/phpmyadmin/login.png" alt="install secure phpmyadmin on debian9 stretch" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/linux/server/Error-1698-Access-denied-for-user-'root'@'localhost-di-phpMyAdmin/">Error #1698 Access denied for user 'root'@'localhost di phpMyAdmin</a>
+	</h2>
+	<p class="excerpt">
+	   Assalamualaikum wr. wb
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#linux">linux</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#server">server</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		26 February 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/linux/server/Error-1698-Access-denied-for-user-'root'@'localhost-di-phpMyAdmin/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/nginx/err.png" alt="Error #1698 Access denied for user 'root'@'localhost di phpMyAdmin" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/linux/server/install-driver-iwlwifi-debian9/">install-driver-iwlwifi-debian9</a>
+	</h2>
+	<p class="excerpt">
+	   
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#linux">linux</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#server">server</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		24 February 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/linux/server/install-driver-iwlwifi-debian9/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/debian9/install-driver-wifi-debian-thinkpad-iwlwifi-linux.jpg" alt="install-driver-iwlwifi-debian9" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+        <div class="mt-5">
+         <!-- Pagination links -->
+            
+            <ul class="pagination">
+              
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page5">&laquo; Prev</a></li>
+              
+
+              
+                
+                <li class="page-item"><a class="page-link" href="http://localhost:4000/">1</a></li>
+                
+              
+                
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page2">2</a></li>
+                
+              
+                
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page3">3</a></li>
+                
+              
+                
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page4">4</a></li>
+                
+              
+                
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page5">5</a></li>
+                
+              
+                
+                <li class="page-item disabled"><span class="webjeda page-link">6</span></li>
+                
+              
+                
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page7">7</a></li>
+                
+              
+                
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page8">8</a></li>
+                
+              
+
+              
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page7">Next &raquo;</a></li>
+              
+            </ul>
+            
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+        <div class="sticky-top sticky-top-offset">
+    <h4 class="font-weight-bold spanborder"><span>Featured</span></h4>
+    <ol class="list-featured">
+        
+            <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="http://localhost:4000/blog/story/kembang-dari-periangan/" class="text-dark">Kembang Dari Priangan</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">Blog</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#story">story</a><span class="sep">, </span>
+                    
+                    </span>
+                </span>
+            </span>
+            </li>
+        
+            <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="http://localhost:4000/news/blog/writer/Tangkuban-Perahu-Erupsi/" class="text-dark">Tangkuban Perahu meletus dengan erupsi diperkirakan 'satu minggu' dan masyarakat diminta 'berwaspada letusan tiba-tiba'</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#news">News</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">Blog</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#writer">Writer</a><span class="sep">, </span>
+                    
+                    </span>
+                </span>
+            </span>
+            </li>
+        
+            <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="http://localhost:4000/jekyll/blog/tutorial/Powerfull-things-markdown-editor/" class="text-dark">Hal-hal keren yang dapat kalian lakukan dengan editor Markdown</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jekyll">Jekyll</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">Blog</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#tutorial">tutorial</a><span class="sep">, </span>
+                    
+                    </span>
+                </span>
+            </span>
+            </li>
+        
+            <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="http://localhost:4000/kajianislam/sunnah/blog/Luasnya-Ampunan-Allah/" class="text-dark">Luasnya Ampunan Allah SWT</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#kajianislam">KajianIslam</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#sunnah">Sunnah</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">Blog</a><span class="sep">, </span>
+                    
+                    </span>
+                </span>
+            </span>
+            </li>
+        
+            <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="http://localhost:4000/blog/writer/Gairah-Budaya-Membaca/" class="text-dark">Gairah Budaya Membaca</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">blog</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#writer">writer</a><span class="sep">, </span>
+                    
+                    </span>
+                </span>
+            </span>
+            </li>
+        
+            <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="http://localhost:4000/kajianislam/sunnah/blog/Ramalan-Ali-ra-Zaman-Mendatang/" class="text-dark">Ramalan Ali ra tentang zaman mendatang </a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#kajianislam">KajianIslam</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#sunnah">Sunnah</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">blog</a><span class="sep">, </span>
+                    
+                    </span>
+                </span>
+            </span>
+            </li>
+        
+            <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="http://localhost:4000/kajianislam/sunnah/Mutiara-Hikmah/" class="text-dark">Mutiara Hikmah</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#kajianislam">KajianIslam</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#sunnah">Sunnah</a><span class="sep">, </span>
+                    
+                    </span>
+                </span>
+            </span>
+            </li>
+        
+            <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="http://localhost:4000/kajianislam/sunnah/Muadzin-Abu-Mahdzurah/" class="text-dark">Muadzin Abu Mahdzurah</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#kajianislam">KajianIslam</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#sunnah">Sunnah</a><span class="sep">, </span>
+                    
+                    </span>
+                </span>
+            </span>
+            </li>
+        
+            <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="http://localhost:4000/kajianislam/sunnah/Untung-Terus/" class="text-dark">Untung Terus</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#kajianislam">KajianIslam</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#sunnah">Sunnah</a><span class="sep">, </span>
+                    
+                    </span>
+                </span>
+            </span>
+            </li>
+        
+    </ol>
+</div>
+    </div>
+
+</div>
+
+
+
+</div>
+:ET

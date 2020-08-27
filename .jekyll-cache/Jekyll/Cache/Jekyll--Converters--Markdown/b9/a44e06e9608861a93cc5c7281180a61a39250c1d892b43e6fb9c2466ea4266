@@ -1,0 +1,148 @@
+I"e%<h3 id="liquid-data-in-jekyll">Liquid data in jekyll</h3>
+
+<p>Hai coders ! apa kabarnya semoga selalu dalam keadaan sehat-sehat selalu.<br />
+dalam artikel kali ini gout mau berbagi sebuat tips mengenai pengolahan data di static site generator jekyll ruby.<br />
+dalam artikel ini gout buat sebuah studi kasus dalam mengelola data static di jekyll, kasus nya dimana gout mau membuat templating untuk navigation di layout static website gout. seperti yang kita tau bahwasanya navigation ini berfungsi sebagai link untuk mengarahkan halaman kita ke sebuah page yang kita klik, dan kemudian mesin browser kita akan mengarahkannya pada view yang telah kita arul polarisasinya.</p>
+
+<h5 id="liquid-operasional-data">liquid operasional data</h5>
+
+<p>hal pertama adalah gout membuat sebuah file baru di direktori <code class="language-plaintext highlighter-rouge">_data/</code>, biasanya struktur  direktori di jekyll itu seperti ini …</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+├── _config.yml
+├── _data
+│   └── members.yml
+	└── navigation.yml
+├── _drafts
+│   ├── begin-with-the-crazy-ideas.md
+│   └── on-simplicity-in-technology.md
+├── _includes
+│   ├── footer.html
+│   └── header.html
+├── _layouts
+│   ├── default.html
+│   └── post.html
+├── _posts
+│   ├── 2007-10-29-why-every-programmer-should-play-nethack.md
+│   └── 2009-04-26-barcamp-boston-4-roundup.md
+├── _sass
+│   ├── _base.scss
+│   └── _layout.scss
+├── _site
+├── .jekyll-metadata
+└── index.html # can also be an 'index.md' with valid front matter
+</code></pre></div></div>
+<p>seperti terlihat di struktur data di atas ada direktori <code class="language-plaintext highlighter-rouge">_data</code>, di direktori tersebut gout membuat sebauh file baru untuk menyimpan data yang akan di olah nantinya <code class="language-plaintext highlighter-rouge">_data/navigation.yml</code>, dengan format YAML.</p>
+
+<ul>
+  <li>YAML :<br />
+<strong><em>YAML</em></strong> adalah sebuah format serialisasi data yang mengambil konsep dari bahasa-bahasa seperti <code class="language-plaintext highlighter-rouge">XML, C, PYTHON, perl</code> serta format surat elektronik seperti yang tercantum dalam RFC 2822. YAML pertama kali diusulkan oleh Clark Evans pada tahun 2001 [1] yang merancang format ini bersama dengan Ingy döt Net dan Oren Ben-Kiki. YAML tersedia bagi beberapa bahasa dan skrip pemrograman.</li>
+</ul>
+
+<p>Pada awal pengembangannya, YAML dimaksudkan sebagai singkatan dari “Yet Another Markup Language” [2]. Dalam perkembangannya, untuk menegaskan tujuannya yang terfokus pada data dan bukan markah dokumen, YAML diubah menjadi singkatan rekursif dari “YAML Ain’t a Markup Language.”.<br />
+….begitulah sedikit wiki dari <code class="language-plaintext highlighter-rouge">YAML</code> format.</p>
+
+<ul>
+  <li>Lanjut lagi</li>
+</ul>
+
+<p>lanjut lagi ke judul artikel kita mengenai passing data di jekyll menggunakan YAML format. setelah sebelumnya gout membuat sebuah file di <code class="language-plaintext highlighter-rouge">_data/navigation.yml</code>, dan isi dari file navigation ini adalah sepert berikut :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- name: Home
+  url: /
+
+- name: About
+  url: /about/
+
+- name: Project
+  url: /project/
+</code></pre></div></div>
+<p>file <code class="language-plaintext highlighter-rouge">navigation.yml</code> ini nanti akan kita gunakan di template kita, di sini gout mau pasing data <code class="language-plaintext highlighter-rouge">navigation.yml</code> ini di template utama, yaitu template <code class="language-plaintext highlighter-rouge">home.html</code>.<br />
+layout <code class="language-plaintext highlighter-rouge">_layouts/home.html</code> ini akan meng include file di <code class="language-plaintext highlighter-rouge">_includes/header.html</code>, seperti code dari file <code class="language-plaintext highlighter-rouge">home.html</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+{&amp;#37; include header.html &amp;#37;}
+
+&lt;main class="page-content" aria-label="Content"&gt;
+  
+{&amp;#37; include switchButton.html &amp;#37;}
+
+      &lt;div class="wrapper content container"&gt;
+        	&lt;div class="home"&gt;
+    			&lt;div class="posts"&gt;
+    				&lt;div class="row justify-content-center"&gt;
+    					&lt;div class="col-xs-6 col-sm"&gt;
+				{{content}}
+			&lt;/div&gt;	
+		&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+
+{&amp;#37; include footer.html &amp;#37;}
+</code></pre></div></div>
+
+<ul>
+  <li>Kemudian isi file <code class="language-plaintext highlighter-rouge">_includes/header.html</code> :</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!doctype html&gt;
+&lt;html lang="en" id="data-theme"&gt;
+  &lt;head&gt;
+    &lt;!-- Required meta tags --&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;
+    &lt;link rel="shortcut icon" type="image/png" href="{{site.url}}/favicon.ico"&gt;
+    &lt;!-- Bootstrap CSS --&gt;
+      &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"&gt;
+      &lt;link href="https://fonts.googleapis.com/css2?family=Lalezar&amp;family=Lobster&amp;family=Rambla&amp;family=Satisfy&amp;display=swap" rel="stylesheet"&gt;
+      &lt;link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"&gt;
+      &lt;link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&amp;display=swap" rel="stylesheet"&gt; 
+      &lt;link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&amp;display=swap" rel="stylesheet"&gt; 
+      &lt;link rel="stylesheet" href="{{'/public/css/main.css' | absolute_url}}"&gt;
+      &lt;link rel="stylesheet" href="{{'/public/css/hyde.css' | absolute_url}}"&gt;
+      &lt;link rel="stylesheet" href="{{'/public/css/poole.css' | absolute_url}}"&gt;
+      &lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"&gt;
+      &lt;link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&amp;family=Source+Code+Pro:wght@200&amp;display=swap" rel="stylesheet"&gt; 
+      
+ &lt;title&gt;{{site.title}}&lt;/title&gt;
+
+&lt;/head&gt;
+
+  &lt;body&gt;
+  
+        {&amp;#37; include navbar.html &amp;#37;}
+
+
+        &lt;p class="small"&gt;&amp;copy; {{page.date | date: "&amp;#37;Y"}}
+           &lt;a href='mailto:{{author.email}}'&gt;{{author.name}}.&lt;/a&gt;  All rights reserved.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+</code></pre></div></div>
+<p>pada dasarnya isi file dari <code class="language-plaintext highlighter-rouge">header.html</code> tersebut adalah file html lengkap untuk polarisasi layouting di aplikasi jekyll gout. dan di file <code class="language-plaintext highlighter-rouge">header.html</code> tersebut terdapat script <strong><em>liquid</em></strong> yaitu di <code class="language-plaintext highlighter-rouge">{&amp;#37; include navbar.html &amp;#37;}</code>, script include file navbar ini lah yang menjadi fokus utama di artikel kali ini.</p>
+
+<ul>
+  <li>lanjut lagi …<br />
+dan selanjutnya kita buka file yang masih berada satu file dengan file <code class="language-plaintext highlighter-rouge">header.html</code> yaitu direktori <code class="language-plaintext highlighter-rouge">_includes</code> kita buka file <code class="language-plaintext highlighter-rouge">_includes/navbar.html</code>, berikut isi file <code class="language-plaintext highlighter-rouge">navbar.html</code> :</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;nav id="navbar" class="sidebar-nav"&gt;
+	{&amp;#37; for nav in site.data.navigation &amp;#37;}
+	   &lt;a href="{{site.url}}{{ nav.url }}" class="sidebar-nav-item {&amp;#37; if nav.url == page.url &amp;#37;} active {&amp;#37; endif &amp;#37;} "&gt;
+	      {{ nav.name }}
+	   &lt;/a&gt;
+	 {&amp;#37; endfor &amp;#37;}
+&lt;/nav&gt;
+</code></pre></div></div>
+<p>di file tersebut gout melakukan <code class="language-plaintext highlighter-rouge">passing data</code> dari file yang ada di direktori <code class="language-plaintext highlighter-rouge">_data/</code> yaitu file <code class="language-plaintext highlighter-rouge">navigation.html</code> script liquid berikut yang gout gunakan untuk looping data dari file <code class="language-plaintext highlighter-rouge">_data/navigation.yml</code>. dibagian ini lah fokus utama kita di artikel kali ini :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{&amp;#37; for nav in site.data.navigation &amp;#37;} //melakukan passing data dari file navigation.html di direktori _data/ kita looping  data tersebut 
+{{nav.url}} {{nav.name}} // dua item yang ada di file navigation.yml
+{&amp;#37; endfor &amp;#37;} // kemudian kita akhiri loopingnya
+</code></pre></div></div>
+
+<p>Ok sekian dulu artikel mengenai jekyll data ini, akhir kata gout ucapkan terima kasih, jangan lupa jaga selalu kesehatan kita. Salam sukses selalu.</p>
+
+<p>By. Puji Ermanto</p>
+
+:ET

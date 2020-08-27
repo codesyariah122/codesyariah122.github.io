@@ -17,4 +17,5 @@ group :jekyll_plugins do
     gem "jekyll-paginate"
   	gem "jekyll-coffeescript"
   	gem "jekyll-sass-converter"
+  	gem "rouge"
 end

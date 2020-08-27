@@ -1,0 +1,516 @@
+I"+t<h3 id="liquid-data-in-jekyll">Liquid data in jekyll</h3>
+
+<p>Hai coders ! apa kabarnya semoga selalu dalam keadaan sehat-sehat selalu.<br />
+dalam artikel kali ini gout mau berbagi sebuat tips mengenai pengolahan data di static site generator jekyll ruby.<br />
+dalam artikel ini gout buat sebuah studi kasus dalam mengelola data static di jekyll, kasus nya dimana gout mau membuat templating untuk navigation di layout static website gout. seperti yang kita tau bahwasanya navigation ini berfungsi sebagai link untuk mengarahkan halaman kita ke sebuah page yang kita klik, dan kemudian mesin browser kita akan mengarahkannya pada view yang telah kita arul polarisasinya.</p>
+
+<h5 id="liquid-operasional-data">liquid operasional data</h5>
+
+<p>hal pertama adalah gout membuat sebuah file baru di direktori <code class="language-plaintext highlighter-rouge">_data/</code>, biasanya struktur  direktori di jekyll itu seperti ini …</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+├── _config.yml
+├── _data
+│   └── members.yml
+	└── navigation.yml
+├── _drafts
+│   ├── begin-with-the-crazy-ideas.md
+│   └── on-simplicity-in-technology.md
+├── _includes
+│   ├── footer.html
+│   └── header.html
+├── _layouts
+│   ├── default.html
+│   └── post.html
+├── _posts
+│   ├── 2007-10-29-why-every-programmer-should-play-nethack.md
+│   └── 2009-04-26-barcamp-boston-4-roundup.md
+├── _sass
+│   ├── _base.scss
+│   └── _layout.scss
+├── _site
+├── .jekyll-metadata
+└── index.html # can also be an 'index.md' with valid front matter
+</code></pre></div></div>
+<p>seperti terlihat di struktur data di atas ada direktori <code class="language-plaintext highlighter-rouge">_data</code>, di direktori tersebut gout membuat sebauh file baru untuk menyimpan data yang akan di olah nantinya <code class="language-plaintext highlighter-rouge">_data/navigation.yml</code>, dengan format YAML.</p>
+
+<ul>
+  <li>YAML :<br />
+<strong><em>YAML</em></strong> adalah sebuah format serialisasi data yang mengambil konsep dari bahasa-bahasa seperti <code class="language-plaintext highlighter-rouge">XML, C, PYTHON, perl</code> serta format surat elektronik seperti yang tercantum dalam RFC 2822. YAML pertama kali diusulkan oleh Clark Evans pada tahun 2001 [1] yang merancang format ini bersama dengan Ingy döt Net dan Oren Ben-Kiki. YAML tersedia bagi beberapa bahasa dan skrip pemrograman.</li>
+</ul>
+
+<p>Pada awal pengembangannya, YAML dimaksudkan sebagai singkatan dari “Yet Another Markup Language” [2]. Dalam perkembangannya, untuk menegaskan tujuannya yang terfokus pada data dan bukan markah dokumen, YAML diubah menjadi singkatan rekursif dari “YAML Ain’t a Markup Language.”.<br />
+….begitulah sedikit wiki dari <code class="language-plaintext highlighter-rouge">YAML</code> format.</p>
+
+<ul>
+  <li>Lanjut lagi</li>
+</ul>
+
+<p>lanjut lagi ke judul artikel kita mengenai passing data di jekyll menggunakan YAML format. setelah sebelumnya gout membuat sebuah file di <code class="language-plaintext highlighter-rouge">_data/navigation.yml</code>, dan isi dari file navigation ini adalah sepert berikut :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- name: Home
+  url: /
+
+- name: About
+  url: /about/
+
+- name: Project
+  url: /project/
+</code></pre></div></div>
+<p>file <code class="language-plaintext highlighter-rouge">navigation.yml</code> ini nanti akan kita gunakan di template kita, di sini gout mau pasing data <code class="language-plaintext highlighter-rouge">navigation.yml</code> ini di template utama, yaitu template <code class="language-plaintext highlighter-rouge">home.html</code>.<br />
+layout <code class="language-plaintext highlighter-rouge">_layouts/home.html</code> ini akan meng include file di <code class="language-plaintext highlighter-rouge">_includes/header.html</code>, seperti code dari file <code class="language-plaintext highlighter-rouge">home.html</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+{&amp;percnt; include header.html &amp;percnt;}
+
+&lt;main class="page-content" aria-label="Content"&gt;
+  
+{&amp;percnt; include switchButton.html &amp;percnt;}
+
+      &lt;div class="wrapper content container"&gt;
+        	&lt;div class="home"&gt;
+    			&lt;div class="posts"&gt;
+    				&lt;div class="row justify-content-center"&gt;
+    					&lt;div class="col-xs-6 col-sm"&gt;
+				
+&lt;div class="container"&gt;
+
+	    &lt;audio id="myAudio" loop&gt;
+      &lt;source src="http://localhost:4000/assets/Night-sounds.mp3" type="audio/mpeg" &gt;
+    &lt;/audio&gt;
+
+    &lt;ul id="day-mode"&gt;
+            &lt;input type="checkbox" id="day" name="day"&gt;
+            &lt;label for="day" id="day-label" class="mode-label"&gt;🌤&lt;/label&gt;
+
+            &lt;!-- &lt;div class="night-text" id="text-mode"&gt;Switch night&lt;/div&gt; --&gt;
+    &lt;/ul&gt;
+
+    &lt;ul id="night-mode"&gt;
+            &lt;input type="checkbox" id="night" name="night"&gt;
+            &lt;label for="night" id="night-label" class="mode-label"&gt;🌛&lt;/label&gt;
+
+&lt;!--             &lt;div class="day-text" id="text-mode"&gt;Switch day&lt;/div&gt; --&gt;
+    &lt;/ul&gt;
+
+&lt;div class="jumbotron jumbotron-fluid mb-3 pl-0 pt-0 pb-0 bg-white position-relative"&gt;
+		&lt;div class="h-100 tofront"&gt;
+			&lt;div class="row  justify-content-between "&gt;
+				&lt;div class=" col-md-6  pr-0 pr-md-4 pt-4 pb-4 align-self-center"&gt;
+					&lt;p class="text-uppercase font-weight-bold"&gt;
+                        &lt;span class="catlist"&gt;
+						
+                          &lt;a class="sscroll text-danger" href="/categories.html#nodejs"&gt;nodejs&lt;/a&gt;&lt;span class="sep"&gt;, &lt;/span&gt;
+                        
+                          &lt;a class="sscroll text-danger" href="/categories.html#sass"&gt;sass&lt;/a&gt;&lt;span class="sep"&gt;, &lt;/span&gt;
+                        
+                        &lt;/span&gt;
+					&lt;/p&gt;
+					&lt;h1 class="display-4 mb-4 article-headline"&gt;Memulai SASS di NodeJS&lt;/h1&gt;
+					&lt;div class="d-flex align-items-center"&gt;
+                        
+                        &lt;img class="rounded-circle" src="http://localhost:4000//assets/images/bio/uji.jpg" alt="Puji Ermanto" width="70"/&gt;
+                        
+						&lt;small class="ml-3"&gt; Puji Ermanto &lt;span&gt;&lt;a target="_blank" href="https://twitter.com/pujiermanto" class="btn btn-outline-success btn-sm btn-round ml-1"&gt;Follow&lt;/a&gt;&lt;/span&gt;
+                            &lt;span class="text-muted d-block mt-1"&gt;Aug 25, 2020 · &lt;span class="reading-time"&gt;
+  
+  
+    5 mins read
+  
+&lt;/span&gt;
+    &lt;/span&gt;
+						&lt;/small&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+                
+				&lt;div class="col-md-6 pr-0 align-self-center"&gt;
+					&lt;img class="rounded" src="/assets/images/post/sass.png" alt="Memulai SASS di NodeJS"&gt;
+				&lt;/div&gt;
+                
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+
+&lt;div class="container-lg pt-4 pb-4"&gt;
+	&lt;div class="row justify-content-center"&gt;
+        
+        
+        &lt;!-- Share --&gt;
+		&lt;div class="col-lg-2 pr-4 mb-4 col-md-12"&gt;
+			&lt;div class="sticky-top sticky-top-offset text-center"&gt;
+				&lt;div class="text-muted"&gt;
+					Share this
+				&lt;/div&gt;
+				&lt;div class="share d-inline-block"&gt;
+					&lt;!-- AddToAny BEGIN --&gt;
+					&lt;div class="a2a_kit a2a_kit_size_32 a2a_default_style"&gt;
+						&lt;a class="a2a_dd" href="https://www.addtoany.com/share"&gt;&lt;/a&gt;
+						&lt;a class="a2a_button_facebook"&gt;&lt;/a&gt;
+						&lt;a class="a2a_button_twitter"&gt;&lt;/a&gt;
+					&lt;/div&gt;
+					&lt;script async src="https://static.addtoany.com/menu/page.js"&gt;&lt;/script&gt;
+					&lt;!-- AddToAny END --&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+        
+        
+		&lt;div class="col-md-12 col-lg-8"&gt;
+            
+            &lt;!-- Article --&gt;
+			&lt;article class="article-post"&gt;                
+			&lt;p&gt;&lt;img src="http://localhost:4000/assets/images/post/sass-vs-css.webp" alt="SASS-1" /&gt;&lt;/p&gt;
+
+&lt;h3 id="styling-web-dengan-sass"&gt;Styling web dengan SASS&lt;/h3&gt;
+&lt;p&gt;Hai Coders ! Apa kabarnya ? 
+Semoga sehat-sehat selalu. 
+Dalam artikel kali ini gout mau bahas mengenai sass, sass adalah tools atau library yang melengkapi kebutuhan dalam kerangka design. melengkapi kinerja css (cascading stylesheet) yaitu format scripting untuk menambahkan styling bagi keperluan web design dalam hal ini juga bisa di sematkan kepada front end web developer. SASS menjadi tools pelengkap para developer web era milenial.&lt;/p&gt;
+
+&lt;h4 id="apa-itu-sass-"&gt;Apa itu SASS ?&lt;/h4&gt;
+&lt;p&gt;SASS merupakan singkatan dari Syntactically Awesome Style Sheets. SASS adalah sebuah bahasa pra-prosesor (preprocessor) untuk CSS.&lt;/p&gt;
+
+&lt;p&gt;SASS bukanlah bahasa pemrograman, SASS tools library , scripting untuk melengkapi kerangka design dari css.&lt;br /&gt;
+so untuk developer web dengan skala yang besar dan design yang kompleks mungkin sass bisa sangat bermanfaat. gout sendiri baru baru ini mulai tertarik menggunakan SASS, dan itu terasa memudahkan sekali dalam proses mendesign sebuah project khususnya web development.&lt;/p&gt;
+
+&lt;h3 id="memulai-sass"&gt;Memulai SASS&lt;/h3&gt;
+&lt;p&gt;dalam project artikel kali ini gout masih menggunakan &lt;code class="language-plaintext highlighter-rouge"&gt;Node.js&lt;/code&gt; untuk membuat project web. dalam project kali ini gout mencoba menambahkan module untuk SASS di &lt;code class="language-plaintext highlighter-rouge"&gt;Node.js&lt;/code&gt; yaitu &lt;code class="language-plaintext highlighter-rouge"&gt;node-sass&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;install sass
+npm install node-sass --savev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;kemudian buat direktori baru di root direktori project kita dengan nama &lt;code class="language-plaintext highlighter-rouge"&gt;sass&lt;/code&gt;&lt;/p&gt;
+&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;mkdir -p sass
+chmod 777 sass/.*
+touch sass/index.scss
+touch sass/_layout.scss
+touch sass/_color.scss
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;mungkin untuk sebagian orang SASS adalah hal baru, sama seperti gout waktu pertama mengenal SASS, dilihat dari format ekstensi file nya yaitu &lt;code class="language-plaintext highlighter-rouge"&gt;.scss&lt;/code&gt; .&lt;/p&gt;
+&lt;h4 id="kenapa-scss"&gt;Kenapa SCSS&lt;/h4&gt;
+&lt;p&gt;Menurut penjelasan &lt;a href="https://thesassway.com/editorial/sass-vs-scss-which-syntax-is-better"&gt;thesassway&lt;/a&gt;, awalnya syntax SASS cukup sulit difahami. karena sangat berbeda jauh dengan &lt;code class="language-plaintext highlighter-rouge"&gt;css&lt;/code&gt; biasa.  seperti berikut ini perbedaan dari syntax SASS dan SCSS :&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:4000/assets/images/post/sass-vs-scss.png" alt="SASS-2" /&gt;&lt;/p&gt;
+
+&lt;p&gt;terlihat perbedaannya bukan, SCSS akan lebih mudah dibaca dan dipahami bagi yang sudah terbiasa menggunakan syntax &lt;code class="language-plaintext highlighter-rouge"&gt;CSS&lt;/code&gt; untuk melakukan styling web.&lt;br /&gt;
+sedangkan &lt;code class="language-plaintext highlighter-rouge"&gt;SASS&lt;/code&gt; tidak familiar, butuh adaptasi lebih lagi dalam mempelajari &lt;code class="language-plaintext highlighter-rouge"&gt;SASS&lt;/code&gt; bagi awam seperti gout.&lt;/p&gt;
+
+&lt;h4 id="selanjutnya"&gt;Selanjutnya&lt;/h4&gt;
+&lt;p&gt;setelah membuat direktori &lt;code class="language-plaintext highlighter-rouge"&gt;sass/&lt;/code&gt; dari diatas, kemudian kita membuat direktori untuk &lt;code class="language-plaintext highlighter-rouge"&gt;css&lt;/code&gt; gout menyimpan nya di &lt;code class="language-plaintext highlighter-rouge"&gt;assets/css/&lt;/code&gt;&lt;/p&gt;
+&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;mkdir -p assets/css/
+chmod 777 assets/css/.*
+touch assets/css/styles.css
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;di SASS kalian tinggal buka satu file saja sebagai target styling, disini gout menggunakan file &lt;code class="language-plaintext highlighter-rouge"&gt;SASS&lt;/code&gt; di &lt;code class="language-plaintext highlighter-rouge"&gt;sass/_layout.scss&lt;/code&gt;.  sebelumnya buka file &lt;code class="language-plaintext highlighter-rouge"&gt;sass/index.scss&lt;/code&gt;, kemudian import tiap file sass yang akan di configurasi sebagai base styling.&lt;/p&gt;
+&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;//file index.scss
+@import '_color.scss';
+@import '_layout.scss';
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;kemudian buka file &lt;code class="language-plaintext highlighter-rouge"&gt;sass/_layout.scss&lt;/code&gt;, dan untuk memulai configurasi sass kalian, di sass ada fungsi &lt;code class="language-plaintext highlighter-rouge"&gt;--watch&lt;/code&gt; , kalian bisa lihat di dokumentasi sass &lt;a href="https://sass-lang.com/guide"&gt;Doc(guide) SASS&lt;/a&gt;. kita bisa menggunakan &lt;code class="language-plaintext highlighter-rouge"&gt;--watch&lt;/code&gt; ini untuk memonitor target untuk file &lt;code class="language-plaintext highlighter-rouge"&gt;css&lt;/code&gt; nya dimana dalam artikel ini file css gout ada di direktori &lt;code class="language-plaintext highlighter-rouge"&gt;assets/css/styles.css&lt;/code&gt;.&lt;br /&gt;
+buka terminal kembali :&lt;/p&gt;
+&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;sass --watch sass/index.scss:assets/css/styles.css
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src="http://localhost:4000/assets/images/post/sass-watch.png" alt="SASS-3" /&gt;&lt;/p&gt;
+
+&lt;p&gt;kemudian kita buka file &lt;code class="language-plaintext highlighter-rouge"&gt;sass/_color.scss&lt;/code&gt; dimana file ini kita fungsikan sebagai tempat menyimpan variable karena di &lt;code class="language-plaintext highlighter-rouge"&gt;SASS&lt;/code&gt; ini kalian bisa menambahkan variable untuk memudahkan format styling kita.&lt;/p&gt;
+&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;$heading1: firebrick;
+$heading2: crimson;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;setelah itu buka file &lt;code class="language-plaintext highlighter-rouge"&gt;sass/_layout.scss&lt;/code&gt; sekarang kita bisa gunakan &lt;code class="language-plaintext highlighter-rouge"&gt;variable($)&lt;/code&gt; dari file &lt;code class="language-plaintext highlighter-rouge"&gt;sass/_color.scss&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;h1, h2, h3{
+	color: $heading1;
+}  
+h3, h4{
+	color: $heading2;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;dalam project kali ini gout menggunakan &lt;code class="language-plaintext highlighter-rouge"&gt;Node.js&lt;/code&gt;, di &lt;code class="language-plaintext highlighter-rouge"&gt;Node.js&lt;/code&gt; sepert ini konfigurasi &lt;code class="language-plaintext highlighter-rouge"&gt;Node.js&lt;/code&gt; gout :  gout menggunakan file &lt;code class="language-plaintext highlighter-rouge"&gt;server.js&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;//file = server.js
+const http = require('http');
+const fs = require('fs');
+const path = require('path');
+
+http.createServer(function (request, response) {
+    console.log('request ', request.url);
+
+    let filePath = '.' + request.url;
+
+    if (filePath == './') {
+        filePath = './views/index.html';
+    }
+
+    const extname = String(path.extname(filePath)).toLowerCase();
+    const mimeTypes = {
+        '.html': 'text/html',
+        '.js': 'text/javascript',
+        '.css': 'text/css',
+        '.json': 'application/json',
+        '.png': 'image/png',
+        '.jpg': 'image/jpg',
+        '.gif': 'image/gif',
+        '.svg': 'image/svg+xml',
+        '.wav': 'audio/wav',
+        '.mp4': 'video/mp4',
+        '.woff': 'application/font-woff',
+        '.ttf': 'application/font-ttf',
+        '.eot': 'application/vnd.ms-fontobject',
+        '.otf': 'application/font-otf',
+        '.wasm': 'application/wasm'
+    };
+
+    const contentType = mimeTypes[extname] || 'application/octet-stream';
+
+    fs.readFile(filePath, function(error, content) {
+        if (error) {
+            if(error.code == 'ENOENT') {
+                fs.readFile('./404.html', function(error, content) {
+                    response.writeHead(404, { 'Content-Type': 'text/html' });
+
+                    response.end(content, 'utf-8');
+                });
+            }
+            else {
+                response.writeHead(500);
+                response.end('Sorry, check with the site admin for error: '+error.code+' ..\n');
+            }
+        }
+        else {
+            response.writeHead(200, { 'Content-Type': contentType });
+            response.end(content, 'utf-8');
+        }
+    });
+
+}).listen(5151);
+console.log('Server running at http://127.0.0.1:5151/');
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;kemudian di file &lt;code class="language-plaintext highlighter-rouge"&gt;views/index.html&lt;/code&gt;, berikut isi file script html gout :&lt;/p&gt;
+
+&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+&amp;lt;head&amp;gt;
+	&amp;lt;title&amp;gt;Testing SASS&amp;lt;/title&amp;gt;
+	&amp;lt;link rel="stylesheet" type="text/css" href="./assets/css/styles.css"&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+
+	&amp;lt;h1&amp;gt;I'm Using SASS in Node.js&amp;lt;/h1&amp;gt;
+	&amp;lt;h4&amp;gt;Hello World SASS is Awesome&amp;lt;/h4&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src="http://localhost:4000/assets/images/post/sass-test-2.png" alt="SASS-4" /&gt;&lt;/p&gt;
+
+&lt;p&gt;kurang lebih begini ketika dilakukan &lt;code class="language-plaintext highlighter-rouge"&gt;--watch&lt;/code&gt; pada file index.scss&lt;br /&gt;
+&lt;img src="http://localhost:4000/assets/images/post/sass-test-1.png" alt="SASS-5" /&gt;&lt;/p&gt;
+
+&lt;h4 id="kesimpulan-"&gt;kesimpulan !&lt;/h4&gt;
+&lt;p&gt;Bahwa dengan &lt;strong&gt;SASS&lt;/strong&gt; ini kalian bisa melakukan apa yang tidak bisa dilakukan &lt;strong&gt;&lt;em&gt;CSS&lt;/em&gt;&lt;/strong&gt; seperti penggunaan &lt;strong&gt;$variable&lt;/strong&gt;, kemudian &lt;strong&gt;Nested (bersarang)&lt;/strong&gt; struktur di css.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:4000/assets/images/post/sass-test-2-1.png" alt="SASS-5" /&gt;&lt;br /&gt;
+&lt;img src="http://localhost:4000/assets/images/post/sass-test-3.png" alt="SASS-6" /&gt;&lt;br /&gt;
+&lt;img src="http://localhost:4000/assets/images/post/sass-test-4.png" alt="SASS-7" /&gt;&lt;/p&gt;
+
+&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;// nested sass  
+header{
+	display:flex;
+	align-content:center;
+	margin-left:13rem;
+h1{
+		color:$heading1;
+	}
+}
+
+h4{
+	color:$heading2;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;begitulah kelebihan menggunakan &lt;strong&gt;SASS&lt;/strong&gt;, untuk selanjutnya kalian bisa eksplore juga, bisa lihat langsung ke documentasi resmi dari sass ini .&lt;/p&gt;
+
+&lt;p&gt;ok cukup sekian mengenai lanjutan artikel nodeJS kali ini, mudah-mudahan bermanfaat. nanti di artikel berikut nya gout akan membahas yang lain lagi mengenai Node.js.&lt;/p&gt;
+
+&lt;p&gt;akhir kata gout ucapkan …&lt;/p&gt;
+
+&lt;p&gt;wassalaam&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Puji Ermanto&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+                
+			&lt;/article&gt;
+			
+			&lt;!-- Tags --&gt;
+			&lt;div class="mb-4"&gt;
+				&lt;span class="taglist"&gt;
+				
+				  &lt;a class="sscroll btn btn-light btn-sm font-weight-bold" href="/tags.html#fullstack_developer"&gt;fullstack_developer&lt;/a&gt;
+				
+				&lt;/span&gt;
+			&lt;/div&gt;
+ 
+            &lt;!-- Mailchimp Subscribe Form --&gt;
+            
+			&lt;div class="border p-5 bg-lightblue"&gt;
+				&lt;div class="row justify-content-between"&gt;
+					&lt;div class="col-md-6 mb-2 mb-md-0"&gt;
+						&lt;h5 class="font-weight-bold"&gt;Join Newsletter&lt;/h5&gt;
+						 Get the latest news right in your inbox. We never spam!
+					&lt;/div&gt;
+					&lt;div class="col-md-6"&gt;
+						&lt;div class="row"&gt;
+                            &lt;form action="http://eepurl.com/gEvV-f" method="post" name="mc-embedded-subscribe-form" class="wj-contact-form validate w-100" target="_blank" novalidate&gt;
+                            &lt;div class="mc-field-group"&gt;
+							
+								&lt;input type="email" placeholder="Enter e-mail address" name="EMAIL" class="required email form-control w-100" id="mce-EMAIL" autocomplete="on" required&gt;
+							
+							
+								&lt;button type="submit" value="Subscribe" name="subscribe" class="heart btn btn-success btn-block w-100 mt-2"&gt;Subscribe&lt;/button&gt;
+							
+                            &lt;/div&gt;
+                            &lt;/form&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+            
+            
+            
+             &lt;!-- Author Box --&gt;
+                				
+				&lt;div class="row mt-5"&gt;
+					&lt;div class="col-md-2 align-self-center"&gt;
+                         
+                        &lt;img class="rounded-circle" src="http://localhost:4000//assets/images/bio/uji.jpg" alt="Puji Ermanto" width="90"/&gt;
+                         
+					&lt;/div&gt;
+					&lt;div class="col-md-10"&gt;		
+                        &lt;h5 class="font-weight-bold"&gt;Ditulis Oleh Puji Ermanto &lt;span&gt;&lt;a target="_blank" href="https://twitter.com/pujiermanto" class="btn btn-outline-success btn-sm btn-round ml-2"&gt;Follow&lt;/a&gt;&lt;/span&gt;&lt;/h5&gt;
+						Adalah seorang freelancer web developer, blogger, dan sekarang bekerja sebagai web developer sekaligus IT Staf di PT.Gemilang Citrus Berjaya					
+					&lt;/div&gt;
+				&lt;/div&gt;				
+                
+            
+            &lt;!-- Comments --&gt;
+            
+                &lt;!--  Don't edit anything here. Set your disqus id in _config.yml --&gt;
+
+&lt;div id="comments" class="mt-5"&gt;
+    &lt;div id="disqus_thread"&gt;
+    &lt;/div&gt;
+    &lt;script type="text/javascript"&gt;
+        var disqus_shortname = 'codesyariah122-github-io'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    &lt;/script&gt;
+    &lt;noscript&gt;
+    Please enable JavaScript to view the &lt;a href="http://disqus.com/?ref_noscript"&gt;comments powered by Disqus.&lt;/a&gt;
+    &lt;/noscript&gt;
+&lt;/div&gt;
+            
+            
+		&lt;/div&gt;
+        
+        
+	&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;!-- Aletbar Prev/Next --&gt;
+&lt;div class="alertbar"&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="row prevnextlinks small font-weight-bold"&gt;
+          
+            &lt;div class="col-md-6 rightborder pl-0"&gt;
+                &lt;a class="text-dark" href="/nodejs/javascript/mencicipi-express-js-framework-untuk-nodeJS/"&gt; &lt;img height="30px" class="mr-1" src="/assets/images/post/express.jpg"&gt;  Mencicipi Express Framework untuk NodeJS&lt;/a&gt;
+            &lt;/div&gt;
+          
+          
+            &lt;div class="col-md-6 text-right pr-0"&gt;
+                &lt;a class="text-dark" href="/jekyll/ruby/passing-data-dengan-liquid-di-jekyll/"&gt; Passing data di jekyll dengan liquid dan yaml  &lt;img height="30px" class="ml-1" src="/assets/images/post/jekyll-data.jpeg"&gt; &lt;/a&gt;
+            &lt;/div&gt;
+          
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+			&lt;/div&gt;	
+		&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+
+{&amp;percnt; include footer.html &amp;percnt;}
+</code></pre></div></div>
+
+<ul>
+  <li>Kemudian isi file <code class="language-plaintext highlighter-rouge">_includes/header.html</code> :</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!doctype html&gt;
+&lt;html lang="en" id="data-theme"&gt;
+  &lt;head&gt;
+    &lt;!-- Required meta tags --&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;
+    &lt;link rel="shortcut icon" type="image/png" href="http://localhost:4000/favicon.ico"&gt;
+    &lt;!-- Bootstrap CSS --&gt;
+      &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"&gt;
+      &lt;link href="https://fonts.googleapis.com/css2?family=Lalezar&amp;family=Lobster&amp;family=Rambla&amp;family=Satisfy&amp;display=swap" rel="stylesheet"&gt;
+      &lt;link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"&gt;
+      &lt;link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&amp;display=swap" rel="stylesheet"&gt; 
+      &lt;link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&amp;display=swap" rel="stylesheet"&gt; 
+      &lt;link rel="stylesheet" href="http://localhost:4000/public/css/main.css"&gt;
+      &lt;link rel="stylesheet" href="http://localhost:4000/public/css/hyde.css"&gt;
+      &lt;link rel="stylesheet" href="http://localhost:4000/public/css/poole.css"&gt;
+      &lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"&gt;
+      &lt;link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&amp;family=Source+Code+Pro:wght@200&amp;display=swap" rel="stylesheet"&gt; 
+      
+ &lt;title&gt;&lt;/title&gt;
+
+&lt;/head&gt;
+
+  &lt;body&gt;
+  
+        {&amp;percnt; include navbar.html &amp;percnt;}
+
+
+        &lt;p class="small"&gt;&amp;copy; &amp;percnt;Y
+           &lt;a href='mailto:'&gt;.&lt;/a&gt;  All rights reserved.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+</code></pre></div></div>
+<p>pada dasarnya isi file dari <code class="language-plaintext highlighter-rouge">header.html</code> tersebut adalah file html lengkap untuk polarisasi layouting di aplikasi jekyll gout. dan di file <code class="language-plaintext highlighter-rouge">header.html</code> tersebut terdapat script <strong><em>liquid</em></strong> yaitu di <code class="language-plaintext highlighter-rouge">{&amp;percnt; include navbar.html &amp;percnt;}</code>, script include file navbar ini lah yang menjadi fokus utama di artikel kali ini.</p>
+
+<ul>
+  <li>lanjut lagi …<br />
+dan selanjutnya kita buka file yang masih berada satu file dengan file <code class="language-plaintext highlighter-rouge">header.html</code> yaitu direktori <code class="language-plaintext highlighter-rouge">_includes</code> kita buka file <code class="language-plaintext highlighter-rouge">_includes/navbar.html</code>, berikut isi file <code class="language-plaintext highlighter-rouge">navbar.html</code> :</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;nav id="navbar" class="sidebar-nav"&gt;
+	{&amp;percnt; for nav in site.data.navigation &amp;percnt;}
+	   &lt;a href="http://localhost:4000" class="sidebar-nav-item {&amp;percnt; if nav.url == page.url &amp;percnt;} active {&amp;percnt; endif &amp;percnt;} "&gt;
+	      
+	   &lt;/a&gt;
+	 {&amp;percnt; endfor &amp;percnt;}
+&lt;/nav&gt;
+</code></pre></div></div>
+<p>di file tersebut gout melakukan <code class="language-plaintext highlighter-rouge">passing data</code> dari file yang ada di direktori <code class="language-plaintext highlighter-rouge">_data/</code> yaitu file <code class="language-plaintext highlighter-rouge">navigation.html</code> script liquid berikut yang gout gunakan untuk looping data dari file <code class="language-plaintext highlighter-rouge">_data/navigation.yml</code>. dibagian ini lah fokus utama kita di artikel kali ini :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{&amp;percnt; for nav in site.data.navigation &amp;percnt;} //melakukan passing data dari file navigation.html di direktori _data/ kita looping  data tersebut 
+  // dua item yang ada di file navigation.yml
+{&amp;percnt; endfor &amp;percnt;} // kemudian kita akhiri loopingnya
+</code></pre></div></div>
+
+<p>Ok sekian dulu artikel mengenai jekyll data ini, akhir kata gout ucapkan terima kasih, jangan lupa jaga selalu kesehatan kita. Salam sukses selalu.</p>
+
+<p>By. Puji Ermanto</p>
+
+:ET
