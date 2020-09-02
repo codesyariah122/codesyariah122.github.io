@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Belajar programming dengan python"
+title:  "Penggunaan database di pemrogramman python"
 author: puji
 categories: [ Python, programmer ]
 image: assets/images/post/pythonDB.png
