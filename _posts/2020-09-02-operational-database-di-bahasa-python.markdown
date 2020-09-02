@@ -37,7 +37,6 @@ import mysql.connector
 host = 'localhost'
 user = 'root'
 passwd = '1'
-db = 'nama_ular'
 
 cnx = mysql.connector.connect(
 		host = host,
