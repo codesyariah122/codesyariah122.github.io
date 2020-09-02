@@ -44,7 +44,12 @@ kita bisa langsung eksekusi code diatas, antara lain menggunakan terminal, kemba
 ```
 # sesuai nama file yang diberikan
 python connection.py
+```
+jika muncul result di terminal seperti ini :  
+```
+Database version : 10.1.45-MariaDB-0+deb9u1
 ```  
+pernyataan diatas menandakan koneksi ke database berhasil, dan database siap di operasikan.
 
 #### insert data  
 contoh script dibawah ini adalah eksekusi pernyataan untuk SQL INSERT untu membuat catatan di table kita.  
