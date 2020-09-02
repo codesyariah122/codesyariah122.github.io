@@ -55,7 +55,7 @@ python conn.py
 ```  
 jika dijalankan code diatas, maka hasilnya seperti ini :  
 
-![pythongif1]({{site.url}}/assets/images/post/python/pip-python.gif)  
+![pythongif2]({{site.url}}/assets/images/post/python/conn-python.gif)  
 
 kode program kita berhasil terhubung ke server MySQL di localhost setelah di eksekusi oleh python.  
 
