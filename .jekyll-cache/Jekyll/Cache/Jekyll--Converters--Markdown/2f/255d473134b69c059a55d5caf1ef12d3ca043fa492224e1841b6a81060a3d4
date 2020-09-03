@@ -1,4 +1,4 @@
-I"¥O<p><img src="http://localhost:4000/assets/images/post/python/python-sql.jpeg" alt="python1" /></p>
+I"•O<p><img src="http://localhost:4000/assets/images/post/python/python-sql.jpeg" alt="python1" /></p>
 
 <h3 id="database-in-python">Database In Python</h3>
 <p>masih melanjutkan artikel sebelumnya membahas python, artikel kali ini akan membahas mengenai akses dan operational data di python :<br />
@@ -25,7 +25,6 @@ gout akan menggunaan module <code class="language-plaintext highlighter-rouge">m
 host = 'localhost'
 user = 'root'
 passwd = '1'
-db = 'nama_ular'
 
 cnx = mysql.connector.connect(
 		host = host,
@@ -43,7 +42,7 @@ cnx.close()
 </code></pre></div></div>
 <p>jika dijalankan code diatas, maka hasilnya seperti ini :</p>
 
-<p><img src="http://localhost:4000/assets/images/post/python/pip-python.gif" alt="pythongif1" /></p>
+<p><img src="http://localhost:4000/assets/images/post/python/conn-python.gif" alt="pythongif2" /></p>
 
 <p>kode program kita berhasil terhubung ke server MySQL di localhost setelah di eksekusi oleh python.</p>
 

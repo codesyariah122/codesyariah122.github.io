@@ -1,4 +1,4 @@
-I"¥O<p><img src="http://localhost:4000/assets/images/post/python/python-sql.jpeg" alt="python1" /></p>
+I"üN<p><img src="{{site.url}}/assets/images/post/python/python-sql.jpeg" alt="python1" /></p>
 
 <h3 id="database-in-python">Database In Python</h3>
 <p>masih melanjutkan artikel sebelumnya membahas python, artikel kali ini akan membahas mengenai akses dan operational data di python :<br />
@@ -10,7 +10,7 @@ gout akan menggunaan module <code class="language-plaintext highlighter-rouge">m
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 -m pip install mysql-connector
 </code></pre></div></div>
-<p><img src="http://localhost:4000/assets/images/post/python/pip-python.gif" alt="pythongif1" /></p>
+<p><img src="{{site.url}}/assets/images/post/python/pip-python.gif" alt="pythongif1" /></p>
 
 <p>setelah proses installasi module selesai, kita bisa mulai menggunakan module tersebut di project python kita. untuk menggunakan module package kita bisa menambahkan tag seperti ini :</p>
 
@@ -25,7 +25,6 @@ gout akan menggunaan module <code class="language-plaintext highlighter-rouge">m
 host = 'localhost'
 user = 'root'
 passwd = '1'
-db = 'nama_ular'
 
 cnx = mysql.connector.connect(
 		host = host,
@@ -43,7 +42,7 @@ cnx.close()
 </code></pre></div></div>
 <p>jika dijalankan code diatas, maka hasilnya seperti ini :</p>
 
-<p><img src="http://localhost:4000/assets/images/post/python/pip-python.gif" alt="pythongif1" /></p>
+<p><img src="{{site.url}}/assets/images/post/python/conn-python.gif" alt="pythongif2" /></p>
 
 <p>kode program kita berhasil terhubung ke server MySQL di localhost setelah di eksekusi oleh python.</p>
 
@@ -98,10 +97,10 @@ print("Database berhasil dibuat")
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python createDB.py
 </code></pre></div></div>
 <p>seperti ini hasil code diatas jika di jalankan diterminal
-<img src="http://localhost:4000/assets/images/post/python/create_db1.png" alt="python3" /></p>
+<img src="{{site.url}}/assets/images/post/python/create_db1.png" alt="python3" /></p>
 
 <p>dan ini di UI phpmyadmin : 
-<img src="http://localhost:4000/assets/images/post/python/create_db2.png" alt="python4" /></p>
+<img src="{{site.url}}/assets/images/post/python/create_db2.png" alt="python4" /></p>
 
 <p>dengan itu berarti eksekusi code kita berhasil, dan database berhasil dibuat dari screenshoot di phpmyadmin tersebut terlihat ada database baru yang terdaftar.</p>
 
@@ -158,11 +157,11 @@ print("Table ular_berbisa berhasil dibuat")
 </code></pre></div></div>
 <p>seperti ini hasilnya program python di terminal kita :</p>
 
-<p><img src="http://localhost:4000/assets/images/post/python/create_tb1.png" alt="python5" /></p>
+<p><img src="{{site.url}}/assets/images/post/python/create_tb1.png" alt="python5" /></p>
 
 <p>dan ini di phpmyadmin:</p>
 
-<p><img src="http://localhost:4000/assets/images/post/python/create_tb2.png" alt="python6" /></p>
+<p><img src="{{site.url}}/assets/images/post/python/create_tb2.png" alt="python6" /></p>
 
 <p>kita sudah berhasil membuat sebuah table baru di database kita menggunaan module <code class="language-plaintext highlighter-rouge">mysql.connector</code> di python.</p>
 
@@ -204,10 +203,10 @@ print("{} data ditambahkan ".format(cursor.rowcount))
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python insertDB.py
 </code></pre></div></div>
 <p>begini hasilnya di terminal :<br />
-<img src="http://localhost:4000/assets/images/post/python/insert_tb1.png" alt="python6" /></p>
+<img src="{{site.url}}/assets/images/post/python/insert_tb1.png" alt="python6" /></p>
 
 <p>di phpmyadmin sepert ini hasilnya :<br />
-<img src="http://localhost:4000/assets/images/post/python/insert_tb2.png" alt="python7" /></p>
+<img src="{{site.url}}/assets/images/post/python/insert_tb2.png" alt="python7" /></p>
 
 <p><strong><em>penjelasan:</em></strong><br />
 sedikit penjelasan: perhatikan baris code yang kita gunakan untuk melakukan query insert data:</p>
@@ -258,10 +257,10 @@ print("{} data ditambahkan ".format(len(values)))
 <p>kemudian jalankan kembali di teminal file <code class="language-plaintext highlighter-rouge">python insertMany.py</code></p>
 
 <p>Dan seperti ini hasilnya di terminal :<br />
-<img src="http://localhost:4000/assets/images/post/python/insert_many1.png" alt="python6" /></p>
+<img src="{{site.url}}/assets/images/post/python/insert_many1.png" alt="python6" /></p>
 
 <p>di phpmyadmin sepert ini hasilnya :<br />
-<img src="http://localhost:4000/assets/images/post/python/insert_many2.png" alt="python7" /></p>
+<img src="{{site.url}}/assets/images/post/python/insert_many2.png" alt="python7" /></p>
 
 <h3 id="menampilkan-data">Menampilkan data</h3>
 <p>Judul selanjutnya ini adalah menampilkan data, masih menggunaan query MySQL dengan command <code class="language-plaintext highlighter-rouge">SELECT</code>. kita bisa ambil beberapa data dengan method :</p>
@@ -304,7 +303,7 @@ cnx.close()
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python selectData.py
 </code></pre></div></div>
 <p>Dan seperti ini hasilnya di terminal :<br />
-<img src="http://localhost:4000/assets/images/post/python/select_data1.png" alt="python8" /></p>
+<img src="{{site.url}}/assets/images/post/python/select_data1.png" alt="python8" /></p>
 
 <p>Selanjutnya kita akan mencoba menggunaan method <code class="language-plaintext highlighter-rouge">fetchone()</code>, untuk mengambil satu data saja. buat file baru lagi dengan nama <code class="language-plaintext highlighter-rouge">selectOne.py</code> :</p>
 
@@ -339,7 +338,7 @@ print(results)
 cnx.close()
 </code></pre></div></div>
 <p>Dan seperti ini hasilnya di terminal :<br />
-<img src="http://localhost:4000/assets/images/post/python/select_data2.png" alt="python9" /></p>
+<img src="{{site.url}}/assets/images/post/python/select_data2.png" alt="python9" /></p>
 
 <p>Untuk method select data lainnya, coders bisa coba sendiri, diantaranya ada <code class="language-plaintext highlighter-rouge">fetchmany() dan fetchall()</code>.</p>
 
@@ -377,9 +376,9 @@ cnx.close()
 <p>di code tersebut gout melakukan update data untuk sebuah id :
 <code class="language-plaintext highlighter-rouge">WHERE id_ular=</code> karena di variable selanjutnya yaitu <em>**val = **</em> gout memberikan nilai seperti ini <code class="language-plaintext highlighter-rouge">val = ("Mamba Hijau", "Dendroaspis angusticeps", 3)</code>, dengan itu gout melakukan update untuk data dengan <code class="language-plaintext highlighter-rouge">ular_id=3</code>.<br />
 Dan seperti ini hasilnya di terminal :<br />
-<img src="http://localhost:4000/assets/images/post/python/update_data1.png" alt="python10" /><br />
+<img src="{{site.url}}/assets/images/post/python/update_data1.png" alt="python10" /><br />
 dan di phpmyadminnya :<br />
-<img src="http://localhost:4000/assets/images/post/python/update_data2.png" alt="python11" /></p>
+<img src="{{site.url}}/assets/images/post/python/update_data2.png" alt="python11" /></p>
 
 <p>selanjutnya â€¦</p>
 
@@ -418,10 +417,10 @@ cnx.close()
 </code></pre></div></div>
 <p>dari code diatas gout melakukan delete data berdasarkan <code class="language-plaintext highlighter-rouge">id_ular = 3</code>.</p>
 
-<p><img src="http://localhost:4000/assets/images/post/python/delete_data1.png" alt="python12" /></p>
+<p><img src="{{site.url}}/assets/images/post/python/delete_data1.png" alt="python12" /></p>
 
 <p>dan di phpmyadminnya :<br />
-<img src="http://localhost:4000/assets/images/post/python/delete_data2.png" alt="python13" /><br />
+<img src="{{site.url}}/assets/images/post/python/delete_data2.png" alt="python13" /><br />
 data dengan <code class="language-plaintext highlighter-rouge">id_ular = 3</code> berhasil dihapus.</p>
 
 <p>sampai disini mungin kesimpulannya, pemrograman python ini tidak jauh berbeda dengan php, yang sebelumny gout gunakan dalam beberapa project gout dan di kerjaan utama gout. makanya gout tertarik dalam mempelajari dan menggunakan python untuk project gout selanjutnya.</p>
