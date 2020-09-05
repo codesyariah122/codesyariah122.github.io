@@ -1,4 +1,275 @@
-I"ÍI<div class="container">
+I"e<div class="container">
+
+
+
+
+
+<!-- Begin post excerpts, let's highlight the first 4 posts on top -->
+<div class="row remove-site-content-margin">
+
+    <!-- latest post -->
+    
+    <div class="col-md-6">
+    <div class="card border-0 mb-4 box-shadow">
+<!-- adding image thumbnail hover -->
+
+    <a href="http://localhost:4000/php/laravel/mvc/oop/membangun-project-baru-laravel-7/">
+    <div class="topfirstimage" style="background-image: url( http://localhost:4000/assets/images/post/laravel7_0.jpg); height: 200px;    background-size: cover;    background-repeat: no-repeat;"></div>
+    </a>
+
+    <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
+    <h2 class="h4 font-weight-bold">
+    <a class="text-dark" href="http://localhost:4000/php/laravel/mvc/oop/membangun-project-baru-laravel-7/">Membangun project baru laravel 7</a>
+    </h2>
+    <p class="excerpt">
+        
+    </p>
+    <div>
+        <small class="d-block text-muted">
+            In <span class="catlist">
+                
+                <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">PHP</a><span class="sep">, </span>
+                
+                <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#laravel">Laravel</a><span class="sep">, </span>
+                
+                <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#mvc">MVC</a><span class="sep">, </span>
+                
+                <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#oop">OOP</a><span class="sep">, </span>
+                
+                </span>
+        </small>
+        <small class="text-muted">
+            05 September, 2020
+        </small>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <div class="col-md-6">
+
+        <!-- second latest post --><div class="mb-3 d-flex align-items-center">
+                
+                <div class="col-md-4">
+                <a href="http://localhost:4000/python/programmer/operational-database-di-bahasa-python/">
+                 <img class="w-100" src="http://localhost:4000/assets/images/post/python/pythonDB.png" alt="Operational database di bahasa python dengan module mysql connector" />
+                </a>
+                </div>
+                
+                <div>
+                    <h2 class="mb-2 h6 font-weight-bold">
+                    <a class="text-dark" href="http://localhost:4000/python/programmer/operational-database-di-bahasa-python/">Operational database di bahasa python dengan module mysql connector</a>
+                    </h2>
+                    <small class="d-block text-muted">
+                        In <span class="catlist">
+                        
+                        <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#python">Python</a><span class="sep">, </span>
+                        
+                        <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#programmer">programmer</a><span class="sep">, </span>
+                        
+                        </span>
+                    </small>
+                    <small class="text-muted">
+                        02 September 2020
+                    </small>
+                </div>
+            </div>
+
+        <!-- third latest post --><div class="mb-3 d-flex align-items-center">
+                
+                <div class="col-md-4">
+                <a href="http://localhost:4000/python/programmer/programming-with-python3/">
+                 <img class="w-100" src="http://localhost:4000/assets/images/post/python2.png" alt="Belajar programming dengan python" />
+                </a>
+                </div>
+                
+                <div>
+                    <h2 class="mb-2 h6 font-weight-bold">
+                    <a class="text-dark" href="http://localhost:4000/python/programmer/programming-with-python3/">Belajar programming dengan python</a>
+                    </h2>
+                    <small class="d-block text-muted">
+                        In <span class="catlist">
+                        
+                        <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#python">Python</a><span class="sep">, </span>
+                        
+                        <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#programmer">programmer</a><span class="sep">, </span>
+                        
+                        </span>
+                    </small>
+                    <small class="text-muted">
+                        31 August 2020
+                    </small>
+                </div>
+            </div>
+
+        <!-- fourth latest post --><div class="mb-3 d-flex align-items-center">
+                
+                <div class="col-md-4">
+                <a href="http://localhost:4000/jekyll/ruby/passing-data-dengan-liquid-di-jekyll/">
+                <img class="w-100" src="http://localhost:4000/assets/images/post/jekyll-data.jpeg" alt="Passing data di jekyll dengan liquid dan yaml" />
+                </a>
+                </div>
+                
+                <div>
+                    <h2 class="mb-2 h6 font-weight-bold">
+                    <a class="text-dark" href="http://localhost:4000/jekyll/ruby/passing-data-dengan-liquid-di-jekyll/">Passing data di jekyll dengan liquid dan yaml</a>
+                    </h2>
+                    <small class="d-block text-muted">
+                        In <span class="catlist">
+                        
+                        <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jekyll">Jekyll</a><span class="sep">, </span>
+                        
+                        <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#ruby">ruby</a><span class="sep">, </span>
+                        
+                        </span>
+                    </small>
+                    <small class="text-muted">
+                        27 August 2020
+                    </small>
+                </div>
+            </div>
+
+    </div>
+
+</div>
+
+<!-- Sticky - add sticky tag to the post you want to highlight here - tags: [sticky] -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jumbotron jumbotron-fluid jumbotron-home pt-0 pb-0 mt-3 mb-2rem bg-lightblue position-relative">
+    <div class="pl-4 pr-0 h-100 tofront">
+        <div class="row justify-content-between">
+            <div class="col-md-6 pt-6 pb-6 pr-lg-4 align-self-center">
+                <h1 class="mb-3">Muadzin Abu Mahdzurah</h1>
+                <p class="mb-3 lead">
+                    Kisah Muadzin Rasulullah (Abu Mahdzurah)
+                </p>
+                <a href="http://localhost:4000/kajianislam/sunnah/Muadzin-Abu-Mahdzurah/" class="btn btn-dark">Read More</a>
+            </div>
+            <div class="col-md-6 d-none d-md-block pr-0" style="background-size:cover;background-image:url(http://localhost:4000/assets/images/post/abu-mahdzurah.jpeg);">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
 
  <!--endif page url is / -->
 
@@ -17,40 +288,7 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/php/explode/memecah-string-nomor-telepon/">Explode string nomor telepon dari query database</a>
-	</h2>
-	<p class="excerpt">
-	   Halo para coders semuanya !selamat menjalankan ibadah puasanya, semoga berkah ibadah di bulan ramadhan tahun ini.postingan kali akan berhubungan dengan string di PHP. ok langsung saja...
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">PHP</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#explode">explode</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		05 May 2020
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/php/explode/memecah-string-nomor-telepon/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/explode_telp.png" alt="Explode string nomor telepon dari query database" />
-	</a>
-	</div>
-
-</div>
-
-
-        
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/php/intltelponinput/memasang-plugin-input-telepon-international/">Memasang Plugins Input Telepon International</a>
+	<a class="text-dark" href="http://localhost:4000/php/laravel/mvc/oop/membangun-project-baru-laravel-7/">Membangun project baru laravel 7</a>
 	</h2>
 	<p class="excerpt">
 	   
@@ -60,18 +298,22 @@
 		
 		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">PHP</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#intltelponinput">intlTelponinput</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#laravel">Laravel</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#mvc">MVC</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#oop">OOP</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		27 April 2020
+		05 September 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/php/intltelponinput/memasang-plugin-input-telepon-international/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/intl3.png" alt="Memasang Plugins Input Telepon International" />
+	<a href="http://localhost:4000/php/laravel/mvc/oop/membangun-project-baru-laravel-7/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/laravel7_0.jpg" alt="Membangun project baru laravel 7" />
 	</a>
 	</div>
 
@@ -83,73 +325,7 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/linux/debian/Install-font-di-linux/">Install fonts di linux</a>
-	</h2>
-	<p class="excerpt">
-	   hai sobat coders, bagaimana kabarnya ? semoga baik baik selalu. kali ini saya akan berbagi tips, cara install font di os linux, kebetulan distro linux yang saya gunakan adalah debian ...
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#linux">Linux</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#debian">debian</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		27 April 2020
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/linux/debian/Install-font-di-linux/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/font1.jpg" alt="Install fonts di linux" />
-	</a>
-	</div>
-
-</div>
-
-
-        
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/php/ip_location2/Menentukan-koordinat-dengan-ip-address/">Mendapatkan koordinat google melalui ip address</a>
-	</h2>
-	<p class="excerpt">
-	   Menentukan lokasi, koordinat berdasarkan ip address
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">PHP</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#ip_location2">ip_location2</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		26 April 2020
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/php/ip_location2/Menentukan-koordinat-dengan-ip-address/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/ip-location.png" alt="Mendapatkan koordinat google melalui ip address" />
-	</a>
-	</div>
-
-</div>
-
-
-        
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/javascript/api/Membuat-Marker-untuk-Menandai-Lokasi-Google-Maps-API/">Membuat Marker untuk Menandai Lokasi Google Maps API</a>
+	<a class="text-dark" href="http://localhost:4000/python/programmer/operational-database-di-bahasa-python/">Operational database di bahasa python dengan module mysql connector</a>
 	</h2>
 	<p class="excerpt">
 	   
@@ -157,20 +333,20 @@
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">javascript</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#python">Python</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#api">API</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#programmer">programmer</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		26 April 2020
+		02 September 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/javascript/api/Membuat-Marker-untuk-Menandai-Lokasi-Google-Maps-API/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/googlemaps2.jpg" alt="Membuat Marker untuk Menandai Lokasi Google Maps API" />
+	<a href="http://localhost:4000/python/programmer/operational-database-di-bahasa-python/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/python/pythonDB.png" alt="Operational database di bahasa python dengan module mysql connector" />
 	</a>
 	</div>
 
@@ -182,7 +358,7 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/mysql-server/phpmyadmin/install-visual-studio-code-debian9-stretch/">Install Visual Studio Code di debian 9 stretch</a>
+	<a class="text-dark" href="http://localhost:4000/python/programmer/programming-with-python3/">Belajar programming dengan python</a>
 	</h2>
 	<p class="excerpt">
 	   
@@ -190,20 +366,20 @@
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#mysql-server">mysql-server</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#python">Python</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#phpmyadmin">phpmyadmin</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#programmer">programmer</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		25 April 2020
+		31 August 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/mysql-server/phpmyadmin/install-visual-studio-code-debian9-stretch/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/visual_code1.png" alt="Install Visual Studio Code di debian 9 stretch" />
+	<a href="http://localhost:4000/python/programmer/programming-with-python3/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/python2.png" alt="Belajar programming dengan python" />
 	</a>
 	</div>
 
@@ -215,28 +391,127 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/mysql-server/phpmyadmin/delete-table-sql-dengan-inner-join/">Delete table database dari 2 table yang berbeda dengan 1 query inner join</a>
+	<a class="text-dark" href="http://localhost:4000/jekyll/ruby/passing-data-dengan-liquid-di-jekyll/">Passing data di jekyll dengan liquid dan yaml</a>
 	</h2>
 	<p class="excerpt">
-	   gambar table user dan table profile
+	   Liquid data in jekyll
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#mysql-server">mysql-server</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jekyll">Jekyll</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#phpmyadmin">phpmyadmin</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#ruby">ruby</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		25 April 2020
+		27 August 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/mysql-server/phpmyadmin/delete-table-sql-dengan-inner-join/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/1.jpg" alt="Delete table database dari 2 table yang berbeda dengan 1 query inner join" />
+	<a href="http://localhost:4000/jekyll/ruby/passing-data-dengan-liquid-di-jekyll/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/jekyll-data.jpeg" alt="Passing data di jekyll dengan liquid dan yaml" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/nodejs/sass/memulai-sass-di-nodejs/">Memulai SASS di NodeJS</a>
+	</h2>
+	<p class="excerpt">
+	   
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#nodejs">NodeJS</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#sass">SASS</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		25 August 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/nodejs/sass/memulai-sass-di-nodejs/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/sass.png" alt="Memulai SASS di NodeJS" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/nodejs/javascript/mencicipi-express-js-framework-untuk-nodeJS/">Mencicipi Express Framework untuk NodeJS</a>
+	</h2>
+	<p class="excerpt">
+	   
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#nodejs">NodeJS</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		22 August 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/nodejs/javascript/mencicipi-express-js-framework-untuk-nodeJS/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/express.jpg" alt="Mencicipi Express Framework untuk NodeJS" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/nodejs/javascript/mengaktifkan-script-npm-start-dengan-nodemon/">Mengaktifkan script npm start dengan nodemon</a>
+	</h2>
+	<p class="excerpt">
+	   
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#nodejs">NodeJS</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		20 August 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/nodejs/javascript/mengaktifkan-script-npm-start-dengan-nodemon/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/nodemon.png" alt="Mengaktifkan script npm start dengan nodemon" />
 	</a>
 	</div>
 
@@ -250,12 +525,12 @@
             
             <ul class="pagination">
               
-                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page4">&laquo; Prev</a></li>
+                <li class="page-item disabled"><span class="prev page-link">&laquo;</span></li>
               
 
               
                 
-                <li class="page-item"><a class="page-link" href="http://localhost:4000/">1</a></li>
+                <li class="page-item disabled"><span class="webjeda page-link">1</span></li>
                 
               
                 
@@ -271,7 +546,7 @@
                 
               
                 
-                <li class="page-item disabled"><span class="webjeda page-link">5</span></li>
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page5">5</a></li>
                 
               
                 
@@ -292,7 +567,7 @@
               
 
               
-                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page6">Next &raquo;</a></li>
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page2">Next &raquo;</a></li>
               
             </ul>
             

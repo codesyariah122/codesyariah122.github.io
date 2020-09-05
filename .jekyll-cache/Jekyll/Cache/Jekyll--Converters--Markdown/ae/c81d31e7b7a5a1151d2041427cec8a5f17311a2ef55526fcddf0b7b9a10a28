@@ -1,4 +1,4 @@
-I"_L<div class="container">
+I"ÎJ<div class="container">
 
  <!--endif page url is / -->
 
@@ -17,28 +17,28 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/linux/server/Error-1698-Access-denied-for-user-'root'@'localhost-di-phpMyAdmin/">Error #1698 Access denied for user 'root'@'localhost di phpMyAdmin</a>
+	<a class="text-dark" href="http://localhost:4000/mysql-server/phpmyadmin/delete-table-sql-dengan-inner-join/">Delete table database dari 2 table yang berbeda dengan 1 query inner join</a>
 	</h2>
 	<p class="excerpt">
-	   Assalamualaikum wr. wb
+	   gambar table user dan table profile
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#linux">linux</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#mysql-server">mysql-server</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#server">server</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#phpmyadmin">phpmyadmin</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		26 February 2020
+		25 April 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/linux/server/Error-1698-Access-denied-for-user-'root'@'localhost-di-phpMyAdmin/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/nginx/err.png" alt="Error #1698 Access denied for user 'root'@'localhost di phpMyAdmin" />
+	<a href="http://localhost:4000/mysql-server/phpmyadmin/delete-table-sql-dengan-inner-join/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/1.jpg" alt="Delete table database dari 2 table yang berbeda dengan 1 query inner join" />
 	</a>
 	</div>
 
@@ -50,7 +50,139 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/linux/server/install-driver-iwlwifi-debian9/">install-driver-iwlwifi-debian9</a>
+	<a class="text-dark" href="http://localhost:4000/mysql-server/phpmyadmin/Error-Phpmyadmin-Warning-in/">Error Phpmyadmin Warning in ./libraries/sql.lib.php#613 count(): Parameter must be an array or an object that implements Countable</a>
+	</h2>
+	<p class="excerpt">
+	   
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#mysql-server">mysql-server</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#phpmyadmin">phpmyadmin</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		25 April 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/mysql-server/phpmyadmin/Error-Phpmyadmin-Warning-in/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/phpmyadmin/a.png" alt="Error Phpmyadmin Warning in ./libraries/sql.lib.php#613 count(): Parameter must be an array or an object that implements Countable" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/nativephp/vanilla%20javascript/Membuat-feedback-flashmassage-dengan-sweetalert2/">Membuat feedback flashmassage dengan sweetalert2</a>
+	</h2>
+	<p class="excerpt">
+	   
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#nativephp">nativephp</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#vanilla javascript">vanilla javascript</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		21 April 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/nativephp/vanilla%20javascript/Membuat-feedback-flashmassage-dengan-sweetalert2/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/alert_1.png" alt="Membuat feedback flashmassage dengan sweetalert2" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/nativephp/vanilla%20javascript/default-ordering-(sorting)/">Default ordering (sorting) datatables not working</a>
+	</h2>
+	<p class="excerpt">
+	   
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#nativephp">nativephp</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#vanilla javascript">vanilla javascript</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		19 April 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/nativephp/vanilla%20javascript/default-ordering-(sorting)/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/Untitled2.jpg" alt="Default ordering (sorting) datatables not working" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/blog/story/hidup-adalah-ilmu/">hidup adalah ilmu dan hidup dengan ilmu</a>
+	</h2>
+	<p class="excerpt">
+	   apa sih sebenarnya hidup ini??sebuah pertanyaan bagi saya dan diri saya pribadi, mengapa ada bagian saya dan diri saya. apa hakikatnya, apakah ini dengungan dari sebuah istilah lahir ...
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">blog</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#story">story</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		13 April 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/blog/story/hidup-adalah-ilmu/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/ilustrasi-mencari-ilmu.jpg" alt="hidup adalah ilmu dan hidup dengan ilmu" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/linux/server/sorry-that-didn't-work-login-root-debian-9-gnome/">sorry that didn't work login root debian 9 gnome</a>
 	</h2>
 	<p class="excerpt">
 	   
@@ -65,13 +197,13 @@
 		</span>
 	</small>
 	<small class="text-muted">
-		24 February 2020
+		02 March 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/linux/server/install-driver-iwlwifi-debian9/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/debian9/install-driver-wifi-debian-thinkpad-iwlwifi-linux.jpg" alt="install-driver-iwlwifi-debian9" />
+	<a href="http://localhost:4000/linux/server/sorry-that-didn't-work-login-root-debian-9-gnome/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/debian9/IMG_20200201_005454.jpg" alt="sorry that didn't work login root debian 9 gnome" />
 	</a>
 	</div>
 
@@ -83,10 +215,10 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/linux/server/upgrade-debian8-jessie/">upgrade debian 8 jessie</a>
+	<a class="text-dark" href="http://localhost:4000/linux/server/error-404-nginx-saat-menggunakan-framework-codeigniter/">Error 404 nginx saat menggunakan codeigniter</a>
 	</h2>
 	<p class="excerpt">
-	   Sebelum melakukan proses upgrade ke Debian 9 Stretch, disarankan untuk memperbarui perangkat lunak Debian 8 Jessie sehingga dalam kondisi up to date (stable version). Buka terminal De...
+	   error 404 ini saya alami ketika saya menggunakan framework codeigniter, permasalahan ini kemungkinan terjadi akibat nginx tidak mengenalidirektori root dari virtualhot project kita ya...
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
@@ -98,145 +230,13 @@
 		</span>
 	</small>
 	<small class="text-muted">
-		25 December 2019
+		02 March 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/linux/server/upgrade-debian8-jessie/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/debian9/Screenshot from 2020-02-24 19-20-15.png" alt="upgrade debian 8 jessie" />
-	</a>
-	</div>
-
-</div>
-
-
-        
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/live%20chat/codeigniter/memasang-aplikasi-live-chat-di-codeigniter/">pasang aplikasi chat di website yang menggunakan framework codeigniter</a>
-	</h2>
-	<p class="excerpt">
-	   Akhir-akhir ini perkembangan website sudah sangat berkembang pesat, banyak fitur yang bisa memudahkan kita untuk mendapatkan sebuah informasi digital yang akurat.salah satu layanan ap...
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#live chat">live chat</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#codeigniter">Codeigniter</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		05 December 2019
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/live%20chat/codeigniter/memasang-aplikasi-live-chat-di-codeigniter/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/chat/chat.jpg" alt="pasang aplikasi chat di website yang menggunakan framework codeigniter" />
-	</a>
-	</div>
-
-</div>
-
-
-        
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/phpmailer/codeigniter/kirim-email-multiple-attachment-dengan-library-phpmailer-di-codeigniter/">Kirim Email multiple attachment dengan menggunakan library phpmailer di codeigniter</a>
-	</h2>
-	<p class="excerpt">
-	   Kali ini kita (kita .. lu aja kali) maksudnya saya, kali ini saya akan membuat sebuah layanan email service dengan menggunakan library dari phpmailer dan codeigniter, ok langsung saja...
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#phpmailer">phpmailer</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#codeigniter">Codeigniter</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		11 November 2019
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/phpmailer/codeigniter/kirim-email-multiple-attachment-dengan-library-phpmailer-di-codeigniter/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/phpmailer.png" alt="Kirim Email multiple attachment dengan menggunakan library phpmailer di codeigniter" />
-	</a>
-	</div>
-
-</div>
-
-
-        
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/technologies/server/configurasi-static-ip-di-ubuntu-bionic(18.04)/">Konfigurasi Static IP Ubuntu Bionic(18.04)</a>
-	</h2>
-	<p class="excerpt">
-	   konfigurasi static ip ubuntu server Bionic(18.04)  kini sudah berbeda dibandingkan dengan Ubuntu Server 16.04 ke bawah.Versi Ubuntu sebelumnya, konfigurasi dilakukan dengan memodifika...
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#technologies">Technologies</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#server">Server</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		25 September 2019
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/technologies/server/configurasi-static-ip-di-ubuntu-bionic(18.04)/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/bionic/bionic.jpg" alt="Konfigurasi Static IP Ubuntu Bionic(18.04)" />
-	</a>
-	</div>
-
-</div>
-
-
-        
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/blog/story/kembang-dari-periangan/">Kembang Dari Priangan</a>
-	</h2>
-	<p class="excerpt">
-	   Tanah Priangan adalah kawasan gunung gemunung yang didalamnya menjadi tempat bermukim sebagian suku sunda dari berbagai kawasan di wilayah priangan lainnya.Adalah merupakan dataran ya...
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">Blog</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#story">story</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		16 August 2019
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/blog/story/kembang-dari-periangan/">
-	<img class="w-100" src="http://localhost:4000/assets/images/project/skinoc/pic10.jpg" alt="Kembang Dari Priangan" />
+	<a href="http://localhost:4000/linux/server/error-404-nginx-saat-menggunakan-framework-codeigniter/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/nginx/nginx_404.png" alt="Error 404 nginx saat menggunakan codeigniter" />
 	</a>
 	</div>
 
@@ -250,7 +250,7 @@
             
             <ul class="pagination">
               
-                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page6">&laquo; Prev</a></li>
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page5">&laquo; Prev</a></li>
               
 
               
@@ -275,11 +275,11 @@
                 
               
                 
-                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page6">6</a></li>
+                <li class="page-item disabled"><span class="webjeda page-link">6</span></li>
                 
               
                 
-                <li class="page-item disabled"><span class="webjeda page-link">7</span></li>
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page7">7</a></li>
                 
               
                 
@@ -292,7 +292,7 @@
               
 
               
-                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page8">Next &raquo;</a></li>
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page7">Next &raquo;</a></li>
               
             </ul>
             

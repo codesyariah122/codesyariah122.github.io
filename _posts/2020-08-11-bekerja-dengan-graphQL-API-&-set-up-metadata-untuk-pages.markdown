@@ -231,7 +231,7 @@ selanjutnya ..... mulailah untuk membaca dokumentasinya, karena dalam artikel ka
 
         const { createPage } = actions
         const blogTemplate = path.resolve('./src/templates/blog.js')
-        const res = await graphql(`
+        const res = await graphql('
             query{
               allMarkdownRemark {
                 edges {
@@ -243,7 +243,7 @@ selanjutnya ..... mulailah untuk membaca dokumentasinya, karena dalam artikel ka
                 }
               }
             }
-          `)
+          ')
 
         res.data.allMarkdownRemark.edges.forEach((edge) => {
           createPage({

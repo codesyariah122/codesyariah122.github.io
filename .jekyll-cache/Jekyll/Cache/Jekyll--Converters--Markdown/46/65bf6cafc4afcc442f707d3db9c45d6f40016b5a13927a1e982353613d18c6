@@ -218,7 +218,7 @@ seperti ini :</p>
 
       const { createPage } = actions
       const blogTemplate = path.resolve('./src/templates/blog.js')
-      const res = await graphql(`
+      const res = await graphql('
           query{
             allMarkdownRemark {
               edges {
@@ -230,7 +230,7 @@ seperti ini :</p>
               }
             }
           }
-        `)
+        ')
 
       res.data.allMarkdownRemark.edges.forEach((edge) =&gt; {
         createPage({

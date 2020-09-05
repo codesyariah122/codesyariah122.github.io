@@ -1,4 +1,4 @@
-I"fJ<div class="container">
+I"CJ<div class="container">
 
  <!--endif page url is / -->
 
@@ -10,204 +10,6 @@
     <div class="col-md-8 main-loop">
 
         <h4 class="font-weight-bold spanborder"><span>All Stories</span></h4>
-
-
-        
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/php/mysql/membuat-system-polling-dengan-metode-request-ajax-jquery-PHP-PDO/">membuat system polling dengan metode request ajax jquery PHP PDO</a>
-	</h2>
-	<p class="excerpt">
-	     
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">php</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#mysql">mysql</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		29 June 2020
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/php/mysql/membuat-system-polling-dengan-metode-request-ajax-jquery-PHP-PDO/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/system_polling1.png" alt="membuat system polling dengan metode request ajax jquery PHP PDO" />
-	</a>
-	</div>
-
-</div>
-
-
-        
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/css/webdev/Satuan-pada-css/">Satuan Pada Css</a>
-	</h2>
-	<p class="excerpt">
-	   
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#css">css</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#webdev">webdev</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		28 June 2020
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/css/webdev/Satuan-pada-css/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/css.png" alt="Satuan Pada Css" />
-	</a>
-	</div>
-
-</div>
-
-
-        
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/php/composer/install-composer-on-debian9-stretch/">Install composer on debian 9 stretch</a>
-	</h2>
-	<p class="excerpt">
-	   
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">PHP</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#composer">Composer</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		23 June 2020
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/php/composer/install-composer-on-debian9-stretch/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/composer.png" alt="Install composer on debian 9 stretch" />
-	</a>
-	</div>
-
-</div>
-
-
-        
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/jekyll/ruby/create-pagination-on-jekyll-posts-list-and-post-single-page/">Create pagination on jekyll posts list and post single page</a>
-	</h2>
-	<p class="excerpt">
-	   open _config.yml file on root directori :  adding new plugin config.
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jekyll">Jekyll</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#ruby">ruby</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		27 May 2020
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/jekyll/ruby/create-pagination-on-jekyll-posts-list-and-post-single-page/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/jekyll_pagination.png" alt="Create pagination on jekyll posts list and post single page" />
-	</a>
-	</div>
-
-</div>
-
-
-        
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/php/date%20and%20time/membuat-pagination-di-codeigniter-dengan-class-bootstrap/">Membuat pagination di codeigniter dengan tambahan class bootstrap</a>
-	</h2>
-	<p class="excerpt">
-	   assaalamualaikum ~Halo para coders! tercinta mudah-mudahan selalu dalam keadaan baik-baik dan sehat semuanya.kali ini coders akan berbagi trick dan tips seputar pagination di framewor...
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">PHP</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#date and time">Date And Time</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		15 May 2020
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/php/date%20and%20time/membuat-pagination-di-codeigniter-dengan-class-bootstrap/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/pagination.png" alt="Membuat pagination di codeigniter dengan tambahan class bootstrap" />
-	</a>
-	</div>
-
-</div>
-
-
-        
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/php/date%20and%20time/memahami-fungsi-time-di-php/">Memahami fungsi time di php</a>
-	</h2>
-	<p class="excerpt">
-	   Halo para coders semuanya !selamat menjalankan ibadah puasanya, semoga berkah ibadah di bulan ramadhan tahun ini.postingan kali akan berhubungan dengan fungsi date dan time di php.Fun...
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">PHP</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#date and time">Date And Time</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		06 May 2020
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/php/date%20and%20time/memahami-fungsi-time-di-php/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/php_time.jpg" alt="Memahami fungsi time di php" />
-	</a>
-	</div>
-
-</div>
 
 
         
@@ -245,12 +47,210 @@
 
         
 
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/php/explode/memecah-string-nomor-telepon/">Explode string nomor telepon dari query database</a>
+	</h2>
+	<p class="excerpt">
+	   Halo para coders semuanya !selamat menjalankan ibadah puasanya, semoga berkah ibadah di bulan ramadhan tahun ini.postingan kali akan berhubungan dengan string di PHP. ok langsung saja...
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">PHP</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#explode">explode</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		05 May 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/php/explode/memecah-string-nomor-telepon/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/explode_telp.png" alt="Explode string nomor telepon dari query database" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/php/intltelponinput/memasang-plugin-input-telepon-international/">Memasang Plugins Input Telepon International</a>
+	</h2>
+	<p class="excerpt">
+	   
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">PHP</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#intltelponinput">intlTelponinput</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		27 April 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/php/intltelponinput/memasang-plugin-input-telepon-international/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/intl3.png" alt="Memasang Plugins Input Telepon International" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/linux/debian/Install-font-di-linux/">Install fonts di linux</a>
+	</h2>
+	<p class="excerpt">
+	   hai sobat coders, bagaimana kabarnya ? semoga baik baik selalu. kali ini saya akan berbagi tips, cara install font di os linux, kebetulan distro linux yang saya gunakan adalah debian ...
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#linux">Linux</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#debian">debian</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		27 April 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/linux/debian/Install-font-di-linux/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/font1.jpg" alt="Install fonts di linux" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/php/ip_location2/Menentukan-koordinat-dengan-ip-address/">Mendapatkan koordinat google melalui ip address</a>
+	</h2>
+	<p class="excerpt">
+	   Menentukan lokasi, koordinat berdasarkan ip address
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">PHP</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#ip_location2">ip_location2</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		26 April 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/php/ip_location2/Menentukan-koordinat-dengan-ip-address/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/ip-location.png" alt="Mendapatkan koordinat google melalui ip address" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/javascript/api/Membuat-Marker-untuk-Menandai-Lokasi-Google-Maps-API/">Membuat Marker untuk Menandai Lokasi Google Maps API</a>
+	</h2>
+	<p class="excerpt">
+	   
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">javascript</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#api">API</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		26 April 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/javascript/api/Membuat-Marker-untuk-Menandai-Lokasi-Google-Maps-API/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/googlemaps2.jpg" alt="Membuat Marker untuk Menandai Lokasi Google Maps API" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/mysql-server/phpmyadmin/install-visual-studio-code-debian9-stretch/">Install Visual Studio Code di debian 9 stretch</a>
+	</h2>
+	<p class="excerpt">
+	   
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#mysql-server">mysql-server</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#phpmyadmin">phpmyadmin</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		25 April 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/mysql-server/phpmyadmin/install-visual-studio-code-debian9-stretch/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/visual_code1.png" alt="Install Visual Studio Code di debian 9 stretch" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
         <div class="mt-5">
          <!-- Pagination links -->
             
             <ul class="pagination">
               
-                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page3">&laquo; Prev</a></li>
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page4">&laquo; Prev</a></li>
               
 
               
@@ -267,11 +267,11 @@
                 
               
                 
-                <li class="page-item disabled"><span class="webjeda page-link">4</span></li>
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page4">4</a></li>
                 
               
                 
-                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page5">5</a></li>
+                <li class="page-item disabled"><span class="webjeda page-link">5</span></li>
                 
               
                 
@@ -292,7 +292,7 @@
               
 
               
-                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page5">Next &raquo;</a></li>
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page6">Next &raquo;</a></li>
               
             </ul>
             

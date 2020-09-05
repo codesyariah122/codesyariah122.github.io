@@ -1,9 +1,9 @@
-I"p3<h3 id="apa-itu-graphql">Apa itu graphQL</h3>
+I"s3<h3 id="apa-itu-graphql">Apa itu graphQL</h3>
 <p>GraphQL adalah sebuah konsep baru dalam  membangun api. GraphQL (Query Language) yang di develop oleh <code class="language-plaintext highlighter-rouge">facebook</code>.<br />
 di implementasikan pada sisi server. Meskipun sebuah query language graphQL ini tidak secara langsung berhubungan dengan database server, dengan kata lain GraphQL ini tidak terbatas untuk database tertentu di platform tertentu, baik itu <code class="language-plaintext highlighter-rouge">SQL</code> ataupun <code class="language-plaintext highlighter-rouge">noSQL</code>.<br />
 posisi GraphQL ini berada di sisi client dan server yang berhubungan / mengakses suatu API. Salah satu tujuan pengembangan bahasa query ini adalah untuk memudahkan komunikasi data antara beckend dan frontend / mobile aplikasi.</p>
 
-<p><img src="{{site.url}}/assets/images/post/graphql-post.png" alt="graphQL" /></p>
+<p><img src="http://localhost:4000/assets/images/post/graphql-post.png" alt="graphQL" /></p>
 
 <p>GraphQL ini dapat di implementasikan di segala sisi client seperti :</p>
 <ul>
@@ -54,7 +54,7 @@ sebelum melakukan testing query untuk binding data di gatsby, kita mau ubah view
 <p>kemudian buka kembali user interface graphql di link : <code class="language-plaintext highlighter-rouge">localhost:8000/___graphql</code><br />
 seperti inilah tampilan graphql dengan package user interface playground:</p>
 
-<p><img src="{{site.url}}/assets/images/post/graphql-ui-gatsby.png" alt="graphQL" /></p>
+<p><img src="http://localhost:4000/assets/images/post/graphql-ui-gatsby.png" alt="graphQL" /></p>
 
 <p>lakukan query diataranya untuk binding data dan melakukan slug untuk data di page posts nanti yang akan kita buat di bagian selanjutnya : 
 gout melakukan beberapa query sepert dibawah ini, tambahkan query di box sebelah kiti :</p>
@@ -116,7 +116,7 @@ query (
 </code></pre></div></div>
 <p>kalian bisa telah sendiri hasil dari query graphQL diatas, untuk slug dan binding data. kalian coba telaah secara lebih spesifik. seperti ini contohnya :</p>
 
-<p><img src="{{site.url}}/assets/images/post/graphql2.png" alt="graphQL" /><br />
+<p><img src="http://localhost:4000/assets/images/post/graphql2.png" alt="graphQL" /><br />
 query diatas untuk binding metadata untuk di query di bagian page. kalian bisa coba baris perbaris atau buka perbaris dari script graphql diatas di tab baru di user interfacenya graphql.</p>
 
 <h4 id="kemudian-selanjutnya-lagi-">kemudian selanjutnya lagi !</h4>
@@ -184,7 +184,7 @@ tambahkan baris code berikut :
 </code></pre></div>        </div>
         <p>file tersebut akan menampilkan daftar baris post di link <code class="language-plaintext highlighter-rouge">/blog/</code> seperti dibawah ini :</p>
 
-        <p><img src="{{site.url}}/assets/images/post/post-list-gatsby.png" alt="graphQL" /></p>
+        <p><img src="http://localhost:4000/assets/images/post/post-list-gatsby.png" alt="graphQL" /></p>
       </li>
     </ul>
   </li>
@@ -193,7 +193,7 @@ tambahkan baris code berikut :
 selanjutnya, setelah edit page <code class="language-plaintext highlighter-rouge">blog.js</code> kita kembali ke direktori root gatsby kita, kemudian buat satu file baru di root direktori, beri nama <code class="language-plaintext highlighter-rouge">gatsby-node.js</code> .<br />
 seperti ini :</p>
 
-    <p><img src="{{site.url}}/assets/images/post/gatsby-direktori-1.png" alt="graphQL" /></p>
+    <p><img src="http://localhost:4000/assets/images/post/gatsby-direktori-1.png" alt="graphQL" /></p>
 
     <p>kemudian buka file <code class="language-plaintext highlighter-rouge">gatsby-node.js</code> copy baris code berikut :</p>
 
@@ -218,7 +218,7 @@ seperti ini :</p>
 
       const { createPage } = actions
       const blogTemplate = path.resolve('./src/templates/blog.js')
-      const res = await graphql(`
+      const res = await graphql('
           query{
             allMarkdownRemark {
               edges {
@@ -230,7 +230,7 @@ seperti ini :</p>
               }
             }
           }
-        `)
+        ')
 
       res.data.allMarkdownRemark.edges.forEach((edge) =&gt; {
         createPage({
@@ -272,7 +272,7 @@ untuk menampilkan post kita di gatsby kita buat satu direktori baru di direktori
           &lt;Layout&gt;
             &lt;h1&gt;{props.data.markdownRemark.frontmatter.title}&lt;/h1&gt;
             &lt;small&gt;{props.data.markdownRemark.frontmatter.date}&lt;/small&gt;
-            &lt;div dangerouslySetInnerHTML={{__html: props.data.markdownRemark.html}}&gt;&lt;/div&gt;
+            &lt;div dangerouslySetInnerHTML=&gt;&lt;/div&gt;
           &lt;/Layout&gt;
 
         )

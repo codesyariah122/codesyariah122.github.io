@@ -1,4 +1,4 @@
-I"�J<div class="container">
+I"ZO<div class="container">
 
  <!--endif page url is / -->
 
@@ -17,7 +17,7 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/mysql-server/phpmyadmin/Error-Phpmyadmin-Warning-in/">Error Phpmyadmin Warning in ./libraries/sql.lib.php#613 count(): Parameter must be an array or an object that implements Countable</a>
+	<a class="text-dark" href="http://localhost:4000/nodejs/javascript/selanjutnya-dengan-Node-JS/">Selanjutnya dengan Node JS</a>
 	</h2>
 	<p class="excerpt">
 	   
@@ -25,20 +25,20 @@
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#mysql-server">mysql-server</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#nodejs">NodeJS</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#phpmyadmin">phpmyadmin</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		25 April 2020
+		18 August 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/mysql-server/phpmyadmin/Error-Phpmyadmin-Warning-in/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/phpmyadmin/a.png" alt="Error Phpmyadmin Warning in ./libraries/sql.lib.php#613 count(): Parameter must be an array or an object that implements Countable" />
+	<a href="http://localhost:4000/nodejs/javascript/selanjutnya-dengan-Node-JS/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/nodejs-part2.png" alt="Selanjutnya dengan Node JS" />
 	</a>
 	</div>
 
@@ -50,7 +50,7 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/nativephp/vanilla%20javascript/Membuat-feedback-flashmassage-dengan-sweetalert2/">Membuat feedback flashmassage dengan sweetalert2</a>
+	<a class="text-dark" href="http://localhost:4000/nodejs/javascript/membuat-aplikasi-Node-js-pertama/">Membuat aplikasi NodeJS pertama</a>
 	</h2>
 	<p class="excerpt">
 	   
@@ -58,20 +58,20 @@
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#nativephp">nativephp</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#nodejs">NodeJS</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#vanilla javascript">vanilla javascript</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		21 April 2020
+		18 August 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/nativephp/vanilla%20javascript/Membuat-feedback-flashmassage-dengan-sweetalert2/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/alert_1.png" alt="Membuat feedback flashmassage dengan sweetalert2" />
+	<a href="http://localhost:4000/nodejs/javascript/membuat-aplikasi-Node-js-pertama/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/repl-node.jpe" alt="Membuat aplikasi NodeJS pertama" />
 	</a>
 	</div>
 
@@ -83,28 +83,30 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/nativephp/vanilla%20javascript/default-ordering-(sorting)/">Default ordering (sorting) datatables not working</a>
+	<a class="text-dark" href="http://localhost:4000/php/ajax/jquery/Parsing-data-covid19-dengan-PHP-CURL-AJAX-JQUERY/">Parsing data covid 19 dengan PHP CURL, Ajax Jquery</a>
 	</h2>
 	<p class="excerpt">
-	   
+	   Parsing data JSON upadte data covid19 dengan PHP CURL
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#nativephp">nativephp</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">php</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#vanilla javascript">vanilla javascript</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#ajax">ajax</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jquery">jquery</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		19 April 2020
+		15 August 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/nativephp/vanilla%20javascript/default-ordering-(sorting)/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/Untitled2.jpg" alt="Default ordering (sorting) datatables not working" />
+	<a href="http://localhost:4000/php/ajax/jquery/Parsing-data-covid19-dengan-PHP-CURL-AJAX-JQUERY/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/covid.png" alt="Parsing data covid 19 dengan PHP CURL, Ajax Jquery" />
 	</a>
 	</div>
 
@@ -116,28 +118,32 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/blog/story/hidup-adalah-ilmu/">hidup adalah ilmu dan hidup dengan ilmu</a>
+	<a class="text-dark" href="http://localhost:4000/gatsbyjs/react/javascript/tailwindcss/menggunakan-tailwind-css-di-gatsbyJS-menggunakan-plugin-postcss/">Menggunakan plugin tailwind css dan plugin postcss untuk styling di gatsbyJS</a>
 	</h2>
 	<p class="excerpt">
-	   apa sih sebenarnya hidup ini??sebuah pertanyaan bagi saya dan diri saya pribadi, mengapa ada bagian saya dan diri saya. apa hakikatnya, apakah ini dengungan dari sebuah istilah lahir ...
+	   Menggunakan tailwind css di gatsbysalam jumpa lagi para coders ! semoga selalu sehat, udah mulai musim penghujan sepertinya, jangan lupa jaga kesehatan. jangan banyak begadang yah cod...
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">blog</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#gatsbyjs">GatsbyJS</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#story">story</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#react">React</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#tailwindcss">tailwindcss</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		13 April 2020
+		14 August 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/blog/story/hidup-adalah-ilmu/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/ilustrasi-mencari-ilmu.jpg" alt="hidup adalah ilmu dan hidup dengan ilmu" />
+	<a href="http://localhost:4000/gatsbyjs/react/javascript/tailwindcss/menggunakan-tailwind-css-di-gatsbyJS-menggunakan-plugin-postcss/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/tailwindcss.png" alt="Menggunakan plugin tailwind css dan plugin postcss untuk styling di gatsbyJS" />
 	</a>
 	</div>
 
@@ -149,28 +155,30 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/linux/server/sorry-that-didn't-work-login-root-debian-9-gnome/">sorry that didn't work login root debian 9 gnome</a>
+	<a class="text-dark" href="http://localhost:4000/gatsbyjs/react/javascript/menambahkan-package-plugin-emojis-di-gatsby/">Menambahkan package plugin emojis di gatsby</a>
 	</h2>
 	<p class="excerpt">
-	   
+	   Menggunakan package emojis dari gatsby reactdalam artikel ini sebetulnya pembahasan nya bukan sesuatu yang serius, pembahasan kali ini hanya sekedar sebuah hal sederhana, simple dan m...
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#linux">linux</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#gatsbyjs">GatsbyJS</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#server">server</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#react">React</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		02 March 2020
+		12 August 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/linux/server/sorry-that-didn't-work-login-root-debian-9-gnome/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/debian9/IMG_20200201_005454.jpg" alt="sorry that didn't work login root debian 9 gnome" />
+	<a href="http://localhost:4000/gatsbyjs/react/javascript/menambahkan-package-plugin-emojis-di-gatsby/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/gatsby-remark-emojis.png" alt="Menambahkan package plugin emojis di gatsby" />
 	</a>
 	</div>
 
@@ -182,28 +190,30 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/linux/server/error-404-nginx-saat-menggunakan-framework-codeigniter/">Error 404 nginx saat menggunakan codeigniter</a>
+	<a class="text-dark" href="http://localhost:4000/gatsbyjs/react/javascript/bekerja-dengan-graphQL-API-&amp;-set-up-metadata-untuk-pages/">Bekerja dengan graphQL API untuk query metadata page</a>
 	</h2>
 	<p class="excerpt">
-	   error 404 ini saya alami ketika saya menggunakan framework codeigniter, permasalahan ini kemungkinan terjadi akibat nginx tidak mengenalidirektori root dari virtualhot project kita ya...
+	   Apa itu graphQLGraphQL adalah sebuah konsep baru dalam  membangun api. GraphQL (Query Language) yang di develop oleh facebook.di implementasikan pada sisi server. Meskipun sebuah quer...
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#linux">linux</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#gatsbyjs">GatsbyJS</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#server">server</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#react">React</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		02 March 2020
+		11 August 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/linux/server/error-404-nginx-saat-menggunakan-framework-codeigniter/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/nginx/nginx_404.png" alt="Error 404 nginx saat menggunakan codeigniter" />
+	<a href="http://localhost:4000/gatsbyjs/react/javascript/bekerja-dengan-graphQL-API-&amp;-set-up-metadata-untuk-pages/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/graphQL-base.png" alt="Bekerja dengan graphQL API untuk query metadata page" />
 	</a>
 	</div>
 
@@ -215,28 +225,30 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/linux/server/install-secure-phpmyadmin-on-debian9-stretch/">install secure phpmyadmin on debian9 stretch</a>
+	<a class="text-dark" href="http://localhost:4000/gatsbyjs/react/javascript/membangun-project-staticsite-dengan-gatsby/">Membangun project static site dengan gatsbyJS</a>
 	</h2>
 	<p class="excerpt">
-	   Step 1 — Installing phpMyAdmin
+	   Membuat project dengan gatsbytidak ada salahnya memang menjadi kekinian… hehe ini hanya sekedar basa basi di awal artikel ini. untuk menyambut para coders.apa kabarnya nih para coders...
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#linux">linux</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#gatsbyjs">GatsbyJS</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#server">server</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#react">React</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		28 February 2020
+		10 August 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/linux/server/install-secure-phpmyadmin-on-debian9-stretch/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/phpmyadmin/login.png" alt="install secure phpmyadmin on debian9 stretch" />
+	<a href="http://localhost:4000/gatsbyjs/react/javascript/membangun-project-staticsite-dengan-gatsby/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/gatsby.png" alt="Membangun project static site dengan gatsbyJS" />
 	</a>
 	</div>
 
@@ -250,7 +262,7 @@
             
             <ul class="pagination">
               
-                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page5">&laquo; Prev</a></li>
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/">&laquo; Prev</a></li>
               
 
               
@@ -259,7 +271,7 @@
                 
               
                 
-                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page2">2</a></li>
+                <li class="page-item disabled"><span class="webjeda page-link">2</span></li>
                 
               
                 
@@ -275,7 +287,7 @@
                 
               
                 
-                <li class="page-item disabled"><span class="webjeda page-link">6</span></li>
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page6">6</a></li>
                 
               
                 
@@ -292,7 +304,7 @@
               
 
               
-                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page7">Next &raquo;</a></li>
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page3">Next &raquo;</a></li>
               
             </ul>
             

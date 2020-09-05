@@ -1,4 +1,4 @@
-I"�M<div class="container">
+I"*L<div class="container">
 
  <!--endif page url is / -->
 
@@ -17,30 +17,28 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/php/ajax/jquery/Menjalankan-dua-query-berbeda-dalam-satu-statement-menggunakan-PDOExtention/">Menjalankan dua query berbeda dalam satu statement menggunakan PDOExtention</a>
+	<a class="text-dark" href="http://localhost:4000/linux/server/install-secure-phpmyadmin-on-debian9-stretch/">install secure phpmyadmin on debian9 stretch</a>
 	</h2>
 	<p class="excerpt">
-	   Menjalankan dua query berbeda secara bersamaan dalam satu statement
+	   Step 1 — Installing phpMyAdmin
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">php</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#linux">linux</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#ajax">ajax</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jquery">jquery</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#server">server</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		04 August 2020
+		28 February 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/php/ajax/jquery/Menjalankan-dua-query-berbeda-dalam-satu-statement-menggunakan-PDOExtention/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/pdo.png" alt="Menjalankan dua query berbeda dalam satu statement menggunakan PDOExtention" />
+	<a href="http://localhost:4000/linux/server/install-secure-phpmyadmin-on-debian9-stretch/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/phpmyadmin/login.png" alt="install secure phpmyadmin on debian9 stretch" />
 	</a>
 	</div>
 
@@ -52,30 +50,28 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/php/ajax/jquery/membuat-fitur-pagination-pada-aplikasi-crud-data-ajax-jquery/">Membuat fitur pagination pada aplikasi crud data ajax jquery</a>
+	<a class="text-dark" href="http://localhost:4000/linux/server/Error-1698-Access-denied-for-user-'root'@'localhost-di-phpMyAdmin/">Error #1698 Access denied for user 'root'@'localhost di phpMyAdmin</a>
 	</h2>
 	<p class="excerpt">
-	   Fitur pagination dalam crud data with ajax jqueryhalo coders semuanya ….ini masih melanjutkan edisi crud data dengan ajax jquery dengan menggunakan metode php pdo ekstension sebagai s...
+	   Assalamualaikum wr. wb
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">php</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#linux">linux</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#ajax">ajax</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jquery">jquery</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#server">server</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		03 August 2020
+		26 February 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/php/ajax/jquery/membuat-fitur-pagination-pada-aplikasi-crud-data-ajax-jquery/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/pagination-explanation.png" alt="Membuat fitur pagination pada aplikasi crud data ajax jquery" />
+	<a href="http://localhost:4000/linux/server/Error-1698-Access-denied-for-user-'root'@'localhost-di-phpMyAdmin/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/nginx/err.png" alt="Error #1698 Access denied for user 'root'@'localhost di phpMyAdmin" />
 	</a>
 	</div>
 
@@ -87,42 +83,7 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/php/ajax/jquery/membuat-fitur-upload-pada-aplikasi-crud-data-ajax-jquery/">Membuat fitur upload pada aplikasi crud data ajax jquery</a>
-	</h2>
-	<p class="excerpt">
-	   Fitur upload gambar dengan metode PDO dan jquery-ajax
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">php</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#ajax">ajax</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jquery">jquery</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		31 July 2020
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/php/ajax/jquery/membuat-fitur-upload-pada-aplikasi-crud-data-ajax-jquery/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/upload.png" alt="Membuat fitur upload pada aplikasi crud data ajax jquery" />
-	</a>
-	</div>
-
-</div>
-
-
-        
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/nodejs/javascript/install-nodeJS-on-linux-debian9-stretch/">Install NodeJS debian 9 stretch linux</a>
+	<a class="text-dark" href="http://localhost:4000/linux/server/install-driver-iwlwifi-debian9/">install-driver-iwlwifi-debian9</a>
 	</h2>
 	<p class="excerpt">
 	   
@@ -130,20 +91,20 @@
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#nodejs">NodeJS</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#linux">linux</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#server">server</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		29 July 2020
+		24 February 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/nodejs/javascript/install-nodeJS-on-linux-debian9-stretch/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/Node-js-Logo.png" alt="Install NodeJS debian 9 stretch linux" />
+	<a href="http://localhost:4000/linux/server/install-driver-iwlwifi-debian9/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/debian9/install-driver-wifi-debian-thinkpad-iwlwifi-linux.jpg" alt="install-driver-iwlwifi-debian9" />
 	</a>
 	</div>
 
@@ -155,30 +116,28 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/php/ajax/jquery/membuat-fitur-live-search-dengan-ajax/">Membuat fitur live search engine dengan ajax jquery</a>
+	<a class="text-dark" href="http://localhost:4000/linux/server/upgrade-debian8-jessie/">upgrade debian 8 jessie</a>
 	</h2>
 	<p class="excerpt">
-	   Fitur live search dengan ajax jquery
+	   Sebelum melakukan proses upgrade ke Debian 9 Stretch, disarankan untuk memperbarui perangkat lunak Debian 8 Jessie sehingga dalam kondisi up to date (stable version). Buka terminal De...
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">php</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#linux">linux</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#ajax">ajax</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jquery">jquery</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#server">server</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		22 July 2020
+		25 December 2019
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/php/ajax/jquery/membuat-fitur-live-search-dengan-ajax/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/crud_ajax_live_search.gif" alt="Membuat fitur live search engine dengan ajax jquery" />
+	<a href="http://localhost:4000/linux/server/upgrade-debian8-jessie/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/debian9/Screenshot from 2020-02-24 19-20-15.png" alt="upgrade debian 8 jessie" />
 	</a>
 	</div>
 
@@ -190,28 +149,28 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/php/codeigniter/Warning-Message-Module-already-loaded/">Warning Message: Module already loaded</a>
+	<a class="text-dark" href="http://localhost:4000/live%20chat/codeigniter/memasang-aplikasi-live-chat-di-codeigniter/">pasang aplikasi chat di website yang menggunakan framework codeigniter</a>
 	</h2>
 	<p class="excerpt">
-	   Warning Message: Module already loaded
+	   Akhir-akhir ini perkembangan website sudah sangat berkembang pesat, banyak fitur yang bisa memudahkan kita untuk mendapatkan sebuah informasi digital yang akurat.salah satu layanan ap...
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">php</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#live chat">live chat</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#codeigniter">codeigniter</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#codeigniter">Codeigniter</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		21 July 2020
+		05 December 2019
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/php/codeigniter/Warning-Message-Module-already-loaded/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/error_php_codeigniter.png" alt="Warning Message: Module already loaded" />
+	<a href="http://localhost:4000/live%20chat/codeigniter/memasang-aplikasi-live-chat-di-codeigniter/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/chat/chat.jpg" alt="pasang aplikasi chat di website yang menggunakan framework codeigniter" />
 	</a>
 	</div>
 
@@ -223,32 +182,61 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/php/pdo/ajax/jquery/crud-data-dengan-jquery-ajax/">crud data dengan jquery ajax</a>
+	<a class="text-dark" href="http://localhost:4000/phpmailer/codeigniter/kirim-email-multiple-attachment-dengan-library-phpmailer-di-codeigniter/">Kirim Email multiple attachment dengan menggunakan library phpmailer di codeigniter</a>
 	</h2>
 	<p class="excerpt">
-	   crud dengan php ekstensi pdo dengan pemanfaatan api jquery ajax
+	   Kali ini kita (kita .. lu aja kali) maksudnya saya, kali ini saya akan membuat sebuah layanan email service dengan menggunakan library dari phpmailer dan codeigniter, ok langsung saja...
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">php</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#phpmailer">phpmailer</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#pdo">pdo</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#ajax">ajax</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jquery">jquery</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#codeigniter">Codeigniter</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		03 July 2020
+		11 November 2019
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/php/pdo/ajax/jquery/crud-data-dengan-jquery-ajax/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/ajax.jpeg" alt="crud data dengan jquery ajax" />
+	<a href="http://localhost:4000/phpmailer/codeigniter/kirim-email-multiple-attachment-dengan-library-phpmailer-di-codeigniter/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/phpmailer.png" alt="Kirim Email multiple attachment dengan menggunakan library phpmailer di codeigniter" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/technologies/server/configurasi-static-ip-di-ubuntu-bionic(18.04)/">Konfigurasi Static IP Ubuntu Bionic(18.04)</a>
+	</h2>
+	<p class="excerpt">
+	   konfigurasi static ip ubuntu server Bionic(18.04)  kini sudah berbeda dibandingkan dengan Ubuntu Server 16.04 ke bawah.Versi Ubuntu sebelumnya, konfigurasi dilakukan dengan memodifika...
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#technologies">Technologies</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#server">Server</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		25 September 2019
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/technologies/server/configurasi-static-ip-di-ubuntu-bionic(18.04)/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/bionic/bionic.jpg" alt="Konfigurasi Static IP Ubuntu Bionic(18.04)" />
 	</a>
 	</div>
 
@@ -262,7 +250,7 @@
             
             <ul class="pagination">
               
-                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page2">&laquo; Prev</a></li>
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page6">&laquo; Prev</a></li>
               
 
               
@@ -275,7 +263,7 @@
                 
               
                 
-                <li class="page-item disabled"><span class="webjeda page-link">3</span></li>
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page3">3</a></li>
                 
               
                 
@@ -291,7 +279,7 @@
                 
               
                 
-                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page7">7</a></li>
+                <li class="page-item disabled"><span class="webjeda page-link">7</span></li>
                 
               
                 
@@ -304,7 +292,7 @@
               
 
               
-                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page4">Next &raquo;</a></li>
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page8">Next &raquo;</a></li>
               
             </ul>
             

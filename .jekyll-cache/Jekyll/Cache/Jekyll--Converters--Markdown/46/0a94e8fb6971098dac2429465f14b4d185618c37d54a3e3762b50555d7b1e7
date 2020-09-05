@@ -1,4 +1,4 @@
-I"tM<div class="container">
+I"\M<div class="container">
 
  <!--endif page url is / -->
 
@@ -17,30 +17,30 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/news/blog/writer/Tangkuban-Perahu-Erupsi/">Tangkuban Perahu meletus dengan erupsi diperkirakan 'satu minggu' dan masyarakat diminta 'berwaspada letusan tiba-tiba'</a>
+	<a class="text-dark" href="http://localhost:4000/php/ajax/jquery/membuat-fitur-reaction-button-dengan-ajax-jquery-php/">Membuat fitur reaction button dengan ajax jquery php</a>
 	</h2>
 	<p class="excerpt">
-	   Gede Suantika, Kepala Bidang Mitigasi Gunung Api. Pusat Vulkanologi dan Mitigasi Bencana Geologi (PVMBG) memperkirakan letusan yang terjadi kali ini “hampir sama” dengan letusan pada ...
+	   Membuat reaction button dengan jquery ajax
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#news">News</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">php</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">Blog</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#ajax">ajax</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#writer">Writer</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jquery">jquery</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		26 July 2019
+		07 August 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/news/blog/writer/Tangkuban-Perahu-Erupsi/">
-	<img class="w-100" src="https://ichef-bbci-co-uk.cdn.ampproject.org/i/s/ichef.bbci.co.uk/news/485/cpsprodpb/2480/production/_108044390_35d62e98-2316-4be6-9fb5-e6af4cf53d6e.jpg" alt="Tangkuban Perahu meletus dengan erupsi diperkirakan 'satu minggu' dan masyarakat diminta 'berwaspada letusan tiba-tiba'" />
+	<a href="http://localhost:4000/php/ajax/jquery/membuat-fitur-reaction-button-dengan-ajax-jquery-php/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/crud_ajax_with_button_reaction.gif" alt="Membuat fitur reaction button dengan ajax jquery php" />
 	</a>
 	</div>
 
@@ -52,30 +52,30 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/jekyll/blog/tutorial/Powerfull-things-markdown-editor/">Hal-hal keren yang dapat kalian lakukan dengan editor Markdown</a>
+	<a class="text-dark" href="http://localhost:4000/php/ajax/jquery/Menjalankan-dua-query-berbeda-dalam-satu-statement-menggunakan-PDOExtention/">Menjalankan dua query berbeda dalam satu statement menggunakan PDOExtention</a>
 	</h2>
 	<p class="excerpt">
-	   Ada banyak hal keren yang dapat Kalian lakukan dengan editor Markdown. Jika Kalian sudah cukup terbiasa dengan menulis di Markdown, maka Kalian dapat menikmati beberapa tips lebih lan...
+	   Menjalankan dua query berbeda secara bersamaan dalam satu statement
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jekyll">Jekyll</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">php</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">Blog</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#ajax">ajax</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#tutorial">tutorial</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jquery">jquery</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		26 July 2019
+		04 August 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/jekyll/blog/tutorial/Powerfull-things-markdown-editor/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/photo-1.jpeg" alt="Hal-hal keren yang dapat kalian lakukan dengan editor Markdown" />
+	<a href="http://localhost:4000/php/ajax/jquery/Menjalankan-dua-query-berbeda-dalam-satu-statement-menggunakan-PDOExtention/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/pdo.png" alt="Menjalankan dua query berbeda dalam satu statement menggunakan PDOExtention" />
 	</a>
 	</div>
 
@@ -87,30 +87,30 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/kajianislam/sunnah/blog/Luasnya-Ampunan-Allah/">Luasnya Ampunan Allah SWT</a>
+	<a class="text-dark" href="http://localhost:4000/php/ajax/jquery/membuat-fitur-pagination-pada-aplikasi-crud-data-ajax-jquery/">Membuat fitur pagination pada aplikasi crud data ajax jquery</a>
 	</h2>
 	<p class="excerpt">
-	   Luasnya Ampunan Allah
+	   Fitur pagination dalam crud data with ajax jqueryhalo coders semuanya ….ini masih melanjutkan edisi crud data dengan ajax jquery dengan menggunakan metode php pdo ekstension sebagai s...
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#kajianislam">KajianIslam</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">php</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#sunnah">Sunnah</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#ajax">ajax</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">Blog</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jquery">jquery</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		26 July 2019
+		03 August 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/kajianislam/sunnah/blog/Luasnya-Ampunan-Allah/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/ampunan.jpeg" alt="Luasnya Ampunan Allah SWT" />
+	<a href="http://localhost:4000/php/ajax/jquery/membuat-fitur-pagination-pada-aplikasi-crud-data-ajax-jquery/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/pagination-explanation.png" alt="Membuat fitur pagination pada aplikasi crud data ajax jquery" />
 	</a>
 	</div>
 
@@ -122,28 +122,30 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/blog/writer/Gairah-Budaya-Membaca/">Gairah Budaya Membaca</a>
+	<a class="text-dark" href="http://localhost:4000/php/ajax/jquery/membuat-fitur-upload-pada-aplikasi-crud-data-ajax-jquery/">Membuat fitur upload pada aplikasi crud data ajax jquery</a>
 	</h2>
 	<p class="excerpt">
-	   Apa sih pentingnya Membaca itu
+	   Fitur upload gambar dengan metode PDO dan jquery-ajax
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">blog</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">php</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#writer">writer</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#ajax">ajax</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jquery">jquery</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		26 July 2019
+		31 July 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/blog/writer/Gairah-Budaya-Membaca/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/baca.jpeg" alt="Gairah Budaya Membaca" />
+	<a href="http://localhost:4000/php/ajax/jquery/membuat-fitur-upload-pada-aplikasi-crud-data-ajax-jquery/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/upload.png" alt="Membuat fitur upload pada aplikasi crud data ajax jquery" />
 	</a>
 	</div>
 
@@ -155,30 +157,28 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/kajianislam/sunnah/blog/Ramalan-Ali-ra-Zaman-Mendatang/">Ramalan Ali ra tentang zaman mendatang </a>
+	<a class="text-dark" href="http://localhost:4000/nodejs/javascript/install-nodeJS-on-linux-debian9-stretch/">Install NodeJS debian 9 stretch linux</a>
 	</h2>
 	<p class="excerpt">
-	   Dari ‘Ali ra sesungguhnya ia berkata: Suatu zaman akan datang kepada manusia, di zamanitu islam hanya tinggal nama, Al-Quran tinggal tulisan, dan masjid-masjid mereka megah-megah,tapi...
+	   
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#kajianislam">KajianIslam</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#nodejs">NodeJS</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#sunnah">Sunnah</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">blog</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		21 July 2019
+		29 July 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/kajianislam/sunnah/blog/Ramalan-Ali-ra-Zaman-Mendatang/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/ali.jpeg" alt="Ramalan Ali ra tentang zaman mendatang " />
+	<a href="http://localhost:4000/nodejs/javascript/install-nodeJS-on-linux-debian9-stretch/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/Node-js-Logo.png" alt="Install NodeJS debian 9 stretch linux" />
 	</a>
 	</div>
 
@@ -190,28 +190,30 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/kajianislam/sunnah/Mutiara-Hikmah/">Mutiara Hikmah</a>
+	<a class="text-dark" href="http://localhost:4000/php/ajax/jquery/membuat-fitur-live-search-dengan-ajax/">Membuat fitur live search engine dengan ajax jquery</a>
 	</h2>
 	<p class="excerpt">
-	   Allah SWT berfirman:يُؤْتِى الْحِكْمَةَ مَنْ يَّشَآءُ ۚ وَمَنْ يُّؤْتَ الْحِكْمَةَ فَقَدْ اُوْتِيَ خَيْرًا كَثِيْرًا ۗ وَمَا يَذَّكَّرُ اِلَّاۤ اُولُوا الْاَ لْبَا بِyu`til-hikmata m...
+	   Fitur live search dengan ajax jquery
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#kajianislam">KajianIslam</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">php</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#sunnah">Sunnah</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#ajax">ajax</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jquery">jquery</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		06 July 2019
+		22 July 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/kajianislam/sunnah/Mutiara-Hikmah/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/mutiara-hikmah.jpeg" alt="Mutiara Hikmah" />
+	<a href="http://localhost:4000/php/ajax/jquery/membuat-fitur-live-search-dengan-ajax/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/crud_ajax_live_search.gif" alt="Membuat fitur live search engine dengan ajax jquery" />
 	</a>
 	</div>
 
@@ -223,28 +225,28 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/kajianislam/sunnah/Muadzin-Abu-Mahdzurah/">Muadzin Abu Mahdzurah</a>
+	<a class="text-dark" href="http://localhost:4000/php/codeigniter/Warning-Message-Module-already-loaded/">Warning Message: Module already loaded</a>
 	</h2>
 	<p class="excerpt">
-	   Kisah Muadzin Rasulullah (Abu Mahdzurah)
+	   Warning Message: Module already loaded
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#kajianislam">KajianIslam</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">php</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#sunnah">Sunnah</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#codeigniter">codeigniter</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		06 July 2019
+		21 July 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/kajianislam/sunnah/Muadzin-Abu-Mahdzurah/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/abu-mahdzurah.jpeg" alt="Muadzin Abu Mahdzurah" />
+	<a href="http://localhost:4000/php/codeigniter/Warning-Message-Module-already-loaded/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/error_php_codeigniter.png" alt="Warning Message: Module already loaded" />
 	</a>
 	</div>
 
@@ -258,7 +260,7 @@
             
             <ul class="pagination">
               
-                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page7">&laquo; Prev</a></li>
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page2">&laquo; Prev</a></li>
               
 
               
@@ -271,7 +273,7 @@
                 
               
                 
-                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page3">3</a></li>
+                <li class="page-item disabled"><span class="webjeda page-link">3</span></li>
                 
               
                 
@@ -291,7 +293,7 @@
                 
               
                 
-                <li class="page-item disabled"><span class="webjeda page-link">8</span></li>
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page8">8</a></li>
                 
               
                 
@@ -300,7 +302,7 @@
               
 
               
-                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page9">Next &raquo;</a></li>
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page4">Next &raquo;</a></li>
               
             </ul>
             

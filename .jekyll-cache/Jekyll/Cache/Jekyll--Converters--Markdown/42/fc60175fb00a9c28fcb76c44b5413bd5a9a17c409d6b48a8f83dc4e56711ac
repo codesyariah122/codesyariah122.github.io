@@ -1,4 +1,4 @@
-I"³<div class="container">
+I"Ë<div class="container">
 <div class="row justify-content-center">
     <div class="col-md-8">
         <div class="row align-items-center mb-5">
@@ -16,6 +16,41 @@
         
         <h4 class="font-weight-bold spanborder"><span>Posts by Puji</span></h4>
             
+ 
+  <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/php/laravel/mvc/oop/membangun-project-baru-laravel-7/">Membangun project baru laravel 7</a>
+	</h2>
+	<p class="excerpt">
+	   
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">PHP</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#laravel">Laravel</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#mvc">MVC</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#oop">OOP</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		05 September 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/php/laravel/mvc/oop/membangun-project-baru-laravel-7/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/laravel7_0.jpg" alt="Membangun project baru laravel 7" />
+	</a>
+	</div>
+
+</div>
+
  
   <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
