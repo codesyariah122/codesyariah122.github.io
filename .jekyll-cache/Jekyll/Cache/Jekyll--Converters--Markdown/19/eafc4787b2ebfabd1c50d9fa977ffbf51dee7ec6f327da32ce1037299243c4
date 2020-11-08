@@ -1,0 +1,116 @@
+I"2<p><img src="{{site.url}}/assets/images/post/es6.png" alt="es6-1" /></p>
+<h3 id="ecmascript-6">EcmaScript 6</h3>
+<p>Dalam judul kali ini gout berbagi kisah keluh dan kesah, mengenai ecma script, terkhusus dalam judul kali ini yakni mengenai penggunaan module ecmascript6 di nodejs.<br />
+pertama tama gout akan mengucapkan selamat datang bagi para pembaca gout dari alam lain. entah itu alam gaib atau alam sutra ataupun alam semesta. baiklah gout langsung bahas ke topik utama kali ini.</p>
+
+<h4 id="menggunakan-module-esm-dan-mjs">menggunakan module esm dan mjs</h4>
+<p>Menarik sekali bagi gout membahas mengenai ecmascript6 yang sedang di gandrungi oleh para developer, dalam artikel ini gout hanya membahas dari sisi pengguna saja.<br />
+sebelum menggunakan module import-export ini, kita install dulu package ecmascript6 nya. nama packagenya adalah <code class="language-plaintext highlighter-rouge">esm</code> dan <code class="language-plaintext highlighter-rouge">mjs</code>, supaya nanti kita bisa menggunakan module dari ecmascript6 ini. package <code class="language-plaintext highlighter-rouge">mjs</code> ini mungkin akan disertakan bagi yang menggunakan Node.js versi 12 sedangkan versi terakhirnya yaitu versi 14 gout rasa tidak perlu package <code class="language-plaintext highlighter-rouge">mjs</code> ini yah. ok langsung saja kita buka code editor kita.<br />
+<strong><em>Install package</em></strong><br />
+buka code editor nya dulu, dalam artikel kali ini gout menggunakan <code class="language-plaintext highlighter-rouge">visual studio code</code> kita buat direktori baru, misalnya disini gout memberi nama direktori <code class="language-plaintext highlighter-rouge">ES6Module/</code>, langsung ajah kita drag ke code editor kita.<br />
+seperti ini susunan direktori nya :<br />
+<img src="{{site.url}}/assets/images/post/dir-ES6.png" alt="es6-2" /><br />
+pertama-tama kita lakukan initialisasi package nya terlebih dahulu. dengan execute di terminal VSCODE :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm init
+### Kemudian isikan beberapa opsi yang tersedia
+</code></pre></div></div>
+<p>sehingga menghasilkan satu buah file baru di direktori project ES6 kita, dengan nama <code class="language-plaintext highlighter-rouge">package.json</code>.
+kemudian selanjutnya kita kembali ke terminal lagi, untuk menginstall package yang diperlukan :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install --save-dev esm mjs
+</code></pre></div></div>
+<p>sekarang di <code class="language-plaintext highlighter-rouge">package.json</code> ada nama package baru yang terinstall :<br />
+<img src="{{site.url}}/assets/images/post/package-ES6.png" alt="es6-3" /><br />
+sekarang berarti package <code class="language-plaintext highlighter-rouge">ecmascript6</code> nya bisa kita gunakan di file project kita, buat sebuah direktori baru dengan nama <code class="language-plaintext highlighter-rouge">lib/</code> di direktori lib ini kita buat satu buah file baru dengan nama <code class="language-plaintext highlighter-rouge">module.mjs</code> formatnya(ekstensinya) adalah <code class="language-plaintext highlighter-rouge">.mjs</code>. file ini nanti akan kita gunakan untuk menyimpan beberapa module yang akan kita eksport ke file lain. kemduian di root direktori nya kita buat file baru dengan nama : <code class="language-plaintext highlighter-rouge">app.js</code>. berikut script dari file <code class="language-plaintext highlighter-rouge">lib/module.mjs</code> dan file <code class="language-plaintext highlighter-rouge">app.mjs</code> :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># file : lib/module.mjs
+// export function add(a, b) {
+//     let n = a + b
+//     return `${a} + ${b} = ${n}`
+// }
+// export function dist(a, b) {
+//     let n = a - b
+//     return `${a} - ${b} = ${n}`
+// }
+const sayHai = (string) =&gt; {
+    console.log(`halo, ${string}`)
+}
+const agogo = (string) =&gt; {
+    console.log(string)
+}
+const halo = (user) =&gt; {
+    return user
+}
+export { sayHai, agogo, halo }
+</code></pre></div></div>
+<p>kalian bisa coba bagian yang gout beri comment itu, untuk membedakan opsi penggunaan module export di ecmascript6 ini. dan kemduian file selanjutnya :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># file : app.mjs
+// import { add, dist } from './lib/module'
+
+// console.log(add(19, 12))
+
+// console.log(dist(18, 7))
+
+import * as MyModule from './lib/module.mjs'
+MyModule.sayHai('Lagi apa bro ? ')
+MyModule.agogo('Lagi nyalip bis di tikungan arcamanik ! ')
+const user = MyModule.halo('Puji122')
+const span = document.querySelector('span')
+span.addEventListener('mouseenter', () =&gt; {
+    span.innerHTML = MyModule.halo('Puji122')
+    span.style.color = "rgb(211, 0.1, 111)"
+})
+span.addEventListener('mouseleave', () =&gt; {
+    span.innerHTML = 'EcmaScript6'
+    span.style.color = 'crimson'
+})
+</code></pre></div></div>
+<p>begitu juga di file <code class="language-plaintext highlighter-rouge">app.mjs</code> kalian bisa mencupa opsi yang gout beri komentar.<br />
+selanjutnya untuk menjalankannya, seperti biasa kita menggunakan perintah <code class="language-plaintext highlighter-rouge">node</code> tetap dengan penambahan beberapa opsi seperti berikut:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># terminal
+node -r esm app.mjs
+</code></pre></div></div>
+<p>seperti ini hasilnya :<br />
+<img src="{{site.url}}/assets/images/post/module-es6-run.png" alt="es6-4" /><br />
+kemudian kita coba di opsi yang di comment:</p>
+
+<p>file <code class="language-plaintext highlighter-rouge">app.mjs</code><br />
+<img src="{{site.url}}/assets/images/post/module-es6-run2.png" alt="es6-5" /></p>
+
+<p>file <code class="language-plaintext highlighter-rouge">lib/module.mjs</code><br />
+<img src="{{site.url}}/assets/images/post/module-es6-run3.png" alt="es6-6" /></p>
+
+<h4 id="penggunaan-package-mjs-di-script-html">Penggunaan package mjs di script HTML</h4>
+<p>Nah bagaimana mengenai penggunaan module <code class="language-plaintext highlighter-rouge">.mjs</code> ini di tag script html:<br />
+caranya sama ajah, seperti html biasa html:5 kemudian kita panggil module nya dengan tag <code class="language-plaintext highlighter-rouge">&lt;script&gt;&lt;/script&gt;</code>, tapi kali ini ada perubahan di element <code class="language-plaintext highlighter-rouge">type</code> nya, sehinggai file html kita menjadi seperti ini, perbedaanya di bagian tag <code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> kita menggunakan element type dengan nilai <code class="language-plaintext highlighter-rouge">module</code> :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># file : index.html
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Test Module&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;h1&gt;Halo I'm Using &lt;span&gt;EcmaScript6&lt;/span&gt;&lt;/h1&gt;
+
+    &lt;script type="module" src="app.mjs"&gt;&lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre></div></div>
+<p>file diatas hanya html sederhana biasa, hanya sebagai contoh penggunaan module ecmascript6. 
+untuk sourcecode nya ada di link berikut:<br />
+<a href="https://github.com/codesyariah122/NodeJS_basic/tree/master/modernJS/ES6">ES6 Module</a></p>
+
+<p>ok cukup sekian dulu mengenai <code class="language-plaintext highlighter-rouge">Module esm dam mjs</code> di artikel ini, di lain waktu kita explore yang baru-baru lagi dari ecmascript6 ini.</p>
+
+<p>akhir kata gout ucapkan …</p>
+
+<p>wassalaam</p>
+
+<p><strong><em>Puji Ermanto</em></strong></p>
+
+:ET

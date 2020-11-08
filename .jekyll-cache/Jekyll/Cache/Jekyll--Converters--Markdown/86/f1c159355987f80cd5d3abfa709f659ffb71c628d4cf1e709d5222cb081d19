@@ -1,4 +1,4 @@
-I"\M<div class="container">
+I"`L<div class="container">
 
  <!--endif page url is / -->
 
@@ -17,147 +17,7 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/php/ajax/jquery/membuat-fitur-reaction-button-dengan-ajax-jquery-php/">Membuat fitur reaction button dengan ajax jquery php</a>
-	</h2>
-	<p class="excerpt">
-	   Membuat reaction button dengan jquery ajax
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">php</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#ajax">ajax</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jquery">jquery</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		07 August 2020
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/php/ajax/jquery/membuat-fitur-reaction-button-dengan-ajax-jquery-php/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/crud_ajax_with_button_reaction.gif" alt="Membuat fitur reaction button dengan ajax jquery php" />
-	</a>
-	</div>
-
-</div>
-
-
-        
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/php/ajax/jquery/Menjalankan-dua-query-berbeda-dalam-satu-statement-menggunakan-PDOExtention/">Menjalankan dua query berbeda dalam satu statement menggunakan PDOExtention</a>
-	</h2>
-	<p class="excerpt">
-	   Menjalankan dua query berbeda secara bersamaan dalam satu statement
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">php</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#ajax">ajax</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jquery">jquery</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		04 August 2020
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/php/ajax/jquery/Menjalankan-dua-query-berbeda-dalam-satu-statement-menggunakan-PDOExtention/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/pdo.png" alt="Menjalankan dua query berbeda dalam satu statement menggunakan PDOExtention" />
-	</a>
-	</div>
-
-</div>
-
-
-        
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/php/ajax/jquery/membuat-fitur-pagination-pada-aplikasi-crud-data-ajax-jquery/">Membuat fitur pagination pada aplikasi crud data ajax jquery</a>
-	</h2>
-	<p class="excerpt">
-	   Fitur pagination dalam crud data with ajax jqueryhalo coders semuanya ….ini masih melanjutkan edisi crud data dengan ajax jquery dengan menggunakan metode php pdo ekstension sebagai s...
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">php</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#ajax">ajax</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jquery">jquery</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		03 August 2020
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/php/ajax/jquery/membuat-fitur-pagination-pada-aplikasi-crud-data-ajax-jquery/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/pagination-explanation.png" alt="Membuat fitur pagination pada aplikasi crud data ajax jquery" />
-	</a>
-	</div>
-
-</div>
-
-
-        
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/php/ajax/jquery/membuat-fitur-upload-pada-aplikasi-crud-data-ajax-jquery/">Membuat fitur upload pada aplikasi crud data ajax jquery</a>
-	</h2>
-	<p class="excerpt">
-	   Fitur upload gambar dengan metode PDO dan jquery-ajax
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">php</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#ajax">ajax</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jquery">jquery</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		31 July 2020
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/php/ajax/jquery/membuat-fitur-upload-pada-aplikasi-crud-data-ajax-jquery/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/upload.png" alt="Membuat fitur upload pada aplikasi crud data ajax jquery" />
-	</a>
-	</div>
-
-</div>
-
-
-        
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/nodejs/javascript/install-nodeJS-on-linux-debian9-stretch/">Install NodeJS debian 9 stretch linux</a>
+	<a class="text-dark" href="http://localhost:4000/nodejs/javascript/mencicipi-express-js-framework-untuk-nodeJS/">Mencicipi Express Framework untuk NodeJS</a>
 	</h2>
 	<p class="excerpt">
 	   
@@ -172,13 +32,13 @@
 		</span>
 	</small>
 	<small class="text-muted">
-		29 July 2020
+		22 August 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/nodejs/javascript/install-nodeJS-on-linux-debian9-stretch/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/Node-js-Logo.png" alt="Install NodeJS debian 9 stretch linux" />
+	<a href="http://localhost:4000/nodejs/javascript/mencicipi-express-js-framework-untuk-nodeJS/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/express.jpg" alt="Mencicipi Express Framework untuk NodeJS" />
 	</a>
 	</div>
 
@@ -190,10 +50,109 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/php/ajax/jquery/membuat-fitur-live-search-dengan-ajax/">Membuat fitur live search engine dengan ajax jquery</a>
+	<a class="text-dark" href="http://localhost:4000/nodejs/javascript/mengaktifkan-script-npm-start-dengan-nodemon/">Mengaktifkan script npm start dengan nodemon</a>
 	</h2>
 	<p class="excerpt">
-	   Fitur live search dengan ajax jquery
+	   
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#nodejs">NodeJS</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		20 August 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/nodejs/javascript/mengaktifkan-script-npm-start-dengan-nodemon/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/nodemon.png" alt="Mengaktifkan script npm start dengan nodemon" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/nodejs/javascript/selanjutnya-dengan-Node-JS/">Selanjutnya dengan Node JS</a>
+	</h2>
+	<p class="excerpt">
+	   
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#nodejs">NodeJS</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		18 August 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/nodejs/javascript/selanjutnya-dengan-Node-JS/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/nodejs-part2.png" alt="Selanjutnya dengan Node JS" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/nodejs/javascript/membuat-aplikasi-Node-js-pertama/">Membuat aplikasi NodeJS pertama</a>
+	</h2>
+	<p class="excerpt">
+	   
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#nodejs">NodeJS</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		18 August 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/nodejs/javascript/membuat-aplikasi-Node-js-pertama/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/repl-node.jpe" alt="Membuat aplikasi NodeJS pertama" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/php/ajax/jquery/Parsing-data-covid19-dengan-PHP-CURL-AJAX-JQUERY/">Parsing data covid 19 dengan PHP CURL, Ajax Jquery</a>
+	</h2>
+	<p class="excerpt">
+	   Parsing data JSON upadte data covid19 dengan PHP CURL
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
@@ -207,13 +166,13 @@
 		</span>
 	</small>
 	<small class="text-muted">
-		22 July 2020
+		15 August 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/php/ajax/jquery/membuat-fitur-live-search-dengan-ajax/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/crud_ajax_live_search.gif" alt="Membuat fitur live search engine dengan ajax jquery" />
+	<a href="http://localhost:4000/php/ajax/jquery/Parsing-data-covid19-dengan-PHP-CURL-AJAX-JQUERY/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/covid.png" alt="Parsing data covid 19 dengan PHP CURL, Ajax Jquery" />
 	</a>
 	</div>
 
@@ -225,28 +184,67 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/php/codeigniter/Warning-Message-Module-already-loaded/">Warning Message: Module already loaded</a>
+	<a class="text-dark" href="http://localhost:4000/gatsbyjs/react/javascript/tailwindcss/menggunakan-tailwind-css-di-gatsbyJS-menggunakan-plugin-postcss/">Menggunakan plugin tailwind css dan plugin postcss untuk styling di gatsbyJS</a>
 	</h2>
 	<p class="excerpt">
-	   Warning Message: Module already loaded
+	   Menggunakan tailwind css di gatsbysalam jumpa lagi para coders ! semoga selalu sehat, udah mulai musim penghujan sepertinya, jangan lupa jaga kesehatan. jangan banyak begadang yah cod...
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">php</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#gatsbyjs">GatsbyJS</a><span class="sep">, </span>
 		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#codeigniter">codeigniter</a><span class="sep">, </span>
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#react">React</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#tailwindcss">tailwindcss</a><span class="sep">, </span>
 		
 		</span>
 	</small>
 	<small class="text-muted">
-		21 July 2020
+		14 August 2020
 	</small>
 </div>
 
 	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/php/codeigniter/Warning-Message-Module-already-loaded/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/error_php_codeigniter.png" alt="Warning Message: Module already loaded" />
+	<a href="http://localhost:4000/gatsbyjs/react/javascript/tailwindcss/menggunakan-tailwind-css-di-gatsbyJS-menggunakan-plugin-postcss/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/tailwindcss.png" alt="Menggunakan plugin tailwind css dan plugin postcss untuk styling di gatsbyJS" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/gatsbyjs/react/javascript/menambahkan-package-plugin-emojis-di-gatsby/">Menambahkan package plugin emojis di gatsby</a>
+	</h2>
+	<p class="excerpt">
+	   Menggunakan package emojis dari gatsby reactdalam artikel ini sebetulnya pembahasan nya bukan sesuatu yang serius, pembahasan kali ini hanya sekedar sebuah hal sederhana, simple dan m...
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#gatsbyjs">GatsbyJS</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#react">React</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		12 August 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/gatsbyjs/react/javascript/menambahkan-package-plugin-emojis-di-gatsby/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/gatsby-remark-emojis.png" alt="Menambahkan package plugin emojis di gatsby" />
 	</a>
 	</div>
 
@@ -260,7 +258,7 @@
             
             <ul class="pagination">
               
-                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page2">&laquo; Prev</a></li>
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/">&laquo; Prev</a></li>
               
 
               
@@ -269,11 +267,11 @@
                 
               
                 
-                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page2">2</a></li>
+                <li class="page-item disabled"><span class="webjeda page-link">2</span></li>
                 
               
                 
-                <li class="page-item disabled"><span class="webjeda page-link">3</span></li>
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page3">3</a></li>
                 
               
                 
@@ -302,7 +300,7 @@
               
 
               
-                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page4">Next &raquo;</a></li>
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page3">Next &raquo;</a></li>
               
             </ul>
             

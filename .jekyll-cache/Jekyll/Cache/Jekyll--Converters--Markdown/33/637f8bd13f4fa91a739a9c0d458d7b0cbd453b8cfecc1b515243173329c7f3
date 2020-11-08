@@ -1,4 +1,4 @@
-I"�M<div class="container">
+I"N<div class="container">
 
  <!--endif page url is / -->
 
@@ -10,6 +10,72 @@
     <div class="col-md-8 main-loop">
 
         <h4 class="font-weight-bold spanborder"><span>All Stories</span></h4>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/phpmailer/codeigniter/kirim-email-multiple-attachment-dengan-library-phpmailer-di-codeigniter/">Kirim Email multiple attachment dengan menggunakan library phpmailer di codeigniter</a>
+	</h2>
+	<p class="excerpt">
+	   Kali ini kita (kita .. lu aja kali) maksudnya saya, kali ini saya akan membuat sebuah layanan email service dengan menggunakan library dari phpmailer dan codeigniter, ok langsung saja...
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#phpmailer">phpmailer</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#codeigniter">Codeigniter</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		11 November 2019
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/phpmailer/codeigniter/kirim-email-multiple-attachment-dengan-library-phpmailer-di-codeigniter/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/phpmailer.png" alt="Kirim Email multiple attachment dengan menggunakan library phpmailer di codeigniter" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/technologies/server/configurasi-static-ip-di-ubuntu-bionic(18.04)/">Konfigurasi Static IP Ubuntu Bionic(18.04)</a>
+	</h2>
+	<p class="excerpt">
+	   konfigurasi static ip ubuntu server Bionic(18.04)  kini sudah berbeda dibandingkan dengan Ubuntu Server 16.04 ke bawah.Versi Ubuntu sebelumnya, konfigurasi dilakukan dengan memodifika...
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#technologies">Technologies</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#server">Server</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		25 September 2019
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/technologies/server/configurasi-static-ip-di-ubuntu-bionic(18.04)/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/bionic/bionic.jpg" alt="Konfigurasi Static IP Ubuntu Bionic(18.04)" />
+	</a>
+	</div>
+
+</div>
 
 
         
@@ -177,74 +243,6 @@
 	<div class="col-md-3 pr-0 text-right">
 	<a href="http://localhost:4000/blog/writer/Gairah-Budaya-Membaca/">
 	<img class="w-100" src="http://localhost:4000/assets/images/post/baca.jpeg" alt="Gairah Budaya Membaca" />
-	</a>
-	</div>
-
-</div>
-
-
-        
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/kajianislam/sunnah/blog/Ramalan-Ali-ra-Zaman-Mendatang/">Ramalan Ali ra tentang zaman mendatang </a>
-	</h2>
-	<p class="excerpt">
-	   Dari ‘Ali ra sesungguhnya ia berkata: Suatu zaman akan datang kepada manusia, di zamanitu islam hanya tinggal nama, Al-Quran tinggal tulisan, dan masjid-masjid mereka megah-megah,tapi...
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#kajianislam">KajianIslam</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#sunnah">Sunnah</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">blog</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		21 July 2019
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/kajianislam/sunnah/blog/Ramalan-Ali-ra-Zaman-Mendatang/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/ali.jpeg" alt="Ramalan Ali ra tentang zaman mendatang " />
-	</a>
-	</div>
-
-</div>
-
-
-        
-
-            <div class="mb-5 d-flex justify-content-between main-loop-card">
-<div class="pr-3">
-	<h2 class="mb-1 h4 font-weight-bold">
-	<a class="text-dark" href="http://localhost:4000/kajianislam/sunnah/Mutiara-Hikmah/">Mutiara Hikmah</a>
-	</h2>
-	<p class="excerpt">
-	   Allah SWT berfirman:يُؤْتِى الْحِكْمَةَ مَنْ يَّشَآءُ ۚ وَمَنْ يُّؤْتَ الْحِكْمَةَ فَقَدْ اُوْتِيَ خَيْرًا كَثِيْرًا ۗ وَمَا يَذَّكَّرُ اِلَّاۤ اُولُوا الْاَ لْبَا بِyu`til-hikmata m...
-	</p>
-	<small class="d-block text-muted">
-		In <span class="catlist">
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#kajianislam">KajianIslam</a><span class="sep">, </span>
-		
-		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#sunnah">Sunnah</a><span class="sep">, </span>
-		
-		</span>
-	</small>
-	<small class="text-muted">
-		06 July 2019
-	</small>
-</div>
-
-	<div class="col-md-3 pr-0 text-right">
-	<a href="http://localhost:4000/kajianislam/sunnah/Mutiara-Hikmah/">
-	<img class="w-100" src="http://localhost:4000/assets/images/post/mutiara-hikmah.jpeg" alt="Mutiara Hikmah" />
 	</a>
 	</div>
 

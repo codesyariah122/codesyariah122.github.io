@@ -1,4 +1,4 @@
-I"tô<div class="container">
+I"ò<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
         <h1 class="font-weight-bold title h6 text-uppercase mb-4">Categories</h1>
@@ -17,7 +17,7 @@
 	<a class="text-dark" href="http://localhost:4000/ruby/installing-ruby/">installing ruby</a>
 	</h2>
 	<p class="excerpt">
-	   installing ruby on debian```curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+	   
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
@@ -2280,6 +2280,46 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/php/laravel/mvc/oop/routing-dan-blade-templating-laravel7/">Routing dan blade templating laravel 7</a>
+	</h2>
+	<p class="excerpt">
+	   
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">PHP</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#laravel">Laravel</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#mvc">MVC</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#oop">OOP</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		06 September 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/php/laravel/mvc/oop/routing-dan-blade-templating-laravel7/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/blade_laravel/laravel-logo.png" alt="Routing dan blade templating laravel 7" />
+	</a>
+	</div>
+
+</div>
+
+          
+        
+        
+        
+          
+         
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
 	<a class="text-dark" href="http://localhost:4000/php/laravel/mvc/oop/membangun-project-baru-laravel-7/">Membangun project baru laravel 7</a>
 	</h2>
 	<p class="excerpt">
@@ -4172,6 +4212,42 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/nodejs/javascript/menggunakan-module-export-import-ecmascript6-wiht-nodejs/">Menggunakan module import - export ecmascript6 di Node.js</a>
+	</h2>
+	<p class="excerpt">
+	   EcmaScript 6Dalam judul kali ini gout berbagi kisah keluh dan kesah, mengenai ecma script, terkhusus dalam judul kali ini yakni mengenai penggunaan module ecmascript6 di nodejs.pertam...
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#nodejs">NodeJS</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		06 September 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/nodejs/javascript/menggunakan-module-export-import-ecmascript6-wiht-nodejs/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/import-export.png" alt="Menggunakan module import - export ecmascript6 di Node.js" />
+	</a>
+	</div>
+
+</div>
+
+          
+        
+        
+        
+          
+         
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
 	<a class="text-dark" href="http://localhost:4000/nodejs/sass/memulai-sass-di-nodejs/">Memulai SASS di NodeJS</a>
 	</h2>
 	<p class="excerpt">
@@ -4388,6 +4464,42 @@
          
         <h4 class="font-weight-bold spanborder text-capitalize" id="javascript"><span>Javascript</span></h4>
             
+        
+        
+        
+          
+         
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/nodejs/javascript/menggunakan-module-export-import-ecmascript6-wiht-nodejs/">Menggunakan module import - export ecmascript6 di Node.js</a>
+	</h2>
+	<p class="excerpt">
+	   EcmaScript 6Dalam judul kali ini gout berbagi kisah keluh dan kesah, mengenai ecma script, terkhusus dalam judul kali ini yakni mengenai penggunaan module ecmascript6 di nodejs.pertam...
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#nodejs">NodeJS</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		06 September 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/nodejs/javascript/menggunakan-module-export-import-ecmascript6-wiht-nodejs/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/import-export.png" alt="Menggunakan module import - export ecmascript6 di Node.js" />
+	</a>
+	</div>
+
+</div>
+
+          
         
         
         
@@ -5314,6 +5426,46 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/php/laravel/mvc/oop/routing-dan-blade-templating-laravel7/">Routing dan blade templating laravel 7</a>
+	</h2>
+	<p class="excerpt">
+	   
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">PHP</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#laravel">Laravel</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#mvc">MVC</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#oop">OOP</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		06 September 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/php/laravel/mvc/oop/routing-dan-blade-templating-laravel7/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/blade_laravel/laravel-logo.png" alt="Routing dan blade templating laravel 7" />
+	</a>
+	</div>
+
+</div>
+
+          
+        
+        
+        
+          
+         
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
 	<a class="text-dark" href="http://localhost:4000/php/laravel/mvc/oop/membangun-project-baru-laravel-7/">Membangun project baru laravel 7</a>
 	</h2>
 	<p class="excerpt">
@@ -5362,6 +5514,46 @@
             <div class="mb-5 d-flex justify-content-between main-loop-card">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/php/laravel/mvc/oop/routing-dan-blade-templating-laravel7/">Routing dan blade templating laravel 7</a>
+	</h2>
+	<p class="excerpt">
+	   
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">PHP</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#laravel">Laravel</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#mvc">MVC</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#oop">OOP</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		06 September 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/php/laravel/mvc/oop/routing-dan-blade-templating-laravel7/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/blade_laravel/laravel-logo.png" alt="Routing dan blade templating laravel 7" />
+	</a>
+	</div>
+
+</div>
+
+          
+        
+        
+        
+          
+         
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
 	<a class="text-dark" href="http://localhost:4000/php/laravel/mvc/oop/membangun-project-baru-laravel-7/">Membangun project baru laravel 7</a>
 	</h2>
 	<p class="excerpt">
@@ -5402,6 +5594,46 @@
          
         <h4 class="font-weight-bold spanborder text-capitalize" id="oop"><span>OOP</span></h4>
             
+        
+        
+        
+          
+         
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/php/laravel/mvc/oop/routing-dan-blade-templating-laravel7/">Routing dan blade templating laravel 7</a>
+	</h2>
+	<p class="excerpt">
+	   
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">PHP</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#laravel">Laravel</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#mvc">MVC</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#oop">OOP</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		06 September 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/php/laravel/mvc/oop/routing-dan-blade-templating-laravel7/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/blade_laravel/laravel-logo.png" alt="Routing dan blade templating laravel 7" />
+	</a>
+	</div>
+
+</div>
+
+          
         
         
         
