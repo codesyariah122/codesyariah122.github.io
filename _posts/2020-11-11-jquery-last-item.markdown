@@ -14,7 +14,7 @@ Halo apa kabar para coders ? sudah lama tidak posting, hampir 2 bulan lamanya da
 di postingan kali ini gout mau sedikit berbagi pengalaman mengenai penggunaan jquery, seperti yang sudah di ketahui sejak lama jquery merupakan sebuah library javascript yang banyak kegunaannya, kalau kata lagu mah ( cucunya segudang ) 😁, tapi di artikel ini gout tidak akan membahas lagunya, ( ya udah sihhh !!! ).  
 
 walaupun sebetulnya dihari ini jquery sudah kalah pamornya oleh library javascript lainnya, tapi buat gout jquery masih tetap di pakai dan gout selalu gagal move on dari jquery. 
-dalam artikel ini gout mau membahas salah satu method dari jquery yakni ```last()```, penggunaan last ini sendiri adalah untuk mengambil sebuah nilai di akhir sebuah element array, singkat nya kita mau ambil baris akhir dari sebuah element di dalam array.  
+dalam artikel ini gout mau membahas salah satu method dari jquery yakni ```last()```, penggunaan last ini sendiri adalah untuk mengambil sebuah nilai di akhir sebuah element array, singkat nya kita mau ambil nilai terakhir dari sebuah element di dalam array.  
 
 dalam studi kasus ini gout punya sebuah template yang mempunyai navbar, jadi template nya ini adalah sebuah theme wordpress, karena di wordpress untuk menambahkan sebuah menu itu ada di bagian beckend adminnya, nah gimana kalau kita memerlukan tambahan menu baru di luar menu yang sudah kita atur di beckend admin nya. maka dari itu kita memerlukan jquery untuk melakukan dom object element. dengan memasukan element baru, ke dalam element yang sudah ada.  
 
