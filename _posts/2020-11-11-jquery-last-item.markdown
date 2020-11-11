@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Penggunaan jQuery last function untuk menambahkan di akhir sebuah element"
+title:  "Penggunaan jQuery last untuk mengambil element terakhir"
 author: puji
 categories: [ Javascript, JQuery ]
 image: assets/images/post/jquery_last1.png
