@@ -21,6 +21,7 @@ collections:
   - projects
   - myrooms
   - cupcakes
+  - cookies
 
 include: ["_pages"]
 permalink: /:categories/:title/

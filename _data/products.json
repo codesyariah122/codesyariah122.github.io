@@ -5,13 +5,13 @@
         "image": "/assets/images/project/nabillabakery/cupcakes/cupcake-4.png",
         "tags": "kue kecil dalam balutan wadah khusus yang berupa kertas, ataupun cangkir alumunium , dengan proses pemanggangan yang khas ala <span style='font-family:Reey Regular; color:crimson;'>Nabila Bakery</span> diambil dari resep yang terjaga cita rasanya tanpa bahan-bahan pengawet semuanya murni di produksi dengan cinta.",
         "price": "10k",
-        "links": "https://nabilla-baking.github.io/cupcakes",
+        "links": "https://nabilla-baking.github.io/cupcakes"
     },
-      "cookie":
+      "cookies":
     {
-        "name": "Cookie",
-        "image": "/assets/images/project/nabillabakery/cookie/cookie.jpg",
-        "tags": "Kue kering memiliki daya tahan yang cukup lama, Bahan yang umum digunakan utuk pembuatan kue kering diantaranya tepung beras, tepung ketan, terigu ataupun sagu, Kue kering yang dioven biasanya di sebut cookies. ... Roti tidaklah selalu sama dengan kue, sebab di Indonesia kadangkala roti dianggap sebagai makanan utama.",
+        "name": "Cookies",
+        "image": "/assets/images/project/nabillabakery/bg-14.jpg",
+        "tags": "Kue yang di olah kering renyah yang diolah secara istimewa di dapur Nabilla Bakery, Perpaduan bahan-bahan terbaik tanpa campur tangan bahan-bahan pengawet. Sehingga menghasilkan tekstur yang lembut ketika kita mengunyahnya, dengan varian toping yang bisa anda sesuaikan dengan selera anda.",
         "price": "12k",
         "links": "https://nabilla-baking.github.io/cookies"
     }

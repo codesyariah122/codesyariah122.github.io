@@ -1,14 +1,4 @@
----
-layout: default
-title: "Nabilla Bakery"
-permalink: "/project-nabillabakery/"
-projectname: nabillabakery
-projectstory1 : story1
-projectstory2 : story2
-product1: cupcake
-product2: cookies
----  
-<style type="text/css">
+I"¸E<style type="text/css">
 /* all parallax top and bottom */
 .parallax{
   min-height: 500px; 
@@ -116,13 +106,13 @@ product2: cookies
 
 </style>
 
-{% comment %}
+<p>{% comment %}
 *tampilkan collections products 
-{% endcomment %}
+{% endcomment %}</p>
 
-{% assign nabillabakery = site.data.projectnames[page.projectname] %}
+<p>{% assign nabillabakery = site.data.projectnames[page.projectname] %}
 {% assign story1 = site.data.projectnames[page.projectstory1] %}
-{% assign story2 = site.data.projectnames[page.projectstory2] %}
+{% assign story2 = site.data.projectnames[page.projectstory2] %}</p>
 
 <div class="jumbotron jumbotron-fluid" style="background-image:url('{{site.url}}{{nabillabakery.image}}');">
   <div class="container">
@@ -144,9 +134,9 @@ product2: cookies
 
     <div class="col-md-6">
       <div class="polaroid">
-        <img src="{{site.url}}/assets/images/project/nabillabakery/vector3.gif" alt="" class="img-responsive mt-3" width="600" style="margin-top:-1rem;">
+        <img src="{{site.url}}/assets/images/project/nabillabakery/vector3.gif" alt="" class="img-responsive mt-3" width="600" style="margin-top:-1rem;" />
         <div class="polaroid-body">
-          <h2>Proses produksi cookies <i class="fas fa-cookie-bite fa-fw" style="color:burlywood;"></i>  di dapur <span class="codesyariah">{{nabillabakery.name}}</span> dibuat dengan penuh cinta <i class="fas fa-heart fa-fw text-danger"></i><i class="fas fa-1x fa-heart fa-fw text-danger"></i><i class="fas fa-2x fa-heart fa-fw text-danger"></i> <span style="font-family:SpringSakura;">|</span> <br/> <span style="font-family:SpringSakura;">|</span> Untuk itu kami selalu menjaga kualitas produk kami sebagai persembahan terbaik bagi anda.</h2>
+          <h2>Proses produksi cookies <i class="fas fa-cookie-bite fa-fw" style="color:burlywood;"></i>  di dapur <span class="codesyariah">{{nabillabakery.name}}</span> dibuat dengan penuh cinta <i class="fas fa-heart fa-fw text-danger"></i><i class="fas fa-1x fa-heart fa-fw text-danger"></i><i class="fas fa-2x fa-heart fa-fw text-danger"></i> <span style="font-family:SpringSakura;">|</span> <br /> <span style="font-family:SpringSakura;">|</span> Untuk itu kami selalu menjaga kualitas produk kami sebagai persembahan terbaik bagi anda.</h2>
         </div>	
       </div>
     </div>
@@ -154,17 +144,16 @@ product2: cookies
   </div>
 </div>
 
-
 <h1 class="underline mt-2 mb-2"></h1>
 
 <div class="parallax" style="background-image: url('{{site.url}}/assets/images/project/nabillabakery/bg-4.jpg');
 ">
 
   <div class="caption">
-    <br/><br/>
+    <br /><br />
     <h2> Seperti sang bunda yang jalinannya selalu memudahkan kita untuk mengekspresikan rasa. Apa yang anda minta sesuai kebutuhan anda, Kami akan menuangkannya dalam cita rasa.</h2>
       <a href="https://instagram.com/{{nabillabakery.instagram}}" class="btn btn-primary text-white">Contact      Us</a>
-    <br/><br/>
+    <br /><br />
   </div>
 
 </div>
@@ -180,23 +169,23 @@ product2: cookies
             <!-- row content1 -->
             <div class="row">
               <div class="col-md-4">
-                <img src="{{site.url}}/assets/images/project/nabillabakery/kitchen1.jpg" alt="" class="float-left img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;"/>
+                <img src="{{site.url}}/assets/images/project/nabillabakery/kitchen1.jpg" alt="" class="float-left img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
               </div>
               <div class="col-md-6 ml-5 mt-5">
                 <h1 class="text-center">
-                  {{nabillabakery.name}}  <br>
+                  {{nabillabakery.name}}  <br />
                   <span class="blockquote-footer text-success">{{nabillabakery.moto}}</span> 
                 </h1>
-                <hr>
+                <hr />
                   <p class="ml-5">
                      {{nabillabakery.profile1}}.
                   </p>
-                  <img src="{{site.url}}/assets/images/project/nabillabakery/vector4.gif" alt="">
+                  <img src="{{site.url}}/assets/images/project/nabillabakery/vector4.gif" alt="" />
               </div>
 
             </div>
             <!-- row content1 end -->
-            <br>
+            <br />
             <h1 class="underline text-center mt-2 mb-4"></h1>
             <!-- row content2 -->
             <div class="row justify-content-center">
@@ -208,18 +197,18 @@ product2: cookies
                 </div>
                 <div class="col-md-6">
                   <div class="polaroid">
-                     <img src="{{story1.img}}" class="img-responsive float-left" alt="" width="500" height="470" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;">  
+                     <img src="{{story1.img}}" class="img-responsive float-left" alt="" width="500" height="470" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />  
                   </div>
 
                 </div>
             </div>
             <!-- row content2 end -->
-            <br>
+            <br />
             <!-- row content3  -->
             <div class="row justify-content-center">
               <div class="col-md-6">
                 <div class="polaroid">
-                    <img src="{{story2.img}}" class="img-responsive float-left" alt="" width="500" height="470" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;">
+                    <img src="{{story2.img}}" class="img-responsive float-left" alt="" width="500" height="470" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
                 </div>
               </div>
               <div class="col-md-6 mt-5">
@@ -231,7 +220,7 @@ product2: cookies
               </div>
           </div>
           <!-- row content3 end -->
-          <br>
+          <br />
           <h1 class="underline text-center mt-2 mb-4"></h1>
           <!-- row content4 -->
               <div class="row justify-content-center">
@@ -242,7 +231,7 @@ product2: cookies
                     <span style="font-family:Reey Regular;color:tomato;">{{nabillabakery.name}}</span>
                   </p> 
                   <div class="polaroid">
-                      <img src="{{nabillabakery.foto}}" class="img-responsive float-left" alt="" width="500" height="470" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;">
+                      <img src="{{nabillabakery.foto}}" class="img-responsive float-left" alt="" width="500" height="470" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
                   </div>
                   <p class="mt-3 ml-3">
                     <span style="font-size:45px; font-family:SpringSakura;color:tomato;">{{nabillabakery.moto}} <i class="fas fa-cookie-bite fa-fw" style="color:burlywood;"></i> </span>
@@ -250,7 +239,7 @@ product2: cookies
                 </div>
             </div>
             <!-- end row content4 -->
-            <br>
+            <br />
           <h1 class="underline text-center mt-2 mb-4"></h1>
           </div>
           <!-- end container panel-body -->
@@ -261,9 +250,9 @@ product2: cookies
   </div>
 </div>
 
-<br>
+<p><br /></p>
 
-<hr>
+<hr />
 
 <div class="parallax" style="background-image: url('{{site.url}}/assets/images/project/nabillabakery/bg-5.jpg');
 ">
@@ -271,24 +260,24 @@ product2: cookies
       <div class="row">
 
         <div class="col-md-4">
-          <div class='box-wave'>
-            <div class='wave -one'></div>
-            <div class='wave -two'></div>
-            <div class='wave -three'></div>
-            <div class='title-wave'>
+          <div class="box-wave">
+            <div class="wave -one"></div>
+            <div class="wave -two"></div>
+            <div class="wave -three"></div>
+            <div class="title-wave">
               <h4>
                 {{nabillabakery.profile2}}
               </h4>
             </div>
           </div>
-            <br/><br/>
+            <br /><br />
         </div>
 
       </div>
   </div>
 </div>
 
-{% assign cupcake = site.data.products[page.product1] %}
+<p>{% assign cupcake = site.data.products[page.product1] %}</p>
 <div class="container">
   <div class="row justify-content-center">
 
@@ -300,23 +289,23 @@ product2: cookies
             <!-- row content1 -->
             <div class="row">
               <div class="col-md-4">
-                <img src="{{site.url}}{{cupcake.image}}" alt="" class="float-left img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;"/>
+                <img src="{{site.url}}{{cupcake.image}}" alt="" class="float-left img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
               </div>
               <div class="col-md-6 ml-5 mt-5">
                 <h1 class="text-center">
-                  {{cupcake.name}} <br>
+                  {{cupcake.name}} <br />
                   <span class="blockquote-footer text-success">Idr : {{ cupcake.price }}/pcs isi 3 cup</span> 
                 </h1>
-                <hr>
+                <hr />
                   <p class="ml-5">
                      {{cupcake.tags}}.
                   </p>
-                  <img src="{{site.url}}/assets/images/project/nabillabakery/cupcakes.gif" alt="">
+                  <img src="{{site.url}}/assets/images/project/nabillabakery/cupcakes.gif" alt="" />
               </div>
 
             </div>
             <!-- row content1 end -->
-            <br>
+            <br />
             <h1 class="underline text-center mt-2 mb-4"></h1>
             <!-- row content2 -->
             <div class="row justify-content-center">
@@ -328,10 +317,7 @@ product2: cookies
                 <div class="col-md-4 mt-5">
                   <h4 class="text-center underline">{{cupcake.name}}</h4>
                   <div class="polaroid">
-                    <a href="{{cupcake.image_path}}" data-toggle="lightbox" data-gallery="cupcakes">
-                      <img src="{{cupcake.image_path}}" class="img-responsive img-fluid float-left"  alt="{{cupcake.name}}" height="350" width="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;">
-                    </a>
-                       
+                     <img src="{{cupcake.image_path}}" class="img-responsive img-fluid float-left" data-toggle="lightbox" alt="{{cupcake.name}}" height="350" width="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />  
                      <p style="text-indent:'0';">{{cupcake.description}}</p>
                   </div>
                 </div>
@@ -339,7 +325,7 @@ product2: cookies
 
             </div>
             <!-- row content2 end -->
-          <br>
+          <br />
           <h1 class="underline text-center mt-2 mb-4"></h1>
           </div>
           <!-- end container panel-body -->
@@ -350,22 +336,21 @@ product2: cookies
   </div>
 </div>
 
-<br>
+<p><br /></p>
 
-<hr>
+<hr />
 
 <div class="parallax" style="background-image: url('{{site.url}}/assets/images/project/nabillabakery/bg-11.jpg');
 ">
       <div class="caption">
-        <br/><br/>
+        <br /><br />
         <h2> Order selalu terbuka bagi anda yang rindu kehangatan dalam kebersamaan keluarga. Tak ada penolakan bagi orang orang yang anda cinta, Seperti rasa yang tak pernah salah.</h2>
           <a href="https://instagram.com/{{nabillabakery.instagram}}" class="btn btn-primary text-white">Order Now</a>
-        <br/><br/>
+        <br /><br />
       </div>
 </div>
 
-
-{% assign cookies = site.data.products[page.product2] %}
+<p>{% assign cookies = site.data.products[page.product2] %}</p>
 <div class="container">
   <div class="row justify-content-center">
 
@@ -377,23 +362,23 @@ product2: cookies
             <!-- row content1 -->
             <div class="row">
               <div class="col-md-4">
-                <img src="{{site.url}}{{cookies.image}}" alt="{{cookies.name}}" class="float-left img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;"/>
+                <img src="{{site.url}}{{cookies.image}}" alt="{{cookies.name}}" class="float-left img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
               </div>
               <div class="col-md-6 ml-5 mt-5">
                 <h1 class="text-center">
-                  {{cookies.name}} <br>
+                  {{cookies.name}} <br />
                   <span class="blockquote-footer text-success">Idr : {{ cookies.price }}/pcs isi 3 cup</span> 
                 </h1>
-                <hr>
+                <hr />
                   <p class="ml-5">
                      {{cookies.tags}}.
                   </p>
-                  <img src="{{site.url}}/assets/images/project/nabillabakery/cookies/cookies.gif" alt="">
+                  <img src="{{site.url}}/assets/images/project/nabillabakery/cookies/cookies.gif" alt="" />
               </div>
 
             </div>
             <!-- row content1 end -->
-            <br>
+            <br />
             <h1 class="underline text-center mt-2 mb-4"></h1>
             <!-- row content2 -->
             <div class="row justify-content-center">
@@ -405,10 +390,7 @@ product2: cookies
                 <div class="col-md-4 mt-5">
                   <h4 class="text-center underline">{{cookie.name}}</h4>
                   <div class="polaroid">
-                    <a href="{{cookie.image_path}}" data-toggle="lightbox" data-gallery="cookies">
-                      <img src="{{cookie.image_path}}" class="img-responsive img-fluid float-left"  alt="{{cookie.name}}"  height="350" width="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;">
-                    </a>
-                       
+                     <img src="{{cookie.image_path}}" class="img-responsive img-fluid float-left" data-toggle="lightbox" alt="{{cookie.name}}" height="350" width="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />  
                      <p style="text-indent:'0';">{{cookie.description}}</p>
                   </div>
                 </div>
@@ -416,50 +398,38 @@ product2: cookies
 
             </div>
             <!-- row content2 end -->
-          <br>
+          <br />
           <h1 class="underline text-center mt-2 mb-4"></h1>
           </div>
           <!-- end container panel-body -->
         </div>
       </div>
     </div>
+
   </div>
-
-  <hr>
-
 </div>
 
-<div class="parallax" style="background-image: url('{{site.url}}/assets/images/project/nabillabakery/bg-13.jpg');
-">
-      <div class="caption">
-        <br/><br/>
-        <h2> Update terus resep terbaru dari <br> <span style="font-family:Reey Regular;color:crimson;">Nabilla Bakery</span>.</h2> <br>
-          <a href="https://instagram.com/{{nabillabakery.instagram}}" class="btn btn-primary text-white">Update Now</a>
-        <br/><br/>
-      </div>
-</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="row justify-content-end"&gt;
+     &lt;!-- row content4 --&gt;
+      &lt;div class="col-md-8 mt-5"&gt;
+        &lt;h1 class="text-center" style="font-family: 'Indie Flower', cursive; color:burlywood;"&gt;{{nabillabakery.name}}&lt;i class="fas fa-cookie-bite fa-fw" style="color:burlywood;"&gt;&lt;/i&gt;  &lt;/h1&gt;
 
-    <div class="row justify-content-end">
-         <!-- row content4 -->
-          <div class="col-md-8 mt-5">
-            <h1 class="text-center" style="font-family: 'Indie Flower', cursive; color:burlywood;">{{nabillabakery.name}}<i class="fas fa-cookie-bite fa-fw" style="color:burlywood;"></i>  </h1>
+        &lt;p class="mt-2 ml-5"&gt;
+          Design and Code By : &lt;span style="font-size:35px;font-family:Reey Regular;color:springgreen;"&gt;{{site.name}}&lt;/span&gt;
+        &lt;/p&gt; 
 
-            <p class="mt-2 ml-5">
-              Design and Code By : <span style="font-size:35px;font-family:Reey Regular;color:springgreen;">{{site.name}}</span>
-            </p> 
-
-            <p class="mt-3 ml-3">
-              <span style="font-size:21px; font-family:Reey Regular;color:tomato;">{{site.description}} <i class="fas fa-code fa-fw" style="color:burlywood;"></i> </span>
-            </p> 
-            <div class="polaroid">
-                <img src="{{site.url}}/assets/images/codesyariah-team.gif" class="img-responsive float-left" alt="" width="500" height="470" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;">
-            </div>
-          </div>
-          <br>
-      <!-- end row content4 -->
-    </div>
-
-
+        &lt;p class="mt-3 ml-3"&gt;
+          &lt;span style="font-size:21px; font-family:Reey Regular;color:tomato;"&gt;{{site.description}} &lt;i class="fas fa-code fa-fw" style="color:burlywood;"&gt;&lt;/i&gt; &lt;/span&gt;
+        &lt;/p&gt; 
+        &lt;div class="polaroid"&gt;
+            &lt;img src="{{site.url}}/assets/images/codesyariah-team.gif" class="img-responsive float-left" alt="" width="500" height="470" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;"&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;br&gt;
+      
+  &lt;!-- end row content4 --&gt;
+&lt;/div&gt;
+</code></pre></div></div>
 
 <!-- <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <h1 class="display-4">{{ page.title }}</h1>
@@ -504,3 +474,4 @@ product2: cookies
   </div>
 </div>
  -->
+:ET
