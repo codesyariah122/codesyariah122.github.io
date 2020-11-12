@@ -1,4 +1,4 @@
-I"#1<style type="text/css">
+I"á+<style type="text/css">
 /* img{
   clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
 }
@@ -229,8 +229,9 @@ a:hover{
     text-align: left;
     transform: translate3d(0, 0, 0);
     color: white;
+    font-weight: bold;;
     text-transform: uppercase;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Poiret One', cursive;
     letter-spacing: .4em;
     font-size: 14px;
     text-shadow: 0 1px 0 rgba(black, .1);
@@ -264,11 +265,12 @@ a:hover{
 }
 </style>
 
-<div class="jumbotron jumbotron-fluid" style="background-image:url('http://localhost:4000/assets/images/project/codesyariah/model3.jpg');">
+<p>{% assign WebDevelopment = site.data.webdevelopers[page.product1]%}</p>
+<div class="jumbotron jumbotron-fluid" style="background-image:url('{{site.url}}{{WebDevelopment.image}}');">
   <div class="container">
     <div class="row">
       <div class="col-md-4">
-          <h1 class="display-4">Codesyariah Web Development</h1>
+          <h1 class="display-4">Codesyariah {{WebDevelopment.name}}</h1>
       </div>
     </div>
   </div>
@@ -280,9 +282,9 @@ a:hover{
   <div class="row justify-content-center">
       <div class="col-md-6">
           <div class="polaroid">
-            <img src="http://localhost:4000/assets/images/project/codesyariah/vector1.gif" alt="" class="img-responsive" />
+            <img src="{{site.url}}/assets/images/project/codesyariah/vector1.gif" alt="" class="img-responsive" />
             <div class="polaroid-body">
-              <h2>Ingin punya website untuk company profile, aplikasi penjualan untuk menunjang bisnis anda, website toko online yang professional, kami <span class="codesyariah">CodeSyariah</span> dan team <span style="font-family:SpringSakura;">|</span> <br /> <span style="font-family:SpringSakura;">|</span> akan merealisasikan impian anda untuk mempunyai website dan aplikasi yang menunjang kebutuhan bisnis anda, dengan harga fleksibel yang menyesuaikan.</h2>
+              <h2>Ingin punya website untuk company profile, aplikasi penjualan untuk menunjang bisnis anda, website toko online yang professional, kami <span class="codesyariah">{{site.name}}</span> dan team <span style="font-family:SpringSakura;">|</span> <br /> <span style="font-family:SpringSakura;">|</span> akan merealisasikan impian anda untuk mempunyai website dan aplikasi yang menunjang kebutuhan bisnis anda, dengan harga fleksibel yang menyesuaikan.</h2>
             </div>	
           </div>
 
@@ -292,14 +294,14 @@ a:hover{
 
 <h1 class="underline"></h1>
 
-<div class="parallax" style="background-image: url('http://localhost:4000/assets/images/project/codesyariah/model4.jpg');
+<div class="parallax" style="background-image: url('{{site.url}}/assets/images/project/codesyariah/model4.jpg');
 ">
 
   <div class="caption">
     <br /><br />
     <h2> Untuk info lebih lanjut silahkan hubungi contact dibawah ini :</h2>
-      <a href="https://wa.me/6288222668778?text=Hai%20kak%20saya%20membutuhkan%20jasa%20web%20development" class="btn btn-primary text-white">whatsap</a>
-      <a href="https://instagram.com/pujiermanto" class="btn btn-primary text-white">Instagram</a>
+      <a href="https://wa.me/{{WebDevelopment.whatsapp}}?text=Hai%20kak%20saya%20membutuhkan%20jasa%20web%20development" class="btn btn-primary text-white">whatsap</a>
+      <a href="https://instagram.com/{{WebDevelopment.instagram}}" class="btn btn-primary text-white">Instagram</a>
     <br /><br />
   </div>
 
@@ -316,16 +318,16 @@ a:hover{
             <!-- row content1 -->
             <div class="row">
               <div class="col-md-4">
-                <img src="http://localhost:4000/assets/images/project/codesyariah/work-work.gif" alt="" class="float-left img-responsive" width="300" height="300" />
+                <img src="{{site.url}}/assets/images/project/codesyariah/work-work.gif" alt="" class="float-left img-responsive" width="300" height="300" />
               </div>
               <div class="col-md-6 ml-3">
                 <h1 class="underline text-center">
-                  CodeSyariah Web Development
+                  {{site.name}} {{WebDevelopment.name}}
                 </h1>
                   <p>
-                    Jasa Pembuatan website untuk beberapa layanan yang bisa anda request. seperti : <ul><li>website official sekolah</li><li>portal berita</li><li>website instansi pemerintahan</li><li>portfolio perusahaan</li><li>website untuk toko online</li> web replika dengan service role member&lt;/li&gt;<li>Aplikasi Point Of Sales berbasis web</li></ul> Produk Jasa web development kami menawarkan jasa pembuatan website dengan terstruktur service lengkap dengan harga terjangkau, kami pastikan anda mendapat layanan terbaik dari kami, kami berdedikasi kepada kepuasan konsumen, oleh karena itu kami pun bekerja dengan sepenuh hati untuk membuat website sesuai dengan keperluan bisnis anda. Dalam meningkatkan penjualan produk-produk terbaik dalam bisnis anda.
+                    {{WebDevelopment.tags}}
                   </p>
-                  <h3 class="text-success">IDR - 3,000.000</h3>
+                  <h3 class="text-success">{{WebDevelopment.price}}</h3>
               </div>
             </div>
             <!-- row content1 end -->
@@ -339,7 +341,7 @@ a:hover{
                   </p>
                 </div>
                 <div class="col-md-6">
-                  <img src="http://localhost:4000/assets/images/project/codesyariah/anim19.gif" class="img-responsive float-left" alt="" width="500" height="600" />
+                  <img src="{{site.url}}/assets/images/project/codesyariah/anim19.gif" class="img-responsive float-left" alt="" width="500" height="600" />
                 </div>
             </div>
             <!-- row content2 end -->
@@ -357,7 +359,7 @@ a:hover{
 
 <hr />
 
-<div class="parallax" style="background-image: url('http://localhost:4000/assets/images/project/codesyariah/model2.jpg');
+<div class="parallax" style="background-image: url('{{site.url}}/assets/images/project/codesyariah/model2.jpg');
 ">
 
   <div class="container">
@@ -369,7 +371,7 @@ a:hover{
           <div class="wave -three"></div>
           <div class="title-wave">
             <h4>
-              CodeSyariah Web Development, menawarkan jasa dengan kualitas profesional namun harga terjangkau.
+              {{site.name}} {{WebDevelopment.name}}, menawarkan jasa dengan kualitas profesional namun harga terjangkau.
             </h4>
           </div>
         </div>
@@ -383,17 +385,17 @@ a:hover{
 <!-- 
 <div class="card">
   <div class="card-body">
-    <h3 class="text-center text-primary">Codesyariah Webdevelopment</h3>
-    <img class="card-img-top img-responsive" width="350" height="500" src="http://localhost:4000/assets/images/project/codesyariah/model3.jpg" alt="Card image cap">
+    <h3 class="text-center text-primary">{{page.title}}</h3>
+    <img class="card-img-top img-responsive" width="350" height="500" src="{{site.url}}{{WebDevelopment.image}}" alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">Web Development</h5>
-          <p class="card-text text-justify">Jasa Pembuatan website untuk beberapa layanan yang bisa anda request. seperti : <ul><li>website official sekolah</li><li>portal berita</li><li>website instansi pemerintahan</li><li>portfolio perusahaan</li><li>website untuk toko online</li> web replika dengan service role member</li><li>Aplikasi Point Of Sales berbasis web</li></ul> Produk Jasa web development kami menawarkan jasa pembuatan website dengan terstruktur service lengkap dengan harga terjangkau, kami pastikan anda mendapat layanan terbaik dari kami, kami berdedikasi kepada kepuasan konsumen, oleh karena itu kami pun bekerja dengan sepenuh hati untuk membuat website sesuai dengan keperluan bisnis anda. Dalam meningkatkan penjualan produk-produk terbaik dalam bisnis anda.</p>
-          <h3 class="text-success">IDR - 3,000.000</h3><br/>
+          <h5 class="card-title">{{WebDevelopment.name}}</h5>
+          <p class="card-text text-justify">{{WebDevelopment.tags}}</p>
+          <h3 class="text-success">{{WebDevelopment.price}}</h3><br/>
           <div class="alert alert-danger" role="alert">
             Untuk info lebih lanjut silahkan hubungi contact dibawah ini : 
           </div>
-          <a href="https://wa.me/6288222668778?text=Hai%20kak%20saya%20membutuhkan%20jasa%20web%20development" class="btn btn-primary text-white">whatsap</a>
-          <a href="https://instagram.com/pujiermanto" class="btn btn-primary text-white">Instagram</a>
+          <a href="https://wa.me/{{WebDevelopment.whatsapp}}?text=Hai%20kak%20saya%20membutuhkan%20jasa%20web%20development" class="btn btn-primary text-white">whatsap</a>
+          <a href="https://instagram.com/{{WebDevelopment.instagram}}" class="btn btn-primary text-white">Instagram</a>
   </div>
 </div> -->
 :ET

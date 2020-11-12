@@ -1,4 +1,4 @@
-I"Í+<style type="text/css">
+I"Ê+<style type="text/css">
 /* img{
   clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
 }
@@ -228,9 +228,9 @@ a:hover{
     line-height: 300px;
     text-align: left;
     transform: translate3d(0, 0, 0);
-    color: white;
+    color: tomato;
     text-transform: uppercase;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Poiret One', cursive;
     letter-spacing: .4em;
     font-size: 14px;
     text-shadow: 0 1px 0 rgba(black, .1);
