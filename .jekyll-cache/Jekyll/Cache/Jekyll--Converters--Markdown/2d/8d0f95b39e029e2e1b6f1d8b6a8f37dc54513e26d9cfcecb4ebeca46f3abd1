@@ -1,0 +1,399 @@
+I"#1<style type="text/css">
+/* img{
+  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+}
+a:hover{
+  color: coral;
+} */
+@font-face {
+    font-family: 'SpringSakura';
+    font-style: normal;
+    font-weight: normal;
+    src: local('SpringSakura'), url('https://github.com/codesyariah122/kerjaan-syoobe/blob/main/for_page/fonts/SpringSakura-3z1m8.otf') format('otf');
+}
+
+@font-face {
+    font-family: 'Reey Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Reey Regular'), url('https://github.com/codesyariah122/kerjaan-syoobe/blob/main/for_page/fonts/Reey-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Lemon/Milk Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('https://github.com/codesyariah122/kerjaan-syoobe/blob/main/for_page/fonts/Lemon__Milk%20400.otf') format('otf');
+}
+
+
+/* jumbotron */
+.jumbotron {
+    /* background-size: cover;
+    height: 540px; */
+    text-align: center;
+    position: relative;
+    
+    background-color: #17234E;
+    margin-top:-5rem;
+    margin-bottom: 0;
+    min-height: 100vh;
+    width :100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    position: relative;
+}
+
+.jumbotron .container{
+    z-index: 1;
+    position: relative;
+}
+
+.jumbotron::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    position: absolute;
+    bottom:0;
+    margin-left: -.7rem;
+}
+
+.jumbotron .display-4 {
+    color: white;
+    margin-top: 5px;
+    font-weight: 200;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.jumbotron .display-4 span {
+    font-weight: 500;
+    color:tomato;
+}
+
+/* polaroid1 */
+.polaroid{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important;
+    color: rgb(255,228,181);
+    position: relative;
+    text-align: center;
+    margin-bottom: 5rem;
+    margin-top:2rem;
+}
+
+.polaroid-body h2{
+    padding: 25px;
+    color:black;
+    font-family: 'Poiret One', cursive;font-weight:bold;
+    font-size: 25px;
+}
+
+.codesyariah{
+    text-transform: uppercase;
+    font-family:'Lemon/Milk Regular';
+    color: rgb(255,99,71);
+}
+
+/* all parallax top and bottom */
+.parallax{
+  min-height: 500px; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin:0;
+}
+.caption {
+    background:rgba(255,255,255,0.4);
+    /* clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); */
+    position: absolute;
+    left: 21rem;
+    margin-top: 10rem;
+    width: 50%;
+    text-align: center;
+    color: #000;
+}
+.caption h2 {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+    margin-bottom: .9rem;
+}
+.caption a{
+    font-size: 18px;
+}
+
+.underline:after{
+    content: '';
+    display: block;
+    margin: auto;
+    position: relative;
+    margin-bottom:2rem;
+    margin-top:.8rem;
+    width: 100px;
+    height: 2px;
+    background:rgb(255, 99, 78);
+}
+/* pannel bootstrap */
+.panel{
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    margin-top: -5rem;
+    padding:12px;
+    background-color: white;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: justify-content-center;
+    width:100%;
+}
+.panel-body{
+    margin-top:1rem;
+}
+.panel-body h1{
+    font-family: 'Poiret One', cursive;
+    font-weight:800;
+    text-align: center;
+    font-size: 35px;
+}
+.panel-body p{
+    font-size: 14px;
+    text-align: justify;
+}
+
+.panel img{
+    border-radius: 50%;
+}
+/* end pannel */
+
+/* wave */
+.box-wave {
+    width: 350px;
+    height: 500px;
+    border-radius: 5px;
+    box-shadow: 0 2px 30px rgba(black, .2);
+    background: lighten(#f0f4c3, 10%);
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .wave {
+    opacity: .4;
+    position: absolute;
+    top: 3%;
+    left: 50%;
+    background: #0af;
+    width: 500px;
+    height: 500px;
+    margin-left: -250px;
+    margin-top: -250px;
+    transform-origin: 50% 48%;
+    border-radius: 43%;
+    animation: drift 3000ms infinite linear;
+  }
+  
+  .wave.-three {
+    animation: drift 5000ms infinite linear;
+  }
+  
+  .wave.-two {
+    animation: drift 7000ms infinite linear;
+    opacity: .1;
+    background: yellow;
+  }
+  
+  .box-wave:after {
+    content: '';
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(#e8a, 1), rgba(#def, 0) 80%, rgba(white, .5));
+    z-index: -1;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .title-wave {
+    position: absolute;
+    left: 1rem;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    line-height: 300px;
+    text-align: left;
+    transform: translate3d(0, 0, 0);
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: .4em;
+    font-size: 14px;
+    text-shadow: 0 1px 0 rgba(black, .1);
+  }
+  .titl-wave a{
+      margin-left: 2rem;
+  }
+
+@keyframes drift {
+  from { transform: rotate(0deg); }
+  from { transform: rotate(360deg); }
+}
+
+@media only screen and (max-device-width: 812px) {
+  .parallax {
+        background-attachment: scroll;
+  }
+  .caption {
+        position: absolute;
+        left: 0;
+        margin-top: 2rem;
+        width: 100%;
+        text-align: center;
+        color: #000;
+    }
+
+    .waves {
+        height: 40px;
+        min-height: 40px;
+    }
+}
+</style>
+
+<div class="jumbotron jumbotron-fluid" style="background-image:url('http://localhost:4000/assets/images/project/codesyariah/model3.jpg');">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+          <h1 class="display-4">Codesyariah Web Development</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<p><br /><br /></p>
+<h1 class="underline mt-2 mt-3"></h1>
+
+<div class="container">
+  <div class="row justify-content-center">
+      <div class="col-md-6">
+          <div class="polaroid">
+            <img src="http://localhost:4000/assets/images/project/codesyariah/vector1.gif" alt="" class="img-responsive" />
+            <div class="polaroid-body">
+              <h2>Ingin punya website untuk company profile, aplikasi penjualan untuk menunjang bisnis anda, website toko online yang professional, kami <span class="codesyariah">CodeSyariah</span> dan team <span style="font-family:SpringSakura;">|</span> <br /> <span style="font-family:SpringSakura;">|</span> akan merealisasikan impian anda untuk mempunyai website dan aplikasi yang menunjang kebutuhan bisnis anda, dengan harga fleksibel yang menyesuaikan.</h2>
+            </div>	
+          </div>
+
+      </div>
+  </div>
+</div>
+
+<h1 class="underline"></h1>
+
+<div class="parallax" style="background-image: url('http://localhost:4000/assets/images/project/codesyariah/model4.jpg');
+">
+
+  <div class="caption">
+    <br /><br />
+    <h2> Untuk info lebih lanjut silahkan hubungi contact dibawah ini :</h2>
+      <a href="https://wa.me/6288222668778?text=Hai%20kak%20saya%20membutuhkan%20jasa%20web%20development" class="btn btn-primary text-white">whatsap</a>
+      <a href="https://instagram.com/pujiermanto" class="btn btn-primary text-white">Instagram</a>
+    <br /><br />
+  </div>
+
+</div>
+
+<div class="container">
+  <div class="row justify-content-center">
+
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <!-- container on panel-body -->
+          <div class="container">
+            <!-- row content1 -->
+            <div class="row">
+              <div class="col-md-4">
+                <img src="http://localhost:4000/assets/images/project/codesyariah/work-work.gif" alt="" class="float-left img-responsive" width="300" height="300" />
+              </div>
+              <div class="col-md-6 ml-3">
+                <h1 class="underline text-center">
+                  CodeSyariah Web Development
+                </h1>
+                  <p>
+                    Jasa Pembuatan website untuk beberapa layanan yang bisa anda request. seperti : <ul><li>website official sekolah</li><li>portal berita</li><li>website instansi pemerintahan</li><li>portfolio perusahaan</li><li>website untuk toko online</li> web replika dengan service role member&lt;/li&gt;<li>Aplikasi Point Of Sales berbasis web</li></ul> Produk Jasa web development kami menawarkan jasa pembuatan website dengan terstruktur service lengkap dengan harga terjangkau, kami pastikan anda mendapat layanan terbaik dari kami, kami berdedikasi kepada kepuasan konsumen, oleh karena itu kami pun bekerja dengan sepenuh hati untuk membuat website sesuai dengan keperluan bisnis anda. Dalam meningkatkan penjualan produk-produk terbaik dalam bisnis anda.
+                  </p>
+                  <h3 class="text-success">IDR - 3,000.000</h3>
+              </div>
+            </div>
+            <!-- row content1 end -->
+            <br /><br />
+            <!-- row content2 -->
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                  <h1 class="underline"></h1>
+                  <p>
+                    Dengan <span class="syoobe">website </span> <span style="font-family:SpringSakura;color:crimson;font-weight:bold;">| &nbsp; </span> anda dapat meningkatkan penjualan segala jenis produk mulai dari produk fisik, digital, maupun produk jasa layanan dalam bentuk kerangka media digital tanpa proses maupun birokrasi yang rumit. <br /> Kami siap membangun <span class="syoobe">platform</span> yang praktis <span style="font-family:SpringSakura;color:crimson;font-weight:bold;">| &nbsp; </span> yang dapat di andalkan dengan jaminan system keamanan terpercaya.
+                  </p>
+                </div>
+                <div class="col-md-6">
+                  <img src="http://localhost:4000/assets/images/project/codesyariah/anim19.gif" class="img-responsive float-left" alt="" width="500" height="600" />
+                </div>
+            </div>
+            <!-- row content2 end -->
+
+          </div>
+          <!-- end container panel-body -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<p><br /></p>
+
+<hr />
+
+<div class="parallax" style="background-image: url('http://localhost:4000/assets/images/project/codesyariah/model2.jpg');
+">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="box-wave">
+          <div class="wave -one"></div>
+          <div class="wave -two"></div>
+          <div class="wave -three"></div>
+          <div class="title-wave">
+            <h4>
+              CodeSyariah Web Development, menawarkan jasa dengan kualitas profesional namun harga terjangkau.
+            </h4>
+          </div>
+        </div>
+          <br /><br />
+      </div>
+    </div>
+
+</div>
+
+</div>
+<!-- 
+<div class="card">
+  <div class="card-body">
+    <h3 class="text-center text-primary">Codesyariah Webdevelopment</h3>
+    <img class="card-img-top img-responsive" width="350" height="500" src="http://localhost:4000/assets/images/project/codesyariah/model3.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Web Development</h5>
+          <p class="card-text text-justify">Jasa Pembuatan website untuk beberapa layanan yang bisa anda request. seperti : <ul><li>website official sekolah</li><li>portal berita</li><li>website instansi pemerintahan</li><li>portfolio perusahaan</li><li>website untuk toko online</li> web replika dengan service role member</li><li>Aplikasi Point Of Sales berbasis web</li></ul> Produk Jasa web development kami menawarkan jasa pembuatan website dengan terstruktur service lengkap dengan harga terjangkau, kami pastikan anda mendapat layanan terbaik dari kami, kami berdedikasi kepada kepuasan konsumen, oleh karena itu kami pun bekerja dengan sepenuh hati untuk membuat website sesuai dengan keperluan bisnis anda. Dalam meningkatkan penjualan produk-produk terbaik dalam bisnis anda.</p>
+          <h3 class="text-success">IDR - 3,000.000</h3><br/>
+          <div class="alert alert-danger" role="alert">
+            Untuk info lebih lanjut silahkan hubungi contact dibawah ini : 
+          </div>
+          <a href="https://wa.me/6288222668778?text=Hai%20kak%20saya%20membutuhkan%20jasa%20web%20development" class="btn btn-primary text-white">whatsap</a>
+          <a href="https://instagram.com/pujiermanto" class="btn btn-primary text-white">Instagram</a>
+  </div>
+</div> -->
+:ET

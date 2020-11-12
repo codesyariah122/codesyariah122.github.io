@@ -1,0 +1,478 @@
+I"SK<div class="container">
+
+ <!--endif page url is / -->
+
+
+<!-- Now the rest of the posts with the usual loop but with an offset:4 on the first page so we can skeep the first 4 posts displayed above -->
+
+<div class="row mt-3">
+
+    <div class="col-md-8 main-loop">
+
+        <h4 class="font-weight-bold spanborder"><span>All Stories</span></h4>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/php/composer/install-composer-on-debian9-stretch/">Install composer on debian 9 stretch</a>
+	</h2>
+	<p class="excerpt">
+	   
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">PHP</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#composer">Composer</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		23 June 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/php/composer/install-composer-on-debian9-stretch/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/composer.png" alt="Install composer on debian 9 stretch" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/jekyll/ruby/create-pagination-on-jekyll-posts-list-and-post-single-page/">Create pagination on jekyll posts list and post single page</a>
+	</h2>
+	<p class="excerpt">
+	   open _config.yml file on root directori :  adding new plugin config.
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jekyll">Jekyll</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#ruby">ruby</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		27 May 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/jekyll/ruby/create-pagination-on-jekyll-posts-list-and-post-single-page/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/jekyll_pagination.png" alt="Create pagination on jekyll posts list and post single page" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/php/date%20and%20time/membuat-pagination-di-codeigniter-dengan-class-bootstrap/">Membuat pagination di codeigniter dengan tambahan class bootstrap</a>
+	</h2>
+	<p class="excerpt">
+	   assaalamualaikum ~Halo para coders! tercinta mudah-mudahan selalu dalam keadaan baik-baik dan sehat semuanya.kali ini coders akan berbagi trick dan tips seputar pagination di framewor...
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">PHP</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#date and time">Date And Time</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		15 May 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/php/date%20and%20time/membuat-pagination-di-codeigniter-dengan-class-bootstrap/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/pagination.png" alt="Membuat pagination di codeigniter dengan tambahan class bootstrap" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/php/date%20and%20time/memahami-fungsi-time-di-php/">Memahami fungsi time di php</a>
+	</h2>
+	<p class="excerpt">
+	   Halo para coders semuanya !selamat menjalankan ibadah puasanya, semoga berkah ibadah di bulan ramadhan tahun ini.postingan kali akan berhubungan dengan fungsi date dan time di php.Fun...
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">PHP</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#date and time">Date And Time</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		06 May 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/php/date%20and%20time/memahami-fungsi-time-di-php/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/php_time.jpg" alt="Memahami fungsi time di php" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/php/mysql_database/menampilkan-data-dari-table-yang-berelasi-php-mysql/">Menampilkan data dari relasi 2 table di php</a>
+	</h2>
+	<p class="excerpt">
+	   hallo para coders ! … salam jumpa.kali ini saya ingin berbagi tips dan trick seputar join table, inner join mysql mariaDB , php.dari kedua gambar diatas adalah data dari front end hal...
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">PHP</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#mysql_database">mysql_database</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		05 May 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/php/mysql_database/menampilkan-data-dari-table-yang-berelasi-php-mysql/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/relasi/relasi8.png" alt="Menampilkan data dari relasi 2 table di php" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/php/explode/memecah-string-nomor-telepon/">Explode string nomor telepon dari query database</a>
+	</h2>
+	<p class="excerpt">
+	   Halo para coders semuanya !selamat menjalankan ibadah puasanya, semoga berkah ibadah di bulan ramadhan tahun ini.postingan kali akan berhubungan dengan string di PHP. ok langsung saja...
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">PHP</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#explode">explode</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		05 May 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/php/explode/memecah-string-nomor-telepon/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/explode_telp.png" alt="Explode string nomor telepon dari query database" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/php/intltelponinput/memasang-plugin-input-telepon-international/">Memasang Plugins Input Telepon International</a>
+	</h2>
+	<p class="excerpt">
+	   
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">PHP</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#intltelponinput">intlTelponinput</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		27 April 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/php/intltelponinput/memasang-plugin-input-telepon-international/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/intl3.png" alt="Memasang Plugins Input Telepon International" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+        <div class="mt-5">
+         <!-- Pagination links -->
+            
+            <ul class="pagination">
+              
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page4">&laquo; Prev</a></li>
+              
+
+              
+                
+                <li class="page-item"><a class="page-link" href="http://localhost:4000/">1</a></li>
+                
+              
+                
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page2">2</a></li>
+                
+              
+                
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page3">3</a></li>
+                
+              
+                
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page4">4</a></li>
+                
+              
+                
+                <li class="page-item disabled"><span class="webjeda page-link">5</span></li>
+                
+              
+                
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page6">6</a></li>
+                
+              
+                
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page7">7</a></li>
+                
+              
+                
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page8">8</a></li>
+                
+              
+                
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page9">9</a></li>
+                
+              
+
+              
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page6">Next &raquo;</a></li>
+              
+            </ul>
+            
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+        <div class="sticky-top sticky-top-offset">
+    <h4 class="font-weight-bold spanborder"><span>Featured</span></h4>
+    <ol class="list-featured">
+        
+            <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="http://localhost:4000/blog/story/kembang-dari-periangan/" class="text-dark">Kembang Dari Priangan</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">Blog</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#story">story</a><span class="sep">, </span>
+                    
+                    </span>
+                </span>
+            </span>
+            </li>
+        
+            <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="http://localhost:4000/news/blog/writer/Tangkuban-Perahu-Erupsi/" class="text-dark">Tangkuban Perahu meletus dengan erupsi diperkirakan 'satu minggu' dan masyarakat diminta 'berwaspada letusan tiba-tiba'</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#news">News</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">Blog</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#writer">Writer</a><span class="sep">, </span>
+                    
+                    </span>
+                </span>
+            </span>
+            </li>
+        
+            <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="http://localhost:4000/jekyll/blog/tutorial/Powerfull-things-markdown-editor/" class="text-dark">Hal-hal keren yang dapat kalian lakukan dengan editor Markdown</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jekyll">Jekyll</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">Blog</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#tutorial">tutorial</a><span class="sep">, </span>
+                    
+                    </span>
+                </span>
+            </span>
+            </li>
+        
+            <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="http://localhost:4000/kajianislam/sunnah/blog/Luasnya-Ampunan-Allah/" class="text-dark">Luasnya Ampunan Allah SWT</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#kajianislam">KajianIslam</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#sunnah">Sunnah</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">Blog</a><span class="sep">, </span>
+                    
+                    </span>
+                </span>
+            </span>
+            </li>
+        
+            <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="http://localhost:4000/blog/writer/Gairah-Budaya-Membaca/" class="text-dark">Gairah Budaya Membaca</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">blog</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#writer">writer</a><span class="sep">, </span>
+                    
+                    </span>
+                </span>
+            </span>
+            </li>
+        
+            <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="http://localhost:4000/kajianislam/sunnah/blog/Ramalan-Ali-ra-Zaman-Mendatang/" class="text-dark">Ramalan Ali ra tentang zaman mendatang </a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#kajianislam">KajianIslam</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#sunnah">Sunnah</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">blog</a><span class="sep">, </span>
+                    
+                    </span>
+                </span>
+            </span>
+            </li>
+        
+            <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="http://localhost:4000/kajianislam/sunnah/Mutiara-Hikmah/" class="text-dark">Mutiara Hikmah</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#kajianislam">KajianIslam</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#sunnah">Sunnah</a><span class="sep">, </span>
+                    
+                    </span>
+                </span>
+            </span>
+            </li>
+        
+            <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="http://localhost:4000/kajianislam/sunnah/Muadzin-Abu-Mahdzurah/" class="text-dark">Muadzin Abu Mahdzurah</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#kajianislam">KajianIslam</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#sunnah">Sunnah</a><span class="sep">, </span>
+                    
+                    </span>
+                </span>
+            </span>
+            </li>
+        
+            <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="http://localhost:4000/kajianislam/sunnah/Untung-Terus/" class="text-dark">Untung Terus</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#kajianislam">KajianIslam</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#sunnah">Sunnah</a><span class="sep">, </span>
+                    
+                    </span>
+                </span>
+            </span>
+            </li>
+        
+    </ol>
+</div>
+    </div>
+
+</div>
+
+
+
+</div>
+:ET
