@@ -1,0 +1,180 @@
+  /* img{
+  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+}
+a:hover{
+  color: coral;
+} */
+@font-face {
+    font-family: 'SpringSakura';
+    font-style: normal;
+    font-weight: normal;
+    src: local('SpringSakura'), url('https://github.com/codesyariah122/kerjaan-syoobe/blob/main/for_page/fonts/SpringSakura-3z1m8.otf') format('otf');
+}
+
+@font-face {
+    font-family: 'Reey Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Reey Regular'), url('https://github.com/codesyariah122/kerjaan-syoobe/blob/main/for_page/fonts/Reey-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Lemon/Milk Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('https://github.com/codesyariah122/kerjaan-syoobe/blob/main/for_page/fonts/Lemon__Milk%20400.otf') format('otf');
+}
+
+
+/* jumbotron */
+.jumbotron {
+    /* background-size: cover;
+    height: 540px; */
+    text-align: center;
+    position: relative;
+    
+    background-color: #17234E;
+    margin-top:-5rem;
+    margin-bottom: 0;
+    min-height: 100vh;
+    width :100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    position: relative;
+}
+
+.jumbotron .container{
+    z-index: 1;
+    position: relative;
+}
+
+.jumbotron::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    position: absolute;
+    bottom:0;
+    margin-left: -.7rem;
+}
+
+.jumbotron .display-4 {
+    color: white;
+    margin-top: 5px;
+    font-weight: 200;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.jumbotron .display-4 span {
+    font-weight: 500;
+    color:tomato;
+}
+.jumbotron p {
+    font-weight: 500;
+    font-size: 35px;
+    color:#FFFFF0;
+    font-family: 'Poiret One', cursive;font-weight:bold;
+}
+
+
+/* polaroid1 */
+.polaroid{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important;
+    color: rgb(255,228,181);
+    position: relative;
+    margin-bottom: 5rem;
+    margin-top:2rem;
+}
+
+
+.polaroid-body h2{
+    padding: 25px;
+    color:black;
+    font-family: 'Poiret One', cursive;font-weight:bold;
+    font-size: 25px;
+}
+
+.polaroid p{
+    color: black;
+    text-indent: 0px;
+    margin-top:1.5rem;
+    font-weight: 400;
+    text-align:justify;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.codesyariah{
+    text-transform: uppercase;
+    font-family:'Lemon/Milk Regular';
+    color: rgb(255,99,71);
+}
+
+
+.underline:after{
+    content: '';
+    display: block;
+    margin: auto;
+    position: relative;
+    margin-bottom:2rem;
+    margin-top:.8rem;
+    width: 100px;
+    height: 2px;
+    background:rgb(255, 99, 78);
+}
+/* pannel bootstrap */
+.panel{
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    margin-top: -5rem;
+    padding:12px;
+    background-color: white;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: justify-content-center;
+    width:100%;
+}
+.panel-body{
+    margin-top:1rem;
+}
+.panel-body h1{
+    font-family: 'Poiret One', cursive;
+    font-weight:800;
+    text-align: center;
+    font-size: 35px;
+}
+.panel-body p{
+    font-size: 14px;
+    text-align: justify;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-indent: 65px;
+}
+
+.panel img{
+    border-radius: 50%;
+}
+/* end pannel */
+
+
+@media only screen and (max-device-width: 812px) {
+    .parallax {
+          background-attachment: scroll;
+    }
+    .caption {
+          position: absolute;
+          left: 0;
+          margin-top: 2rem;
+          width: 100%;
+          text-align: center;
+          color: #000;
+      }
+  
+      .waves {
+          height: 40px;
+          min-height: 40px;
+      }
+  }
