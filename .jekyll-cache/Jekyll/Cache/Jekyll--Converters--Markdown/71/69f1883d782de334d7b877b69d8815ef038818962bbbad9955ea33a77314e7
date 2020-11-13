@@ -1,4 +1,4 @@
-I"Ù0<style type="text/css">
+I"„0<style type="text/css">
   /* all parallax top and bottom */
   .parallax{
     min-height: 500px; 
@@ -171,7 +171,7 @@
 
   <div class="caption">
     <br /><br />
-    <h2> {{webdev.parallax.satu,info}} : </h2>
+    <h2> {{webdev.parallax.satu.info}} : </h2>
       <a href="https://wa.me/{{WebDevelopment.whatsapp}}?text=Hai%20kak%20saya%20membutuhkan%20jasa%20web%20development" class="btn btn-primary text-white">whatsap</a>
       <a href="https://instagram.com/{{WebDevelopment.instagram}}" class="btn btn-primary text-white">Instagram</a>
     <br /><br />
@@ -265,7 +265,7 @@
           <div class="wave -three"></div>
           <div class="title-wave">
             <h4>
-              {{WebDevelopment.parallax.dua.info}}.
+              {{webdev.parallax.dua.info}}.
             </h4>
           </div>
         </div>
@@ -331,8 +331,6 @@
 
             </div>
             <!-- row content2 end -->
-          <br />
-          <h1 class="underline text-center mt-2 mb-4"></h1>
           </div>
           <!-- end container panel-body -->
         </div>

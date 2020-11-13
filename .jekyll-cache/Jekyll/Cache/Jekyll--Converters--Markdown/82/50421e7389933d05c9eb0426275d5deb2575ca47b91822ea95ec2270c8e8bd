@@ -1,4 +1,4 @@
-I"hW<style type="text/css">
+I"zV<style type="text/css">
   /* all parallax top and bottom */
   .parallax{
     min-height: 500px; 
@@ -162,18 +162,18 @@
 
 <h1 class="underline mb-2 mt-2"></h1>
 
-<p>&lt;div class=”parallax” style=”background-image: url(‘http://localhost:4000{“img”=&gt;”/assets/images/project/codesyariah/story9.jpg”, “info”=&gt;””}’);
-“&gt;</p>
+<div class="parallax" style="background-image: url('http://localhost:4000/assets/images/project/codesyariah/story9.jpg');
+">
 
-<div class="caption">
+  <div class="caption">
     <br /><br />
-    <h2> Untuk info lebih lanjut silahkan hubungi contact dibawah ini :</h2>
+    <h2> Untuk info lebih lanjut silahkan hubungi contact dibawah ini : </h2>
       <a href="https://wa.me/?text=Hai%20kak%20saya%20membutuhkan%20jasa%20web%20development" class="btn btn-primary text-white">whatsap</a>
       <a href="https://instagram.com/pujiermanto" class="btn btn-primary text-white">Instagram</a>
     <br /><br />
   </div>
 
-<p>&lt;/div&gt;</p>
+</div>
 
 <div class="container">
   <div class="row justify-content-center">
@@ -249,10 +249,10 @@
 
 <h1 class="underline mb-2 mt-2"></h1>
 
-<p>&lt;div class=”parallax” style=”background-image: url(‘http://localhost:4000{“img”=&gt;”/assets/images/project/codesyariah/story6.jpg”, “info”=&gt;””}’);
-“&gt;</p>
+<div class="parallax" style="background-image: url('http://localhost:4000/assets/images/project/codesyariah/story6.jpg');
+">
 
-<div class="container">
+  <div class="container">
     <div class="row">
       <div class="col-md-4">
         <div class="box-wave">
@@ -271,7 +271,7 @@
 
 </div>
 
-<p>&lt;/div&gt;</p>
+</div>
 
 <div class="container">
   <div class="row justify-content-center">
@@ -392,8 +392,6 @@
 
             </div>
             <!-- row content2 end -->
-          <br />
-          <h1 class="underline text-center mt-2 mb-4"></h1>
           </div>
           <!-- end container panel-body -->
         </div>
