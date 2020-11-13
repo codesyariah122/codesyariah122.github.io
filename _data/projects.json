@@ -1,32 +1,22 @@
 {
 "codesyariah webdev":
-{
-"links": "codesyariah",
-"name": "Codesyariah WebDevelopment",
-"type": "Jasa Pembuatan Website Dan Toko Online",
-"website": "",
-"tagline": "Melayani Jasa pembuatan website untuk onlineshop, marketplace eccommerce dan lain-lain",
-"img_path": "/assets/images/project/webdev.jpg",
-"alamat": "in progress"
-},
-"nabilla bakery":
-{
-"links": "nabillabakery",
-"name": "Nabilla Bakery & Cake",
-"type": "Food & Drink",
-"website": "https://nabilla-bakery.github.io",
-"tagline": "Mengedepankan pelayanan dari kualitas terbaik kami",
-"img_path": "/assets/images/project/bakery.jpg",
-"alamat": "in progress"
-},
-"skinoc":
-{
-"links": "skinoc",
-"name": "PT. Gemilang Citrus Berjaya",
-"type": "Healthy & Treatment",
-"website": "https://skinoc.github.io",
-"tagline": "Perusahaan profesional dan legal, produk sudah sertifikasi BPOM",
-"img_path": "/assets/images/project/skinoc.jpg",
-"alamat": "Mutiara Regency Blok A1 No. 55 Sidoarjo – Jawa Timur INDONESIA"
-}
+    {
+        "links": "codesyariah",
+        "name": "Codesyariah WebDevelopment",
+        "type": "Jasa Pembuatan Website Dan Toko Online",
+        "website": "",
+        "tagline": "Melayani Jasa pembuatan website untuk onlineshop, marketplace eccommerce dan lain-lain",
+        "img_path": "/assets/images/project/webdev.jpg",
+        "alamat": "in progress"
+    },
+    "nabilla bakery":
+    {
+        "links": "nabillabakery",
+        "name": "Nabilla Bakery & Cake",
+        "type": "Food & Drink",
+        "website": "https://nabilla-bakery.github.io",
+        "tagline": "Mengedepankan pelayanan dari kualitas terbaik kami",
+        "img_path": "/assets/images/project/bakery.jpg",
+        "alamat": "in progress"
+    }
 } 

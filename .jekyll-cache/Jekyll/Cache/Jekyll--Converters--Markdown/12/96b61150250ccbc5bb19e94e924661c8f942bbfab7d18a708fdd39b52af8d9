@@ -1,4 +1,4 @@
-I"Á{<style type="text/css">
+I"è<style type="text/css">
 /* all parallax top and bottom */
 .parallax{
   min-height: 500px; 
@@ -464,6 +464,17 @@
 
               
                 <div class="col-md-4 mt-5">
+                  <div class="card" style="width: 18rem;">
+                    <a href="/assets/images/project/nabillabakery/cookies/chocooat.jpg" data-toggle="lightbox" data-gallery="cookies">
+                      <img class="card-img-top" src=".../100px180/" alt="Card image cap" />
+                    </a>
+                    <div class="card-body">
+                      <h5 class="card-title">Choco Oat Cookies</h5>
+                      <p class="card-text">Perpaduan cokelat dan oat atau haver emang nggak pernah mengecewakan, apalagi dengan tambahan sedikit kayu manis!.</p>
+                      <a href="#" class="btn btn-primary">Beli</a>
+                    </div>
+                  </div>
+
                   <h4 class="text-center underline">Choco Oat Cookies</h4>
                   <div class="polaroid">
                     <a href="/assets/images/project/nabillabakery/cookies/chocooat.jpg" data-toggle="lightbox" data-gallery="cookies">
@@ -475,6 +486,17 @@
                 </div>
               
                 <div class="col-md-4 mt-5">
+                  <div class="card" style="width: 18rem;">
+                    <a href="/assets/images/project/nabillabakery/cookies/classic.jpg" data-toggle="lightbox" data-gallery="cookies">
+                      <img class="card-img-top" src=".../100px180/" alt="Card image cap" />
+                    </a>
+                    <div class="card-body">
+                      <h5 class="card-title">Classic Chocochip</h5>
+                      <p class="card-text">Cookies yang terbuat dari adonan yang buttery, dark chocohips, dan sentuhan sea salt pada bagian atasnya ini udah terbukti nggak pernah fail untuk menjadi favorit banyak orang, termasuk anda dan orang-orang tercinta..</p>
+                      <a href="#" class="btn btn-primary">Beli</a>
+                    </div>
+                  </div>
+
                   <h4 class="text-center underline">Classic Chocochip</h4>
                   <div class="polaroid">
                     <a href="/assets/images/project/nabillabakery/cookies/classic.jpg" data-toggle="lightbox" data-gallery="cookies">
@@ -486,6 +508,17 @@
                 </div>
               
                 <div class="col-md-4 mt-5">
+                  <div class="card" style="width: 18rem;">
+                    <a href="/assets/images/project/nabillabakery/cookies/coffeekis.jpg" data-toggle="lightbox" data-gallery="cookies">
+                      <img class="card-img-top" src=".../100px180/" alt="Card image cap" />
+                    </a>
+                    <div class="card-body">
+                      <h5 class="card-title">Coffee Kiss Chocochip</h5>
+                      <p class="card-text">Nggak hanya hits dikenal sebagai kopi kekinian, soft cookies rasa kopi juga bisa kamu temukan lho di Kukis.sis! Adonan dengan rasa kopi ini disempurnakan dengan tambahan chocochips dan drizzle saus karamel di atasnya. Can't resist!.</p>
+                      <a href="#" class="btn btn-primary">Beli</a>
+                    </div>
+                  </div>
+
                   <h4 class="text-center underline">Coffee Kiss Chocochip</h4>
                   <div class="polaroid">
                     <a href="/assets/images/project/nabillabakery/cookies/coffeekis.jpg" data-toggle="lightbox" data-gallery="cookies">
@@ -497,6 +530,17 @@
                 </div>
               
                 <div class="col-md-4 mt-5">
+                  <div class="card" style="width: 18rem;">
+                    <a href="/assets/images/project/nabillabakery/cookies/doubledark.jpg" data-toggle="lightbox" data-gallery="cookies">
+                      <img class="card-img-top" src=".../100px180/" alt="Card image cap" />
+                    </a>
+                    <div class="card-body">
+                      <h5 class="card-title">Double Dark Chocochip</h5>
+                      <p class="card-text">Pencinta cookies sekaligus cokelat pasti suka banget nih sama varian Double Dark Chocolate Cookies! Kenapa? Karena cookies ini terbuat dari adonan dark chocolate dengan tambahan chia seeds yang diberi filling chocochips yang melimpah di dalamnya. Delicious!..</p>
+                      <a href="#" class="btn btn-primary">Beli</a>
+                    </div>
+                  </div>
+
                   <h4 class="text-center underline">Double Dark Chocochip</h4>
                   <div class="polaroid">
                     <a href="/assets/images/project/nabillabakery/cookies/doubledark.jpg" data-toggle="lightbox" data-gallery="cookies">
@@ -508,6 +552,17 @@
                 </div>
               
                 <div class="col-md-4 mt-5">
+                  <div class="card" style="width: 18rem;">
+                    <a href="/assets/images/project/nabillabakery/cookies/matchalmond.jpg" data-toggle="lightbox" data-gallery="cookies">
+                      <img class="card-img-top" src=".../100px180/" alt="Card image cap" />
+                    </a>
+                    <div class="card-body">
+                      <h5 class="card-title">Match Almond Cookies</h5>
+                      <p class="card-text">Dari namanya, kamu udah bisa tebak belum komponen apa aja yang terkandung dalam soft cookies ini? Kalau kamu menebak matcha dan almond, kamu benar, Babes! Adonan matcha dengan filling white chocolate ini dilengkapi dengan irisan almond yang bikin tekstur cookies lebih beragam...</p>
+                      <a href="#" class="btn btn-primary">Beli</a>
+                    </div>
+                  </div>
+
                   <h4 class="text-center underline">Match Almond Cookies</h4>
                   <div class="polaroid">
                     <a href="/assets/images/project/nabillabakery/cookies/matchalmond.jpg" data-toggle="lightbox" data-gallery="cookies">
@@ -519,6 +574,17 @@
                 </div>
               
                 <div class="col-md-4 mt-5">
+                  <div class="card" style="width: 18rem;">
+                    <a href="/assets/images/project/nabillabakery/cookies/redmallow.jpg" data-toggle="lightbox" data-gallery="cookies">
+                      <img class="card-img-top" src=".../100px180/" alt="Card image cap" />
+                    </a>
+                    <div class="card-body">
+                      <h5 class="card-title">Red Mallow Cookies</h5>
+                      <p class="card-text">Soft cookies yang satu ini memiliki rasa yang complicated in a good way. Adonan red velvet dengan cream cheese di bagian dalamnya dan tambahan marshmallow pada bagian atasnya pasti gooey banget! Nggak perlu khawatir, cookies ini nggak bikin enek sama sekali..</p>
+                      <a href="#" class="btn btn-primary">Beli</a>
+                    </div>
+                  </div>
+
                   <h4 class="text-center underline">Red Mallow Cookies</h4>
                   <div class="polaroid">
                     <a href="/assets/images/project/nabillabakery/cookies/redmallow.jpg" data-toggle="lightbox" data-gallery="cookies">
@@ -559,23 +625,19 @@
   <div class="row justify-content-center">
     <div class="polaroid" style="margin-top:-5rem;">
       
-      <img src="http://localhost:4000/assets/images/codesyariah-team.gif" class="img-responsive float-left" alt="" width="500" height="470" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
-    </div>
-    <div class="polaroid-body" style="margin-top:5rem;">
-      <h1 class="text-center" style="font-family: 'Indie Flower', cursive; color:burlywood;">Nabilla Bakery<i class="fas fa-cookie-bite fa-fw" style="color:burlywood;"></i>  </h1>
-      <p class="mt-2 ml-5">
-        Design and Code By : <span style="font-size:35px;font-family:Reey Regular;color:springgreen;">CodeSyariah</span>
-        <br />
-        <span style="font-size:21px; margin-top:1rem; font-family:Reey Regular;color:tomato;">Script again Coffee again <i class="fas fa-code fa-fw" style="color:burlywood;"></i> </span>
-      </p> 
-    </div>	
-  <br />
-</div>
-</div>
-
-<div class="row justify-content-end">
-   
+        <img src="http://localhost:4000/assets/images/codesyariah-team.gif" class="img-responsive float-left" alt="" width="500" height="470" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+      </div>
+      <div class="polaroid-body" style="margin-top:5rem;">
+        <h1 class="text-center" style="font-family: 'Indie Flower', cursive; color:burlywood;">Nabilla Bakery<i class="fas fa-cookie-bite fa-fw" style="color:burlywood;"></i>  </h1>
+        <p class="mt-2 ml-5">
+          Design and Code By : <span style="font-size:35px;font-family:Reey Regular;color:springgreen;">CodeSyariah</span>
+          <br />
+          <span style="font-size:21px; margin-top:1rem; font-family:Reey Regular;color:tomato;">Script again Coffee again <i class="fas fa-code fa-fw" style="color:burlywood;"></i> </span>
+        </p> 
+      </div>	
+    <br />
   </div>
+</div>
 
 <!-- <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <h1 class="display-4">Nabilla Bakery</h1>

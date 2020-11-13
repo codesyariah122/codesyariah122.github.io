@@ -1,4 +1,4 @@
-I"ÚI<style type="text/css">
+I"BJ<style type="text/css">
 /* all parallax top and bottom */
 .parallax{
   min-height: 500px; 
@@ -419,13 +419,15 @@
 
               {% for cookie in site.cookies %}
                 <div class="col-md-4 mt-5">
-                  <h4 class="text-center underline">{{cookie.name}}</h4>
-                  <div class="polaroid">
+                  <div class="card" style="width: 18rem;">
                     <a href="{{cookie.image_path}}" data-toggle="lightbox" data-gallery="cookies">
-                      <img src="{{cookie.image_path}}" class="img-responsive img-fluid float-left" alt="{{cookie.name}}" height="350" width="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                      <img class="card-img-top img-responsive img-fluid float-left" src=".{{cookie.image_path}}" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
                     </a>
-                       
-                     <p style="text-indent:'0';">{{cookie.description}}</p>
+                    <div class="card-body">
+                      <h5 class="card-title">{{cookie.name}}</h5>
+                      <p class="card-text">{{cookie.description}}.</p>
+                      <a href="#" class="btn btn-primary">Beli</a>
+                    </div>
                   </div>
                 </div>
               {% endfor %}
@@ -459,23 +461,19 @@
   <div class="row justify-content-center">
     <div class="polaroid" style="margin-top:-5rem;">
       
-      <img src="{{site.url}}/assets/images/codesyariah-team.gif" class="img-responsive float-left" alt="" width="500" height="470" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
-    </div>
-    <div class="polaroid-body" style="margin-top:5rem;">
-      <h1 class="text-center" style="font-family: 'Indie Flower', cursive; color:burlywood;">{{nabillabakery.name}}<i class="fas fa-cookie-bite fa-fw" style="color:burlywood;"></i>  </h1>
-      <p class="mt-2 ml-5">
-        Design and Code By : <span style="font-size:35px;font-family:Reey Regular;color:springgreen;">{{site.name}}</span>
-        <br />
-        <span style="font-size:21px; margin-top:1rem; font-family:Reey Regular;color:tomato;">{{site.description}} <i class="fas fa-code fa-fw" style="color:burlywood;"></i> </span>
-      </p> 
-    </div>	
-  <br />
-</div>
-</div>
-
-<div class="row justify-content-end">
-   
+        <img src="{{site.url}}/assets/images/codesyariah-team.gif" class="img-responsive float-left" alt="" width="500" height="470" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+      </div>
+      <div class="polaroid-body" style="margin-top:5rem;">
+        <h1 class="text-center" style="font-family: 'Indie Flower', cursive; color:burlywood;">{{nabillabakery.name}}<i class="fas fa-cookie-bite fa-fw" style="color:burlywood;"></i>  </h1>
+        <p class="mt-2 ml-5">
+          Design and Code By : <span style="font-size:35px;font-family:Reey Regular;color:springgreen;">{{site.name}}</span>
+          <br />
+          <span style="font-size:21px; margin-top:1rem; font-family:Reey Regular;color:tomato;">{{site.description}} <i class="fas fa-code fa-fw" style="color:burlywood;"></i> </span>
+        </p> 
+      </div>	
+    <br />
   </div>
+</div>
 
 <!-- <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <h1 class="display-4">{{ page.title }}</h1>

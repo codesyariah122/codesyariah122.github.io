@@ -1,5 +1,4 @@
-I"
-J<style type="text/css">
+I"¥J<style type="text/css">
 /* all parallax top and bottom */
 .parallax{
   min-height: 500px; 
@@ -343,16 +342,18 @@ J<style type="text/css">
               </div>
 
               {% for cupcake in site.cupcakes %}
-                <div class="col-md-4 mt-5">
-                  <h4 class="text-center underline">{{cupcake.name}}</h4>
-                  <div class="polaroid">
-                    <a href="{{cupcake.image_path}}" data-toggle="lightbox" data-gallery="cupcakes">
-                      <img src="{{cupcake.image_path}}" class="img-responsive img-fluid float-left" alt="{{cupcake.name}}" height="350" width="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
-                    </a>
-                       
-                     <p style="text-indent:'0';">{{cupcake.description}}</p>
+              <div class="col-md-4 mt-5">
+                <div class="card" style="width: 18rem;">
+                  <a href="{{cupcake.image_path}}" data-toggle="lightbox" data-gallery="cupcakes">
+                    <img class="card-img-top img-responsive img-fluid float-left" src="{{cupcake.image_path}}" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                  </a>
+                  <div class="card-body">
+                    <h5 class="card-title">{{cupcake.name}}</h5>
+                    <p class="card-text">{{cupcake.description}}.</p>
+                    <a href="#" class="btn btn-primary">Beli Sekarang</a>
                   </div>
                 </div>
+              </div>
               {% endfor %}
 
             </div>
@@ -420,13 +421,15 @@ J<style type="text/css">
 
               {% for cookie in site.cookies %}
                 <div class="col-md-4 mt-5">
-                  <h4 class="text-center underline">{{cookie.name}}</h4>
-                  <div class="polaroid">
+                  <div class="card" style="width: 18rem;">
                     <a href="{{cookie.image_path}}" data-toggle="lightbox" data-gallery="cookies">
-                      <img src="{{cookie.image_path}}" class="img-responsive img-fluid float-left" alt="{{cookie.name}}" height="350" width="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                      <img class="card-img-top img-responsive img-fluid float-left" src="{{cookie.image_path}}" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
                     </a>
-                       
-                     <p style="text-indent:'0';">{{cookie.description}}</p>
+                    <div class="card-body">
+                      <h5 class="card-title">{{cookie.name}}</h5>
+                      <p class="card-text">{{cookie.description}}.</p>
+                      <a href="#" class="btn btn-primary">Beli Sekarang</a>
+                    </div>
                   </div>
                 </div>
               {% endfor %}
@@ -473,10 +476,6 @@ J<style type="text/css">
     <br />
   </div>
 </div>
-
-<div class="row justify-content-end">
-   
-  </div>
 
 <!-- <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <h1 class="display-4">{{ page.title }}</h1>

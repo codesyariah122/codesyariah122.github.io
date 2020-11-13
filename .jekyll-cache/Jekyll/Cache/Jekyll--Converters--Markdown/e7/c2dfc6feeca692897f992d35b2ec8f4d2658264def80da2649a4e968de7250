@@ -1,4 +1,4 @@
-I"õ|<style type="text/css">
+I"—€<style type="text/css">
 /* all parallax top and bottom */
 .parallax{
   min-height: 500px; 
@@ -127,7 +127,6 @@
       font-size: 12px;
   }
 
-  
   .waves {
           height: 40px;
           min-height: 40px;
@@ -334,71 +333,83 @@
               </div>
 
               
-                <div class="col-md-4 mt-5">
-                  <h4 class="text-center underline">Velvet Banana</h4>
-                  <div class="polaroid">
-                    <a href="/assets/images/project/nabillabakery/cupcakes/banana.jpg" data-toggle="lightbox" data-gallery="cupcakes">
-                      <img src="/assets/images/project/nabillabakery/cupcakes/banana.jpg" class="img-responsive img-fluid float-left" alt="Velvet Banana" height="350" width="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
-                    </a>
-                       
-                     <p style="text-indent:'0';">Lagi pelengkap vitamin c anda dan keluarga, cupcake dengan toping cream banana yang dipilih dari bahan terbaik tanpa bahan pengawet dari buah asli, untuk menjaga kualitas gizi anda dan keluarga.</p>
+              <div class="col-md-4 mt-5">
+                <div class="card" style="width: 18rem;">
+                  <a href="/assets/images/project/nabillabakery/cupcakes/banana.jpg" data-toggle="lightbox" data-gallery="cupcakes">
+                    <img class="card-img-top img-responsive img-fluid float-left" src="/assets/images/project/nabillabakery/cupcakes/banana.jpg" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                  </a>
+                  <div class="card-body">
+                    <h5 class="card-title">Velvet Banana</h5>
+                    <p class="card-text">Lagi pelengkap vitamin c anda dan keluarga, cupcake dengan toping cream banana yang dipilih dari bahan terbaik tanpa bahan pengawet dari buah asli, untuk menjaga kualitas gizi anda dan keluarga..</p>
+                    <a href="#" class="btn btn-primary">Beli Sekarang</a>
                   </div>
                 </div>
+              </div>
               
-                <div class="col-md-4 mt-5">
-                  <h4 class="text-center underline">Sweet Chocolate</h4>
-                  <div class="polaroid">
-                    <a href="/assets/images/project/nabillabakery/cupcakes/chocolate2.jpg" data-toggle="lightbox" data-gallery="cupcakes">
-                      <img src="/assets/images/project/nabillabakery/cupcakes/chocolate2.jpg" class="img-responsive img-fluid float-left" alt="Sweet Chocolate" height="350" width="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
-                    </a>
-                       
-                     <p style="text-indent:'0';">Cupcake dengan cream chocolate manis dan taburan meses akan menemani hari anda bersama keluarga.</p>
+              <div class="col-md-4 mt-5">
+                <div class="card" style="width: 18rem;">
+                  <a href="/assets/images/project/nabillabakery/cupcakes/chocolate2.jpg" data-toggle="lightbox" data-gallery="cupcakes">
+                    <img class="card-img-top img-responsive img-fluid float-left" src="/assets/images/project/nabillabakery/cupcakes/chocolate2.jpg" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                  </a>
+                  <div class="card-body">
+                    <h5 class="card-title">Sweet Chocolate</h5>
+                    <p class="card-text">Cupcake dengan cream chocolate manis dan taburan meses akan menemani hari anda bersama keluarga..</p>
+                    <a href="#" class="btn btn-primary">Beli Sekarang</a>
                   </div>
                 </div>
+              </div>
               
-                <div class="col-md-4 mt-5">
-                  <h4 class="text-center underline">Cheesy Smile</h4>
-                  <div class="polaroid">
-                    <a href="/assets/images/project/nabillabakery/cupcakes/creamcheese.jpg" data-toggle="lightbox" data-gallery="cupcakes">
-                      <img src="/assets/images/project/nabillabakery/cupcakes/creamcheese.jpg" class="img-responsive img-fluid float-left" alt="Cheesy Smile" height="350" width="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
-                    </a>
-                       
-                     <p style="text-indent:'0';">Siapa sih yang gak suka keju ? cupcake chocolate dengan toping creame cheese ini tidak akan membuat anda kecewa, so manisnya dapet gurihnya dapet.</p>
+              <div class="col-md-4 mt-5">
+                <div class="card" style="width: 18rem;">
+                  <a href="/assets/images/project/nabillabakery/cupcakes/creamcheese.jpg" data-toggle="lightbox" data-gallery="cupcakes">
+                    <img class="card-img-top img-responsive img-fluid float-left" src="/assets/images/project/nabillabakery/cupcakes/creamcheese.jpg" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                  </a>
+                  <div class="card-body">
+                    <h5 class="card-title">Cheesy Smile</h5>
+                    <p class="card-text">Siapa sih yang gak suka keju ? cupcake chocolate dengan toping creame cheese ini tidak akan membuat anda kecewa, so manisnya dapet gurihnya dapet..</p>
+                    <a href="#" class="btn btn-primary">Beli Sekarang</a>
                   </div>
                 </div>
+              </div>
               
-                <div class="col-md-4 mt-5">
-                  <h4 class="text-center underline">C'Mon Lemon</h4>
-                  <div class="polaroid">
-                    <a href="/assets/images/project/nabillabakery/cupcakes/lemon.jpg" data-toggle="lightbox" data-gallery="cupcakes">
-                      <img src="/assets/images/project/nabillabakery/cupcakes/lemon.jpg" class="img-responsive img-fluid float-left" alt="C'Mon Lemon" height="350" width="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
-                    </a>
-                       
-                     <p style="text-indent:'0';">Selain enak cupcake lemon ini juga menyehatkan loh, cream dengan bahan lemon alami yang dipastikan acara keluarga anda semakin meriah penuh senyum dari orang-orang tercinta.</p>
+              <div class="col-md-4 mt-5">
+                <div class="card" style="width: 18rem;">
+                  <a href="/assets/images/project/nabillabakery/cupcakes/lemon.jpg" data-toggle="lightbox" data-gallery="cupcakes">
+                    <img class="card-img-top img-responsive img-fluid float-left" src="/assets/images/project/nabillabakery/cupcakes/lemon.jpg" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                  </a>
+                  <div class="card-body">
+                    <h5 class="card-title">C'Mon Lemon</h5>
+                    <p class="card-text">Selain enak cupcake lemon ini juga menyehatkan loh, cream dengan bahan lemon alami yang dipastikan acara keluarga anda semakin meriah penuh senyum dari orang-orang tercinta..</p>
+                    <a href="#" class="btn btn-primary">Beli Sekarang</a>
                   </div>
                 </div>
+              </div>
               
-                <div class="col-md-4 mt-5">
-                  <h4 class="text-center underline">Strawberry Field Forever</h4>
-                  <div class="polaroid">
-                    <a href="/assets/images/project/nabillabakery/cupcakes/strawberry.jpg" data-toggle="lightbox" data-gallery="cupcakes">
-                      <img src="/assets/images/project/nabillabakery/cupcakes/strawberry.jpg" class="img-responsive img-fluid float-left" alt="Strawberry Field Forever" height="350" width="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
-                    </a>
-                       
-                     <p style="text-indent:'0';">Yang manis emang yang terbaik untuk melengkapi hari spesial anda bersama orang-orang tercinta, cream strawberry nya berasal dari bahan pilihan yang alami, menjadi sajian lengkap saat santai anda.</p>
+              <div class="col-md-4 mt-5">
+                <div class="card" style="width: 18rem;">
+                  <a href="/assets/images/project/nabillabakery/cupcakes/strawberry.jpg" data-toggle="lightbox" data-gallery="cupcakes">
+                    <img class="card-img-top img-responsive img-fluid float-left" src="/assets/images/project/nabillabakery/cupcakes/strawberry.jpg" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                  </a>
+                  <div class="card-body">
+                    <h5 class="card-title">Strawberry Field Forever</h5>
+                    <p class="card-text">Yang manis emang yang terbaik untuk melengkapi hari spesial anda bersama orang-orang tercinta, cream strawberry nya berasal dari bahan pilihan yang alami, menjadi sajian lengkap saat santai anda..</p>
+                    <a href="#" class="btn btn-primary">Beli Sekarang</a>
                   </div>
                 </div>
+              </div>
               
-                <div class="col-md-4 mt-5">
-                  <h4 class="text-center underline">Vanilla Sky</h4>
-                  <div class="polaroid">
-                    <a href="/assets/images/project/nabillabakery/cupcakes/vanilla.jpg" data-toggle="lightbox" data-gallery="cupcakes">
-                      <img src="/assets/images/project/nabillabakery/cupcakes/vanilla.jpg" class="img-responsive img-fluid float-left" alt="Vanilla Sky" height="350" width="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
-                    </a>
-                       
-                     <p style="text-indent:'0';">Cream vanilla  ditaburi dengan sprinkle yang menambah cita rasa manis yang pas untuk melengkapi hari bahagia anda.</p>
+              <div class="col-md-4 mt-5">
+                <div class="card" style="width: 18rem;">
+                  <a href="/assets/images/project/nabillabakery/cupcakes/vanilla.jpg" data-toggle="lightbox" data-gallery="cupcakes">
+                    <img class="card-img-top img-responsive img-fluid float-left" src="/assets/images/project/nabillabakery/cupcakes/vanilla.jpg" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                  </a>
+                  <div class="card-body">
+                    <h5 class="card-title">Vanilla Sky</h5>
+                    <p class="card-text">Cream vanilla  ditaburi dengan sprinkle yang menambah cita rasa manis yang pas untuk melengkapi hari bahagia anda..</p>
+                    <a href="#" class="btn btn-primary">Beli Sekarang</a>
                   </div>
                 </div>
+              </div>
               
 
             </div>
@@ -465,68 +476,80 @@
 
               
                 <div class="col-md-4 mt-5">
-                  <h4 class="text-center underline">Choco Oat Cookies</h4>
-                  <div class="polaroid">
+                  <div class="card" style="width: 18rem;">
                     <a href="/assets/images/project/nabillabakery/cookies/chocooat.jpg" data-toggle="lightbox" data-gallery="cookies">
-                      <img src="/assets/images/project/nabillabakery/cookies/chocooat.jpg" class="img-responsive img-fluid float-left" alt="Choco Oat Cookies" height="350" width="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                      <img class="card-img-top img-responsive img-fluid float-left" src="/assets/images/project/nabillabakery/cookies/chocooat.jpg" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
                     </a>
-                       
-                     <p style="text-indent:'0';">Perpaduan cokelat dan oat atau haver emang nggak pernah mengecewakan, apalagi dengan tambahan sedikit kayu manis!</p>
+                    <div class="card-body">
+                      <h5 class="card-title">Choco Oat Cookies</h5>
+                      <p class="card-text">Perpaduan cokelat dan oat atau haver emang nggak pernah mengecewakan, apalagi dengan tambahan sedikit kayu manis!.</p>
+                      <a href="#" class="btn btn-primary">Beli Sekarang</a>
+                    </div>
                   </div>
                 </div>
               
                 <div class="col-md-4 mt-5">
-                  <h4 class="text-center underline">Classic Chocochip</h4>
-                  <div class="polaroid">
+                  <div class="card" style="width: 18rem;">
                     <a href="/assets/images/project/nabillabakery/cookies/classic.jpg" data-toggle="lightbox" data-gallery="cookies">
-                      <img src="/assets/images/project/nabillabakery/cookies/classic.jpg" class="img-responsive img-fluid float-left" alt="Classic Chocochip" height="350" width="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                      <img class="card-img-top img-responsive img-fluid float-left" src="/assets/images/project/nabillabakery/cookies/classic.jpg" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
                     </a>
-                       
-                     <p style="text-indent:'0';">Cookies yang terbuat dari adonan yang buttery, dark chocohips, dan sentuhan sea salt pada bagian atasnya ini udah terbukti nggak pernah fail untuk menjadi favorit banyak orang, termasuk anda dan orang-orang tercinta.</p>
+                    <div class="card-body">
+                      <h5 class="card-title">Classic Chocochip</h5>
+                      <p class="card-text">Cookies yang terbuat dari adonan yang buttery, dark chocohips, dan sentuhan sea salt pada bagian atasnya ini udah terbukti nggak pernah fail untuk menjadi favorit banyak orang, termasuk anda dan orang-orang tercinta..</p>
+                      <a href="#" class="btn btn-primary">Beli Sekarang</a>
+                    </div>
                   </div>
                 </div>
               
                 <div class="col-md-4 mt-5">
-                  <h4 class="text-center underline">Coffee Kiss Chocochip</h4>
-                  <div class="polaroid">
+                  <div class="card" style="width: 18rem;">
                     <a href="/assets/images/project/nabillabakery/cookies/coffeekis.jpg" data-toggle="lightbox" data-gallery="cookies">
-                      <img src="/assets/images/project/nabillabakery/cookies/coffeekis.jpg" class="img-responsive img-fluid float-left" alt="Coffee Kiss Chocochip" height="350" width="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                      <img class="card-img-top img-responsive img-fluid float-left" src="/assets/images/project/nabillabakery/cookies/coffeekis.jpg" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
                     </a>
-                       
-                     <p style="text-indent:'0';">Nggak hanya hits dikenal sebagai kopi kekinian, soft cookies rasa kopi juga bisa kamu temukan lho di Kukis.sis! Adonan dengan rasa kopi ini disempurnakan dengan tambahan chocochips dan drizzle saus karamel di atasnya. Can't resist!</p>
+                    <div class="card-body">
+                      <h5 class="card-title">Coffee Kiss Chocochip</h5>
+                      <p class="card-text">Nggak hanya hits dikenal sebagai kopi kekinian, soft cookies rasa kopi juga bisa kamu temukan lho di Kukis.sis! Adonan dengan rasa kopi ini disempurnakan dengan tambahan chocochips dan drizzle saus karamel di atasnya. Can't resist!.</p>
+                      <a href="#" class="btn btn-primary">Beli Sekarang</a>
+                    </div>
                   </div>
                 </div>
               
                 <div class="col-md-4 mt-5">
-                  <h4 class="text-center underline">Double Dark Chocochip</h4>
-                  <div class="polaroid">
+                  <div class="card" style="width: 18rem;">
                     <a href="/assets/images/project/nabillabakery/cookies/doubledark.jpg" data-toggle="lightbox" data-gallery="cookies">
-                      <img src="/assets/images/project/nabillabakery/cookies/doubledark.jpg" class="img-responsive img-fluid float-left" alt="Double Dark Chocochip" height="350" width="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                      <img class="card-img-top img-responsive img-fluid float-left" src="/assets/images/project/nabillabakery/cookies/doubledark.jpg" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
                     </a>
-                       
-                     <p style="text-indent:'0';">Pencinta cookies sekaligus cokelat pasti suka banget nih sama varian Double Dark Chocolate Cookies! Kenapa? Karena cookies ini terbuat dari adonan dark chocolate dengan tambahan chia seeds yang diberi filling chocochips yang melimpah di dalamnya. Delicious!.</p>
+                    <div class="card-body">
+                      <h5 class="card-title">Double Dark Chocochip</h5>
+                      <p class="card-text">Pencinta cookies sekaligus cokelat pasti suka banget nih sama varian Double Dark Chocolate Cookies! Kenapa? Karena cookies ini terbuat dari adonan dark chocolate dengan tambahan chia seeds yang diberi filling chocochips yang melimpah di dalamnya. Delicious!..</p>
+                      <a href="#" class="btn btn-primary">Beli Sekarang</a>
+                    </div>
                   </div>
                 </div>
               
                 <div class="col-md-4 mt-5">
-                  <h4 class="text-center underline">Match Almond Cookies</h4>
-                  <div class="polaroid">
+                  <div class="card" style="width: 18rem;">
                     <a href="/assets/images/project/nabillabakery/cookies/matchalmond.jpg" data-toggle="lightbox" data-gallery="cookies">
-                      <img src="/assets/images/project/nabillabakery/cookies/matchalmond.jpg" class="img-responsive img-fluid float-left" alt="Match Almond Cookies" height="350" width="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                      <img class="card-img-top img-responsive img-fluid float-left" src="/assets/images/project/nabillabakery/cookies/matchalmond.jpg" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
                     </a>
-                       
-                     <p style="text-indent:'0';">Dari namanya, kamu udah bisa tebak belum komponen apa aja yang terkandung dalam soft cookies ini? Kalau kamu menebak matcha dan almond, kamu benar, Babes! Adonan matcha dengan filling white chocolate ini dilengkapi dengan irisan almond yang bikin tekstur cookies lebih beragam..</p>
+                    <div class="card-body">
+                      <h5 class="card-title">Match Almond Cookies</h5>
+                      <p class="card-text">Dari namanya, kamu udah bisa tebak belum komponen apa aja yang terkandung dalam soft cookies ini? Kalau kamu menebak matcha dan almond, kamu benar, Babes! Adonan matcha dengan filling white chocolate ini dilengkapi dengan irisan almond yang bikin tekstur cookies lebih beragam...</p>
+                      <a href="#" class="btn btn-primary">Beli Sekarang</a>
+                    </div>
                   </div>
                 </div>
               
                 <div class="col-md-4 mt-5">
-                  <h4 class="text-center underline">Red Mallow Cookies</h4>
-                  <div class="polaroid">
+                  <div class="card" style="width: 18rem;">
                     <a href="/assets/images/project/nabillabakery/cookies/redmallow.jpg" data-toggle="lightbox" data-gallery="cookies">
-                      <img src="/assets/images/project/nabillabakery/cookies/redmallow.jpg" class="img-responsive img-fluid float-left" alt="Red Mallow Cookies" height="350" width="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                      <img class="card-img-top img-responsive img-fluid float-left" src="/assets/images/project/nabillabakery/cookies/redmallow.jpg" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
                     </a>
-                       
-                     <p style="text-indent:'0';">Soft cookies yang satu ini memiliki rasa yang complicated in a good way. Adonan red velvet dengan cream cheese di bagian dalamnya dan tambahan marshmallow pada bagian atasnya pasti gooey banget! Nggak perlu khawatir, cookies ini nggak bikin enek sama sekali.</p>
+                    <div class="card-body">
+                      <h5 class="card-title">Red Mallow Cookies</h5>
+                      <p class="card-text">Soft cookies yang satu ini memiliki rasa yang complicated in a good way. Adonan red velvet dengan cream cheese di bagian dalamnya dan tambahan marshmallow pada bagian atasnya pasti gooey banget! Nggak perlu khawatir, cookies ini nggak bikin enek sama sekali..</p>
+                      <a href="#" class="btn btn-primary">Beli Sekarang</a>
+                    </div>
                   </div>
                 </div>
               
@@ -556,26 +579,23 @@
       </div>
 </div>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="row justify-content-center"&gt;
-        &lt;div class="polaroid" style="margin-top:-5rem;"&gt;
-          
-          &lt;img src="http://localhost:4000/assets/images/codesyariah-team.gif" class="img-responsive float-left" alt="" width="500" height="470" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;"&gt;
-        &lt;/div&gt;
-        &lt;div class="polaroid-body" style="margin-top:5rem;"&gt;
-          &lt;h1 class="text-center" style="font-family: 'Indie Flower', cursive; color:burlywood;"&gt;Nabilla Bakery&lt;i class="fas fa-cookie-bite fa-fw" style="color:burlywood;"&gt;&lt;/i&gt;  &lt;/h1&gt;
-          &lt;p class="mt-2 ml-5"&gt;
-            Design and Code By : &lt;span style="font-size:35px;font-family:Reey Regular;color:springgreen;"&gt;CodeSyariah&lt;/span&gt;
-            &lt;br&gt;
-            &lt;span style="font-size:21px; margin-top:1rem; font-family:Reey Regular;color:tomato;"&gt;Script again Coffee again &lt;i class="fas fa-code fa-fw" style="color:burlywood;"&gt;&lt;/i&gt; &lt;/span&gt;
-          &lt;/p&gt; 
-        &lt;/div&gt;	
-      &lt;br&gt;
-&lt;/div&gt;
-</code></pre></div></div>
-
-<div class="row justify-content-end">
-   
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="polaroid" style="margin-top:-5rem;">
+      
+        <img src="http://localhost:4000/assets/images/codesyariah-team.gif" class="img-responsive float-left" alt="" width="500" height="470" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+      </div>
+      <div class="polaroid-body" style="margin-top:5rem;">
+        <h1 class="text-center" style="font-family: 'Indie Flower', cursive; color:burlywood;">Nabilla Bakery<i class="fas fa-cookie-bite fa-fw" style="color:burlywood;"></i>  </h1>
+        <p class="mt-2 ml-5">
+          Design and Code By : <span style="font-size:35px;font-family:Reey Regular;color:springgreen;">CodeSyariah</span>
+          <br />
+          <span style="font-size:21px; margin-top:1rem; font-family:Reey Regular;color:tomato;">Script again Coffee again <i class="fas fa-code fa-fw" style="color:burlywood;"></i> </span>
+        </p> 
+      </div>	
+    <br />
   </div>
+</div>
 
 <!-- <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <h1 class="display-4">Nabilla Bakery</h1>

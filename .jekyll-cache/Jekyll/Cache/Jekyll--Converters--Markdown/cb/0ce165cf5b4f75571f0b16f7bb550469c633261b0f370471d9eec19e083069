@@ -1,0 +1,83 @@
+I"ƒ<section class="wrapper-pricing">
+    <div class="container-fostrap">
+           
+       <div>
+            <img src="http://localhost:4000//assets/images/codesyariah.png" class="fostrap-logo" />
+            <h1 class="heading">
+                Welcome in MyProject
+            </h1>
+        </div><br /><br />
+
+        <div class="content-pricing">
+            <div class="container">
+                <div class="row">
+
+
+       
+
+
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="card-pricing">
+
+                            <a class="img-card-pricing" href="http://localhost:4000//assets/images/project/webdev.jpg">
+                            <img src="/assets/images/project/webdev.jpg" />
+                          </a>
+                            <div class="card-content-pricing">
+                            <h4 class="card-title">Codesyariah web development</h4>
+                                                           
+                                <blockquote style="color:lightskyblue;">
+                                    Jasa Pembuatan Toko Online Website Instansi, Organisasi, Sekolah Dan Lain-lain
+                                </blockquote>
+
+                                <p class="">
+                                    Codesyariah WebDev merupakan Jalan bagi anda yang ingin mempromosikan layanan, usaha atau bisnis anda melalui media website, kami siap membantu mewujudka...
+                                </p>
+
+                            </div>
+                            <div class="card-read-more-pricing">
+                                <a href="http://localhost:4000/project-codesyariah" class="btn btn-link btn-block">
+                                    Read More
+                                </a>
+                            </div>
+
+                        </div>
+                    </div> <br />                 
+
+       
+
+
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="card-pricing">
+
+                            <a class="img-card-pricing" href="http://localhost:4000//assets/images/project/bakery.jpg">
+                            <img src="/assets/images/project/bakery.jpg" />
+                          </a>
+                            <div class="card-content-pricing">
+                            <h4 class="card-title">Nabilla Bakery &amp; Cake</h4>
+                                                           
+                                <blockquote style="color:lightskyblue;">
+                                    Mengedepankan pelayanan dari kualitas terbaik kami
+                                </blockquote>
+
+                                <p class="">
+                                    Nabilla Bakery &amp; Cake adalah outlet kue yang memproduksi berbagai varian kue.selain pemesanan dengan system digital, kami juga memiliki outlet offlin...
+                                </p>
+
+                            </div>
+                            <div class="card-read-more-pricing">
+                                <a href="http://localhost:4000/project-nabillabakery" class="btn btn-link btn-block">
+                                    Read More
+                                </a>
+                            </div>
+
+                        </div>
+                    </div> <br />                 
+         
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+:ET
