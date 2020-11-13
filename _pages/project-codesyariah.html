@@ -2,6 +2,8 @@
 layout: default
 title: "Codesyariah Webdevelopment"
 permalink: "/project-codesyariah/"
+projectname: codesyariahwebdev
+projectstory1: story1
 product1: WebDevelopment
 product2: Web Replika
 product3: Wordpress WebDevelopment
@@ -143,12 +145,15 @@ product3: Wordpress WebDevelopment
   </style>
   
 
-{% assign WebDevelopment = site.data.webdevelopers[page.product1]%}
+{% assign WebDevelopment = site.data.projectnames[page.projectname]%}
+{% assign story1 = site.data.projectnames[page.projectstory1] %}
+{% assign webdev = site.data.webdevelopers[page.product1] %}
+
 <div class="jumbotron jumbotron-fluid jumbotron-content" style="background-image:url('{{site.url}}{{WebDevelopment.image}}');">
   <div class="container">
     <div class="row">
-      <div class="col-md-4">
-          <h1 class="display-4">Codesyariah {{WebDevelopment.name}}</h1>
+      <div class="col-md-6">
+          <h1 class="display-4">{{WebDevelopment.name}}</h1>
       </div>
     </div>
   </div>
@@ -160,9 +165,9 @@ product3: Wordpress WebDevelopment
   <div class="row justify-content-center">
       <div class="col-md-6">
           <div class="polaroid">
-            <img src="{{site.url}}/assets/images/project/codesyariah/vector1.gif" alt="" class="img-responsive mt-3">
+            <img src="{{site.url}}{{WebDevelopment.vector.satu}}" alt="" class="img-responsive mt-3">
             <div class="polaroid-body">
-              <h2>Ingin punya website untuk company profile, aplikasi penjualan untuk menunjang bisnis anda, website toko online yang professional, kami <span class="codesyariah">{{site.name}}</span> dan team <span style="font-family:SpringSakura;">|</span> <br/> <span style="font-family:SpringSakura;">|</span> akan merealisasikan impian anda untuk mempunyai website dan aplikasi yang menunjang kebutuhan bisnis anda, dengan harga fleksibel yang menyesuaikan.</h2>
+              <h2>{{WebDevelopment.tags}}.</h2>
             </div>	
           </div>
 
@@ -172,12 +177,12 @@ product3: Wordpress WebDevelopment
 
 <h1 class="underline mb-2 mt-2"></h1>
 
-<div class="parallax" style="background-image: url('{{site.url}}/assets/images/project/codesyariah/model4.jpg');
+<div class="parallax" style="background-image: url('{{site.url}}{{webdev.parallax.satu.img}}');
 ">
 
   <div class="caption">
     <br/><br/>
-    <h2> Untuk info lebih lanjut silahkan hubungi contact dibawah ini :</h2>
+    <h2> {{webdev.parallax.satu.info}} : </h2>
       <a href="https://wa.me/{{WebDevelopment.whatsapp}}?text=Hai%20kak%20saya%20membutuhkan%20jasa%20web%20development" class="btn btn-primary text-white">whatsap</a>
       <a href="https://instagram.com/{{WebDevelopment.instagram}}" class="btn btn-primary text-white">Instagram</a>
     <br/><br/>
@@ -196,33 +201,54 @@ product3: Wordpress WebDevelopment
             <!-- row content1 -->
             <div class="row">
               <div class="col-md-4">
-                <img src="{{site.url}}/assets/images/project/codesyariah/work-work.gif" alt="" class="float-left img-responsive" width="300" height="300"/>
+                <img src="{{site.url}}{{WebDevelopment.story1.img}}" alt="" class="float-left img-responsive"  width="600" height="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;"/>
               </div>
-              <div class="col-md-6 ml-3">
+              <div class="col-md-6 ml-3 mt-5">
                 <h1 class="underline text-center">
-                  {{site.name}} {{WebDevelopment.name}}
+                  {{WebDevelopment.name}}
                 </h1>
-                  <p>
-                    {{WebDevelopment.tags}}
+                  <p class="ml-3">
+                    {{WebDevelopment.profile1}}
                   </p>
-                  <h3 class="text-success">{{WebDevelopment.price}}</h3>
+                  <img src="{{site.url}}{{WebDevelopment.vector.dua}}" alt="">
               </div>
+              <!-- <div class="row justify-content-end">
+                <img src="{{site.url}}/assets/images/project/codesyariah/vector4.gif" alt="">
+              </div> -->
             </div>
             <!-- row content1 end -->
-            <br><br/>
+            <br>
+            <h1 class="underline text-center mt-2 mb-4"></h1>
             <!-- row content2 -->
-            <div class="row justify-content-center">
+            <div class="row mt-3">
                 <div class="col-md-6">
-                  <h1 class="underline"></h1>
+                  <h1 class="underline text-center">
+                    Proses <span style="font-family:Reey Regular; text-transform: capitalize;">Development</span> yang prima dan <span style="font-family:Reey Regular; text-transform: capitalize;">cekatan</span> 
+                  </h1>
                   <p>
-                    Dengan <span class="syoobe">website </span> <span style="font-family:SpringSakura;color:crimson;font-weight:bold;">| &nbsp; </span> anda dapat meningkatkan penjualan segala jenis produk mulai dari produk fisik, digital, maupun produk jasa layanan dalam bentuk kerangka media digital tanpa proses maupun birokrasi yang rumit. <br/> Kami siap membangun <span class="syoobe">platform</span> yang praktis <span style="font-family:SpringSakura;color:crimson;font-weight:bold;">| &nbsp; </span> yang dapat di andalkan dengan jaminan system keamanan terpercaya.
+                    {{WebDevelopment.profile2}}
                   </p>
                 </div>
                 <div class="col-md-6">
-                  <img src="{{site.url}}/assets/images/project/codesyariah/anim19.gif" class="img-responsive float-left" alt="" width="500" height="600">
+                  <img src="{{site.url}}{{WebDevelopment.story2.img}}" class="img-responsive float-left" alt="" width="600" height="700" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;">
                 </div>
             </div>
             <!-- row content2 end -->
+            <br>
+            <!-- row content 3 -->
+            <div class="row mt-3">
+                  <div class="col-md-6">
+                    <img src="{{site.url}}{{WebDevelopment.story3.img}}" class="img-responsive float-left" alt="" width="600" height="700" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;">
+                  </div>
+
+                  <div class="col-md-6">
+                    <h1 class="underline text-center">
+                      Digitalisasi Ide <span style="font-family:Reey Regular; text-transfrom:capitalize;">Bisnis</span> Anda
+                    </h1>
+                    <p>{{WebDevelopment.profile3}}</p>
+                  </div>
+            </div>
+            <!-- row content 3 end -->
 
           </div>
           <!-- end container panel-body -->
@@ -231,13 +257,14 @@ product3: Wordpress WebDevelopment
     </div>
 
   </div>
+ 
 </div>
 
 <br>
 
-<hr>
+<h1 class="underline mb-2 mt-2"></h1>
 
-<div class="parallax" style="background-image: url('{{site.url}}/assets/images/project/codesyariah/model2.jpg');
+<div class="parallax" style="background-image: url('{{site.url}}{{webdev.parallax.dua.img}}');
 ">
 
   <div class="container">
@@ -249,7 +276,7 @@ product3: Wordpress WebDevelopment
           <div class='wave -three'></div>
           <div class='title-wave'>
             <h4>
-              {{site.name}} {{WebDevelopment.name}}, menawarkan jasa dengan kualitas profesional namun harga terjangkau.
+              {{webdev.parallax.dua.info}}.
             </h4>
           </div>
         </div>
@@ -258,6 +285,91 @@ product3: Wordpress WebDevelopment
     </div>
 
 </div>
+
+</div>
+
+
+<div class="container">
+  <div class="row justify-content-center">
+
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <!-- container on panel-body -->
+          <div class="container">
+            <!-- row content1 -->
+            <div class="row">
+              <div class="col-md-4">
+                <img src="{{site.url}}{{webdev.image}}" alt="" class="float-left img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;"/>
+              </div>
+              <div class="col-md-6 ml-5 mt-5">
+                <h1 class="text-center">
+                  {{webdev.name}} <br>
+                </h1>
+                <hr>
+                  <p class="ml-5">
+                     {{webdev.tags}}.
+                     <br>
+
+                     <span class="blockquote-footer text-success" style="font-size:16px; margin-left:-2rem;">Harga : Idr {{ webdev.price }} / Layanan</span> 
+                  </p>
+                  <img src="{{site.url}}{{webdev.vector.tiga}}" alt="">
+              </div>
+
+            </div>
+            <!-- row content1 end -->
+            <br>
+            <h1 class="underline text-center mt-2 mb-4"></h1>
+            <!-- row content2 -->
+            <div class="row justify-content-center">
+              <div class="col-md-12 mt-4">
+                  <h1 style="color:salmon;">{{webdev.name}}  </h1>
+              </div>
+
+              {% for wdevs in site.webdevs %}
+              <div class="col-md-4 mt-5">
+                <div class="card" style="width: 18rem;">
+                  <a href="{{wdevs.image_path}}" data-toggle="lightbox" data-gallery="webdevs">
+                    <img class="card-img-top img-responsive img-fluid float-left" src="{{wdevs.image_path}}" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;">
+                  </a>
+                  <div class="card-body">
+                    <h5 class="card-title">{{wdevs.name}}</h5>
+                    <p class="card-text">{{wdevs.description}}.</p>
+                    <a href="{{wdevs.links}}" class="btn btn-primary">Beli Sekarang</a>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+
+            </div>
+            <!-- row content2 end -->
+          <br>
+          <h1 class="underline text-center mt-2 mb-4"></h1>
+          </div>
+          <!-- end container panel-body -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<br>
+
+<h1 class="underline mb-2 mt-2"></h1>
+
+<br>
+
+<div class="parallax" style="background-image: url('{{site.url}}{{webdev.parallax.tiga.img}}');
+">
+
+  <div class="caption">
+    <br/><br/>
+    <h2> {{webdev.parallax.tiga.info}} :</h2>
+      <a href="https://wa.me/{{WebDevelopment.whatsapp}}?text=Hai%20kak%20saya%20membutuhkan%20jasa%20web%20development" class="btn btn-primary text-white">whatsap</a>
+      <a href="https://instagram.com/{{WebDevelopment.instagram}}" class="btn btn-primary text-white">Instagram</a>
+    <br/><br/>
+  </div>
 
 </div>
 <!-- 

@@ -1,0 +1,118 @@
+I"�
+<div class="container">
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="row align-items-center mb-5">
+            <div class="col-md-9">
+                <h2 class="font-weight-bold">Amelia Wijayanti <span class="small btn btn-outline-success btn-sm btn-round">
+                    <a href="https://twitter.com/amel-headconf">Follow</a></span></h2>
+                <p><a href=""></a></p>
+                <p class="excerpt">Adalah Seorang web designer, blogger, vlogger dan juga author dan koresponden di codesyariah blogsite</p>
+            </div>
+            <div class="col-md-3 text-right">
+                <img alt="Amelia Wijayanti" src="http://localhost:4000/assets/images/bio/amel.jpeg" class="rounded-circle" height="100" width="100" />
+            </div>
+        </div>
+        
+        <h4 class="font-weight-bold spanborder"><span>Posts by Amel</span></h4>
+            
+ 
+  <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/javascript/api/Membuat-Marker-untuk-Menandai-Lokasi-Google-Maps-API/">Membuat Marker untuk Menandai Lokasi Google Maps API</a>
+	</h2>
+	<p class="excerpt">
+	   
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">javascript</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#api">API</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		26 April 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/javascript/api/Membuat-Marker-untuk-Menandai-Lokasi-Google-Maps-API/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/googlemaps2.jpg" alt="Membuat Marker untuk Menandai Lokasi Google Maps API" />
+	</a>
+	</div>
+
+</div>
+
+ 
+  <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/blog/story/hidup-adalah-ilmu/">hidup adalah ilmu dan hidup dengan ilmu</a>
+	</h2>
+	<p class="excerpt">
+	   apa sih sebenarnya hidup ini??sebuah pertanyaan bagi saya dan diri saya pribadi, mengapa ada bagian saya dan diri saya. apa hakikatnya, apakah ini dengungan dari sebuah istilah lahir ...
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">blog</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#story">story</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		13 April 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/blog/story/hidup-adalah-ilmu/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/ilustrasi-mencari-ilmu.jpg" alt="hidup adalah ilmu dan hidup dengan ilmu" />
+	</a>
+	</div>
+
+</div>
+
+ 
+  <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/news/blog/writer/Tangkuban-Perahu-Erupsi/">Tangkuban Perahu meletus dengan erupsi diperkirakan 'satu minggu' dan masyarakat diminta 'berwaspada letusan tiba-tiba'</a>
+	</h2>
+	<p class="excerpt">
+	   Gede Suantika, Kepala Bidang Mitigasi Gunung Api. Pusat Vulkanologi dan Mitigasi Bencana Geologi (PVMBG) memperkirakan letusan yang terjadi kali ini “hampir sama” dengan letusan pada ...
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#news">News</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">Blog</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#writer">Writer</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		26 July 2019
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/news/blog/writer/Tangkuban-Perahu-Erupsi/">
+	<img class="w-100" src="https://ichef-bbci-co-uk.cdn.ampproject.org/i/s/ichef.bbci.co.uk/news/485/cpsprodpb/2480/production/_108044390_35d62e98-2316-4be6-9fb5-e6af4cf53d6e.jpg" alt="Tangkuban Perahu meletus dengan erupsi diperkirakan 'satu minggu' dan masyarakat diminta 'berwaspada letusan tiba-tiba'" />
+	</a>
+	</div>
+
+</div>
+
+ 
+    </div>
+</div>
+</div>
+:ET

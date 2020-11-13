@@ -22,6 +22,7 @@ collections:
   - myrooms
   - cupcakes
   - cookies
+  - webdevs
 
 include: ["_pages"]
 permalink: /:categories/:title/

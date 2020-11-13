@@ -1,14 +1,33 @@
 {
-  "WebDevelopment":
-{
-    "name": "Web Development",
-    "image": "/assets/images/project/codesyariah/model3.jpg",
-    "tags": "Jasa Pembuatan website untuk beberapa layanan yang bisa anda request. seperti : <ul><li>website official sekolah</li><li>portal berita</li><li>website instansi pemerintahan</li><li>portfolio perusahaan</li><li>website untuk toko online</li> web replika dengan service role member</li><li>Aplikasi Point Of Sales berbasis web</li></ul> Produk Jasa web development kami menawarkan jasa pembuatan website dengan terstruktur service lengkap dengan harga terjangkau, kami pastikan anda mendapat layanan terbaik dari kami, kami berdedikasi kepada kepuasan konsumen, oleh karena itu kami pun bekerja dengan sepenuh hati untuk membuat website sesuai dengan keperluan bisnis anda. Dalam meningkatkan penjualan produk-produk terbaik dalam bisnis anda.",
-    "price": "IDR - 3,000.000",
-    "links": "https://codesyariah122.github.io",
-    "whatsapp": "6288222668778",
-    "instagram": "pujiermanto"
-}
+    "WebDevelopment":
+  {
+      "name": "Web Development <span style='font-family:Reey Regular;'>Service</span> ",
+      "image": "/assets/images/project/codesyariah/story18.jpg",
+      "tags": "Media digital akan meningkatkan pemasaran dan penjualan produk-produk karya anda, kami <span class='codesyariah'>codesyariah</span> dan team <span style='font-family:SpringSakura;'>|</span> akan merealisasikan ide-ide bisnis anda untuk meningkatkan penjualan produk di bisnis anda. <span style='font-family:SpringSakura;'>|</span>  Kembangkan ide-ide bisnis anda bersama kami, kami akan realisasikan ide anda dengan design memukau, system keamanan dan privacy yang terjaga, karena kualitas terbaik adalah salah satu upaya kami dalam bekerja sama dengan anda",
+      "price": "3,000.000 s/d 5,000.000",
+      "links": "https://codesyariah122.github.io",
+      "whatsapp": "6288222668778",
+      "instagram": "pujiermanto",
+      "vector" : {
+        "satu" : "/assets/images/project/codesyariah/vector5.gif",
+        "dua" : "/assets/images/project/codesyariah/work-work.gif",
+        "tiga" : "/assets/images/project/codesyariah/vector1.gif"
+      },
+      "parallax" : {
+        "satu" : {
+          "img" : "/assets/images/project/codesyariah/story9.jpg",
+          "info" : "Untuk info lebih lanjut silahkan hubungi contact dibawah ini"
+        },
+        "dua" : {
+          "img" : "/assets/images/project/codesyariah/story6.jpg",
+          "info" : "<span class='codesyariah' style='color:crimson;'>Codesyariah</span> <span style='font-family:SpringSakura; color:tomato;'>|</span> akan selalu mempersembahkan karya digital terbaik untuk anda"
+        },
+          "tiga" : {
+          "img" : "/assets/images/project/codesyariah/model4.jpg", 
+          "info" : "Kualitas terjamin , System keamanan terbaik siap menunjang bisnis anda"
+        }
+      }
+  }
 
 }
 
