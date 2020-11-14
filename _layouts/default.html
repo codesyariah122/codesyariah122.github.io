@@ -10,7 +10,6 @@
     <script>
     $('.carousel').carousel()
     </script>
-
     <link href='{{site.url}}/feed.xml' rel='alternate' type='application/atom+xml'>
  
     <link rel="shortcut icon" type="image/x-icon" href="{{site.url}}/{{site.favicon}}">
@@ -58,7 +57,7 @@
 
     <script src="//code.tidio.co/ufghizwydzu8qh5g3oufaaigdwznzclj.js" async></script>
     <!-- mailchimp and and tidio live chat -->
-
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
     </head>
 
     <body class="{% if page.url == '/' %}homefirstpage{% endif %}">
@@ -163,6 +162,7 @@ $(function () {
         const projURL = baseURL('{{site.url}}/projects/');
         const imgURL = imageURL('{{site.url}}','/assets/images/');
     </script>
+    <script type="text/javascript" src="{{site.url}}/assets/js/MyData.js"></script>
 
 </body>
 

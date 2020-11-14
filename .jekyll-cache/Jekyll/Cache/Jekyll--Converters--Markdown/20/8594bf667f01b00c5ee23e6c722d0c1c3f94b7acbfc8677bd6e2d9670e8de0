@@ -1,14 +1,4 @@
----
-title: "Authors"
-header: "Codesyariah Author"
-layout: default
-permalink: "/authors-list/"
-image: "/assets/images/author1.jpg"
-vector1: "/assets/images/codesyariah-team.gif"
-tags: "Team  <i class='fas fa-cookie-bite fa-fw' style='color:burlywood;'></i> author <span class='codesyariah'>Codesyariah</span> selalu mempersembahkan <i class='fas fa-heart fa-fw text-danger'></i><i class='fas fa-1x fa-heart fa-fw text-danger'></i><i class='fas fa-2x fa-heart fa-fw text-danger'></i> <span style='font-family:SpringSakura;'>|</span> <br/> <span style='font-family:SpringSakura;'>|</span> arsip-arsip digital dari sumber sumber yang kredibel demi mempersembahkan nilai inovasi"
----
-
-<style type="text/css">
+I"¿<style type="text/css">
     /* all parallax top and bottom */
     .parallax{
       min-height: 500px; 
@@ -144,7 +134,6 @@ tags: "Team  <i class='fas fa-cookie-bite fa-fw' style='color:burlywood;'></i> a
     }
     </style>
 
-
 <div id="contentApp">
 
     <div class="jumbotron jumbotron-fluid jumbotron-content" style="background-image:url('{{site.url}}{{page.image}}');">
@@ -152,20 +141,20 @@ tags: "Team  <i class='fas fa-cookie-bite fa-fw' style='color:burlywood;'></i> a
           <div class="row">
             <div class="d-flex justify-content-center">
                 <div class="col-md-12">
-                    <h1 class="display-4 text-right" v-html="titleHeader" style="margin-left:8rem;margin-top:9rem;"></h1>
+                    <h1 class="display-4 text-right" style="margin-left:8rem;margin-top:9rem;"></h1>
                 </div>
             </div>
           </div>
         </div>
       </div>
-      <br><br>
+      <br /><br />
       <h1 class="underline mt-2 mb-2"></h1>  
 
       <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="polaroid">
-                  <img src="{{site.url}}{{page.vector1}}" class="img-responsive mt-3"  width="800" height="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;">
+                  &lt;img v-bind:src="imgCard1" :titleImage="ImgCardTitle1" class="img-responsive mt-3"&gt;
                   <div class="polaroid-body">
                     <h2>
                         {{page.tags}}
@@ -186,7 +175,7 @@ tags: "Team  <i class='fas fa-cookie-bite fa-fw' style='color:burlywood;'></i> a
                     <div class="p-4 border rounded">
                     <div class="row">
                     <div class="col-md-3 mb-4 mb-md-0">
-        <img alt="{{ author[1].nama_lengkap }}" src="{{site.url}}{{ author[1].avatar }}" class="rounded-circle" height="80" width="80"></div>
+        <img alt="{{ author[1].nama_lengkap }}" src="{{site.url}}{{ author[1].avatar }}" class="rounded-circle" height="80" width="80" /></div>
                     <div class="col-md-9">
                     <a href="{{site.url}}/author-{{ author[1].links | slugify }}">
                     <h4 class="text-dark mb-0"> {{ author[1].nama_lengkap }} </h4>
@@ -208,11 +197,12 @@ tags: "Team  <i class='fas fa-cookie-bite fa-fw' style='color:burlywood;'></i> a
         </div>
 </div>
 
-
-
 <script type="text/javascript">
     const obj = {
         'title' : '{{page.title}} List',
         'titleHeader' : '{{page.header}}',
-    };
+        'imgCard1' : '{{site.url}}{{page.vector1}}',
+        'imgCardTitle1' : '{{page.header}}',
 </script>
+
+:ET

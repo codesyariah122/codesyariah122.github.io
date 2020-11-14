@@ -1,14 +1,4 @@
----
-title: "Authors"
-header: "Codesyariah Author"
-layout: default
-permalink: "/authors-list/"
-image: "/assets/images/author1.jpg"
-vector1: "/assets/images/codesyariah-team.gif"
-tags: "Team  <i class='fas fa-cookie-bite fa-fw' style='color:burlywood;'></i> author <span class='codesyariah'>Codesyariah</span> selalu mempersembahkan <i class='fas fa-heart fa-fw text-danger'></i><i class='fas fa-1x fa-heart fa-fw text-danger'></i><i class='fas fa-2x fa-heart fa-fw text-danger'></i> <span style='font-family:SpringSakura;'>|</span> <br/> <span style='font-family:SpringSakura;'>|</span> arsip-arsip digital dari sumber sumber yang kredibel demi mempersembahkan nilai inovasi"
----
-
-<style type="text/css">
+I"!<style type="text/css">
     /* all parallax top and bottom */
     .parallax{
       min-height: 500px; 
@@ -144,10 +134,9 @@ tags: "Team  <i class='fas fa-cookie-bite fa-fw' style='color:burlywood;'></i> a
     }
     </style>
 
-
 <div id="contentApp">
 
-    <div class="jumbotron jumbotron-fluid jumbotron-content" style="background-image:url('{{site.url}}{{page.image}}');">
+    <div class="jumbotron jumbotron-fluid jumbotron-content" style="background-image:url('http://localhost:4000/assets/images/author1.jpg');">
         <div class="container">
           <div class="row">
             <div class="d-flex justify-content-center">
@@ -158,17 +147,17 @@ tags: "Team  <i class='fas fa-cookie-bite fa-fw' style='color:burlywood;'></i> a
           </div>
         </div>
       </div>
-      <br><br>
+      <br /><br />
       <h1 class="underline mt-2 mb-2"></h1>  
 
       <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="polaroid">
-                  <img src="{{site.url}}{{page.vector1}}" class="img-responsive mt-3"  width="800" height="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;">
+                  &lt;img v-bind:src="imgCard1" :titleImage="ImgCardTitle1" class="img-responsive mt-3"&gt;
                   <div class="polaroid-body">
                     <h2>
-                        {{page.tags}}
+                        Team  <i class="fas fa-cookie-bite fa-fw" style="color:burlywood;"></i> author <span class="codesyariah">Codesyariah</span> selalu mempersembahkan <i class="fas fa-heart fa-fw text-danger"></i><i class="fas fa-1x fa-heart fa-fw text-danger"></i><i class="fas fa-2x fa-heart fa-fw text-danger"></i> <span style="font-family:SpringSakura;">|</span> <br /> <span style="font-family:SpringSakura;">|</span> arsip-arsip digital dari sumber sumber yang kredibel demi mempersembahkan nilai inovasi
                     </h2>
                   </div>	
                 </div>
@@ -179,40 +168,63 @@ tags: "Team  <i class='fas fa-cookie-bite fa-fw' style='color:burlywood;'></i> a
 
     <div class="container">
         <h4 style="font-family:Reey Regular; font-size:45px; color:crimson;" class="font-weight-bold spanborder text-center" v-html="title1"><span>Hallo World</span></h4>
-        {% assign author = site.data.authors[page.author] %}
+        
             <div class="row gap-y listrecent listrecent listauthor">
-            {% for author in site.data.authors %}
+            
                 <div class="col-lg-6 mb-4">
                     <div class="p-4 border rounded">
                     <div class="row">
                     <div class="col-md-3 mb-4 mb-md-0">
-        <img alt="{{ author[1].nama_lengkap }}" src="{{site.url}}{{ author[1].avatar }}" class="rounded-circle" height="80" width="80"></div>
+        <img alt="Puji Ermanto" src="http://localhost:4000/assets/images/bio/uji.jpg" class="rounded-circle" height="80" width="80" /></div>
                     <div class="col-md-9">
-                    <a href="{{site.url}}/author-{{ author[1].links | slugify }}">
-                    <h4 class="text-dark mb-0"> {{ author[1].nama_lengkap }} </h4>
+                    <a href="http://localhost:4000/author-pujiermanto">
+                    <h4 class="text-dark mb-0"> Puji Ermanto </h4>
                     <small class="d-inline-block mt-1 mb-3 font-weight-normal">(View Posts)</small>
-                    <div class="excerpt">{{ author[1].bio }}</div>
+                    <div class="excerpt">Adalah seorang freelancer web developer, blogger, beberapa waktu lalu mengerjakan Project sebagai Fullstack Web Developer di Sebuah marketplace yaitu PT. Syoobe Inti Perdana(Syoobe) - Jakarta, Dan di beberapa pengalaman sebelumnya bekerja sebagai web developer sekaligus IT Staf di PT.Gemilang Citrus Berjaya(ourcitrus) - Sidoarjo</div>
                     </a>
                     <div class="icon-block mt-3 d-flex justify-content-between">  
                     <div>
-                    <a target="_blank" href="{{ author[1].twitter }}"><i class="fab fa-twitter text-muted" aria-hidden="true"></i></a>  &nbsp;
-                    <a target="_blank" href="{{ author[1].situs }}"><i class="fa fa-globe text-muted" aria-hidden="true"></i></a> &nbsp;
+                    <a target="_blank" href="https://twitter.com/pujiermanto"><i class="fab fa-twitter text-muted" aria-hidden="true"></i></a>  &nbsp;
+                    <a target="_blank" href="https://pujiermanto.netlify.app/about/"><i class="fa fa-globe text-muted" aria-hidden="true"></i></a> &nbsp;
                     </div>
                     </div>
                     </div>
                     </div>
                     </div>
                 </div>
-            {% endfor %}
+            
+                <div class="col-lg-6 mb-4">
+                    <div class="p-4 border rounded">
+                    <div class="row">
+                    <div class="col-md-3 mb-4 mb-md-0">
+        <img alt="Amelia Wijayanti" src="http://localhost:4000/assets/images/bio/amel.jpeg" class="rounded-circle" height="80" width="80" /></div>
+                    <div class="col-md-9">
+                    <a href="http://localhost:4000/author-ameliawijayanti">
+                    <h4 class="text-dark mb-0"> Amelia Wijayanti </h4>
+                    <small class="d-inline-block mt-1 mb-3 font-weight-normal">(View Posts)</small>
+                    <div class="excerpt">Adalah Seorang web designer, blogger, vlogger dan juga author dan koresponden di codesyariah blogsite</div>
+                    </a>
+                    <div class="icon-block mt-3 d-flex justify-content-between">  
+                    <div>
+                    <a target="_blank" href="https://twitter.com/amel-headconf"><i class="fab fa-twitter text-muted" aria-hidden="true"></i></a>  &nbsp;
+                    <a target="_blank" href="https://amel-head-conf.github.io"><i class="fa fa-globe text-muted" aria-hidden="true"></i></a> &nbsp;
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            
             </div>
         </div>
 </div>
 
-
-
 <script type="text/javascript">
     const obj = {
-        'title' : '{{page.title}} List',
-        'titleHeader' : '{{page.header}}',
-    };
+        'title' : 'Authors List',
+        'titleHeader' : 'Codesyariah Author',
+        'imgCard1' : 'http://localhost:4000/assets/images/codesyariah-team.gif',
+        'imgCardTitle1' : 'Codesyariah Author',
 </script>
+
+:ET
