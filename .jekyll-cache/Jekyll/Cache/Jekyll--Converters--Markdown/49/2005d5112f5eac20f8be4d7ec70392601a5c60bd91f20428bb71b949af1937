@@ -1,4 +1,4 @@
-I"Ù<style type="text/css">
+I".<style type="text/css">
     /* all parallax top and bottom */
     .parallax{
       min-height: 500px; 
@@ -141,7 +141,7 @@
             <div class="d-flex justify-content-center">
                 <div class="col-md-12">
                     <h1 class="display-4 text-right" v-html="titleHeaderContact" style="margin-left:8rem;margin-top:9rem;"></h1>
-                    <h4 class="blockquote-footer"></h4>
+                    <h3 class="blockquote-footer text-danger" style="font-family: Reey Regular;font-size:31px;" v-html="blockquoteHeader"></h3>
                 </div>
             </div>
           </div>
@@ -171,9 +171,8 @@
         <div class="alert alert-primary" role="alert">
             Silahkan isi form contact dibawah dengan lengkap dan benar
           </div>
-          <div class="row">
               <div class="d-flex justify-content-center">
-                <div class="col-md-9">
+                <div class="col-md-12">
                     <form id="my-form" action="https://formspree.io/f/xnqozvjw" method="POST">
                         <div class="form-group">
                           <label for="exampleInputEmail1">Email address</label>
@@ -185,7 +184,7 @@
                           <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="3"></textarea>
                         </div>
                         <div id="my-form-status"></div>
-                        <button type="submit" id="my-form-button" class="btn btn-primary">Submit</button>
+                        <button id="my-form-button" class="btn btn-primary">Submit</button>
 
                       </form>
                       <!-- <form id="my-form"
@@ -202,8 +201,6 @@
                   </div>    
               </div>
           </div>
-      </div>
-
 
 </div>
 <!-- <form action="https://formspree.io/{{site.email}}" method="POST">
@@ -223,6 +220,7 @@
 <script type="text/javascript">
     const obj = {
         'titleHeader' : '{{page.header}}',
+        'blockquoteHeader' : '{{page.blockquote}}',
         'cardVector' : '{{site.url}}{{page.vector}}',
         'tagsParallax' : '{{page.parallax-tags}} ',
     };
