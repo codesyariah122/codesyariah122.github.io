@@ -1,11 +1,14 @@
 ---
 title: "Authors"
 header: "Codesyariah Author"
+blockquote: "Lebih dekat dengan ide"
 layout: default
 permalink: "/authors-list/"
-image: "/assets/images/author1.jpg"
+image: "/assets/images/author4.jpg"
+parallax: "/assets/images/parallax1.jpg"
+parallax-tags: "Anda yang ingin megembangkan ide-ide tulisan yang menarik dan ingin di publish di blog kami, silahkan hubungi kontak di bawah ini"
 vector1: "/assets/images/codesyariah-team.gif"
-tags: "Team  <i class='fas fa-cookie-bite fa-fw' style='color:burlywood;'></i> author <span class='codesyariah'>Codesyariah</span> selalu mempersembahkan <i class='fas fa-heart fa-fw text-danger'></i><i class='fas fa-1x fa-heart fa-fw text-danger'></i><i class='fas fa-2x fa-heart fa-fw text-danger'></i> <span style='font-family:SpringSakura;'>|</span> <br/> <span style='font-family:SpringSakura;'>|</span> arsip-arsip digital dari sumber sumber yang kredibel demi mempersembahkan nilai inovasi"
+card-tags: "Team  <i class='fas fa-cookie-bite fa-fw' style='color:burlywood;'></i> author <span class='codesyariah'>Codesyariah</span> selalu mempersembahkan <i class='fas fa-heart fa-fw text-danger'></i><i class='fas fa-1x fa-heart fa-fw text-danger'></i><i class='fas fa-2x fa-heart fa-fw text-danger'></i> <span style='font-family:SpringSakura;'>|</span> <br/> <span style='font-family:SpringSakura;'>|</span> arsip-arsip digital dari sumber sumber yang kredibel demi mempersembahkan nilai inovasi"
 ---
 
 <style type="text/css">
@@ -153,6 +156,7 @@ tags: "Team  <i class='fas fa-cookie-bite fa-fw' style='color:burlywood;'></i> a
             <div class="d-flex justify-content-center">
                 <div class="col-md-12">
                     <h1 class="display-4 text-right" v-html="titleHeader" style="margin-left:8rem;margin-top:9rem;"></h1>
+                    <h3 class="blockquote-footer text-danger" style="font-family: Reey Regular;font-size:31px;" v-html="blockquoteHeader"></h3>
                 </div>
             </div>
           </div>
@@ -165,11 +169,9 @@ tags: "Team  <i class='fas fa-cookie-bite fa-fw' style='color:burlywood;'></i> a
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="polaroid">
-                  <img src="{{site.url}}{{page.vector1}}" class="img-responsive mt-3"  width="800" height="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;">
+                  <img v-bind:src="imageVectorCard" class="img-responsive mt-3"  width="800" height="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;">
                   <div class="polaroid-body">
-                    <h2>
-                        {{page.tags}}
-                    </h2>
+                    <h2>{{page.card-tags}}</h2>
                   </div>	
                 </div>
       
@@ -177,8 +179,23 @@ tags: "Team  <i class='fas fa-cookie-bite fa-fw' style='color:burlywood;'></i> a
         </div>
       </div>
 
+      <h1 class="underline mb-2 mt-2"></h1>
+
+      <div class="parallax" style="background-image: url('{{site.url}}{{page.parallax}}');
+      ">
+      
+        <div class="caption">
+          <br/><br/>
+          <h2 v-html="tagsParallax"></h2>
+            <a href="https://wa.me/{{WebDevelopment.whatsapp}}?text=Hai%20kak%20saya%20membutuhkan%20jasa%20web%20development" class="btn btn-primary text-white">whatsap</a>
+            <a href="https://instagram.com/{{WebDevelopment.instagram}}" class="btn btn-primary text-white">Instagram</a>
+          <br/><br/>
+        </div>
+      
+      </div>  
+
     <div class="container">
-        <h4 style="font-family:Reey Regular; font-size:45px; color:crimson;" class="font-weight-bold spanborder text-center" v-html="title1"><span>Hallo World</span></h4>
+        <h4 style="font-size:45px; margin-top:5rem;" class="mb-5 font-weight-bold spanborder text-center text-success" v-html="title1"><span>Hallo World</span></h4>
         {% assign author = site.data.authors[page.author] %}
             <div class="row gap-y listrecent listrecent listauthor">
             {% for author in site.data.authors %}
@@ -195,8 +212,8 @@ tags: "Team  <i class='fas fa-cookie-bite fa-fw' style='color:burlywood;'></i> a
                     </a>
                     <div class="icon-block mt-3 d-flex justify-content-between">  
                     <div>
-                    <a target="_blank" href="{{ author[1].twitter }}"><i class="fab fa-twitter text-muted" aria-hidden="true"></i></a>  &nbsp;
-                    <a target="_blank" href="{{ author[1].situs }}"><i class="fa fa-globe text-muted" aria-hidden="true"></i></a> &nbsp;
+                    <a target="_blank" href="{{ author[1].twitter }}"><i class="fab fa-twitter text-info" aria-hidden="true"></i></a>  &nbsp;
+                    <a target="_blank" href="{{ author[1].situs }}"><i class="fa fa-globe text-success" aria-hidden="true"></i></a> &nbsp;
                     </div>
                     </div>
                     </div>
@@ -212,7 +229,10 @@ tags: "Team  <i class='fas fa-cookie-bite fa-fw' style='color:burlywood;'></i> a
 
 <script type="text/javascript">
     const obj = {
-        'title' : '{{page.title}} List',
+        'title' : `{{page.title}} <span style="font-family:Reey Regular;color:crimson;">List</span>`,
         'titleHeader' : '{{page.header}}',
+        'blockquoteHeader' : '{{page.blockquote}}',
+        'cardVector' : '{{site.url}}{{page.vector1}}',
+        'tagsParallax' : '{{page.parallax-tags}} ',
     };
 </script>

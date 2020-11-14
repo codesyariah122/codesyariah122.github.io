@@ -1,0 +1,232 @@
+I"û<style type="text/css">
+    /* all parallax top and bottom */
+    .parallax{
+      min-height: 500px; 
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin:0;
+    }
+    .caption {
+        background:rgba(255,255,255,0.4);
+        /* clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); */
+        position: absolute;
+        left: 21rem;
+        margin-top: 7rem;
+        width: 50%;
+        text-align: center;
+        color: #000;
+    }
+    .caption h2 {
+        color: white;
+        font-family: 'Poiret One', cursive;font-weight:bold;
+        text-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+        margin-bottom: .9rem;
+    }
+    .caption a{
+        font-size: 18px;
+    }
+    
+    /* wave */
+    .box-wave {
+        width: 350px;
+        height: 500px;
+        border-radius: 5px;
+        box-shadow: 0 2px 30px rgba(black, .2);
+        background: lighten(#f0f4c3, 10%);
+        position: relative;
+        overflow: hidden;
+        transform: translate3d(0, 0, 0);
+      }
+      
+      .wave {
+        opacity: .4;
+        position: absolute;
+        top: 3%;
+        left: 50%;
+        background: #0af;
+        width: 500px;
+        height: 500px;
+        margin-left: -250px;
+        margin-top: -250px;
+        transform-origin: 50% 48%;
+        border-radius: 43%;
+        animation: drift 3000ms infinite linear;
+      }
+      
+      .wave.-three {
+        animation: drift 5000ms infinite linear;
+      }
+      
+      .wave.-two {
+        animation: drift 7000ms infinite linear;
+        opacity: .1;
+        background: yellow;
+      }
+      
+      .box-wave:after {
+        content: '';
+        display: block;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(#e8a, 1), rgba(#def, 0) 80%, rgba(white, .5));
+        z-index: -1;
+        transform: translate3d(0, 0, 0);
+      }
+      
+      .title-wave {
+        position: absolute;
+        left: 1rem;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+        line-height: 300px;
+        text-align: left;
+        transform: translate3d(0, 0, 0);
+        color: white;
+        font-weight: bold;;
+        text-transform: uppercase;
+        font-family: 'Poiret One', cursive;
+        letter-spacing: .4em;
+        font-size: 14px;
+        text-shadow: 0 1px 0 rgba(black, .1);
+      }
+      .titl-wave a{
+          margin-left: 2rem;
+      }
+    
+    @keyframes drift {
+      from { transform: rotate(0deg); }
+      from { transform: rotate(360deg); }
+    }
+    
+    
+    @media only screen and (max-device-width: 812px) {
+      .parallax {
+          background-attachment: scroll;
+      }
+      .caption {
+          position: absolute;
+          left: 0;
+          margin-top: 2rem;
+          width: 100%;
+          text-align: center;
+          color: #000;
+      }
+      .caption h2 {
+          color: white;
+          font-family: 'Poiret One', cursive;font-weight:bold;
+          text-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+          margin-bottom: .9rem;
+          font-size:14px;
+      }
+      .caption a{
+          font-size: 12px;
+      }
+    
+      .waves {
+              height: 40px;
+              min-height: 40px;
+        }
+    }
+    </style>
+
+<div id="contentApp">
+    <div class="jumbotron jumbotron-fluid jumbotron-content" style="background-image:url('http://localhost:4000/assets/images/author7.jpg');margin-top:-11rem;">
+        <div class="container">
+          <div class="row">
+            <div class="d-flex justify-content-center">
+                <div class="col-md-12">
+                    <h1 class="display-4 text-right" v-html="titleHeaderContact" style="margin-left:8rem;margin-top:9rem;"></h1>
+                    <h4 class="blockquote-footer" style="font-family: Reey Regular;" v-html="blockquoteHeader"></h4>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br /><br />
+      <h1 class="underline mt-2 mb-2"></h1> 
+
+      <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="polaroid">
+                  <img v-bind:src="imageVectorCard" class="img-responsive mt-3" width="800" height="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                  <div class="polaroid-body">
+                    <h2>Halo <i class="fas fa-cookie-bite fa-fw" style="color:burlywood;"></i> teman-teman coders. <span class="codesyariah">Codesyariah</span> menyediakan form contact untuk kalian yang membutuhkan info dari kami <i class="fas fa-heart fa-fw text-danger"></i><i class="fas fa-1x fa-heart fa-fw text-danger"></i><i class="fas fa-2x fa-heart fa-fw text-danger"></i> <span style="font-family:SpringSakura;">|</span> <br /> <span style="font-family:SpringSakura;">|</span> mengenai seputar dunia teknologi informasi, atau jika kalian tertarik ingin bergabung bersama team kami, atau kalian ingin mengajak kami untuk berkolaborasi, siahkan hubungi kami melalui form contact di bawah ini.</h2>
+                  </div>	
+                </div>
+      
+            </div>
+        </div>
+      </div>
+
+ <h1 class="underline mt-2 mb-2"></h1> 
+      
+    <div class="container">
+        <div class="alert alert-primary" role="alert">
+            Silahkan isi form contact dibawah dengan lengkap dan benar
+          </div>
+          <div class="row">
+              <div class="d-flex justify-content-center">
+                <div class="col-md-9">
+                    <form id="my-form" action="https://formspree.io/f/xnqozvjw" method="POST">
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Email address</label>
+                          <input type="_replyto" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+                          <small id="emailHelp" class="form-text text-muted">Isi dengan email aktif kalian, jangan asal-asalan.</small>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">Password</label>
+                          <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="3"></textarea>
+                        </div>
+                        <div id="my-form-status"></div>
+                        <button type="submit" id="my-form-button" class="btn btn-primary">Submit</button>
+
+                      </form>
+                      <!-- <form id="my-form"
+                      action="https://formspree.io/f/xnqozvjw"
+                      method="POST"
+                    >
+                      <label>Email:</label>
+                      <input type="email" name="email" />
+                      <label>Message:</label>
+                      <input type="text" name="message" />
+                      <button id="my-form-button">Submit</button>
+                      <p id="my-form-status"></p>
+                    </form> -->
+                  </div>    
+              </div>
+          </div>
+      </div>
+
+
+</div>
+<!-- <form action="https://formspree.io/pujiermanto@hotmail.com" method="POST">
+<p class="mb-4">Please send your message to CodeSyariah. We will reply as soon as possible!</p>
+<div class="form-group row">
+<div class="col-md-6">
+<input class="form-control" type="text" name="name" placeholder="Name*" required>
+</div>
+<div class="col-md-6">
+<input class="form-control" type="email" name="_replyto" placeholder="E-mail Address*" required>
+</div>
+</div>
+<textarea rows="8" class="form-control mb-3" name="message" placeholder="Message*" required></textarea>
+<input class="btn btn-success" type="submit" value="Send">
+</form> -->
+
+<script type="text/javascript">
+    const obj = {
+        'titleHeader' : 'Codesyariah Contact',
+        'blockquoteHeader' : 'Your Idea Your Future',
+        'cardVector' : 'http://localhost:4000/assets/images/vector3.gif',
+        'tagsParallax' : ' ',
+    };
+</script>
+
+:ET

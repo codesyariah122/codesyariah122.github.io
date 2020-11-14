@@ -141,6 +141,7 @@
         <div class="d-flex justify-content-end">
             <div class="col-md-6">
                 <h1 class="display-4 text-right" style="margin-left:8rem;margin-top:9rem;">{{page.title}}</h1>
+                <h3 class="blockquote-footer text-danger" style="font-family: Reey Regular;font-size:31px;" v-html="blockquoteHeader">{{page.blockquote}}</h3>
             </div>
         </div>
       </div>
@@ -190,7 +191,7 @@
               <!-- row content1 -->
               <div class="row">
                 <div class="col-md-4">
-                  <img src="{{site.url}}{{page.vector2}}" alt="" class="float-left img-responsive"  width="800" height="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;"/>
+                  <img v-bind:src="imageVectorCard" src="{{site.url}}{{page.vector2}}" alt="" class="float-left img-responsive"  width="800" height="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;"/>
                 </div>
                 <div class="col-md-6 ml-3 mt-5">
                   <h1 class="underline text-center">
@@ -314,3 +315,13 @@
         </div>
     </div>
 </section> -->
+
+
+<script type="text/javascript">
+  const obj = {
+      'titleHeader' : '{{page.header}}',
+      'blockquoteHeader' : '{{page.blockquote}}',
+      'cardVector' : '{{site.url}}{{page.vector}}',
+      'tagsParallax' : '{{page.parallax-tags}} ',
+  };
+</script>

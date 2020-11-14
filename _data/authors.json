@@ -3,9 +3,10 @@
 {
 "links": "PujiErmanto",
 "nama_lengkap": "Puji Ermanto",
+"shortname": "Uji",
 "situs": "https://pujiermanto.netlify.app/about/",
 "avatar": "/assets/images/bio/uji.jpg",
-"bio": "Adalah seorang freelancer web developer, blogger, beberapa waktu lalu mengerjakan Project sebagai Fullstack Web Developer di Sebuah marketplace yaitu PT. Syoobe Inti Perdana(Syoobe) - Jakarta, Dan di beberapa pengalaman sebelumnya bekerja sebagai web developer sekaligus IT Staf di PT.Gemilang Citrus Berjaya(ourcitrus) - Sidoarjo",
+"bio": "Adalah seorang freelancer web developer, blogger, beberapa waktu lalu mengerjakan Project sebagai Fullstack Web Developer di Sebuah marketplace yaitu <br/> <b>PT. Syoobe Inti Perdana(Syoobe) - <span class='text-success'>Jakarta</span></b> <br/> Dan di beberapa pengalaman sebelumnya bekerja sebagai web developer sekaligus IT Staf di <br/> <b>PT.Gemilang Citrus Berjaya(ourcitrus) - <span class='text-success'>Sidoarjo</span></b>",
 "email": "pujiermanto@gmail.com",
 "twitter": "https://twitter.com/pujiermanto"
 },
@@ -13,9 +14,10 @@
 {
 "links": "AmeliaWijayanti",
 "nama_lengkap": "Amelia Wijayanti",
+"shortname" : "Amelia",
 "situs": "https://amel-head-conf.github.io",
 "avatar": "/assets/images/bio/amel.jpeg",
-"bio": "Adalah Seorang web designer, blogger, vlogger dan juga author dan koresponden di codesyariah blogsite",
+"bio": "Adalah Seorang web designer, blogger, vlogger dan juga bekeja di sebuah startup digital yaitu <br/> PT. Sritech Sanjaya - <span class='text-success'>Karawang</span> <br/>saat ini masih aktif sebagai author dan koresponden di beberapa media digital yang tersebar dan terselubung di ranah maya salah satunya di codesyariah blogsite ini.",
 "email": "amel_workhard@hotmaik.com",
 "twitter": "https://twitter.com/amel-headconf"
 }
