@@ -6,7 +6,7 @@
         "type": "Jasa Pembuatan Website Dan Toko Online",
         "website": "",
         "tagline": "Melayani Jasa pembuatan website untuk onlineshop, marketplace eccommerce dan lain-lain",
-        "img_path": "/assets/images/project/webdev.jpg",
+        "img_path": "/assets/images/project/webdev.gif",
         "alamat": "in progress"
     },
     "nabilla bakery":
@@ -16,7 +16,7 @@
         "type": "Food & Drink",
         "website": "https://nabilla-bakery.github.io",
         "tagline": "Mengedepankan pelayanan dari kualitas terbaik kami",
-        "img_path": "/assets/images/project/bakery.jpg",
+        "img_path": "/assets/images/project/bakery.gif",
         "alamat": "in progress"
     }
 } 

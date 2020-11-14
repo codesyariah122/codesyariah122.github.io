@@ -5,7 +5,7 @@ type: Food & Drink
 tagline: "Mengedepankan pelayanan dari kualitas terbaik kami"
 instagram: https://instagram.com/nabilla_bakery
 website: https://nabilla-bakery.me
-img_path: /assets/images/project/bakery.jpg
+img_path: /assets/images/project/bakery.gif
 data: nabilla bakery
 ---  
 {% assign data = site.data.projects[page.data] %}
