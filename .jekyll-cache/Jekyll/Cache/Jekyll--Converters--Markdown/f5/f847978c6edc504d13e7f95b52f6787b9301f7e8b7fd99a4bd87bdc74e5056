@@ -1,4 +1,4 @@
-I"İJ<style type="text/css">
+I"RH<style type="text/css">
 /* all parallax top and bottom */
 .parallax{
   min-height: 500px; 
@@ -164,7 +164,7 @@
       <div class="polaroid">
         <img src="{{site.url}}/assets/images/project/nabillabakery/vector3.gif" alt="" class="img-responsive mt-3" width="600" style="margin-top:-1rem;" />
         <div class="polaroid-body">
-          <h2>Proses produksi cookies <i class="fas fa-cookie-bite fa-fw" style="color:burlywood;"></i>  di dapur <span class="codesyariah">{{nabillabakery.name}}</span> dibuat dengan penuh cinta <i class="fas fa-heart fa-fw text-danger"></i><i class="fas fa-1x fa-heart fa-fw text-danger"></i><i class="fas fa-2x fa-heart fa-fw text-danger"></i> <span style="font-family:SpringSakura;">|</span> <br /> <span style="font-family:SpringSakura;">|</span> Untuk itu kami selalu menjaga kualitas produk kami sebagai persembahan terbaik bagi anda.</h2>
+          <h2>{{nabillabakery.tags1}}</h2>
         </div>	
       </div>
     </div>
@@ -179,7 +179,7 @@
 
   <div class="caption">
     <br /><br />
-    <h2> Seperti sang bunda yang jalinannya selalu memudahkan kita untuk mengekspresikan rasa. Apa yang anda minta sesuai kebutuhan anda, Kami akan menuangkannya dalam cita rasa.</h2>
+    <h2>{{nabillabakery.tags2}}</h2>
       <a href="https://instagram.com/{{nabillabakery.instagram}}" class="btn btn-primary text-white">Contact      Us</a>
     <br /><br />
   </div>
