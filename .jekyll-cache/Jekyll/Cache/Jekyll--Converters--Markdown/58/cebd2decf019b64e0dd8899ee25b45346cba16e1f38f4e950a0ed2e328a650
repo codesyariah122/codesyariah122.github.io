@@ -1,4 +1,4 @@
-I"s&<style type="text/css">
+I"„&<style type="text/css">
     /* all parallax top and bottom */
     .parallax{
       min-height: 500px; 
@@ -237,7 +237,7 @@
     const obj = {
         'title' : `Authors <span style="font-family:Reey Regular;color:crimson;">List</span>`,
         'titleHeader' : 'Codesyariah Author',
-        'blockquoteHeader' : 'Lebih dekat dengan ide',
+        'blockquoteHeader' : 'Lebih dekat dengan ide-ide kreatif anda',
         'cardVector' : 'http://localhost:4000/assets/images/codesyariah-team.gif',
         'tagsParallax' : 'Anda yang ingin megembangkan ide-ide tulisan yang menarik dan ingin di publish di blog kami, silahkan hubungi kontak di bawah ini ',
     };

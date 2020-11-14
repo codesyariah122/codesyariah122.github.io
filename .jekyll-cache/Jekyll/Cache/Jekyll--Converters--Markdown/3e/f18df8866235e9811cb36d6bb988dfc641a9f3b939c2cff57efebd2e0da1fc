@@ -1,4 +1,4 @@
-I"ß<style type="text/css">
+I" <style type="text/css">
     /* all parallax top and bottom */
     .parallax{
       min-height: 500px; 
@@ -135,7 +135,7 @@
     </style>
 
 <div id="contentApp">
-    <div class="jumbotron jumbotron-fluid jumbotron-content" style="background-image:url('http://localhost:4000/assets/images/author7.jpg');margin-top:-11rem;">
+    <div class="jumbotron jumbotron-fluid jumbotron-content" style="background-image:url('{{site.url}}{{page.image}}');margin-top:-11rem;">
         <div class="container">
           <div class="row">
             <div class="d-flex justify-content-center">
@@ -148,6 +148,26 @@
         </div>
       </div>
 
+       <!-- container -->
+    <div class="container">
+      <!-- info panel -->
+          <div class="row justify-content-center">
+              <div class="col-10 info-panel">
+                  <div class="row">
+                    {% for panel in site.data.panels %}
+                    <div class="col-lg">
+                      <img src="{{site.url}}{{panel.img_path}}" class="float-left img-responsive" alt="" />
+                      <h4>{{panel.header_text}}</h4>
+                      <p>
+                          {{panel.plot}}.
+                      </p>
+                    </div>
+                    {% endfor %}
+                  </div>
+              </div>
+          </div>
+      <!-- akhir info panel -->
+
       <br /><br />
       <h1 class="underline mt-2 mb-2"></h1> 
 
@@ -157,7 +177,7 @@
                 <div class="polaroid">
                   <img v-bind:src="imageVectorCard" class="img-responsive mt-3" width="800" height="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
                   <div class="polaroid-body">
-                    <h2>Halo <i class="fas fa-cookie-bite fa-fw" style="color:burlywood;"></i> teman-teman coders. <span class="codesyariah">Codesyariah</span> menyediakan form contact untuk kalian yang membutuhkan info dari kami <i class="fas fa-heart fa-fw text-danger"></i><i class="fas fa-1x fa-heart fa-fw text-danger"></i><i class="fas fa-2x fa-heart fa-fw text-danger"></i> <span style="font-family:SpringSakura;">|</span> <br /> <span style="font-family:SpringSakura;">|</span> mengenai seputar dunia teknologi informasi, atau jika kalian tertarik ingin bergabung bersama team kami, atau kalian ingin mengajak kami untuk berkolaborasi, siahkan hubungi kami melalui form contact di bawah ini.</h2>
+                    <h2>{{page.card-tags}}</h2>
                   </div>	
                 </div>
       
@@ -168,7 +188,7 @@
  <h1 class="underline mt-2 mb-2"></h1> 
       
     <div class="container">
-        <div class="alert alert-primary" role="alert">
+        <div class="alert alert-danger" role="alert">
             Silahkan isi form contact dibawah dengan lengkap dan benar
           </div>
               <div class="d-flex justify-content-center">
@@ -187,6 +207,7 @@
                         <button id="my-form-button" class="btn btn-primary">Submit</button>
 
                       </form>
+                      
                       <!-- <form id="my-form"
                       action="https://formspree.io/f/xnqozvjw"
                       method="POST"
@@ -203,8 +224,8 @@
           </div>
 
 </div>
-<!-- <form action="https://formspree.io/pujiermanto@hotmail.com" method="POST">
-<p class="mb-4">Please send your message to CodeSyariah. We will reply as soon as possible!</p>
+<!-- <form action="https://formspree.io/{{site.email}}" method="POST">
+<p class="mb-4">Please send your message to {{site.name}}. We will reply as soon as possible!</p>
 <div class="form-group row">
 <div class="col-md-6">
 <input class="form-control" type="text" name="name" placeholder="Name*" required>
@@ -217,13 +238,15 @@
 <input class="btn btn-success" type="submit" value="Send">
 </form> -->
 
+
+
 <script type="text/javascript">
     const obj = {
-        'titleHeader' : 'Codesyariah Contact',
-        'blockquoteHeader' : 'Your Idea Your Future',
-        'cardVector' : 'http://localhost:4000/assets/images/vector3.gif',
-        'tagsParallax' : ' ',
+        'titleHeader' : '{{page.header}}',
+        'blockquoteHeader' : '{{page.blockquote}}',
+        'cardVector' : '{{site.url}}{{page.vector}}',
+        'tagsParallax' : '{{page.parallax-tags}} ',
     };
 </script>
-
+</div>
 :ET

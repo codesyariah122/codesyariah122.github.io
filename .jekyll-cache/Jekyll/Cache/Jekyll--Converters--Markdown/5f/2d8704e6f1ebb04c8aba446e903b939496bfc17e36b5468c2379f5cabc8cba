@@ -1,4 +1,4 @@
-I"!<style type="text/css">
+I"÷%<style type="text/css">
     /* all parallax top and bottom */
     .parallax{
       min-height: 500px; 
@@ -148,6 +148,42 @@
         </div>
       </div>
 
+       <!-- container -->
+    <div class="container">
+      <!-- info panel -->
+          <div class="row justify-content-center">
+              <div class="col-10 info-panel">
+                  <div class="row">
+                    
+                    <div class="col-lg">
+                      <img v-bind:src="imageVectorCard" class="float-left img-responsive" alt="" />
+                      <h4>Mixed Your Idea</h4>
+                      <p>
+                          Kembangkan ide-ide kreatif anda apapun bidang yang ditekuni.
+                      </p>
+                    </div>
+                    
+                    <div class="col-lg">
+                      <img v-bind:src="imageVectorCard" class="float-left img-responsive" alt="" />
+                      <h4>Contact Our Team</h4>
+                      <p>
+                          Hubungi team kami untuk mendapatkan konsultasi terbaik bagi ide anda.
+                      </p>
+                    </div>
+                    
+                    <div class="col-lg">
+                      <img v-bind:src="imageVectorCard" class="float-left img-responsive" alt="" />
+                      <h4>Maximize Your Creativity</h4>
+                      <p>
+                          Kami akan menjadi partner terbaik bagi perjalanan ide kreatif anda.
+                      </p>
+                    </div>
+                    
+                  </div>
+              </div>
+          </div>
+      <!-- akhir info panel -->
+
       <br /><br />
       <h1 class="underline mt-2 mb-2"></h1> 
 
@@ -168,15 +204,15 @@
  <h1 class="underline mt-2 mb-2"></h1> 
       
     <div class="container">
-        <div class="alert alert-primary" role="alert">
+        <div class="alert alert-danger" role="alert">
             Silahkan isi form contact dibawah dengan lengkap dan benar
           </div>
               <div class="d-flex justify-content-center">
                 <div class="col-md-12">
-                    <!-- <form id="my-form" action="https://formspree.io/f/xnqozvjw" method="POST">
+                    <form id="my-form" action="https://formspree.io/f/xnqozvjw" method="POST">
                         <div class="form-group">
                           <label for="exampleInputEmail1">Email address</label>
-                          <input type="_replyto" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                          <input type="_replyto" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
                           <small id="emailHelp" class="form-text text-muted">Isi dengan email aktif kalian, jangan asal-asalan.</small>
                         </div>
                         <div class="form-group">
@@ -186,12 +222,8 @@
                         <div id="my-form-status"></div>
                         <button id="my-form-button" class="btn btn-primary">Submit</button>
 
-                      </form> -->
-                      <form action="https://formspree.io/f/xnqozvjw" method="POST">
-                        <input type="text" name="name" />
-                        <input type="email" name="_replyto" />
-                        <input type="submit" value="Send" />
                       </form>
+                      
                       <!-- <form id="my-form"
                       action="https://formspree.io/f/xnqozvjw"
                       method="POST"
@@ -222,13 +254,16 @@
 <input class="btn btn-success" type="submit" value="Send">
 </form> -->
 
+
+
 <script type="text/javascript">
     const obj = {
         'titleHeader' : 'Codesyariah Contact',
         'blockquoteHeader' : 'Your Idea Your Future',
+        'panelImg' : 'http://localhost:4000',
         'cardVector' : 'http://localhost:4000/assets/images/vector3.gif',
         'tagsParallax' : ' ',
     };
 </script>
-
+</div>
 :ET

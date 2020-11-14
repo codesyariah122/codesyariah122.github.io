@@ -1,14 +1,4 @@
----
-title: "Contact"
-permalink: "/contact.html"
-image: "/assets/images/author7.jpg"
-vector: "/assets/images/vector3.gif"
-header: "Codesyariah Contact"
-blockquote: "Your Idea Your Future"
-card-tags: "Halo <i class='fas fa-cookie-bite fa-fw' style='color:burlywood;'></i> teman-teman coders. <span class='codesyariah'>Codesyariah</span> menyediakan form contact untuk kalian yang membutuhkan info dari kami <i class='fas fa-heart fa-fw text-danger'></i><i class='fas fa-1x fa-heart fa-fw text-danger'></i><i class='fas fa-2x fa-heart fa-fw text-danger'></i> <span style='font-family:SpringSakura;'>|</span> <br/> <span style='font-family:SpringSakura;'>|</span> mengenai seputar dunia teknologi informasi, atau jika kalian tertarik ingin bergabung bersama team kami, atau kalian ingin mengajak kami untuk berkolaborasi, siahkan hubungi kami melalui form contact di bawah ini."
----
-
-<style type="text/css">
+I"þ%<style type="text/css">
     /* all parallax top and bottom */
     .parallax{
       min-height: 500px; 
@@ -143,8 +133,9 @@ card-tags: "Halo <i class='fas fa-cookie-bite fa-fw' style='color:burlywood;'></
         }
     }
     </style>
+
 <div id="contentApp">
-    <div class="jumbotron jumbotron-fluid jumbotron-content" style="background-image:url('{{site.url}}{{page.image}}');margin-top:-11rem;">
+    <div class="jumbotron jumbotron-fluid jumbotron-content" style="background-image:url('http://localhost:4000/assets/images/author7.jpg');margin-top:-11rem;">
         <div class="container">
           <div class="row">
             <div class="d-flex justify-content-center">
@@ -163,30 +154,46 @@ card-tags: "Halo <i class='fas fa-cookie-bite fa-fw' style='color:burlywood;'></
           <div class="row justify-content-center">
               <div class="col-10 info-panel">
                   <div class="row">
-                    {% for panel in site.data.panels_contact %}
+                    
                     <div class="col-lg">
-                      <img src="{{site.url}}{{panel.img_path}}" class="float-left img-responsive" alt="">
-                      <h4>{{panel.header_text}}</h4>
+                      <img v-bind:src="panelContactImg" class="float-left img-responsive" alt="" />
+                      <h4>Mixed Your Idea</h4>
                       <p>
-                          {{panel.plot}}.
+                          Kembangkan ide-ide kreatif anda apapun bidang yang ditekuni.
                       </p>
                     </div>
-                    {% endfor %}
+                    
+                    <div class="col-lg">
+                      <img v-bind:src="panelContactImg" class="float-left img-responsive" alt="" />
+                      <h4>Contact Our Team</h4>
+                      <p>
+                          Hubungi team kami untuk mendapatkan konsultasi terbaik bagi ide anda.
+                      </p>
+                    </div>
+                    
+                    <div class="col-lg">
+                      <img v-bind:src="panelContactImg" class="float-left img-responsive" alt="" />
+                      <h4>Maximize Your Creativity</h4>
+                      <p>
+                          Kami akan menjadi partner terbaik bagi perjalanan ide kreatif anda.
+                      </p>
+                    </div>
+                    
                   </div>
               </div>
           </div>
       <!-- akhir info panel -->
 
-      <br><br>
+      <br /><br />
       <h1 class="underline mt-2 mb-2"></h1> 
 
       <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="polaroid">
-                  <img v-bind:src="imageVectorCard" class="img-responsive mt-3"  width="800" height="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;">
+                  <img v-bind:src="imageVectorCard" class="img-responsive mt-3" width="800" height="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
                   <div class="polaroid-body">
-                    <h2>{{page.card-tags}}</h2>
+                    <h2>Halo <i class="fas fa-cookie-bite fa-fw" style="color:burlywood;"></i> teman-teman coders. <span class="codesyariah">Codesyariah</span> menyediakan form contact untuk kalian yang membutuhkan info dari kami <i class="fas fa-heart fa-fw text-danger"></i><i class="fas fa-1x fa-heart fa-fw text-danger"></i><i class="fas fa-2x fa-heart fa-fw text-danger"></i> <span style="font-family:SpringSakura;">|</span> <br /> <span style="font-family:SpringSakura;">|</span> mengenai seputar dunia teknologi informasi, atau jika kalian tertarik ingin bergabung bersama team kami, atau kalian ingin mengajak kami untuk berkolaborasi, siahkan hubungi kami melalui form contact di bawah ini.</h2>
                   </div>	
                 </div>
       
@@ -205,7 +212,7 @@ card-tags: "Halo <i class='fas fa-cookie-bite fa-fw' style='color:burlywood;'></
                     <form id="my-form" action="https://formspree.io/f/xnqozvjw" method="POST">
                         <div class="form-group">
                           <label for="exampleInputEmail1">Email address</label>
-                          <input type="_replyto" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                          <input type="_replyto" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
                           <small id="emailHelp" class="form-text text-muted">Isi dengan email aktif kalian, jangan asal-asalan.</small>
                         </div>
                         <div class="form-group">
@@ -233,8 +240,8 @@ card-tags: "Halo <i class='fas fa-cookie-bite fa-fw' style='color:burlywood;'></
           </div>
 
 </div>
-<!-- <form action="https://formspree.io/{{site.email}}" method="POST">
-<p class="mb-4">Please send your message to {{site.name}}. We will reply as soon as possible!</p>
+<!-- <form action="https://formspree.io/pujiermanto@hotmail.com" method="POST">
+<p class="mb-4">Please send your message to CodeSyariah. We will reply as soon as possible!</p>
 <div class="form-group row">
 <div class="col-md-6">
 <input class="form-control" type="text" name="name" placeholder="Name*" required>
@@ -251,9 +258,12 @@ card-tags: "Halo <i class='fas fa-cookie-bite fa-fw' style='color:burlywood;'></
 
 <script type="text/javascript">
     const obj = {
-        'titleHeader' : '{{page.header}}',
-        'blockquoteHeader' : '{{page.blockquote}}',
-        'cardVector' : '{{site.url}}{{page.vector}}',
-        'tagsParallax' : '{{page.parallax-tags}} ',
+        'titleHeader' : 'Codesyariah Contact',
+        'blockquoteHeader' : 'Your Idea Your Future',
+        'panelContactImg' : 'http://localhost:4000',
+        'cardVector' : 'http://localhost:4000/assets/images/vector3.gif',
+        'tagsParallax' : ' ',
     };
 </script>
+</div>
+:ET
