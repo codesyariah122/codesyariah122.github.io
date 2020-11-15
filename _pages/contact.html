@@ -1,7 +1,7 @@
 ---
 title: "Contact"
 permalink: "/contact.html"
-image: "/assets/images/author7.jpg"
+image: "/assets/images/author5.jpg"
 vector: "/assets/images/vector3.gif"
 header: "Codesyariah Contact"
 blockquote: "Your Idea Your Future"
@@ -205,13 +205,17 @@ card-tags: "Halo <i class='fas fa-cookie-bite fa-fw' style='color:burlywood;'></
                 <div class="col-md-12">
                     <form id="my-form" action="https://formspree.io/f/xnqozvjw" method="POST">
                         <div class="form-group">
-                          <label for="exampleInputEmail1">Email address</label>
-                          <input type="_replyto" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                          <label for="fullname">Full Name</label>
+                          <input type="_replyto" name="fullname" class="form-control" id="fullname" placeholder="Full Name">
+                        </div>
+                        <div class="form-group">
+                          <label for="email">Email address</label>
+                          <input type="_replyto" name="email" class="form-control" id="email"  placeholder="Enter email">
                           <small id="emailHelp" class="form-text text-muted">Isi dengan email aktif kalian, jangan asal-asalan.</small>
                         </div>
                         <div class="form-group">
-                          <label for="exampleInputPassword1">Password</label>
-                          <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="3"></textarea>
+                          <label for="message">Message</label>
+                          <textarea class="form-control" id="message" name="message" rows="3"></textarea>
                         </div>
                         <div id="my-form-status"></div>
                         <button id="my-form-button" class="btn btn-primary">Submit</button>
@@ -252,9 +256,13 @@ card-tags: "Halo <i class='fas fa-cookie-bite fa-fw' style='color:burlywood;'></
 
 <script type="text/javascript">
     const obj = {
+        'emailInput' : document.getElementById('email').value,
         'titleHeader' : '{{page.header}}',
         'blockquoteHeader' : '{{page.blockquote}}',
         'cardVector' : '{{site.url}}{{page.vector}}',
         'tagsParallax' : '{{page.parallax-tags}} ',
+        'validationBackdrop' : '{{site.url}}/assets/images/',
+        'validationGif' : '{{site.url}}/assets/images/validation/',
     };
+
 </script>
