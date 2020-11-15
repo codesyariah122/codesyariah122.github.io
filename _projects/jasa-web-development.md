@@ -5,7 +5,7 @@ type: Teknologi Informasi
 tagline: "Jasa Pembuatan Toko Online Website Instansi, Organisasi, Sekolah Dan Lain-lain"
 instagram: https://instagram.com/codesyariah
 website: https://codesyariah122.github.io/
-img_path: /assets/images/project/webdev.gif
+img_path: /assets/images/project/webdev1.gif
 data: codesyariah webdev
 ---  
 {% assign data = site.data.projects[page.data] %}

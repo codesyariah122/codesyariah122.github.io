@@ -6,7 +6,6 @@
         "type": "Jasa Pembuatan Website Dan Toko Online",
         "website": "",
         "tagline": "Melayani Jasa pembuatan website untuk onlineshop, marketplace eccommerce dan lain-lain",
-        "img_path": "/assets/images/project/webdev.gif",
         "alamat": "in progress"
     },
     "nabilla bakery":
@@ -16,7 +15,6 @@
         "type": "Food & Drink",
         "website": "https://nabilla-bakery.github.io",
         "tagline": "Mengedepankan pelayanan dari kualitas terbaik kami",
-        "img_path": "/assets/images/project/bakery.gif",
         "alamat": "in progress"
     },
     "hallo movie":
@@ -26,7 +24,6 @@
         "type": "Entertainment & History",
         "website": "https://hallomovie.io",
         "tagline": "Cari film mu dengan mudah dan cepat",
-        "img_path": "/assets/images/project/sayhalo7.gif",
         "alamat": "in progress"
     }
 } 

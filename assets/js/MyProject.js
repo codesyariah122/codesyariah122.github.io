@@ -10,7 +10,7 @@ $(document).ready(function(){
             background: `#fff url(${imgURL}project/master-bg2.jpg)`,
             backdrop: `
               rgba(0,0,123,0.4)
-              url("${imgURL}project/vector1.gif")
+              url("${imgURL}project/sayhalo.gif")
               left top
               no-repeat
             `
