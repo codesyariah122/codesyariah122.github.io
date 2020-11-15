@@ -242,8 +242,8 @@
                                                     </div>
                                                     
                                                     <div class="card-read-more-pricing">
-                                                        <a href="{{site.url}}/project-{{ ProjectData.links | slugify }}" class="btn btn-link btn-block">
-                                                                    Lihat Project
+                                                        <a href="{{site.url}}/{{page.type}}/{{ ProjectData.links | slugify }}" class="btn btn-link btn-block">
+                                                            Lihat Project
                                                         </a>
                                                     </div>
                                 
@@ -325,6 +325,7 @@
 
 <script type="text/javascript">
   const obj = {
+      'sayHeloGif' : '{{page.sayHeloGif}}',
       'titleHeader' : '{{page.header}}',
       'blockquoteHeader' : '{{page.blockquote}}',
       'cardVector' : '{{site.url}}{{page.vector}}',

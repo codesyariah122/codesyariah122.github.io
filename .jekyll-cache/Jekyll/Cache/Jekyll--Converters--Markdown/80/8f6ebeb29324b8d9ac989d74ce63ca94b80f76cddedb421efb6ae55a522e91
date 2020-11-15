@@ -1,0 +1,444 @@
+I"ÿP
+<style type="text/css">
+    /* all parallax top and bottom */
+    .parallax{
+      min-height: 500px; 
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin:0;
+    }
+    .caption {
+        background:rgba(255,255,255,0.4);
+        /* clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); */
+        position: absolute;
+        left: 21rem;
+        margin-top: 7rem;
+        width: 50%;
+        text-align: center;
+        color: #000;
+    }
+    .caption h2 {
+        color: white;
+        font-family: 'Poiret One', cursive;font-weight:bold;
+        text-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+        margin-bottom: .9rem;
+    }
+    .caption a{
+        font-size: 18px;
+    }
+    
+    /* wave */
+    .box-wave {
+        width: 350px;
+        height: 500px;
+        border-radius: 5px;
+        box-shadow: 0 2px 30px rgba(black, .2);
+        background: lighten(#f0f4c3, 10%);
+        position: relative;
+        overflow: hidden;
+        transform: translate3d(0, 0, 0);
+      }
+      
+      .wave {
+        opacity: .4;
+        position: absolute;
+        top: 3%;
+        left: 50%;
+        background: #0af;
+        width: 500px;
+        height: 500px;
+        margin-left: -250px;
+        margin-top: -250px;
+        transform-origin: 50% 48%;
+        border-radius: 43%;
+        animation: drift 3000ms infinite linear;
+      }
+      
+      .wave.-three {
+        animation: drift 5000ms infinite linear;
+      }
+      
+      .wave.-two {
+        animation: drift 7000ms infinite linear;
+        opacity: .1;
+        background: yellow;
+      }
+      
+      .box-wave:after {
+        content: '';
+        display: block;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(#e8a, 1), rgba(#def, 0) 80%, rgba(white, .5));
+        z-index: -1;
+        transform: translate3d(0, 0, 0);
+      }
+      
+      .title-wave {
+        position: absolute;
+        left: 1rem;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+        line-height: 300px;
+        text-align: left;
+        transform: translate3d(0, 0, 0);
+        color: white;
+        font-weight: bold;;
+        text-transform: uppercase;
+        font-family: 'Poiret One', cursive;
+        letter-spacing: .4em;
+        font-size: 14px;
+        text-shadow: 0 1px 0 rgba(black, .1);
+      }
+      .titl-wave a{
+          margin-left: 2rem;
+      }
+    
+    @keyframes drift {
+      from { transform: rotate(0deg); }
+      from { transform: rotate(360deg); }
+    }
+    
+    
+    @media only screen and (max-device-width: 812px) {
+      .parallax {
+          background-attachment: scroll;
+      }
+      .caption {
+          position: absolute;
+          left: 0;
+          margin-top: 2rem;
+          width: 100%;
+          text-align: center;
+          color: #000;
+      }
+      .caption h2 {
+          color: white;
+          font-family: 'Poiret One', cursive;font-weight:bold;
+          text-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+          margin-bottom: .9rem;
+          font-size:14px;
+      }
+      .caption a{
+          font-size: 12px;
+      }
+    
+      .waves {
+              height: 40px;
+              min-height: 40px;
+        }
+    }
+    </style>
+
+<div class="jumbotron jumbotron-fluid jumbotron-content" style="background-image:url('http://localhost:4000/assets/images/project/master-bg1.jpg');">
+    <div class="container">
+      <div class="row">
+        <div class="d-flex justify-content-end">
+            <div class="col-md-6">
+                <h1 class="display-4 text-right" style="margin-left:8rem;margin-top:9rem;">Codesyariah Projects</h1>
+                <h3 class="blockquote-footer text-danger" style="font-family: Reey Regular;font-size:31px;" v-html="blockquoteHeader">Jalan Sukses Selalu Terbuka</h3>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<h1 class="underline mt-5 mb-2"></h1>
+
+<div class="container">
+    <div class="row justify-content-center">
+      <div style="width: 100%; height: auto !important; clear: both; text-align: center;" class="google-auto-placed">
+      </div>
+        <div class="col-md-6">
+            <div class="polaroid">
+              <img src="http://localhost:4000/assets/images/project/vector1.gif" alt="" class="img-responsive mt-3" />
+              <div class="polaroid-body">
+                <h2>Sebagai persembahan bagi dunia teknologi digital, <span style="font-family:SpringSakura;color:crimson;font-weight:bold;">| &nbsp; </span> <span class="codesyariah">Codesyariah</span> hadir untuk memberikan layanan kepada khalayak untuk menuangkan ide-ide kreatif dalam melengkapi jejak-jejak dunia teknologi informasi..</h2>
+              </div>	
+            </div>
+  
+        </div>
+    </div>
+  </div>
+
+<h1 class="underline mb-2 mt-2"></h1>
+
+<div class="parallax" style="background-image: url('http://localhost:4000/assets/images/project/parallax1.jpg');
+">
+
+  <div class="caption">
+    <br /><br />
+    <h2> Untuk informasi lebih lanjut <span style="font-family:SpringSakura;color:crimson;font-weight:bold;">| &nbsp; </span> anda bisa menghubungi kami melalui kontak dibawah ini : </h2>
+      <a href="https://wa.me/?text=Hai%20kak%20saya%20membutuhkan%20jasa%20web%20development" class="btn btn-primary text-white">whatsap</a>
+      <a href="https://instagram.com/" class="btn btn-primary text-white">Instagram</a>
+    <br /><br />
+  </div>
+
+</div>
+
+<div class="container">
+  
+  <div style="width: 100%; height: auto !important; clear: both; text-align: center;" class="google-auto-placed">
+  </div>
+
+    <div class="row justify-content-center">
+  
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <!-- container on panel-body -->
+            <div class="container">
+              <!-- row content1 -->
+              <div class="row">
+                <div class="col-md-4">
+                  <img v-bind:src="imageVectorCard" src="http://localhost:4000/assets/images/project/vector2.gif" alt="" class="float-left img-responsive" width="800" height="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                </div>
+                <div class="col-md-6 ml-3 mt-5">
+                  <h1 class="underline text-center">
+                    Codesyariah Projects
+                  </h1>
+                    <p class="ml-3">
+                      Ada beberapa project <span style="font-family:SpringSakura;color:crimson;font-weight:bold;">| &nbsp; </span> yang telah kami kerjakan, dan kami sangat membuka kesempatan untuk membuka keran kerjasama bagi anda yang memiliki ide-ide untuk dikembangkan dalam menunjang bidang kegiatan maupun bisnis anda
+                    </p>
+                    <img src="http://localhost:4000/assets/images/project/vector3.gif" alt="" />
+                </div>
+                <!-- <div class="row justify-content-end">
+                  <img src="http://localhost:4000/assets/images/project/codesyariah/vector4.gif" alt="">
+                </div> -->
+              </div>
+              <!-- row content1 end -->
+              <br />
+              <h1 class="underline mb-5 mt-2"></h1>
+
+                    <div class="container">
+                        <h1 class="text-center mt-2 mb-3">
+                            List Project <span style="font-family:Reey Regular;color:crimson;">Codesyariah</span>
+                        </h1>
+                        
+                            <div class="d-flex justify-content-center">
+                                <div class="row">
+                                    
+                                                     
+                                            <div class="col-md-4 col-xs-12 col-sm-12">
+                                                <div class="card-pricing">
+                                                    <a class="img-card-pricing" href="http://localhost:4000//assets/images/project/hallomovie.gif" data-toggle="lightbox" data-gallery="projects">
+                                                            <img src="/assets/images/project/hallomovie.gif" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                                                    </a>
+                                                    
+                                                    <div class="card-content-pricing">
+                                                        <h4 class="card-title">Hallo Movie</h4>                              
+                                                                <blockquote class="blockquote-footer" style="color:lightskyblue;">
+                                                                    Mencari data informasi tentang film yang mau anda tonton dengan mudah dan cepat
+                                                                </blockquote>
+                                                                <p class="">
+                                                                    Hallo Movie merupakan client api, untuk mencari data-data film yang ingin anda tonton atau anda cari sebagai bahan referensi, dengan proses mudah dan cep...
+                                                                </p>
+                                                    </div>
+                                                    
+                                                    <div class="card-read-more-pricing">
+                                                        <a href="http://localhost:4000/codesyariahhallomovie" class="btn btn-link btn-block">
+                                                            Lihat Project
+                                                        </a>
+                                                    </div>
+                                
+                                                </div>
+                                            </div>                
+                                    
+                                                     
+                                            <div class="col-md-4 col-xs-12 col-sm-12">
+                                                <div class="card-pricing">
+                                                    <a class="img-card-pricing" href="http://localhost:4000//assets/images/project/webdev.gif" data-toggle="lightbox" data-gallery="projects">
+                                                            <img src="/assets/images/project/webdev.gif" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                                                    </a>
+                                                    
+                                                    <div class="card-content-pricing">
+                                                        <h4 class="card-title">Codesyariah web development</h4>                              
+                                                                <blockquote class="blockquote-footer" style="color:lightskyblue;">
+                                                                    Jasa Pembuatan Toko Online Website Instansi, Organisasi, Sekolah Dan Lain-lain
+                                                                </blockquote>
+                                                                <p class="">
+                                                                    Codesyariah WebDev merupakan Jalan bagi anda yang ingin mempromosikan layanan, usaha atau bisnis anda melalui media website, kami siap membantu mewujudka...
+                                                                </p>
+                                                    </div>
+                                                    
+                                                    <div class="card-read-more-pricing">
+                                                        <a href="http://localhost:4000/codesyariahcodesyariah" class="btn btn-link btn-block">
+                                                            Lihat Project
+                                                        </a>
+                                                    </div>
+                                
+                                                </div>
+                                            </div>                
+                                    
+                                                     
+                                            <div class="col-md-4 col-xs-12 col-sm-12">
+                                                <div class="card-pricing">
+                                                    <a class="img-card-pricing" href="http://localhost:4000//assets/images/project/bakery.gif" data-toggle="lightbox" data-gallery="projects">
+                                                            <img src="/assets/images/project/bakery.gif" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                                                    </a>
+                                                    
+                                                    <div class="card-content-pricing">
+                                                        <h4 class="card-title">Nabilla Bakery &amp; Cake</h4>                              
+                                                                <blockquote class="blockquote-footer" style="color:lightskyblue;">
+                                                                    Mengedepankan pelayanan dari kualitas terbaik kami
+                                                                </blockquote>
+                                                                <p class="">
+                                                                    Nabilla Bakery &amp; Cake adalah outlet kue yang memproduksi berbagai varian kue.selain pemesanan dengan system digital, kami juga memiliki outlet offlin...
+                                                                </p>
+                                                    </div>
+                                                    
+                                                    <div class="card-read-more-pricing">
+                                                        <a href="http://localhost:4000/codesyariahnabillabakery" class="btn btn-link btn-block">
+                                                            Lihat Project
+                                                        </a>
+                                                    </div>
+                                
+                                                </div>
+                                            </div>                
+                                               
+                            </div>
+                        </div>
+
+                    </div>
+
+              </div>
+
+            <!-- end container panel-body -->
+          </div>
+        </div>
+      </div>
+  
+    </div>
+   
+  </div>
+
+<p><br /></p>
+
+<!-- <section class="wrapper-pricing">
+    <div class="container-fostrap">
+           
+       <div>
+            <img src="http://localhost:4000//assets/images/codesyariah.png" class="fostrap-logo"/>
+            <h1 class="heading">
+                Welcome in MyProject
+            </h1>
+        </div><br/><br/>
+
+        <div class="content-pricing">
+            <div class="container">
+                <div class="row">
+
+
+       
+
+
+                    <div class="col-md-4 col-xs-12 col-sm-4">
+                        <div class="card-pricing">
+
+                            <a class="img-card-pricing" href="http://localhost:4000//assets/images/project/hallomovie.gif">
+                            <img src="/assets/images/project/hallomovie.gif" />
+                          </a>
+                            <div class="card-content-pricing">
+                            <h4 class="card-title">Hallo Movie</h4>
+                                                           
+                                <blockquote style='color:lightskyblue;'>
+                                    Mencari data informasi tentang film yang mau anda tonton dengan mudah dan cepat
+                                </blockquote>
+
+                                <p class="">
+                                    Hallo Movie merupakan client api, untuk mencari data-data film yang ingin anda tonton atau anda cari sebagai bahan referensi, dengan proses mudah dan cep...
+                                </p>
+
+                            </div>
+                            <div class="card-read-more-pricing">
+                                <a href="http://localhost:4000/project-hallomovie" class="btn btn-link btn-block">
+                                    Read More
+                                </a>
+                            </div>
+
+                        </div>
+                    </div> <br/>                 
+
+       
+
+
+                    <div class="col-md-4 col-xs-12 col-sm-4">
+                        <div class="card-pricing">
+
+                            <a class="img-card-pricing" href="http://localhost:4000//assets/images/project/webdev.gif">
+                            <img src="/assets/images/project/webdev.gif" />
+                          </a>
+                            <div class="card-content-pricing">
+                            <h4 class="card-title">Codesyariah web development</h4>
+                                                           
+                                <blockquote style='color:lightskyblue;'>
+                                    Jasa Pembuatan Toko Online Website Instansi, Organisasi, Sekolah Dan Lain-lain
+                                </blockquote>
+
+                                <p class="">
+                                    Codesyariah WebDev merupakan Jalan bagi anda yang ingin mempromosikan layanan, usaha atau bisnis anda melalui media website, kami siap membantu mewujudka...
+                                </p>
+
+                            </div>
+                            <div class="card-read-more-pricing">
+                                <a href="http://localhost:4000/project-codesyariah" class="btn btn-link btn-block">
+                                    Read More
+                                </a>
+                            </div>
+
+                        </div>
+                    </div> <br/>                 
+
+       
+
+
+                    <div class="col-md-4 col-xs-12 col-sm-4">
+                        <div class="card-pricing">
+
+                            <a class="img-card-pricing" href="http://localhost:4000//assets/images/project/bakery.gif">
+                            <img src="/assets/images/project/bakery.gif" />
+                          </a>
+                            <div class="card-content-pricing">
+                            <h4 class="card-title">Nabilla Bakery & Cake</h4>
+                                                           
+                                <blockquote style='color:lightskyblue;'>
+                                    Mengedepankan pelayanan dari kualitas terbaik kami
+                                </blockquote>
+
+                                <p class="">
+                                    Nabilla Bakery &amp; Cake adalah outlet kue yang memproduksi berbagai varian kue.selain pemesanan dengan system digital, kami juga memiliki outlet offlin...
+                                </p>
+
+                            </div>
+                            <div class="card-read-more-pricing">
+                                <a href="http://localhost:4000/project-nabillabakery" class="btn btn-link btn-block">
+                                    Read More
+                                </a>
+                            </div>
+
+                        </div>
+                    </div> <br/>                 
+         
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<script type="text/javascript">
+  const obj = {
+      'sayHeloGif' : '/assets/images/project/sayhalo4.gif',
+      'titleHeader' : '',
+      'blockquoteHeader' : 'Jalan Sukses Selalu Terbuka',
+      'cardVector' : 'http://localhost:4000',
+      'tagsParallax' : 'Untuk informasi lebih lanjut <span style='font-family:SpringSakura;color:crimson;font-weight:bold;'>| &nbsp; </span> anda bisa menghubungi kami melalui kontak dibawah ini ',
+  };
+</script>
+
+:ET

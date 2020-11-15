@@ -12,6 +12,6 @@ data: nabilla bakery
 
 **{{ data.name }}** adalah outlet kue yang memproduksi berbagai varian kue.  
 selain pemesanan dengan system digital, kami juga memiliki outlet offline,  
-yang berlokasi di..... <a href="https://nabilla-bakery.me">Check disini</a>.  
+yang berlokasi di..... <a href="{{page.website}}">Check disini</a>.  
 
 > *Nabilla Bakery & Cake* Memproduksi kue dengan kualitas bahan terbaik dan di pastikan halal.  

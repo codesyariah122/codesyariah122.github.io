@@ -2,6 +2,7 @@
 "puji":
 {
 "links": "PujiErmanto",
+"type": "author",
 "nama_lengkap": "Puji Ermanto",
 "shortname": "Uji",
 "situs": "https://pujiermanto.netlify.app/about/",
@@ -13,6 +14,7 @@
 "amel":
 {
 "links": "AmeliaWijayanti",
+"type": "author",
 "nama_lengkap": "Amelia Wijayanti",
 "shortname" : "Amelia",
 "situs": "https://amel-head-conf.github.io",

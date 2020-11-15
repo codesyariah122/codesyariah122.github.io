@@ -1,7 +1,7 @@
 {
-"codesyariah webdev":
+    "codesyariah webdev":
     {
-        "links": "codesyariah",
+        "links": "webdevelopment",
         "name": "Codesyariah WebDevelopment",
         "type": "Jasa Pembuatan Website Dan Toko Online",
         "website": "",
@@ -17,6 +17,16 @@
         "website": "https://nabilla-bakery.github.io",
         "tagline": "Mengedepankan pelayanan dari kualitas terbaik kami",
         "img_path": "/assets/images/project/bakery.gif",
+        "alamat": "in progress"
+    },
+    "hallo movie":
+    {
+        "links": "hallomovie",
+        "name": "Hallo Movie",
+        "type": "Entertainment & History",
+        "website": "https://hallomovie.io",
+        "tagline": "Cari film mu dengan mudah dan cepat",
+        "img_path": "/assets/images/project/hallomovie.gif",
         "alamat": "in progress"
     }
 } 

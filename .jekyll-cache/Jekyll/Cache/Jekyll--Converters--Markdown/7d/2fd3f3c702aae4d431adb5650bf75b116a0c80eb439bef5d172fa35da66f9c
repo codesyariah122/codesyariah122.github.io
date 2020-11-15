@@ -1,4 +1,4 @@
-I"~A
+I"ÞP
 <style type="text/css">
     /* all parallax top and bottom */
     .parallax{
@@ -226,6 +226,32 @@
                                                      
                                             <div class="col-md-4 col-xs-12 col-sm-12">
                                                 <div class="card-pricing">
+                                                    <a class="img-card-pricing" href="http://localhost:4000//assets/images/project/hallomovie.gif" data-toggle="lightbox" data-gallery="projects">
+                                                            <img src="/assets/images/project/hallomovie.gif" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                                                    </a>
+                                                    
+                                                    <div class="card-content-pricing">
+                                                        <h4 class="card-title">Hallo Movie</h4>                              
+                                                                <blockquote class="blockquote-footer" style="color:lightskyblue;">
+                                                                    Mencari data informasi tentang film yang mau anda tonton dengan mudah dan cepat
+                                                                </blockquote>
+                                                                <p class="">
+                                                                    Hallo Movie merupakan client api, untuk mencari data-data film yang ingin anda tonton atau anda cari sebagai bahan referensi, dengan proses mudah dan cep...
+                                                                </p>
+                                                    </div>
+                                                    
+                                                    <div class="card-read-more-pricing">
+                                                        <a href="http://localhost:4000/hallomovie" class="btn btn-link btn-block">
+                                                            Lihat Project
+                                                        </a>
+                                                    </div>
+                                
+                                                </div>
+                                            </div>                
+                                    
+                                                     
+                                            <div class="col-md-4 col-xs-12 col-sm-12">
+                                                <div class="card-pricing">
                                                     <a class="img-card-pricing" href="http://localhost:4000//assets/images/project/webdev.gif" data-toggle="lightbox" data-gallery="projects">
                                                             <img src="/assets/images/project/webdev.gif" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
                                                     </a>
@@ -241,8 +267,8 @@
                                                     </div>
                                                     
                                                     <div class="card-read-more-pricing">
-                                                        <a href="http://localhost:4000/project-codesyariah" class="btn btn-link btn-block">
-                                                                    Lihat Project
+                                                        <a href="http://localhost:4000/codesyariah" class="btn btn-link btn-block">
+                                                            Lihat Project
                                                         </a>
                                                     </div>
                                 
@@ -267,8 +293,8 @@
                                                     </div>
                                                     
                                                     <div class="card-read-more-pricing">
-                                                        <a href="http://localhost:4000/project-nabillabakery" class="btn btn-link btn-block">
-                                                                    Lihat Project
+                                                        <a href="http://localhost:4000/nabillabakery" class="btn btn-link btn-block">
+                                                            Lihat Project
                                                         </a>
                                                     </div>
                                 
@@ -307,6 +333,36 @@
             <div class="container">
                 <div class="row">
 
+
+       
+
+
+                    <div class="col-md-4 col-xs-12 col-sm-4">
+                        <div class="card-pricing">
+
+                            <a class="img-card-pricing" href="http://localhost:4000//assets/images/project/hallomovie.gif">
+                            <img src="/assets/images/project/hallomovie.gif" />
+                          </a>
+                            <div class="card-content-pricing">
+                            <h4 class="card-title">Hallo Movie</h4>
+                                                           
+                                <blockquote style='color:lightskyblue;'>
+                                    Mencari data informasi tentang film yang mau anda tonton dengan mudah dan cepat
+                                </blockquote>
+
+                                <p class="">
+                                    Hallo Movie merupakan client api, untuk mencari data-data film yang ingin anda tonton atau anda cari sebagai bahan referensi, dengan proses mudah dan cep...
+                                </p>
+
+                            </div>
+                            <div class="card-read-more-pricing">
+                                <a href="http://localhost:4000/project-hallomovie" class="btn btn-link btn-block">
+                                    Read More
+                                </a>
+                            </div>
+
+                        </div>
+                    </div> <br/>                 
 
        
 
@@ -377,6 +433,7 @@
 
 <script type="text/javascript">
   const obj = {
+      'sayHeloGif' : '/assets/images/project/sayhalo4.gif',
       'titleHeader' : '',
       'blockquoteHeader' : 'Jalan Sukses Selalu Terbuka',
       'cardVector' : 'http://localhost:4000',

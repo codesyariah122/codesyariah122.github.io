@@ -1,13 +1,4 @@
----
-title: "Puji"
-type: "author"
-layout: default
-author: "puji"
-permalink: "/author/pujiermanto"
-image: "/assets/images/author12.jpg"
-vector: "/assets/images/final2.gif"
----
-<style type="text/css">
+I"Š<style type="text/css">
     /* all parallax top and bottom */
     .parallax{
       min-height: 500px; 
@@ -143,72 +134,93 @@ vector: "/assets/images/final2.gif"
     }
     </style>
 
-{% assign puji = site.data.authors[page.author] %}
 <div id="contentApp">
+
     <div class="jumbotron jumbotron-fluid jumbotron-content" style="background-image:url('{{site.url}}{{page.image}}');">
-        <!-- <div class="container">
+        <div class="container">
           <div class="row">
             <div class="d-flex justify-content-center">
                 <div class="col-md-12">
                     <h1 class="display-4 text-right" v-html="titleHeader" style="margin-left:8rem;margin-top:9rem;"></h1>
+                    <h3 class="blockquote-footer text-danger" style="font-family: Reey Regular;font-size:31px;" v-html="blockquoteHeader"></h3>
                 </div>
             </div>
           </div>
-        </div> -->
+        </div>
+      </div>
+      
+      <h1 class="underline mt-2 mb-2"></h1> 
 
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="row align-items-center mb-5">
-                        <div class="col-md-9">
-                            <h2 class="font-weight-bold text-white">{{site.data.authors[page.author].nama_lengkap}} 
-                                <span style="font-size:18px;" class="small btn btn-outline-success btn-sm btn-round">
-                                <a href="{{ site.data.authors[page.author].twitter }}">Follow</a>
-                                </span>
-                            </h2>
-                            <p style="font-size:22px;"><a href="{{ puji.situs }}">{{ site.data.authors[page.author].site }}</a></p>
-                            <p style="font-size:18px;" class="excerpt">{{puji.nama_lengkap}} {{ puji.bio }}</p>
-                        </div>
-                        <div class="col-md-3 text-right">
-                            <img alt="{{ site.data.authors[page.author].name }}" src="{{site.url}}/{{ site.data.authors[page.author].avatar }}" class="rounded-circle" height="150" width="200">
-                        </div>
+      <div class="container">
+          <h4 style="font-size:45px; margin-top:5rem;" class="mb-5 font-weight-bold spanborder text-center text-success" v-html="title1"><span>Hallo World</span></h4>
+          {% assign author = site.data.authors[page.author] %}
+              <div class="row gap-y listrecent listrecent listauthor">
+              {% for author in site.data.authors %}
+                  <div class="col-lg-6 mb-4">
+                    <div class="p-4 border rounded">
+                      <div class="row">
+                    <div class="col-md-3 mb-4 mb-md-0">
+                      <img alt="{{ author[1].nama_lengkap }}" src="{{site.url}}{{ author[1].avatar }}" class="rounded-circle" height="80" width="80" />
+                    </div>
+                    <div class="col-md-9">
+                      <a href="{{site.url}}/{{author[1].type}}/{{ author[1].links | slugify }}">
+                      <h4 class="text-dark mb-0"> {{ author[1].nama_lengkap }} </h4>
+                      <small class="d-inline-block mt-1 mb-3 font-weight-normal">(View Posts)</small>
+                      <div class="excerpt">{{ author[1].bio }}</div>
+                      </a>
+                      <div class="icon-block mt-3 d-flex justify-content-between">  
+                      <div>
+                      <a target="_blank" href="{{ author[1].twitter }}"><i class="fab fa-twitter text-info" aria-hidden="true"></i></a>  &nbsp;
+                      <a target="_blank" href="{{ author[1].situs }}"><i class="fa fa-globe text-success" aria-hidden="true"></i></a> &nbsp;
+                      </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+            </div>
+              {% endfor %}
+          </div>
+      </div>
+
+<h1 class="underline mb-2 mt-2"></h1>
+
+<div class="parallax" style="background-image: url('{{site.url}}{{page.parallax}}');
+">
+
+  <div class="caption">
+    <br /><br />
+    <h2 v-html="tagsParallax"></h2>
+      <a href="https://wa.me/{{WebDevelopment.whatsapp}}?text=Hai%20kak%20saya%20membutuhkan%20jasa%20web%20development" class="btn btn-primary text-white">whatsap</a>
+      <a href="https://instagram.com/{{WebDevelopment.instagram}}" class="btn btn-primary text-white">Instagram</a>
+    <br /><br />
+  </div>
+
+</div>  
+
+      <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="polaroid">
+                  <img v-bind:src="imageVectorCard" class="img-responsive mt-3" width="800" height="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                  <div class="polaroid-body">
+                    <h2>{{page.card-tags}}</h2>
+                  </div>	
+                </div>
+      
             </div>
         </div>
       </div>
-</div>
-
-<br>
-<h1 class="underline mt-2 mb-2"></h1>  
-<br><br>
-<div class="containe">
-    <div class="row justify-content-center">
-        <div class="col-5">
-            <img v-bind:src="imageVectorCard" alt="" class="img-responsive"> 
-        </div>
-    </div>
-</div>
-
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <h4 class="font-weight-bold spanborder">Posts by <span v-html="message"></span></h4>
-                <br>
-                    {% assign posts = site.posts | where:"author","puji" %}
-                    {% for post in posts %}
-                    {% include main-loop-card.html %}
-                    {% endfor %}
-            </div>
-           
-        </div>
-    </div>
 
 </div>
-<!-- end content app -->
 
 <script type="text/javascript">
     const obj = {
-        'cardVector' : '{{site.url}}{{page.vector}}',
-        'author' : '{{puji.shortname}}',
+        'title' : `{{page.title}} <span style="font-family:Reey Regular;color:crimson;">List</span>`,
+        'titleHeader' : '{{page.header}}',
+        'blockquoteHeader' : '{{page.blockquote}}',
+        'cardVector' : '{{site.url}}{{page.vector1}}',
+        'tagsParallax' : '{{page.parallax-tags}} ',
     };
 </script>
+
+:ET
