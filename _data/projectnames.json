@@ -56,6 +56,37 @@
             "img" : "/assets/images/project/codesyariah/story14.jpg",
             "text" : "Media informasi menjadi penunjang prospek bisnis anda, ide-ide anda dalam bisnis dengan mudah dan terjangkau bisa kami tuangkan dalam prespektif media digital, dan dengan itu team marketing anda semakin terbantu dalam memasarkan produk-produk karya anda."
         }
+    },
+    "hallomovie" : 
+    {
+        "name" : "Hallo <span style='font-family:Reey Regular;'>Movie</span> Codesyariah",
+        "tags": "Lagi nyari info atau data tentang film yang anda suka dan ingin anda tonton, kami menyediakan layanan data akses ke IMDB. <span style='font-family:SpringSakura;color:crimson;'>|</span> Sebagai layanan untuk mencari data informasi mengenai release movie <span style='font-family:SpringSakura;color:crimson;'>|</span> dari seluruh dunia, anda bisa menggunakannya dengan bebas gratis, tinggal ketik di input field pencarian yang telah kami sediakan berikut.",
+        "foto" : "",
+        "vector" : {
+            "satu" : "/assets/images/project/hallomovie/vector1.gif"
+        },
+        "instagram" : "pujiermanto",
+        "owner" : "Puji Ermanto",
+        "moto" : "Simply and Faster",
+        "profile1" : "Kejujuran dalam produksi adalah integritas <span style='font-family:SpringSakura;color:crimson;'>|</span>  tanggung jawab kewajiban kami untuk memberikan layanan terbaik bagi anda. <span class='codesyariah'>codesyariah</span> mengedepankan kualitas dalam setiap pengerjaan design aplikasi web atau mobile yang anda pesan melalui team kami. Keseriusan kami dalam menuangkan karya untuk menjadi sesuatu yang bisa menunjang ide-ide bisnis anda. Layanan yang mudah untuk dijangkau, hasilkan karya yang otentik untuk meningkatkan penjualan produk dan ide bisnis anda",
+        "image" : "/assets/images/project/hallomovie/movie2.jpg",
+        "profile2" : "Jasa web development <span style='font-family:SpringSakura; color:crimson;'>|</span>  kami dikerjakan dengan sepenuh hati, setiap permintaan client akan kami tuangkan kedalam sebuah karya yang otentik. Team support kami selalu siaga melayani anda dalam merealisasikan setiap ide <span style='font-family:SpringSakura;'>|</span>  untuk bisnis anda. Pengerjaan dilakukan dengan waktu yang bisa anda sesuaikan, karena kami tahu lebih cepat itu lebih baik, dan kami berusaha untuk memberikan yang terbaik dalam setiap tuangan ide anda dalam karya-karya kami <span style='font-family:SpringSakura; color:crimson;'>|</span> ",
+        "profile3" : "Tuangkan ide-ide bisnis anda bersama kami <span style='font-family:SpringSakura; color:crimson;'>|</span>  <span class='codesyariah'>codesyariah</span> selalu fokus dalam mengembangkan ide anda untuk menjadi suatu karya yang bisa menunjang prospek bisnis anda <span style='font-family:SpringSakura;'>|</span>. Informasi digital menjadi sangat vital sekarang ini begitupun dunia bisnis akan sangat penting manfaat digitalisasi produk dalam media informasi <span style='font-family:SpringSakura; color:crimson;'>|</span> ",
+        "story1" : 
+        {
+            "img" : "/assets/images/project/codesyariah/story4.jpg",
+            "text" : "Pengerjaan dilakukan dengan sepenuh hati sebagai sebuah persembahan bagi anda, dengan harapan karya kami bisa menunjang anda untuk memajukan ide-ide bisnis anda."
+        },
+        "story2" : 
+        {
+            "img" : "/assets/images/project/codesyariah/story5.jpg",
+            "text" : "Pengerjaan dilakukan dengan sepenuh hati sebagai sebuah persembahan bagi anda, dengan harapan karya kami bisa menunjang anda untuk memajukan ide-ide bisnis anda."
+        },
+        "story3" : 
+        {
+            "img" : "/assets/images/project/codesyariah/story14.jpg",
+            "text" : "Media informasi menjadi penunjang prospek bisnis anda, ide-ide anda dalam bisnis dengan mudah dan terjangkau bisa kami tuangkan dalam prespektif media digital, dan dengan itu team marketing anda semakin terbantu dalam memasarkan produk-produk karya anda."
+        }
     }
 
 }
