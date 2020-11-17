@@ -17,14 +17,14 @@
         },
         "parallax": 
         {
-            "satu": "/assets/images/parallax1.jpg",
+            "satu": "/assets/images/forauthor3.jpg",
             "dua": "/assets/images/parallax2.jpg",
             "tiga": "/assets/images/forauthor2.jpg"
         },
         "parallax-text":
         {
-            "satu": "Anda yang ingin megembangkan ide-ide tulisan yang menarik dan ingin di publish di blog kami, silahkan hubungi kontak di bawah ini",
-            "dua": "Kami membuat layanan penelurusan informasi berita berupa data api. dalam skala regional dari sumber-sumber label media di tanah air.",
+            "satu": "Kami membuka kran kerjasama bagi anda yang memiliki ide kreatif untuk tulisan. Tidak terbatas pada tema apapun, baik itu tema bisnis, ilmiah ataupun sekedar catatan harian, silahkan hubungi kontak dibawah bagi anda yang berminat.",
+            "dua": "Layanan penelurusan informasi berita berupa data api. dalam skala regional dari sumber-sumber label media di tanah air.",
             "tiga": "Design & Code By. <span class='codesyariah'>Codesyariah</span> Team <span style='font-family: SpringSakura;'> |,&</span>"
         }
     }

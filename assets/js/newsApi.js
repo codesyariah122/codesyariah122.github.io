@@ -38,6 +38,7 @@ $(document).ready(function(){
     `);
     newsApi();
     $('#enter').on('click', function(){
+        $('#news-list').html('');
         const newsSelect = $('#select-news').val();
         const urlProxy = "https://cors-anywhere.herokuapp.com/";
 
