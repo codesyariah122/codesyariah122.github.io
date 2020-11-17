@@ -1,5 +1,3 @@
-
-
 function newsApi(){
     const data = {
         'country' : 'id',
@@ -42,7 +40,7 @@ $(document).ready(function(){
         const newsSelect = $('#select-news').val();
         const urlProxy = "https://cors-anywhere.herokuapp.com/";
 
-        if(newsSelect === 'choose'){
+        if(newsSelect === 'choose' || newsSelect === ''){
             $('#err').show('slow').fadeIn(1000);
         }else{
             $('#err').hide('slow').slideUp(1000);
@@ -53,6 +51,7 @@ $(document).ready(function(){
                 data:data,
                 success: function(res){
                     if(res){
+                        $('#select-news').val('choose');
                         let getNews = res['articles'][newsSelect];
                         // console.log(getNews);
                         $('#news-list').append(`

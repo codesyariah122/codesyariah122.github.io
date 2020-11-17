@@ -1,0 +1,70 @@
+I"T<p><img src="{{site.url}}/public/images/post/ruby.png" alt="rails2" /></p>
+
+<h1 id="install-ruby-di-debian-9">install ruby di debian 9</h1>
+
+<p>Ruby adalah salah satu bahasa paling populer saat ini. Ruby memiliki sintaks yang elegan dan merupakan bahasa di balik framework Ruby on Rails yang kuat.</p>
+
+<p>Dalam tutorial ini kami akan menunjukkan kepada Anda tiga cara berbeda untuk menginstal Ruby pada sistem Debian 9.</p>
+
+<h3 id="install-ruby-dari-repository-debian-9">install ruby dari repository debian 9</h3>
+<p>Cara termudah untuk menginstal Ruby di sistem Debian Anda adalah melalui apt package manager. Pada saat penulisan, versi di repositori Debian adalah 2.3.3 yang mana akan segera EOL (End of Life).<br />
+Untuk menginstal Ruby dari repositori default Debian, ikuti langkah-langkah ini:<br />
+1 . perbarui index paket :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt update
+</code></pre></div></div>
+<ol>
+  <li>install ruby dengan mengetik :
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt install ruby-full
+</code></pre></div>    </div>
+  </li>
+  <li>cek versi ruby :
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby --version
+</code></pre></div>    </div>
+    <p>outputnya adalah seperti ini</p>
+  </li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-linux]
+</code></pre></div></div>
+
+<h3 id="install-ruby-menggunakan-rbenv">Install ruby menggunakan rbenv</h3>
+<p>Rbenv adalah alat manajemen versi Ruby yang memungkinkan Anda untuk dengan mudah beralih versi Ruby. Secara default Rbenv tidak menangani masalah instalasi Ruby, sehingga kita juga perlu menginstal ruby-build yang merupakan alat yang membantu Anda menginstal versi Ruby apa pun yang mungkin Anda perlukan.</p>
+
+<p>Untuk menginstal Ruby menggunakan skrip Rbenv, ikuti langkah-langkah ini:</p>
+<ol>
+  <li>Pertama, perbarui indeks paket dan install paket yang diperukan oleh ruby-build untuk membangun ruby dari sumber :
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt update
+apt install git curl libssl-dev libreadline-dev zlib1g-dev autoconf bison build-essential libyaml-dev libreadline-dev libncurses5-dev libffi-dev libgdbm-dev
+</code></pre></div>    </div>
+  </li>
+  <li>Selanjutnya, jalankan perintah curl berikut untuk menginstall rbenv dan ruby-build :
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -sL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-installer | bash -
+</code></pre></div>    </div>
+    <p>Script akan mengkloning repositori rbenv dan ruby-build dari GitHub ke direktori <code class="language-plaintext highlighter-rouge">~/.rbenv</code>. Skrip installer juga memanggil skrip lain yang akan mencoba memverifikasi pemasangan. Output dari skrip akan terlihat seperti di bawah ini:</p>
+  </li>
+  <li>Tambahkan $HOME/.rbenv/bin ke sistem PATH.
+Jika Anda menggunakan Bash, jalankan:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo 'export PATH="$HOME/.rbenv/bin:$PATH"' &gt;&gt; ~/.bashrc
+echo 'eval "$(rbenv init -)"' &gt;&gt; ~/.bashrc
+source ~/.bashrc
+</code></pre></div>    </div>
+    <p>Jika Anda menggunakanZsh, jalankan:</p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo 'export PATH="$HOME/.rbenv/bin:$PATH"' &gt;&gt; ~/.zshrc
+echo 'eval "$(rbenv init -)"' &gt;&gt; ~/.zshrc
+source ~/.zshrc
+</code></pre></div>    </div>
+  </li>
+  <li>Install ruby versi stabil terbaru dan tetapkan sebagai versi default dengan :
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rbenv install 2.5.1
+rbenv global 2.5.1
+</code></pre></div>    </div>
+    <p>Untuk melihat daftar semua versi Ruby yang tersedia, Anda dapat menggunakan: <code class="language-plaintext highlighter-rouge">rbenv install -l</code><br />
+Verifikasi bahwa Ruby telah diinstal dengan benar dengan mencetak nomor versi:</p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby --version
+</code></pre></div>    </div>
+    <p>outputnya :</p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-linux]
+</code></pre></div>    </div>
+  </li>
+</ol>
+:ET

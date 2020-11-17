@@ -1,14 +1,4 @@
----
-layout: default
-title: "Codesyariah Webdevelopment"
-permalink: "/project/webdevelopment"
-projectname: codesyariahwebdev
-projectstory1: story1
-product1: WebDevelopment
-product2: Web Replika
-product3: Wordpress WebDevelopment
----  
-<style type="text/css">
+I"â1<style type="text/css">
   /* all parallax top and bottom */
   .parallax{
     min-height: 500px; 
@@ -143,11 +133,10 @@ product3: Wordpress WebDevelopment
       }
   }
   </style>
-  
 
-{% assign WebDevelopment = site.data.projectnames[page.projectname]%}
+<p>{% assign WebDevelopment = site.data.projectnames[page.projectname]%}
 {% assign story1 = site.data.projectnames[page.projectstory1] %}
-{% assign webdev = site.data.webdevelopers[page.product1] %}
+{% assign webdev = site.data.webdevelopers[page.product1] %}</p>
 
 <div class="jumbotron jumbotron-fluid jumbotron-content" style="background-image:url('{{site.url}}{{WebDevelopment.image}}');">
   <div class="container">
@@ -158,14 +147,14 @@ product3: Wordpress WebDevelopment
     </div>
   </div>
 </div>
-<br><br>
+<p><br /><br /></p>
 <h1 class="underline mt-2 mb-2"></h1>
 
 <div class="container">
   <div class="row justify-content-center">
       <div class="col-md-6">
           <div class="polaroid">
-            <img src="{{site.url}}{{WebDevelopment.vector.satu}}" alt="" class="img-responsive mt-3">
+            <img src="{{site.url}}{{WebDevelopment.vector.satu}}" alt="" class="img-responsive mt-3" />
             <div class="polaroid-body">
               <h2>{{WebDevelopment.tags}}.</h2>
             </div>	
@@ -181,11 +170,11 @@ product3: Wordpress WebDevelopment
 ">
 
   <div class="caption">
-    <br/><br/>
+    <br /><br />
     <h2> {{webdev.parallax.satu.info}} : </h2>
       <a href="https://wa.me/{{WebDevelopment.whatsapp}}?text=Hai%20kak%20saya%20membutuhkan%20jasa%20web%20development" class="btn btn-primary text-white">whatsap</a>
       <a href="https://instagram.com/{{WebDevelopment.instagram}}" class="btn btn-primary text-white">Instagram</a>
-    <br/><br/>
+    <br /><br />
   </div>
 </div>
 
@@ -203,23 +192,23 @@ product3: Wordpress WebDevelopment
             <!-- row content1 -->
             <div class="row">
               <div class="col-md-4">
-                <img src="{{site.url}}{{WebDevelopment.story1.img}}" alt="" class="float-left img-responsive"  width="600" height="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;"/>
+                <img src="{{site.url}}{{WebDevelopment.story1.img}}" alt="" class="float-left img-responsive" width="600" height="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
               </div>
-              <div class="col-md-6">
+              <div class="col-md-6 ml-3 mt-5">
                 <h1 class="underline text-center">
                   {{WebDevelopment.name}}
                 </h1>
                   <p class="ml-3">
                     {{WebDevelopment.profile1}}
                   </p>
-                  <img src="{{site.url}}{{WebDevelopment.vector.dua}}" alt="">
+                  <img src="{{site.url}}{{WebDevelopment.vector.dua}}" alt="" />
               </div>
               <!-- <div class="row justify-content-end">
                 <img src="{{site.url}}/assets/images/project/codesyariah/vector4.gif" alt="">
               </div> -->
             </div>
             <!-- row content1 end -->
-            <br>
+            <br />
             <h1 class="underline text-center mt-2 mb-4"></h1>
             <!-- row content2 -->
             <div class="row mt-3">
@@ -232,15 +221,15 @@ product3: Wordpress WebDevelopment
                   </p>
                 </div>
                 <div class="col-md-6">
-                  <img src="{{site.url}}{{WebDevelopment.story2.img}}" class="img-responsive float-left" alt="" width="600" height="700" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;">
+                  <img src="{{site.url}}{{WebDevelopment.story2.img}}" class="img-responsive float-left" alt="" width="600" height="700" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
                 </div>
             </div>
             <!-- row content2 end -->
-            <br>
+            <br />
             <!-- row content 3 -->
             <div class="row mt-3">
                   <div class="col-md-6">
-                    <img src="{{site.url}}{{WebDevelopment.story3.img}}" class="img-responsive float-left" alt="" width="600" height="700" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;">
+                    <img src="{{site.url}}{{WebDevelopment.story3.img}}" class="img-responsive float-left" alt="" width="600" height="700" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
                   </div>
 
                   <div class="col-md-6">
@@ -262,7 +251,7 @@ product3: Wordpress WebDevelopment
  
 </div>
 
-<br>
+<p><br /></p>
 
 <h1 class="underline mb-2 mt-2"></h1>
 
@@ -272,24 +261,23 @@ product3: Wordpress WebDevelopment
   <div class="container">
     <div class="row">
       <div class="col-md-4">
-        <div class='box-wave'>
-          <div class='wave -one'></div>
-          <div class='wave -two'></div>
-          <div class='wave -three'></div>
-          <div class='title-wave'>
+        <div class="box-wave">
+          <div class="wave -one"></div>
+          <div class="wave -two"></div>
+          <div class="wave -three"></div>
+          <div class="title-wave">
             <h4>
               {{webdev.parallax.dua.info}}.
             </h4>
           </div>
         </div>
-          <br/><br/>
+          <br /><br />
       </div>
     </div>
 
 </div>
 
 </div>
-
 
 <div class="container">
   <div class="row justify-content-center">
@@ -303,38 +291,38 @@ product3: Wordpress WebDevelopment
             <!-- row content1 -->
             <div class="row">
               <div class="col-md-4">
-                <img src="{{site.url}}{{webdev.image}}" alt="" class="float-left img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;"/>
+                <img src="{{site.url}}{{webdev.image}}" alt="" class="float-left img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
               </div>
               <div class="col-md-6 ml-5 mt-5">
                 <h1 class="text-center">
-                  {{webdev.name}} <br>
+                  {{webdev.name}} <br />
                 </h1>
-                <hr>
+                <hr />
                   <p class="ml-5">
                      {{webdev.tags}}.
-                     <br>
+                     <br />
 
                      <span class="blockquote-footer text-success" style="font-size:16px; margin-left:-2rem;">Harga : Idr {{ webdev.price }} / Layanan</span> 
                   </p>
-                  <img src="{{site.url}}{{webdev.vector.tiga}}" alt="">
+                  <img src="{{site.url}}{{webdev.vector.tiga}}" alt="" />
               </div>
 
             </div>
             <!-- row content1 end -->
-            <br>
+            <br />
 
             <h1 class="underline text-center mt-2 mb-4"></h1>
             <!-- row content2 -->
             <div class="row justify-content-center">
-              <div class="col-md-12 col-xs-12 col-sm-12">
+              <div class="col-md-12">
                   <h1 style="color:salmon;">{{webdev.name}}  </h1>
               </div>
 
               {% for wdevs in site.webdevs %}
-              <div class="col-md-4 col-xs-12 col-sm-12">
+              <div class="col-md-4">
                 <div class="card" style="width: 18rem;">
                   <a href="{{wdevs.image_path}}" data-toggle="lightbox" data-gallery="webdevs">
-                    <img class="card-img-top img-responsive img-fluid float-left" src="{{wdevs.image_path}}" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;">
+                    <img class="card-img-top img-responsive img-fluid float-left" src="{{wdevs.image_path}}" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
                   </a>
                   <div class="card-body">
                     <h5 class="card-title">{{wdevs.name}}</h5>
@@ -356,21 +344,21 @@ product3: Wordpress WebDevelopment
   </div>
 </div>
 
-<br>
+<p><br /></p>
 
 <h1 class="underline mb-2 mt-2"></h1>
 
-<br>
+<p><br /></p>
 
 <div class="parallax" style="background-image: url('{{site.url}}{{webdev.parallax.tiga.img}}');
 ">
 
   <div class="caption">
-    <br/><br/>
+    <br /><br />
     <h2> {{webdev.parallax.tiga.info}} :</h2>
       <a href="https://wa.me/{{WebDevelopment.whatsapp}}?text=Hai%20kak%20saya%20membutuhkan%20jasa%20web%20development" class="btn btn-primary text-white">whatsap</a>
       <a href="https://instagram.com/{{WebDevelopment.instagram}}" class="btn btn-primary text-white">Instagram</a>
-    <br/><br/>
+    <br /><br />
   </div>
 
 </div>
@@ -390,3 +378,4 @@ product3: Wordpress WebDevelopment
           <a href="https://instagram.com/{{WebDevelopment.instagram}}" class="btn btn-primary text-white">Instagram</a>
   </div>
 </div> -->
+:ET
