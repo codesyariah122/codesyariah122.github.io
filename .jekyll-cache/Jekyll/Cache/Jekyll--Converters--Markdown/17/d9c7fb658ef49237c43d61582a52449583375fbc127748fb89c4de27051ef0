@@ -1,4 +1,4 @@
-I"z6<style type="text/css">
+I"Ð6<style type="text/css">
     /* all parallax top and bottom */
     .parallax{
       min-height: 500px; 
@@ -291,14 +291,17 @@
                         <div class="col-12">
                             <h1 class="text-center">Search News</h1>
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Movie title search .. " id="search-input" />
-                                <div class="input-group-append">
-                                  <button class="btn btn-dark" type="button" id="search-button">Button</button>
-                                </div>
+                              <select class="custom-select" id="select-news">
+                                  <!-- <option selected>Choose...</option> -->                       
+                              </select>
+                              <div class="input-group-append">
+                                  <button id="input" class="btn btn-dark">Options</button>
                               </div>
+                          </div>
                         </div>
     
                         <hr />
+                        
                         <div class="row" id="news-list">
                         </div>
                     

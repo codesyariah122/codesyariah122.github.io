@@ -1,4 +1,4 @@
-I"{6<style type="text/css">
+I"Ö7<style type="text/css">
     /* all parallax top and bottom */
     .parallax{
       min-height: 500px; 
@@ -289,18 +289,24 @@
                   <!-- row content2 -->
                     <div class="row mt-3 justify-content-center">
                         <div class="col-12">
-                            <h1 class="text-center">Search News</h1>
+                            <h1 class="text-center">Pilih Media</h1>
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Movie title search .. " id="search-input" />
-                                <div class="input-group-append">
-                                  <button class="btn btn-dark" type="button" id="search-button">Button</button>
-                                </div>
+                              <select class="custom-select" id="select-news">
+                                  <!-- <option selected>Choose...</option> -->                       
+                              </select>
+                              <div class="input-group-append">
+                                  <button id="input" class="btn btn-dark">Options</button>
                               </div>
+                          </div>
                         </div>
     
                         <hr />
-                        <div class="row" id="movie-list">
-                        </div>
+                        
+                            <div class="col-12">
+                                <div id="news-list">
+                                </div>
+                            </div>
+                        
                     
                     </div>
                   <!-- row content2 end -->
@@ -330,7 +336,7 @@
         'cardVector3' : 'http://localhost:4000/assets/images/vector4.gif',
         'tagsParallax1' : 'Anda yang ingin megembangkan ide-ide tulisan yang menarik dan ingin di publish di blog kami, silahkan hubungi kontak di bawah ini',
         'tagsParallax2' : 'Data api news dari berbagai media regional favorit anda yang bisa di cari di media kami di bawah ini',
-        'tagsApi' : 'Bertebarannya berita dan informasi hoax akhir-akhir ini menyiasati kami untuk menjaga kredibelitas penyebaran informasi data agar tetap terjaba kredibeiatasnya. Dalam kesempatan ini kami membuat layanan berupa pencarian berita dari sumber-sumber kredibel pilihan anda sebagai media untuk memperkaya khazanah informasi data, bijaklah dalam mencari informasi.',
+        'tagsApi' : 'Bertebarannya berita dan informasi hoax akhir-akhir ini menyiasati kami untuk menjaga kredibelitas penyebaran informasi data agar tetap terjaga kredibelitasnya. Dalam kesempatan ini kami membuat layanan berupa pencarian berita dari sumber-sumber media nasional tanah air yang mudah-mudahan kredibel yang dapat anda pilih melalui field select dibawah ini kami berharap upaya kami dapat memperkaya khazanah informasi data di ranah awam para peminat baca yang haus informasi. bijaklah dalam mencari informasi.',
     };
 </script>
 

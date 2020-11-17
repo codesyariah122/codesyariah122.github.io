@@ -1,4 +1,4 @@
-I"0+<style type="text/css">
+I".<style type="text/css">
     /* all parallax top and bottom */
     .parallax{
       min-height: 500px; 
@@ -266,19 +266,33 @@
                   <!-- row content2 -->
                     <div class="row mt-3 justify-content-center">
                         <div class="col-12">
-                            <h1 class="text-center">Search News</h1>
+                            <h1 class="text-center">Pilih Media</h1>
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Movie title search .. " id="search-input" />
-                                <div class="input-group-append">
-                                  <button class="btn btn-dark" type="button" id="search-button">Button</button>
+                              <select class="custom-select" id="select-news">
+                                  <!-- <option selected>Choose...</option> -->                       
+                              </select>
+                              <div class="input-group-append">
+                                  <button id="input" class="btn btn-dark">Options</button>
+                              </div>
+                          </div>
+
+                          <hr />
+                          
+                          <div id="err">
+                              <div class="col-12">
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <strong>Wooopssshhh!!!</strong> <span class="text-center">Pilih nama media online nya dulu bro</span>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                                 </div>
                               </div>
+                          </div>
+
+                          <div id="news-list">
+                          </div>
+
                         </div>
-    
-                        <hr />
-                        <div class="row" id="news-list">
-                        </div>
-                    
                     </div>
                   <!-- row content2 end -->
                   

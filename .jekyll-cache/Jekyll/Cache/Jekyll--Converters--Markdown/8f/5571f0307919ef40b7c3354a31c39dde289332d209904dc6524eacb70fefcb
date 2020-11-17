@@ -1,14 +1,4 @@
----
-title: "Authors"
-assets: author_assets
-header: "Codesyariah Author"
-blockquote: "Lebih dekat dengan ide-ide kreatif anda"
-layout: default
-permalink: "/authors/"
-api: newsapi
----
-
-<style type="text/css">
+I">,<style type="text/css">
     /* all parallax top and bottom */
     .parallax{
       min-height: 500px; 
@@ -144,7 +134,6 @@ api: newsapi
     }
     </style>
 
-
 <div id="contentApp">
 {% assign assets = site.data.author_assets[page.assets] %}
 {% assign news = site.data.api_pages[page.api] %}
@@ -172,7 +161,7 @@ api: newsapi
                     <div class="p-4 border rounded">
                       <div class="row">
                     <div class="col-md-3 mb-4 mb-md-0">
-                      <img alt="{{ author[1].nama_lengkap }}" src="{{site.url}}{{ author[1].avatar }}" class="rounded-circle" height="80" width="80">
+                      <img alt="{{ author[1].nama_lengkap }}" src="{{site.url}}{{ author[1].avatar }}" class="rounded-circle" height="80" width="80" />
                     </div>
                     <div class="col-md-9">
                       <a href="{{site.url}}/{{author[1].type}}/{{ author[1].links | slugify }}">
@@ -200,11 +189,11 @@ api: newsapi
       ">
 
         <div class="caption">
-          <br/><br/>
+          <br /><br />
           <h2 v-html="tagsParallax1"></h2>
             <a href="https://wa.me/{{WebDevelopment.whatsapp}}?text=Hai%20kak%20saya%20membutuhkan%20jasa%20web%20development" class="btn btn-primary text-white">whatsap</a>
             <a href="https://instagram.com/{{WebDevelopment.instagram}}" class="btn btn-primary text-white">Instagram</a>
-          <br/><br/>
+          <br /><br />
         </div>
 
       </div>  
@@ -215,7 +204,7 @@ api: newsapi
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="polaroid">
-                  <img v-bind:src="imageVectorCard1" class="img-responsive mt-3"  width="800" height="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;">
+                  <img v-bind:src="imageVectorCard1" class="img-responsive mt-3" width="800" height="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
                   <div class="polaroid-body">
                     <h2>{{assets.card-text.satu}}</h2>
                   </div>	
@@ -232,15 +221,15 @@ api: newsapi
           <div class="container">
             <div class="row">
               <div class="col-md-4">
-                <div class='box-wave'>
-                  <div class='wave -one'></div>
-                  <div class='wave -two'></div>
-                  <div class='wave -three'></div>
-                  <div class='title-wave'>
+                <div class="box-wave">
+                  <div class="wave -one"></div>
+                  <div class="wave -two"></div>
+                  <div class="wave -three"></div>
+                  <div class="title-wave">
                     <h4 v-html="tagsParallax2">parallax2-tags</h4>
                   </div>
                 </div>
-                  <br/><br/>
+                  <br /><br />
               </div>
             </div>
         </div>
@@ -258,21 +247,21 @@ api: newsapi
                   <!-- row content1 -->
                   <div class="row">
                     <div class="col-md-4">
-                        <img v-bind:src="imageCardApi1" alt="" class="float-left img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;"/>
+                        <img v-bind:src="imageCardApi1" alt="" class="float-left img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
                       </div>
                       <div class="col-md-6 ml-5 mt-5">
                         <h1 class="text-center">
-                          {{news.title}} <br>
+                          {{news.title}} <br />
                         </h1>
-                        <hr>
+                        <hr />
                           <p v-html="tagsApi" class="ml-5">.</p>
-                          <br>
-                          <img v-bind:src="cardVectorApi2" alt="">
+                          <br />
+                          <img v-bind:src="cardVectorApi2" alt="" />
                       </div>
       
                   </div>
                   <!-- row content1 end -->
-                  <br>
+                  <br />
                   <h1 class="underline text-center mt-2 mb-4"></h1>
                   <!-- row content2 -->
                     <div class="row mt-3 justify-content-center">
@@ -283,33 +272,26 @@ api: newsapi
                                   <!-- <option selected>Choose...</option> -->                       
                               </select>
                               <div class="input-group-append">
-                                  <button id="enter" class="btn btn-dark" id="input">Options</button>
+                                  <button id="input" class="btn btn-dark">Options</button>
                               </div>
                           </div>
-
-                          <hr>
-                          
-                          <div id="err">
-                              <div class="col-12">
-                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                <strong>Wooopssshhh!!!</strong> <span class="text-center">Pilih nama media online nya dulu bro</span>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                </div>
-                              </div>
-                          </div>
-
-                          <div id="news-list">
-                          </div>
-
                         </div>
+    
+                        <hr />
+                        <div class="row justify-content-center">
+                            <div class="col-12">
+                                <div id="news-list">
+                                </div>
+                            </div>
+                        </div>
+                        
+                    
                     </div>
                   <!-- row content2 end -->
                   
                   <h1 class="underline mb-2 mt-2"></h1>
                   
-                  <br>
+                  <br />
                 
               </div>
             </div>
@@ -320,10 +302,7 @@ api: newsapi
       
     </div>
 
-</div>    
-
- 
-
+</div>
 
 <script type="text/javascript">
     const obj = {
@@ -338,3 +317,5 @@ api: newsapi
         'tagsApi' : '{{news.tags}}',
     };
 </script>
+
+:ET
