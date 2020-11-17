@@ -1,4 +1,4 @@
-I".<style type="text/css">
+I"80<style type="text/css">
     /* all parallax top and bottom */
     .parallax{
       min-height: 500px; 
@@ -275,8 +275,8 @@
                                   <button id="input" class="btn btn-dark">Options</button>
                               </div>
                           </div>
-
-                          <hr />
+                        </div>
+                         <hr />
                           
                           <div id="err">
                               <div class="col-12">
@@ -288,13 +288,10 @@
                                 </div>
                               </div>
                           </div>
-
-                          <div id="news-list">
-                          </div>
-
-                        </div>
                     </div>
                   <!-- row content2 end -->
+                  <div class="row" id="news-list">
+                  </div>
                   
                   <h1 class="underline mb-2 mt-2"></h1>
                   
@@ -308,6 +305,21 @@
       </div>
       
     </div>
+
+    <br />
+    <br />
+    <hr />
+    <div class="parallax" style="background-image: url('{{site.url}}{{assets.parallax.tiga}}');">
+
+      <div class="caption">
+        <br /><br />
+        <h2>{{assets.parallax-text.tiga}}</h2>
+          <a href="https://wa.me/{{WebDevelopment.whatsapp}}?text=Hai%20kak%20saya%20membutuhkan%20jasa%20web%20development" class="btn btn-primary text-white">whatsap</a>
+          <a href="https://instagram.com/{{WebDevelopment.instagram}}" class="btn btn-primary text-white">Instagram</a>
+        <br /><br />
+      </div>
+
+    </div>  
 
 </div>
 

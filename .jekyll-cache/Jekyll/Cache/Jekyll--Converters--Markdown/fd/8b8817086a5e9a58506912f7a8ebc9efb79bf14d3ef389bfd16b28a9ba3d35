@@ -1,4 +1,4 @@
-I"O+<style type="text/css">
+I"v/<style type="text/css">
     /* all parallax top and bottom */
     .parallax{
       min-height: 500px; 
@@ -275,14 +275,23 @@
                                   <button id="input" class="btn btn-dark">Options</button>
                               </div>
                           </div>
-
-                          <hr />
-                          <div id="news-list">
-                          </div>
-
                         </div>
+                         <hr />
+                          
+                          <div id="err">
+                              <div class="col-12">
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <strong>Wooopssshhh!!!</strong> <span class="text-center">Pilih nama media online nya dulu bro</span>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                              </div>
+                          </div>
                     </div>
                   <!-- row content2 end -->
+                  <div class="row" id="news-list">
+                  </div>
                   
                   <h1 class="underline mb-2 mt-2"></h1>
                   
@@ -296,6 +305,20 @@
       </div>
       
     </div>
+
+    <br />
+    <br />
+    <hr />
+    <div class="parallax" style="background-image: url('{{site.url}}{{assets.parallax.tiga}}');">
+
+      <div class="caption">
+        <br /><br />
+        <h2>{{assets.parallax-text.tiga}}</h2>
+          <h4 style="font-family:Reey Regular;">Bijaklah dalam menyebarkan informasi digital</h4>
+        <br /><br />
+      </div>
+
+    </div>  
 
 </div>
 

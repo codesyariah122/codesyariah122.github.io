@@ -5,9 +5,9 @@ function newsApi(){
         'country' : 'id',
         'apiKey' : '5effd68f01ce47589b435b22ebdb06b9'
     };
-
+    const urlProxy = "https://cors-anywhere.herokuapp.com/";
     $.ajax({
-        url: 'https://newsapi.org/v2/top-headlines',
+        url: `${urlProxy}https://newsapi.org/v2/top-headlines`,
         type: 'get',
         dataType: 'json',
         data: data,
@@ -39,12 +39,14 @@ $(document).ready(function(){
     newsApi();
     $('#enter').on('click', function(){
         const newsSelect = $('#select-news').val();
+        const urlProxy = "https://cors-anywhere.herokuapp.com/";
+
         if(newsSelect === 'choose'){
             $('#err').show('slow').fadeIn(1000);
         }else{
             $('#err').hide('slow').slideUp(1000);
             $.ajax({
-                url: 'https://newsapi.org/v2/top-headlines',
+                url: `${urlProxy}https://newsapi.org/v2/top-headlines`,
                 type: 'get',
                 dataType: 'json',
                 data:data,
@@ -62,7 +64,7 @@ $(document).ready(function(){
                                             <p>
                                                 ${getNews.content}
                                             </p>
-                                            <a href="#" class="card-link see-detail" data-toggle="modal" data-target="#exampleModal" data-id="${getNews.url}">See Detail</a>
+                                            <a href="${getNews.url}" class="card-link see-detail" data-toggle="modal" data-target="#exampleModal" data-id="${getNews}">See Detail</a>
                                             </div>
                                     </div>
                                 </div>
