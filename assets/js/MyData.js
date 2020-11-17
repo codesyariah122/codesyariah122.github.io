@@ -4,7 +4,7 @@ const vm = new Vue({
 				title1 : obj.title,
 				titleHeader : obj.titleHeader,
 				blockquoteHeader: obj.blockquoteHeader,
-				imageVectorCard1 : obj.cardVector1,
+				imageVectorCard : obj.cardVector,
 				imageCardApi1 : obj.cardVector2,
 				cardVectorApi2 : obj.cardVector3,
 				tagsApi : obj.tagsApi,
