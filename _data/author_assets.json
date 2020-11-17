@@ -1,0 +1,30 @@
+{
+    "author_assets":
+    {
+        "images":
+        {
+            "satu": "/assets/images/author4.jpg"
+        },
+        "vector":
+        {
+            "satu": "/assets/images/codesyariah-team.gif",
+            "dua": "/assets/images/author2.jpg",
+            "tiga": "/assets/images/vector4.gif"
+        },
+        "card-text":
+        {
+            "satu" : "Team  <i class='fas fa-cookie-bite fa-fw' style='color:burlywood;'></i> author <span class='codesyariah'>Codesyariah</span> selalu mempersembahkan <i class='fas fa-heart fa-fw text-danger'></i><i class='fas fa-1x fa-heart fa-fw text-danger'></i><i class='fas fa-2x fa-heart fa-fw text-danger'></i> <span style='font-family:SpringSakura;'>|</span> <br/> <span style='font-family:SpringSakura;'>|</span> arsip-arsip digital dari sumber sumber yang kredibel demi mempersembahkan nilai inovasi"
+        },
+        "parallax": 
+        {
+            "satu": "/assets/images/parallax1.jpg",
+            "dua": "/assets/images/parallax2.jpg"
+        },
+        "parallax-text":
+        {
+            "satu": "Anda yang ingin megembangkan ide-ide tulisan yang menarik dan ingin di publish di blog kami, silahkan hubungi kontak di bawah ini",
+            "dua": "Data api news dari berbagai media regional favorit anda yang bisa di cari di media kami di bawah ini"
+        }
+    }
+
+}

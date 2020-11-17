@@ -2,11 +2,11 @@ function searchMovie(){
     data.movieList.html('');
     const input = data.searchMovie.val();
     $.ajax({
-        url: 'http://www.omdbapi.com',
+        url: 'https://omdbapi.com',
         type: 'get',
         dataType: 'json',
         data: {
-            'apiKey' : '43c80ec7',
+            'apiKey' : '434248d4',
             's' : input
         },
         success: function(res){
@@ -28,8 +28,8 @@ function searchMovie(){
                 })
             }else{
                data.movieList.html(`
-                <div class="col">
-                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <div class="col-12">
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     <strong>Wooopssshhh!!!</strong> <span class="text-center">${res.Error}</span>
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -54,11 +54,11 @@ $(document).ready(function(){
 
     data.movieList.on('click', '.see-detail', function(){
           $.ajax({
-            url: 'http://omdbapi.com',
+            url: 'https://omdbapi.com',
             type: 'get',
             dataType: 'json',
             data: {
-                'apiKey' : '43c80ec7',
+                'apiKey' : '434248d4',
                 'i' : $(this).data('id')
             },
             success: function(res){
