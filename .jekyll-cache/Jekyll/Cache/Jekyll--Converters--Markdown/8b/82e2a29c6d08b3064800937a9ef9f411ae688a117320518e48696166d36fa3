@@ -1,0 +1,4 @@
+I"j<p>error 404 ini saya alami ketika saya menggunakan framework codeigniter, permasalahan ini kemungkinan terjadi akibat nginx tidak mengenali<br />
+direktori root dari virtualhot project kita yang menggunakan codeigniter.<br />
+setting config codeigniter saya sengaja di buat untuk clean url, berikut script config dan autoload codeigniter yang saya gunakan,</p>
+:ET

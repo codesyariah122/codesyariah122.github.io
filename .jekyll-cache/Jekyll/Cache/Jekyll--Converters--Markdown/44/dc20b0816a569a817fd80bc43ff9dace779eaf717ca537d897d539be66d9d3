@@ -1,0 +1,12 @@
+I"<p>konfigurasi static ip ubuntu server Bionic(18.04)  kini sudah berbeda dibandingkan dengan Ubuntu Server 16.04 ke bawah.<br />
+Versi Ubuntu sebelumnya, konfigurasi dilakukan dengan memodifikasi file /etc/network/interfaces.<br />
+Di Ubuntu 18.04 file konfigurasi IP address di direktori /etc/netplan/ secara default file konfigurasi ubuntu server saya adalah 01-netcfg.yaml coba teman-teman list dengan perintah ls di ubuntu kalian.<br />
+<img src="http://localhost:4000/assets/images/post/bionic/Untitled1.jpg" alt="untitled1" /><br />
+ls<br />
+<img src="http://localhost:4000/assets/images/post/bionic/Untitled2.jpg" alt="untitled2" /><br />
+kemudian teman-teman buka file 01-netcfg.yaml dengan editor favorit kalian, secara default sudah ada konfigurasinya seperti ini<br />
+<img src="http://localhost:4000/assets/images/post/bionic/Untitled3.jpg" alt="untitled3" /><br />
+<img src="http://localhost:4000/assets/images/post/bionic/Untitled4.jpg" alt="untitled4" /><br />
+kemudian teman teman insert dengan menggunakan keywoard <strong>(i)</strong> karena disini saya menggunakan editor <em>(vi)</em> lalu set konfigurasi default tadi sesuai jaringan di local network teman-teman<br />
+<img src="http://localhost:4000/assets/images/post/bionic/Untitled5.jpg" alt="untitled5" /></p>
+:ET
