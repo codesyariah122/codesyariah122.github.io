@@ -1,14 +1,4 @@
----
-title: "Authors"
-assets: author_assets
-header: "Codesyariah Author"
-blockquote: "Lebih dekat dengan ide-ide kreatif anda"
-layout: default
-permalink: "/authors/"
-api: newsapi
----
-
-<style type="text/css">
+I"‘=<style type="text/css">
     /* all parallax top and bottom */
     .parallax{
       min-height: 500px; 
@@ -113,7 +103,10 @@ api: newsapi
       from { transform: rotate(360deg); }
     }
     
-    
+    #map {
+      height: 100%;
+    }
+
     @media only screen and (max-device-width: 812px) {
       .parallax {
           background-attachment: scroll;
@@ -144,11 +137,10 @@ api: newsapi
     }
     </style>
 
-
 <div id="contentApp">
-{% assign assets = site.data.author_assets[page.assets] %}
-{% assign news = site.data.api_pages[page.api] %}
-    <div class="jumbotron jumbotron-fluid jumbotron-content" style="background-image:url('{{site.url}}{{assets.images.satu}}');">
+
+
+    <div class="jumbotron jumbotron-fluid jumbotron-content" style="background-image:url('http://localhost:4000/assets/images/author4.jpg');">
         <div class="container">
           <div class="row">
             <div class="d-flex justify-content-center">
@@ -165,46 +157,69 @@ api: newsapi
 
       <div class="container">
           <h4 style="font-size:45px; margin-top:5rem;" class="mb-5 font-weight-bold spanborder text-center text-success" v-html="title1"><span>Hallo World</span></h4>
-          {% assign author = site.data.authors[page.author] %}
+          
               <div class="row gap-y listrecent listrecent listauthor">
-              {% for author in site.data.authors %}
+              
                   <div class="col-lg-6 mb-4">
                     <div class="p-4 border rounded">
                       <div class="row">
                     <div class="col-md-3 mb-4 mb-md-0">
-                      <img alt="{{ author[1].nama_lengkap }}" src="{{site.url}}{{ author[1].avatar }}" class="rounded-circle" height="80" width="80">
+                      <img alt="Puji Ermanto" src="http://localhost:4000/assets/images/bio/uji.jpg" class="rounded-circle" height="80" width="80" />
                     </div>
                     <div class="col-md-9">
-                      <a href="{{site.url}}/{{author[1].type}}/{{ author[1].links | slugify }}">
-                      <h4 class="text-dark mb-0"> {{ author[1].nama_lengkap }} </h4>
+                      <a href="http://localhost:4000/author/pujiermanto">
+                      <h4 class="text-dark mb-0"> Puji Ermanto </h4>
                       <small class="d-inline-block mt-1 mb-3 font-weight-normal">(View Posts)</small>
-                      <div class="excerpt">{{ author[1].bio }}</div>
+                      <div class="excerpt">Adalah seorang freelancer web developer, blogger, beberapa waktu lalu mengerjakan Project sebagai Fullstack Web Developer di Sebuah marketplace yaitu <br /> <b>PT. Syoobe Inti Perdana(Syoobe) - <span class="text-success">Jakarta</span></b> <br /> Dan di beberapa pengalaman sebelumnya bekerja sebagai web developer sekaligus IT Staf di <br /> <b>PT.Gemilang Citrus Berjaya(ourcitrus) - <span class="text-success">Sidoarjo</span></b></div>
                       </a>
                       <div class="icon-block mt-3 d-flex justify-content-between">  
                       <div>
-                      <a target="_blank" href="{{ author[1].twitter }}"><i class="fab fa-twitter text-info" aria-hidden="true"></i></a>  &nbsp;
-                      <a target="_blank" href="{{ author[1].situs }}"><i class="fa fa-globe text-success" aria-hidden="true"></i></a> &nbsp;
+                      <a target="_blank" href="https://twitter.com/pujiermanto"><i class="fab fa-twitter text-info" aria-hidden="true"></i></a>  &nbsp;
+                      <a target="_blank" href="https://pujiermanto.netlify.app/about/"><i class="fa fa-globe text-success" aria-hidden="true"></i></a> &nbsp;
                       </div>
                       </div>
                     </div>
                   </div>
                 </div>
             </div>
-              {% endfor %}
+              
+                  <div class="col-lg-6 mb-4">
+                    <div class="p-4 border rounded">
+                      <div class="row">
+                    <div class="col-md-3 mb-4 mb-md-0">
+                      <img alt="Amelia Wijayanti" src="http://localhost:4000/assets/images/bio/amel.jpeg" class="rounded-circle" height="80" width="80" />
+                    </div>
+                    <div class="col-md-9">
+                      <a href="http://localhost:4000/author/ameliawijayanti">
+                      <h4 class="text-dark mb-0"> Amelia Wijayanti </h4>
+                      <small class="d-inline-block mt-1 mb-3 font-weight-normal">(View Posts)</small>
+                      <div class="excerpt">Adalah Seorang web designer, blogger, vlogger dan juga bekeja di sebuah startup digital yaitu <br /> PT. Sritech Sanjaya - <span class="text-success">Karawang</span> <br />saat ini masih aktif sebagai author dan koresponden di beberapa media digital yang tersebar dan terselubung di ranah maya salah satunya di codesyariah blogsite ini.</div>
+                      </a>
+                      <div class="icon-block mt-3 d-flex justify-content-between">  
+                      <div>
+                      <a target="_blank" href="https://twitter.com/amel-headconf"><i class="fab fa-twitter text-info" aria-hidden="true"></i></a>  &nbsp;
+                      <a target="_blank" href="https://amel-head-conf.github.io"><i class="fa fa-globe text-success" aria-hidden="true"></i></a> &nbsp;
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+              
           </div>
       </div>
 
 <h1 class="underline mb-2 mt-2"></h1>
 
-      <div class="parallax" style="background-image: url('{{site.url}}{{assets.parallax.satu}}');
+      <div class="parallax" style="background-image: url('http://localhost:4000/assets/images/forauthor3.jpg');
       ">
 
         <div class="caption">
-          <br/><br/>
+          <br /><br />
           <h2 v-html="tagsParallax1"></h2>
-            <a href="https://wa.me/{{WebDevelopment.whatsapp}}?text=Hai%20kak%20saya%20membutuhkan%20jasa%20web%20development" class="btn btn-primary text-white">whatsap</a>
-            <a href="https://instagram.com/{{WebDevelopment.instagram}}" class="btn btn-primary text-white">Instagram</a>
-          <br/><br/>
+            <a href="https://wa.me/?text=Hai%20kak%20saya%20membutuhkan%20jasa%20web%20development" class="btn btn-primary text-white">whatsap</a>
+            <a href="https://instagram.com/" class="btn btn-primary text-white">Instagram</a>
+          <br /><br />
         </div>
 
       </div>  
@@ -215,9 +230,9 @@ api: newsapi
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="polaroid">
-                  <img v-bind:src="imageVectorCard" class="img-responsive mt-3"  width="800" height="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;">
+                  <img v-bind:src="imageVectorCard" class="img-responsive mt-3" width="800" height="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
                   <div class="polaroid-body">
-                    <h2>{{assets.card-text.satu}}</h2>
+                    <h2>Team  <i class="fas fa-cookie-bite fa-fw" style="color:burlywood;"></i> author <span class="codesyariah">Codesyariah</span> selalu mempersembahkan <i class="fas fa-heart fa-fw text-danger"></i><i class="fas fa-1x fa-heart fa-fw text-danger"></i><i class="fas fa-2x fa-heart fa-fw text-danger"></i> <span style="font-family:SpringSakura;">|</span> <br /> <span style="font-family:SpringSakura;">|</span> arsip-arsip digital dari sumber sumber yang kredibel demi mempersembahkan nilai inovasi</h2>
                   </div>	
                 </div>
       
@@ -227,20 +242,20 @@ api: newsapi
 
 <h1 class="underline mb-2 mt-2"></h1>
 
-      <div class="parallax" style="background-image: url('{{site.url}}{{assets.parallax.dua}}');
+      <div class="parallax" style="background-image: url('http://localhost:4000/assets/images/parallax2.jpg');
       ">
           <div class="container">
             <div class="row">
               <div class="col-md-4">
-                <div class='box-wave'>
-                  <div class='wave -one'></div>
-                  <div class='wave -two'></div>
-                  <div class='wave -three'></div>
-                  <div class='title-wave'>
+                <div class="box-wave">
+                  <div class="wave -one"></div>
+                  <div class="wave -two"></div>
+                  <div class="wave -three"></div>
+                  <div class="title-wave">
                     <h5 v-html="tagsParallax2" stye="font-size: 21px;">parallax2-tags</h5>
                   </div>
                 </div>
-                  <br/><br/>
+                  <br /><br />
               </div>
             </div>
         </div>
@@ -258,32 +273,29 @@ api: newsapi
                   <!-- row content1 -->
                   <div class="row">
                     <div class="col-md-4">
-                        <img v-bind:src="imageCardApi1" alt="" class="float-left img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;"/>
+                        <img v-bind:src="imageCardApi1" alt="" class="float-left img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
                       </div>
                       <div class="col-md-6 ml-5 mt-5">
                         <h1 class="text-center">
-                          {{news.title}} <br>
+                          News Api Data <br />
                         </h1>
-                        <hr>
+                        <hr />
                           <p v-html="tagsApi" class="ml-5">.</p>
-                          <br>
-                          <img v-bind:src="cardVectorApi2" alt="">
+                          <br />
+                          <img v-bind:src="cardVectorApi2" alt="" />
                       </div>
       
                   </div>
                   <!-- row content1 end -->
-                  <br>
+                  <br />
                   <h1 class="underline text-center mt-2 mb-4"></h1>
                   <!-- row content2 -->
                     <div class="row mt-3 justify-content-center">
                         <div class="col-12">
+
+                          <div id="map"></div>
                           
-                          <div id="your-location">
-
-                            <div id="map" style="width:100%;height:380px;">
-                            </div>
-
-                          </div>
+                          <div id="your-location"></div>
 
                             <h1 class="text-center">Pilih Media</h1>
                             <div class="input-group mb-3">
@@ -291,11 +303,11 @@ api: newsapi
                                   <!-- <option selected>Choose...</option> -->                       
                               </select>
                               <div class="input-group-append">
-                                  <button id="enter" class="btn btn-dark" id="input">Options</button>
+                                  <button id="input" class="btn btn-dark">Options</button>
                               </div>
                           </div>
                         </div>
-                         <hr>
+                         <hr />
                           
                           <div id="err">
                               <div class="col-12">
@@ -316,7 +328,7 @@ api: newsapi
                   
                   <h1 class="underline mb-2 mt-2"></h1>
                   
-                  <br>
+                  <br />
                 
               </div>
             </div>
@@ -327,35 +339,34 @@ api: newsapi
       
     </div>
 
-    <br>
-    <br>
-    <hr>
-    <div class="parallax" style="background-image: url('{{site.url}}{{assets.parallax.tiga}}');">
+    <br />
+    <br />
+    <hr />
+    <div class="parallax" style="background-image: url('http://localhost:4000/assets/images/forauthor2.jpg');">
 
       <div class="caption">
-        <br/><br/>
-        <h2 >{{assets.parallax-text.tiga}}</h2>
+        <br /><br />
+        <h2>Design &amp; Code By. <span class="codesyariah">Codesyariah</span> Team <span style="font-family: SpringSakura;"> |,&amp;</span></h2>
           <h4 style="font-family:Reey Regular;">Bijaklah dalam menyebarkan informasi digital</h4>
-        <br/><br/>
+        <br /><br />
       </div>
 
     </div>  
 
-</div>    
-
- 
-
+</div>
 
 <script type="text/javascript">
     const obj = {
-        'title' : `{{page.title}} <span style="font-family:Reey Regular;color:crimson;">List</span>`,
-        'titleHeader' : '{{page.header}}',
-        'blockquoteHeader' : '{{page.blockquote}}',
-        'cardVector' : '{{site.url}}{{assets.vector.satu}}',
-        'cardVector2' : '{{site.url}}{{assets.vector.dua}}',
-        'cardVector3' : '{{site.url}}{{assets.vector.tiga}}',
-        'tagsParallax1' : '{{assets.parallax-text.satu}}',
-        'tagsParallax2' : '{{assets.parallax-text.dua}}',
-        'tagsApi' : '{{news.tags}}',
+        'title' : `Authors <span style="font-family:Reey Regular;color:crimson;">List</span>`,
+        'titleHeader' : 'Codesyariah Author',
+        'blockquoteHeader' : 'Lebih dekat dengan ide-ide kreatif anda',
+        'cardVector' : 'http://localhost:4000/assets/images/codesyariah-team.gif',
+        'cardVector2' : 'http://localhost:4000/assets/images/author2.jpg',
+        'cardVector3' : 'http://localhost:4000/assets/images/vector4.gif',
+        'tagsParallax1' : 'Kami membuka kran kerjasama bagi anda yang memiliki ide kreatif untuk tulisan. Tidak terbatas pada tema apapun, baik itu tema bisnis, ilmiah ataupun sekedar catatan harian, silahkan hubungi kontak dibawah bagi anda yang berminat.',
+        'tagsParallax2' : 'Layanan penelurusan informasi berita berupa data api. dalam skala regional dari sumber-sumber label media di tanah air.',
+        'tagsApi' : 'Bertebarannya informasi data dan berita tanpa jejak sumber yang kredibel akhir-akhir ini, menggerakan niatan kami untuk menyiasati berbagai macam penyebaran isu dalam narasi informasi data yang berupa karya literasi dan jurnaistik. Dalam kesempatan ini kami berupaya membuat layanan filtrasi data informasi  dari media-media regional yang sejak lama dikenal publik awam. Anda dapat memilah sendiri label media mainstream di tanah air melalui filtrasi input dibawah ini, kami sadar layanan sederhana ini banyak keterbatasan dan kekurangan sumber data yang lebih valid lagi, mungkin kedepannya team kami akan terus memperbaiki fitur-fitur dalam layanan ini.',
     };
 </script>
+
+:ET

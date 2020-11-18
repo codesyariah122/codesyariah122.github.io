@@ -1,4 +1,4 @@
-I"0<style type="text/css">
+I"0<style type="text/css">
     /* all parallax top and bottom */
     .parallax{
       min-height: 500px; 
@@ -266,9 +266,10 @@
                   <!-- row content2 -->
                     <div class="row mt-3 justify-content-center">
                         <div class="col-12">
+
+                          <div id="map"></div>
                           
                           <div id="your-location"></div>
-                          <h4 id="country_code"></h4>
 
                             <h1 class="text-center">Pilih Media</h1>
                             <div class="input-group mb-3">

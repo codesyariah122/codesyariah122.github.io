@@ -15,8 +15,13 @@ function ipAddr(){
                     'isp': res.data.geo.isp,
                     'country': res.data.geo.country_name,
                     'country_code':res.data.geo.country_code,
-                    'city': res.data.geo.city
+                    'city': res.data.geo.city,
+                    'lat' : res.data.geo.latitude,
+                    'lng' : res.data.geo.longitude
                 };
+
+                Cookies.set('lat', result.lat, {expires: 1});
+                Cookies.set('lng', result.lng, {expires: 1});
 
                Cookies.set('country_code', result.country_code, {expires: 1});
             } 
@@ -27,12 +32,22 @@ function ipAddr(){
 
 ipAddr();
 
+let map;
+function initMap() {
+    const lat = Cookies.get('lat');
+    const lng = Cookies.get('lng');
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: lat, lng: lng },
+    zoom: 8,
+  });
+}
+
 function newsApi(){
     // const country_code = Cookies.get('country_code');
     // console.log(country_code);
     const data = {
         'country' : Cookies.get('country_code'),
-        'apiKey' : '5effd68f01ce47589b435b22ebdb06b9'
+        'apiKey' : '0cd9904ea4d44b4385e69e554073be4b'
     };
     const urlProxy = "https://cors-anywhere.herokuapp.com/";
     $.ajax({
@@ -61,7 +76,7 @@ $(document).ready(function(){
     // console.log(country_code);
     const data = {
         'country' : Cookies.get('country_code'),
-        'apiKey' : '5effd68f01ce47589b435b22ebdb06b9'
+        'apiKey' : '0cd9904ea4d44b4385e69e554073be4b'
     };
 
     console.log(`Your Country : ${data.country}`);
