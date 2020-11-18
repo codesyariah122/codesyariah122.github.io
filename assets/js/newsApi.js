@@ -1,3 +1,5 @@
+{/* <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15843.02469076354!2d${result.lng}!3d${result.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1605683044978!5m2!1sid!2sid" width="900" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe> */}
+
 function ipAddr(){
     $.getJSON("https://api.ipify.org/?format=json", function(e) {
         // $('#show-ip').text(e.ip);
@@ -15,6 +17,7 @@ function ipAddr(){
                     'isp': res.data.geo.isp,
                     'country': res.data.geo.country_name,
                     'country_code':res.data.geo.country_code,
+                    'region': res.data.geo.region_name,
                     'city': res.data.geo.city,
                     'lat' : res.data.geo.latitude,
                     'lng' : res.data.geo.longitude
@@ -24,6 +27,11 @@ function ipAddr(){
                 Cookies.set('lng', result.lng, {expires: 1});
 
                Cookies.set('country_code', result.country_code, {expires: 1});
+
+               $('#your-location').append(`
+                    <h5 class="text-primary">Your Location : ${result.country} | ${result.city} - ${result.region}</h5>
+                    <h6 class="text-danger">Your Ip Address : ${result.ip}</h6>
+               `);
             } 
         });
 
@@ -34,13 +42,42 @@ ipAddr();
 
 let map;
 function initMap() {
-    const lat = Cookies.get('lat');
-    const lng = Cookies.get('lng');
+    const lat = parseFloat(Cookies.get('lat'));
+    const lng = parseFloat(Cookies.get('lng'));
+    // alert(typeof lat);
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: lat, lng: lng },
-    zoom: 8,
+    zoom: 7,
   });
+
+  marker = new google.maps.Marker({
+      position: new google.maps.LatLng(lat, lng),
+      map: map
+  });
+
 }
+
+
+// function initialize() {
+//     const lat = parseFloat(Cookies.get('lat'));
+//     const lng = parseFloat(Cookies.get('lng'));
+//     var propertiPeta = {
+//       center:new google.maps.LatLng(lat, lng),
+//       zoom:9,
+//       mapTypeId:google.maps.MapTypeId.ROADMAP
+//     };
+    
+//     var peta = new google.maps.Map(document.getElementById("map"), propertiPeta);
+    
+//     // membuat Marker
+//     var marker=new google.maps.Marker({
+//         position: new google.maps.LatLng(lat, lng),
+//         map: peta
+//     });
+  
+//   }
+  
+//   google.maps.event.addDomListener(window, 'load', initialize);
 
 function newsApi(){
     // const country_code = Cookies.get('country_code');
