@@ -1,24 +1,179 @@
 ---
 layout: default
+permalink: /404.html
+contact: WebDevelopment
 ---
-
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
+<style type="text/css">
+  /* all parallax top and bottom */
+  .parallax{
+    min-height: 500px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin:0;
   }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
+  .caption {
+      background:rgba(255,255,255,0.4);
+      /* clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); */
+      position: absolute;
+      left: 21rem;
+      margin-top: 7rem;
+      width: 50%;
+      text-align: center;
+      color: #000;
   }
-</style>
+  .caption h2 {
+      color: white;
+      font-family: 'Poiret One', cursive;font-weight:bold;
+      text-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+      margin-bottom: .9rem;
+  }
+  .caption a{
+      font-size: 18px;
+  }
+  
+  /* wave */
+  .box-wave {
+      width: 350px;
+      height: 500px;
+      border-radius: 5px;
+      box-shadow: 0 2px 30px rgba(black, .2);
+      background: lighten(#f0f4c3, 10%);
+      position: relative;
+      overflow: hidden;
+      transform: translate3d(0, 0, 0);
+    }
+    
+    .wave {
+      opacity: .4;
+      position: absolute;
+      top: 3%;
+      left: 50%;
+      background: #0af;
+      width: 500px;
+      height: 500px;
+      margin-left: -250px;
+      margin-top: -250px;
+      transform-origin: 50% 48%;
+      border-radius: 43%;
+      animation: drift 3000ms infinite linear;
+    }
+    
+    .wave.-three {
+      animation: drift 5000ms infinite linear;
+    }
+    
+    .wave.-two {
+      animation: drift 7000ms infinite linear;
+      opacity: .1;
+      background: yellow;
+    }
+    
+    .box-wave:after {
+      content: '';
+      display: block;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(#e8a, 1), rgba(#def, 0) 80%, rgba(white, .5));
+      z-index: -1;
+      transform: translate3d(0, 0, 0);
+    }
+    
+    .title-wave {
+      position: absolute;
+      left: 1rem;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+      line-height: 300px;
+      text-align: left;
+      transform: translate3d(0, 0, 0);
+      color: white;
+      font-weight: bold;;
+      text-transform: uppercase;
+      font-family: 'Poiret One', cursive;
+      letter-spacing: .4em;
+      font-size: 14px;
+      text-shadow: 0 1px 0 rgba(black, .1);
+    }
+    .titl-wave a{
+        margin-left: 2rem;
+    }
+  
+  @keyframes drift {
+    from { transform: rotate(0deg); }
+    from { transform: rotate(360deg); }
+  }
+  
+  
+  @media only screen and (max-device-width: 812px) {
+    .parallax {
+        background-attachment: scroll;
+    }
+    .caption {
+        position: absolute;
+        left: 0;
+        margin-top: 2rem;
+        width: 100%;
+        text-align: center;
+        color: #000;
+    }
+    .caption h2 {
+        color: white;
+        font-family: 'Poiret One', cursive;font-weight:bold;
+        text-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+        margin-bottom: .9rem;
+        font-size:14px;
+    }
+    .caption a{
+        font-size: 12px;
+    }
+  
+    .waves {
+            height: 40px;
+            min-height: 40px;
+      }
+  }
+  </style>
+{% assign webdev = site.data.webdevelopers[page.contact]%}
+<div class="jumbotron jumbotron-fluid jumbotron-content" style="background-image:url('{{site.url}}{{webdev.404_image}}');">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+          <h1 class="display-4">{{webdev.404_title}}</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<h1 class="underline"></h1>
 
 <div class="container">
-  <h1>404</h1>
+  <div class="row justify-content-center">
+      <div class="col-md-6">
+          <div class="polaroid">
+            <img src="{{site.url}}{{webdev.vector.404}}" alt="" class="img-responsive mt-3">
+            <div class="polaroid-body">
+              <h2>{{webdev.puisi.404}}.</h2>
+            </div>	
+          </div>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+      </div>
+  </div>
+</div>
+
+<h1 class="underline"></h1>
+
+<div class="parallax" style="background-image: url('{{site.url}}{{webdev.parallax.empat.img}}');
+">
+
+  <div class="caption">
+    <br/><br/>
+    <h2> {{webdev.parallax.empat.info}} : </h2>
+      <a href="https://wa.me/{{WebDevelopment.whatsapp}}?text=Hai%20kak%20saya%20membutuhkan%20jasa%20web%20development" class="btn btn-primary text-white">whatsap</a>
+      <a href="https://instagram.com/{{WebDevelopment.instagram}}" class="btn btn-primary text-white">Instagram</a>
+    <br/><br/>
+  </div>
 </div>

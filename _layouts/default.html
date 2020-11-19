@@ -40,10 +40,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Poppins:wght@900&family=Quicksand:wght@500&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
-
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" type="text/css">
     <!-- jquery plug in here its work  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
     <script src="{{site.url}}/assets/js/cookie.min.js" type="text/javascript"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js" type="text/javascript"></script>
     <!-- ================================================================================================= -->
     {% include tracking-footer.html %}
     <!-- google adsense setup -->
@@ -124,7 +125,7 @@
                <span> Made with : </span><br/>
                 {% assign dev = site.data.developers.puji %}
                 <a target="_blank" class="font-weight-bold" href="{{site.url}}">{{site.name}} | {{site.description}}</a><br/>
-                 by : <a style="color:salmon;" target="_blank" href="https://codesyariah122.github.io">
+                 by : <a style="color:salmon;" target="_blank" href="{{site.portfolio}}">
                  <b>{{ dev.nama_lengkap }}</b></a>.
             </div>
         </div>
@@ -160,6 +161,7 @@ $(function () {
     </script>
 
     <script src="{{site.url}}/assets/js/MyLightBox.js" type="text/javascript"></script>
+    <script src="{{site.url}}/assets/js/activeTables.js" type="text/javascript"></script>
     <script src="{{site.url}}/assets/js/MyObj.js" type="text/javascript"></script>
     <script src="{{site.url}}/assets/js/MyProject.js" type="text/javascript"></script>
     <script type="text/javascript">
@@ -170,7 +172,7 @@ $(function () {
     <script type="text/javascript" src="{{site.url}}/assets/js/MyData.js"></script>
     <script type="text/javascript" src="{{site.url}}/assets/js/MovieSearch.js"></script>
     <script type="text/javascript" src="{{site.url}}/assets/js/newsApi.js"></script>
-
+    <script type="text/javascript" src="{{site.url}}/assets/js/quranApi.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA12hVNjXuiy4GgHR_cUjh-Zc-oKFVBHYw&callback=initMap"
     type="text/javascript"></script>

@@ -32,8 +32,9 @@ function askYou(url){
 		submit.addEventListener('click', function(e){
 			const tanya = document.querySelector('input[name=ask]').value;
 			let hasil = Math.ceil(0.15 * 29 / 100);
+			let hasil2 = 2
 
-				if(tanya == hasil ){
+				if(tanya == hasil2 ){
 					document.querySelector('input[name=ask]').value='';
 					Swal.fire({
 					  position: 'top-end',

@@ -29,7 +29,8 @@ function ipAddr(){
                Cookies.set('country_code', result.country_code, {expires: 1});
 
                $('#your-location').append(`
-                    <h5 class="text-primary">Your Location : ${result.country} | ${result.city} - ${result.region}</h5>
+                
+                    <h5 class="text-primary">Your Location : <img src="https://newsapi.org/images/flags/${result.country_code}.svg" width="20" height="50" style="backgound:rgba(0, 0, 0, 0.8);"/> | ${result.city} - ${result.region}</h5>
                     <h6 class="text-danger">Your Ip Address : ${result.ip}</h6>
                `);
             } 
