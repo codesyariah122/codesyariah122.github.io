@@ -79,11 +79,12 @@ $(document).ready(function(){
             data: dataGender.idGender,
             success: function(res){
                 const berdasarkanGender = res.list_data[dataGender.idGender].jenis_kelamin;
-                const labels = ['key', 'Total'];
-                const dataChartGender = [ 
+                const labels = [
                     berdasarkanGender[0].key,
-                    berdasarkanGender[0].doc_count,
                     berdasarkanGender[1].key,
+                ];
+                const dataChartGender = [                     
+                    berdasarkanGender[0].doc_count,
                     berdasarkanGender[1].doc_count,
                 ];
                 data.genderChart.show();
