@@ -19,9 +19,10 @@ const data = {
     'ModaLabelSurah' : $('#ModalLabelSurah'),
     'ModalBodySurah' : $('.modal-body-surah'),
     'MyChart' : $('#myChart'),
+    'ChartTambahan' : $('#chartTambahan'),
     'SelectProvinsi' : $('#select-provinsi'),
     'PilihProvinsi' : $('#pilih-provinsi'),
     'resultError' : $('#resultError'),
-    'ErrorTags' : "Maaf silahkan pilih nama provinsi terlebih dahulu"
-    
+    'ErrorTags' : "Maaf silahkan pilih nama provinsi terlebih dahulu",
+    'ResultExp' : $('#result-exp')
 };

@@ -1,6 +1,8 @@
 data.MyChart.hide();
-
+data.resultError.hide();
 $(document).ready(function(){
+    data.ResultExp.html('');
+    
     data.SelectProvinsi.append(`
         <option value="choose">Choose ... </option>
     `);
@@ -8,6 +10,9 @@ $(document).ready(function(){
     kawalCovid();
 
     data.PilihProvinsi.on('click', () => {
+        
+        data.ResultExp.html('');
+
         const provinsi = {
           'idProv' : data.SelectProvinsi.val(),
           'data': 'prov.json',
@@ -15,14 +20,9 @@ $(document).ready(function(){
         };
 
         if(provinsi.idProv === 'choose' || provinsi.idProv === '' ){
-            data.resultError.append(`
-                <div class="alert alert-danger alert-dismissible fade show resut-error" role="alert">
-                   ${data.ErrorTags}
-                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            `);
+            data.ResultExp.html('');
+            data.MyChart.hide('slow').slideUp(1000);
+            data.resultError.show('slow').fadeIn(1000);
         }else{
             data.resultError.hide('slow').slideUp(1000);
             data.SelectProvinsi.val('choose');
@@ -43,16 +43,21 @@ $(document).ready(function(){
                             result.jumlah_sembuh
                     ];
 
-                    console.log(result); 
+                    // console.log(result); 
                     data.MyChart.show();
-                    $('#result-exp').append(`
-                        <ul style="list-style:none;">
-                            <li class="text-primary">${labels[0]} : ${resData[0]} Jiwa</li>
-                            <li class="text-info">${labels[1]} : ${resData[1]} Jiwa</li>
-                            <li class="text-warning">${labels[2]} : ${resData[2]} Jiwa</li>
-                            <li class="text-success">${labels[3]} : ${resData[3]} Jiwa</li>
-                        </ul>
+                    
+                    data.ResultExp.append(`
+                        <div class="col-md-6">
+                            <ul style="list-style:none;">
+                                <li class="text-primary">${labels[0]} : ${resData[0]} Jiwa</li>
+                                <li class="text-info">${labels[1]} : ${resData[1]} Jiwa</li>
+                                <li class="text-warning">${labels[2]} : ${resData[2]} Jiwa</li>
+                                <li class="text-success">${labels[3]} : ${resData[3]} Jiwa</li>
+                                <li><button class="mt-3 btn btn-primary btn-sm" id="tambahanKasus">Penambahan</button></li>
+                            </ul>
+                        </div>
                     `);
+
                     covidChart(last_date, labels, name_prov, resData);
                 
                 }
@@ -88,7 +93,7 @@ const kawalCovid = ()=>{
 data.MyChart.css({
     'height': '400px',
     'width': '1000px',
-})
+});
 
 const covidChart = (last_date, labels, label, dataCovid) => {
     var ctx = document.getElementById('myChart').getContext('2d');
@@ -98,6 +103,45 @@ const covidChart = (last_date, labels, label, dataCovid) => {
             labels: labels,
             datasets: [{
                 label: `# ${label} | Update : ${last_date}`,
+                data: dataCovid,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+}
+
+const PenambahanKasus = (labels, dataCovid) => {
+    var ctx2 = document.getElementById('chartTambahan').getContext('2d');
+    var chartTambahan = new Chart(ctx2, {
+        type: 'pie',
+        data: {
+            labels: labels,
+            datasets: [{
                 data: dataCovid,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',

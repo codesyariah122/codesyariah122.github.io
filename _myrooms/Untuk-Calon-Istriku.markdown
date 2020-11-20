@@ -1,13 +1,45 @@
 ---
 layout: myrooms
-title: "Untuk Calon Istriku Inshaallah" 
+title: "Tokoh Gerakan Hidup Sederhana" 
 author: puji
-date: "2019-12-08"
-img_path: "/assets/images/myroom/woman.jpg"
-modal: calonku
+date: "2020-11-20"
+img_path: "/assets/images/myroom/abudzar.jpg"
+modal: abudzar
 ---  
 
-# Untuk Calon Istriku
+# Abu Dzar Al-Ghifari  
+Ia datang ke Makkah sambil terhuyung-huyung, namun sinar matanya bersinar bahagia. Memang, sulitnya perjalanan dan teriknya matahari yang menyengat tubuhnya cukup menyakitkan. Namun tujuan yang hendak dicapainya telah meringankan penderitaan dan meniupkan semangat kegembiraan.
+
+Ia memasuki kota dengan menyamar seolah-olah hendak melakukan thawaf mengelilingi berhala-berhala di sekitar Ka'bah, atau seolah-olah musafir yang sesat dalam perjalanan, yang memerlukan istirahat dan menambah perbekalan.
+
+Padahal seandainya orang-orang Makkah tahu bahwa kedatangannya itu untuk menjumpai Nabi Muhammad SAW dan mendengarkan keterangan beliau, pastilah mereka akan membunuhnya.
+
+Ia terus melangkah sambil memasang telinga, dan setiap didengarnya orang mengatakan tentang Rasulullah, ia pun mendekat dan menyimak dengan hati-hati. Sehingga dari cerita yang tersebar di sana-sini, diperolehnya petunjuk yang dapat mengarahkannya ke kediaman Nabi Muhammad dan mempertemukannya dengan beliau.
+
+Pada suatu pagi, lelaki itu, Abu Dzar Al-Ghifari, pergi ke tempat tersebut. Didapatinya Rasulullah sedang duduk seorang diri. Ia mendekat kemudian menyapa, "Selamat pagi, wahai kawan sebangsa."
+
+"Wa alaikum salam, wahai sahabat," jawab Rasulullah.
+
+"Bacakanlah kepadaku hasil gubahan anda!"
+
+"Ia bukan syair hingga dapat digubah, tetapi Al-Qur'an yang mulia," kata Rasulullah, kemudian membacakan wahyu Allah SWT.
+
+Tak berselang lama, Abu Dzar berseru, "Aku bersaksi bahwa tiada Tuhan selain Allah, dan aku bahwa bersaksi bahwa engkau adalah hamba dan utusan-Nya."
+
+"Anda dari mana, kawan sebangsa?" tanya Rasulullah.
+
+"Dari Ghifar," jawabnya.
+
+Bibir Rasulullah menyunggingkan senyum dan wajahnya diliputi rasa kagum dan takjub. Abu Dzar juga tersenyum, karena ia mengetahui rasa terpendam di balik kekaguman Rasulullah setelah mendengar bahwa orang yang telah mengaku Islam di hadapannya secara terus terang itu adalah seorang laki-laki dari Ghifar.
+
+Ghifar adalah suatu kabilah atau suku yang tidak ada taranya dalam soal menempuh jarak. Mereka jadi contoh perbandingan dalam melakukan perjalanan yang luar biasa. Malam yang kelam dan gelap gulita tak jadi soal bagi mereka. Dan celakalah orang yang kesasar atau jatuh ke tangan kaum Ghifar di waktu malam.
+
+Rasulullah pun bersabda, "Sesungguhnya Allah memberi petunjuk kepada yang disukainya..."
+
+<a class="btn btn-success btn-sm" href="https://republika.co.id/berita/lmq2ia/kisah-sahabat-nabi-abu-dzar-alghifari-tokoh-gerakan-hidup-sederhana"> Lanjut Baca </a>
+
+
+<!-- # Untuk Calon Istriku
 Untuk Calon istriku...  
 Aku bukanlah seorang Musa yang diutus allah untuk menjadi lelaki gagah di medan dakwah   
 Aku bukanlah seorang hamba Daud yang allah perintahkan menjadi raja bani israil  
@@ -48,4 +80,4 @@ Laa Hawla wa Laa Quwwata Illa Billah aku akan selalu bersamamu mengarungi samude
 
 Untuk Calonku Tercinta
 
-Puji Ermanto - Sidoarjo(2019)
+Puji Ermanto - Sidoarjo(2019) -->
