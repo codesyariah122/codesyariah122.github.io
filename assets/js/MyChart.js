@@ -11,7 +11,8 @@ $(document).ready(function(){
     kawalCovid();
 
     data.PilihProvinsi.on('click', () => {
-        
+        data.MyChart.hide();
+        data.genderChart.hide();
         data.ResultExp.html('');
 
         const provinsi = {
@@ -21,7 +22,8 @@ $(document).ready(function(){
 
         if(provinsi.idProv === 'choose' || provinsi.idProv === '' ){
             data.ResultExp.html('');
-            data.MyChart.hide('slow').slideUp(1000);
+            data.MyChart.hide();
+            data.genderChart.hide();
             data.resultError.show('slow').fadeIn(1000);
         }else{
             data.ResultExp.html('');
@@ -79,13 +81,14 @@ $(document).ready(function(){
             data: dataGender.idGender,
             success: function(res){
                 const berdasarkanGender = res.list_data[dataGender.idGender].jenis_kelamin;
+
                 const labels = [
                     berdasarkanGender[0].key,
-                    berdasarkanGender[1].key,
+                    berdasarkanGender[1].key
                 ];
-                const dataChartGender = [                     
-                    berdasarkanGender[0].doc_count,
-                    berdasarkanGender[1].doc_count,
+                const dataChartGender = [      
+                    berdasarkanGender[1].doc_count,               
+                    berdasarkanGender[0].doc_count
                 ];
                 data.genderChart.show();
                 genderChart(labels, dataChartGender);
