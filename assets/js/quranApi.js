@@ -10,7 +10,6 @@ $(document).ready(function(){
         data.ResultSurah.html('');
         const surahData = {
             'surah': data.SelectSurah.val(),
-            'urlProxy': "https://cors-anywhere.herokuapp.com/",
         };
         
         if(surahData.surah === 'choose' || surahData.surah === ''){   
@@ -23,7 +22,7 @@ $(document).ready(function(){
             data.TableEmpty.hide('slow').slideUp(1000);
             // alert(data.surah);
             $.ajax({
-                url: `${surahData.urlProxy}https://raw.githubusercontent.com/penggguna/QuranJSON/master/surah/${surahData.surah}.json`,
+                url: `${baseAPI.proxy}${baseAPI.quran}${surahData.surah}.json`,
                 type: 'get',
                 dataType: 'json',
                 data: surahData.surah,
@@ -53,12 +52,11 @@ $(document).ready(function(){
 
 const quranApi = () =>{
     const quranData = {
-      'urlProxy':  "https://cors-anywhere.herokuapp.com/",
       'jsonData': "quran.json"
     };
 
     $.ajax({
-        url: `${quranData.urlProxy}https://raw.githubusercontent.com/penggguna/QuranJSON/master/${quranData.jsonData}`,
+        url: `${baseAPI.proxy}${baseAPI.quranMaster}${quranData.jsonData}`,
         type: 'get',
         dataType: 'json',
         data: quranData.jsonData,
@@ -83,12 +81,11 @@ const showRecitations = () => {
     data.ModalSurah.modal('show');
     data.ModalBodySurah.html('');
     const recitation = {
-        'urlProxy': "https://cors-anywhere.herokuapp.com/",
         'surah': $('#recitations').data('surah')
     };
 
     $.ajax({
-        url: `${recitation.urlProxy}https://raw.githubusercontent.com/penggguna/QuranJSON/master/surah/${recitation.surah}.json`,
+        url: `${baseAPI.proxy}${baseAPI.quran}${recitation.surah}.json`,
         type: 'get',
         dataType: 'json',
         data: recitation.surah,
@@ -152,12 +149,11 @@ const showVerses = () => {
     data.ModalSurah.modal('show');
     data.ModalBodySurah.html('');
     const verses = {
-        'urlProxy': "https://cors-anywhere.herokuapp.com/",
         'surah': $('#verses').data('surah'),
     };
     
     $.ajax({
-        url: `${verses.urlProxy}https://raw.githubusercontent.com/penggguna/QuranJSON/master/surah/${verses.surah}.json`,
+        url: `${baseAPI.proxy}${baseAPI.quran}${verses.surah}.json`,
         type: 'get',
         dataType: 'json',
         data: verses.surah,

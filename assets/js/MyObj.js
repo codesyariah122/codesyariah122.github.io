@@ -19,10 +19,18 @@ const data = {
     'ModaLabelSurah' : $('#ModalLabelSurah'),
     'ModalBodySurah' : $('.modal-body-surah'),
     'MyChart' : $('#myChart'),
-    'ChartTambahan' : $('#chartTambahan'),
+    'genderChart' : $('#chartGender'),
     'SelectProvinsi' : $('#select-provinsi'),
     'PilihProvinsi' : $('#pilih-provinsi'),
     'resultError' : $('#resultError'),
     'ErrorTags' : "Maaf silahkan pilih nama provinsi terlebih dahulu",
-    'ResultExp' : $('#result-exp')
+    'ResultExp' : $('#result-exp'),
+    'berdasarkanGender': $('#gender')
 };
+
+const baseAPI = {
+    'proxy' : "https://cors-anywhere.herokuapp.com/",
+    'covid' : "https://data.covid19.go.id/public/api/",
+    "quran" : "https://raw.githubusercontent.com/penggguna/QuranJSON/master/surah/",
+    "quranMaster" : "https://raw.githubusercontent.com/penggguna/QuranJSON/master/",
+}

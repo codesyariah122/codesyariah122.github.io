@@ -1,4 +1,5 @@
 data.MyChart.hide();
+data.genderChart.hide();
 data.resultError.hide();
 $(document).ready(function(){
     data.ResultExp.html('');
@@ -16,7 +17,6 @@ $(document).ready(function(){
         const provinsi = {
           'idProv' : data.SelectProvinsi.val(),
           'data': 'prov.json',
-          'urlProxy' : "https://cors-anywhere.herokuapp.com/",
         };
 
         if(provinsi.idProv === 'choose' || provinsi.idProv === '' ){
@@ -24,10 +24,11 @@ $(document).ready(function(){
             data.MyChart.hide('slow').slideUp(1000);
             data.resultError.show('slow').fadeIn(1000);
         }else{
+            data.ResultExp.html('');
             data.resultError.hide('slow').slideUp(1000);
             data.SelectProvinsi.val('choose');
             $.ajax({
-                url: `${provinsi.urlProxy}https://data.covid19.go.id/public/api/${provinsi.data}`,
+                url: `${baseAPI.proxy}${baseAPI.covid}${provinsi.data}`,
                 type: 'get',
                 dataType: 'json',
                 data: provinsi.idProv,
@@ -35,13 +36,14 @@ $(document).ready(function(){
                     const last_date = res.last_date;
                     const result = res.list_data[provinsi.idProv];
                     const name_prov = result.key;
-                    const labels = ['Jumlah Kasus', 'Dirawat', 'Meninggal', 'Sembuh'];
-                    const resData = [
-                            result.jumlah_dirawat,
-                            result.jumlah_kasus,
-                            result.jumlah_meninggal, 
-                            result.jumlah_sembuh
-                    ];
+                    const labels = ['Kasus', 'Dirawat', 'Meninggal', 'Sembuh'];
+                    const resData = {
+                        'kasus': result.jumlah_kasus,
+                        'dirawat': result.jumlah_dirawat,
+                        'meninggal': result.jumlah_meninggal, 
+                        'sembuh': result.jumlah_sembuh
+                    };
+                    const dataCovid = [resData.kasus, resData.dirawat, resData.meninggal, resData.sembuh];
 
                     // console.log(result); 
                     data.MyChart.show();
@@ -49,20 +51,45 @@ $(document).ready(function(){
                     data.ResultExp.append(`
                         <div class="col-md-6">
                             <ul style="list-style:none;">
-                                <li class="text-primary">${labels[0]} : ${resData[0]} Jiwa</li>
-                                <li class="text-info">${labels[1]} : ${resData[1]} Jiwa</li>
-                                <li class="text-warning">${labels[2]} : ${resData[2]} Jiwa</li>
-                                <li class="text-success">${labels[3]} : ${resData[3]} Jiwa</li>
-                                <li><button class="mt-3 btn btn-primary btn-sm" id="tambahanKasus">Penambahan</button></li>
+                                <li class="text-primary">${labels[0]} : ${resData.kasus} Jiwa</li>
+                                <li class="text-info">${labels[1]} : ${resData.dirawat} Jiwa</li>
+                                <li class="text-warning">${labels[2]} : ${resData.meninggal} Jiwa</li>
+                                <li class="text-success">${labels[3]} : ${resData.sembuh} Jiwa</li>
+                                <li><button class="mt-3 btn btn-primary btn-sm" data-id="${provinsi.idProv}" id="gender">Berdasarkan Gender</button></li>
                             </ul>
                         </div>
                     `);
 
-                    covidChart(last_date, labels, name_prov, resData);
+                    covidChart(last_date, labels, name_prov, dataCovid);
                 
                 }
             });
         }
+    });
+
+    data.ResultExp.on('click', data.berdasarkanGender, function(){
+        const dataGender = {
+            'idGender' : $('#gender').data('id'),
+            'dataProv': 'prov.json',
+          };
+        $.ajax({
+            url: `${baseAPI.proxy}${baseAPI.covid}${dataGender.dataProv}`,
+            type: 'get',
+            dataType: 'json',
+            data: dataGender.idGender,
+            success: function(res){
+                const berdasarkanGender = res.list_data[dataGender.idGender].jenis_kelamin;
+                const labels = ['key', 'Total'];
+                const dataChartGender = [ 
+                    berdasarkanGender[0].key,
+                    berdasarkanGender[0].doc_count,
+                    berdasarkanGender[1].key,
+                    berdasarkanGender[1].doc_count,
+                ];
+                data.genderChart.show();
+                genderChart(labels, dataChartGender);
+            }
+        });
     });
 
 });
@@ -70,12 +97,11 @@ $(document).ready(function(){
 
 const kawalCovid = ()=>{
     const covid = {
-        'urlProxy': "https://cors-anywhere.herokuapp.com/",
         'data': "prov.json",
     };
 
     $.ajax({
-        url: `${covid.urlProxy}https://data.covid19.go.id/public/api/${covid.data}`,
+        url: `${baseAPI.proxy}${baseAPI.covid}${covid.data}`,
         type: 'get',
         dataType: 'json',
         data: covid.data,
@@ -135,41 +161,24 @@ const covidChart = (last_date, labels, label, dataCovid) => {
     });
 }
 
-const PenambahanKasus = (labels, dataCovid) => {
-    var ctx2 = document.getElementById('chartTambahan').getContext('2d');
-    var chartTambahan = new Chart(ctx2, {
+const genderChart = (labels, dataChartGender) => {
+    var ctx2 = document.getElementById('chartGender').getContext('2d');
+    var chartGender =  new Chart(ctx2, {
         type: 'pie',
         data: {
-            labels: labels,
-            datasets: [{
-                data: dataCovid,
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
+          labels: labels,
+          datasets: [{
+            backgroundColor: [
+              "#2ecc71",
+              "#3498db",
+              "#95a5a6",
+              "#9b59b6",
+              "#f1c40f",
+              "#e74c3c",
+              "#34495e"
+            ],
+            data: dataChartGender
+          }]
         }
-    });
+      });
 }

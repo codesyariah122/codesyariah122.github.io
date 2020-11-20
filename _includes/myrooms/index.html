@@ -228,6 +228,126 @@
       </div>
     </div>
 
+
+<div class="parallax" style="background-image: url('{{site.url}}{{myroom.bg-image.sembilan}}');
+">
+
+  <div class="caption">
+    <br/><br/>
+    <h2> {{myroom.tags.enam}}</h2>
+    <br/><br/>
+  </div>
+
+</div>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+      <div style="width: 100%; height: auto !important; clear: both; text-align: center;" class="google-auto-placed"></div>
+      <div id="mys-wrapper" class="mys-wrapper"></div>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <!-- container on panel-body -->
+          <div class="container">
+            <!-- row content1 -->
+            <div class="row">
+              <div class="col-md-4">
+                <img src="{{site.url}}{{myroom.vector.enam}}" alt="" class="float-left img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;"/>
+              </div>
+              <div class="col-md-6 ml-5 mt-5">
+                <h1 class="text-center">
+                  {{myroom.content.header_panel2}} <br>
+                </h1>
+                <hr>
+                  <p class="ml-5">
+                     {{myroom.tags.tujuh}}.
+                     <br>
+                  </p>
+                  <img src="{{site.url}}{{myroom.vector.tujuh}}" alt="">
+              </div>
+
+            </div>
+            <!-- row content1 end -->
+
+            <h1 class="underline text-center mt-5 mb-4"></h1>
+
+            <br>
+            <!-- row content 2 -->
+            <div class="row">
+              <div class="col-md-6 mt-5">
+                <h1 class="text-center">
+                  {{myroom.content.header_panel3}} <br>
+                </h1>
+                <hr>
+                <p class="ml-3 mr-3">
+                  {{myroom.tags.delapan}}.
+               </p>
+              </div>
+              <div class="col-md-6">
+                <img src="{{site.url}}{{myroom.vector.lima}}" alt="" class="float-left img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;"/>                 
+              </div>
+            </div>
+            
+            <!-- row content2 -->
+            <br>
+
+            <div class="row justify-content-center">
+              <div class="col-md-12 col-xs-12 col-sm-12 mt-5">
+                <h1 class="text-center">Pilih Provinsi</h1>
+                <div class="input-group mb-3">
+                  <select class="custom-select" id="select-provinsi" name="provinsi">
+                      <!-- <option selected>Choose...</option> -->                       
+                  </select>
+                    <div class="input-group-append">
+                        <button id="pilih-provinsi" class="btn btn-dark">Check</button>
+                    </div>
+                </div>
+
+                <div id="resultError">
+                  <div class="alert alert-danger alert-dismissible fade show resut-error" role="alert">
+                    Silahkan Pilih Provinsi terlebih dahulu
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                     </button>
+                 </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- row content2 end -->
+
+            <div class="row justify-content-center">
+                <div class="col-10">
+                   <canvas id="myChart"></canvas>
+                </div>
+                <div class="col-6 mt-3 mb-2">
+                   <div id="result-exp"></div>
+                </div>
+                <div class="col-6">
+                  <canvas id="chartGender"></canvas>
+                </div>
+            </div>
+          </div>
+
+          <br>
+
+          <h1 class="underline mb-2 mt-5"></h1>
+
+          <!-- end container panel-body -->
+        </div>
+        
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<br>
+<br>
+
+<hr>
+
+
   <div class="parallax" style="background-image: url('{{site.url}}{{myroom.bg-image.tujuh}}');
 ">
 
@@ -430,6 +550,9 @@
             </div>
             <!-- row content2 end -->
           </div>
+
+          <h1 class="underline text-center mt-2 mb-4"></h1>
+          
           <!-- end container panel-body -->
         </div>
       </div>
@@ -438,200 +561,6 @@
   </div>
 </div>
 
-<br><br>
-<hr>
-
-<div class="parallax" style="background-image: url('{{site.url}}{{myroom.bg-image.sembilan}}');
-">
-
-  <div class="caption">
-    <br/><br/>
-    <h2> {{myroom.tags.enam}}</h2>
-    <br/><br/>
-  </div>
-
-</div>
-
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-12">
-      <div style="width: 100%; height: auto !important; clear: both; text-align: center;" class="google-auto-placed"></div>
-      <div id="mys-wrapper" class="mys-wrapper"></div>
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <!-- container on panel-body -->
-          <div class="container">
-            <!-- row content1 -->
-            <div class="row">
-              <div class="col-md-4">
-                <img src="{{site.url}}{{myroom.vector.enam}}" alt="" class="float-left img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;"/>
-              </div>
-              <div class="col-md-6 ml-5 mt-5">
-                <h1 class="text-center">
-                  {{myroom.content.header_panel2}} <br>
-                </h1>
-                <hr>
-                  <p class="ml-5">
-                     {{myroom.tags.tujuh}}.
-                     <br>
-                  </p>
-                  <img src="{{site.url}}{{myroom.vector.tujuh}}" alt="">
-              </div>
-
-            </div>
-            <!-- row content1 end -->
-            <br>
-            <!-- row content 2 -->
-            <div class="row">
-              <div class="col-md-6 mt-5">
-                <h1 class="text-center">
-                  {{myroom.content.header_panel3}} <br>
-                </h1>
-                <hr>
-                <p class="ml-3 mr-3">
-                  {{myroom.tags.delapan}}.
-               </p>
-              </div>
-              <div class="col-md-6">
-                <img src="{{site.url}}{{myroom.vector.lima}}" alt="" class="float-left img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;"/>                 
-              </div>
-            </div>
-            
-            <!-- row content2 -->
-            <br>
-
-            <h1 class="underline text-center mt-5 mb-4"></h1>
-
-            <div class="row justify-content-center">
-              <div class="col-md-12 col-xs-12 col-sm-12 mt-5">
-                <h1 class="text-center">Pilih Provinsi</h1>
-                <div class="input-group mb-3">
-                  <select class="custom-select" id="select-provinsi" name="provinsi">
-                      <!-- <option selected>Choose...</option> -->                       
-                  </select>
-                    <div class="input-group-append">
-                        <button id="pilih-provinsi" class="btn btn-dark">Check</button>
-                    </div>
-                </div>
-
-                <div id="resultError">
-                  <div class="alert alert-danger alert-dismissible fade show resut-error" role="alert">
-                    Silahkan Pilih Provinsi terlebih dahulu
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                         <span aria-hidden="true">&times;</span>
-                     </button>
-                 </div>
-                </div>
-
-              </div>
-            </div>
-            <!-- row content2 end -->
-
-            <div class="row justify-content-center">
-                <div class="col-8">
-                   <canvas id="myChart"></canvas>
-
-                   <div class="mt-3 mb-2" id="result-exp">
-
-                      <canvas id="chartTambahan"></canvas>
-
-                   </div>
-                    
-                  </div>
-            </div>
-          </div>
-
-          <br>
-
-          <h1 class="underline mb-2 mt-5"></h1>
-
-          <!-- end container panel-body -->
-        </div>
-  
-      </div>
-    </div>
-
-  </div>
-</div>
 
 
 
-<!-- <section class="wrapper-pricing">
-    <div class="container-fostrap">
-           
-       <div>
-            <img src="{{site.url}}/{{site.favicon}}" class="fostrap-logo"/>
-            <h1 class="heading">
-                Welcome in MyRoom
-            </h1>
-        </div><br/><br/>
-
-        <div class="content-pricing">
-            <div class="container">
-                <div class="row">
-
-{% for myroom in site.myrooms %}
-
-                    <div class="col-xs-12 col-sm-4">
-                        <div class="card-pricing">
-
-                            <a class="img-card-pricing" href="{{site.url}}/{{myroom.img_path}}">
-                            <img src="{{myroom.img_path}}" />
-                          </a>
-                            <div class="card-content-pricing">
-                                <h4 class="card-title-pricing">
-                                    <a href="" data-toggle="modal" data-target="#{{myroom.modal}}"> {{myroom.title}}
-                                  </a>
-                                </h4>
-                                <p class="">
-                                    {{ myroom.content | strip_html | strip_newlines | truncate: 156 }}
-                                </p>
-                            </div>
-                            <div class="card-read-more-pricing">
-                                <a href="" data-toggle="modal" data-target="#{{myroom.modal}}" class="btn btn-link btn-block">
-                                    Read More
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
-
-<div class="modal fade" id="{{myroom.modal}}" tabindex="-1" role="dialog" aria-labelledby="{{myroom.modal}}Title" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="{{myroom.modal}}Title">{{ myroom.title }} <br/> 
-          <span style="font-size:8px;" class="text-muted d-block mt-1">{{ myroom.date | date: '%d %B %Y' }} · {% include meta-read-time.html %} <br/> <b>by: {{ author.nama_lengkap }}</b></span>
-        </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <article class="article-post">
-        {{ myroom.content }}
-      {% if myroom.video_path %}
-      <div class="embed-responsive embed-responsive-16by9">   
-      <video controls="controls">
-      <source type="video/mp4" src="{{myroom.video_path.vid1}}"></source>
-      </video>
-      </div>
-      {% endif %}
-      </article>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-                    
-{% endfor %}         
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-</section> 
--->

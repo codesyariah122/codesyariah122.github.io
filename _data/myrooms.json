@@ -29,7 +29,8 @@
             "empat": "/assets/images/myroom/myroom4.gif",
             "lima": "/assets/images/myroom/covid1.jpg",
             "enam": "/assets/images/myroom/covid2.jpg",
-            "tujuh": "/assets/images/myroom/myroom5.gif"
+            "tujuh": "/assets/images/myroom/myroom5.gif",
+            "delapan": "<lottie-player src='https://assets5.lottiefiles.com/packages/lf20_CYBIbn.json'  background='transparent'  speed='1'  style='width: 300px; height: 300px;'  loop controls autoplay></lottie-player>"
         },
         "tags":
         {
