@@ -1,5 +1,5 @@
-function readDevice(time, baseurl){
-    let device = Cookies.get('device');
+const readDevice = (time, baseurl, name) => {
+    let device = Cookies.get(name);
     let date = new Date();
     date.setTime(date.getTime() + (time * 1000));
     // alert(old+' minute');

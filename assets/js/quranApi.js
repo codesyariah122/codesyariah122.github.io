@@ -1,37 +1,38 @@
 $(document).ready(function(){
-    $('#err').hide();
-    $('#select-surah').append(`
+    data.Err.hide();
+    data.SelectSurah.append(`
         <option value="choose" selected>Choose...</option>
     `);
+
     quranApi();
 
-    $('#pilih-surah').on('click', function(){
-        $('#result').html('');
-        const data = {
-            'surah': $('#select-surah').val()
+    data.PilihSurah.on('click', () => {
+        data.ResultSurah.html('');
+        const surahData = {
+            'surah': data.SelectSurah.val(),
+            'urlProxy': "https://cors-anywhere.herokuapp.com/",
         };
-        const urlProxy = "https://cors-anywhere.herokuapp.com/";
         
-        if(data.surah === 'choose' || data.surah === ''){   
-            $('#result').html(`
+        if(surahData.surah === 'choose' || surahData.surah === ''){   
+            data.ResultSurah.html(`
                 <tr>
                     <td class="text-danger text-center" style="width:100%;" colspan="7">Maaf anda belum memilih nama surah</td>
                 </tr>
             `);
         }else{
-            $('.dataTables_empty').hide('slow').slideUp(1000);
+            data.TableEmpty.hide('slow').slideUp(1000);
             // alert(data.surah);
             $.ajax({
-                url: `${urlProxy}https://raw.githubusercontent.com/penggguna/QuranJSON/master/surah/${data.surah}.json`,
+                url: `${surahData.urlProxy}https://raw.githubusercontent.com/penggguna/QuranJSON/master/surah/${surahData.surah}.json`,
                 type: 'get',
                 dataType: 'json',
-                data: data,
+                data: surahData.surah,
                 success: function(res){
                    if(res){
-                       $('#select-surah').val('choose');
-                       $('.modal-body-surah').html('');
+                       data.SelectSurah.val('choose');
+                       data.ModalBodySurah.html('');
                     //    console.log(res);
-                       $('#result').append(`      
+                       data.ResultSurah.append(`      
                             <tr>
                                 <td>${res.name}</td>
                                 <td>Number - ${res.number_of_surah}</td>
@@ -50,21 +51,24 @@ $(document).ready(function(){
     });
 });
 
-function quranApi(){
-    const urlProxy = "https://cors-anywhere.herokuapp.com/";
-    const data = "quran.json";
+const quranApi = () =>{
+    const quranData = {
+      'urlProxy':  "https://cors-anywhere.herokuapp.com/",
+      'jsonData': "quran.json"
+    };
+
     $.ajax({
-        url: `${urlProxy}https://raw.githubusercontent.com/penggguna/QuranJSON/master/${data}`,
+        url: `${quranData.urlProxy}https://raw.githubusercontent.com/penggguna/QuranJSON/master/${quranData.jsonData}`,
         type: 'get',
         dataType: 'json',
-        data: data,
+        data: quranData.jsonData,
         success: function(res){
             // alert(res.length);
-            console.log(res);
+            console.log(res);   
             for(let i = 0; i<=res.length; i++){
                 const number_surah = res[i].number_of_surah;
                 const nama_surah = res[i].name;
-                $('#select-surah').append(`
+                data.SelectSurah.append(`
                      <option id="pilih" value="${number_surah}">${nama_surah}</option>
                 `);
             }
@@ -75,16 +79,19 @@ function quranApi(){
 
 
 
-function showRecitations(){
-    $('#surahModal').modal('show');
-    const urlProxy = "https://cors-anywhere.herokuapp.com/";
-    const surah = $('#recitations').data('surah');
-    $('.modal-body-surah').html('');
+const showRecitations = () => {
+    data.ModalSurah.modal('show');
+    data.ModalBodySurah.html('');
+    const recitation = {
+        'urlProxy': "https://cors-anywhere.herokuapp.com/",
+        'surah': $('#recitations').data('surah')
+    };
+
     $.ajax({
-        url: `${urlProxy}https://raw.githubusercontent.com/penggguna/QuranJSON/master/surah/${surah}.json`,
+        url: `${recitation.urlProxy}https://raw.githubusercontent.com/penggguna/QuranJSON/master/surah/${recitation.surah}.json`,
         type: 'get',
         dataType: 'json',
-        data: surah,
+        data: recitation.surah,
         success: function(res){
             if(res){
                 const bacaan = {
@@ -102,8 +109,8 @@ function showRecitations(){
                     }
                 };
 
-                $('#ModalLabelSurah').text(`${res.name} Recitations `);
-                $('.modal-body-surah').append(`
+                data.ModaLabelSurah.text(`${res.name} Recitations `);
+                data.ModalBodySurah.append(`
                      <ul>    
                          <li>
                              ${bacaan.name.satu} <br/>
@@ -141,22 +148,25 @@ function showRecitations(){
 }
 
 
-function showVerses(){
-    $('#surahModal').modal('show');
-    const urlProxy = "https://cors-anywhere.herokuapp.com/";
-    const surah = $('#verses').data('surah');
-    $('.modal-body-surah').html('');
+const showVerses = () => {
+    data.ModalSurah.modal('show');
+    data.ModalBodySurah.html('');
+    const verses = {
+        'urlProxy': "https://cors-anywhere.herokuapp.com/",
+        'surah': $('#verses').data('surah'),
+    };
+    
     $.ajax({
-        url: `${urlProxy}https://raw.githubusercontent.com/penggguna/QuranJSON/master/surah/${surah}.json`,
+        url: `${verses.urlProxy}https://raw.githubusercontent.com/penggguna/QuranJSON/master/surah/${verses.surah}.json`,
         type: 'get',
         dataType: 'json',
-        data: surah,
+        data: verses.surah,
         success: function(res){
-            $('#ModalLabelSurah').html(`Surah - ${res.name}`);
+            data.ModaLabelSurah.html(`Surah - ${res.name}`);
             const verses = res.verses;
             for(let i = 0; i <= verses.length; i++){
                 const show = (res.verses[i].number === 1) ? 'show' : '';
-                $('.modal-body-surah').append(`
+                data.ModalBodySurah.append(`
                 <div class="accordion" id="accordionExample">
                     <div class="card">
                         <div class="card-header" id="heading${i}">

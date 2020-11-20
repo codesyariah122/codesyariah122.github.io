@@ -5,4 +5,23 @@ const data = {
     'searchMovie' : $('#search-input'),
     'movieList' : $('#movie-list'),
     'searchButton' : $('#search-button'),
+    'MyTable' : $('#myTable'),
+    'TableLength' : $('.dataTables_length'),
+    'TableFilter' : $('.dataTables_filter'),
+    'TableInfo' : $('.dataTables_info'),
+    'TablePaginate' : $('.dataTables_paginate'),
+    'TableEmpty' : $('.dataTables_empty'),
+    'Err' : $('#err'),
+    'SelectSurah' : $('#select-surah'),
+    'PilihSurah' : $('#pilih-surah'),
+    'ModalSurah' : $('#surahModal'),
+    'ResultSurah' : $('#result'),
+    'ModaLabelSurah' : $('#ModalLabelSurah'),
+    'ModalBodySurah' : $('.modal-body-surah'),
+    'MyChart' : $('#myChart'),
+    'SelectProvinsi' : $('#select-provinsi'),
+    'PilihProvinsi' : $('#pilih-provinsi'),
+    'resultError' : $('#resultError'),
+    'ErrorTags' : "Maaf silahkan pilih nama provinsi terlebih dahulu"
+    
 };

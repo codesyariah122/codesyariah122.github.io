@@ -1,5 +1,5 @@
 $(document).ready( function () {
-    $('#myTable').DataTable({
+    data.MyTable.DataTable({
         responsive: true
     });
     $('.dataTables_length').hide();
@@ -7,5 +7,5 @@ $(document).ready( function () {
     // $('.dataTables_empty').hide();
     $('.dataTables_info').hide();
     $('.dataTables_paginate').hide();
-    $('.dataTables_empty').html(`<h5 class="text-danger">Silahkan pilih nama surah </h5>`)
+    $('.dataTables_empty').html(`<h5 class="text-danger">Silahkan pilih nama surah </h5>`);
 } );
