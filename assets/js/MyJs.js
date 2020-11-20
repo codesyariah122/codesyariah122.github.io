@@ -12,7 +12,6 @@ function pauseSound(audio){
 
 function askYou(url){
 	const baseUrl = url+"/myrooms";
-	
 	if(location.href === baseUrl){
 		$('#MyModal').modal({
 			show: true,
@@ -31,8 +30,9 @@ function askYou(url){
 		const submit = document.querySelector('#submit');
 		submit.addEventListener('click', function(e){
 			const tanya = document.querySelector('input[name=ask]').value;
-			let hasil = Math.ceil(0.15 * 29 / 100);
-			let hasil2 = 2
+			// let hasil = Math.ceil(0.15 * 29 / 100);
+			let date = new Date(), device = navigator.userAgent, hasil2 = 2;
+			date.setTime(date.getTime() + (1800 * 1000));
 
 				if(tanya == hasil2 ){
 					document.querySelector('input[name=ask]').value='';
@@ -42,7 +42,10 @@ function askYou(url){
 					  title: 'Jawaban anda benar. Welcome in My Rooms <br/>🎉🎇🎁',
 					  showConfirmButton: false,
 					  timer: 1500
-					})
+					});
+
+					Cookies.set('device', device, {expires: date});
+					
 					let myAudio = document.querySelector('#crowded');
 
 					playSound(myAudio);

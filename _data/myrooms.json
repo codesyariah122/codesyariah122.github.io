@@ -3,9 +3,11 @@
     {
         "content":
         {
-            "header_title": "Welcome in My <span style='font-family:Reey Regular;color:crimson;'>Room</span>",
+            "header_title": "Welcome in <span style='font-family:Reey Regular;color:crimson;'>My Room</span>",
             "heade_tag": "Coffee Again Script Again",
-            "header_panel": "Stay Faithful to the stories in your head"
+            "header_panel": "Stay Faithful to the stories in your head",
+            "header_panel2": "Stay Safe Stay Health",
+            "header_panel3": "Update Kasus Covid 19"
         },
         "bg-image": 
         {
@@ -16,22 +18,29 @@
             "lima": "/assets/images/myroom/bg5.jpg",
             "enam": "/assets/images/myroom/bg6.jpg",
             "tujuh": "/assets/images/myroom/bg7.jpg",
-            "delapan": "/assets/images/myroom/bg8.jpg"
+            "delapan": "/assets/images/myroom/bg8.jpg",
+            "sembilan": "/assets/images/myroom/bg10.jpg"
         },
         "vector":
         {
             "satu": "/assets/images/myroom/myroom1.gif",
             "dua": "/assets/images/myroom/myroom2.png",
             "tiga": "/assets/images/myroom/myroom3.svg",
-            "empat": "/assets/images/myroom/myroom4.gif"
+            "empat": "/assets/images/myroom/myroom4.gif",
+            "lima": "/assets/images/myroom/covid1.jpg",
+            "enam": "/assets/images/myroom/covid2.jpg",
+            "tujuh": "/assets/images/myroom/myroom5.gif"
         },
         "tags":
         {
             "satu": "Diruang ini segala ekspresi tanpa koreksi dari kanal-kanal berbau industri dan pasar. <span style='font-family: SpringSakura; color:crimson;'>| | & &</span> Semua kebebasan ini dituangkan tanpa <span style='font-family:Reey Regular;'>Interupsi</span> dari golongan separatis bersenjata modal asing",
             "dua": "Kami membuka ruang untuk kerjasama bagi kelompok apapun untuk menuangkan segala ide-ide kreatif yang ada di kepala anda",
-            "tiga": "Sebutir pelurumu <span style='font-family:SpringSakura;color:crimson;'>| & | &</span> yang menembus kepalaku <br/> hanya akan <span style='font-family:Reey Regular;'> Membunuhku </span> <br/> tapi tulisan <span style='font-family:SpringSakura;'> & </span> buah pikiranku akan <span style='font-family:Reey Regular;'>Menembus</span> jutaan Kepala orang <span style='font-family:SpringSakura;'>| & | & *</span>.",
+            "tiga": "Sebutir pelurumu <span style='font-family:SpringSakura;color:crimson;'>| & | &</span> yang menembus kepalaku <br/> hanya akan <span style='font-family:Reey Regular;'> Membunuhku </span> <br/> tapi tulisan <span style='font-family:SpringSakura;'> & </span> buah pikiranku akan <span style='font-family:Reey Regular;'>Menembus</span> jutaan Kepala orang <span style='font-family:SpringSakura;'>| & | & *</span>. <br> <footer class='blockquote-footer'>sayyid qutb</footer>",
             "empat": "Secuil catatan tentang zaman yang ku lalui dan menjadi khazanah tersendiri dalam kehidupanku",
-            "lima": "Selamanya cerita tentang manusia akan tetap menarik, yah manusia dengan sejuta kerumitan di dalamnya adalah sebuah perjalanan ilmu yang tiada habisnya untuk di gali. Kita tuangkan seluruh kisah ini ke dalam sebuah tulisan yang mungkin akan dibaca oleh manusia-manusia selanjutnya, dan semoga menjadi sesuatu yang bermanfaat di waktu kemudian."
+            "lima": "Selamanya cerita tentang manusia akan tetap menarik, yah manusia dengan sejuta kerumitan di dalamnya adalah sebuah perjalanan ilmu yang tiada habisnya untuk di gali. Kita tuangkan seluruh kisah ini ke dalam sebuah tulisan yang mungkin akan dibaca oleh manusia-manusia selanjutnya, dan semoga menjadi sesuatu yang bermanfaat di waktu kemudian.",
+            "enam": "Tak ada perlindungan terbaik selain dari perhatian keluarga.",
+            "tujuh": "Mudah-mudahan kasus covid 19 ini berakhir di tahun ini, kita bisa lakukan pencegahan dini sesuai dengan anjuran dari kementrian kesehatan. Jaga terus kesehatan kalian dan keluarga semoga kita selalu terjaga dari bahaya covid 19 ini.",
+            "delapan": "Update terbaru kasus covid 19 di Indonesia / Provinsi. Anda bisa memilih bagian provinsi di field input dibawah, untuk mengecek perubahan data kasus covid di Indonesia / Provinsi"
         }
     }
 }

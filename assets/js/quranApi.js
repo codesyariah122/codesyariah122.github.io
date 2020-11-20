@@ -62,8 +62,8 @@ function quranApi(){
             // alert(res.length);
             console.log(res);
             for(let i = 0; i<=res.length; i++){
-                let number_surah = res[i].number_of_surah;
-                let nama_surah = res[i].name;
+                const number_surah = res[i].number_of_surah;
+                const nama_surah = res[i].name;
                 $('#select-surah').append(`
                      <option id="pilih" value="${number_surah}">${nama_surah}</option>
                 `);
@@ -87,7 +87,7 @@ function showRecitations(){
         data: surah,
         success: function(res){
             if(res){
-                let bacaan = {
+                const bacaan = {
                     'name': 
                     {
                         'satu': `${res.recitations[0].name}`,
@@ -153,9 +153,9 @@ function showVerses(){
         data: surah,
         success: function(res){
             $('#ModalLabelSurah').html(`Surah - ${res.name}`);
-            let verses = res.verses;
+            const verses = res.verses;
             for(let i = 0; i <= verses.length; i++){
-                let show = (res.verses[i].number === 1) ? 'show' : '';
+                const show = (res.verses[i].number === 1) ? 'show' : '';
                 $('.modal-body-surah').append(`
                 <div class="accordion" id="accordionExample">
                     <div class="card">
