@@ -38,7 +38,8 @@ $(document).ready(function(){
                     const last_date = res.last_date;
                     const result = res.list_data[provinsi.idProv];
                     const name_prov = result.key;
-                    const labels = ['Kasus', 'Dirawat', 'Meninggal', 'Sembuh'];
+
+                    const labels = [`Kasus : ${result.jumlah_kasus} Jiwa`, `Dirawat : ${result.jumlah_dirawat} Jiwa`, `Meninggal : ${result.jumlah_meninggal} Jiwa`, `Sembuh : ${result.jumlah_sembuh} Jiwa`];
                     const resData = {
                         'kasus': result.jumlah_kasus,
                         'dirawat': result.jumlah_dirawat,
@@ -53,10 +54,10 @@ $(document).ready(function(){
                     data.ResultExp.append(`
                         <div class="col-md-6">
                             <ul style="list-style:none;">
-                                <li class="text-primary">${labels[0]} : ${resData.kasus} Jiwa</li>
-                                <li class="text-info">${labels[1]} : ${resData.dirawat} Jiwa</li>
-                                <li class="text-warning">${labels[2]} : ${resData.meninggal} Jiwa</li>
-                                <li class="text-success">${labels[3]} : ${resData.sembuh} Jiwa</li>
+                                <li class="text-primary">${labels[0]}</li>
+                                <li class="text-info">${labels[1]}</li>
+                                <li class="text-warning">${labels[2]}</li>
+                                <li class="text-success">${labels[3]}</li>
                                 <li><button class="mt-3 btn btn-primary btn-sm" data-id="${provinsi.idProv}" id="gender">Berdasarkan Gender</button></li>
                             </ul>
                         </div>
@@ -126,31 +127,26 @@ data.MyChart.css({
 });
 
 const covidChart = (last_date, labels, label, dataCovid) => {
-    var ctx = document.getElementById('myChart').getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'bar',
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'line',
         data: {
             labels: labels,
             datasets: [{
                 label: `# ${label} | Update : ${last_date}`,
                 data: dataCovid,
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
+                    'rgba(255,218,185, 0.3)',
                 ],
                 borderColor: [
                     'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
                 ],
-                borderWidth: 1
+                pointBackgroundColor:[
+                    'rgb(255,99,71)'
+                ],
+                borderWidth: 3,
+                pointBorderWidth: 5,
+                fill:true
             }]
         },
         options: {
@@ -163,11 +159,12 @@ const covidChart = (last_date, labels, label, dataCovid) => {
             }
         }
     });
+    myChart.update();
 }
 
 const genderChart = (labels, dataChartGender) => {
-    var ctx2 = document.getElementById('chartGender').getContext('2d');
-    var chartGender =  new Chart(ctx2, {
+    const ctx2 = document.getElementById('chartGender').getContext('2d');
+    const chartGender =  new Chart(ctx2, {
         type: 'pie',
         data: {
           labels: labels,
@@ -185,4 +182,5 @@ const genderChart = (labels, dataChartGender) => {
           }]
         }
       });
+
 }
