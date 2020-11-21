@@ -1,0 +1,650 @@
+I"¡„<style type="text/css">
+/* all parallax top and bottom */
+.parallax{
+  min-height: 500px; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin:0;
+}
+.caption {
+    background:rgba(255,255,255,0.4);
+    /* clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); */
+    position: absolute;
+    left: 21rem;
+    margin-top: 7rem;
+    width: 50%;
+    text-align: center;
+    color: #000;
+}
+.caption h2 {
+    color: white;
+    font-family: 'Poiret One', cursive;font-weight:bold;
+    text-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+    margin-bottom: .9rem;
+}
+.caption a{
+    font-size: 18px;
+}
+
+/* wave */
+.box-wave {
+    width: 350px;
+    height: 500px;
+    border-radius: 5px;
+    box-shadow: 0 2px 30px rgba(black, .2);
+    background: lighten(#f0f4c3, 10%);
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .wave {
+    opacity: .4;
+    position: absolute;
+    top: 3%;
+    left: 50%;
+    background: #0af;
+    width: 500px;
+    height: 500px;
+    margin-left: -250px;
+    margin-top: -250px;
+    transform-origin: 50% 48%;
+    border-radius: 43%;
+    animation: drift 3000ms infinite linear;
+  }
+  
+  .wave.-three {
+    animation: drift 5000ms infinite linear;
+  }
+  
+  .wave.-two {
+    animation: drift 7000ms infinite linear;
+    opacity: .1;
+    background: yellow;
+  }
+  
+  .box-wave:after {
+    content: '';
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(#e8a, 1), rgba(#def, 0) 80%, rgba(white, .5));
+    z-index: -1;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .title-wave {
+    position: absolute;
+    left: 1rem;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    line-height: 300px;
+    text-align: left;
+    transform: translate3d(0, 0, 0);
+    color: white;
+    font-weight: bold;;
+    text-transform: uppercase;
+    font-family: 'Poiret One', cursive;
+    letter-spacing: .4em;
+    font-size: 14px;
+    text-shadow: 0 1px 0 rgba(black, .1);
+  }
+  .titl-wave a{
+      margin-left: 2rem;
+  }
+
+@keyframes drift {
+  from { transform: rotate(0deg); }
+  from { transform: rotate(360deg); }
+}
+
+
+@media only screen and (max-device-width: 812px) {
+  .parallax {
+      background-attachment: scroll;
+  }
+  .caption {
+      position: absolute;
+      left: 0;
+      margin-top: 2rem;
+      width: 100%;
+      text-align: center;
+      color: #000;
+  }
+  .caption h2 {
+      color: white;
+      font-family: 'Poiret One', cursive;font-weight:bold;
+      text-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+      margin-bottom: .9rem;
+      font-size:14px;
+  }
+  .caption a{
+      font-size: 12px;
+  }
+
+  .waves {
+          height: 40px;
+          min-height: 40px;
+    }
+}
+</style>
+
+<div class="jumbotron jumbotron-fluid jumbotron-content" style="background-image:url('http://localhost:4000/assets/images/project/nabillabakery/bg-1.jpeg');">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+          <h1 class="display-4">Nabilla Bakery <i class="fas fa-cookie-bite fa-fw" style="color:burlywood;"></i> <i class="fas fa-cookie-bite fa-1x fa-fw" style="color:burlywood;"></i> </h1>
+          <p>
+            Fresh &amp; Tasty <span style="font-family:SpringSakura"> || "</span>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h1 class="underline mt-2 mb-2"></h1>
+
+<div class="container">
+  <div class="row justify-content-center">
+
+    <div class="col-md-6 col-xs-12 col-sm-12">
+      <div class="polaroid">
+        <img src="http://localhost:4000/assets/images/project/nabillabakery/vector3.gif" alt="" class="img-responsive mt-3" width="600" style="margin-top:-1rem;" />
+        <div class="polaroid-body">
+          <h2>Proses produksi  <i class="fas fa-cookie-bite fa-fw" style="color:burlywood;"></i>  di dapur <span class="codesyariah">nabilla bakery</span> dibuat dengan penuh cinta <i class="fas fa-heart fa-fw text-danger"></i><i class="fas fa-1x fa-heart fa-fw text-danger"></i><i class="fas fa-2x fa-heart fa-fw text-danger"></i> <span style="font-family:SpringSakura;">|</span> <br /> <span style="font-family:SpringSakura;">|</span> Untuk itu kami selalu menjaga kualitas produk kami sebagai persembahan terbaik bagi anda.</h2>
+        </div>	
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<h1 class="underline mt-2 mb-2"></h1>
+
+<div class="parallax" style="background-image: url('http://localhost:4000/assets/images/project/nabillabakery/bg-4.jpg');
+">
+
+  <div class="caption">
+    <br /><br />
+    <h2>Seperti cinta kasih sang bunda yang jalinannya selalu memudahkan kita untuk mengekspresikan rasa. Kami akan menuangkannya dalam cita rasa.</h2>
+      <a href="https://instagram.com/nabila_bakery" class="btn btn-primary text-white">Contact      Us</a>
+    <br /><br />
+  </div>
+
+</div>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-12 col-xs-12 col-sm-12">
+      
+      <div style="width: 100%; height: auto !important; clear: both; text-align: center;" class="google-auto-placed"></div>
+      <div id="mys-wrapper" class="mys-wrapper"></div>
+
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <!-- container on panel-body -->
+          <div class="container">
+            <!-- row content1 -->
+            <div class="row">
+              <div class="col-md-4">
+                <img src="http://localhost:4000/assets/images/project/nabillabakery/kitchen1.jpg" alt="" class="float-left img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+              </div>
+              <div class="col-md-6 col-xs-12 col-sm-12">
+                <h1 class="text-center">
+                  Nabilla Bakery  <br />
+                  <span class="blockquote-footer text-success">Fresh &amp; Tasty</span> 
+                </h1>
+                <hr />
+                  <p class="ml-2">
+                     Formula terbaik antara racikan resep dan penambahan cinta <span style="font-family:SpringSakura;color:crimson;font-weight:bold;">| &nbsp; </span> dalam setiap proses produksi, sebagai paduan cita rasa dan paduan bahan-bahan terbaik yang telah terseleksi untuk jadi produk bakery dengan cita rasa tinggi untuk anda nikmati bersama orang-orang tercinta.<br /> Saat acara keluarga dalam perayaan hari raya, hari spesial bersama keluarga tentunya anda tidak perlu repot lagi, karena dapur kami akan sigap dan siap dalam memenuhi pesanan untuk memberi kehangatan dalam perhelatan hari spesial anda, dimanapun dan kapanpun.
+                  </p>
+                  <img src="http://localhost:4000/assets/images/project/nabillabakery/vector4.gif" alt="" />
+              </div>
+
+            </div>
+            <!-- row content1 end -->
+            <br />
+            <h1 class="underline text-center mt-2 mb-4"></h1>
+            <!-- row content2 -->
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-xs-12 col-sm-12">
+                  <h1 class="text-center">Nabilla Bakery | Resep dan <i class="fas fa-heart fa-fw text-danger"></i> </h1>
+                  <p>
+                    Siapa dan apa hal terbaik dalam hidup anda, tentunya kami sepakat bahwa segala kebaikan akan kami persembahkan pada orang,rekan, keluarga tercinta. <span class="codesyariah">Nabilla Bakery </span> <span style="font-family:SpringSakura;color:crimson;font-weight:bold;">| &nbsp; </span> mewakili segala perasaan anda yang selalu ingin memberikan yang terbaik untuk keluarga. <br /> <span class="codesyariah">Nabilla Bakery</span> bukan hanya sekedar <span style="font-family:SpringSakura;color:crimson;font-weight:bold;">| &nbsp; </span> nilai bisnis semata, kejujuran dalam mengerjakan proses produksi, menjadi resep yang akan menjadi hadiah special bagi orang terkasih anda.
+                  </p>
+                </div>
+                <div class="col-md-6 col-xs-12 col-sm-12">
+                  <div class="polaroid">
+                     <img src="/assets/images/project/nabillabakery/story1.jpg" class="img-responsive float-left" alt="" width="500" height="470" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />  
+                  </div>
+
+                </div>
+            </div>
+            <!-- row content2 end -->
+            <br />
+            <!-- row content3  -->
+            <div class="row justify-content-center">
+              <div class="col-md-6 col-xs-12 col-sm-12">
+                <div class="polaroid">
+                    <img src="/assets/images/project/nabillabakery/story2.jpg" class="img-responsive float-left" alt="" width="500" height="470" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                </div>
+              </div>
+              <div class="col-md-6 col-xs-12 col-sm-12 mt-3">
+                  <h1 class="text-center">Tidak melulu tentang menjual <span style="font-family:Reey Regular; text-transform: capitalize;">cita rasa</span> <i class="fas fa-heart fa-fw text-danger"></i> </h1>
+
+                  <p class="mt-2">
+                    Kami tau setiap jalan bagi ide cemerlang bisa menjadi sebuah titik penghasilan yang bersumber pada apa yang kita kerjakan, tapi adakalanya semua itu menjadi sia-sia ketika kita melupakan dari mana kita tumbuh dan menghasilkan sesuatu dari bisnis kita. <span class="codesyariah">Nabilla Bakery </span> <span style="font-family:SpringSakura;color:crimson;font-weight:bold;">| &nbsp; </span> bukan hanya sebagai kalangan penggerak bisnis semata, kami ada hadi untuk anda bukan hanya sekedar menjual segala pernak-pernik resep yang menggoda selera. <br /> <span class="codesyariah">Nabilla Bakery</span> sebagai penyurat bagi kalangan moral <span style="font-family:SpringSakura;color:crimson;font-weight:bold;">| &nbsp; </span> untuk lebih dekat dan merasakan tentang apa arti sebuah <span class="codesyariah" style="font-family:Reey Regular;">cita rasa</span>.
+                  </p> 
+              </div>
+          </div>
+          <!-- row content3 end -->
+          <br />
+          <h1 class="underline text-center mt-2 mb-4"></h1>
+          <!-- row content4 -->
+              <div class="row justify-content-center">
+                <div class="col-md-6 col-xs-12 col-sm-12">
+                  <h1 class="text-center">Nabilla Kirana<i class="fas fa-cookie-bite fa-fw" style="color:burlywood;"></i>  </h1>
+
+                  <p class="mt-2 ml-2">
+                    <span style="font-family:Reey Regular;color:tomato;">Nabilla Bakery</span>
+                  </p> 
+                  <div class="polaroid">
+                      <img src="/assets/images/project/nabillabakery/vector6.gif" class="img-responsive float-left" alt="" width="500" height="470" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                  </div>
+                  <p class="mt-2 ml-2">
+                    <span style="font-size:45px; font-family:SpringSakura;color:tomato;">Fresh &amp; Tasty <i class="fas fa-cookie-bite fa-fw" style="color:burlywood;"></i> </span>
+                  </p> 
+                </div>
+            </div>
+            <!-- end row content4 -->
+            <br />
+          <h1 class="underline text-center mt-2 mb-4"></h1>
+          </div>
+          <!-- end container panel-body -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<p><br /></p>
+
+<hr />
+
+<div class="parallax" style="background-image: url('http://localhost:4000/assets/images/project/nabillabakery/bg-5.jpg');
+">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="box-wave">
+            <div class="wave -one"></div>
+            <div class="wave -two"></div>
+            <div class="wave -three"></div>
+            <div class="title-wave">
+              <h4>
+                Berbagai rangkaian resep dari <span style="color:crimson;">Nabilla Bakery</span>, yang siap menemani hari anda
+              </h4>
+            </div>
+          </div>
+            <br /><br />
+        </div>
+
+      </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-12 col-xs-12 col-sm-12">
+      
+      <div style="width: 100%; height: auto !important; clear: both; text-align: center;" class="google-auto-placed"></div>
+      <div id="mys-wrapper" class="mys-wrapper"></div>
+
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <!-- container on panel-body -->
+          <div class="container">
+            <!-- row content1 -->
+            <div class="row">
+              <div class="col-md-4 col-xs-12 col-sm-12">
+                <img src="http://localhost:4000/assets/images/project/nabillabakery/cupcakes/cupcake-4.png" alt="" class="float-left img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+              </div>
+              <div class="col-md-6 col-xs-12 col-sm-12 ml-2 mt-3">
+                <h1 class="text-center">
+                  Cupcake <br />
+                  <span class="blockquote-footer text-success">Idr : 10k/pcs isi 3 cup</span> 
+                </h1>
+                <hr />
+                  <p class="ml-2">
+                     kue kecil dalam balutan wadah khusus yang berupa kertas, ataupun cangkir alumunium , dengan proses pemanggangan yang khas ala <span style="font-family:Reey Regular; color:crimson;">Nabila Bakery</span> diambil dari resep yang terjaga cita rasanya tanpa bahan-bahan pengawet semuanya murni di produksi dengan cinta..
+                  </p>
+                  <img src="http://localhost:4000/assets/images/project/nabillabakery/cupcakes.gif" alt="" />
+              </div>
+
+            </div>
+            <!-- row content1 end -->
+            <br />
+            <h1 class="underline text-center mt-2 mb-4"></h1>
+            <!-- row content2 -->
+            <div class="row justify-content-center">
+              <div class="col-md-12 col-xs-12 col-sm-12">
+                  <h1 style="color:salmon;">Cupcake <span style="font-family:Reey Regular;">Flavour</span> </h1>
+              </div>
+
+              
+              <div class="col-md-4 col-xs-12 col-sm-12 mt-3">
+                <div class="card" style="width: 18rem;">
+                  <a href="/assets/images/project/nabillabakery/cupcakes/banana.jpg" data-toggle="lightbox" data-gallery="cupcakes">
+                    <img class="card-img-top img-responsive img-fluid float-left" src="/assets/images/project/nabillabakery/cupcakes/banana.jpg" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                  </a>
+                  <div class="card-body">
+                    <h5 class="card-title">Velvet Banana</h5>
+                    <p class="card-text">Lagi pelengkap vitamin c anda dan keluarga, cupcake dengan toping cream banana yang dipilih dari bahan terbaik tanpa bahan pengawet dari buah asli, untuk menjaga kualitas gizi anda dan keluarga..</p>
+                    <a href="#" class="btn btn-primary">Beli Sekarang</a>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-md-4 col-xs-12 col-sm-12 mt-3">
+                <div class="card" style="width: 18rem;">
+                  <a href="/assets/images/project/nabillabakery/cupcakes/chocolate2.jpg" data-toggle="lightbox" data-gallery="cupcakes">
+                    <img class="card-img-top img-responsive img-fluid float-left" src="/assets/images/project/nabillabakery/cupcakes/chocolate2.jpg" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                  </a>
+                  <div class="card-body">
+                    <h5 class="card-title">Sweet Chocolate</h5>
+                    <p class="card-text">Cupcake dengan cream chocolate manis dan taburan meses akan menemani hari anda bersama keluarga..</p>
+                    <a href="#" class="btn btn-primary">Beli Sekarang</a>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-md-4 col-xs-12 col-sm-12 mt-3">
+                <div class="card" style="width: 18rem;">
+                  <a href="/assets/images/project/nabillabakery/cupcakes/creamcheese.jpg" data-toggle="lightbox" data-gallery="cupcakes">
+                    <img class="card-img-top img-responsive img-fluid float-left" src="/assets/images/project/nabillabakery/cupcakes/creamcheese.jpg" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                  </a>
+                  <div class="card-body">
+                    <h5 class="card-title">Cheesy Smile</h5>
+                    <p class="card-text">Siapa sih yang gak suka keju ? cupcake chocolate dengan toping creame cheese ini tidak akan membuat anda kecewa, so manisnya dapet gurihnya dapet..</p>
+                    <a href="#" class="btn btn-primary">Beli Sekarang</a>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-md-4 col-xs-12 col-sm-12 mt-3">
+                <div class="card" style="width: 18rem;">
+                  <a href="/assets/images/project/nabillabakery/cupcakes/lemon.jpg" data-toggle="lightbox" data-gallery="cupcakes">
+                    <img class="card-img-top img-responsive img-fluid float-left" src="/assets/images/project/nabillabakery/cupcakes/lemon.jpg" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                  </a>
+                  <div class="card-body">
+                    <h5 class="card-title">C'Mon Lemon</h5>
+                    <p class="card-text">Selain enak cupcake lemon ini juga menyehatkan loh, cream dengan bahan lemon alami yang dipastikan acara keluarga anda semakin meriah penuh senyum dari orang-orang tercinta..</p>
+                    <a href="#" class="btn btn-primary">Beli Sekarang</a>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-md-4 col-xs-12 col-sm-12 mt-3">
+                <div class="card" style="width: 18rem;">
+                  <a href="/assets/images/project/nabillabakery/cupcakes/strawberry.jpg" data-toggle="lightbox" data-gallery="cupcakes">
+                    <img class="card-img-top img-responsive img-fluid float-left" src="/assets/images/project/nabillabakery/cupcakes/strawberry.jpg" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                  </a>
+                  <div class="card-body">
+                    <h5 class="card-title">Strawberry Field Forever</h5>
+                    <p class="card-text">Yang manis emang yang terbaik untuk melengkapi hari spesial anda bersama orang-orang tercinta, cream strawberry nya berasal dari bahan pilihan yang alami, menjadi sajian lengkap saat santai anda..</p>
+                    <a href="#" class="btn btn-primary">Beli Sekarang</a>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-md-4 col-xs-12 col-sm-12 mt-3">
+                <div class="card" style="width: 18rem;">
+                  <a href="/assets/images/project/nabillabakery/cupcakes/vanilla.jpg" data-toggle="lightbox" data-gallery="cupcakes">
+                    <img class="card-img-top img-responsive img-fluid float-left" src="/assets/images/project/nabillabakery/cupcakes/vanilla.jpg" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                  </a>
+                  <div class="card-body">
+                    <h5 class="card-title">Vanilla Sky</h5>
+                    <p class="card-text">Cream vanilla  ditaburi dengan sprinkle yang menambah cita rasa manis yang pas untuk melengkapi hari bahagia anda..</p>
+                    <a href="#" class="btn btn-primary">Beli Sekarang</a>
+                  </div>
+                </div>
+              </div>
+              
+
+            </div>
+            <!-- row content2 end -->
+          <br />
+          <h1 class="underline text-center mt-2 mb-2"></h1>
+          </div>
+          <!-- end container panel-body -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<p><br /></p>
+
+<hr />
+
+<div class="parallax" style="background-image: url('http://localhost:4000/assets/images/project/nabillabakery/bg-11.jpg');
+">
+      <div class="caption">
+        <br /><br />
+        <h2> Order selalu terbuka bagi anda yang rindu kehangatan dalam kebersamaan keluarga. Tak ada penolakan bagi orang orang yang anda cinta, Seperti rasa yang tak pernah salah.</h2>
+          <a href="https://instagram.com/nabila_bakery" class="btn btn-primary text-white">Order Now</a>
+        <br /><br />
+      </div>
+</div>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-12 col-xs-12 col-sm-12">
+      <div style="width: 100%; height: auto !important; clear: both; text-align: center;" class="google-auto-placed"></div>
+      <div id="mys-wrapper" class="mys-wrapper"></div>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <!-- container on panel-body -->
+          <div class="container">
+            <!-- row content1 -->
+            <div class="row">
+              <div class="col-md-4 col-xs-12 col-sm-12">
+                <img src="http://localhost:4000/assets/images/project/nabillabakery/bg-14.jpg" alt="Cookies" class="float-left img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+              </div>
+              <div class="col-md-6 col-xs-12 col-sm-12 ml-2 mt-2">
+                <h1 class="text-center">
+                  Cookies <br />
+                  <span class="blockquote-footer text-success">Idr : 12k/pcs isi 3 cup</span> 
+                </h1>
+                <hr />
+                  <p class="ml-2">
+                     Kue yang di olah kering renyah yang diolah secara istimewa di dapur Nabilla Bakery, Perpaduan bahan-bahan terbaik tanpa campur tangan bahan-bahan pengawet. Sehingga menghasilkan tekstur yang lembut ketika kita mengunyahnya, dengan varian toping yang bisa anda sesuaikan dengan selera anda..
+                  </p>
+                  <img src="http://localhost:4000/assets/images/project/nabillabakery/cookies/cookies.gif" alt="" />
+              </div>
+
+            </div>
+            <!-- row content1 end -->
+            <br />
+            <h1 class="underline text-center mt-2 mb-2"></h1>
+            <!-- row content2 -->
+            <div class="row justify-content-center">
+              <div class="col-md-12 col-xs-12 col-sm-12">
+                  <h1 style="color:salmon;">Cookies <span style="font-family:Reey Regular;">Flavour</span> </h1>
+              </div>
+
+              
+                <div class="col-md-4 col-xs-12 col-sm-12">
+                  <div class="card" style="width: 18rem;">
+                    <a href="/assets/images/project/nabillabakery/cookies/chocooat.jpg" data-toggle="lightbox" data-gallery="cookies">
+                      <img class="card-img-top img-responsive img-fluid float-left" src="/assets/images/project/nabillabakery/cookies/chocooat.jpg" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                    </a>
+                    <div class="card-body">
+                      <h5 class="card-title">Choco Oat Cookies</h5>
+                      <p class="card-text">Perpaduan cokelat dan oat atau haver emang nggak pernah mengecewakan, apalagi dengan tambahan sedikit kayu manis!.</p>
+                      <a href="#" class="btn btn-primary">Beli Sekarang</a>
+                    </div>
+                  </div>
+                </div>
+              
+                <div class="col-md-4 col-xs-12 col-sm-12">
+                  <div class="card" style="width: 18rem;">
+                    <a href="/assets/images/project/nabillabakery/cookies/classic.jpg" data-toggle="lightbox" data-gallery="cookies">
+                      <img class="card-img-top img-responsive img-fluid float-left" src="/assets/images/project/nabillabakery/cookies/classic.jpg" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                    </a>
+                    <div class="card-body">
+                      <h5 class="card-title">Classic Chocochip</h5>
+                      <p class="card-text">Cookies yang terbuat dari adonan yang buttery, dark chocohips, dan sentuhan sea salt pada bagian atasnya ini udah terbukti nggak pernah fail untuk menjadi favorit banyak orang, termasuk anda dan orang-orang tercinta..</p>
+                      <a href="#" class="btn btn-primary">Beli Sekarang</a>
+                    </div>
+                  </div>
+                </div>
+              
+                <div class="col-md-4 col-xs-12 col-sm-12">
+                  <div class="card" style="width: 18rem;">
+                    <a href="/assets/images/project/nabillabakery/cookies/coffeekis.jpg" data-toggle="lightbox" data-gallery="cookies">
+                      <img class="card-img-top img-responsive img-fluid float-left" src="/assets/images/project/nabillabakery/cookies/coffeekis.jpg" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                    </a>
+                    <div class="card-body">
+                      <h5 class="card-title">Coffee Kiss Chocochip</h5>
+                      <p class="card-text">Nggak hanya hits dikenal sebagai kopi kekinian, soft cookies rasa kopi juga bisa kamu temukan lho di Kukis.sis! Adonan dengan rasa kopi ini disempurnakan dengan tambahan chocochips dan drizzle saus karamel di atasnya. Can't resist!.</p>
+                      <a href="#" class="btn btn-primary">Beli Sekarang</a>
+                    </div>
+                  </div>
+                </div>
+              
+                <div class="col-md-4 col-xs-12 col-sm-12">
+                  <div class="card" style="width: 18rem;">
+                    <a href="/assets/images/project/nabillabakery/cookies/doubledark.jpg" data-toggle="lightbox" data-gallery="cookies">
+                      <img class="card-img-top img-responsive img-fluid float-left" src="/assets/images/project/nabillabakery/cookies/doubledark.jpg" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                    </a>
+                    <div class="card-body">
+                      <h5 class="card-title">Double Dark Chocochip</h5>
+                      <p class="card-text">Pencinta cookies sekaligus cokelat pasti suka banget nih sama varian Double Dark Chocolate Cookies! Kenapa? Karena cookies ini terbuat dari adonan dark chocolate dengan tambahan chia seeds yang diberi filling chocochips yang melimpah di dalamnya. Delicious!..</p>
+                      <a href="#" class="btn btn-primary">Beli Sekarang</a>
+                    </div>
+                  </div>
+                </div>
+              
+                <div class="col-md-4 col-xs-12 col-sm-12">
+                  <div class="card" style="width: 18rem;">
+                    <a href="/assets/images/project/nabillabakery/cookies/matchalmond.jpg" data-toggle="lightbox" data-gallery="cookies">
+                      <img class="card-img-top img-responsive img-fluid float-left" src="/assets/images/project/nabillabakery/cookies/matchalmond.jpg" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                    </a>
+                    <div class="card-body">
+                      <h5 class="card-title">Match Almond Cookies</h5>
+                      <p class="card-text">Dari namanya, kamu udah bisa tebak belum komponen apa aja yang terkandung dalam soft cookies ini? Kalau kamu menebak matcha dan almond, kamu benar, Babes! Adonan matcha dengan filling white chocolate ini dilengkapi dengan irisan almond yang bikin tekstur cookies lebih beragam...</p>
+                      <a href="#" class="btn btn-primary">Beli Sekarang</a>
+                    </div>
+                  </div>
+                </div>
+              
+                <div class="col-md-4 col-xs-12 col-sm-12">
+                  <div class="card" style="width: 18rem;">
+                    <a href="/assets/images/project/nabillabakery/cookies/redmallow.jpg" data-toggle="lightbox" data-gallery="cookies">
+                      <img class="card-img-top img-responsive img-fluid float-left" src="/assets/images/project/nabillabakery/cookies/redmallow.jpg" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                    </a>
+                    <div class="card-body">
+                      <h5 class="card-title">Red Mallow Cookies</h5>
+                      <p class="card-text">Soft cookies yang satu ini memiliki rasa yang complicated in a good way. Adonan red velvet dengan cream cheese di bagian dalamnya dan tambahan marshmallow pada bagian atasnya pasti gooey banget! Nggak perlu khawatir, cookies ini nggak bikin enek sama sekali..</p>
+                      <a href="#" class="btn btn-primary">Beli Sekarang</a>
+                    </div>
+                  </div>
+                </div>
+              
+
+            </div>
+            <!-- row content2 end -->
+          <br />
+          <h1 class="underline text-center mt-2 mb-4"></h1>
+          </div>
+          <!-- end container panel-body -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+
+</div>
+
+<div class="parallax" style="background-image: url('http://localhost:4000/assets/images/project/nabillabakery/bg-13.jpg');
+">
+      <div class="caption">
+        <br /><br />
+        <h2> Update terus resep terbaru dari <br /> <span style="font-family:Reey Regular;color:crimson;">Nabilla Bakery</span>.</h2> <br />
+          <a href="https://instagram.com/nabila_bakery" class="btn btn-primary text-white">Update Now</a>
+        <br /><br />
+      </div>
+</div>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="polaroid" style="margin-top:-5rem;">
+      
+        <img src="http://localhost:4000/assets/images/codesyariah-team.gif" class="img-responsive float-left" alt="" width="500" height="470" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+      </div>
+      <div class="polaroid-body" style="margin-top:5rem;">
+        <h1 class="text-center" style="font-family: 'Indie Flower', cursive; color:burlywood;">Nabilla Bakery<i class="fas fa-cookie-bite fa-fw" style="color:burlywood;"></i>  </h1>
+        <p class="mt-2 ml-2">
+          Design and Code By : <span style="font-size:35px;font-family:Reey Regular;color:springgreen;">CodeSyariah</span>
+          <br />
+          <span style="font-size:21px; margin-top:1rem; font-family:Reey Regular;color:tomato;">Script again Coffee again <i class="fas fa-code fa-fw" style="color:burlywood;"></i> </span>
+        </p> 
+      </div>	
+    <br />
+  </div>
+</div>
+
+<!-- <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">Nabilla Bakery</h1>
+  <h3 class="lead">Our Product : </h3>
+</div>
+
+<div class="container">
+<div class="card">
+  <h4 class="display">Cupcake</h4>
+
+      <div class="hovereffect">
+        <img class="img-responsive" src="http://localhost:4000/assets/images/project/nabillabakery/cupcakes/cupcake-4.png" alt="Cupcake">
+        <div class="overlay">
+           <h2>Cupcake <br/> Idr : Rp. 10k/pcs isi 3 cup</h2>
+           <a class="info" href="https://nabilla-baking.github.io/cupcakes">Beli Cupcake</a>
+        </div>
+      </div>
+
+  <div class="card-body">
+    <p class="card-text">kue kecil dalam balutan wadah khusus yang berupa kertas, ataupun cangkir alumunium , dengan proses pemanggangan yang khas ala <span style='font-family:Reey Regular; color:crimson;'>Nabila Bakery</span> diambil dari resep yang terjaga cita rasanya tanpa bahan-bahan pengawet semuanya murni di produksi dengan cinta.</p>
+    <a href="https://nabilla-baking.github.io/cupcakes" class="btn btn-primary">Lihat Lebih banyak</a>
+  </div>
+ </div>
+</div>
+<br>
+  <div class="container">
+     <div class="card">
+  <h4 class="display"></h4>
+
+      <div class="hovereffect">
+        <img class="img-responsive" src="http://localhost:4000" alt="">
+        <div class="overlay">
+           <h2> <br/> Idr : Rp. /pcs isi 20 </h2>
+           <a class="info" href="">Beli </a>
+        </div>
+      </div>
+
+    <div class="card-body">
+    <p class="card-text"></p>
+    <a href="" class="btn btn-primary">Lihat Lebih banyak</a>
+    </div>
+  </div>
+</div>
+ -->
+:ET

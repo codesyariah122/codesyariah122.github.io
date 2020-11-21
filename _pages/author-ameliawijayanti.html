@@ -52,7 +52,7 @@ vector: "/assets/images/vector2.gif"
 <div class="container">
     <div class="row justify-content-center">
 
-        <div class="col-md-8">
+        <div class="col-md-8 col-xs-12 col-sm-12">
             <h4 class="font-weight-bold spanborder">Posts by  <span v-html="message">{{amel.shortname}}</span></h4>
             {% assign posts = site.posts | where:"author","amel" %}
             {% for post in posts %}

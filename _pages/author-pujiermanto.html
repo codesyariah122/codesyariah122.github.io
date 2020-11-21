@@ -183,7 +183,7 @@ vector: "/assets/images/final2.gif"
 <br><br>
 <div class="containe">
     <div class="row justify-content-center">
-        <div class="col-5">
+        <div class="col-5 col-xs-12 col-sm-12">
             <img v-bind:src="imageVectorCard" alt="" class="img-responsive"> 
         </div>
     </div>
@@ -191,7 +191,7 @@ vector: "/assets/images/final2.gif"
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-8 col-xs-12 col-sm-12">
                 <h4 class="font-weight-bold spanborder">Posts by <span v-html="message"></span></h4>
                 <br>
                     {% assign posts = site.posts | where:"author","puji" %}

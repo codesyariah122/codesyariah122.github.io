@@ -1,0 +1,207 @@
+I"<style type="text/css">
+    /* all parallax top and bottom */
+    .parallax{
+      min-height: 500px; 
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin:0;
+    }
+    .caption {
+        background:rgba(255,255,255,0.4);
+        /* clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); */
+        position: absolute;
+        left: 21rem;
+        margin-top: 7rem;
+        width: 50%;
+        text-align: center;
+        color: #000;
+    }
+    .caption h2 {
+        color: white;
+        font-family: 'Poiret One', cursive;font-weight:bold;
+        text-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+        margin-bottom: .9rem;
+    }
+    .caption a{
+        font-size: 18px;
+    }
+    
+    /* wave */
+    .box-wave {
+        width: 350px;
+        height: 500px;
+        border-radius: 5px;
+        box-shadow: 0 2px 30px rgba(black, .2);
+        background: lighten(#f0f4c3, 10%);
+        position: relative;
+        overflow: hidden;
+        transform: translate3d(0, 0, 0);
+      }
+      
+      .wave {
+        opacity: .4;
+        position: absolute;
+        top: 3%;
+        left: 50%;
+        background: #0af;
+        width: 500px;
+        height: 500px;
+        margin-left: -250px;
+        margin-top: -250px;
+        transform-origin: 50% 48%;
+        border-radius: 43%;
+        animation: drift 3000ms infinite linear;
+      }
+      
+      .wave.-three {
+        animation: drift 5000ms infinite linear;
+      }
+      
+      .wave.-two {
+        animation: drift 7000ms infinite linear;
+        opacity: .1;
+        background: yellow;
+      }
+      
+      .box-wave:after {
+        content: '';
+        display: block;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(#e8a, 1), rgba(#def, 0) 80%, rgba(white, .5));
+        z-index: -1;
+        transform: translate3d(0, 0, 0);
+      }
+      
+      .title-wave {
+        position: absolute;
+        left: 1rem;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+        line-height: 300px;
+        text-align: left;
+        transform: translate3d(0, 0, 0);
+        color: white;
+        font-weight: bold;;
+        text-transform: uppercase;
+        font-family: 'Poiret One', cursive;
+        letter-spacing: .4em;
+        font-size: 14px;
+        text-shadow: 0 1px 0 rgba(black, .1);
+      }
+      .titl-wave a{
+          margin-left: 2rem;
+      }
+    
+    @keyframes drift {
+      from { transform: rotate(0deg); }
+      from { transform: rotate(360deg); }
+    }
+    
+    
+    @media only screen and (max-device-width: 812px) {
+      .parallax {
+          background-attachment: scroll;
+      }
+      .caption {
+          position: absolute;
+          left: 0;
+          margin-top: 2rem;
+          width: 100%;
+          text-align: center;
+          color: #000;
+      }
+      .caption h2 {
+          color: white;
+          font-family: 'Poiret One', cursive;font-weight:bold;
+          text-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+          margin-bottom: .9rem;
+          font-size:14px;
+      }
+      .caption a{
+          font-size: 12px;
+      }
+    
+      .waves {
+              height: 40px;
+              min-height: 40px;
+        }
+    }
+    </style>
+
+<p>{% assign puji = site.data.authors[page.author] %}</p>
+<div id="contentApp">
+    <div class="jumbotron jumbotron-fluid jumbotron-content" style="background-image:url('{{site.url}}{{page.image}}');">
+        <!-- <div class="container">
+          <div class="row">
+            <div class="d-flex justify-content-center">
+                <div class="col-md-12">
+                    <h1 class="display-4 text-right" v-html="titleHeader" style="margin-left:8rem;margin-top:9rem;"></h1>
+                </div>
+            </div>
+          </div>
+        </div> -->
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="row align-items-center mb-5">
+                        <div class="col-md-9">
+                            <h2 class="font-weight-bold text-white">{{site.data.authors[page.author].nama_lengkap}} 
+                                <span style="font-size:18px;" class="small btn btn-outline-success btn-sm btn-round">
+                                <a href="{{ site.data.authors[page.author].twitter }}">Follow</a>
+                                </span>
+                            </h2>
+                            <p style="font-size:22px;"><a href="{{ puji.situs }}">{{ site.data.authors[page.author].site }}</a></p>
+                            <p style="font-size:18px;" class="excerpt">{{puji.nama_lengkap}} {{ puji.bio }}</p>
+                        </div>
+                        <div class="col-md-3 text-right">
+                            <img alt="{{ site.data.authors[page.author].name }}" src="{{site.url}}/{{ site.data.authors[page.author].avatar }}" class="rounded-circle" height="150" width="200" />
+                        </div>
+                </div>
+            </div>
+        </div>
+      </div>
+</div>
+
+<br />
+<h1 class="underline mt-2 mb-2"></h1>  
+<br /><br />
+<div class="containe">
+    <div class="row justify-content-center">
+        <div class="col-5 col-xs-12 col-sm-12">
+            <img v-bind:src="imageVectorCard" alt="" class="img-responsive" /> 
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-xs-12 col-sm-12">
+                <h4 class="font-weight-bold spanborder">Posts by <span v-html="message"></span></h4>
+                <br />
+                    {% assign posts = site.posts | where:"author","puji" %}
+                    {% for post in posts %}
+                    {% include main-loop-card.html %}
+                    {% endfor %}
+            </div>
+           
+        </div>
+    </div>
+
+</div>
+<!-- end content app -->
+
+<script type="text/javascript">
+    const obj = {
+        'cardVector' : '{{site.url}}{{page.vector}}',
+        'author' : '{{puji.shortname}}',
+    };
+</script>
+
+:ET

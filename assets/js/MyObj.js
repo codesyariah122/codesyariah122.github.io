@@ -28,6 +28,11 @@ const data = {
     'ResultExp' : $('#result-exp'),
     'berdasarkanGender' : $('#gender'),
     'berdasarkanUsia' : $('#usia'),
+    'yourLocation' : $('#your-location'),
+    'enter' : $('#enter'),
+    'selectNews' : $('#select-news'),
+    'newsList' : $('#news-list'),
+
 };
 
 const baseAPI = {

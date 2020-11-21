@@ -142,7 +142,7 @@
     <div class="container">
       <div class="row">
         <div class="d-flex justify-content-end">
-            <div class="col-md-6">
+            <div class="col-md-6 col-xs-12 col-sm-12">
                 <h1 class="display-4 text-right" style="margin-left:8rem;margin-top:9rem;">{{page.title}}</h1>
                 <h3 class="blockquote-footer text-danger" style="font-family: Reey Regular;font-size:31px;" v-html="blockquoteHeader">{{page.blockquote}}</h3>
             </div>
@@ -151,13 +151,13 @@
     </div>
   </div>
 
-  <h1 class="underline mt-5 mb-2"></h1>  
+  <h1 class="underline mt-3 mb-2"></h1>  
 
   <div class="container">
     <div class="row justify-content-center">
       <div style="width: 100%; height: auto !important; clear: both; text-align: center;" class="google-auto-placed">
       </div>
-        <div class="col-md-6">
+        <div class="col-md-6 col-xs-12 col-sm-12">
             <div class="polaroid">
               <img src="{{site.url}}{{page.vector1}}" alt="" class="img-responsive mt-3">
                 <div class="polaroid-body">
@@ -191,21 +191,21 @@
 
     <div class="row justify-content-center">
   
-      <div class="col-md-12">
+      <div class="col-md-12 col-xs-12 col-sm-12">
         <div class="panel panel-default">
           <div class="panel-body">
             <!-- container on panel-body -->
             <div class="container">
               <!-- row content1 -->
               <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 col-xs-12 col-sm-12">
                   <img v-bind:src="imageVectorCard" src="{{site.url}}{{page.vector2}}" alt="" class="float-left img-responsive"  width="800" height="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;"/>
                 </div>
-                <div class="col-md-6 ml-3 mt-5">
+                <div class="col-md-6 col-xs-12 col-sm-12 ml-2 mt-2">
                   <h1 class="underline text-center">
                     {{page.title}}
                   </h1>
-                    <p class="ml-3">
+                    <p class="ml-2">
                       {{page.tags2}}
                     </p>
                     <img src="{{site.url}}{{page.vector3}}" alt="">

@@ -1,0 +1,261 @@
+I"ó!<style type="text/css">
+    /* all parallax top and bottom */
+    .parallax{
+      min-height: 500px; 
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin:0;
+    }
+    .caption {
+        background:rgba(255,255,255,0.4);
+        /* clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); */
+        position: absolute;
+        left: 21rem;
+        margin-top: 7rem;
+        width: 50%;
+        text-align: center;
+        color: #000;
+    }
+    .caption h2 {
+        color: white;
+        font-family: 'Poiret One', cursive;font-weight:bold;
+        text-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+        margin-bottom: .9rem;
+    }
+    .caption a{
+        font-size: 18px;
+    }
+    
+    /* wave */
+    .box-wave {
+        width: 350px;
+        height: 500px;
+        border-radius: 5px;
+        box-shadow: 0 2px 30px rgba(black, .2);
+        background: lighten(#f0f4c3, 10%);
+        position: relative;
+        overflow: hidden;
+        transform: translate3d(0, 0, 0);
+      }
+      
+      .wave {
+        opacity: .4;
+        position: absolute;
+        top: 3%;
+        left: 50%;
+        background: #0af;
+        width: 500px;
+        height: 500px;
+        margin-left: -250px;
+        margin-top: -250px;
+        transform-origin: 50% 48%;
+        border-radius: 43%;
+        animation: drift 3000ms infinite linear;
+      }
+      
+      .wave.-three {
+        animation: drift 5000ms infinite linear;
+      }
+      
+      .wave.-two {
+        animation: drift 7000ms infinite linear;
+        opacity: .1;
+        background: yellow;
+      }
+      
+      .box-wave:after {
+        content: '';
+        display: block;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(#e8a, 1), rgba(#def, 0) 80%, rgba(white, .5));
+        z-index: -1;
+        transform: translate3d(0, 0, 0);
+      }
+      
+      .title-wave {
+        position: absolute;
+        left: 1rem;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+        line-height: 300px;
+        text-align: left;
+        transform: translate3d(0, 0, 0);
+        color: white;
+        font-weight: bold;;
+        text-transform: uppercase;
+        font-family: 'Poiret One', cursive;
+        letter-spacing: .4em;
+        font-size: 14px;
+        text-shadow: 0 1px 0 rgba(black, .1);
+      }
+      .titl-wave a{
+          margin-left: 2rem;
+      }
+    
+    @keyframes drift {
+      from { transform: rotate(0deg); }
+      from { transform: rotate(360deg); }
+    }
+    
+    
+    @media only screen and (max-device-width: 812px) {
+      .parallax {
+          background-attachment: scroll;
+      }
+      .caption {
+          position: absolute;
+          left: 0;
+          margin-top: 2rem;
+          width: 100%;
+          text-align: center;
+          color: #000;
+      }
+      .caption h2 {
+          color: white;
+          font-family: 'Poiret One', cursive;font-weight:bold;
+          text-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+          margin-bottom: .9rem;
+          font-size:14px;
+      }
+      .caption a{
+          font-size: 12px;
+      }
+    
+      .waves {
+              height: 40px;
+              min-height: 40px;
+        }
+    }
+    </style>
+
+<div id="contentApp">
+    <div class="jumbotron jumbotron-fluid jumbotron-content" style="background-image:url('{{site.url}}{{page.image}}');margin-top:-11rem;">
+        <div class="container">
+          <div class="row">
+            <div class="d-flex justify-content-center">
+                <div class="col-md-12">
+                    <h1 class="display-4 text-right" v-html="titleHeaderContact" style="margin-left:8rem;margin-top:9rem;"></h1>
+                    <h3 class="blockquote-footer text-danger" style="font-family: Reey Regular;font-size:31px;" v-html="blockquoteHeader"></h3>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+<h1 class="underline mt-2 mb-2"></h1>
+       <!-- container -->
+    <div class="container">
+      <!-- info panel -->
+          <div class="row justify-content-center">
+              <div class="col-10 info-panel">
+                  <div class="row">
+                    {% for panel in site.data.panels_contact %}
+                    <div class="col-lg">
+                      <img src="{{site.url}}{{panel.img_path}}" class="float-left img-responsive" alt="" />
+                      <h4>{{panel.header_text}}</h4>
+                      <p>
+                          {{panel.plot}}.
+                      </p>
+                    </div>
+                    {% endfor %}
+                  </div>
+              </div>
+          </div>
+      <!-- akhir info panel -->
+
+      <br /><br />
+      <h1 class="underline mt-2 mb-2"></h1> 
+
+      <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-xs-12 col-sm-12">
+                <div class="polaroid">
+                  <img v-bind:src="imageVectorCard" class="img-responsive mt-3" width="800" height="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                  <div class="polaroid-body">
+                    <h2>{{page.card-tags}}</h2>
+                  </div>	
+                </div>
+      
+            </div>
+        </div>
+      </div>
+
+ <h1 class="underline mt-2 mb-2"></h1> 
+      
+    <div class="container">
+        <div class="alert alert-danger" role="alert">
+            Silahkan isi form contact dibawah dengan lengkap dan benar
+          </div>
+              <div class="d-flex justify-content-center">
+                <div class="col-md-12 col-xs-12 col-sm-12">
+                    <form id="my-form" action="https://formspree.io/f/xnqozvjw" method="POST">
+                        <div class="form-group">
+                          <label for="fullname">Full Name</label>
+                          <input type="_replyto" name="fullname" class="form-control" id="fullname" placeholder="Full Name" />
+                        </div>
+                        <div class="form-group">
+                          <label for="email">Email address</label>
+                          <input type="_replyto" name="email" class="form-control" id="email" placeholder="Enter email" />
+                          <small id="emailHelp" class="form-text text-muted">Isi dengan email aktif kalian, jangan asal-asalan.</small>
+                        </div>
+                        <div class="form-group">
+                          <label for="message">Message</label>
+                          <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+                        </div>
+                        <div id="my-form-status"></div>
+                        <button id="my-form-button" class="btn btn-primary">Submit</button>
+
+                      </form>
+                      
+                      <!-- <form id="my-form"
+                      action="https://formspree.io/f/xnqozvjw"
+                      method="POST"
+                    >
+                      <label>Email:</label>
+                      <input type="email" name="email" />
+                      <label>Message:</label>
+                      <input type="text" name="message" />
+                      <button id="my-form-button">Submit</button>
+                      <p id="my-form-status"></p>
+                    </form> -->
+                  </div>    
+              </div>
+          </div>
+
+</div>
+<!-- <form action="https://formspree.io/{{site.email}}" method="POST">
+<p class="mb-4">Please send your message to {{site.name}}. We will reply as soon as possible!</p>
+<div class="form-group row">
+<div class="col-md-6">
+<input class="form-control" type="text" name="name" placeholder="Name*" required>
+</div>
+<div class="col-md-6">
+<input class="form-control" type="email" name="_replyto" placeholder="E-mail Address*" required>
+</div>
+</div>
+<textarea rows="8" class="form-control mb-3" name="message" placeholder="Message*" required></textarea>
+<input class="btn btn-success" type="submit" value="Send">
+</form> -->
+
+
+
+<script type="text/javascript">
+    const obj = {
+        'emailInput' : document.getElementById('email').value,
+        'titleHeader' : '{{page.header}}',
+        'blockquoteHeader' : '{{page.blockquote}}',
+        'cardVector' : '{{site.url}}{{page.vector}}',
+        'tagsParallax' : '{{page.parallax-tags}} ',
+        'validationBackdrop' : '{{site.url}}/assets/images/',
+        'validationGif' : '{{site.url}}/assets/images/validation/',
+    };
+
+</script>
+</div>
+:ET

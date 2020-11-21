@@ -1,0 +1,442 @@
+I"8Y<style type="text/css">
+  /* all parallax top and bottom */
+  .parallax{
+    min-height: 500px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin:0;
+  }
+  .caption {
+      background:rgba(255,255,255,0.4);
+      /* clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); */
+      position: absolute;
+      left: 21rem;
+      margin-top: 7rem;
+      width: 50%;
+      text-align: center;
+      color: #000;
+  }
+  .caption h2 {
+      color: white;
+      font-family: 'Poiret One', cursive;font-weight:bold;
+      text-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+      margin-bottom: .9rem;
+  }
+  .caption a{
+      font-size: 18px;
+  }
+  
+  /* wave */
+  .box-wave {
+      width: 350px;
+      height: 500px;
+      border-radius: 5px;
+      box-shadow: 0 2px 30px rgba(black, .2);
+      background: lighten(#f0f4c3, 10%);
+      position: relative;
+      overflow: hidden;
+      transform: translate3d(0, 0, 0);
+    }
+    
+    .wave {
+      opacity: .4;
+      position: absolute;
+      top: 3%;
+      left: 50%;
+      background: #0af;
+      width: 500px;
+      height: 500px;
+      margin-left: -250px;
+      margin-top: -250px;
+      transform-origin: 50% 48%;
+      border-radius: 43%;
+      animation: drift 3000ms infinite linear;
+    }
+    
+    .wave.-three {
+      animation: drift 5000ms infinite linear;
+    }
+    
+    .wave.-two {
+      animation: drift 7000ms infinite linear;
+      opacity: .1;
+      background: yellow;
+    }
+    
+    .box-wave:after {
+      content: '';
+      display: block;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(#e8a, 1), rgba(#def, 0) 80%, rgba(white, .5));
+      z-index: -1;
+      transform: translate3d(0, 0, 0);
+    }
+    
+    .title-wave {
+      position: absolute;
+      left: 1rem;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+      line-height: 300px;
+      text-align: left;
+      transform: translate3d(0, 0, 0);
+      color: white;
+      font-weight: bold;;
+      text-transform: uppercase;
+      font-family: 'Poiret One', cursive;
+      letter-spacing: .4em;
+      font-size: 14px;
+      text-shadow: 0 1px 0 rgba(black, .1);
+    }
+    .titl-wave a{
+        margin-left: 2rem;
+    }
+  
+  @keyframes drift {
+    from { transform: rotate(0deg); }
+    from { transform: rotate(360deg); }
+  }
+  
+  
+  @media only screen and (max-device-width: 812px) {
+    .parallax {
+        background-attachment: scroll;
+    }
+    .caption {
+        position: absolute;
+        left: 0;
+        margin-top: 2rem;
+        width: 100%;
+        text-align: center;
+        color: #000;
+    }
+    .caption h2 {
+        color: white;
+        font-family: 'Poiret One', cursive;font-weight:bold;
+        text-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+        margin-bottom: .9rem;
+        font-size:14px;
+    }
+    .caption a{
+        font-size: 12px;
+    }
+  
+    .waves {
+            height: 40px;
+            min-height: 40px;
+      }
+  }
+  </style>
+
+<div class="jumbotron jumbotron-fluid jumbotron-content" style="background-image:url('http://localhost:4000/assets/images/project/codesyariah/model3.jpg');">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-xs-12 col-sm-12">
+          <h1 class="display-4">Codesyariah <span style="font-family:Reey Regular;">Web</span> Development</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<p><br /><br /></p>
+<h1 class="underline mt-2 mb-2"></h1>
+
+<div class="container">
+  <div class="row justify-content-center">
+      <div class="col-md-6 col-xs-12 col-sm-12">
+          <div class="polaroid">
+            <img src="http://localhost:4000/assets/images/project/codesyariah/vector4.gif" alt="" class="img-responsive mt-3" />
+            <div class="polaroid-body">
+              <h2>Ingin punya website untuk company profile, aplikasi penjualan untuk menunjang bisnis anda, website toko online yang professional, kami <span class="codesyariah">codesyariah</span> dan team <span style="font-family:SpringSakura;">|</span> <br /> <span style="font-family:SpringSakura;">|</span> akan merealisasikan impian anda untuk mempunyai website dan aplikasi yang menunjang kebutuhan bisnis anda, dengan harga fleksibel yang menyesuaikan.</h2>
+            </div>	
+          </div>
+
+      </div>
+  </div>
+</div>
+
+<h1 class="underline mb-2 mt-2"></h1>
+
+<div class="parallax" style="background-image: url('http://localhost:4000/assets/images/project/codesyariah/story9.jpg');
+">
+
+  <div class="caption">
+    <br /><br />
+    <h2> Untuk info lebih lanjut silahkan hubungi contact dibawah ini : </h2>
+      <a href="https://wa.me/6288222668778?text=Hai%20kak%20saya%20membutuhkan%20jasa%20web%20development" class="btn btn-primary text-white">whatsap</a>
+      <a href="https://instagram.com/pujiermanto" class="btn btn-primary text-white">Instagram</a>
+    <br /><br />
+  </div>
+</div>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-12 col-xs-12 col-sm-12">
+
+      <div style="width: 100%; height: auto !important; clear: both; text-align: center;" class="google-auto-placed"></div>
+      <div id="mys-wrapper" class="mys-wrapper"></div>
+
+      <div class="panel panel-default">  
+        <div class="panel-body">
+          <!-- container on panel-body -->
+          <div class="container">
+            <!-- row content1 -->
+            <div class="row">
+              <div class="col-md-4">
+                <img src="http://localhost:4000/assets/images/project/codesyariah/story4.jpg" alt="" class="float-left img-responsive" width="600" height="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+              </div>
+              <div class="col-md-6">
+                <h1 class="underline text-center">
+                  Codesyariah <span style="font-family:Reey Regular;">Web</span> Development
+                </h1>
+                  <p class="ml-3">
+                    Kejujuran dalam produksi adalah integritas <span style="font-family:SpringSakura;color:crimson;">|</span>  tanggung jawab kewajiban kami untuk memberikan layanan terbaik bagi anda. <span class="codesyariah">codesyariah</span> mengedepankan kualitas dalam setiap pengerjaan design aplikasi web atau mobile yang anda pesan melalui team kami. Keseriusan kami dalam menuangkan karya untuk menjadi sesuatu yang bisa menunjang ide-ide bisnis anda. Layanan yang mudah untuk dijangkau, hasilkan karya yang otentik untuk meningkatkan penjualan produk dan ide bisnis anda
+                  </p>
+                  <img src="http://localhost:4000/assets/images/project/codesyariah/vector2.gif" alt="" />
+              </div>
+              <!-- <div class="row justify-content-end">
+                <img src="http://localhost:4000/assets/images/project/codesyariah/vector4.gif" alt="">
+              </div> -->
+            </div>
+            <!-- row content1 end -->
+            <br />
+            <h1 class="underline text-center mt-2 mb-4"></h1>
+            <!-- row content2 -->
+            <div class="row mt-3">
+                <div class="col-md-6">
+                  <h1 class="underline text-center">
+                    Proses <span style="font-family:Reey Regular; text-transform: capitalize;">Development</span> yang prima dan <span style="font-family:Reey Regular; text-transform: capitalize;">cekatan</span> 
+                  </h1>
+                  <p>
+                    Jasa web development <span style="font-family:SpringSakura; color:crimson;">|</span>  kami dikerjakan dengan sepenuh hati, setiap permintaan client akan kami tuangkan kedalam sebuah karya yang otentik. Team support kami selalu siaga melayani anda dalam merealisasikan setiap ide <span style="font-family:SpringSakura;">|</span>  untuk bisnis anda. Pengerjaan dilakukan dengan waktu yang bisa anda sesuaikan, karena kami tahu lebih cepat itu lebih baik, dan kami berusaha untuk memberikan yang terbaik dalam setiap tuangan ide anda dalam karya-karya kami <span style="font-family:SpringSakura; color:crimson;">|</span> 
+                  </p>
+                </div>
+                <div class="col-md-6">
+                  <img src="http://localhost:4000/assets/images/project/codesyariah/story5.jpg" class="img-responsive float-left" alt="" width="600" height="700" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                </div>
+            </div>
+            <!-- row content2 end -->
+            <br />
+            <!-- row content 3 -->
+            <div class="row mt-3">
+                  <div class="col-md-6">
+                    <img src="http://localhost:4000/assets/images/project/codesyariah/story14.jpg" class="img-responsive float-left" alt="" width="600" height="700" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                  </div>
+
+                  <div class="col-md-6">
+                    <h1 class="underline text-center">
+                      Digitalisasi Ide <span style="font-family:Reey Regular; text-transfrom:capitalize;">Bisnis</span> Anda
+                    </h1>
+                    <p>Tuangkan ide-ide bisnis anda bersama kami <span style="font-family:SpringSakura; color:crimson;">|</span>  <span class="codesyariah">codesyariah</span> selalu fokus dalam mengembangkan ide anda untuk menjadi suatu karya yang bisa menunjang prospek bisnis anda <span style="font-family:SpringSakura;">|</span>. Informasi digital menjadi sangat vital sekarang ini begitupun dunia bisnis akan sangat penting manfaat digitalisasi produk dalam media informasi <span style="font-family:SpringSakura; color:crimson;">|</span> </p>
+                  </div>
+            </div>
+            <!-- row content 3 end -->
+
+          </div>
+          <!-- end container panel-body -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+ 
+</div>
+
+<p><br /></p>
+
+<h1 class="underline mb-2 mt-2"></h1>
+
+<div class="parallax" style="background-image: url('http://localhost:4000/assets/images/project/codesyariah/story6.jpg');
+">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="box-wave">
+          <div class="wave -one"></div>
+          <div class="wave -two"></div>
+          <div class="wave -three"></div>
+          <div class="title-wave">
+            <h4>
+              <span class="codesyariah" style="color:crimson;">Codesyariah</span> <span style="font-family:SpringSakura; color:tomato;">|</span> akan selalu mempersembahkan karya digital terbaik untuk anda.
+            </h4>
+          </div>
+        </div>
+          <br /><br />
+      </div>
+    </div>
+
+</div>
+
+</div>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+      <div style="width: 100%; height: auto !important; clear: both; text-align: center;" class="google-auto-placed"></div>
+      <div id="mys-wrapper" class="mys-wrapper"></div>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <!-- container on panel-body -->
+          <div class="container">
+            <!-- row content1 -->
+            <div class="row">
+              <div class="col-md-4">
+                <img src="http://localhost:4000/assets/images/project/codesyariah/story18.jpg" alt="" class="float-left img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+              </div>
+              <div class="col-md-6 ml-5 mt-5">
+                <h1 class="text-center">
+                  Web Development <span style="font-family:Reey Regular;">Service</span>  <br />
+                </h1>
+                <hr />
+                  <p class="ml-5">
+                     Media digital akan meningkatkan pemasaran dan penjualan produk-produk karya anda, kami <span class="codesyariah">codesyariah</span> dan team <span style="font-family:SpringSakura;">|</span> akan merealisasikan ide-ide bisnis anda untuk meningkatkan penjualan produk di bisnis anda. <span style="font-family:SpringSakura;">|</span>  Kembangkan ide-ide bisnis anda bersama kami, kami akan realisasikan ide anda dengan design memukau, system keamanan dan privacy yang terjaga, karena kualitas terbaik adalah salah satu upaya kami dalam bekerja sama dengan anda.
+                     <br />
+
+                     <span class="blockquote-footer text-success" style="font-size:16px; margin-left:-2rem;">Harga : Idr 5,000.000 s/d 15,000.000 / Layanan</span> 
+                  </p>
+                  <img src="http://localhost:4000/assets/images/project/codesyariah/vector1.gif" alt="" />
+              </div>
+
+            </div>
+            <!-- row content1 end -->
+            <br />
+
+            <h1 class="underline text-center mt-2 mb-4"></h1>
+            <!-- row content2 -->
+            <div class="row justify-content-center">
+              <div class="col-md-12 col-xs-12 col-sm-12">
+                  <h1 style="color:salmon;">Web Development <span style="font-family:Reey Regular;">Service</span>   </h1>
+              </div>
+
+              
+              <div class="col-md-4 col-xs-12 col-sm-12">
+                <div class="card" style="width: 18rem;">
+                  <a href="/assets/images/project/codesyariah/webdevs/company2.jpg" data-toggle="lightbox" data-gallery="webdevs">
+                    <img class="card-img-top img-responsive img-fluid float-left" src="/assets/images/project/codesyariah/webdevs/company2.jpg" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                  </a>
+                  <div class="card-body">
+                    <h5 class="card-title">Company Profile</h5>
+                    <p class="card-text">Sebuah perusahaan akan sangat ditunjang dengan profile yang baik untuk menjaring client ataupun vendor dalam pemasaran produk bisnis anda..</p>
+                    <a href="https://api.whatsapp.com/send?phone=6288222668778&amp;text=Saya%20tertarik%20untuk%20menggunakan%20layanan%20ini%20segera" class="btn btn-primary">Beli Sekarang</a>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-md-4 col-xs-12 col-sm-12">
+                <div class="card" style="width: 18rem;">
+                  <a href="/assets/images/project/codesyariah/webdevs/pos1.jpg" data-toggle="lightbox" data-gallery="webdevs">
+                    <img class="card-img-top img-responsive img-fluid float-left" src="/assets/images/project/codesyariah/webdevs/pos1.jpg" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                  </a>
+                  <div class="card-body">
+                    <h5 class="card-title">Point Of Sales</h5>
+                    <p class="card-text">Pengelolaan keuangan sebuah bisnis menjadi semakin mudah dan simple, dalam di kelola melalui system administrasi digital pengelolaan penjualan bisnis anda dapat tercatat baik dengan system digital point of sales..</p>
+                    <a href="https://api.whatsapp.com/send?phone=6288222668778&amp;text=Saya%20tertarik%20untuk%20menggunakan%20layanan%20ini%20segera" class="btn btn-primary">Beli Sekarang</a>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-md-4 col-xs-12 col-sm-12">
+                <div class="card" style="width: 18rem;">
+                  <a href="/assets/images/project/codesyariah/webdevs/portalschool1.jpg" data-toggle="lightbox" data-gallery="webdevs">
+                    <img class="card-img-top img-responsive img-fluid float-left" src="/assets/images/project/codesyariah/webdevs/portalschool1.jpg" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                  </a>
+                  <div class="card-body">
+                    <h5 class="card-title">Portal School</h5>
+                    <p class="card-text">Manajemen pengarsipan sebuah sekolah mejadi lebih mudah, karena segala informasi lebih mudah dijangkau melalui system media digital, maka website portal sekolah ini bisa jadi sebuah media untuk menarik siswa baru, atau membuat kreasi baru yang lebih keren bagi system pendidikan..</p>
+                    <a href="https://api.whatsapp.com/send?phone=6288222668778&amp;text=Saya%20tertarik%20untuk%20menggunakan%20layanan%20ini%20segera" class="btn btn-primary">Beli Sekarang</a>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-md-4 col-xs-12 col-sm-12">
+                <div class="card" style="width: 18rem;">
+                  <a href="/assets/images/project/codesyariah/webdevs/olshop1.jpg" data-toggle="lightbox" data-gallery="webdevs">
+                    <img class="card-img-top img-responsive img-fluid float-left" src="/assets/images/project/codesyariah/webdevs/olshop1.jpg" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                  </a>
+                  <div class="card-body">
+                    <h5 class="card-title">Online Shop</h5>
+                    <p class="card-text">Ide-ide bisnis anda untuk memasarkan produk karya anda akan semakin mudah untuk meningkatkan penjualan, kepuasan pembeli adalah salah satu asset penting dalam bisnis anda, dengan toko online pastikan pelayanan anda meningkat memudahkan pembeli untuk membeli produk anda..</p>
+                    <a href="https://api.whatsapp.com/send?phone=6288222668778&amp;text=Saya%20tertarik%20untuk%20menggunakan%20layanan%20ini%20segera" class="btn btn-primary">Beli Sekarang</a>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-md-4 col-xs-12 col-sm-12">
+                <div class="card" style="width: 18rem;">
+                  <a href="/assets/images/project/codesyariah/webdevs/webblog1.jpg" data-toggle="lightbox" data-gallery="webdevs">
+                    <img class="card-img-top img-responsive img-fluid float-left" src="/assets/images/project/codesyariah/webdevs/webblog1.jpg" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                  </a>
+                  <div class="card-body">
+                    <h5 class="card-title">Web Blog</h5>
+                    <p class="card-text">Anda yang suka dengan dunia junalistik, blogging ataupun arsip-arsip kegiatan tulis menulis, dengan memiliki blog tulisan anda bisa menjadi lebih luas dalam segmentasi pembaca bagi karya tulis anda..</p>
+                    <a href="https://api.whatsapp.com/send?phone=6288222668778&amp;text=Saya%20tertarik%20untuk%20menggunakan%20layanan%20ini%20segera" class="btn btn-primary">Beli Sekarang</a>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-md-4 col-xs-12 col-sm-12">
+                <div class="card" style="width: 18rem;">
+                  <a href="/assets/images/project/codesyariah/webdevs/webkatalog1.jpg" data-toggle="lightbox" data-gallery="webdevs">
+                    <img class="card-img-top img-responsive img-fluid float-left" src="/assets/images/project/codesyariah/webdevs/webkatalog1.jpg" alt="Card image cap" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                  </a>
+                  <div class="card-body">
+                    <h5 class="card-title">Website Katalog</h5>
+                    <p class="card-text">Pelengkap bagi toko online anda yang telah meluncur menjaring para peminat dan pembeli produk karya-karya anda, dengan tampilan design elegan dan menarik toko online anda akan semakin menarik perhatian para pembeli..</p>
+                    <a href="https://api.whatsapp.com/send?phone=6288222668778&amp;text=Saya%20tertarik%20untuk%20menggunakan%20layanan%20ini%20segera" class="btn btn-primary">Beli Sekarang</a>
+                  </div>
+                </div>
+              </div>
+              
+
+            </div>
+            <!-- row content2 end -->
+          </div>
+          <!-- end container panel-body -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<p><br /></p>
+
+<h1 class="underline mb-2 mt-2"></h1>
+
+<p><br /></p>
+
+<div class="parallax" style="background-image: url('http://localhost:4000/assets/images/project/codesyariah/model4.jpg');
+">
+
+  <div class="caption">
+    <br /><br />
+    <h2> Kualitas terjamin , System keamanan terbaik siap menunjang bisnis anda :</h2>
+      <a href="https://wa.me/6288222668778?text=Hai%20kak%20saya%20membutuhkan%20jasa%20web%20development" class="btn btn-primary text-white">whatsap</a>
+      <a href="https://instagram.com/pujiermanto" class="btn btn-primary text-white">Instagram</a>
+    <br /><br />
+  </div>
+
+</div>
+<!-- 
+<div class="card">
+  <div class="card-body">
+    <h3 class="text-center text-primary">Codesyariah Webdevelopment</h3>
+    <img class="card-img-top img-responsive" width="350" height="500" src="http://localhost:4000/assets/images/project/codesyariah/model3.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Codesyariah <span style='font-family:Reey Regular;'>Web</span> Development</h5>
+          <p class="card-text text-justify">Ingin punya website untuk company profile, aplikasi penjualan untuk menunjang bisnis anda, website toko online yang professional, kami <span class='codesyariah'>codesyariah</span> dan team <span style='font-family:SpringSakura;'>|</span> <br/> <span style='font-family:SpringSakura;'>|</span> akan merealisasikan impian anda untuk mempunyai website dan aplikasi yang menunjang kebutuhan bisnis anda, dengan harga fleksibel yang menyesuaikan</p>
+          <h3 class="text-success"></h3><br/>
+          <div class="alert alert-danger" role="alert">
+            Untuk info lebih lanjut silahkan hubungi contact dibawah ini : 
+          </div>
+          <a href="https://wa.me/6288222668778?text=Hai%20kak%20saya%20membutuhkan%20jasa%20web%20development" class="btn btn-primary text-white">whatsap</a>
+          <a href="https://instagram.com/pujiermanto" class="btn btn-primary text-white">Instagram</a>
+  </div>
+</div> -->
+:ET

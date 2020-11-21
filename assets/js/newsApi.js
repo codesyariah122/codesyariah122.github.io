@@ -3,13 +3,13 @@
 function ipAddr(){
     $.getJSON(`${baseAPI.ip}`, function(e) {
         // $('#show-ip').text(e.ip);
-        const data = {
+        const dataIp = {
             'host' : e.ip
         };
         $.ajax({
             url: `${baseAPI.proxy}${baseAPI.geo}`,
             type: 'get',
-            data: data,
+            data: dataIp,
             success: function(res){
                 const result = {
                     'ip': res.data.geo.host,
@@ -27,8 +27,7 @@ function ipAddr(){
 
                Cookies.set('country_code', result.country_code, {expires: 1});
 
-               $('#your-location').append(`
-                
+               data.yourLocation.append(`
                     <h5 class="text-primary">Your Location : <img src="https://newsapi.org/images/flags/${result.country_code}.svg" width="20" height="50" style="backgound:rgba(0, 0, 0, 0.8);"/> | ${result.city} - ${result.region}</h5>
                     <h6 class="text-danger">Your Ip Address : ${result.ip}</h6>
                `);
@@ -82,7 +81,7 @@ function initMap() {
 function newsApi(){
     // const country_code = Cookies.get('country_code');
     // console.log(country_code);
-    const data = {
+    const dataApi = {
         'country' : Cookies.get('country_code'),
         'apiKey' : '0cd9904ea4d44b4385e69e554073be4b'
     };
@@ -90,7 +89,7 @@ function newsApi(){
         url: `${baseAPI.proxy}${baseAPI.news}`,
         type: 'get',
         dataType: 'json',
-        data: data,
+        data: dataApi,
         success: function(res){
             let news = res['articles'];
             // console.log(news);
@@ -98,7 +97,7 @@ function newsApi(){
                 let id = i;
                 let media = news[i]['source']['name'];
                 // console.log(media);
-                $('#select-news').append(`
+                data.selectNews.append(`
                     <option id="pilih" value="${id}">${media}</option>
                 `);
             }
@@ -110,39 +109,39 @@ function newsApi(){
 $(document).ready(function(){
    // const country_code = Cookies.get('country_code');
     // console.log(country_code);
-    const data = {
+    const dataApi = {
         'country' : Cookies.get('country_code'),
         'apiKey' : '0cd9904ea4d44b4385e69e554073be4b'
     };
 
     // console.log(`Your Country : ${data.country}`);
     
-    $('#err').hide();
-    $('#select-news').append(`
+    data.Err.hide();
+    data.selectNews.append(`
         <option value="choose" selected>Choose...</option>
     `);
     
     newsApi();
 
-    $('#enter').on('click', function(){
-        $('#news-list').html('');
+    data.enter.on('click', function(){
+        data.newsList.html('');
         const newsSelect = $('#select-news').val();
 
         if(newsSelect === 'choose' || newsSelect === ''){
-            $('#err').show('slow').fadeIn(1000);
+            data.Err.show('slow').fadeIn(1000);
         }else{
-            $('#err').hide('slow').slideUp(1000);
+            data.Err.hide('slow').slideUp(1000);
             $.ajax({
                 url: `${baseAPI.proxy}${baseAPI.news}`,
                 type: 'get',
                 dataType: 'json',
-                data:data,
+                data:dataApi,
                 success: function(res){
                     if(res){
-                        $('#select-news').val('choose');
+                        data.selectNews.val('choose');
                         let getNews = res['articles'][newsSelect];
                         // console.log(getNews);
-                        $('#news-list').append(`
+                        data.newsList.append(`
                                 <div class="col-md-4">
                                     <div class="card mb-5 mt-2">
                                         <img src="${getNews.urlToImage}" class="card-img-top float-left img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" alt="...">
@@ -152,7 +151,7 @@ $(document).ready(function(){
                                             <p>
                                                 ${getNews.content}
                                             </p>
-                                            <a href="${getNews.url}" class="card-link see-detail" data-toggle="modal" data-target="#exampleModal" data-id="${getNews}">See Detail</a>
+                                            <a href="${getNews.url}" class="card-link see-detail" data-id="${getNews}" target="_blank">See Detail</a>
                                             </div>
                                     </div>
                                 </div>
@@ -162,4 +161,5 @@ $(document).ready(function(){
             });
         }
     });
+
 });
