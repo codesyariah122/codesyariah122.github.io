@@ -1,0 +1,62 @@
+<div class="parallax" style="background-image: url('{{site.url}}{{myroom.bg-image.enam}}');
+">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class='box-wave'>
+          <div class='wave -one'></div>
+          <div class='wave -two'></div>
+          <div class='wave -three'></div>
+          <div class='title-wave'>
+            <h4>
+              {{myroom.tags.empat}}.
+            </h4>
+          </div>
+        </div>
+          <br/><br/>
+      </div>
+    </div>
+
+</div>
+
+</div>
+
+
+  <audio id="crowded" loop>
+      <source src="{{site.url}}/assets/crowded.mp3" type="audio/mpeg" >
+    </audio>
+
+    <audio id="booring" loop>
+      <source src="{{site.url}}/assets/booring.mp3" type="audio/mpeg" >
+    </audio>
+
+<!-- Modal pertanyaan quiz-->
+<div class="modal fade" id="MyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Javascript Quiz</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="jawaban">Jawab Pertanyaan berikut <br/>
+            <span class="text-primary"><b>Sapi betina adalah surah ke -  ?  berapa</b></span>
+          </label>
+          <input type="number" autocomplete="off" autofocus="on" class="form-control" id="jawaban" name="ask" placeholder="Isikan Jawaban Anda" autofocus>
+          <small id="emailHelp" class="form-text text-muted">
+            Isi jawaban tersebut dengan benar . <br/>
+            Selamat menjawab
+            <span class="text-danger">Jangan di cancel!</span>
+          </small>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="submit" class="btn btn-primary">Jawab</button>
+      </div>
+    </div>
+  </div>
+</div>

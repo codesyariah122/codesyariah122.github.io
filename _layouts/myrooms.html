@@ -1,6 +1,21 @@
 ---
 layout: default
 ---
+{% assign myroom = site.data.myrooms[page.label] %}
+
+{% assign WebDevelopment = site.data.webdevelopers[page.contact] %} 
+
+{% include myrooms/style.html %}
+
+{% include myrooms/jumbotron.html %}
+
+{% include myrooms/quran.html %}
+
+{% include myrooms/covid.html %}
+
+{% include myrooms/card_after_covid.html %}
+
+{% include myrooms/quiz.html %}
 
 {% include myrooms/index.html %}
 

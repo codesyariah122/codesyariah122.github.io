@@ -20,12 +20,14 @@ const data = {
     'ModalBodySurah' : $('.modal-body-surah'),
     'MyChart' : $('#myChart'),
     'genderChart' : $('#chartGender'),
+    'usiaChart' : $('#chartUsia'),
     'SelectProvinsi' : $('#select-provinsi'),
     'PilihProvinsi' : $('#pilih-provinsi'),
     'resultError' : $('#resultError'),
     'ErrorTags' : "Maaf silahkan pilih nama provinsi terlebih dahulu",
     'ResultExp' : $('#result-exp'),
-    'berdasarkanGender': $('#gender')
+    'berdasarkanGender' : $('#gender'),
+    'berdasarkanUsia' : $('#usia'),
 };
 
 const baseAPI = {
@@ -33,4 +35,8 @@ const baseAPI = {
     'covid' : "https://data.covid19.go.id/public/api/",
     "quran" : "https://raw.githubusercontent.com/penggguna/QuranJSON/master/surah/",
     "quranMaster" : "https://raw.githubusercontent.com/penggguna/QuranJSON/master/",
+    "news" : "https://newsapi.org/v2/top-headlines",
+    "geo" : "https://tools.keycdn.com/geo.json",
+    "ip" : "https://api.ipify.org/?format=json",
+    "movie" : "https://omdbapi.com",
 }

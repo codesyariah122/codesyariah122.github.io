@@ -1,14 +1,13 @@
 {/* <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15843.02469076354!2d${result.lng}!3d${result.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1605683044978!5m2!1sid!2sid" width="900" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe> */}
 
 function ipAddr(){
-    $.getJSON("https://api.ipify.org/?format=json", function(e) {
+    $.getJSON(`${baseAPI.ip}`, function(e) {
         // $('#show-ip').text(e.ip);
-        const urlProxy = "https://cors-anywhere.herokuapp.com/";
         const data = {
             'host' : e.ip
         };
         $.ajax({
-            url: `${urlProxy}https://tools.keycdn.com/geo.json`,
+            url: `${baseAPI.proxy}${baseAPI.geo}`,
             type: 'get',
             data: data,
             success: function(res){
@@ -87,9 +86,8 @@ function newsApi(){
         'country' : Cookies.get('country_code'),
         'apiKey' : '0cd9904ea4d44b4385e69e554073be4b'
     };
-    const urlProxy = "https://cors-anywhere.herokuapp.com/";
     $.ajax({
-        url: `${urlProxy}https://newsapi.org/v2/top-headlines`,
+        url: `${baseAPI.proxy}${baseAPI.news}`,
         type: 'get',
         dataType: 'json',
         data: data,
@@ -117,7 +115,7 @@ $(document).ready(function(){
         'apiKey' : '0cd9904ea4d44b4385e69e554073be4b'
     };
 
-    console.log(`Your Country : ${data.country}`);
+    // console.log(`Your Country : ${data.country}`);
     
     $('#err').hide();
     $('#select-news').append(`
@@ -129,14 +127,13 @@ $(document).ready(function(){
     $('#enter').on('click', function(){
         $('#news-list').html('');
         const newsSelect = $('#select-news').val();
-        const urlProxy = "https://cors-anywhere.herokuapp.com/";
 
         if(newsSelect === 'choose' || newsSelect === ''){
             $('#err').show('slow').fadeIn(1000);
         }else{
             $('#err').hide('slow').slideUp(1000);
             $.ajax({
-                url: `${urlProxy}https://newsapi.org/v2/top-headlines`,
+                url: `${baseAPI.proxy}${baseAPI.news}`,
                 type: 'get',
                 dataType: 'json',
                 data:data,

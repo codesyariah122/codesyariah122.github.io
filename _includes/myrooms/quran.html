@@ -1,0 +1,77 @@
+
+  <div class="container">
+    <div class="row justify-content-center">
+
+      <div class="col-12">
+        <h1 class="text-success text-center" style="font-family:Reey Regular;">Sang Pembeda</h1>
+        <h4 class="text-center">Pilih Surah Quran</h4>
+        <div class="input-group mb-3">
+          <select class="custom-select" id="select-surah" name="surah">
+              <!-- <option selected>Choose...</option> -->                       
+          </select>
+            <div class="input-group-append">
+                <button id="pilih-surah" class="btn btn-dark">Enter</button>
+            </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div style="width: 100%;" class="table-responsive">
+            <table id="myTable" class="hover table table-striped table-bordered" style="width:100%">
+              <thead>
+                  <tr>
+                      <th>Name</th>
+                      <th>Number Surah</th>
+                      <th>Number Ayah</th>
+                      <th>Type</th>
+                      <th>Place</th>
+                      <th>Recitations</th>
+                      <th>Verses</th>
+                  </tr>
+              </thead>
+              <tbody id="result"> </tbody>	
+            </table>
+        </div>
+      </div>
+
+      <div style="width: 100%; height: auto !important; clear: both; text-align: center;" class="google-auto-placed">
+      </div>
+
+    </div>
+  </div>
+
+  <h1 class="underline mb-5 mt-3"></h1>
+
+  <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="polaroid">
+            <img src="{{site.url}}{{myroom.vector.tiga}}" alt="" class="img-responsive mt-3">
+              <div class="polaroid-body">
+                  <h2>{{myroom.tags.tiga}}.</h2>
+              </div>	
+          </div>
+  
+        </div>
+    </div>
+  </div>
+  
+  <h1 class="underline mb-2 mt-2"></h1>
+
+    <!-- Modal -->
+    <div class="modal fade" id="surahModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ModalLabelSurah"> </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            
+            <div class="modal-body-surah">
+            </div>
+  
+          </div>
+        </div>
+      </div>
+  

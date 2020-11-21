@@ -1,14 +1,15 @@
 function searchMovie(){
     data.movieList.html('');
     const input = data.searchMovie.val();
+    const dataMovieApi = {
+        'apiKey' : '434248d4',
+        's' : input
+    }
     $.ajax({
-        url: 'https://omdbapi.com',
+        url: `${baseAPI.proxy}${baseAPI.movie}`,
         type: 'get',
         dataType: 'json',
-        data: {
-            'apiKey' : '434248d4',
-            's' : input
-        },
+        data: dataMovieApi,
         success: function(res){
             if(res.Response == 'True'){
                 let movies = res.Search;
@@ -53,14 +54,15 @@ $(document).ready(function(){
     });
 
     data.movieList.on('click', '.see-detail', function(){
+        const dataMovieApi = {
+            'apiKey' : '434248d4',
+            'i' : $(this).data('id')
+        };
           $.ajax({
-            url: 'https://omdbapi.com',
+            url: `${baseAPI.proxy}${baseAPI.movie}`,
             type: 'get',
             dataType: 'json',
-            data: {
-                'apiKey' : '434248d4',
-                'i' : $(this).data('id')
-            },
+            data: dataMovieApi,
             success: function(res){
                 if(res.Response === 'True'){
                     $('.modal-body').html(`
