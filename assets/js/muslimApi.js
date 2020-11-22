@@ -140,10 +140,43 @@ const showVerses = () => {
 
 }
 
-const MulaiWaktuAdzan = (jam=[]) => {
+const MulaiWaktuAdzan = (shalat) => {
     const date = new Date();
     const now = date.getHours()+':'+date.getMinutes();
-    const adzanNow = jam.includes(now);
+    const jam = "18:03";
+    // ini untuk  array
+    // const adzanNow = jam.includes(now);
+    
+    // ini untuk object
+    const waktuAdzan = Object.values(shalat);
+    const Adzan = waktuAdzan.includes(jam);
+    const waktuShalat = Object.keys(shalat);
+    
+    console.log(waktuShalat);
+    console.log(waktuAdzan);
+
+    switch(Adzan){
+        case waktuAdzan[1]:
+            namaShalat = waktuShalat[1];
+        break;
+        case waktuAdzan[2]:
+            namaShalat = waktuShalat[2];
+        break;
+        case waktuAdzan[3]:
+            namaShalat = waktuShalat[3];
+        break;
+        case waktuAdzan[4]:
+            namaShalat = waktuShalat[4];
+        break;
+        case waktuAdzan[5]:
+            namaShalat = waktuShalat[5];
+        break;
+        default:
+            namaShalat = "tidak ada";
+    }
+
+    alert(namaShalat);
+
 }
 
 const jadwalShalat = (today, city) => {
@@ -152,7 +185,7 @@ const jadwalShalat = (today, city) => {
     };
 
     $.ajax({
-        url: `${baseAPI.shalat}${today}`,
+        url: `${baseAPI.proxy}${baseAPI.shalat}${today}`,
         type: 'get',
         dataType: 'json',
         data: dataShalat,
@@ -171,9 +204,9 @@ const jadwalShalat = (today, city) => {
                 'Isha': result.datetime[0].times.Isha
             };
 
-            const waktuAdzanTest = [adzan.Imsak, adzan.Fajr, adzan.Dhuhr, adzan.Asr, adzan.Maghrib, adzan.Isha];
+            // const waktuAdzanNya = [adzan.Imsak, adzan.Fajr, adzan.Dhuhr, adzan.Asr, adzan.Maghrib, adzan.Isha];
             
-            MulaiWaktuAdzan(waktuAdzanTest);
+            MulaiWaktuAdzan(adzan);
 
             data.tanggal.html(`${tanggal.hijriah} Hijriah | ${tanggal.gregoria}`);
 
