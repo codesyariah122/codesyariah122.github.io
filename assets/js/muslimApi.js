@@ -145,7 +145,7 @@ const MulaiWaktuAdzan = (jam=[]) => {
     const now = date.getHours()+':'+date.getMinutes();
     const angkaTest = 18;
     if(jQuery.inArray(angkaTest, jam)){
-        alert(jam);
+        // alert(jam);
     }
 }
 
