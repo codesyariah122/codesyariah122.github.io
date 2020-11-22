@@ -30,7 +30,9 @@
             "lima": "/assets/images/myroom/covid1.jpg",
             "enam": "/assets/images/myroom/covid2.jpg",
             "tujuh": "/assets/images/myroom/myroom5.gif",
-            "delapan": "<lottie-player src='https://assets5.lottiefiles.com/packages/lf20_CYBIbn.json'  background='transparent'  speed='1'  style='width: 300px; height: 300px;'  loop controls autoplay></lottie-player>"
+            "delapan": "/assets/images/myroom/myroom3.jpg",
+            "sembilan": "/assets/images/myroom/doa.jpg",
+            "sepuluh": "/assets/images/myroom/shalat.jpg"
         },
         "tags":
         {
@@ -42,6 +44,12 @@
             "enam": "Tak ada perlindungan terbaik selain dari perhatian keluarga.",
             "tujuh": "Mudah-mudahan kasus covid 19 ini berakhir di tahun ini, kita bisa lakukan pencegahan dini sesuai dengan anjuran dari kementrian kesehatan. Jaga terus kesehatan kalian dan keluarga semoga kita selalu terjaga dari bahaya covid 19 ini.",
             "delapan": "Update terbaru kasus covid 19 di Indonesia / Provinsi. Anda bisa memilih bagian provinsi di field input dibawah, untuk mengecek perubahan data kasus covid di Indonesia / Provinsi"
+        },
+        "dalil":
+        {
+            "judul": "Shalat Di Awal Waktu",
+            "satu": "“Sesungguhnya shalat memiliki waktu yang telah ditetapkan bagi orang beriman.” <br/> (QS. An Nisaa’:103)",
+            "dua": "Ibnu Jarir dalam kitab tafsirnya berkata, dari Al Auza’i, dari Musa bin Sulaiman, dari Al Qosim bin Mukhoymiroh mengenai firman Allah Ta’ala, <br/> <b> “Dan datanglah orang-orang setelah mereka yang menyia-nyiakan shalat.” (QS. Maryam: 59)</b>, <br/> Al Qosim berkata bahwa yang dimaksud ayat ini, “Mereka yang menyia-nyiakan waktu shalat. Sedangkan jika sampai meninggalkan shalat, maka kafir.”  Dari Ummu Farwah, ia berkata, <br/> <b>“Rasulullah shallallahu ‘alaihi wa sallam </b> pernah ditanya, amalan apakah yang paling afdhol. Beliau pun menjawab, <br/> <b>“Shalat di awal waktunya.” (HR. Abu Daud no. 426. Syaikh Al Albani mengatakan bahwa hadits ini shahih)</b>. "
         }
     }
 }

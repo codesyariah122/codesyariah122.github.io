@@ -39,9 +39,36 @@
     </div>
   </div>
 
-  <h1 class="underline mb-5 mt-3"></h1>
+  <h1 class="underline mb-3 mt-3"></h1>
 
   <div class="container">
+    <div class="row justify-content-start">
+      <div class="col-md-4 col-xs-12 col-sm-12">
+        <div class="polaroid">
+          <img src="{{site.url}}{{myroom.vector.delapan}}" alt="" class="img-responsive mt-3">
+            <div class="polaroid-body" id="jadwal-shalat">
+                <h5 class="mt-2 mb-2 text-center text-dark" id="kota"></h5>
+                  <p id="tanggal" class="mb-3 underline text-success text-center"></p>
+                <ul class="list-group list-group-flush" id="waktu-adzan">
+                </ul>            
+            </div>	
+        </div>
+      </div>
+
+      <div class="col-md-6 col-xs-12 col-sm-12 mt-5 ml-5">
+        <h1 class="underline text-center" style="font-family: 'Poiret One', cursive;">{{myroom.dalil.judul}}</h1>
+        <p class="text-center" style="font-weight: 500;">
+            {{myroom.dalil.satu}}
+        </p>
+        <p style="text-indent: 45px; text-align: justify;">
+          {{myroom.dalil.dua}}
+        </p>
+        <img src="{{site.url}}{{myroom.vector.sepuluh}}" style="border-radius: 50%;" alt="" class="img-responsive mt-3">
+      </div>
+    </div>
+    
+    <h1 class="underline mb-5 mt-3"></h1>
+
     <div class="row justify-content-center">
         <div class="col-md-6 col-xs-12 col-sm-12">
           <div class="polaroid">
@@ -50,28 +77,11 @@
                   <h2>{{myroom.tags.tiga}}.</h2>
               </div>	
           </div>
-  
         </div>
     </div>
   </div>
   
   <h1 class="underline mb-2 mt-2"></h1>
 
-    <!-- Modal -->
-    <div class="modal fade" id="surahModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="ModalLabelSurah"> </h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            
-            <div class="modal-body-surah">
-            </div>
-  
-          </div>
-        </div>
-      </div>
+
   

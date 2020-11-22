@@ -14,10 +14,10 @@ const data = {
     'Err' : $('#err'),
     'SelectSurah' : $('#select-surah'),
     'PilihSurah' : $('#pilih-surah'),
-    'ModalSurah' : $('#surahModal'),
     'ResultSurah' : $('#result'),
-    'ModaLabelSurah' : $('#ModalLabelSurah'),
-    'ModalBodySurah' : $('.modal-body-surah'),
+    'ModalApi' : $('#apiModal'),
+    'ModaLabelApi' : $('#ModalLabelApi'),
+    'ModalBodyApi' : $('.modal-body-api'),
     'MyChart' : $('#myChart'),
     'genderChart' : $('#chartGender'),
     'usiaChart' : $('#chartUsia'),
@@ -32,7 +32,10 @@ const data = {
     'enter' : $('#enter'),
     'selectNews' : $('#select-news'),
     'newsList' : $('#news-list'),
-
+    'jadwalShalat' : $('#jadwal-shalat'),
+    'tanggal' : $('#tanggal'),
+    'waktuAdzan' : $('#waktu-adzan'),
+    'kota' : $('#kota'),
 };
 
 const baseAPI = {
@@ -44,4 +47,5 @@ const baseAPI = {
     "geo" : "https://tools.keycdn.com/geo.json",
     "ip" : "https://api.ipify.org/?format=json",
     "movie" : "https://omdbapi.com",
+    'shalat' : "https://api.pray.zone/v2/times/",
 }

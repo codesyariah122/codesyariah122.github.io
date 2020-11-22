@@ -24,10 +24,11 @@ function ipAddr(){
 
                 Cookies.set('lat', result.lat, {expires: 1});
                 Cookies.set('lng', result.lng, {expires: 1});
+                Cookies.set('city', result.city, {expires: 30});
 
-               Cookies.set('country_code', result.country_code, {expires: 1});
+                Cookies.set('country_code', result.country_code, {expires: 1});
 
-               data.yourLocation.append(`
+                data.yourLocation.append(`
                     <h5 class="text-primary">Your Location : <img src="https://newsapi.org/images/flags/${result.country_code}.svg" width="20" height="50" style="backgound:rgba(0, 0, 0, 0.8);"/> | ${result.city} - ${result.region}</h5>
                     <h6 class="text-danger">Your Ip Address : ${result.ip}</h6>
                `);
