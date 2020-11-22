@@ -36,6 +36,7 @@ const data = {
     'tanggal' : $('#tanggal'),
     'waktuAdzan' : $('#waktu-adzan'),
     'kota' : $('#kota'),
+    'now' : $('#now'),
 };
 
 const baseAPI = {

@@ -75,14 +75,6 @@ const covidChart = (last_date, labels, label, dataCovid) => {
             }]
         },
         options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    },
-                    stacked: true
-                }]
-            },
             responsive: true,
             maintainAspectRatio: false
         }
@@ -110,6 +102,7 @@ const genderChart = (labels, dataChartGender) => {
             data: dataChartGender
           }]
         }
+
       });
 
 }

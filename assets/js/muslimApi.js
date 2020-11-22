@@ -143,10 +143,7 @@ const showVerses = () => {
 const MulaiWaktuAdzan = (jam=[]) => {
     const date = new Date();
     const now = date.getHours()+':'+date.getMinutes();
-    const angkaTest = 18;
-    if(jQuery.inArray(angkaTest, jam)){
-        // alert(jam);
-    }
+    const adzanNow = jam.includes(now);
 }
 
 const jadwalShalat = (today, city) => {
@@ -174,7 +171,7 @@ const jadwalShalat = (today, city) => {
                 'Isha': result.datetime[0].times.Isha
             };
 
-            const waktuAdzanTest = [19, 20, 21, 22];
+            const waktuAdzanTest = [adzan.Imsak, adzan.Fajr, adzan.Dhuhr, adzan.Asr, adzan.Maghrib, adzan.Isha];
             
             MulaiWaktuAdzan(waktuAdzanTest);
 
@@ -187,7 +184,7 @@ const jadwalShalat = (today, city) => {
             })
 
             
-            console.log(result);
+            // console.log(result);
 
             {/* <li class="list-group-item">Cras justo odio</li> */}
         
