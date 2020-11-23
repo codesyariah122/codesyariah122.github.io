@@ -79,21 +79,15 @@ function initMap() {
   
 //   google.maps.event.addDomListener(window, 'load', initialize);
 
-function newsApi(){
-    // const country_code = Cookies.get('country_code');
-    // console.log(country_code);
-    const dataApiNews = {
-        'country' : Cookies.get('country_code'),
-        'apiKey' : '0cd9904ea4d44b4385e69e554073be4b'
-    };
+const newsApi = (data) => {
+
     $.ajax({
         url: `${baseAPI.proxy}${baseAPI.news}`,
         type: 'get',
         dataType: 'json',
-        data: dataApiNews,
+        data: data,
         success: function(res){
             let news = res['articles'];
-            // console.log(news);
             for(let i = 0; i <= news.length-1; i++){
                 let id = i;
                 let media = news[i]['source']['name'];
@@ -102,30 +96,29 @@ function newsApi(){
                     <option id="pilih" value="${id}">${media}</option>
                 `);
             }
-            // console.log(news);
         }
-    })
+    });
 }
 
 $(document).ready(function(){
-   // const country_code = Cookies.get('country_code');
-    // console.log(country_code);
+    // apiKey list
+    // 5effd68f01ce47589b435b22ebdb06b9
+    // 0cd9904ea4d44b4385e69e554073be4b
     const dataApiNews = {
         'country' : Cookies.get('country_code'),
-        'apiKey' : '0cd9904ea4d44b4385e69e554073be4b'
+        'apiKey' : '5effd68f01ce47589b435b22ebdb06b9'
     };
 
-    // console.log(`Your Country : ${data.country}`);
-    
     $('#err').hide();
     $('#select-news').append(`
         <option value="choose" selected>Choose...</option>
     `);
     
-    newsApi();
+    newsApi(dataApiNews);
 
     $('#enter').on('click', function(){
         $('#news-list').html('');
+
         const newsSelect = $('#select-news').val();
 
         if(newsSelect === 'choose' || newsSelect === ''){
@@ -142,7 +135,7 @@ $(document).ready(function(){
                         $('#select-news').val('choose');
                         let getNews = res['articles'][newsSelect];
                         // console.log(getNews);
-                        $('news-list').append(`
+                        $('#news-list').append(`
                                 <div class="col-md-4">
                                     <div class="card mb-5 mt-2">
                                         <img src="${getNews.urlToImage}" class="card-img-top float-left img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" alt="...">
