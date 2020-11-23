@@ -28,7 +28,7 @@ function ipAddr(){
 
                 Cookies.set('country_code', result.country_code, {expires: 1});
 
-                data.yourLocation.append(`
+                $('#your-location').append(`
                     <h5 class="text-primary">Your Location : <img src="https://newsapi.org/images/flags/${result.country_code}.svg" width="20" height="50" style="backgound:rgba(0, 0, 0, 0.8);"/> | ${result.city} - ${result.region}</h5>
                     <h6 class="text-danger">Your Ip Address : ${result.ip}</h6>
                `);
@@ -82,7 +82,7 @@ function initMap() {
 function newsApi(){
     // const country_code = Cookies.get('country_code');
     // console.log(country_code);
-    const dataApi = {
+    const dataApiNews = {
         'country' : Cookies.get('country_code'),
         'apiKey' : '0cd9904ea4d44b4385e69e554073be4b'
     };
@@ -90,7 +90,7 @@ function newsApi(){
         url: `${baseAPI.proxy}${baseAPI.news}`,
         type: 'get',
         dataType: 'json',
-        data: dataApi,
+        data: dataApiNews,
         success: function(res){
             let news = res['articles'];
             // console.log(news);
@@ -98,7 +98,7 @@ function newsApi(){
                 let id = i;
                 let media = news[i]['source']['name'];
                 // console.log(media);
-                data.selectNews.append(`
+                $('#select-news').append(`
                     <option id="pilih" value="${id}">${media}</option>
                 `);
             }
@@ -110,39 +110,39 @@ function newsApi(){
 $(document).ready(function(){
    // const country_code = Cookies.get('country_code');
     // console.log(country_code);
-    const dataApi = {
+    const dataApiNews = {
         'country' : Cookies.get('country_code'),
         'apiKey' : '0cd9904ea4d44b4385e69e554073be4b'
     };
 
     // console.log(`Your Country : ${data.country}`);
     
-    data.Err.hide();
-    data.selectNews.append(`
+    $('#err').hide();
+    $('#select-news').append(`
         <option value="choose" selected>Choose...</option>
     `);
     
     newsApi();
 
-    data.enter.on('click', function(){
-        data.newsList.html('');
+    $('#enter').on('click', function(){
+        $('#news-list').html('');
         const newsSelect = $('#select-news').val();
 
         if(newsSelect === 'choose' || newsSelect === ''){
-            data.Err.show('slow').fadeIn(1000);
+            $('#err').show('slow').fadeIn(1000);
         }else{
-            data.Err.hide('slow').slideUp(1000);
+            $('#err').hide('slow').slideUp(1000);
             $.ajax({
                 url: `${baseAPI.proxy}${baseAPI.news}`,
                 type: 'get',
                 dataType: 'json',
-                data:dataApi,
+                data:dataApiNews,
                 success: function(res){
                     if(res){
-                        data.selectNews.val('choose');
+                        $('#select-news').val('choose');
                         let getNews = res['articles'][newsSelect];
                         // console.log(getNews);
-                        data.newsList.append(`
+                        $('news-list').append(`
                                 <div class="col-md-4">
                                     <div class="card mb-5 mt-2">
                                         <img src="${getNews.urlToImage}" class="card-img-top float-left img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" alt="...">
