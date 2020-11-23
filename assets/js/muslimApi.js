@@ -143,7 +143,7 @@ const showVerses = () => {
 const MulaiWaktuAdzan = (shalat) => {
     const date = new Date();
     const now = date.getHours()+':'+date.getMinutes();
-    const jam = "18:03";
+    const jam = "18:04";
     // ini untuk  array
     // const adzanNow = jam.includes(now);
     
@@ -152,30 +152,9 @@ const MulaiWaktuAdzan = (shalat) => {
     const Adzan = waktuAdzan.includes(jam);
     const waktuShalat = Object.keys(shalat);
     
-    console.log(waktuShalat);
-    console.log(waktuAdzan);
-
-    switch(Adzan){
-        case waktuAdzan[1]:
-            namaShalat = waktuShalat[1];
-        break;
-        case waktuAdzan[2]:
-            namaShalat = waktuShalat[2];
-        break;
-        case waktuAdzan[3]:
-            namaShalat = waktuShalat[3];
-        break;
-        case waktuAdzan[4]:
-            namaShalat = waktuShalat[4];
-        break;
-        case waktuAdzan[5]:
-            namaShalat = waktuShalat[5];
-        break;
-        default:
-            namaShalat = "tidak ada";
-    }
-
-    alert(namaShalat);
+    // console.log(waktuShalat);
+    // console.log(waktuAdzan);
+    // alert(Adzan);
 
 }
 
@@ -206,7 +185,7 @@ const jadwalShalat = (today, city) => {
 
             // const waktuAdzanNya = [adzan.Imsak, adzan.Fajr, adzan.Dhuhr, adzan.Asr, adzan.Maghrib, adzan.Isha];
             
-            MulaiWaktuAdzan(adzan);
+            // MulaiWaktuAdzan(adzan);
 
             data.tanggal.html(`${tanggal.hijriah} Hijriah | ${tanggal.gregoria}`);
 
