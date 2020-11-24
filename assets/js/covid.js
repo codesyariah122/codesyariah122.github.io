@@ -1,6 +1,4 @@
-data.MyChart.hide();
-data.genderChart.hide();
-data.usiaChart.hide();
+data.MyChart.html('');
 data.resultError.hide();
 
 $(document).ready(function(){
@@ -13,9 +11,7 @@ $(document).ready(function(){
     kawalCovid();
 
     data.PilihProvinsi.on('click', () => {
-        data.MyChart.hide();
-        data.genderChart.hide();
-        data.usiaChart.hide();
+        data.MyChart.html('');
         data.ResultExp.html('');
 
         const provinsi = {
@@ -39,6 +35,8 @@ $(document).ready(function(){
                 dataType: 'json',
                 data: provinsi.idProv,
                 success: function(res){
+                    genderChart('', '');
+                    usiaChart('', '');
                     const last_date = res.last_date;
                     const result = res.list_data[provinsi.idProv];
                     const name_prov = result.key;
@@ -53,7 +51,7 @@ $(document).ready(function(){
                     const dataCovid = [resData.kasus, resData.dirawat, resData.meninggal, resData.sembuh];
 
                     // console.log(result); 
-                    data.MyChart.show();
+                    // data.MyChart.show();
                     
                     data.ResultExp.append(`
                         <div class="col-md-6">
@@ -100,7 +98,7 @@ $(document).ready(function(){
                     berdasarkanGender[0].doc_count
                 ];
 
-                data.genderChart.show();
+                // data.genderChart.show();
                 genderChart(labels, dataChartGender);
             }
         });
@@ -136,7 +134,7 @@ $(document).ready(function(){
                     berdasarkanUsia[4].doc_count,
                     berdasarkanUsia[5].doc_count
                 ];
-                data.usiaChart.show();
+                // data.usiaChart.show();
                 usiaChart(labels, dataChartUsia);
             }
         });

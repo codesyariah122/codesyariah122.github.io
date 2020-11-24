@@ -140,22 +140,23 @@ const showVerses = () => {
 
 }
 
-const MulaiWaktuAdzan = (shalat) => {
-    const date = new Date();
-    const now = date.getHours()+':'+date.getMinutes();
-    const jam = "18:04";
-    // ini untuk  array
-    // const adzanNow = jam.includes(now);
-    
-    // ini untuk object
-    const waktuAdzan = Object.values(shalat);
-    // const Adzan = waktuAdzan.includes(jam);
-    const Adzan = waktuAdzan.indexOf(jam);
-    const waktuShalat = Object.keys(shalat);
-    
-    console.log(waktuShalat);
-    console.log(waktuAdzan);
-    // console.log(Adzan);
+const MulaiWaktuAdzan = (value, arr1, arr2) => {
+
+    for(let i = 0; i<=arr1.length; i++){
+        const shalat = arr1[i];
+        if(shalat == value){
+            status = arr2[i];
+                 $('#now2').append(`
+                    Sekarang memasuki waktu <b>${status}</b> : ${arr1[i]}
+                 `);
+            break;
+        }
+
+    }
+
+    // alert(value);
+
+    return status;
 
 }
 
@@ -171,30 +172,41 @@ const jadwalShalat = (today, city) => {
         data: dataShalat,
         success: function(res){
             const result = res.results;
+            // console.log(result);
+
             const tanggal = {
                 'hijriah': result.datetime[0].date.hijri,
                 'gregoria': result.datetime[0].date.gregorian,
             };
-            const adzan = {
+            const islamTime = {
                 'Imsak': result.datetime[0].times.Imsak,
                 'Fajr': result.datetime[0].times.Fajr,
+                'Sunrise': result.datetime[0].times.Sunrise,
                 'Dhuhr': result.datetime[0].times.Dhuhr,
                 'Asr': result.datetime[0].times.Asr,
                 'Maghrib': result.datetime[0].times.Maghrib,
-                'Isha': result.datetime[0].times.Isha
+                'Isha': result.datetime[0].times.Isha,
+                'Qiyamullail': result.datetime[0].times.Midnight,
             };
 
             // const waktuAdzanNya = [adzan.Imsak, adzan.Fajr, adzan.Dhuhr, adzan.Asr, adzan.Maghrib, adzan.Isha];
-            
-            // MulaiWaktuAdzan(adzan);
+            // const Adzan = waktuAdzan.includes(jam);
+            // const Adzan = waktuAdzan.indexOf(jam);
+            const waktuAdzan = Object.values(islamTime);
+            const waktuShalat = Object.keys(islamTime);
+            // console.log(waktuShalat);
+            const date = new Date();
+            const now = date.getHours()+':'+date.getMinutes();
+
+            MulaiWaktuAdzan(now, waktuAdzan, waktuShalat);
 
             data.tanggal.html(`${tanggal.hijriah} Hijriah | ${tanggal.gregoria}`);
 
-            $.each(adzan, function(key, value){
+            $.each(islamTime, function(key, value){
                 data.waktuAdzan.append(`
-                <li class="list-group-item text-dark"><b>${key}</b> : ${value}</li>
-                `)
-            })
+                    <li class="list-group-item text-dark"><b>${key}</b> : ${value}</li>
+                `);
+            });
 
             
             // console.log(result);
