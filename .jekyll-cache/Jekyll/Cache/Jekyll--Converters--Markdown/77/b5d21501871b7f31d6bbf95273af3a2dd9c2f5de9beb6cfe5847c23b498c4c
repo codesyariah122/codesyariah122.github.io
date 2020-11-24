@@ -1,12 +1,4 @@
----
-layout: default
-title: "Hallo Movie"
-permalink: "/project/hallomovie"
-projectname: hallomovie
-projectstory1: story1
-product: hallomovie
----  
-<style type="text/css">
+I"X)<style type="text/css">
     /* all parallax top and bottom */
     .parallax{
       min-height: 500px; 
@@ -142,29 +134,25 @@ product: hallomovie
     }
     </style>
 
-
-{% assign hallomovie = site.data.projectnames[page.projectname]%}
-{% assign movie = site.data.hallomovies[page.product] %}
-
 <div id="contentApp">
-    <div class="jumbotron jumbotron-fluid jumbotron-content" style="background-image:url('{{site.url}}{{hallomovie.image}}');">
+    <div class="jumbotron jumbotron-fluid jumbotron-content" style="background-image:url('http://localhost:4000/assets/images/project/hallomovie/movie2.jpg');">
         <div class="container">
           <div class="row justify-content-end">
             <div class="col-md-6">
-                <h1 class="display-4">{{hallomovie.name}}</h1>
+                <h1 class="display-4">Hallo <span style="font-family:Reey Regular;">Movie</span> Codesyariah</h1>
             </div>
           </div>
         </div>
       </div>
-    <br><br>
+    <br /><br />
 <h1 class="underline mt-2 mb-2"></h1>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6 col-xs-12 col-sm-12">
                 <div class="polaroid">
-                <img src="{{site.url}}{{hallomovie.vector.satu}}" alt="" class="img-responsive mt-3">
+                <img src="http://localhost:4000/assets/images/project/hallomovie/vector1.gif" alt="" class="img-responsive mt-3" />
                 <div class="polaroid-body">
-                    <h2>{{hallomovie.tags}}.</h2>
+                    <h2>Lagi nyari info atau data tentang film yang anda suka dan ingin anda tonton, kami menyediakan layanan data akses ke IMDB. <span style="font-family:SpringSakura;color:crimson;">|</span> Sebagai layanan untuk mencari data informasi mengenai release movie <span style="font-family:SpringSakura;color:crimson;">|</span> dari seluruh dunia, anda bisa menggunakannya dengan bebas gratis, tinggal ketik di input field pencarian yang telah kami sediakan berikut..</h2>
                 </div>	
                 </div>
     
@@ -174,23 +162,23 @@ product: hallomovie
   
 <h1 class="underline mb-2 mt-2"></h1>
 
-<div class="parallax" style="background-image: url('{{site.url}}{{movie.parallax.satu.img}}');
+<div class="parallax" style="background-image: url('http://localhost:4000/assets/images/project/hallomovie/movie7.jpg');
 ">
 
     <div class="container">
         <div class="row">
         <div class="col-md-4">
-            <div class='box-wave'>
-            <div class='wave -one'></div>
-            <div class='wave -two'></div>
-            <div class='wave -three'></div>
-            <div class='title-wave'>
+            <div class="box-wave">
+            <div class="wave -one"></div>
+            <div class="wave -two"></div>
+            <div class="wave -three"></div>
+            <div class="title-wave">
                 <h4>
-                {{movie.parallax.satu.info}}.
+                Cara termudah mendapatkan referensi data informasi <br /> mengenai film yang ingin anda tonton.
                 </h4>
             </div>
             </div>
-            <br/><br/>
+            <br /><br />
         </div>
         </div>
 
@@ -210,36 +198,35 @@ product: hallomovie
               <!-- row content1 -->
               <div class="row">
                 <div class="col-md-4 col-xs-12 col-sm-12">
-                    <img src="{{site.url}}{{movie.image}}" alt="" class="float-left img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;"/>
+                    <img src="http://localhost:4000/assets/images/project/hallomovie/movie9.jpg" alt="" class="float-left img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
                   </div>
                   <div class="col-md-6 ml-2 mt-2">
                     <h1 class="text-center">
-                      {{movie.name}} <br>
+                      Hallo <span style="font-family:Reey Regular;"> Movie </span> Codesyariah <br />
                     </h1>
-                    <hr>
+                    <hr />
                       <p class="ml-2">
-                         {{movie.tags}}.
+                         Media digital saat ini sudah sangat mumpuni untuk kita mendapatkan infomasi apapun, kami <span class="codesyariah">codesyariah</span> dan team <span style="font-family:SpringSakura;">|</span> tidak ingin ketinggalan walau hanya sekedar untuk mencicipi selancaran kami di dunia maya. <span style="font-family:SpringSakura;">|</span> Dan saat ini salah satunya adalah layanan pencarian data informasi seputar movie bisa kita dapatkan dimanapun dengan variasi data yang lebih beragam dan informasi lengkap dari sumber-sumber yang lebih luas..
                       </p>
-                      <img src="{{site.url}}{{movie.vector.satu}}" alt="">
+                      <img src="http://localhost:4000/assets/images/project/hallomovie/vector2.gif" alt="" />
                   </div>
+                  <div class="col-md-12 col-xs-12 col-sm-12">
+                      <h1>
+                        <button class="btn btn-success btn-sm" id="show-search">Movie Search</button>
+                      </h1>
+                  </div>
+  
               </div>
               <!-- row content1 end -->
-              <br>
+              <br />
               <h1 class="underline text-center mt-2 mb-4"></h1>
-                <div class="col-md-12 col-xs-12 col-sm-12">
-                    <h1>
-                      <button class="btn btn-success btn-lg text-white" id="show-search">Movie Search</button> &nbsp;
-                      <button class="btn btn-danger btn-lg text-white" id="show-review">Movie Review</button>
-                    </h1>
-                </div>
               <!-- row content2 -->
                 <div class="row justify-content-center">
                     <div id="movie-search">
                         <div class="col-12 col-xs-12 col-sm-12">
-                          <i class="far fa-window-close fa-2x fa-fw" id="close-search"></i>
                           <h1 class="text-center">Search Movie</h1>
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Movie title search .. " id="search-input">
+                                <input type="text" class="form-control" placeholder="Movie title search .. " id="search-input" />
                                 <div class="input-group-append">
                                   <button class="btn btn-dark" type="button" id="search-button">Button</button>
                                 </div>
@@ -247,16 +234,14 @@ product: hallomovie
                         </div>
                     </div>
                 </div>
-
                  <div class="row justify-content-center">   
                     <div id="movie-review">
                       <div class="col-12 col-xs-12 col-sm-12">
-                        <i class="far fa-window-close fa-2x fa-fw" id="close-review"></i>
                         <h1 class="text-center">Review Movie</h1>
                           <div class="input-group mb-3">
-                              <input type="text" class="form-control" placeholder="Movie title search .. " id="search-review">
+                              <input type="text" class="form-control" placeholder="Movie title search .. " id="search-input" />
                               <div class="input-group-append">
-                                <button class="btn btn-dark" type="button" id="review-button">Button</button>
+                                <button class="btn btn-dark" type="button" id="search-button">Button</button>
                               </div>
                             </div>
                       </div>
@@ -264,7 +249,7 @@ product: hallomovie
                   </div>
 
                   <div class="row justify-content-center">
-                    <hr>
+                    <hr />
                     <div class="col-12">
                       <div class="row" id="movie-list">
                       </div>  
@@ -274,7 +259,7 @@ product: hallomovie
               
               <h1 class="underline mb-2 mt-2"></h1>
               
-              <br>
+              <br />
             
           </div>
         </div>
@@ -285,4 +270,25 @@ product: hallomovie
   
 </div>
 
-{% include modal.html %}
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Hallo Movie Detail</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+:ET
