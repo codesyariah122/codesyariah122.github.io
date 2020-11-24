@@ -197,7 +197,8 @@ const jadwalShalat = (today, city) => {
             // console.log(waktuShalat);
             const date = new Date();
             const now = date.getHours()+':'+date.getMinutes();
-
+            now.toString();
+            // alert(typeof now);
             MulaiWaktuAdzan(now, waktuAdzan, waktuShalat);
 
             data.tanggal.html(`${tanggal.hijriah} Hijriah | ${tanggal.gregoria}`);

@@ -41,7 +41,7 @@ $(document).ready(function(){
                     const result = res.list_data[provinsi.idProv];
                     const name_prov = result.key;
 
-                    const labels = [`Kasus : ${result.jumlah_kasus} Jiwa`, `Dirawat : ${result.jumlah_dirawat} Jiwa`, `Meninggal : ${result.jumlah_meninggal} Jiwa`, `Sembuh : ${result.jumlah_sembuh} Jiwa`];
+                    const labels = [`Kasus : ${result.jumlah_kasus}`, `Dirawat : ${result.jumlah_dirawat}`, `Meninggal : ${result.jumlah_meninggal}`, `Sembuh : ${result.jumlah_sembuh}`];
                     const resData = {
                         'kasus': result.jumlah_kasus,
                         'dirawat': result.jumlah_dirawat,
@@ -89,8 +89,8 @@ $(document).ready(function(){
                 const berdasarkanGender = res.list_data[dataGender.idGender].jenis_kelamin;
 
                 const labels = [
-                    `${berdasarkanGender[0].key} : ${berdasarkanGender[0].doc_count} Jiwa | `,
-                    `${berdasarkanGender[1].key} : ${berdasarkanGender[1].doc_count} jiwa | `
+                    `${berdasarkanGender[0].key}`,
+                    `${berdasarkanGender[1].key}`,
                 ];
 
                 const dataChartGender = [      
@@ -119,12 +119,12 @@ $(document).ready(function(){
                 const berdasarkanUsia = res.list_data[dataUsia.idUsia].kelompok_umur;
                 console.log(berdasarkanUsia);
                 const labels = [
-                    `${berdasarkanUsia[0].key} Tahun : ${berdasarkanUsia[0].doc_count} Jiwa | `,
-                    `${berdasarkanUsia[1].key} Tahun : ${berdasarkanUsia[1].doc_count} Jiwa | `,
-                    `${berdasarkanUsia[2].key} Tahun : ${berdasarkanUsia[2].doc_count} Jiwa | `,
-                    `${berdasarkanUsia[3].key} Tahun : ${berdasarkanUsia[3].doc_count} Jiwa | `,
-                    `${berdasarkanUsia[4].key} Tahun : ${berdasarkanUsia[4].doc_count} Jiwa | `,
-                    `${berdasarkanUsia[5].key} Tahun : ${berdasarkanUsia[5].doc_count} Jiwa | `,
+                    `${berdasarkanUsia[0].key}`,
+                    `${berdasarkanUsia[1].key}`,
+                    `${berdasarkanUsia[2].key}`,
+                    `${berdasarkanUsia[3].key}`,
+                    `${berdasarkanUsia[4].key}`,
+                    `${berdasarkanUsia[5].key}`,
                 ];
                 const dataChartUsia = [
                     berdasarkanUsia[0].doc_count,
