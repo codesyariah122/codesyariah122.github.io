@@ -149,12 +149,13 @@ const MulaiWaktuAdzan = (shalat) => {
     
     // ini untuk object
     const waktuAdzan = Object.values(shalat);
-    const Adzan = waktuAdzan.includes(jam);
+    // const Adzan = waktuAdzan.includes(jam);
+    const Adzan = waktuAdzan.indexOf(jam);
     const waktuShalat = Object.keys(shalat);
     
-    // console.log(waktuShalat);
-    // console.log(waktuAdzan);
-    // alert(Adzan);
+    console.log(waktuShalat);
+    console.log(waktuAdzan);
+    // console.log(Adzan);
 
 }
 

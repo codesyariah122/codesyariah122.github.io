@@ -31,7 +31,7 @@ const searchMovie = (key, method) => {
                                     <div class="card-body">
                                     <h5 class="card-title">${data.Title}</h5>
                                     <h6 class="card-subtitle mb-2 text-muted">${data.Year}</h6>
-                                    <a href="#" class="card-link see-detail" data-toggle="modal" data-target="#exampleModal" data-id="${data.imdbID}">See Detail</a>
+                                    <a href="#" class="card-link see-detail-search-movie" data-toggle="modal" data-target="#exampleModal" data-id="${data.imdbID}">See Detail</a>
                                     </div>
                             </div>
                         </div>
@@ -105,26 +105,39 @@ const reviewMovie = (method, key) => {
                data.searchReview.val('');
                 const movieReview = res.results;
                 console.log(movieReview);
-                for(let i = 0; i <= movieReview.length; i++){
-                        $('#movie-list').append(`
-                            <div class="col-md-4">
-                                <div class="card mb-5 mt-2">
-                                    <img src="${movieReview[i].multimedia.src}" class="card-img-top float-left img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" alt="...">
-                                        <div class="card-body">
-                                        <h5 class="card-title">${movieReview[i].display_title}</h5>
-                                        <h5 class="card-title">${movieReview[i].byline  }</h5>
-                                        <h6 class="card-subtitle mb-2 text-muted">${movieReview[i].publication_date}</h6>
-                                        <a href="#" class="card-link see-detail" data-toggle="modal" data-target="#exampleModal" data-id="${movieReview[i].link.url}">See Detail</a>
-                                        </div>
+                    for(let i = 0; i <= movieReview.length; i++){
+                            $('#movie-list').append(`
+                                <div class="col-md-4">
+                                    <div class="card mb-5 mt-2">
+                                        <img src="${movieReview[i].multimedia.src}" class="card-img-top float-left img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" alt="...">
+                                            <div class="card-body">
+                                            <h5 class="card-title" data-query="${movieReview[i].display_title}">${movieReview[i].display_title}</h5>
+                                            <h5 class="card-title">${movieReview[i].byline  }</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">${movieReview[i].publication_date}</h6>
+                                            <a href="${movieReview[i].link.url}" target="_blank" class="card-link see-detail-review-movie" data-id="${i}">See Detail</a>
+                                            </div>
+                                    </div>
                                 </div>
-                            </div>
-                        `);
-               }
+                            `);
+                }
 
+           }else{
+            data.movieList.html(`
+             <div class="col-12">
+                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                 <strong>Wooopssshhh!!!</strong> <span class="text-center">${res.Error}</span>
+                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                 </button>
+                 </div>
+             </div>
+             `);
            }
         }
     })
 }
+
+
 
 $(document).ready(function(){
     config();
@@ -143,10 +156,12 @@ $(document).ready(function(){
 
     data.closeSearch.on('click', function(){
         data.movieSearch.hide();
+        data.movieList.html('');
     });
 
     data.closeReview.on('click', function(){
         data.movieReview.hide();
+        data.movieList.html('');
     })
 
     data.searchButton.on('click', function(){
@@ -161,15 +176,27 @@ $(document).ready(function(){
         }
     });
 
-    data.movieList.on('click', '.see-detail', function(){
+    data.movieList.on('click', '.see-detail-search-movie', function(){
+        const input = data.searchMovie.val();
         const detail =  $(this).data('id');
 
-        detailMovie(baseAPI.keySearchMovie, detail);
+        alert(input);
+
+        detailMovie(baseAPI.keySearchMovie,input, detail);
     });
 
     data.reviewButton.on('click', function(){
         const input = data.searchReview.val();
         reviewMovie(input, baseAPI.keyReviewMovie);
     });
+
+    data.searchReview.on('keyup', function(e){
+        const input = $(this).val();
+        if(e.which === 13){
+            reviewMovie(input, baseAPI.keyReviewMovie);
+        }
+    });
+
+
 
 });
