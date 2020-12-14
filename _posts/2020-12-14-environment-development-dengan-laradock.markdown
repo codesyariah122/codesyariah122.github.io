@@ -28,7 +28,7 @@ versi Community Edition.
 #### Install Docker Compose  
 karena disini kita sebagai pengguna linux maka diperlukan untuk menginstall tools yang satu ini yaitu **Docker Compose**  
 ```
-curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+$ curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 ```  
 <blockquote>
 Gunakan versi terbaru, contoh di atas menggunakan versi 1.21.2, kamu juga boleh mengecek versi
@@ -37,14 +37,14 @@ terbaru yang tersedia di link ini https://github.com/docker/compose/releases
 
 Selanjutnya buat permision untuk mengijinkan docker-compose tadi menjadi executable  
 ```
-chmod +x /usr/local/bin/docker-compose
+$ chmod +x /usr/local/bin/docker-compose
 ```  
 cek apakah installasi docker-compose sudah berhasil  
 ```
-docker-compose --version
+$ docker-compose --version
 ```
 ```
-docker-compose version 1.21.2, build 1719ceb
+$ docker-compose version 1.21.2, build 1719ceb
 ```  
 
 #### Menyiapkan lingkungan kerja Laradock  
@@ -53,35 +53,35 @@ Laradock.
 Oke langsung saja kita eksekusi, seperti biasa buka dulu senjata andalan kita yaitu terminal (CMD) atau (Command Prompt) heheheh.  
 buat direktori baru dengan nama **laravel-projects**  
 ```
-mkdir -p laravel-projects
+$ mkdir -p laravel-projects
 ```  
 direktori ini akan kita gunakan untuk menaruh setiap project yang akan kita bangun dalam lingkungan laradock ini terkhusus yang menggunakan framework laravel, karena fitur laradock ini lengkap, paket lengkap seperti lamp hanya saja dalam kerangka yang modern.  
 
 ***Lanjut ...***  
 ok lanjut kita akses direktori yang tadi kita buat 
 ```
-cd laravel-projects/
+$ cd laravel-projects/
 ```
 jika sudah ada di direktori project kita selanjutnya kita clone package laradock nya dari github  
 ```
-git clone https://github.com/Laradock/laradock.git
+$ git clone https://github.com/Laradock/laradock.git
 ```  
 setelah proses ***cloning*** selesai akses direktori ***laradock***
 
 ```
-chmod -R 755 laradock/.*
-cd laradock/
+$ chmod -R 755 laradock/.*
+$ cd laradock/
 ```
 
 ubah env-example menjadi .env
 ```
-cp env-example .env
+$ cp env-example .env
 ```  
 
 Kemudian selanjutnya mengaktifkan container untuk laradock  
 
 ```
-docker-compose up -d nginx mysql phpmyadmin redis workspace
+$ docker-compose up -d nginx mysql phpmyadmin redis workspace
 ```  
 dan untuk selanjutnya setiap kali kita akan memulai development kita gunakan perintah diatas untuk mengaktifkan container laradock, Minimal kita perlu menyalakan service nginx, mysql, phpmyadmin dan redis karena kita akan memerlukan ke empat service tersebut.  
 
@@ -129,7 +129,7 @@ docker-compose build mysql
 Solusi yang lain adalah dengan menggunakan fitur upgrade dari mysql untuk mengatasi masalah ini.
 Caranya, masuk ke container mysql 
 ```
-docker exec -it mysql bash
+$ docker exec -it mysql bash
 
 mysql -u root -p
 mysql> SET GLOBAL innodb_fast_shutdown = 1;
@@ -152,12 +152,14 @@ seperti biasa kita buka terminal terlebih dahulu atau jika menggunakan visual st
 
 - Masuk ke folder(direktori) Laradock
 ```
-cd laravel-project/laradock
+$ cd laravel-project/laradock
 ```
 
 - Lalu aktifkan mode workspace laradock
 ```
-docker-compose exec --user=laradock workspace bash
+// masuk ke workspace laradock
+
+$ docker-compose exec --user=laradock workspace bash
 ```
 setiap kita ingin membuat project pastikan kita ada didalam workspae laradock jika kita ingin menggunakan laradock sebagai environment development, seperti ini penampakan workspace laradock.
 
@@ -171,23 +173,23 @@ menginstall Composer dan tool lain yang kita butuhkan.
 Download Laravel installer menggunakan composer, caranya ketik di terminal perintah berikut.
 
 ```
-composer global require "laravel/installer"
+$ composer global require "laravel/installer"
 ```  
 Setelah berhasil menjankan perintah di atas, perintah laravel bisa kita gunakan. Untuk membuat aplikasi laravel baru dengan nama aplikasi-laravelku, jalankan perintah berikut di terminal.  
 
 ```
-laravel new aplikasi-laravelku
+$ laravel new aplikasi-laravelku
 ```  
 Setelah berhasil masuk ke direktori aplikasi yang baru saja kita install menggunakan terminal / cmder. Lalu ketik perintah berikut untuk menginstall dependency project kita: 
 
 ```
-composer install
+$ composer install
 ```  
 ### Buat Project dengan Composer create-project ~3
 Alternatif lain adalah dengan menggunakan perintah composer create-project di terminal, seperti berikut (ini adalah salah satu cara yang gout biasa pakai ):  
 
 ```
-composer create-project laravel/laravel=6.* toko-online --prefer-dist
+$ composer create-project laravel/laravel=6.* toko-online --prefer-dist
 ```
 Dan aplikasi laravel kita telah berhasil di install, kita bisa mengeceknya dengan mengakses localhost di browser kita.
 http://localhost/aplikasi-laravelku/public  
@@ -207,9 +209,9 @@ root /var/www
 jangan lupa restart nginx nya : 
 
 ```
-docker-compose stop nginx
+$ docker-compose stop nginx
 
-docker-compose up -d nginx
+$ docker-compose up -d nginx
 ```
 
 ***Wassallaam***
