@@ -21,6 +21,7 @@ Untuk menginstal Ruby dari repositori default Debian, ikuti langkah-langkah ini:
 1 . perbarui index paket :  
 ```
 apt update
+apt install git curl libssl-dev libreadline-dev zlib1g-dev autoconf bison build-essential libyaml-dev libreadline-dev libncurses5-dev libffi-dev libgdbm-dev
 ```
 2. install ruby dengan mengetik :  
 ```
@@ -48,6 +49,7 @@ apt install git curl libssl-dev libreadline-dev zlib1g-dev autoconf bison build-
 2. Selanjutnya, jalankan perintah curl berikut untuk menginstall rbenv dan ruby-build : 
 ```
 curl -sL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-installer | bash -
+
 ```  
 Script akan mengkloning repositori rbenv dan ruby-build dari GitHub ke direktori ``` ~/.rbenv```. Skrip installer juga memanggil skrip lain yang akan mencoba memverifikasi pemasangan. Output dari skrip akan terlihat seperti di bawah ini: 
 3. Tambahkan $HOME/.rbenv/bin ke sistem PATH.

@@ -1,0 +1,771 @@
+I"^h<div class="container">
+
+
+
+
+
+<!-- Begin post excerpts, let's highlight the first 4 posts on top -->
+<div class="row remove-site-content-margin">
+
+    <!-- latest post -->
+    
+    <div class="col-md-6">
+    <div class="card border-0 mb-4 box-shadow">
+<!-- adding image thumbnail hover -->
+
+    <a href="http://localhost:4000/php/laravel/environment-development-dengan-laradock/">
+    <div class="topfirstimage" style="background-image: url( http://localhost:4000/assets/images/post/laradock.jpg); height: 200px;    background-size: cover;    background-repeat: no-repeat;"></div>
+    </a>
+
+    <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
+    <h2 class="h4 font-weight-bold">
+    <a class="text-dark" href="http://localhost:4000/php/laravel/environment-development-dengan-laradock/">Pengenalan dan installasi Node.js sebagai beckend di javascript</a>
+    </h2>
+    <p class="excerpt">
+        
+    </p>
+    <div>
+        <small class="d-block text-muted">
+            In <span class="catlist">
+                
+                <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">PHP</a><span class="sep">, </span>
+                
+                <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#laravel">Laravel</a><span class="sep">, </span>
+                
+                </span>
+        </small>
+        <small class="text-muted">
+            14 December, 2020
+        </small>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <div class="col-md-6">
+
+        <!-- second latest post --><div class="mb-3 d-flex align-items-center">
+                
+                <div class="col-md-4">
+                <a href="http://localhost:4000/javascript/jquery/jquery-scroll-effect/">
+                 <img class="w-100" src="http://localhost:4000/assets/images/post/jquery_scroll.png" alt="Bermain dengan jQuery Scrolling Effect" />
+                </a>
+                </div>
+                
+                <div>
+                    <h2 class="mb-2 h6 font-weight-bold">
+                    <a class="text-dark" href="http://localhost:4000/javascript/jquery/jquery-scroll-effect/">Bermain dengan jQuery Scrolling Effect</a>
+                    </h2>
+                    <small class="d-block text-muted">
+                        In <span class="catlist">
+                        
+                        <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
+                        
+                        <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jquery">JQuery</a><span class="sep">, </span>
+                        
+                        </span>
+                    </small>
+                    <small class="text-muted">
+                        11 November 2020
+                    </small>
+                </div>
+            </div>
+
+        <!-- third latest post --><div class="mb-3 d-flex align-items-center">
+                
+                <div class="col-md-4">
+                <a href="http://localhost:4000/javascript/jquery/jquery-last-item/">
+                 <img class="w-100" src="http://localhost:4000/assets/images/post/jquery_last1.png" alt="Penggunaan jQuery last untuk mengambil element terakhir" />
+                </a>
+                </div>
+                
+                <div>
+                    <h2 class="mb-2 h6 font-weight-bold">
+                    <a class="text-dark" href="http://localhost:4000/javascript/jquery/jquery-last-item/">Penggunaan jQuery last untuk mengambil element terakhir</a>
+                    </h2>
+                    <small class="d-block text-muted">
+                        In <span class="catlist">
+                        
+                        <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
+                        
+                        <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jquery">JQuery</a><span class="sep">, </span>
+                        
+                        </span>
+                    </small>
+                    <small class="text-muted">
+                        11 November 2020
+                    </small>
+                </div>
+            </div>
+
+        <!-- fourth latest post --><div class="mb-3 d-flex align-items-center">
+                
+                <div class="col-md-4">
+                <a href="http://localhost:4000/php/laravel/mvc/oop/routing-dan-blade-templating-laravel7/">
+                <img class="w-100" src="http://localhost:4000/assets/images/post/blade_laravel/laravel-logo.png" alt="Routing dan blade templating laravel 7" />
+                </a>
+                </div>
+                
+                <div>
+                    <h2 class="mb-2 h6 font-weight-bold">
+                    <a class="text-dark" href="http://localhost:4000/php/laravel/mvc/oop/routing-dan-blade-templating-laravel7/">Routing dan blade templating laravel 7</a>
+                    </h2>
+                    <small class="d-block text-muted">
+                        In <span class="catlist">
+                        
+                        <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">PHP</a><span class="sep">, </span>
+                        
+                        <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#laravel">Laravel</a><span class="sep">, </span>
+                        
+                        <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#mvc">MVC</a><span class="sep">, </span>
+                        
+                        <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#oop">OOP</a><span class="sep">, </span>
+                        
+                        </span>
+                    </small>
+                    <small class="text-muted">
+                        06 September 2020
+                    </small>
+                </div>
+            </div>
+
+    </div>
+
+</div>
+
+<!-- Sticky - add sticky tag to the post you want to highlight here - tags: [sticky] -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jumbotron jumbotron-fluid jumbotron-home pt-0 pb-0 mt-3 mb-2rem bg-lightblue position-relative">
+    <div class="pl-4 pr-0 h-100 tofront">
+        <div class="row justify-content-between">
+            <div class="col-md-6 pt-6 pb-6 pr-lg-4 align-self-center">
+                <h1 class="mb-3">Muadzin Abu Mahdzurah</h1>
+                <p class="mb-3 lead">
+                    Kisah Muadzin Rasulullah (Abu Mahdzurah)
+                </p>
+                <a href="http://localhost:4000/kajianislam/sunnah/Muadzin-Abu-Mahdzurah/" class="btn btn-dark">Read More</a>
+            </div>
+            <div class="col-md-6 d-none d-md-block pr-0" style="background-size:cover;background-image:url(http://localhost:4000/assets/images/post/abu-mahdzurah.jpeg);">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+ <!--endif page url is / -->
+
+
+<!-- Now the rest of the posts with the usual loop but with an offset:4 on the first page so we can skeep the first 4 posts displayed above -->
+
+<div class="row mt-3">
+
+    <div class="col-md-8 main-loop">
+
+        <h4 class="font-weight-bold spanborder"><span>All Stories</span></h4>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/php/laravel/environment-development-dengan-laradock/">Pengenalan dan installasi Node.js sebagai beckend di javascript</a>
+	</h2>
+	<p class="excerpt">
+	   
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">PHP</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#laravel">Laravel</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		14 December 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/php/laravel/environment-development-dengan-laradock/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/laradock.jpg" alt="Pengenalan dan installasi Node.js sebagai beckend di javascript" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/javascript/jquery/jquery-scroll-effect/">Bermain dengan jQuery Scrolling Effect</a>
+	</h2>
+	<p class="excerpt">
+	   Assalamualaikum
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jquery">JQuery</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		11 November 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/javascript/jquery/jquery-scroll-effect/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/jquery_scroll.png" alt="Bermain dengan jQuery Scrolling Effect" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/javascript/jquery/jquery-last-item/">Penggunaan jQuery last untuk mengambil element terakhir</a>
+	</h2>
+	<p class="excerpt">
+	   Assalamualaikum
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jquery">JQuery</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		11 November 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/javascript/jquery/jquery-last-item/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/jquery_last1.png" alt="Penggunaan jQuery last untuk mengambil element terakhir" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/php/laravel/mvc/oop/routing-dan-blade-templating-laravel7/">Routing dan blade templating laravel 7</a>
+	</h2>
+	<p class="excerpt">
+	   
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">PHP</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#laravel">Laravel</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#mvc">MVC</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#oop">OOP</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		06 September 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/php/laravel/mvc/oop/routing-dan-blade-templating-laravel7/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/blade_laravel/laravel-logo.png" alt="Routing dan blade templating laravel 7" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/nodejs/javascript/menggunakan-module-export-import-ecmascript6-wiht-nodejs/">Menggunakan module import - export ecmascript6 di Node.js</a>
+	</h2>
+	<p class="excerpt">
+	   EcmaScript 6Dalam judul kali ini gout berbagi kisah keluh dan kesah, mengenai ecma script, terkhusus dalam judul kali ini yakni mengenai penggunaan module ecmascript6 di nodejs.pertam...
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#nodejs">NodeJS</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#javascript">Javascript</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		06 September 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/nodejs/javascript/menggunakan-module-export-import-ecmascript6-wiht-nodejs/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/import-export.png" alt="Menggunakan module import - export ecmascript6 di Node.js" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/php/laravel/mvc/oop/membangun-project-baru-laravel-7/">Membangun project baru laravel 7</a>
+	</h2>
+	<p class="excerpt">
+	   
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#php">PHP</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#laravel">Laravel</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#mvc">MVC</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#oop">OOP</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		05 September 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/php/laravel/mvc/oop/membangun-project-baru-laravel-7/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/laravel7_0.jpg" alt="Membangun project baru laravel 7" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="http://localhost:4000/python/programmer/operational-database-di-bahasa-python/">Operational database di bahasa python dengan module mysql connector</a>
+	</h2>
+	<p class="excerpt">
+	   
+	</p>
+	<small class="d-block text-muted">
+		In <span class="catlist">
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#python">Python</a><span class="sep">, </span>
+		
+		<a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#programmer">programmer</a><span class="sep">, </span>
+		
+		</span>
+	</small>
+	<small class="text-muted">
+		02 September 2020
+	</small>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="http://localhost:4000/python/programmer/operational-database-di-bahasa-python/">
+	<img class="w-100" src="http://localhost:4000/assets/images/post/python/pythonDB.png" alt="Operational database di bahasa python dengan module mysql connector" />
+	</a>
+	</div>
+
+</div>
+
+
+        
+
+        <div class="mt-5">
+         <!-- Pagination links -->
+            
+            <ul class="pagination">
+              
+                <li class="page-item disabled"><span class="prev page-link">&laquo;</span></li>
+              
+
+              
+                
+                <li class="page-item disabled"><span class="webjeda page-link">1</span></li>
+                
+              
+                
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page2">2</a></li>
+                
+              
+                
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page3">3</a></li>
+                
+              
+                
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page4">4</a></li>
+                
+              
+                
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page5">5</a></li>
+                
+              
+                
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page6">6</a></li>
+                
+              
+                
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page7">7</a></li>
+                
+              
+                
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page8">8</a></li>
+                
+              
+                
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page9">9</a></li>
+                
+              
+                
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page10">10</a></li>
+                
+              
+
+              
+                <li class="page-item"><a class="page-link" href="http:/localhost:4000/page2">Next &raquo;</a></li>
+              
+            </ul>
+            
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+        <div class="sticky-top sticky-top-offset">
+    <h4 class="font-weight-bold spanborder"><span>Featured</span></h4>
+    <ol class="list-featured">
+        
+            <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="http://localhost:4000/blog/story/kembang-dari-periangan/" class="text-dark">Kembang Dari Priangan</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">Blog</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#story">story</a><span class="sep">, </span>
+                    
+                    </span>
+                </span>
+            </span>
+            </li>
+        
+            <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="http://localhost:4000/news/blog/writer/Tangkuban-Perahu-Erupsi/" class="text-dark">Tangkuban Perahu meletus dengan erupsi diperkirakan 'satu minggu' dan masyarakat diminta 'berwaspada letusan tiba-tiba'</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#news">News</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">Blog</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#writer">Writer</a><span class="sep">, </span>
+                    
+                    </span>
+                </span>
+            </span>
+            </li>
+        
+            <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="http://localhost:4000/jekyll/blog/tutorial/Powerfull-things-markdown-editor/" class="text-dark">Hal-hal keren yang dapat kalian lakukan dengan editor Markdown</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#jekyll">Jekyll</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">Blog</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#tutorial">tutorial</a><span class="sep">, </span>
+                    
+                    </span>
+                </span>
+            </span>
+            </li>
+        
+            <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="http://localhost:4000/kajianislam/sunnah/blog/Luasnya-Ampunan-Allah/" class="text-dark">Luasnya Ampunan Allah SWT</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#kajianislam">KajianIslam</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#sunnah">Sunnah</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">Blog</a><span class="sep">, </span>
+                    
+                    </span>
+                </span>
+            </span>
+            </li>
+        
+            <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="http://localhost:4000/blog/writer/Gairah-Budaya-Membaca/" class="text-dark">Gairah Budaya Membaca</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">blog</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#writer">writer</a><span class="sep">, </span>
+                    
+                    </span>
+                </span>
+            </span>
+            </li>
+        
+            <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="http://localhost:4000/kajianislam/sunnah/blog/Ramalan-Ali-ra-Zaman-Mendatang/" class="text-dark">Ramalan Ali ra tentang zaman mendatang </a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#kajianislam">KajianIslam</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#sunnah">Sunnah</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#blog">blog</a><span class="sep">, </span>
+                    
+                    </span>
+                </span>
+            </span>
+            </li>
+        
+            <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="http://localhost:4000/kajianislam/sunnah/Mutiara-Hikmah/" class="text-dark">Mutiara Hikmah</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#kajianislam">KajianIslam</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#sunnah">Sunnah</a><span class="sep">, </span>
+                    
+                    </span>
+                </span>
+            </span>
+            </li>
+        
+            <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="http://localhost:4000/kajianislam/sunnah/Muadzin-Abu-Mahdzurah/" class="text-dark">Muadzin Abu Mahdzurah</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#kajianislam">KajianIslam</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#sunnah">Sunnah</a><span class="sep">, </span>
+                    
+                    </span>
+                </span>
+            </span>
+            </li>
+        
+            <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="http://localhost:4000/kajianislam/sunnah/Untung-Terus/" class="text-dark">Untung Terus</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#kajianislam">KajianIslam</a><span class="sep">, </span>
+                    
+                    <a class="text-capitalize text-muted smoothscroll" href="http://localhost:4000/categories.html#sunnah">Sunnah</a><span class="sep">, </span>
+                    
+                    </span>
+                </span>
+            </span>
+            </li>
+        
+    </ol>
+</div>
+    </div>
+
+</div>
+
+
+
+</div>
+:ET

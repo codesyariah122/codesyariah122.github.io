@@ -1,0 +1,48 @@
+I"f<p><img src="{{site.url}}/assets/images/post/Node-js-Logo.png" alt="nodeJS_webserver" /></p>
+
+<h3 id="berkenalan-dengan-nodejs">Berkenalan dengan Node.js</h3>
+<p>Node.js atau terkadang juga disebut (Node) adalah lingkungan atau platform untuk mengeksekusi kode-kode yang ditulis didalam javascript, yang dikenal dengan sebutan Javascript runtime environment. Dalam melaksanakan tugasnya, Node.js menggunakan V8, yaitu mesin JavaScript yang diproduksi oleh Google. V8 itu sendiri bertugas untuk mengubah kode JavaScript ke dalam bentuk bytecode. File <strong><em>bytecode</em></strong> inilah yang nantinya akan dieksekusi oleh Node.js. Proses eksekusi terhadap <strong><em>bytecode</em></strong> dapat berjalan lebih cepat dibandingkan dengan eksekusi terhadap kode JavaScript secara langsung. Untuk melihat bytecode yang dihasilkan, kita dapat menggunakan opsi <strong>–print-bytecode</strong> pada saat mengeksekusi aplikasi yang dibuat menggunakan Node.js, misalnya seperti berikut.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ node --print-bytecode app.js
+</code></pre></div></div>
+<p>V8 sendiri ditulis menggunakan bahasa C++ dan digunakan oleh Google dalam mengembangkan web browser Google Chrome. Masing-masing aplikasi web browser memiliki mesin JavaScript yang berbeda. Mozilla Firefox menggunakan Spidermonkey, Apple Safari mengguanakan JavaScriptCore, dan Google Chrome menggunakan V8. Mesin V8 inilah yang digunakan juga oleh Node.js.</p>
+
+<p><strong>singkatnya</strong><br />
+Dengan adanya Node.js kita bisa gunakan javascript sebagai bahasa BeckEnd dan membuat berbagai macam jenis program aplikasi dan untuk project berskala apapun, JavaScript telah mengalami kemajuan yang pesat dalam dekade akhir-akhir ini, dari berbagai macam jenis aplikasi bisa dibuat dengan JavaScript. Begitulah sedikit pengenalan mengenai Node.js</p>
+
+<h4 id="installasi-nodejs--di-linux--debian--ubuntu-">Installasi Node.js  di linux ( Debian / Ubuntu )</h4>
+<p>Sebelum kita melanjutkan proses installasi Node.js, kita tambahkan dulu beberapa opsi Kita tambahkan PPA ke system repository kita. 
+Kita juga perlu menginstal paket software-properties-common jika belum diinstal. Anda dapat memilih untuk menginstal versi Node.js terbaru atau versi LTS.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get install curl software-properties-common
+
+curl -sL https://deb.nodesource.com/setup_12.x | bash -
+
+</code></pre></div></div>
+
+<p><strong>Lanjut …</strong><br />
+Setelah menambahkan file PPA yang diperlukan, mari instal paket Nodejs. NPM juga akan diinstal dengan node.js. Perintah ini juga akan menginstal banyak paket dependen lainnya di sistem Anda.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt install nodejs
+</code></pre></div></div>
+<p>sebagai tambahan install <strong>yarn</strong><br />
+<strong>Yarn</strong>
+adalah perangkat lunak manajemen paket canggih untuk aplikasi Node.js. Ini adalah alternatif yang cepat, aman, dan andal dibandingkan pengelola paket Nodejs lainnya. Setelah proses menginstal Node.js terbaru di sistem Ubuntu dan Debian.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install yarn -g
+</code></pre></div></div>
+
+<h4 id="check-version-nodejs">Check version Node.js</h4>
+<p>Setelah proses installasi selesai semua, kita bisa mengecek apakah proses instalasi Node.js kita berhasil atau tidak dengan mengetikan perintah berikut :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>node -v
+# v14.11.0
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm -v
+6.14.8
+</code></pre></div></div>
+
+<p>Okay proses installasi Node.js berhasil dan Node.js sudah siap digunakan sebagai beckend programming languange untuk aplikasi javascript anda. Kita lanjut ke artikel tentang Node.js lainnya di artikel berikutnya, akhir kata gout ucapkan …</p>
+
+<p><strong><em>Wassallaam</em></strong></p>
+:ET
