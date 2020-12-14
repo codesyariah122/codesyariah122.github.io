@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Pengenalan dan installasi Node.js sebagai beckend di javascript"
+title:  "Environment Development Laravel With Laradock"
 author: puji
 categories: [ PHP, Laravel, Composer, Git, Docker ]
 image: assets/images/post/laradock.jpg
