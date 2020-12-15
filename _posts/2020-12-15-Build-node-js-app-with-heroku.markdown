@@ -77,6 +77,30 @@ isi beberapa opsi yang tersedia, lanjut install nodemon sebagai interpreter untu
 ```
 root@debian:/home/puji122/jhony-thunder/# npm install nodemon --save
 ```  
+kemudian edit file **package.json**, tambahkan baris berikut didalam object bagian script
+```
+script{
+    "start": "nodemon app.js",
+}
+```  
+isi file ```package.json``` :  
+```
+{
+  "name": "jhony-thunder",
+  "version": "1.0.0",
+  "description": "script again coffee again",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "puji",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
+```
 ok sekarang kalian bisa build aplikasi Node.js seperti biasanya. karena environment developing nya sudah kita siapkan.  
 sebagai contoh kita akan membuat request http sederhana di Node.js, buka code editor visual code, kemudian mulai coding untuk aplikasi sederhana kita.
 ```
