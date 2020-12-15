@@ -9,6 +9,10 @@ opening: بسم الله الرحمن الرحيم
 ---  
 
 ![heroku1]({{site.url}}/assets/images/post/heroku2.png) 
+**Assalamuallaikumm**...  
+
+Apa kabarnya sobat coders semua ? semoga selalu dalam keadaan sehat-sehat semuanya.  
+kali ini gout mau berbagi tips ataupun trick mengenai Node.js salah satu programming language yang sedang berkembang pesat dijagat developer.  
 
 ## Sekilas Heroku  
 Heroku adalah platform cloud sebagai layanan (PaaS) yang mendukung beberapa bahasa pemrograman . Salah satu platform cloud pertama, Heroku telah dikembangkan sejak Juni 2007, saat itu hanya mendukung bahasa pemrograman Ruby , tetapi sekarang mendukung Java , Node.js , Scala , Clojure , Python , PHP , dan Go . [1] [2] Karena alasan ini, Heroku dikatakan sebagai platform poliglot karena memiliki fitur bagi pengembang untuk membangun, menjalankan, dan menskalakan aplikasi dengan cara yang sama di sebagian besar bahasa. Heroku diakuisisi oleh Salesforce.com pada tahun 2010 seharga $ 212 juta. (sumber wiki)
@@ -17,9 +21,13 @@ Heroku awalnya dikembangkan oleh James Lindenbaum , [4] Adam Wiggins, [5] dan Or
 
 seperti itulah mengenai heroku dalam intisari singkat diatas. Heroku adalah sebuah PasS(Platform as a Service).
 #### Deploy aplikasi Node.js with Heroku
-**Assalamuallaikumm**...  
-Apa kabarnya sobat coders semua ? semoga selalu dalam keadaan sehat-sehat semuanya.  
-kali ini gout mau berbagi tips ataupun trick mengenai Node.js salah satu programming language yang sedang berkembang pesat dijagat developer.  
+Ada beberapa **Metode Deploymeny** yang disediakan heroku antara lain :  
+- Heroku Git ( Use Heroku CLI )
+- Github ( Connect to github account )
+- Container Registry (Use Heroku CLI )  
+diantara ketiga metode diatas gout sudah mencoba diantara kedua opsi method dari list tersebut yaitu : **Heroku Git** dan **Github**, sedangkan dalam artikel kali ini gout mau membahas method deployment heroku dengan menggunakan **Heroku Git**. seperti berikut contoh pengaplikasiannya.  
+(eiiitss sebelum lanjut , biasa) ... basa-basi dulu ! ...  
+
 buat kalian yang baru pertama belajar Node.js, sama seperti gout yang mengalami kebingungan dikala ingin menghosting aplikasi yang sudah kita buat dalam masa pembelajaran Node.js ini.  
 kalian tidak perlu risaw kawan, hehehe. karena sekarang ini tidak ada yang tidak mungkin, semua pertanyaan ada jawabannya, semua kesulitan pasti ada jalan keluar :) .  
 
