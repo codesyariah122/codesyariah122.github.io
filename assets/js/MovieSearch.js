@@ -122,7 +122,7 @@ const reviewMovie = (method, key) => {
                 }
 
            }else{
-            data.movieList.html(`
+            data.searchReview.html(`
              <div class="col-12">
                  <div class="alert alert-danger alert-dismissible fade show" role="alert">
                  <strong>Wooopssshhh!!!</strong> <span class="text-center">${res.Error}</span>
@@ -177,12 +177,11 @@ $(document).ready(function(){
     });
 
     data.movieList.on('click', '.see-detail-search-movie', function(){
-        const input = data.searchMovie.val();
         const detail =  $(this).data('id');
 
-        alert(input);
+        // alert(input);
 
-        detailMovie(baseAPI.keySearchMovie,input, detail);
+        detailMovie(baseAPI.keySearchMovie, detail);
     });
 
     data.reviewButton.on('click', function(){

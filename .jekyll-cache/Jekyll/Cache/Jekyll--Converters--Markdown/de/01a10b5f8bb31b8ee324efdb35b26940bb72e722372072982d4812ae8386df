@@ -1,0 +1,132 @@
+I"[)<p><img src="{{site.url}}/assets/images/post/heroku2.png" alt="heroku1" /> 
+<strong>Assalamuallaikumm</strong>…</p>
+
+<p>Apa kabarnya sobat coders semua ? semoga selalu dalam keadaan sehat-sehat semuanya.<br />
+kali ini gout mau berbagi tips ataupun trick mengenai Node.js salah satu programming language yang sedang berkembang pesat dijagat developer.</p>
+
+<h2 id="sekilas-heroku">Sekilas Heroku</h2>
+<p>Heroku adalah platform cloud sebagai layanan (PaaS) yang mendukung beberapa bahasa pemrograman . Salah satu platform cloud pertama, Heroku telah dikembangkan sejak Juni 2007, saat itu hanya mendukung bahasa pemrograman Ruby , tetapi sekarang mendukung Java , Node.js , Scala , Clojure , Python , PHP , dan Go . [1] [2] Karena alasan ini, Heroku dikatakan sebagai platform poliglot karena memiliki fitur bagi pengembang untuk membangun, menjalankan, dan menskalakan aplikasi dengan cara yang sama di sebagian besar bahasa. Heroku diakuisisi oleh Salesforce.com pada tahun 2010 seharga $ 212 juta. (sumber wiki)</p>
+<h3 id="sejarah">Sejarah</h3>
+<p>Heroku awalnya dikembangkan oleh James Lindenbaum , [4] Adam Wiggins, [5] dan Orion Henry [6] untuk mendukung proyek-proyek yang kompatibel dengan platform pemrograman Ruby yang dikenal sebagai Rack . [7] Pengembangan prototipe memakan waktu sekitar enam bulan. Belakangan, Heroku menghadapi kekurangan karena kurangnya pelanggan pasar yang tepat karena banyak pengembang aplikasi menggunakan alat dan lingkungan mereka sendiri. [ Rujukan? ] Pada bulan Januari 2009, platform baru diluncurkan yang dibangun hampir dari awal setelah upaya tiga bulan. Pada Oktober 2009, Byron Sebastian bergabung dengan Heroku sebagai CEO. [8] Pada 8 Desember 2010, Salesforce.com mengakuisisi Heroku sebagai anak perusahaan yang sepenuhnya dimiliki oleh Salesforce.com. Pada 12 Juli 2011, Yukihiro “Matz” Matsumoto , kepala desainer bahasa pemrograman Ruby , bergabung dengan perusahaan sebagai Kepala Arsitek, Ruby. [9] Di bulan yang sama, Heroku menambahkan dukungan untuk Node.js dan Clojure . Pada 15 September 2011, Heroku dan Facebook memperkenalkan Heroku untuk Facebook. [10] Saat ini Heroku mendukung database Redis [11] [12] selain PostgreSQL standarnya. [13]</p>
+
+<p>seperti itulah mengenai heroku dalam intisari singkat diatas. Heroku adalah sebuah PasS(Platform as a Service).</p>
+<h4 id="deploy-aplikasi-nodejs-with-heroku">Deploy aplikasi Node.js with Heroku</h4>
+<p>Ada beberapa <strong>Metode Deploymeny</strong> yang disediakan heroku antara lain :</p>
+<ul>
+  <li>Heroku Git ( Use Heroku CLI )</li>
+  <li>Github ( Connect to github account )</li>
+  <li>Container Registry (Use Heroku CLI )<br />
+diantara ketiga metode diatas gout sudah mencoba diantara kedua opsi method dari list tersebut yaitu : <strong>Heroku Git</strong> dan <strong>Github</strong>, sedangkan dalam artikel kali ini gout mau membahas method deployment heroku dengan menggunakan <strong>Heroku Git</strong>. seperti berikut contoh pengaplikasiannya.<br />
+(eiiitss sebelum lanjut , biasa) … basa-basi dulu ! …</li>
+</ul>
+
+<p>buat kalian yang baru pertama belajar Node.js, sama seperti gout yang mengalami kebingungan dikala ingin menghosting aplikasi yang sudah kita buat dalam masa pembelajaran Node.js ini.<br />
+kalian tidak perlu risaw kawan, hehehe. karena sekarang ini tidak ada yang tidak mungkin, semua pertanyaan ada jawabannya, semua kesulitan pasti ada jalan keluar :) .</p>
+
+<p><strong>tenangkan pikiran</strong> fokus kedepan kita melangkah (halahhhh apaan sih, to the point aje brooo).<br />
+Ok kita langsung cuuuusss praktek, kita akan mempublish karya kita yang berupa aplikasi sederhana yang berbasis Node.js sebagai programming language nya. yoiiii cuuss langsung aksess ke link berikut:<br />
+<a href="https://www.heroku.com/">Heroku </a> langsung klik ajah,<br />
+lanjut sobat bisa buat free account dengan signup terlebih dahulu, untuk bisa mendapatkan layanan akses dari heroku yang berupa server virtual machine. sama kaya aws gitu atau layanan serupa lainnya kaya netlify.</p>
+
+<h4 id="selanjutnya">Selanjutnya</h4>
+<p>setelah membuat akun langsung akses dashboard heroku sobat, seperti ini tampilan dashboard nya :<br />
+<img src="{{site.url}}/assets/images/post/heroku/heroku1.png" alt="heroku_node1_" />
+<img src="{{site.url}}/assets/images/post/heroku/heroku2.png" alt="heroku_node1_" /> 
+pilih salah satu virtual machine yang tersedia sepertinya semua lokasi server nya sama, jadi sobat bebas pilih vm yang manapun bisa sobat sesuaikan, setelah memilih vm, kalian bisa ubah nama vm nya agar lebih mudah dalam maintenance kedepannya.</p>
+
+<h4 id="jalankan-heroku">Jalankan Heroku</h4>
+<p>Setelah mesin virtual dipilih dan telah disesuaikan nama dan settingan lainnya dengan keinginan
+<img src="{{site.url}}/assets/images/post/heroku/heroku3.png" alt="heroku_node1_" /><br />
+sobat, sobat bisa langsung configurasi repo baru untuk applikasi yang akan kita bangun di vm heroku. buka terminal kemudian jalankan :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>heroku login
+</code></pre></div></div>
+<p><img src="{{site.url}}/assets/images/post/heroku/heroku4.png" alt="heroku_node1_" />
+setelah itu autentikasikan login anda ada berupa link url dibawahnya kemudian klik kanan open link
+<img src="{{site.url}}/assets/images/post/heroku/heroku5.png" alt="heroku_node1_" /> 
+kemudian buka dibrowser kalian<br />
+<img src="{{site.url}}/assets/images/post/heroku/heroku6.png" alt="heroku_node1_" /><br />
+klik login, untuk melanjutkan autentikasi heroku kalian.<br />
+<img src="{{site.url}}/assets/images/post/heroku/heroku7.png" alt="heroku_node1_" /></p>
+
+<h4 id="selanjutnya-1">Selanjutnya</h4>
+<p>Selanjutnya adalah membuat direktori project baru di mesin lokal atau di desktop kalian</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mkdir -p jhony-thunder
+$ chmod -R 777 jhony-thunder/.*
+$ cd jhony-thunder/
+</code></pre></div></div>
+<p><small style="color:crimson;">(Nama project gout adalah <strong>jhony-thunder</strong>)</small><br />
+kemudian lakukan initialisasi dan remote untuk repo aplikasi heroku kalian</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@debian:/home/puji122/jhony-thunder/# git init
+root@debian:/home/puji122/jhony-thunder/# heroku git:remote -a jhony-thunder
+</code></pre></div></div>
+<p><img src="{{site.url}}/assets/images/post/heroku/heroku10.png" alt="heroku_node1_" /></p>
+
+<p>setelah itu buat sebuah file baru</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@debian:/home/puji122/jhony-thunder/# touch app.js 
+</code></pre></div></div>
+<p>kemudian kita initialisasi package aplikasi Node.js kita</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@debian:/home/puji122/jhony-thunder/# npm init 
+</code></pre></div></div>
+<p>isi beberapa opsi yang tersedia, lanjut install nodemon sebagai interpreter untuk menjalankan aplikasi Node.js kita.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@debian:/home/puji122/jhony-thunder/# npm install nodemon --save
+</code></pre></div></div>
+<p>kemudian edit file <strong>package.json</strong>, tambahkan baris berikut didalam object bagian script</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>script{
+    "start": "nodemon app.js",
+}
+</code></pre></div></div>
+<p>isi file <code class="language-plaintext highlighter-rouge">package.json</code> :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "name": "jhony-thunder",
+  "version": "1.0.0",
+  "description": "script again coffee again",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" &amp;&amp; exit 1"
+  },
+  "author": "puji",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
+</code></pre></div></div>
+<p>ok sekarang kalian bisa build aplikasi Node.js seperti biasanya. karena environment developing nya sudah kita siapkan.<br />
+sebagai contoh kita akan membuat request http sederhana di Node.js, buka code editor visual code, kemudian mulai coding untuk aplikasi sederhana kita.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const server = require('http')
+const PORT = process.env.PORT || 3000
+const app = server.createServer((req, res) =&gt; {
+    res.write(`&lt;h1&gt;Hallo World&lt;/h1&gt;`)
+    res.end()
+}).listen(PORT, () =&gt; {
+    console.log(`app is running on port ${PORT}`)
+})
+</code></pre></div></div>
+<p><img src="{{site.url}}/assets/images/post/heroku/heroku10.png" alt="heroku_node1_" /><br />
+untuk uji coba kita bisa buka terminal di <strong>vscode</strong> dengan menekan shortcutkey (ctrl+`), kemudian jalankan kembali command heroku :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@debian:/home/puji122/jhony-thunder# heroku local web 
+</code></pre></div></div>
+<p><img src="{{site.url}}/assets/images/post/heroku/heroku13.png" alt="heroku_node1_" /><br />
+kemudian akses browser kalian sesuai port yang diberikan (localhost:5000) biasanya.<br />
+<img src="{{site.url}}/assets/images/post/heroku/heroku14.png" alt="heroku_node1_" /></p>
+
+<h2 id="publish-ke-heroku">Publish ke heroku</h2>
+<p>Ok setelah berjalan di mesin lokal kita, sekarang waktunya mempublish aplikasi kita, langsung saja buka terminal lagi</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@debian:/home/puji122/jhony-thunder# git add .
+root@debian:/home/puji122/jhony-thunder# git commit -am "My Application With Heroku"
+root@debian:/home/puji122/jhony-thunder# git push heroku master 
+</code></pre></div></div>
+<p><img src="{{site.url}}/assets/images/post/heroku/heroku16.png" alt="heroku_node1_" /></p>
+
+<p><strong>Proses Deployment Success</strong>
+Aplikasi kita sudah di deploy ke publish server virtual machine heroku kita, kalian sudah bisa mengakses url aplikasi kalian sekarang .
+<img src="{{site.url}}/assets/images/post/heroku/heroku17.png" alt="heroku_node1_" /></p>
+
+<p>Ok sekian dulu tips and trick gout kali ini, mohon maaf jika ada kekurangan, dan semoga bermanfaat.
+akhir kata gout ucapkan.</p>
+
+<p><strong><em>Wassalaam</em></strong></p>
+:ET

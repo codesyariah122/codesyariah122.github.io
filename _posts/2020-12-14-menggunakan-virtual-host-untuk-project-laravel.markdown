@@ -37,10 +37,12 @@ cp laravel.conf.example aplikasi-laravelku.conf
 3. Edit file toko-online.conf tersebut
     Ubah kode ini  
 ```
+server_name laravel.test;
 root /var/www/laravel/public;
 ```
 ***Menjadi***  
 ```
+server_name aplikasi-laravelku.test;
 root /var/www/aplikasi-laravelku/public;
 ```  
 4. Restart laradock container kita

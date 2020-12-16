@@ -7,6 +7,9 @@ function pauseAudio(){
 	myAudio.pause()
 }
 	
+$('.mode-label').css({
+	'font-size': '37px'
+})
 
 $(document).ready(function(){
 // 	$('myAudio').removeAttr('autoplay');
@@ -19,7 +22,7 @@ $(document).ready(function(){
 				'display': 'inline-block',
 				'margin-top': '7rem',
 				'margin-left': '-3.7rem',
-				'font-size': '3rem',
+				'font-size': '37px',
 				'z-index': '1'
 			})
 			$('#text-mode').css({
@@ -37,7 +40,7 @@ $(document).ready(function(){
 				'display':'',
 				'margin-top':'',
 				'margin-left': '',
-				'font-size': '',
+				'font-size': '37px',
 				'z-index':'1'
 			})
 			$('#text-mode').css({
