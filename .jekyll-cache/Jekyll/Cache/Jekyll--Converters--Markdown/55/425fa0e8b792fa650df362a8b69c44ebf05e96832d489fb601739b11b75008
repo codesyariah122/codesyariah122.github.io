@@ -1,4 +1,4 @@
-I"8#<style type="text/css">
+I"‹#<style type="text/css">
     /* all parallax top and bottom */
     .parallax{
       min-height: 500px; 
@@ -216,11 +216,12 @@
               </div>
               <!-- row content1 end -->
               <br />
+              <h1 class="text-center">Pilih Aplikasi Dibawah</h1>
               <h1 class="underline text-center mt-2 mb-4"></h1>
                 <div class="col-md-12 col-xs-12 col-sm-12">
                     <h1>
-                      <button class="btn btn-success btn-lg text-white" id="show-search">Movie Search</button> &nbsp;
-                      <button class="btn btn-danger btn-lg text-white" id="show-review">Movie Review</button>
+                      <button class="btn btn-success btn-lg text-white" id="show-search">Movie Search (IMDB)</button> &nbsp;
+                      <button class="btn btn-danger btn-lg text-white" id="show-review">Movie Review (NYTIMES)</button>
                     </h1>
                 </div>
               <!-- row content2 -->

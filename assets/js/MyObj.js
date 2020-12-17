@@ -5,6 +5,7 @@ const data = {
     'searchMovie' : $('#search-input'),
     'searchReview' : $('#search-review'),
     'movieList' : $('#movie-list'),
+    'reviewList' : $('#review-list'),
     'searchButton' : $('#search-button'),
     'reviewButton' : $('#review-button'),
     'MyTable' : $('#myTable'),
