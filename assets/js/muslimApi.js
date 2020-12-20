@@ -142,21 +142,30 @@ const showVerses = () => {
 
 const MulaiWaktuAdzan = (value, arr1, arr2) => {
 
-    for(let i = 0; i<=arr1.length; i++){
-        const shalat = arr1[i];
-        if(shalat == value){
-            status = arr2[i];
-                 $('#now2').append(`
-                    Sekarang memasuki waktu <b>${status}</b> : ${arr1[i]}
-                 `);
-            break;
+        const shalat = arr1;
+      
+        if(shalat.includes(value)){
+            if(value === shalat[0]){
+                nama = "Imsak";
+            }else if(value === shalat[1]){
+                nama = "Fajr";
+            }else if(value === shalat[2]){
+                nama = "Sunrise";
+            }else if(value === shalat[3]){
+                nama = "Dhuhr";
+            }else if(value === shalat[4]){
+                nama = "Asr";
+            }else if(value === shalat[5]){
+                nama = "Maghrib";
+            }else if(value === shalat[6]){
+                nama = "Isha";
+            }else if(value === shalat[7]){
+                nama = "Qiyamullail";
+            }
+            $('#now2').append(`<b>Memasuki Waktu ${nama}</b>`);
+        }else{
+            $('#now2').append(`<b>Menunggu waktu shalat selanjutnya</b>`)
         }
-
-    }
-
-    // alert(value);
-
-    return status;
 
 }
 
@@ -198,7 +207,8 @@ const jadwalShalat = (today, city) => {
             const date = new Date();
             const now = date.getHours()+':'+date.getMinutes();
             now.toString();
-            // alert(typeof now);
+            // alert(now);
+            alert(typeof now);
             MulaiWaktuAdzan(now, waktuAdzan, waktuShalat);
 
             data.tanggal.html(`${tanggal.hijriah} Hijriah | ${tanggal.gregoria}`);
@@ -209,11 +219,6 @@ const jadwalShalat = (today, city) => {
                 `);
             });
 
-            
-            // console.log(result);
-
-            {/* <li class="list-group-item">Cras justo odio</li> */}
-        
         }
     })
 }
