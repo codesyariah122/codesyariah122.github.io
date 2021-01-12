@@ -9,36 +9,69 @@
 
     <!-- latest post -->
     {% assign latest_post = site.posts[0] %}
-    <div class="col-md-6">
-    <div class="card border-0 mb-4 box-shadow">
-<!-- adding image thumbnail hover -->
+<div class="col-md-6">
+        <div class="card border-0 mb-4 box-shadow">
+    <!-- adding image thumbnail hover -->
 
-    <a href="{{site.url}}{{latest_post.url}}">
-    <div class="topfirstimage" style="background-image: url({% if latest_post.image contains "://" %}{{ latest_post.image }}{% else %} {{site.url}}/{{ latest_post.image}}{% endif %}); height: 200px;    background-size: cover;    background-repeat: no-repeat;"></div>
-    </a>
+        <a href="{{site.url}}{{latest_post.url}}">
+        <div class="topfirstimage" style="background-image: url({% if latest_post.image contains "://" %}{{ latest_post.image }}{% else %} {{site.url}}/{{ latest_post.image}}{% endif %}); height: 200px;    background-size: cover;    background-repeat: no-repeat;"></div>
+        </a>
 
-    <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
-    <h2 class="h4 font-weight-bold">
-    <a class="text-dark" href="{{site.url}}{{latest_post.url}}">{{ latest_post.title }}</a>
-    </h2>
-    <p class="excerpt">
-        {{ latest_post.excerpt | strip_html | strip_newlines | truncate: 136 }}
-    </p>
-    <div>
-        <small class="d-block text-muted">
-            In <span class="catlist">
-                {% for category in latest_post.categories %}
-                <a class="text-capitalize text-muted smoothscroll" href="{{site.url}}/categories.html#{{ category | downcase }}">{{ category }}</a><span class="sep">, </span>
-                {% endfor %}
-                </span>
-        </small>
-        <small class="text-muted">
-            {{ latest_post.date | date: '%d %B, %Y' }}
-        </small>
+            <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
+            <h2 class="h4 font-weight-bold">
+            <a class="text-dark" href="{{site.url}}{{latest_post.url}}">{{ latest_post.title }}</a>
+            </h2>
+            <p class="excerpt">
+                {{ latest_post.excerpt | strip_html | strip_newlines | truncate: 136 }}
+            </p>
+            <div>
+                <small class="d-block text-muted">
+                    In <span class="catlist">
+                        {% for category in latest_post.categories %}
+                        <a class="text-capitalize text-muted smoothscroll" href="{{site.url}}/categories.html#{{ category | downcase }}">{{ category }}</a><span class="sep">, </span>
+                        {% endfor %}
+                        </span>
+                </small>
+                <small class="text-muted">
+                    {{ latest_post.date | date: '%d %B, %Y' }}
+                </small>
+            </div>
+        </div>
     </div>
-    </div>
-    </div>
-    </div>
+
+       <!-- row content1 end -->
+    <br>
+        <h1 class="underline text-center mt-2 mb-4"></h1>
+            <!-- row content2 -->
+            <div class="row justify-content-center">
+                <div class="col-12 col-xs-12 col-sm-12">
+                    <h1 class="text-center">Update Berita</h1>
+                    
+                    <div class="input-group mb-3">
+                        <select class="custom-select" id="select-news">
+                                  <!-- <option selected>Choose...</option> --> 
+                        </select>
+                        <div class="input-group-append">
+                            <button id="enter" class="btn btn-dark">Choose</button>
+                        </div>
+                          
+                    </div>
+                </div>
+
+                <hr>
+                          
+                <div id="err">
+                    <div class="col-12 col-xs-12 col-sm-12">
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>Wooopssshhh!!!</strong> <span class="text-center">Pilih nama media online nya dulu bro</span>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- row content2 end -->
+
+</div><!-- col-md-6 -->
 
     <div class="col-md-6">
 
