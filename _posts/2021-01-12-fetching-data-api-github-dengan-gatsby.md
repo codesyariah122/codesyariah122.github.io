@@ -10,7 +10,7 @@ opening: بسم الله الرحمن الرحيم
 
 
 ### Gatsby Source Graphql   
-Halo sob ... ini post kedua di tahun 2021 ini, agak delay yah .. maklum sob kondisi belum kondusif, PSBB silih berganti menyumbat aktifitas publik.  
+Halo sob ... ini post kedua di tahun 2021 ini, agak delay yah .. maklum sob kondisi belum kondusif, PSBB silih berganti membatasi aktifitas-aktifitas diruang publik, jangan lupa selalu jaga kesehatan kalian frenn.  
 Dalam artikel ini gout mau melanjutkan tulisan gout tentang static site generator yang dibuat dengan ```React.js``` yaitu ```Gatsby.js```. Kali ini akan membagi sedikit tips dari hasil kulik mengulik gout, maklum lah gout ini **otodidak** sejati.  
 
 Ok langsung ajah, di artikel ini gout bermaksud untuk membuat sebuah portfolio page atau personal website, dimana di dalam portfolio page tersebut gout mau memamerkan Portfolio yang berupa aktifitas kita dan keaktifan kita sebagai seorang programmer atau developer atau engineer yang senantiasa bersentuhan dengan github at least apapun itu baik itu profile, repository atau apapun segala aktifitas kita di github. Karena github menyediakan api key gratis untuk diakses publik, dan gout coba memanfaatkan fitur api data dari github.  
@@ -105,16 +105,13 @@ root@debian:/home/puji122/pujiermanto.netlify.app# npm start
 ```  
 Setelah server gatsby running di localhost:8000, kita bisa buka di browser kita dengan mengakses http://localhost:8000, untuk graphql bisa di akses di ```http://localhost:8000/__graphql```  
 
-bisa dilihat seperti ini fetching data di graphql nya :  
-![github-source-graphql]({{site.url}}/assets/images/post/gatsby-source-graphql.mp4)  
-
 <video width="600" controls autoplay>
   <source src="{{site.url}}/assets/images/post/gatsby-source-graphql.mp4" type="video/mp4">
   <source src="mov_bbb.ogg" type="video/ogg">
   Your browser does not support HTML video.
 </video>
 
-Seperti terlihat dari gif diatas plugin ```gatsby-source-graphql``` sudah bisa kita gunakan untuk fetching data github kita.  
+Seperti terlihat dari cuplikan diatas plugin ```gatsby-source-graphql``` sudah bisa kita gunakan untuk fetching data github kita.  
 
 #### Show off your project at github  
 
@@ -389,7 +386,11 @@ github: {
 Penggunaanya yakni api github, yang documentasi nya bisa kalian simak dimari :  
 <a href="https://docs.github.com/en/free-pro-team@latest/graphql/overview/about-the-graphql-api" target="_blank">Github Api Documentation</a>, dan kalian juga bisa langsung explore graphqlnya github disini : <a href="https://docs.github.com/en/free-pro-team@latest/graphql/overview/explorer" target="_blank">Explorer github graphql</a> lanjut login dengan akun github kalian.  
 **seperti ini contohnya :**  
-![github-source-graphql]({{site.url}}/assets/images/post/github-explorer.gif)  
+<video width="600" controls autoplay>
+  <source src="{{site.url}}/assets/images/post/github-explorer.mp4" type="video/mp4">
+  <source src="mov_bbb.ogg" type="video/ogg">
+  Your browser does not support HTML video.
+</video>  
 
 - Looping data  
 
