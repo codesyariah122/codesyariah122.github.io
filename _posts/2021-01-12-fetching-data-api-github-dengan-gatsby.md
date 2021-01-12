@@ -108,6 +108,12 @@ Setelah server gatsby running di localhost:8000, kita bisa buka di browser kita 
 bisa dilihat seperti ini fetching data di graphql nya :  
 ![github-source-graphql]({{site.url}}/assets/images/post/gatsby-source-graphql.mp4)  
 
+<video width="600" controls autoplay>
+  <source src="{{site.url}}/assets/images/post/gatsby-source-graphql.mp4" type="video/mp4">
+  <source src="mov_bbb.ogg" type="video/ogg">
+  Your browser does not support HTML video.
+</video>
+
 Seperti terlihat dari gif diatas plugin ```gatsby-source-graphql``` sudah bisa kita gunakan untuk fetching data github kita.  
 
 #### Show off your project at github  
