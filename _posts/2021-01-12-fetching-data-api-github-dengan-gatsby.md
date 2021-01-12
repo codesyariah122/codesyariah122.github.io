@@ -385,7 +385,8 @@ Penggunaanya yakni api github, yang documentasi nya bisa kalian simak dimari :
 **seperti ini contohnya :**  
 ![github-source-graphql]({{site.url}}/assets/images/post/github-explorer.gif)  
 
-- Looping data
+- Looping data  
+
 Kemudian kita looping data nya di bagian view dan dapat diambil data sebagai berikut :  
 
 ```
