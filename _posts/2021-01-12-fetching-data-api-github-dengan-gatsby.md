@@ -106,7 +106,7 @@ root@debian:/home/puji122/pujiermanto.netlify.app# npm start
 Setelah server gatsby running di localhost:8000, kita bisa buka di browser kita dengan mengakses http://localhost:8000, untuk graphql bisa di akses di ```http://localhost:8000/__graphql```  
 
 bisa dilihat seperti ini fetching data di graphql nya :  
-![github-source-graphql]({{site.url}}/assets/images/post/github-source-graphql.gif)  
+![github-source-graphql]({{site.url}}/assets/images/post/gatsby-source-graphql.mp4)  
 
 Seperti terlihat dari gif diatas plugin ```gatsby-source-graphql``` sudah bisa kita gunakan untuk fetching data github kita.  
 
