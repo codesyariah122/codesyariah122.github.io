@@ -326,7 +326,9 @@ export default Projects
 
 
 ```  
-bisa kalian telaah yah code nya, kalau gout hanya mau sedikit memberi tambahan intinya, ada di bagian query graphql nya : 
+bisa kalian telaah yah code nya, kalau gout hanya mau sedikit **memberi tambahan untuk intinya**, untuk artikel ini akan gout jabarkan intinya yakni :  
+
+- Query Github Graphql  
 
 ```
 const {
@@ -368,7 +370,9 @@ const {
   );
 ```  
 
-di code ini kita melakukan query dengan mengambil data dari api github :
+**Look at this**  
+Di code ini kita melakukan query dengan mengambil data dari api github :  
+
 ```
 github: {
       viewer: {
@@ -376,18 +380,38 @@ github: {
       },
     } = 
 ```  
-Sama seperti kita fethcing data api pada biasanya, seperti menggunakan native javascript, jquery ataupun ajax.  
-coba cek documentasi dari github nya langsung :  
-<a href="https://docs.github.com/en/free-pro-team@latest/graphql/overview/about-the-graphql-api" target="_blank">Github Api Doc</a> atau kalian bisa langsung explore graphqlnya github disini : <a href="https://docs.github.com/en/free-pro-team@latest/graphql/overview/explorer" target="_blank">Explorer github graphql</a> lanjut login dengan akun github kalian.  
-
-- seperti ini contohnya :  
+Penggunaanya yakni api github, yang documentasi nya bisa kalian simak dimari :  
+<a href="https://docs.github.com/en/free-pro-team@latest/graphql/overview/about-the-graphql-api" target="_blank">Github Api Documentation</a>, dan kalian juga bisa langsung explore graphqlnya github disini : <a href="https://docs.github.com/en/free-pro-team@latest/graphql/overview/explorer" target="_blank">Explorer github graphql</a> lanjut login dengan akun github kalian.  
+**seperti ini contohnya :**  
 ![github-source-graphql]({{site.url}}/assets/images/post/github-explorer.gif)  
 
-#### Component lainnya  
-Untuk component lainnya kalian bisa meluncur langsung ke ling berikut yah :  
+- Looping data
+Kemudian kita looping data nya di bagian view dan dapat diambil data sebagai berikut :  
+
+```
+{edges.map(({ node }) => (
+  {node.id}
+  {node.url}
+  {node.name}
+  {node.description}
+  {node.stargazers.totalCount}
+  {node.forkCount}
+
+  //dan untuk bagian language lakukan looping kedua :  
+    {node.languages.nodes.map(({ id, name }) => (
+        {id}
+        {name}
+    ))}
+))}
+``` 
+
+#### Component-component tambahan lainnya  
+Untuk component lainnya kalian bisa meluncur langsung ke link repository gout berikut yah :  
 
 <a href="https://github.com/codesyariah122/pujiermanto.netlify.app/tree/with_new_gatsby/src/components/common" target="_blank">Disini</a>, bisa kalian sesuaikan dan di kostum sesuai selera kalian.  
-kesimpulannya gout hanya membagi tips pada bagian query graphqlnya saja yah. 
+kesimpulannya gout hanya membagi tips pada bagian query graphqlnya saja yah.  
+
+<a href="https://pujiermanto.netlify.app/" target="_blank">Demo My Portfolio WIth Github Data</a> 
 
 Kurang lebihnya mohon di maafkan, semoga tulisan ini bermanfaat. akhir kata gout ucapkan ...  
 
