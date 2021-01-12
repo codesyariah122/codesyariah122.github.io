@@ -34,7 +34,7 @@ Lalu tambahkan virtual domain yang akan kita pakai, misalnya untuk project aplik
 ```
 cp laravel.conf.example aplikasi-laravelku.conf
 ```  
-3. Edit file toko-online.conf tersebut
+3. Edit file aplikasi-laravelku.conf tersebut
     Ubah kode ini  
 ```
 server_name laravel.test;
