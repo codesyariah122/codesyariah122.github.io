@@ -1,4 +1,4 @@
-<h2 style='color:forestgreen;'>codesyariah122.github.io</h2>
+## codesyariah122.github.io
 
 <p style='color:mediumspringgreen;'>
 Hai Kami Codesyariah Blog...<br/>
@@ -9,7 +9,6 @@ Ikuti terus perjalanan catatan kami hanya di blog codesyariah.
 </p>
 <details>
 <summary style='color:DodgerBlue;'>
-About Codesyariah Founder
 </summary>  
 <img src="https://codesyariah122.github.io/IMG_20191224_051041.jpg" width="170" height="150"/><br/>
 <a href="https://id.linkedin.com/in/puji-ermanto-1b619782">
@@ -17,7 +16,7 @@ Puji Ermanto As Founder Codesyariah
 </a>
 </details>  
 
-Codesyariah dibangun dengan cms jekyll ruby  
-Documentasi dari jekyll :  
+Codesyariah dibangun dengan Static Site Generator dari ruby yaitu ```jekyll ruby```  
 
+Berikut Documentasi dari jekyll :  
 [![Jekyll Docs](https://jekyllrb.com/img/logo-2x.png)](https://jekyllrb.com/docs/)  
