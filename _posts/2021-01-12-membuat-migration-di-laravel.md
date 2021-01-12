@@ -248,7 +248,8 @@ mysql> show databases;
 | projectku          |
 | sys                |
 +--------------------+
-6 rows in set (0.50 sec) mysql> use projectku;
+6 rows in set (0.50 sec)
+mysql> use projectku;
 Reading table information for completion of table and column names
 You can turn off this feature to get a quicker startup with -A
 
