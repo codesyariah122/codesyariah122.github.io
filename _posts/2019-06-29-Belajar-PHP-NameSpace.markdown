@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Explode string nomor telepon dari query database"
+title:  "Belajar namespace PHP - OOP"
 author: puji
-categories: [ PHP, explode ]
+categories: [ PHP, OOP, namespace ]
 image: assets/images/post/namespace-php.jpg
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
@@ -35,7 +35,7 @@ namespace NamaNameSPace;
 
 dalam artikel ini gout akan praktekan langsung dari script nya saja yah gaes, ok Langsung disimak aja :  
 
-Buat direktori baru dengan nama **namespace/**, lanjut akses direktori ```namespace/```, lanjut lagi buat satu file baru di direktori tersebut ```touch index.php```, kemudian buat direktori baru didalam direktori ```namespace/``` dengan nama ```App/```. Selanjutnya kita buka direktori ```namespace/``` di code editor kesayangan kita.  
+Buat direktori baru dengan nama **namespace/**, lanjut akses direktori ```namespace/```, lanjut lagi buat satu file baru di direktori tersebut ```touch index.php```, kemudian buat direktori baru didalam direktori ```namespace/``` dengan nama ```app/```. Selanjutnya kita buka direktori ```namespace/``` di code editor kesayangan kita.  
 
 dalam artikel ini saya akan membuat sebuah fungsi aritmatika sederhana dengan php dengan metode OOP dan kita akan memanfaatkan fitur namespace untuk membundle setiap method yang akan kita deklarasikan.  
 
@@ -45,23 +45,23 @@ selanjutnya buat beberapa direktori baru, diantaranya :
 --------------------------------
  namespace/					
 --------------------------------	
-	App/					 	|
-		BaseClass/			 	|
-			BaseClass.php    	|
-		Add/				 	|
-			Add.php          	|
-		Substract/			 	|
-			Substract.php    	|
-		Multiply/			 	|
-			Multiply.php     	|
-		Devide/				 	|
-			Devide.php       	|
-		Modulus/			 	|
-			Modulus.php      	|
-		GanjilGenap/		 	|
-			GanjilGenap.php  	|
-								|
-		init.php             	|
+	app/					 	
+		BaseClass/			 	
+			BaseClass.php    	
+		Add/				 	
+			Add.php          	
+		Substract/			 	
+			Substract.php    	
+		Multiply/			 	
+			Multiply.php     	
+		Devide/				 	
+			Devide.php       	
+		Modulus/			 	
+			Modulus.php      	
+		GanjilGenap/		 	
+			GanjilGenap.php  
+								
+		init.php             	
 ---------------------------------
 
 index.php
@@ -74,10 +74,10 @@ pertama-tama kita akan edit file untuk ```BaseClass/``` :
 ```php
 <?php
 /*
-file : App/BaseClass/BaseClass.php
+file : app/BaseClass/BaseClass.php
 pujiermanto(codesyariah - 2019)
 */
-namespace App\BaseClass;
+namespace app\BaseClass;
 
   class BaseClass{
 
@@ -132,12 +132,12 @@ selanjutnya file : ```Add.php``` atau pertambahan
 ```php
 <?php
 /*
-file : App/Add/Add.php
+file : app/Add/Add.php
 pujiermanto(codesyariah - 2019)
 */
-namespace App\Add;
+namespace app\Add;
 
-class Add extends \App\BaseClass\BaseClass{
+class Add extends \app\BaseClass\BaseClass{
 
   //Setup calculator method
   public function getAdd($a,$b){
@@ -159,12 +159,12 @@ Lanjut lagi file selanjutnya yaitu : ```Substract.php``` atau pengurangan
 ```php
 <?php
 /*
-file : App/Substract/Substract.php
+file : app/Substract/Substract.php
 pujiermanto(codesyariah - 2019)
 */
-namespace App\Substract;
+namespace app\Substract;
 
-class Substract extends \App\BaseClass\BaseClass{
+class Substract extends \app\BaseClass\BaseClass{
 
   //Setup calculator method
   public function getSub($a,$b){
@@ -186,13 +186,13 @@ Lanjut adalah file : ```Multiply.php``` atau pembagian
 ```php
 <?php
 /*
-file : App/Multiply/Multiply.php
+file : app/Multiply/Multiply.php
 pujiermanto(codesyariah - 2019)
 */
 
-namespace App\Multiply;
+namespace app\Multiply;
 
-class Multiply extends \App\BaseClass\BaseClass{
+class Multiply extends \app\BaseClass\BaseClass{
 
   public function getMult($a,$b){
 
@@ -215,13 +215,13 @@ Lanjut lagi untuk file : ```Divide.php``` atau pembagian
 ```php
 <?php
 /*
-file : App/Devide/Devide.php
+file : app/Devide/Devide.php
 pujiermanto(codesyariah - 2019)
 */
 
-namespace App\Divide;
+namespace app\Divide;
 
-class Divide extends \App\BaseClass\BaseClass{
+class Divide extends \app\BaseClass\BaseClass{
 
   public function getDiv($a,$b){
 
@@ -244,11 +244,11 @@ Selanjutnya lagi adalah file : ```Modulus.php``` atau sisa bagi
 ```php
 <?php
 /*
-file : App/Modulus/Modulus.php
+file : app/Modulus/Modulus.php
 pujiermanto(codesyariah - 2019)
 */
-namespace App\Modulus;
-class Modulus extends \App\BaseClass\BaseClass{
+namespace app\Modulus;
+class Modulus extends \app\BaseClass\BaseClass{
 
   public function getMod($a,$b){
     $this->result=$a % $b;
@@ -263,12 +263,12 @@ Dan terakhir kita buka file : ```GanjilGenap.php``` Untuk menentukan type suatu 
 ```php
 <?php
 /*
-file : App/GanjilGenap/GanjilGenap.php
+file : app/GanjilGenap/GanjilGenap.php
 pujiermanto(codesyariah - 2019)
 */
-namespace App\GanjilGenap;
+namespace app\GanjilGenap;
 
-class GanjilGenap extends \App\BaseClass\BaseClass{
+class GanjilGenap extends \app\BaseClass\BaseClass{
 
   public function getGanjilGenap($n=11){
     $this->result=$n;
@@ -287,12 +287,12 @@ class GanjilGenap extends \App\BaseClass\BaseClass{
   }
 }
 ```  
-Setelah semua file di direktori ```App/``` sebagai direktori utama untuk menyimpan class aplikasi sederhana kita, lanjut kita buka satu file baru yaitu file : ```init.php``` yang dimana fungsi init ini adalah sebagai jalur untuk memanggil tiap tiap class yang ada di direktori ```App/```.  
+Setelah semua file di direktori ```app/``` sebagai direktori utama untuk menyimpan class aplikasi sederhana kita, lanjut kita buka satu file baru yaitu file : ```init.php``` yang dimana fungsi init ini adalah sebagai jalur untuk memanggil tiap tiap class yang ada di direktori ```app/```.  
 
 ```php
 <?php 
 /*
-file : App/init.php
+file : app/init.php
 pujiermanto(codesyariah - 2019)
 */
 
@@ -304,13 +304,13 @@ require_once 'Divide/Divide.php';
 require_once 'Modulus/Modulus.php';
 require_once 'GanjilGenap/GanjilGenap.php';
 
-use \App\BaseClass\BaseClass;
-use \App\Add\Add;
-use \App\Substract\Substract;
-use \App\Multiply\Multiply;
-use \App\Divide\Divide;
-use \App\Modulus\Modulus;
-use \App\GanjilGenap\GanjilGenap;
+use \app\BaseClass\BaseClass;
+use \app\Add\Add;
+use \app\Substract\Substract;
+use \app\Multiply\Multiply;
+use \app\Divide\Divide;
+use \app\Modulus\Modulus;
+use \app\GanjilGenap\GanjilGenap;
 
 $base = new BaseClass;
 
@@ -336,7 +336,7 @@ file : index.php (di root folder)
 pujiermanto(codesyariah - 2019)
 */
 
-require_once(dirname(__FILE__)) .'/App/init.php';
+require_once(dirname(__FILE__)) .'/app/init.php';
 
 
 echo $base::sayHallo();
@@ -360,9 +360,9 @@ $x->getGanjilGenap(19);
 
 ### Kesimpulan  
 
-Ok saatnya menjabarkan, disini saya akan bahas dari file ```init.php``` di root direktori ```App/```, file ini berfungsi untuk memanggil tiap tiap class yang akan kita gunakan di file ```index.php``` di root direktori aplikasi kita, selanjutnya file ```init.php``` ini juga menginstansiasi sejak awal dari tiap-tiap class yang akan di deklarasikan nanti di file index. 
+Ok saatnya menjabarkan, disini saya akan bahas dari file ```init.php``` di root direktori ```app/```, file ini berfungsi untuk memanggil tiap tiap class yang akan kita gunakan di file ```index.php``` di root direktori aplikasi kita, selanjutnya file ```init.php``` ini juga menginstansiasi sejak awal dari tiap-tiap class yang akan di deklarasikan nanti di file index. 
 
-selanjutnya tiap-tiap class sebagai contoh misalnya saya akan jabarkan class ```App\BaseClass``` : class ini adalah class utama kita coba perhatikan pada bagian namespacenya ```namespace  App\BaseClass```, namespace tersebut adalah penggunaan namespace dengan indikasi ```nama_direktori\nama_class``` nya, kalian bebas untuk membuat namespace apapun tidak perlu sama dengan yang saya buat, yang penting faham bagaimana algoritma dari fitur namespace ini.  
+selanjutnya tiap-tiap class sebagai contoh misalnya saya akan jabarkan class ```app\BaseClass``` : class ini adalah class utama kita coba perhatikan pada bagian namespacenya ```namespace  app\BaseClass```, namespace tersebut adalah penggunaan namespace dengan indikasi ```nama_direktori\nama_class``` nya, kalian bebas untuk membuat namespace apapun tidak perlu sama dengan yang saya buat, yang penting faham bagaimana algoritma dari fitur namespace ini.  
 
 Ok yahh ... mudah difahami kan, kalian harus mencobanya langsung di web server kalian, sesuai dengan prinsip pemrogramman yaitu **amati, tiru dan modifikasi**. Mungkin selanjutnya kita akan membahas ```Autoloader PSR``` untuk memudahkan dalam mengelola tiap file yang akan digunakan. Ok ! Sekian dari saya.
 
