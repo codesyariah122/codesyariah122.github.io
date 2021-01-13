@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Membuat Migration di Laravel"
+title:  "Solved Error Install laravel/ui"
 author: puji
 categories: [ PHP, Laravel, MVC, OOP ]
 image: assets/images/post/larvel-ui-vue.jpg
