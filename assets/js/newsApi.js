@@ -136,7 +136,8 @@ $(document).ready(function(){
                         let getNews = res['articles'][newsSelect];
                         // console.log(getNews);
                         $('#news-list').append(`
-                                <div class="col-md-4">
+                            <div class="row mt-2 mb-2">
+                                <div class="col-md-6">
                                     <div class="card mb-5 mt-2">
                                         <img src="${getNews.urlToImage}" class="card-img-top float-left img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" alt="...">
                                             <div class="card-body">
@@ -149,7 +150,8 @@ $(document).ready(function(){
                                             </div>
                                     </div>
                                 </div>
-                            `);
+                            </div>
+                        `);
                     }
                 }
             });

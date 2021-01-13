@@ -45,7 +45,7 @@ pilih salah satu virtual machine yang tersedia sepertinya semua lokasi server ny
 #### Jalankan Heroku  
 Setelah mesin virtual dipilih dan telah disesuaikan nama dan settingan lainnya dengan keinginan
 ![heroku_node1_]({{site.url}}/assets/images/post/heroku/heroku3.png)  
-sobat, sobat bisa langsung configurasi repo baru untuk applikasi yang akan kita bangun di vm heroku. buka terminal kemudian jalankan :  
+sobat, sobat bisa langsung configurasi repo baru untuk applikasi yang akan kita bangun di vm heroku. Atau kalian juga bisa push terlebih dahulu project kalian ke github lalu kita memilih deployment dari repository project kita. OK lanjut buka terminal kemudian jalankan :  
 ```
 heroku login
 ```  

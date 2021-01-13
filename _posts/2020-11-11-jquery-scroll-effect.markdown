@@ -14,11 +14,15 @@ Lanjut lagi mengenai jquery, banyak sebetulnya fungsi dan kegunaan jquery itu ya
 
 dan di artikel kali ini gout mau membuat effect scroll dengan jquery, gout mau membuat sebuah transition background untuk bagian navigasi, ok langsung ajah kita ke codingan nya.  
 
-di ilustrasi ini, pada bagian navigasi yang memiliki background hitam ( bg-dark ) sebuah class dari bootstrap.
+di ilustrasi ini, pada bagian navigasi yang memiliki background hitam ( bg-dark ) sebuah class dari bootstrap.  
+
 ![jquery_scroll_1]({{site.url}}/assets/images/post/scroll_bg_dark.gif)  
+
 nah gout bermaksud untuk membuat navigasi di bagian atas atau pada saat scrollTop backgroundnya transparent, baru pada saat scroll di turunkan backgroundnya berubah dari transparent ke transisi transparent, kemudian berubah menjadi solid hitam. bagaimana melakukannya, ok langsung ajah kita ke script code nya. 
 
-ini script code navigasi sebelumnya:
+ini script code navigasi sebelumnya:  
+
+> ***Oh iya script code dalam artikel ini merupakan project kerjaan gout yang menggunakan wordpress, dalam project tersebut tugas gout adalah membuat sebuah child theme yang di customisasi.***  
 
 ```
 <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-dark">
@@ -75,12 +79,25 @@ kemudian kita bisa bikin css untuk transparentnya, seperti ini code css untuk tr
     margin-top: .5rem;
 }
 ```  
-sehingga menjadi seperti ini penampakan navbar dengan background transparent
-![scroll_transparent]({{site.url}}/assets/images/post/scroll_bg_transparent.gif)  
+sehingga menjadi seperti ini penampakan navbar dengan background transparent  
 
+![scroll_transparent]({{site.url}}/assets/images/post/scroll_bg_transparent.gif)  
 
 css untuk transparent navbar sudah di buat dengan nama class ```transparent-nav```, sekarang kita lanjut ke javascript nya, menggunakan jquery, berikut code nya :  
 jadi code jquery berikut menggunakan fitur scroll, karena kita akan membuat effect peralihan untuk bacgkround di navigasi dari transparent ke solid hitam.  
+
+Pertama kita buat dulu sebuah object javascript baru untuke lebih memudahkan, melakukan query selector untuk tiap class atau id yang akan di gunakan :  
+
+```
+const object = {
+    'menuItem' : $('.menu-item'),
+    'navBrand' : $('.navbar-brand'),
+    'navLink' : $('.nav-link'),
+    'fixedTop' : $('.sticky-top'),
+};
+```  
+
+Lanjut itu lakukan query selector dari class yang telah di definisikan di atas.  
 
 ``` 
     $(window).on('scroll', function(){
@@ -118,21 +135,27 @@ jadi code jquery berikut menggunakan fitur scroll, karena kita akan membuat effe
         }
     });
 ```  
-**sedikit penjelasan** : 
-dari script diatas gout coba mengaktifkan event ```scroll```, kemudian kita melakukan penambahaan fungsi baru untuk event ```scroll``` ini. setelah event ```scroll``` nya aktif kita assignment sebuah fungsi untuk mendeteksi device yang kita assignment kedalam variable berikut 
+
+**sedikit penjelasan** :  
+
+dari script diatas gout coba mengaktifkan event ```scroll```, kemudian kita melakukan penambahaan fungsi baru untuk event ```scroll``` ini. setelah event ```scroll``` nya aktif kita assignment sebuah fungsi untuk mendeteksi device yang kita assignment kedalam variable berikut  
+
 ```
 let isDesktop = window.matchMedia('only screen and (min-width: 992px)').matches;
 ```  
-setelah itu kita lakukan beberapa seleksi diataranya untuk mendeteksi event ```scroll``` nya : 
+setelah itu kita lakukan beberapa seleksi diataranya untuk mendeteksi event ```scroll``` nya :  
 
 ```
 if($(window).scrollTop() > 400)
 ```  
+
 kita cek ketika scroll nya melebihi nilai yang di validasi : seperti ini output di console nya  
 ini output console saat di scroll pada tampilan mobile :  
+
 ![jquery_scroll_mobile]({{site.url}}/assets/images/post/scroll_top_mobile.png)  
 
 ini output console saat di scroll pada tampilan desktop :  
+
 ![jquery_scroll_mobile]({{site.url}}/assets/images/post/scroll_top_desktop.png)  
 
 karena kita tadi melakukan assignment untuk event scroll nya : 

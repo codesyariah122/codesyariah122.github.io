@@ -53,10 +53,9 @@ $ docker-compose restart nginx
 
 Dengan begitu setelah ini kamu cukup mengakses di browser dengan alamat http://aplikasi-aravelku.test tidak perlu lagi menggunakan http://localhost/aplikasi-laravelku/public.  
 
-<blockquote>
-Ketika membuat virtual domain, sebaiknya gunakan akhiran .test. Hindari penggunaan .dev karena
+
+> Ketika membuat virtual domain, sebaiknya gunakan akhiran ```.test```. Hindari penggunaan ```.dev``` karena
 sudah tidak didukung.
-</blockquote>
 
 ## Varible Lingkungan  
 Umumnya kita memerluan konfigurasi berbeda pada tahap pengembangan aplikasi dengan pada tahap
