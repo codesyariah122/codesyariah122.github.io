@@ -59,10 +59,7 @@ root@debian:/home/puji122/pujiermanto.netlify.app# touch .env.development
 Buka file ```.env.development``` : 
 
 ```
-GATSBY_GRAPHQL_IDE=playground
 GATSBY_PORTFOLIO_GITHUB_TOKEN=your_personal_tokens_github
-GATSBY_PORTFOLIO_FORMIK_ENDPOINT=your_formium_Api_REST_Endpoint
-GATSBY_PORTFOLIO_RECAPTCHA_KEY=your_google_recaptcha_key
 ```  
 - Personal access tokens github  
 
