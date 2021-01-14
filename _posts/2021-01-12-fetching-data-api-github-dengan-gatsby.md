@@ -100,13 +100,11 @@ Sebelumnya kita aktifkan dulu server gatsby nya, kembali ke terminal :
 ```bash
 root@debian:/home/puji122/pujiermanto.netlify.app# npm start
 ```  
-Setelah server gatsby running di localhost:8000, kita bisa buka di browser kita dengan mengakses http://localhost:8000, untuk graphql bisa di akses di ```http://localhost:8000/__graphql```  
+Setelah server gatsby running di localhost:8000, kita bisa buka di browser kita dengan mengakses http://localhost:8000, untuk graphql bisa di akses di ```http://localhost:8000/__graphql```   
 
-<video width="200" controls autoplay>
-  <source src="{{site.url}}/assets/images/post/gatsby-source-graphql.mp4" type="video/mp4">
-  <source src="mov_bbb.ogg" type="video/ogg">
-  Your browser does not support HTML video.
-</video>
+<div class="embed-responsive embed-responsive-21by9">
+  <iframe class="embed-responsive-item" src="{{site.url}}/assets/images/post/gatsby-source-graphql.mp4"></iframe>
+</div>  
 
 Seperti terlihat dari cuplikan diatas plugin ```gatsby-source-graphql``` sudah bisa kita gunakan untuk fetching data github kita.  
 
@@ -383,11 +381,9 @@ github: {
 Penggunaanya yakni api github, yang documentasi nya bisa kalian simak dimari :  
 <a href="https://docs.github.com/en/free-pro-team@latest/graphql/overview/about-the-graphql-api" target="_blank">Github Api Documentation</a>, dan kalian juga bisa langsung explore graphqlnya github disini : <a href="https://docs.github.com/en/free-pro-team@latest/graphql/overview/explorer" target="_blank">Explorer github graphql</a> lanjut login dengan akun github kalian.  
 **seperti ini contohnya :**  
-<video width="200" controls autoplay>
-  <source src="{{site.url}}/assets/images/post/github-explorer.mp4" type="video/mp4">
-  <source src="mov_bbb.ogg" type="video/ogg">
-  Your browser does not support HTML video.
-</video>  
+<div class="embed-responsive embed-responsive-21by9">
+  <iframe class="embed-responsive-item" src="{{site.url}}/assets/images/post/github-explorer.mp4"></iframe>
+</div>  
 
 - Looping data  
 

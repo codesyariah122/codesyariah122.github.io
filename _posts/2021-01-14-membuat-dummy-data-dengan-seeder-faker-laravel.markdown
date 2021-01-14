@@ -190,12 +190,9 @@ class EmployeesSeederTable extends Seeder
 }
 ```  
 
-**Penjelasan kode:** > Kode di atas merupakan class seeder dengan nama ProductTableSeeder. Class
-tersebut memiliki satu method bernama run(). Pada method inilah kita akan menulis kode untuk mengisi
-data dummy untuk table products. Kita melakukan insert menggunakan Query Builder.
-Selanjutnya, kita akan coba insert data ke tabel employees. Maka kita tuliskan Query Builder kita pada
-method run() seperti ini:  
-Sebelumnya, kita juga bisa menggunakan model untuk proses Query Builder nya, kita buat dulu model baru :  
+**Penjelasan kode:** 
+	> Kode di atas merupakan class seeder dengan nama ProductTableSeeder. Class tersebut memiliki satu method bernama run(). Pada method inilah kita akan menulis kode untuk mengisi data dummy untuk table products. Kita melakukan insert menggunakan Query Builder. Selanjutnya, kita akan coba insert data ke tabel employees. Maka kita tuliskan Query Builder kita pada method run() seperti ini:  Sebelumnya, kita juga bisa menggunakan model untuk proses Query Builder nya, kita buat dulu model baru :  
+
 ```bash
 root@876a9f5bb1a6:/var/www/projectku# php artisan make:model Employee
 ```  
@@ -211,14 +208,6 @@ use Illuminate\Support\Facades\DB;
 
 class Employee extends Model
 {
-    public function show($table, $where)
-    {
-    	$data = DB::table($table)
-    	->orderBy($where[0], $where[1])
-    	->get();
-    	return $data;
-    }
-
     public function create($table, $data)
     {
     	DB::table($table)->insert([
@@ -269,11 +258,9 @@ Coba cek di mysql atau phpmyadmin kalian maka akan terbentuk data baru, sesuai d
 
 >bisa lihat cuplikan berikut:  
 
-<video width="200" controls autoplay>
-  <source src="{{site.url}}/assets/images/post/db-seed.mp4" type="video/mp4">
-  <source src="mov_bbb.ogg" type="video/ogg">
-  Your browser does not support HTML video.
-</video>  
+<div class="embed-responsive embed-responsive-21by9">
+  <iframe class="embed-responsive-item" src="{{site.url}}/assets/images/post/db-seed.mp4"></iframe>
+</div>
 
 
 ### Dummy Data dengan Faker  
@@ -327,11 +314,9 @@ root@876a9f5bb1a6:/var/www/projectku#
 ```  
 > lihat dicuplikan berikut ini:  
 
-<video width="200" controls autoplay>
-  <source src="{{site.url}}/assets/images/post/db-faker.mp4" type="video/mp4">
-  <source src="mov_bbb.ogg" type="video/ogg">
-  Your browser does not support HTML video.
-</video>  
+<div class="embed-responsive embed-responsive-21by9">
+  <iframe class="embed-responsive-item" src="{{site.url}}/assets/images/post/db-faker.mp4"></iframe>
+</div>  
 
 Mudah bukan, keren dong pastinya pakai framework ```laravel``` ini dimana proses development kita untuk membuat sebuah aplikasi menjadi lebih cepat dalam proses developmentnya, dan itu meringkas waktu sekali, sangat memudahkan para pengembang dan programmer khususnya web developer.  
 
