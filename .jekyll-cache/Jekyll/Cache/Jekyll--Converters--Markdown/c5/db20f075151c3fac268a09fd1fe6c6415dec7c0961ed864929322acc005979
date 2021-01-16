@@ -1,0 +1,59 @@
+I"ï<p>{% include /home/home_page_url.html %}</p>
+
+<!-- Now the rest of the posts with the usual loop but with an offset:4 on the first page so we can skeep the first 4 posts displayed above -->
+
+<div class="row mt-3">
+
+    <div class="col-md-8 main-loop">
+
+        <h4 class="font-weight-bold spanborder"><span>All Stories</span></h4>
+
+
+        {% for post in paginator.posts %}
+
+            {% include components/main-loop-card.html %}
+
+        {% endfor %}
+
+        <div class="mt-5">
+         <!-- Pagination links -->
+            {% if paginator.total_pages &gt; 1 %}
+            <ul class="pagination">
+              {% if paginator.previous_page %}
+                <li class="page-item"><a class="page-link" href="{{ paginator.previous_page_path | prepend: site.url | replace: '//', '/' }}">&laquo; Prev</a></li>
+              {% else %}
+                <li class="page-item disabled"><span class="prev page-link">&laquo;</span></li>
+              {% endif %}
+
+              {% for page in (1..paginator.total_pages) %}
+                {% if page == paginator.page %}
+                <li class="page-item disabled"><span class="webjeda page-link">{{ page }}</span></li>
+                {% elsif page == 1 %}
+                <li class="page-item"><a class="page-link" href="{{site.url}}/">{{ page }}</a></li>
+                {% else %}
+                <li class="page-item"><a class="page-link" href="{{ site.paginate_path | prepend: site.url | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
+                {% endif %}
+              {% endfor %}
+
+              {% if paginator.next_page %}
+                <li class="page-item"><a class="page-link" href="{{ paginator.next_page_path | prepend: site.url | replace: '//', '/' }}">Next &raquo;</a></li>
+              {% else %}
+                <li class="page-item disabled"><span class="next page-link">&raquo;</span></li>
+              {% endif %}
+            </ul>
+            {% endif %}
+        </div>
+
+ <div style="width: 100%; height: auto !important; clear: both; text-align: center;" class="google-auto-placed"></div>
+      <div id="mys-wrapper" class="mys-wrapper"></div>
+
+    </div>
+
+    <div class="col-md-4">
+        {% include components/sidebar-featured.html %}
+    </div>
+
+</div>
+
+<p>&lt;/div&gt;</p>
+:ET

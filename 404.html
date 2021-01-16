@@ -139,11 +139,11 @@ contact: WebDevelopment
   }
   </style>
 {% assign webdev = site.data.webdevelopers[page.contact]%}
-<div class="jumbotron jumbotron-fluid jumbotron-content" style="background-image:url('{{site.url}}{{webdev.404_image}}');">
+<div class="jumbotron jumbotron-fluid jumbotron-content" style="background-image:url('{{site.url}}{{webdev.err_image}}');">
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-          <h1 class="display-4">{{webdev.404_title}}</h1>
+          <h1 class="display-4">{{webdev.err_title}}</h1>
       </div>
     </div>
   </div>
@@ -154,9 +154,9 @@ contact: WebDevelopment
   <div class="row justify-content-center">
       <div class="col-md-6">
           <div class="polaroid">
-            <img src="{{site.url}}{{webdev.vector.404}}" alt="" class="img-responsive mt-3">
+            <img src="{{site.url}}{{webdev.vector.err}}" alt="" class="img-responsive mt-3">
             <div class="polaroid-body">
-              <h2>{{webdev.puisi.404}}.</h2>
+              <h2>{{webdev.puisi.err}}.</h2>
             </div>	
           </div>
 

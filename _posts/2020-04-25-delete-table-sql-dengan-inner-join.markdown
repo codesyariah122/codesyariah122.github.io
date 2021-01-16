@@ -29,7 +29,8 @@ dan berikut query untuk delete nya :
 jadi rule data saya adalah, dimana saya membuat system untuk aktivasi user, dan aktivasi user dilakukan melalui user role admin ... ( biar admin! ada kerjaan). sebelum melakukan delete kita cek isi table dengan nilai **id_profile** sebagai acuan atau kunci.  
 algoritma saya jika **id_profile** ini bernilai *0* berarti nilai nya belum di kirim dan itu berarti statusnya belum aktif. dan selanjutnya melalui user role admin yang bertugas meng aktifasi setiap user yang terdaftar diawal.
 
-```
+```php
+<?php
 //ini adalah query untuk mengambil data
 $conn = mysqli_connect("localhost", "user", "password", "database");
 $dataJoin = mysqli_query($conn, "SELECT * FROM $table1 INNER JOIN $table2 ON $table1.id = $table2.id_profile WHERE $table1.id = $id")[0];
@@ -49,7 +50,7 @@ if( $dataJoin['id_profile'] != 0 ):
 sebetulnya sih untuk menghapus dari 2 table ini bisa dilakukan dua kali query, namun dirasa kurang efektif maka digabungkan dalam satu query. agar server tidak 2 kali kerja.  
 
 jika 2 kali query akan seperti ini :  
-```
+```php
 mysqli_query($conn, "DELETE FROM $table1 WHERE id_profile = $id");
 mysqli_query($conn, "DELETE FROM $table2 WHERE id_profile = $id");
 ```  

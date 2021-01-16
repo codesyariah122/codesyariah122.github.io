@@ -28,7 +28,7 @@ Python dibuat dan dikembangkan oleh Guido Van Rossum, yaitu seorang programmer y
 # Installasi Python  
 dan kita memasuki tahap installasi Python3, banyak cara, banyak penerapan untu melakukan installasi bahasa python di device kita.  
 sementara untuk artikel kali ini gout akan bahas mengenai ***install*** python3 di **Operating System** Linux, disini gout pakai :  
-```
+```bash
 root@codesyariah:/home/puji122# lsb_release -a
 No LSB modules are available.
 Distributor ID:	Debian
@@ -39,7 +39,7 @@ Codename:	stretch
 #### Tahap-tahap install python  
 ok langsung ajah kita ke step demi step dalam menginstall ***Python***. untuk linux, kita bisa langsung menuju ***terminal*** atau kalau di windows itu ***command prompt***. begini langkat install nya :  
 
-```
+```bash
 # buka terminal 
 # install package dan library yang dibutuhkan untuk python
 apt-get install build-essential checkinstall
@@ -61,7 +61,7 @@ make altinstall
 # tunggu sampai prosess installasi Python-3.8 selesai 
 ```  
 setelah proses install selesai, check versi pythonnya : 
-```
+```bash
 python --version
 root@codesyariah:/home/puji122# python --version
 # jika seperti ini berarti python sudah di versi 3.8
@@ -73,7 +73,7 @@ installasi python3 selesai.
 jika kalian sebelumnya menginstall versi di bawahnya atau misalnya python versi sebelumnya seperti **Python-2.7**, setelah kalian tadi menginstall python dan check versi ternyata versi nya belum berubah ke ```Python-3.8.5```, tenang saja, kalian bisa merubahnya di source bash, begini caranya :  
 ***Kembali ke terminal***  
 
-```
+```bash
 # buka dengan editor di terminal
 nano ~/.bashrc
 # atau 
@@ -87,13 +87,13 @@ alias python=python3.8
 ![Source_bashrc]({{site.url}}/assets/images/post/source-python.png)  
 
 jika sudah eluar dari terminal dengan menekan shortcut key : ```ctr+x``` kemudian ```save```. keluar (exit) dari terminal. selanjutnya restart bashrc nya :  
-```
+```bash
 source ~/.bashrc
 # atau
 source ~/.bash_aliases
 ```  
 setelah itu check kembali versi pythonnya :  
-```
+```bash
 python --version
 # apakah sudah seperti ini :
 root@codesyariah:/home/puji122# python --version
@@ -101,7 +101,7 @@ Python 3.8.5
 ```  
 #### Menjalankan python interactive  
 sama seperti pemrograman lain seperti : ```java, C, C++, perl, atau javascript(Node.js)```. python ini bisa di jalankan secara interactive di shell(terminal) kita langsung:  
-```
+```bash
 # buka terminal kembali
 # kemudian jalankan python
 python
@@ -126,7 +126,7 @@ Nama Kamu : Iim Marlina
 ```  
 simple bukan bahasa python ini, setiap code (syntax) di tulis secara sederhana seperti itu :  
 menggunakan function di interactive mode :  
-```
+```bash
 root@codesyariah:/home/puji122# python
 Python 3.7.3 (default, Sep  1 2020, 19:08:02) 
 [GCC 6.3.0 20170516] on linux
@@ -175,7 +175,7 @@ untuk penamaan ekstension python menggunakan (.py) ```TestPython.py``` seperti i
 ## ***program python pertama :***  
 
 **Variable** :
-```
+```python
 nama = "Puji Ermanto"
 umur = 32
 tinggi = 170.5
@@ -187,7 +187,7 @@ namaType = type(nama)
 print(namaType)
 ```  
 **Penulisan komentar di python :**
-```
+```python
 # Komentar di python(single line)
 """ 
 Komentar multi line
@@ -198,7 +198,7 @@ yah gitu deh ini namanya komentar
 ```  
 
 **Contoh pengunaan modul di python :**  
-```
+```python
 import time 
 start_time = time.time()
 
@@ -218,7 +218,7 @@ print(time.time()-start_time, "detik")
 
 **Menjalankan metode / membuat metode sendiri:**  
 
-```
+```python
 # nama file : lat1.py
 def flat(bumi):
 	flat = True
@@ -229,7 +229,7 @@ def flat(bumi):
 
 flat(True)
 ```  
-```
+```python
 # nama file = lat2py
 def pembuat_password(website, tahun):
 	return website.lower() +', '+ str(tahun * 11)
@@ -238,7 +238,7 @@ websiteKu = pembuat_password('pujiermanto.netlify.app', 2020)
 
 print(websiteKu)
 ```  
-```
+```python
 # nama file = math.py
 def pangkat_dua(angka):
 	return angka ** 2
@@ -246,7 +246,7 @@ def pangkat_dua(angka):
 pangkat = pangkat_dua(5)
 print(pangkat)
 ```  
-```
+```python
 # nama file = perbandingan.py
 print(11 == 1)
 

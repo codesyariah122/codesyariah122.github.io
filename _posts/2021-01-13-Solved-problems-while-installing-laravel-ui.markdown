@@ -7,15 +7,14 @@ image: assets/images/post/larvel-ui-vue.jpg
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  
-
-{page.opening}
+{{page.opening}}  
 
 Hallo bro ... artikel kali bertema tentang framework laravel, ini hanya sedikit pengalaman gout dalam melakukan pengembangan aplikasi web dengan framework laravel dengan Environment developmentnya menggunakan **laradock**.  
 Dalam proses development kali ini gout menjumpai sebuah masalah yang lumayan sedikit mengganggu, mungkin untuk yang baru pertama kali menggunakan laravel dan Vue sebagai frontendnya.
 
 ### Install Laravel/ui  
 Problemnya dimulai disini saat menjalankan installasi  
-```bash
+```bash	
 root@04f8fe1a3732:/var/www/projectku# composer require laravel/ui
 ```  
 Kemudian muncul Error notice seperti ini :  

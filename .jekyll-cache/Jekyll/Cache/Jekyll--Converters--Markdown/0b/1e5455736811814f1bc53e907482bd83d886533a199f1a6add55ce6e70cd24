@@ -1,0 +1,161 @@
+I"ÒZ<p>{{page.opening}}</p>
+
+<h1 id="assalamualaikum">Assalamualaikum</h1>
+
+<p>Lanjut lagi mengenai jquery, banyak sebetulnya fungsi dan kegunaan jquery itu yang mungkin belum gout explore lebih jauh lagi. Sekarang ini mungkin sudah sangat tertinggal yah teknologi dari jquery ini tapi untuk bidang web development gout rasa masih di perlukan jquery, yah memang secara tidak langsung dengan kita menggunakan jquery, sebetulnya jquery ini kan hanyalah sebuah library dari javascript dan saat kita menggunakan fungsi fungsi jquery, si jquery nya ini meload library javascript jadi sebetulnya proses ini lah yang bisa memakan waktu, menurut para pakar development, kalo gout sendiri hanya seorang pengguna, dan gout rasa kecepatan dan device para pengguna teknologi sudah sangat mumpuni jadi menurut gout masih layak lah menggunakan jquery di era sekarang ini. heheheh ini hanya prespektif kacamata gout ajah.</p>
+
+<p>dan di artikel kali ini gout mau membuat effect scroll dengan jquery, gout mau membuat sebuah transition background untuk bagian navigasi, ok langsung ajah kita ke codingan nya.</p>
+
+<p>di ilustrasi ini, pada bagian navigasi yang memiliki background hitam ( bg-dark ) sebuah class dari bootstrap.</p>
+
+<p><img src="{{site.url}}/assets/images/post/scroll_bg_dark.gif" alt="jquery_scroll_1" /></p>
+
+<p>nah gout bermaksud untuk membuat navigasi di bagian atas atau pada saat scrollTop backgroundnya transparent, baru pada saat scroll di turunkan backgroundnya berubah dari transparent ke transisi transparent, kemudian berubah menjadi solid hitam. bagaimana melakukannya, ok langsung ajah kita ke script code nya.</p>
+
+<p>ini script code navigasi sebelumnya:</p>
+
+<blockquote>
+  <p><strong><em>Oh iya script code dalam artikel ini merupakan project kerjaan gout yang menggunakan wordpress, dalam project tersebut tugas gout adalah membuat sebuah child theme yang di customisasi.</em></strong></p>
+</blockquote>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"navbar navbar-expand-lg navbar-light sticky-top bg-dark"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"navbar-brand"</span> <span class="na">href=</span><span class="s">"</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nf">home_url</span><span class="p">();</span> <span class="cp">?&gt;</span><span class="s">"</span><span class="nt">&gt;</span><span class="cp">&lt;?=</span><span class="nb">strtoupper</span><span class="p">(</span><span class="nf">bloginfo</span><span class="p">(</span><span class="s1">'title'</span><span class="p">));</span><span class="cp">?&gt;</span><span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"navbar-toggler"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">data-toggle=</span><span class="s">"collapse"</span> <span class="na">data-target=</span><span class="s">"#navbarNavAltMarkup"</span> <span class="na">aria-controls=</span><span class="s">"navbarNavAltMarkup"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span> <span class="na">aria-label=</span><span class="s">"Toggle navigation"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"navbar-toggler-icon"</span><span class="nt">&gt;&lt;/span&gt;</span>
+        <span class="nt">&lt;/button&gt;</span>
+            <span class="cp">&lt;?php</span>
+                <span class="nf">wp_nav_menu</span><span class="p">(</span> <span class="k">array</span><span class="p">(</span>
+                    <span class="s1">'theme_location'</span>    <span class="o">=&gt;</span> <span class="s1">'primary'</span><span class="p">,</span>
+                    <span class="s1">'depth'</span>             <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span>
+                    <span class="s1">'container'</span>         <span class="o">=&gt;</span> <span class="s1">'div'</span><span class="p">,</span>
+                    <span class="s1">'container_class'</span>   <span class="o">=&gt;</span> <span class="s1">'collapse navbar-collapse'</span><span class="p">,</span>
+                    <span class="s1">'container_id'</span>      <span class="o">=&gt;</span> <span class="s1">'navbarNavAltMarkup'</span><span class="p">,</span>
+                    <span class="s1">'menu_class'</span>        <span class="o">=&gt;</span> <span class="s1">'navbar-nav ml-auto'</span><span class="p">,</span>
+                    <span class="s1">'fallback_cb'</span>       <span class="o">=&gt;</span> <span class="s1">'WP_Bootstrap_Navwalker::fallback'</span><span class="p">,</span>
+                    <span class="s1">'walker'</span>            <span class="o">=&gt;</span> <span class="k">new</span> <span class="nc">WP_Bootstrap_Navwalker</span><span class="p">(),</span>
+                <span class="p">)</span> <span class="p">);</span>
+            <span class="cp">?&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/nav&gt;</span>
+</code></pre></div></div>
+<p>pada navbar tersebut terdapat class <code class="language-html highlighter-rouge">bg-dark</code> yaitu class dari bootstrap, untuk membuatnya transparent kita hapus class <code class="language-html highlighter-rouge">bg-dark</code> nya, sehingga menjadi seperti ini :</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="c">&lt;!-- class bg-dark telah di hapus --&gt;</span>
+<span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"navbar navbar-expand-lg navbar-light sticky-top"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"navbar-brand"</span> <span class="na">href=</span><span class="s">"</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nf">home_url</span><span class="p">();</span> <span class="cp">?&gt;</span><span class="s">"</span><span class="nt">&gt;</span><span class="cp">&lt;?=</span><span class="nb">strtoupper</span><span class="p">(</span><span class="nf">bloginfo</span><span class="p">(</span><span class="s1">'title'</span><span class="p">));</span><span class="cp">?&gt;</span><span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"navbar-toggler"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">data-toggle=</span><span class="s">"collapse"</span> <span class="na">data-target=</span><span class="s">"#navbarNavAltMarkup"</span> <span class="na">aria-controls=</span><span class="s">"navbarNavAltMarkup"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span> <span class="na">aria-label=</span><span class="s">"Toggle navigation"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"navbar-toggler-icon"</span><span class="nt">&gt;&lt;/span&gt;</span>
+        <span class="nt">&lt;/button&gt;</span>
+            <span class="cp">&lt;?php</span>
+                <span class="nf">wp_nav_menu</span><span class="p">(</span> <span class="k">array</span><span class="p">(</span>
+                    <span class="s1">'theme_location'</span>    <span class="o">=&gt;</span> <span class="s1">'primary'</span><span class="p">,</span>
+                    <span class="s1">'depth'</span>             <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span>
+                    <span class="s1">'container'</span>         <span class="o">=&gt;</span> <span class="s1">'div'</span><span class="p">,</span>
+                    <span class="s1">'container_class'</span>   <span class="o">=&gt;</span> <span class="s1">'collapse navbar-collapse'</span><span class="p">,</span>
+                    <span class="s1">'container_id'</span>      <span class="o">=&gt;</span> <span class="s1">'navbarNavAltMarkup'</span><span class="p">,</span>
+                    <span class="s1">'menu_class'</span>        <span class="o">=&gt;</span> <span class="s1">'navbar-nav ml-auto'</span><span class="p">,</span>
+                    <span class="s1">'fallback_cb'</span>       <span class="o">=&gt;</span> <span class="s1">'WP_Bootstrap_Navwalker::fallback'</span><span class="p">,</span>
+                    <span class="s1">'walker'</span>            <span class="o">=&gt;</span> <span class="k">new</span> <span class="nc">WP_Bootstrap_Navwalker</span><span class="p">(),</span>
+                <span class="p">)</span> <span class="p">);</span>
+            <span class="cp">?&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/nav&gt;</span>
+</code></pre></div></div>
+<p>kemudian kita bisa bikin css untuk transparentnya, seperti ini code css untuk transparent navbar nya :</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="nc">.transparent-nav</span><span class="p">{</span>
+    <span class="nl">background</span> <span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">255</span><span class="p">,</span><span class="m">255</span><span class="p">,</span><span class="m">240</span><span class="p">,</span> <span class="m">0.3</span><span class="p">);</span>
+    <span class="nl">margin-top</span><span class="p">:</span> <span class="m">.5rem</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>sehingga menjadi seperti ini penampakan navbar dengan background transparent</p>
+
+<p><img src="{{site.url}}/assets/images/post/scroll_bg_transparent.gif" alt="scroll_transparent" /></p>
+
+<p>css untuk transparent navbar sudah di buat dengan nama class <code class="language-html highlighter-rouge">transparent-nav</code>, sekarang kita lanjut ke javascript nya, menggunakan jquery, berikut code nya :<br />
+jadi code jquery berikut menggunakan fitur scroll, karena kita akan membuat effect peralihan untuk bacgkround di navigasi dari transparent ke solid hitam.</p>
+
+<p>Pertama kita buat dulu sebuah object javascript baru untuke lebih memudahkan, melakukan query selector untuk tiap class atau id yang akan di gunakan :</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">const</span> <span class="nx">object</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="dl">'</span><span class="s1">menuItem</span><span class="dl">'</span> <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">.menu-item</span><span class="dl">'</span><span class="p">),</span>
+    <span class="dl">'</span><span class="s1">navBrand</span><span class="dl">'</span> <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">.navbar-brand</span><span class="dl">'</span><span class="p">),</span>
+    <span class="dl">'</span><span class="s1">navLink</span><span class="dl">'</span> <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">.nav-link</span><span class="dl">'</span><span class="p">),</span>
+    <span class="dl">'</span><span class="s1">fixedTop</span><span class="dl">'</span> <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">.sticky-top</span><span class="dl">'</span><span class="p">),</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>Lanjut itu lakukan query selector dari class yang telah di definisikan di atas.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code>    <span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">scroll</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="kd">let</span> <span class="nx">isDesktop</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">matchMedia</span><span class="p">(</span><span class="dl">'</span><span class="s1">only screen and (min-width: 992px)</span><span class="dl">'</span><span class="p">).</span><span class="nx">matches</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">isDesktop</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">scrollTop</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">400</span><span class="p">){</span>
+                <span class="kd">const</span> <span class="nx">scrollTop</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">scrollTop</span><span class="p">();</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Scroll from Top: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">scrollTop</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">this is mobile</span><span class="dl">"</span><span class="p">);</span>
+                <span class="nx">object</span><span class="p">.</span><span class="nx">fixedTop</span><span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="dl">'</span><span class="s1">transparent-nav</span><span class="dl">'</span><span class="p">);</span>
+                <span class="nx">object</span><span class="p">.</span><span class="nx">fixedTop</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="dl">'</span><span class="s1">bg-white</span><span class="dl">'</span><span class="p">);</span>
+            <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                <span class="nx">object</span><span class="p">.</span><span class="nx">fixedTop</span><span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="dl">'</span><span class="s1">bg-white</span><span class="dl">'</span><span class="p">);</span>
+                <span class="nx">object</span><span class="p">.</span><span class="nx">fixedTop</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="dl">'</span><span class="s1">transparent-nav</span><span class="dl">'</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">scrollTop</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">150</span><span class="p">){</span>
+                <span class="kd">const</span> <span class="nx">scrollTop</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">scrollTop</span><span class="p">();</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Scroll from Top: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">scrollTop</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Ok On Desktop</span><span class="dl">"</span><span class="p">);</span>
+                <span class="nx">object</span><span class="p">.</span><span class="nx">fixedTop</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="dl">'</span><span class="s1">transparent-nav</span><span class="dl">'</span><span class="p">);</span>
+                <span class="c1">// object.fixedTop.addClass('bg-dark');</span>
+                <span class="k">if</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">scrollTop</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">400</span><span class="p">){</span>
+                    <span class="kd">const</span> <span class="nx">scrollTop</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">scrollTop</span><span class="p">();</span>
+                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Scroll from Top: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">scrollTop</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>
+                    <span class="nx">object</span><span class="p">.</span><span class="nx">fixedTop</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="dl">'</span><span class="s1">bg-dark</span><span class="dl">'</span><span class="p">);</span>
+                <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                    <span class="nx">object</span><span class="p">.</span><span class="nx">fixedTop</span><span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="dl">'</span><span class="s1">bg-dark</span><span class="dl">'</span><span class="p">);</span>
+                    <span class="nx">object</span><span class="p">.</span><span class="nx">fixedTop</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="dl">'</span><span class="s1">transparent-nav</span><span class="dl">'</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                <span class="nx">object</span><span class="p">.</span><span class="nx">fixedTop</span><span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="dl">'</span><span class="s1">bg-dark</span><span class="dl">'</span><span class="p">);</span>
+                <span class="nx">object</span><span class="p">.</span><span class="nx">fixedTop</span><span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="dl">'</span><span class="s1">transparent-nav</span><span class="dl">'</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+</code></pre></div></div>
+
+<p><strong>sedikit penjelasan</strong> :</p>
+
+<p>dari script diatas gout coba mengaktifkan event <code class="language-html highlighter-rouge">scroll</code>, kemudian kita melakukan penambahaan fungsi baru untuk event <code class="language-html highlighter-rouge">scroll</code> ini. setelah event <code class="language-html highlighter-rouge">scroll</code> nya aktif kita assignment sebuah fungsi untuk mendeteksi device yang kita assignment kedalam variable berikut</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">let</span> <span class="nx">isDesktop</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">matchMedia</span><span class="p">(</span><span class="dl">'</span><span class="s1">only screen and (min-width: 992px)</span><span class="dl">'</span><span class="p">).</span><span class="nx">matches</span><span class="p">;</span>
+</code></pre></div></div>
+<p>setelah itu kita lakukan beberapa seleksi diataranya untuk mendeteksi event <code class="language-html highlighter-rouge">scroll</code> nya :</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="k">if</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">scrollTop</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">400</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>kita cek ketika scroll nya melebihi nilai yang di validasi : seperti ini output di console nya<br />
+ini output console saat di scroll pada tampilan mobile :</p>
+
+<p><img src="{{site.url}}/assets/images/post/scroll_top_mobile.png" alt="jquery_scroll_mobile" /></p>
+
+<p>ini output console saat di scroll pada tampilan desktop :</p>
+
+<p><img src="{{site.url}}/assets/images/post/scroll_top_desktop.png" alt="jquery_scroll_mobile" /></p>
+
+<p>karena kita tadi melakukan assignment untuk event scroll nya :</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">const</span> <span class="nx">scrollTop</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">scrollTop</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Scroll from Top: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">scrollTop</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>
+</code></pre></div></div>
+<p>sehingga hasil akhirnya adalah sepert ini :</p>
+
+<p><img src="{{site.url}}/assets/images/post/scrolling_effect_transparent.gif" alt="jquery_scroll_2" /></p>
+
+<p>ketika scroll nya di gulir ke bawah maka akan ada sebuah transisi untuk warna background di bagian navigasi bar.</p>
+
+<p>Ok sekian dulu artikel gout kali ini, nanti kita lanjutkan kembali artikel lainnya yang menarik dari penggunaan jquery. akhir kata gout ucapkan terima kasih dan <strong>Waasallaam</strong></p>
+
+:ET

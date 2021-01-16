@@ -21,7 +21,7 @@ Biasanya digunakan dalam hal penentuan ukuran kolom (Grid System), mari kita int
 
 #### Semantic UI  
 
-```
+```css
 	.ui[class*="six column"].grid > .row > .column,
   	.ui[class*="six column"].grid > .column:not(.row) {
     width: 16.66666667%;
@@ -29,7 +29,7 @@ Biasanya digunakan dalam hal penentuan ukuran kolom (Grid System), mari kita int
 ```
 #### Bootstrap  
 
-```
+```css
   .col-xs-6 {
     width: 50%;
   }
@@ -47,7 +47,7 @@ Satuan rem dan em bisa dikatakan 16 kali dari satuan px, jadi 1rem/em = 16px, na
 
 Salah satu contoh kasus yang satuan em terasa sangat bermanfaat adalah pada padding untuk elemen yang font-sizenya mudah berubah-ubah, contoh seperti :  
 
-```
+```css
   .button{
     font-size: 1em;
     padding: 5em 10em;
@@ -68,7 +68,7 @@ Satuan ini bergantung pada induk elemennya, jika induk elemen mempunyai ukuran 3
 
 Jika induk dari element adalah 100% atau tak terhingga, maka 100vh bergantung pada ukuran layar.  
 
-```
+```css
   body{
     height: 100%;
   }
@@ -85,7 +85,7 @@ Satuan ini mirip dengan vw dan vh, bedanya jika kita menentukan 100vmin satuan i
 
 Misalnya induk elemen memiliki ukuran 1000px x 1200px, jika anak elemen memakai :  
 
-```
+```css
   .anak{
     height: 100vmin;
     width: 100vmin;
@@ -94,7 +94,7 @@ Misalnya induk elemen memiliki ukuran 1000px x 1200px, jika anak elemen memakai 
 
 Maka hasil yang akan ditampilkan seperti :  
 
-```
+```css
   .anak{
     height: 1000px;
     width: 1000px;

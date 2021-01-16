@@ -24,14 +24,14 @@ python3 -m pip install mysql-connector
 
 setelah proses installasi module selesai, kita bisa mulai menggunakan module tersebut di project python kita. untuk menggunakan module package kita bisa menambahkan tag seperti ini :  
 
-```
+```python
 import mysql.connector
 ```  
 
 ## MySQL.Connector  
 sekarang kita mulai menggunakan module mysql.connector, untuk percobaan kita buat sebuah file untuk membuka sebuah koneksi ke database server, buat file baru dengan nama ```conn.py```, berikut isi code nya :  
 
-```
+```python
 import mysql.connector
 
 host = 'localhost'
@@ -50,7 +50,7 @@ if cnx.is_connected():
 cnx.close()
 ```  
 untuk menjalankannya, kita gunakan perintah di cli(command line) seperti biasa ```python <namafile.py>```. 
-```
+```bash
 python conn.py
 ```  
 jika dijalankan code diatas, maka hasilnya seperti ini :  
@@ -61,8 +61,8 @@ kode program kita berhasil terhubung ke server MySQL di localhost setelah di eks
 
 sedikit penjelasan dari code diatas ...  
 Dibaris pertama kita mengambil module dari python yang mana diartikel ini kita menggunakan module ```mysql.connector```, kita gunakan perintah ```import``` untuk mengambil sebuah module di pyhton.  
-**kemudian : **  
-```
+**kemudian :**  
+```python
 cnx = mysql.connector.connect(
 		host = host,
 		user = user,
@@ -71,7 +71,7 @@ cnx = mysql.connector.connect(
 ```  
 di code tersebut kita membuat sebuah koneksi dengan memanggil fungsi ```connect()``` dengan parameter diantaranya ```host, user dan password```, sebenarnya ada lagi beberapa parameter untuk module mysql.connector ini salah satunya adalah ```database``` yang digunakan untuk menentukan nama database yang akan kita gunakan di project kita.  
 di baris paling bawah, atau baris terahir kita lakan validasi connection database kita, check connection database : 
-```
+```python
 if cnx.is_connected():
 	print("Berhasil terhubung ke server")
 ```  
@@ -81,17 +81,17 @@ selanjutnya kita akan mencoba membuat database dengan menggunakan module ```mysq
 ### Membuat Database  
 sebelumnya kita sudah membuat sebuah objek untuk menampung nilai connect database, ```cnx```.  
 selain objek ```cnx``` kita akan membutuhkan satu objek lagi yaitu cursor, buat objek baru untuk cursor :  
-```
+```python
 cursor = cnx.cursor()
 ```  
 jadi nanti untuk melakukan eksekusi sebuah ```query``` ita tinggal panggil sebuah method di module ```mysql.connector``` yaitu method ```execute()``` dengan parameter string query.  
 
-```
+```python
 cursor.execute(sql)
 ```  
 ok selanjutnya kita akan buat file baru dengan nama ```createDB.py```, berikut code lengkap dari ```createDB.py``` :  
 
-```
+```python
 
 import mysql.connector
 
@@ -112,7 +112,7 @@ cursor.execute("CREATE DATABASE {}".format(nama_db))
 print("Database berhasil dibuat")
 ```  
 sama seperti penggunaan mysql di pemrograman lainnya, kita menggunakan baris-baris command untuk melakukan sebuah query di ```MySQL```. code di atas bisa langsung kita eksekusi dengan menjalankannya di terminal(CLI(command line)) :  
-```
+```bash
 python createDB.py
 ```  
 seperti ini hasil code diatas jika di jalankan diterminal
@@ -127,7 +127,7 @@ dengan itu berarti eksekusi code kita berhasil, dan database berhasil dibuat dar
 Untuk membuat table di database yang baru kita buat, caranya masih sama dengan code sebelumnya kita tinggal gunakan perintah command SQL untuk melakukan sebuah query ke dalam method ```execute()```  
 ubah dahulu bagian ```connect()```, tambahkan parameter baru yaitu ```database``` untuk menentukan database mana yang akan digunakan:  
 
-```
+```python
 host = 'localhost'
 user = 'root'
 passwd = '1'
@@ -143,7 +143,7 @@ cnx = mysql.connector.connect(
 ```  
 pada kode diatas kita menambahkan satu parameter baru untuk menentukan nama database yang akan kita gunakan sehingga menjadi seperti ini parameter lengkap untuk method ```connect()``` :  ```nama_db = 'nama_ular'``` ```database = nama_db```. jadi kita bisa buat sebuah file baru, gout beri nama file nya ```createTable.py``` : 
 
-```
+```python
 # nama file = createTable.py
 import mysql.connector
 
@@ -174,7 +174,7 @@ cursor.execute(sql.format(nama_tb))
 print("Table ular_berbisa berhasil dibuat")
 ```  
 setelah itu kita bisa langsung eksekusi code programmnya :  
-```
+```bash
 python createTable.py
 ```  
 seperti ini hasilnya program python di terminal kita :  
@@ -192,7 +192,7 @@ kita sudah berhasil membuat sebuah table baru di database kita menggunaan module
 Sebelumnya kita telah membuat sebuah table baru, sekarang kita akan mencoba untu menjalankan QUERY SQL untuk menambahan  data baru ke database kita, caranya masih sama, menggunaan command SQL.  
 buat satu file baru lagi , gout kasih nama file nya ```insertDB.py```, kalian bebas memberi nama filenya. berikut isi dari file ```insertDB.py``` :  
 
-```
+```python
 import mysql.connector
 
 host = 'localhost'
@@ -223,7 +223,7 @@ print("{} data ditambahkan ".format(cursor.rowcount))
 ```  
 Langsung kita jalankan codenya di terminal kita :  
 
-```
+```bash
 python insertDB.py
 ```  
 begini hasilnya di terminal :  
@@ -234,7 +234,7 @@ di phpmyadmin sepert ini hasilnya :
 
 ***penjelasan:***  
 sedikit penjelasan: perhatikan baris code yang kita gunakan untuk melakukan query insert data:  
-```
+```python
 sql = "INSERT INTO {} (nama_ular, nama_latin) VALUES (%s, %s)".format(nama_tb)
 
 val = ("King Cobra", "Ophiophagus hannah")
@@ -249,7 +249,7 @@ teknik ini sangat berguna untuk menghindari ```SQL Injection``` dan juga membuat
 
 ***Menambahkan beberapa data sekaligus : ***  
 buat sebuah file baru sebagai contoh, disini kita akan menginsert beberapa data dalam satu eksekusi. gout buat sebuah file baru sebagai contoh gout beri nama ```insertMany.py``` :  
-```
+```python
 import mysql.connector
 
 host = 'localhost'
@@ -297,7 +297,7 @@ Judul selanjutnya ini adalah menampilkan data, masih menggunaan query MySQL deng
 Method ```fetchall(), fetchmany(), fetchone()``` aan mengembalikan sebuah data list yang berisi tupple. 
 ok kita coba buat satu file baru lagi, gout beri nama file nya ```selectData.py``` :  
 
-```
+```python
 import mysql.connector
 
 host = 'localhost'
@@ -327,7 +327,7 @@ for data in results:
 cnx.close()
 ```  
 Seperti biasa kita eksekusi lagi lewat terminal untuk menjalankannya.  
-```
+```bash
 python selectData.py
 ```  
 Dan seperti ini hasilnya di terminal :  
@@ -335,7 +335,7 @@ Dan seperti ini hasilnya di terminal :
 
 Selanjutnya kita akan mencoba menggunaan method ```fetchone()```, untuk mengambil satu data saja. buat file baru lagi dengan nama ```selectOne.py``` :  
 
-```
+```python
 import mysql.connector
 
 host = 'localhost'
@@ -375,7 +375,7 @@ Untuk method select data lainnya, coders bisa coba sendiri, diantaranya ada ```f
 Di judul ini kita akan mencoba mengubah sebuah data, caranya pun masih sama dengan script sebelum-sebelumnya. Masih menggunakan command SQL, kali ini kita akan melakukan query ```UPDATE```. 
 ok langsung saja kita buat file baru, gout beri nama ```updateData.py``` :  
 
-```
+```python
 import mysql.connector
 
 host = 'localhost'
@@ -416,7 +416,7 @@ selanjutnya ...
 Untuk menjalankan hapus data kurang lebih sama, masih menggunakan query SQL kali ini kita akan gunakan comman ```DELETE``` untuk menghapus data dan ```WHERE``` untuk menentukan data mana yang akan kita hapus disini gout menggunakan ```WHERE``` berdasarkan id yang akan dihapus.  
 kita buat file baru dengan nama ```deleteData.py```, seperti ini code nya :  
 
-```
+```python
 import mysql.connector
 
 host = 'localhost'

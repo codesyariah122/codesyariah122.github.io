@@ -1,0 +1,29 @@
+I"'<p>Assalamualaikum wr. wb</p>
+
+<p>Pada kesempatan kali ini saya akan berbagi tentang bagaimana cara mengatasi error pada phpMyAdmin</p>
+
+<p>Pada saat saya akan login ke phpMyAdmin saya menemukan error seperti berikut :<br />
+<img src="{{ site.url }}/assets/images/post/nginx/err.png" alt="err_phpmyadmin" /><br />
+Pertama bukalah terminal dan masuk sebagai user root</p>
+
+<p>Kemudian,ketikkan <code class="language-html highlighter-rouge">mysql -u root</code> lalu tekan enter<br />
+<img src="{{ site.url }}/assets/images/post/nginx/1.png" alt="err_phpmyadmin" /><br />
+Apabila sudah masuk ke dalam servis mariadb,ketik <code class="language-html highlighter-rouge">use mysql</code> dan tekan enter untuk melanjutkan<br />
+<img src="{{ site.url }}/assets/images/post/nginx/2.png" alt="err_phpmyadmin" /><br />
+Kita perbaiki dengan menggunakan perintah seperti ini<br />
+<code class="language-html highlighter-rouge">update user set plugin=''where User='root';</code><br />
+dan tekan enter<br />
+<img src="{{ site.url }}/assets/images/post/nginx/3.png" alt="err_phpmyadmin" /><br />
+Selanjutnya,keikkan <code class="language-html highlighter-rouge">flush privileges;</code> dan tekan enter<br />
+<img src="{{ site.url }}/assets/images/post/nginx/4.png" alt="err_phpmyadmin" /><br />
+Bila sudah dikonfigurasi,ketikkan <code class="language-html highlighter-rouge">exit</code> untuk keluar<br />
+<img src="{{ site.url }}/assets/images/post/nginx/5.png" alt="err_phpmyadmin" /><br />
+Sekarang,masuk ke phpMyAdmin dan isikan username dan password lalu log in maka telah berhasil<br />
+<img src="{{ site.url }}/assets/images/post/nginx/6.png" alt="err_phpmyadmin" /></p>
+
+<fieldset><legend>Kesimpulan</legend>
+<blockquote>
+masalah diatas berhubungan dengan hak akses user untuk mengakses database server kita. 
+</blockquote>
+</fieldset>
+:ET

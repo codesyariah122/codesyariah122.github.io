@@ -1,0 +1,45 @@
+I"8<h1 id="menentukan-lokasi-koordinat-berdasarkan-ip-address">Menentukan lokasi, koordinat berdasarkan ip address</h1>
+
+<p>Hallo para coders ! ….<br />
+Banyak cara yang dapat dilakukan untuk mendapatkan posisi koordinat khususnya latitude dan longitude Google dengan menggunakan IP. Beberapa diantaranya berbayar seperti IPStack dan juga IP2Location. Apakah ada yang gratis?</p>
+
+<p>Saya pernah membandingkan IPStack dan IP2Location, sayangnya database lokasi yang dimiliki keduanya masih kurang valid, saya cek IP komputer saya di Sumatra Utara IP menunjukan di Bandung, walaupun masih sama-sama milik PT. Telekomunikasi di Indonesia. Terakhir saya menggunakan layanan dari keycdn.com. Gratis dan lokasinya lebih valid. Caranya seperti berikut.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">&lt;?php</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">empty</span><span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTP_CLIENT_IP'</span><span class="p">]))</span> <span class="p">{</span>
+    <span class="nv">$ip</span> <span class="o">=</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTP_CLIENT_IP'</span><span class="p">];</span>
+    
+<span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="o">!</span><span class="nb">empty</span><span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTP_X_FORWARDED_FOR'</span><span class="p">]))</span> <span class="p">{</span>
+    <span class="nv">$ip</span> <span class="o">=</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTP_X_FORWARDED_FOR'</span><span class="p">];</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nv">$ip</span> <span class="o">=</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'REMOTE_ADDR'</span><span class="p">];</span>
+<span class="p">}</span>
+<span class="k">echo</span> <span class="nb">password_hash</span><span class="p">(</span><span class="nv">$ip</span><span class="p">,</span> <span class="no">PASSWORD_DEFAULT</span><span class="p">)</span><span class="mf">.</span><span class="s2">"&lt;br/&gt;"</span><span class="p">;</span>
+<span class="c1">//Kemudian</span>
+<span class="nv">$url</span> <span class="o">=</span> <span class="s2">"https://tools.keycdn.com/geo.json?host=</span><span class="nv">$ip</span><span class="s2">"</span><span class="p">;</span>
+<span class="nv">$dt</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="nv">$url</span><span class="p">);</span>
+<span class="nv">$dt</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$dt</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nv">$lat</span> <span class="o">=</span> <span class="nv">$dt</span><span class="p">[</span><span class="s1">'data'</span><span class="p">][</span><span class="s1">'geo'</span><span class="p">][</span><span class="s1">'latitude'</span><span class="p">];</span>
+<span class="nv">$lng</span> <span class="o">=</span> <span class="nv">$dt</span><span class="p">[</span><span class="s1">'data'</span><span class="p">][</span><span class="s1">'geo'</span><span class="p">][</span><span class="s1">'longitude'</span><span class="p">];</span>
+<span class="nv">$regional</span> <span class="o">=</span> <span class="nv">$dt</span><span class="p">[</span><span class="s1">'data'</span><span class="p">][</span><span class="s1">'geo'</span><span class="p">][</span><span class="s1">'region_name'</span><span class="p">];</span>
+<span class="nv">$city_name</span> <span class="o">=</span> <span class="nv">$dt</span><span class="p">[</span><span class="s1">'data'</span><span class="p">][</span><span class="s1">'geo'</span><span class="p">][</span><span class="s1">'city'</span><span class="p">];</span>
+
+<span class="nv">$location</span> <span class="o">=</span> <span class="nv">$city_name</span> <span class="mf">.</span><span class="s2">"-"</span><span class="mf">.</span> <span class="nv">$regional</span><span class="p">;</span>
+
+<span class="k">echo</span> <span class="s2">"&lt;h1&gt;"</span><span class="mf">.</span><span class="nv">$location</span><span class="mf">.</span><span class="s2">"&lt;/h1&gt;"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Koordinatnya telah kita dapatkan yaitu :</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="nv">$lat</span> <span class="o">=</span> <span class="nv">$dt</span><span class="p">[</span><span class="s1">'data'</span><span class="p">][</span><span class="s1">'geo'</span><span class="p">][</span><span class="s1">'latitude'</span><span class="p">];</span>
+<span class="nv">$lng</span> <span class="o">=</span> <span class="nv">$dt</span><span class="p">[</span><span class="s1">'data'</span><span class="p">][</span><span class="s1">'geo'</span><span class="p">][</span><span class="s1">'longitude'</span><span class="p">];</span>
+</code></pre></div></div>
+
+<p>berikut hasil lokasi, sory ip saya saya encrypt sementara demi keamanan. dan kordinatnya sesuai dengan lokasi ipnya.</p>
+
+<p><img src="https://codesyariah122.github.io/assets/images/post/ss_lokasi.jpg" alt="lokasi" /></p>
+
+<p><img src="https://codesyariah122.github.io/assets/images/post/5.jpg" alt="vs_code" /></p>
+
+<p>ok sekial dulu coders, <strong>salam</strong></p>
+:ET

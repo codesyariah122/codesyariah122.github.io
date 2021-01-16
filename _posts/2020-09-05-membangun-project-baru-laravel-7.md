@@ -6,7 +6,10 @@ categories: [ PHP, Laravel, MVC, OOP ]
 image: assets/images/post/laravel7_0.jpg
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
----
+---  
+
+{{page.opening}}  
+
 ![laravel1]({{site.url}}/assets/images/post/laravel.webp)  
 
 Halo coders semua, apa kabarnya ? **Semoga Pada Sehat Semuanya**.  
@@ -21,7 +24,7 @@ jika belum ada composer silahkan ikuti cara install composer di artikel berikut 
 oh iya sebelumnya, gout mau ngasih sedikit info, untuk prosess installasi sendiri kita tidak harus menginstallnya di htdoc dalam artikel kali ini gout menginstall laravel di direktori home distro debian gout. yaitu di direktori ```/home/puji122/```,  direktori project laravel gout :  
 ![laravel2]({{site.url}}/assets/images/post/laravel.webp)
 
-```
+```bash
 # jika kalian ingin menginstall laravel secara global
 cd /home/puji122/
 
@@ -45,12 +48,12 @@ root@codesyariah:/home/puji122/project# laravel new projectku
 
 ```  
 Jika kalian tidak menginstall laravel secara global, kalian bisa menginstall laravel langsung dari repository laravel menggunakan command berikut :  
-```
+```bash
 composer create-project --prefer-dist laravel/laravel projectku
 ```  
 setelah proses pembuatan project laravel selesai, kalian bisa langsung akses direktori ```projectku/```, kemudian buka di code editor kesayangan kalian. selanjutnya kita akses ```projectku/``` di terminal. untuk menjalankan server project laravel kita. menggunakan ```php artisan```. jadi ```php artisan``` adalah command line bawaan dari laravel, untuk melakukan instruksi ke project laravel kita. dalam artikel ini gout mau menjalankan ```local server``` bawaan nya dari laravel, dan php artisan ini memudahkan kita dalam mendevelope sebuah project dengan laravel. 
 
-```
+```bash
 # buka terminal, akses direktori project laravel kita kemudian kita jalankan local server dengan command berikut
 root@codesyariah:/home/puji122/project/projectku# php artisan serve
 ```  
@@ -60,7 +63,7 @@ kemudian kita buka di browser
 ![laravel2]({{site.url}}/assets/images/post/laravel_4.png)  
 
 project laravel kita sudah berjalan di local server dan secara default ``` php artisan serve``` ini menggunakan port 8000, kita bisa menjalankannya di port yang lain, sesuai yang kita inginkan. misalnya disini :  
-```
+```bash
 # pertama kita bisa check list port yang tersedia di system kita dengan perintah berikut 
 root@codesyariah:/home/puji122/project/projectku# netstat
 ```  
@@ -68,7 +71,7 @@ root@codesyariah:/home/puji122/project/projectku# netstat
 
 kemudian kalian bisa menjalankan kembali dengan menambahkan config ```--port=""```  
 
-```
+```bash
 # dari hasil netstat diatas tadi sepertinya gout akan menggunakan port 10000 untuk menjalankan local server laravel ini
 root@codesyariah:/home/puji122/project/projectku# php artisan serve --port=10000
 ```  
@@ -80,7 +83,7 @@ buka kembali browser dan ubah akses port ke port yang tadi kita tambahkan.
 #### Sekedar Info  
 sebetulnya di dalam php itu sendiri sudah tersedia package untuk menjalankan local server dan hampir sama fungsinya dengan ```php artisan serve```, yah memang laravel itu kan ```php```. di php sendiri kita bisa menggunakan local server dengan menjalankan command berikut
 
-```
+```bash
 root@codesyariah:/home/puji122/system_polling# php -S localhost:10000
 ```  
 ![laravel2]({{site.url}}/assets/images/post/laravel_8.png)  

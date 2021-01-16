@@ -8,6 +8,8 @@ tags: [fullstack_developer]
 opening: بسم الله الرحمن الرحيم
 ---  
 
+{{page.opening}}
+
 ![es6-1]({{site.url}}/assets/images/post/es6.png)  
 ### EcmaScript 6  
 Dalam judul kali ini gout berbagi kisah keluh dan kesah, mengenai ecma script, terkhusus dalam judul kali ini yakni mengenai penggunaan module ecmascript6 di nodejs.  
@@ -21,20 +23,20 @@ buka code editor nya dulu, dalam artikel kali ini gout menggunakan ```visual stu
 seperti ini susunan direktori nya :  
 ![es6-2]({{site.url}}/assets/images/post/dir-ES6.png)  
 pertama-tama kita lakukan initialisasi package nya terlebih dahulu. dengan execute di terminal VSCODE : 
-```
+```bash
 npm init
 ### Kemudian isikan beberapa opsi yang tersedia
 ```  
 sehingga menghasilkan satu buah file baru di direktori project ES6 kita, dengan nama ```package.json```.
 kemudian selanjutnya kita kembali ke terminal lagi, untuk menginstall package yang diperlukan :  
-```
+```bash
 npm install --save-dev esm mjs
 ```  
 sekarang di ```package.json``` ada nama package baru yang terinstall :  
 ![es6-3]({{site.url}}/assets/images/post/package-ES6.png)  
 sekarang berarti package ```ecmascript6``` nya bisa kita gunakan di file project kita, buat sebuah direktori baru dengan nama ```lib/``` di direktori lib ini kita buat satu buah file baru dengan nama ```module.mjs``` formatnya(ekstensinya) adalah ```.mjs```. file ini nanti akan kita gunakan untuk menyimpan beberapa module yang akan kita eksport ke file lain. kemduian di root direktori nya kita buat file baru dengan nama : ```app.js```. berikut script dari file ```lib/module.mjs``` dan file ```app.mjs``` : 
-```
-# file : lib/module.mjs
+```javascript
+// file : lib/module.mjs
 // export function add(a, b) {
 //     let n = a + b
 //     return `${a} + ${b} = ${n}`
@@ -55,8 +57,8 @@ const halo = (user) => {
 export { sayHai, agogo, halo }
 ```  
 kalian bisa coba bagian yang gout beri comment itu, untuk membedakan opsi penggunaan module export di ecmascript6 ini. dan kemduian file selanjutnya :  
-```
-# file : app.mjs
+```javascript
+// file : app.mjs
 // import { add, dist } from './lib/module'
 
 // console.log(add(19, 12))
@@ -79,7 +81,7 @@ span.addEventListener('mouseleave', () => {
 ```  
 begitu juga di file ```app.mjs``` kalian bisa mencupa opsi yang gout beri komentar.  
 selanjutnya untuk menjalankannya, seperti biasa kita menggunakan perintah ```node``` tetap dengan penambahan beberapa opsi seperti berikut:  
-```
+```bash
 # terminal
 node -r esm app.mjs
 ```  
@@ -97,7 +99,7 @@ file ```lib/module.mjs```
 Nah bagaimana mengenai penggunaan module ```.mjs``` ini di tag script html:  
 caranya sama ajah, seperti html biasa html:5 kemudian kita panggil module nya dengan tag ```<script></script>```, tapi kali ini ada perubahan di element ```type``` nya, sehinggai file html kita menjadi seperti ini, perbedaanya di bagian tag ```<script>``` kita menggunakan element type dengan nilai ```module``` :  
 
-```
+```html
 # file : index.html
 <!DOCTYPE html>
 <html lang="en">

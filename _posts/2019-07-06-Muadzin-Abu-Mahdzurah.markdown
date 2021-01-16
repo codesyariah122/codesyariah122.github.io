@@ -6,10 +6,11 @@ categories: [ KajianIslam, Sunnah  ]
 image: assets/images/post/abu-mahdzurah.jpeg
 tags: [sticky, Blog]
 opening: بسم الله الرحمن الرحيم
----
+---  
 
-### Kisah Muadzin Rasulullah (Abu Mahdzurah)
-***
+{{page.opening}}  
+
+### Kisah Muadzin Rasulullah (Abu Mahdzurah)  
 
 Namanya adalah Aus bin Mughirah al-Jumahi. Rasulullah ﷺ memerintahkannya untuk mengumandangkan adzan di Mekah
 sekembalinya beliau dari Hunain.

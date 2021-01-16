@@ -24,7 +24,7 @@ ok tan[p]a berlama lama kita langsung ajah ke codingan nya :
 dari code-code sebelumnya gout hanya menambahkan satu fungsi baru sebagai sebuah metode untuk menjalankan program live search.  
 didalam file function.php, tambahkan fungsi baru di baris paling bawah, kemudian copy code dibawah ini:  
 
-```
+```php
 function searchData($keyword){
 	$query = "SELECT * FROM `product` WHERE 
 				`product_code` LIKE '%$keyword%' OR
@@ -41,7 +41,7 @@ dari fungsi diatas terdapat baris code berikut :  ```return view()``` code ini a
 
 berikutnya kita buka file ```view.php``` di direktori ```contents/``` : kemudian ubah semua baris code tersebut menjadi seperti ini :  
 
-```
+```php
 <style>
   .loader{
     width:150px;
@@ -93,7 +93,7 @@ dari code diatas saya ubah semua struktur content viewnya, untuk memodularisasik
 
 difile lainya yakni file ```product_data.php``` jika belum ada buat file baru di direktori yang sama dengan file view.php yaitu direktori contents/, buat file baru dengan nama ```product_data.php``` kemudian copy code berikut :  
 
-```
+```php
 <?php  
 require_once '../functions.php';
 if(@$_GET['keyword'] == @$_POST['keyword']):
@@ -125,13 +125,13 @@ endif;
 <?php $no++; endforeach; ?>
 ```  
 dari file diatas inilah setiap data yang direquest akan ditampung, diambil nilainya yang berupa method ```@$_GET``` dan ```@$_POST```, setiap data yang direquest di tampung ke dalam sebuah variable global php, dan kemudian bisa disimpan kedalam variabel baru, dan variabel baru ini diberinama ```$viewData``` yakni variabel yang berisi sebuah fungsi yakni fungsi baru yang dibuat di file ```functions.php``` yaitu fungsi ```searchData()``` dan fungsi searchData sendiri memiliki nilai parameter, kemudian nilai parameternya itu kita isi dari sebuah input di file ```view.php``` yaitu dibagian ini :  
-```
+```php
 <input type="text" class="form-control" id="keyword" name="keyword" placeholder="Type keywords to search the product ... " autocomplete="off">
 ```  
 input tersebut akan mengirim data menggunakan sebuah method dalam program ini yaitu method ```post``` sedangkan method ```get``` digunakan ketika data ditangani oleh ajax dalam parameter fungsi nya. 
 jadi setiap inputan tersebut akan dikelola terlebih dahulu oleh ajax di file javascript, sebelum dikirim ke server di sisi beckend. dan seperti inilah fungsi ajax yang menangani setiap request data dari inputan tersebut :  
 
-```
+```javascript
 $('#viewdata').on('keyup', '#keyword', function(){
 	$('.loader').show();
 	//variable untuk menampung nilai input dari keyword

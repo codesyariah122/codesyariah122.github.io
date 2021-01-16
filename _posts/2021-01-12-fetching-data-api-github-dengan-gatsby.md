@@ -8,8 +8,7 @@ tags: [fullstack_developer]
 opening: بسم الله الرحمن الرحيم
 ---  
 
-{page.opening}
-
+{{page.opening}}
 
 ### Gatsby Source Graphql   
 Halo sob ... ini post kedua di tahun 2021 ini, agak delay yah .. maklum sob kondisi belum kondusif, PSBB silih berganti membatasi aktifitas-aktifitas diruang publik, jangan lupa selalu jaga kesehatan kalian frenn.  
@@ -49,7 +48,7 @@ drwxrwxrwx    2 root    root      4096 Jan  2 08:13 static
 
 Selanjutnya kita install pluginnya :  
 
-```
+```bash
 npm install --save gatsby-source-graphql dotenv 
 ```  
 #### Selanjutnya  
@@ -60,7 +59,7 @@ root@debian:/home/puji122/pujiermanto.netlify.app# touch .env.development
 ```  
 Buka file ```.env.development``` : 
 
-```
+```bash
 GATSBY_PORTFOLIO_GITHUB_TOKEN=your_personal_tokens_github
 ```  
 - Personal access tokens github  
@@ -72,7 +71,7 @@ kemudian kita buat personal access token di github kita, Bisa akses link berikut
 setelah plugin terinstall, ```Personal access tokens``` telah di buat, lanjut kita buka file ```gatsby-config.js``` yang berada di root directory gatsby kita .  
 tambahkan ini :  
 
-```
+```javascript
 const path = require('path');
 
 require('dotenv').config({
@@ -118,7 +117,7 @@ seperti ini penerapannya di gatsby page gout :
 
 ini component utama gout :  
 
-```
+```javascript
 import React from "react"
 import Layout from "../components/layouts/layout"
 import '../styles/hero.scss'
@@ -151,7 +150,7 @@ export default IndexPage
 kemudian gout punya satu direktori tambahan untuk component homepage yaitu direktori ```homepage/```.  
 kemudian di direktori component ```homepage/``` buat lagi satu direktori untuk membuat view data github nya buat direktori baru namanya ```Projects/```, didalam direktori ```Projects/``` buat satu file baru di direktori ```Projects/``` dengan nama ```index.jsx```, berikut code dari file ```homepage/Projects/index.jsx``` :  
 
-```
+```javascript
 import React from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
@@ -330,7 +329,7 @@ bisa kalian telaah yah code nya, kalau gout hanya mau sedikit **memberi tambahan
 
 - Query Github Graphql  
 
-```
+```javascript
 const {
     github: {
       viewer: {
@@ -373,7 +372,7 @@ const {
 **Look at this**  
 Di code ini kita melakukan query dengan mengambil data dari api github :  
 
-```
+```javascript
 github: {
       viewer: {
         repositories: { edges },
@@ -391,7 +390,7 @@ Penggunaanya yakni api github, yang documentasi nya bisa kalian simak dimari :
 
 Kemudian kita looping data nya di bagian view dan dapat diambil data sebagai berikut :  
 
-```
+```javascript
 {edges.map(({ node }) => (
   {node.id}
   {node.url}

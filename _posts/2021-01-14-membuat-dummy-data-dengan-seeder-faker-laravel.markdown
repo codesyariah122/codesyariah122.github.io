@@ -8,12 +8,12 @@ tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  
 
-
-**{page.opening}** 
+{{page.opening}}  
 
 Halo brothers' masih tentang laravel, diartikel kali ini gout mau memberikan tips seputar management data di laravel menggunakan ```Faker``` method.  
 
 Pertama kalian bisa lihat terlebih dahulu direktori project laravel gout kali ini, seperti ini listing directory project laravel gout :  
+
 ```bash
 root@876a9f5bb1a6:/var/www/projectku# ls -l
 total 284
@@ -48,7 +48,7 @@ root@876a9f5bb1a6:/var/www/projectku# php artisan make:migration create_employee
 ```  
 akan terbentuk file baru di direktori ```database/migration/2021_01_13_create_employees_table.php```, kita buka file migration employees :  
 
-```
+```php
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -79,7 +79,7 @@ root@876a9f5bb1a6:/var/www/projectku# php artisan migrate
 ```  
 bisa dilihat di mysql atau di phpmyadmin kalian, akan ada table baru dengan nama table ```employees``` telah terbentuk, tapi kita lupa menambahkan field/column lainnya. Ok kita ubah terlebih dahulu code diatas, untuk menambahkan beberapa field/column baru di table ```employees``` sehingga code tersebut menjadi seperti ini :  
 
-```
+```php
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -169,7 +169,7 @@ root@876a9f5bb1a6:/var/www/projectku# php artisan make:seeder EmployeesSeederTab
 
 	Setelah kita jalankan perintah di atas, maka sebuah file ```app/database/seeds/EmployeesSeederTable.php``` Seperti ini isi file seedernya :  
 
-```bash
+```php
 <?php
 
 use Illuminate\Database\Seeder;
@@ -198,7 +198,7 @@ root@876a9f5bb1a6:/var/www/projectku# php artisan make:model Employee
 ```  
 Kemudian buka file model dan edit menjadi seperti ini :  
 
-```
+```php
 <?php
 
 namespace App;
@@ -219,7 +219,7 @@ class Employee extends Model
 ```  
 selanjutnya kita buka kembali file ```database/seeds/EmployeeSeederTable.php```, edit code nya menjadi seperti ini :  
 
-```
+```php
 <?php
 
 use App\Employee;
@@ -270,7 +270,7 @@ Sedikit berbeda dengan seeding namun mempunyai metodelogi yang kurang lebih sama
 Ok langsung ajah kita eksekusi menggunakan Faker.  
 Masih menggunakan file yang sama yaitu file ```database/seeds/EmployeesSeederTable.php```, Kita hanya menambahkan method Query Builder langsung di file seedernya sehingga code seeder tersebut menjadi seperti berikut :  
 
-```
+```php
 <?php
 
 use App\Employee;

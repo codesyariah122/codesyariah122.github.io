@@ -21,7 +21,7 @@ Terminal ```REPL``` juga mendukung perintah yang terdiri dari beberapa baris, mi
 
 contoh : 
 
-```
+```bash
 > let a =10
 undefined
 >if(a > 0){
@@ -50,7 +50,7 @@ Tanda titik yang ditulis (...) tiga kali menandakan bahwa baris tersebut merupak
 
 Selain ekspresi dan blok perintah sederhana, kita juga dapat mendefinisikan fungsi pada saat bekerja di dalam terminal ```REPL```. Contoh kode berikut akan menunjukan hal tersebut :  
 
-```
+```bash
 > function tambah(x, y){
 ... return x + y
 ... }
@@ -68,7 +68,7 @@ undefined
 #### Membuat objek  
 Terminal ```REPL``` juga mendukung pembuatan objek, seperti yang ditunjukan oleh contoh kode di bawah ini :  
 
-```
+```bash
 > let obj = new Object()
 undefined
 > obj.alas = 3
@@ -150,7 +150,7 @@ Beberapa perintah tambahan yang dapat digunakan ketika bekerja dengan terminal `
 
 seperti yang telah disebutkan diatas untuk menghentikan terminal ```REPL```, kita dapat menggunakan tombol ```Ctrl + C``` dua kali. 
 
-```
+```bash
 root@codesyariah:/home/puji122# node
 > a = 3
 3

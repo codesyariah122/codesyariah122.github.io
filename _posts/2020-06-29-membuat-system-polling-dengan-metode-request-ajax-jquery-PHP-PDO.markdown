@@ -24,7 +24,7 @@ langsung ajah yuk , kita mulai coding ....
 kita siapkan dulu database untuk menampung value pollingnya...  
 masuk ke terminal atau cmd di windows, akses root ke aplikasi database nya disini saya menggunakan mysql
 *terminal*
-```
+```bash
 mysql -u root -p
 #masukan password root login anda
 #lanjut buat database
@@ -52,7 +52,7 @@ susunan file nya, direktori nya saya beri nama system_polling :
 ### buat file config.php  
 *kemudian copy code di bawah ini*  
 
-```
+```php
 <?php
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
@@ -64,7 +64,7 @@ define('DB_NAME', 'polling');
 ### lanjut buat file functions.php  
 **copy code di bawah ini**  
 
-```
+```php
 
 <?php
 require_once 'config.php';
@@ -136,7 +136,7 @@ function resetPolling($data){
 }
 ```  
 ***Copy code dibawah simpan ke file dengan nama ```index.php```***  
-```
+```php
 <?php require_once 'functions.php'; $dir='contents'; ?>  
 <!DOCTYPE html>
   <html>
@@ -179,7 +179,7 @@ direktori content ini akan menyimpan tampilan utama programm kita.
 ***buat file baru di direktori contents***  
 
 buat file dengan ```polling.php```  kemudian copy code dibawah ini : 
-```
+```php
 <?php 
 $framework = json_decode(framework("SELECT * FROM `framework`"));
 // var_dump($framework); 
@@ -213,7 +213,7 @@ $framework = json_decode(framework("SELECT * FROM `framework`"));
 
 ```  
 dalam update artikel kali ini penulis menambahkan fungsi ajax sebagai metode request untuk meload data dari clientside tanpa mereload halaman secara keseluruhan : 
-```
+```javascript
 $(document).ready(function(){
 
   $('#view-data').hide().load('contents/view_data.php').fadeIn(1000);
@@ -314,7 +314,7 @@ $(document).ready(function(){
 
 ```  
 save code diatas dengan nama MyJs.js di direktori assets, secara keseluruhan code diatas akan meload halaman view yang telah direquest oleh clientside dan menampilkan keseluruhan data terupdate setelah query data selesai dilakukan oleh serverside : 
-```
+```php
 <?php 
 require_once '../functions.php';
 $medal = '<i class="fas fa-fw fa-lg fa-medal blue-text"></i>';

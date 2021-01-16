@@ -55,7 +55,7 @@ Pada awal pengembangannya, YAML dimaksudkan sebagai singkatan dari "Yet Another 
 
 lanjut lagi ke judul artikel kita mengenai passing data di jekyll menggunakan YAML format. setelah sebelumnya gout membuat sebuah file di ```_data/navigation.yml```, dan isi dari file navigation ini adalah sepert berikut :  
 
-```
+```yml
 - name: Home
   url: /
 

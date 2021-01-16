@@ -7,9 +7,10 @@ image: assets/images/post/php-autoload.png
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  
-![php_namespace]({{site.url}}/assets/images/post/autoload-php.jpg)  
 
 {{page.opening}}  
+
+![php_namespace]({{site.url}}/assets/images/post/autoload-php.jpg)  
 
 ## Mengenal fitur Autoload PHP  
 
@@ -19,7 +20,7 @@ dari artikel sebelumnya itu kita sudah mempunyai kerangka program sederhana meng
 
 diartikel sebelumnya kurang lebih susunan direktori untuk aplikasi sederhana saya masih seperti ini belum ada penambahan yah :  
 
-```
+```bash
 --------------------------------
  namespace/					
 --------------------------------	

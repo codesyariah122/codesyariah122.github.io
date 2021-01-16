@@ -7,7 +7,6 @@ image: assets/images/post/prety-url.jpg
 tags: [codeigniter]
 opening: بسم الله الرحمن الرحيم
 ---  
-
 {{page.opening}}  
 
 ### Pretty Url  

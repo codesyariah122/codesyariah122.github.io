@@ -15,7 +15,7 @@ setelah proses installasi selesai kita harus menyambungkan device kita ke intern
 setelah login ke os kita, langsung saja eksekusi command dibawah ini :  
 masuk terlebih dahulu ke direktori repository debian 9 di ```/etc/apt/```  
 
-```
+```bash
 root@debian: cd /etc/apt
 root@debian: echo 'deb http://httpredir.debian.org/debian/ stretch main contrib non-free' >> /etc/apt/sources.list
 root@debian: apt update && apt install firmware-iwlwifi

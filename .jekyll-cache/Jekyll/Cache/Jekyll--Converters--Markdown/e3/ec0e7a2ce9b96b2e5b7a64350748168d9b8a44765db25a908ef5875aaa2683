@@ -1,0 +1,370 @@
+I"ڬ<h3 id="fitur-upload-gambar-dengan-metode-pdo-dan-jquery-ajax">Fitur upload gambar dengan metode PDO dan jquery-ajax</h3>
+<p><img src="{{site.url}}/assets/images/post/crud_ajax_with_upload.gif" alt="upload_ajax" /></p>
+
+<p>halo coders semuanya ….<br />
+ini masih melanjutkan edisi crud data dengan ajax jquery dengan menggunakan metode php pdo ekstension sebagai sql universal interfacenya.  dalam artikel kali ini gout mau menambahkan fitur upload gambar kedalam aplikasi crud data sederhana menggunakan metode pdo dan ajax-jquery :</p>
+
+<p><strong><em>menyambung dari artikel crud data ajax jquery, di artikel sebelumnya</em></strong></p>
+
+<p><a href="https://codesyariah122.github.io/php/pdo/ajax/jquery/crud-data-dengan-jquery-ajax/" title="Crud data sederhana dengan ajax jquery">Crud data ajax jquery</a></p>
+
+<p>dalam artikel sebelumnya tentang implementasi sebuah metode untuk live search.  sudah gout bahas beberapa minggu yang lalu. dari fitur live search tersebut sudah gout push juga ke repository gout yaitu di link dibawah ini :<br />
+<a href="https://github.com/codesyariah122/crud-data-with-php-PDO-Jquery-ajax/tree/master" title="Crud data sederhana dengan ajax jquery">Crud data ajax jquery master</a></p>
+
+<p>Dan kali ini dalam artikel terbaru ini gout mau mengimplementasikan fitur untuk upload image atau foto, dimana dalam fitur upload itu kita dapat menambahkan file yang berekstensi gambar untuk mempercantik tampilan frontend layout crudajax ini, dalam fitur upload tersebut kita membutuhkan sebuah element html yaitu <code class="language-html highlighter-rouge"><span class="nt">&lt;form&gt;</span></code> yang berisi attribut <code class="language-html highlighter-rouge">enctype</code>, dimana enctype ini berisi nilai =<code class="language-html highlighter-rouge">"multipart/form-data"</code> nilai ini merupakan keharusan jika kita ingin melakukan pengolahan file dengan serverside php di beckendnya.<br />
+maka untuk itu gout akan merubah struktur source code di bagian file <code class="language-html highlighter-rouge">contents/add.php</code> dan file <code class="language-html highlighter-rouge">contents/edit.php</code> dimana kedua file tersebut kan berisi form input data dari frontend nya.</p>
+
+<p>oh iya … dibagian database juga gout harus menambahkan 2 item baru, salah satunya untuk menampung nilai dari input file yang dipilih ketika melakukan process input data, sehingga didapatkan struktur table baru di database crudajax menjadi seperti ini :</p>
+
+<p><img src="{{site.url}}/assets/images/post/database_upload_crud_ajax.png" alt="upload_ajax2" /></p>
+
+<p>terlihat ada 2 item baru yaitu column dengan nama</p>
+<ul>
+  <li><code class="language-html highlighter-rouge">product_image</code></li>
+  <li><code class="language-html highlighter-rouge">product_description</code><br />
+kedua item baru ini akan ditambahkan juga di file <code class="language-html highlighter-rouge">add.php</code> dan file <code class="language-html highlighter-rouge">edit.php</code> , untuk item <code class="language-html highlighter-rouge">product_image</code> akan kita gunakan <code class="language-html highlighter-rouge"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">&gt;</span></code> sedangkan untuk item <code class="language-html highlighter-rouge">product_description</code> akan kita gunakan element input <code class="language-html highlighter-rouge"><span class="nt">&lt;textarea&gt;&lt;/textarea&gt;</span></code>. sehingga keseluruhan codenya gout rubah menjadi seperti berikut : 
+<strong><em>file <code class="language-html highlighter-rouge">contents/add.php</code></em></strong></li>
+</ul>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">&lt;?php</span> 
+<span class="k">require_once</span> <span class="s1">'../functions.php'</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span><span class="o">@</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'page'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'add'</span><span class="p">)</span><span class="o">:</span>
+
+  <span class="c1">//addAjax($_POST, $_FILES, 'product');</span>
+  <span class="k">if</span><span class="p">(</span><span class="nf">addAjax</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">,</span> <span class="nv">$_FILES</span><span class="p">,</span> <span class="s1">'product'</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">:</span>
+    <span class="c1">//usleep(700000);</span>
+    <span class="k">echo</span> <span class="s2">"success"</span><span class="p">;</span>
+  <span class="k">endif</span><span class="p">;</span>
+
+<span class="k">else</span><span class="o">:</span>
+
+
+
+<span class="cp">?&gt;</span>
+
+<span class="nt">&lt;style </span><span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
+  <span class="nt">li</span><span class="p">{</span>
+    <span class="nl">list-style</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nf">#close</span><span class="p">{</span>
+    <span class="nl">margin-top</span><span class="p">:</span> <span class="m">-0.7rem</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+
+<span class="nt">&lt;fieldset</span> <span class="na">class=</span><span class="s">"card mt-5 mb-5"</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row justify-content-end"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"close"</span> <span class="na">class=</span><span class="s">"btn btn-lg"</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">"far fa-fw fa-lg fa-window-close"</span><span class="nt">&gt;&lt;/i&gt;&lt;/button&gt;</span>  
+  <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"text-primary text-center mt-2"</span><span class="nt">&gt;</span>Add New Product<span class="nt">&lt;/h4&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col mx-auto"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">method=</span><span class="s">"post"</span> <span class="na">enctype=</span><span class="s">"multipart/form-data"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"productcode"</span><span class="nt">&gt;</span>Product Code<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"productcode"</span> <span class="na">class=</span><span class="s">"form-control"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+           <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"productimage"</span><span class="nt">&gt;</span>Choose file<span class="nt">&lt;/label&gt;</span>
+           <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"file"</span> <span class="na">class=</span><span class="s">"form-control-file"</span> <span class="na">id=</span><span class="s">"productimage"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"productname"</span><span class="nt">&gt;</span>Product Name<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"productname"</span> <span class="na">class=</span><span class="s">"form-control"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"productdescription"</span><span class="nt">&gt;</span>Product Description<span class="nt">&lt;/label&gt;</span>
+          <span class="nt">&lt;textarea</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"productdescription"</span> <span class="na">cols=</span><span class="s">"5"</span> <span class="na">rows=</span><span class="s">"3"</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"productprice"</span><span class="nt">&gt;</span>Product Price<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"number"</span> <span class="na">id=</span><span class="s">"productprice"</span> <span class="na">class=</span><span class="s">"form-control"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>   
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"add"</span> <span class="na">class=</span><span class="s">"mt-5 btn btn-primary btn-lg"</span><span class="nt">&gt;</span>Add Product<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+
+<span class="nt">&lt;/fieldset&gt;</span>
+
+<span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>untuk fungsi insert data nya masih menggunakan fungsi <code class="language-html highlighter-rouge">addAjax()</code> dari file <code class="language-html highlighter-rouge">functions.php</code> namun gout menambahkan  satu parameter baru yaitu super global variable <code class="language-html highlighter-rouge">$_FILES</code> untuk menampung nilai input dari file input di element form html. terdapat 2 item baru ditambahkan di element form add ini yaitu <code class="language-html highlighter-rouge"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">&gt;</span></code> dan <code class="language-html highlighter-rouge"><span class="nt">&lt;textarea&gt;&lt;/textarea&gt;</span></code> . sedangkan untuk file <code class="language-html highlighter-rouge">edit.php</code> tidak jauh berbeda isinya gout menambahkan 2 item baru tersebut di element form edit, sehingga menjadi seperti dibawah ini :</p>
+
+<p><strong><em>file <code class="language-html highlighter-rouge">contents/edit.php</code></em></strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">&lt;?php</span>  
+<span class="k">require_once</span> <span class="s1">'../functions.php'</span><span class="p">;</span>
+
+<span class="nv">$id</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'id'</span><span class="p">];</span>
+
+<span class="nv">$viewById</span> <span class="o">=</span> <span class="nf">view</span><span class="p">(</span><span class="s2">"SELECT * FROM `product` WHERE `id` = '</span><span class="nv">$id</span><span class="s2">'"</span><span class="p">);</span>
+
+<span class="c1">//var_dump($viewById);</span>
+
+<span class="k">if</span><span class="p">(</span><span class="o">@</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'page'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'edit'</span><span class="p">)</span><span class="o">:</span>
+
+  <span class="k">if</span><span class="p">(</span><span class="nf">editAjax</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">,</span> <span class="nv">$_FILES</span><span class="p">,</span> <span class="s1">'product'</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">:</span>
+    <span class="k">echo</span> <span class="s2">"success"</span><span class="p">;</span> 
+  <span class="k">endif</span><span class="p">;</span>
+
+<span class="k">else</span><span class="o">:</span>
+<span class="cp">?&gt;</span>
+<span class="nt">&lt;style </span><span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
+  <span class="nt">li</span><span class="p">{</span>
+    <span class="nl">list-style</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nf">#close</span><span class="p">{</span>
+    <span class="nl">margin-top</span><span class="p">:</span><span class="m">-0.7rem</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+
+<span class="nt">&lt;fieldset</span> <span class="na">class=</span><span class="s">"card mt-5 mb-5"</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row justify-content-end"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"close"</span> <span class="na">class=</span><span class="s">"btn btn-lg"</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">"far fa-fw fa-lg fa-window-close"</span><span class="nt">&gt;&lt;/i&gt;&lt;/button&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"text-info text-center mt-2"</span><span class="nt">&gt;&lt;b&gt;</span>Edit Product Data<span class="nt">&lt;/b&gt;&lt;/h4&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col mx-auto"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">method=</span><span class="s">"post"</span> <span class="na">enctype=</span><span class="s">"multipart/form-data"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">id=</span><span class="s">"productid"</span> <span class="na">value=</span><span class="s">"</span><span class="cp">&lt;?=</span><span class="nv">$viewById</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'id'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="s">"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;li&gt;</span>        
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"productcode"</span><span class="nt">&gt;</span>Product Code<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"productcode"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">value=</span><span class="s">"</span><span class="cp">&lt;?=</span><span class="nv">$viewById</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'product_code'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="s">"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"assets/images/</span><span class="cp">&lt;?=</span><span class="nv">$viewById</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'product_image'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="s">"</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span> <span class="na">class=</span><span class="s">"img-responsive mt-2"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+           <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"productimage"</span><span class="nt">&gt;</span>Choose file for upload<span class="nt">&lt;/label&gt;</span>
+           <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"file"</span> <span class="na">class=</span><span class="s">"form-control-file"</span> <span class="na">id=</span><span class="s">"productimage"</span> <span class="na">value=</span><span class="s">"</span><span class="cp">&lt;?=</span><span class="nv">$viewById</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'product_image'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="s">"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"productname"</span><span class="nt">&gt;</span>Product Name<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"productname"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">value=</span><span class="s">"</span><span class="cp">&lt;?=</span><span class="nv">$viewById</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'product_name'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="s">"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"productdescription"</span><span class="nt">&gt;</span>Product Description<span class="nt">&lt;/label&gt;</span>
+          <span class="nt">&lt;textarea</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"productdescription"</span> <span class="na">cols=</span><span class="s">"5"</span> <span class="na">rows=</span><span class="s">"3"</span><span class="nt">&gt;</span>
+            <span class="cp">&lt;?=</span><span class="nv">$viewById</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'product_description'</span><span class="p">]</span><span class="cp">?&gt;</span>
+          <span class="nt">&lt;/textarea&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"productprice"</span><span class="nt">&gt;</span>Product Price<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"number"</span> <span class="na">id=</span><span class="s">"productprice"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">value=</span><span class="s">"</span><span class="cp">&lt;?=</span><span class="nv">$viewById</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'product_price'</span><span class="p">]</span><span class="cp">?&gt;</span><span class="s">"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"edit"</span> <span class="na">class=</span><span class="s">"mt-5 btn btn-primary btn-lg"</span><span class="nt">&gt;</span>Edit Product<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+
+<span class="nt">&lt;/fieldset&gt;</span>
+
+<span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span>
+</code></pre></div></div>
+<p>hampir sama dengan file <code class="language-html highlighter-rouge">add.php</code> hanya saja untuk edit ini seperti biasa nilai nya sudah di definisikan dari data yang ada di database. sehingga di tiap bagian input ditambahkan attribute <code class="language-html highlighter-rouge">value="<span class="cp">&lt;?=$viewById[0]['field_database']?&gt;</span>"</code>, sedangkan untuk penggunaan fungsi update masih sama dari sebelumnya yakni masih menggunakaan fungsi <code class="language-html highlighter-rouge">editAjax()</code> dan gout menambahkan satu parameter baru sama seperti file <code class="language-html highlighter-rouge">add.php</code> yang tidak lain adalah parameter <code class="language-html highlighter-rouge">$_FILES</code> sebagai super global yang menangani inputan data berupa file browser.</p>
+
+<h1 id="lanjut-ke-bagian-utama-di-aplikasi-crudajax-ini">lanjut ke bagian utama di aplikasi crudajax ini</h1>
+<h3 id="file-functionsphp">file <code class="language-html highlighter-rouge">functions.php</code></h3>
+<p>didalam file functions.php gout merubah algorithma data pada bagian fungsi <code class="language-html highlighter-rouge">function addAjax(){}</code> dan fungsi <code class="language-html highlighter-rouge">function editAjax(){}</code> kemudian menambah satu fungsi tambahan sebagai fungsi yang bertanggung jawab dalam menjalankan fitur upload file atau dalam hal ini file yang ditangani adalah file yang berekstensi image(gambar/foto). sehingga secara keseluruhan file <code class="language-html highlighter-rouge">functions.php</code> setelah gout lakukan perombakan dan penambahan satu fungsi ajah sih sebenernya cuma biar sedikit dramatis gitu artikelnya, hehehe. menjadi seperti ini :</p>
+
+<p><strong><em>file <code class="language-html highlighter-rouge">functions.php</code></em></strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">&lt;?php</span>
+<span class="k">require_once</span> <span class="s1">'config.php'</span><span class="p">;</span>
+
+<span class="k">function</span> <span class="n">layout</span><span class="p">(</span><span class="nv">$dir</span><span class="p">,</span> <span class="nv">$file</span><span class="p">,</span> <span class="nv">$ext</span><span class="p">){</span>
+  <span class="c1">//global $dir;</span>
+  <span class="k">if</span><span class="p">(</span><span class="nb">file_exists</span><span class="p">(</span><span class="nv">$dir</span><span class="mf">.</span><span class="s1">'/'</span><span class="mf">.</span><span class="nv">$file</span><span class="mf">.</span><span class="nv">$ext</span><span class="p">)){</span>
+    <span class="k">require_once</span> <span class="nv">$dir</span><span class="mf">.</span><span class="s1">'/'</span><span class="mf">.</span><span class="nv">$file</span><span class="mf">.</span><span class="nv">$ext</span><span class="p">;</span>
+  <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"&lt;h1 class='text-danger text-center'&gt;Layout Not Found&lt;/h1&gt;"</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">function</span> <span class="n">connect</span><span class="p">(){</span>
+  <span class="nv">$dbhost</span> <span class="o">=</span> <span class="no">DB_HOST</span><span class="p">;</span>
+  <span class="nv">$dbname</span> <span class="o">=</span> <span class="no">DB_NAME</span><span class="p">;</span>
+  <span class="nv">$dbuser</span> <span class="o">=</span> <span class="no">DB_USER</span><span class="p">;</span>
+  <span class="nv">$dbpass</span> <span class="o">=</span> <span class="no">DB_PASS</span><span class="p">;</span>
+
+  <span class="k">try</span><span class="p">{</span>
+    <span class="nv">$conn</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PDO</span><span class="p">(</span><span class="s2">"mysql:host=</span><span class="nv">$dbhost</span><span class="s2">;dbname=</span><span class="nv">$dbname</span><span class="s2">"</span><span class="p">,</span> <span class="nv">$dbuser</span><span class="p">,</span> <span class="nv">$dbpass</span><span class="p">);</span>
+    <span class="nv">$conn</span><span class="o">-&gt;</span><span class="nf">setAttribute</span><span class="p">(</span><span class="no">PDO</span><span class="o">::</span><span class="no">ATTR_ERRMODE</span><span class="p">,</span> <span class="no">PDO</span><span class="o">::</span><span class="no">ERRMODE_EXCEPTION</span><span class="p">);</span>
+    <span class="c1">//echo "Connection succesfully added";</span>
+    <span class="k">return</span> <span class="nv">$conn</span><span class="p">;</span>
+  <span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="nc">PDOException</span> <span class="nv">$e</span><span class="p">){</span>
+    <span class="k">echo</span> <span class="s2">"Connection failed "</span><span class="mf">.</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="nf">getMessage</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="k">function</span> <span class="n">view</span><span class="p">(</span><span class="nv">$query</span><span class="p">){</span>
+  <span class="nv">$dbh</span> <span class="o">=</span> <span class="nf">connect</span><span class="p">();</span>
+  <span class="k">try</span><span class="p">{</span>
+    <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="nf">setAttribute</span><span class="p">(</span><span class="no">PDO</span><span class="o">::</span><span class="no">ATTR_ERRMODE</span><span class="p">,</span> <span class="no">PDO</span><span class="o">::</span><span class="no">ERRMODE_EXCEPTION</span><span class="p">);</span>
+    <span class="nv">$sql</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="nf">query</span><span class="p">(</span><span class="nv">$query</span><span class="p">);</span>
+    <span class="nv">$rows</span><span class="o">=</span><span class="p">[];</span>
+
+    <span class="k">while</span><span class="p">(</span><span class="nv">$row</span> <span class="o">=</span> <span class="nv">$sql</span><span class="o">-&gt;</span><span class="nf">fetch</span><span class="p">(</span><span class="no">PDO</span><span class="o">::</span><span class="no">FETCH_ASSOC</span><span class="p">))</span><span class="o">:</span>
+      <span class="nv">$rows</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$row</span><span class="p">;</span>
+    <span class="k">endwhile</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="nv">$rows</span><span class="p">;</span>
+  <span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="nc">PDOException</span> <span class="nv">$e</span><span class="p">){</span>
+    <span class="k">echo</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="nf">getMessage</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="k">function</span> <span class="n">addAjax</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="nv">$file</span><span class="p">,</span> <span class="nv">$table</span><span class="p">){</span>
+  <span class="c1">// var_dump(@$file);</span>
+  <span class="c1">// var_dump(@$data);</span>
+
+  <span class="nv">$dbh</span> <span class="o">=</span> <span class="nf">connect</span><span class="p">();</span>
+  <span class="nv">$productCode</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'productcode'</span><span class="p">];</span>
+  <span class="nv">$productImage</span> <span class="o">=</span> <span class="nf">upload</span><span class="p">(</span><span class="nv">$file</span><span class="p">,</span> <span class="s1">'../assets/images/'</span><span class="p">);</span>
+  <span class="nv">$productName</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'productname'</span><span class="p">];</span>
+  <span class="nv">$productDesc</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'productdescription'</span><span class="p">];</span>
+  <span class="nv">$productPrice</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'productprice'</span><span class="p">];</span>
+
+  <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nv">$productImage</span><span class="p">){</span>
+    <span class="nv">$productImage</span> <span class="o">=</span> <span class="s1">'no-product-image.png'</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nv">$insertProduct</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="nf">prepare</span><span class="p">(</span><span class="s2">"INSERT INTO `</span><span class="nv">$table</span><span class="s2">` (id, product_code, product_image, product_name, product_description, product_price) VALUES ('', ?, ?, ?, ?, ?)"</span><span class="p">);</span>
+  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="nf">bindParam</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nv">$productCode</span><span class="p">);</span>
+  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="nf">bindParam</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nv">$productImage</span><span class="p">);</span>
+  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="nf">bindParam</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="nv">$productName</span><span class="p">);</span>
+  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="nf">bindParam</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="nv">$productDesc</span><span class="p">);</span>
+  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="nf">bindParam</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="nv">$productPrice</span><span class="p">);</span>
+
+  <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="nf">execute</span><span class="p">();</span>
+
+  <span class="k">return</span> <span class="nv">$insertProduct</span><span class="o">-&gt;</span><span class="nf">rowCount</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="k">function</span> <span class="n">editAjax</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="nv">$file</span><span class="p">,</span> <span class="nv">$table</span><span class="p">){</span>
+  <span class="nv">$productCode</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'productcode'</span><span class="p">];</span>
+  <span class="nv">$productImage</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'productimage'</span><span class="p">];</span>
+  <span class="nv">$productName</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'productname'</span><span class="p">];</span>
+  <span class="nv">$productDesc</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'productdescription'</span><span class="p">];</span>
+  <span class="nv">$productPrice</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'productprice'</span><span class="p">];</span>
+  <span class="nv">$productId</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'productid'</span><span class="p">];</span>
+
+  <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nv">$productImage</span><span class="p">){</span>
+    <span class="nv">$productImage</span> <span class="o">=</span> <span class="nf">upload</span><span class="p">(</span><span class="nv">$file</span><span class="p">,</span> <span class="s1">'../assets/images/'</span><span class="p">);</span>
+  <span class="p">}</span><span class="k">elseif</span><span class="p">(</span><span class="nb">empty</span><span class="p">(</span><span class="nv">$productImage</span><span class="p">)){</span>
+    <span class="nv">$productImage</span> <span class="o">=</span> <span class="s1">'no-product-image.png'</span><span class="p">;</span>
+  <span class="p">}</span>
+
+
+  <span class="nv">$dbh</span> <span class="o">=</span> <span class="nf">connect</span><span class="p">();</span>
+
+  <span class="nv">$edit</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="nf">prepare</span><span class="p">(</span><span class="s2">"UPDATE `</span><span class="nv">$table</span><span class="s2">` SET product_code = ?, product_image = ?, product_name = ?, product_description = ?, product_price = ? WHERE `id` = ?"</span><span class="p">);</span>
+  <span class="nv">$edit</span><span class="o">-&gt;</span><span class="nf">execute</span><span class="p">([</span><span class="nv">$productCode</span><span class="p">,</span> <span class="nv">$productImage</span><span class="p">,</span> <span class="nv">$productName</span><span class="p">,</span> <span class="nv">$productDesc</span><span class="p">,</span> <span class="nv">$productPrice</span><span class="p">,</span> <span class="nv">$productId</span><span class="p">]);</span>
+
+  <span class="k">return</span> <span class="nv">$edit</span><span class="o">-&gt;</span><span class="nf">rowCount</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="k">function</span> <span class="n">deleteAjax</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="nv">$table</span><span class="p">){</span>
+  <span class="nv">$dbh</span> <span class="o">=</span> <span class="nf">connect</span><span class="p">();</span>
+  <span class="nv">$id</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'id'</span><span class="p">];</span>
+  <span class="nv">$delete</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="nf">prepare</span><span class="p">(</span><span class="s2">"DELETE FROM `</span><span class="nv">$table</span><span class="s2">` WHERE `id` = :id"</span><span class="p">);</span>
+  <span class="nv">$delete</span><span class="o">-&gt;</span><span class="nf">bindParam</span><span class="p">(</span><span class="s2">":id"</span><span class="p">,</span> <span class="nv">$id</span><span class="p">);</span>
+
+  <span class="nv">$delete</span><span class="o">-&gt;</span><span class="nf">execute</span><span class="p">();</span>
+
+  <span class="k">return</span> <span class="nv">$delete</span><span class="o">-&gt;</span><span class="nf">rowCount</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="k">function</span> <span class="n">searchData</span><span class="p">(</span><span class="nv">$keyword</span><span class="p">){</span>
+  <span class="nv">$query</span> <span class="o">=</span> <span class="s2">"SELECT * FROM `product` WHERE 
+        `product_code` LIKE '%</span><span class="nv">$keyword</span><span class="s2">' OR
+        `product_name` LIKE '%</span><span class="nv">$keyword</span><span class="s2">%' OR 
+        `product_price` LIKE '%</span><span class="nv">$keyword</span><span class="s2">%'
+        ORDER BY `id` DESC
+  "</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="nf">view</span><span class="p">(</span><span class="nv">$query</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">function</span> <span class="n">upload</span><span class="p">(</span><span class="nv">$file</span><span class="p">,</span> <span class="nv">$dir</span><span class="p">){</span>
+  <span class="nv">$namaFile</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$file</span><span class="p">[</span><span class="s1">'productimage'</span><span class="p">][</span><span class="s1">'name'</span><span class="p">];</span>
+  <span class="nv">$ukuranFile</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$file</span><span class="p">[</span><span class="s1">'productimage'</span><span class="p">][</span><span class="s1">'size'</span><span class="p">];</span>
+  <span class="nv">$error</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$file</span><span class="p">[</span><span class="s1">'productimage'</span><span class="p">][</span><span class="s1">'error'</span><span class="p">];</span>
+  <span class="nv">$tmpName</span> <span class="o">=</span> <span class="o">@</span><span class="nv">$file</span><span class="p">[</span><span class="s1">'productimage'</span><span class="p">][</span><span class="s1">'tmp_name'</span><span class="p">];</span>
+
+  <span class="c1">// validasi error</span>
+  <span class="k">if</span><span class="p">(</span><span class="nv">$error</span> <span class="o">===</span> <span class="mi">4</span><span class="p">){</span>
+    <span class="nv">$empty</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="k">isset</span><span class="p">(</span><span class="nv">$empty</span><span class="p">)){</span>
+      <span class="k">echo</span> <span class="s2">"Image not upload"</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="c1">// validasi ekstensi gambar</span>
+  <span class="nv">$ekstensiValid</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'jpg'</span><span class="p">,</span> <span class="s1">'jpeg'</span><span class="p">,</span> <span class="s1">'png'</span><span class="p">,</span> <span class="s1">'gif'</span><span class="p">];</span>
+  <span class="nv">$ekstensiGambar</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s1">'.'</span><span class="p">,</span> <span class="nv">$namaFile</span><span class="p">);</span>
+  <span class="nv">$ekstensiGambar</span> <span class="o">=</span> <span class="nb">strtolower</span><span class="p">(</span><span class="nb">end</span><span class="p">(</span><span class="nv">$ekstensiGambar</span><span class="p">));</span>
+  <span class="k">echo</span> <span class="nv">$ekstensiGambar</span><span class="p">;</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nb">in_array</span><span class="p">(</span><span class="nv">$ekstensiGambar</span><span class="p">,</span> <span class="nv">$ekstensiValid</span><span class="p">)){</span>
+      <span class="nv">$noEkstensi</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+      <span class="k">if</span><span class="p">(</span><span class="k">isset</span><span class="p">(</span><span class="nv">$noEkstensi</span><span class="p">)){</span>
+        <span class="k">echo</span> <span class="s2">"File no image"</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="c1">// cek ukuran gambar</span>
+    <span class="k">if</span><span class="p">(</span><span class="nv">$ukuranFile</span> <span class="o">&gt;</span> <span class="mi">700000</span><span class="p">){</span>
+      <span class="nv">$sizeError</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+      <span class="k">if</span><span class="p">(</span><span class="k">isset</span><span class="p">(</span><span class="nv">$sizeError</span><span class="p">)){</span>
+        <span class="k">echo</span> <span class="s2">"File image is too big"</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+
+  <span class="c1">// lolos pengecekan</span>
+
+  <span class="nv">$namaFileBaru</span> <span class="o">=</span> <span class="nb">uniqid</span><span class="p">();</span>
+  <span class="nv">$namaFileBaru</span> <span class="mf">.</span><span class="o">=</span> <span class="s1">'.'</span><span class="p">;</span>
+  <span class="nv">$namaFileBaru</span> <span class="mf">.</span><span class="o">=</span> <span class="nv">$ekstensiGambar</span><span class="p">;</span>
+
+  <span class="c1">// lakukan process upload</span>
+  <span class="nb">move_uploaded_file</span><span class="p">(</span><span class="nv">$tmpName</span><span class="p">,</span> <span class="nv">$dir</span><span class="mf">.</span><span class="nv">$namaFileBaru</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="nv">$namaFileBaru</span><span class="p">;</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>nah terlihat bukan perbedaannya dari file <code class="language-html highlighter-rouge">functions.php</code> dari artikel sebelumnya, struktur alur data pada fungsi <code class="language-html highlighter-rouge">addAjax(){}</code> dan <code class="language-html highlighter-rouge">editAjax(){}</code> ada sedikit penambahan. dan pada baris paling bawah ditambahkan juga fungsi yang paling krusialnya yaitu fungsi <code class="language-html highlighter-rouge">upload(){}</code> yang bertindak sebagai root program di artikel gout kali ini.</p>
+
+<p><em>untuk keseluruhan</em> source code dan kelengkapan data yang lebih detail agan-agan dan coders semua bisa meluncur ke repositori crudajax di link dibawah ini : 
+<a href="https://github.com/codesyariah122/crud-data-with-php-PDO-Jquery-ajax/tree/with_upload" title="Crud data sederhana dengan ajax jquery">Repo Crud data ajax jquery</a><br />
+dari link tersebut agan-agan dan coders! semua bisa melanjutkan algoritma lainnya mungkin, karena di repository tersebut juga gout menambahkan beberapa tambahan dari sisi frontend nya, diantaranya:  gout menambahkan popup modal dari bootstrap untuk menampilkan detail data product di table product kemudian gout mengubah struktur html dari file-file yang di load oleh jquery, bisa aga-agan telisik dari link repository tersebut.</p>
+
+<p><strong><em>akhir kata</em></strong> gout ucapkan terima kasih</p>
+
+<p>dan semangat dalam belajar dan bekerja</p>
+
+<p>wassalam .</p>
+
+<p>gout : puji ermanto - seorang kaki tangan kapitalis metropolitan</p>
+:ET

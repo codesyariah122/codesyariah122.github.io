@@ -23,7 +23,7 @@ kemudian masuk ke direktori .font/, lihat hasil copy atau moving file font yang 
 ![maps1]({{ site.url }}/assets/images/post/font4.jpg)  
 
 lanjut eksekusi command berikut 
-```
+```bash
 fc-cache -f -v
 ```  
 secara otomatis system akan melakukan installasi font ke system linux kita.

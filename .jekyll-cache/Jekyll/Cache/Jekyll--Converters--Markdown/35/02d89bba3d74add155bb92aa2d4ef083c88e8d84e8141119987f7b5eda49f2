@@ -1,0 +1,363 @@
+I"P`<p>بسم الله الرحمن الرحيم</p>
+
+<p><img src="https://codesyariah122.github.io/assets/images/post/php-namespace.jpg" alt="php_namespace" /></p>
+
+<h2 id="perkenalan-dengan-namespace">Perkenalan dengan NameSPace</h2>
+
+<p>Halo gaess apa kabarnya kalian semua ? Semoga baik-baik selalu yah gaes.<br />
+Artikel kali ini adalah artikel pertama saya tentang PHP, sebuah bahasa BackEnd yang telah lama diandalkan para web developer di bumi ini.<br />
+dalam artikel ini saya akan membahas salah satu fitur di PHP yaitu <strong>NameSpace</strong>. Yuk langsung ajah kita simak</p>
+
+<h4 id="namespace">namespace</h4>
+<p>Namespaces adalah kualifikasi yang menyelesaikan dua masalah berbeda:</p>
+
+<ul>
+  <li>Memungkinkan pengorganisasian yang lebih baik dengan mengelompokkan kelas-kelas yang bekerja sama untuk melakukan tugas</li>
+  <li>Memungkinkan nama yang sama digunakan untuk lebih dari satu kelas</li>
+</ul>
+
+<p>Misalnya, Kalian mungkin memiliki satu set kelas yang mendeskripsikan tabel HTML, seperti Tabel, Baris dan Sel, sementara juga memiliki satu set kelas lain untuk mendeskripsikan furnitur, seperti Meja, Kursi dan Tempat Tidur. Namespaces dapat digunakan untuk mengatur kelas menjadi dua kelompok yang berbeda dan juga  dapat mencegah dua kelas agar tidak tercampur.</p>
+
+<h3 id="deklarasi-namespace">Deklarasi NameSPace</h3>
+
+<p>Untuk menggunakan namespace dalam project kita, kita bisa lakukan seperti ini :</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">&lt;?php</span> 
+<span class="kn">namespace</span> <span class="nn">NamaNameSPace</span><span class="p">;</span>
+<span class="c1">// alur program</span>
+</code></pre></div></div>
+
+<p>dalam artikel ini gout akan praktekan langsung dari script nya saja yah gaes, ok Langsung disimak aja :</p>
+
+<p>Buat direktori baru dengan nama <strong>namespace/</strong>, lanjut akses direktori <code class="language-html highlighter-rouge">namespace/</code>, lanjut lagi buat satu file baru di direktori tersebut <code class="language-html highlighter-rouge">touch index.php</code>, kemudian buat direktori baru didalam direktori <code class="language-html highlighter-rouge">namespace/</code> dengan nama <code class="language-html highlighter-rouge">app/</code>. Selanjutnya kita buka direktori <code class="language-html highlighter-rouge">namespace/</code> di code editor kesayangan kita.</p>
+
+<p>dalam artikel ini saya akan membuat sebuah fungsi aritmatika sederhana dengan php dengan metode OOP dan kita akan memanfaatkan fitur namespace untuk membundle setiap method yang akan kita deklarasikan.</p>
+
+<p>selanjutnya buat beberapa direktori baru, diantaranya :</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="nt">--------------------------------</span>
+ namespace/         
+<span class="nt">--------------------------------</span>  
+  app/            
+    BaseClass/        
+      BaseClass.php     
+    Add/          
+      Add.php           
+    Substract/        
+      Substract.php     
+    Multiply/       
+      Multiply.php      
+    Devide/         
+      Devide.php       
+    Modulus/        
+      Modulus.php      
+    GanjilGenap/      
+      GanjilGenap.php   
+
+    init.php             
+<span class="nt">---------------------------------</span>
+
+index.php
+
+</code></pre></div></div>
+<p>seperti itu yah susunan direktori untuk belajar namespace di artikel kali ini. Edit tiap-tiap file di code editor kita :<br />
+pertama-tama kita akan edit file untuk <code class="language-html highlighter-rouge">BaseClass/</code> : 
+<strong><em>file: BaseClass.php</em></strong> :</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">&lt;?php</span>
+<span class="cm">/*
+file : app/BaseClass/BaseClass.php
+pujiermanto(codesyariah - 2019)
+*/</span>
+<span class="kn">namespace</span> <span class="nn">app\BaseClass</span><span class="p">;</span>
+
+  <span class="kd">class</span> <span class="nc">BaseClass</span><span class="p">{</span>
+
+  <span class="k">private</span> <span class="nv">$result</span><span class="p">;</span>
+
+   <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="n">sayHallo</span><span class="p">(){</span>
+
+   <span class="k">return</span>
+   <span class="s2">"&lt;style&gt;
+     .hasil{
+      color:salmon;
+      font-size:25px;
+      font-weight:bold;
+           }
+      .hasil-ganjil{
+       color:orange;
+       font-size:25px;
+       font-weight:bold,italic;
+           }
+
+      .hasil-genap{
+       color:salmon;
+       font-size:25px;
+       font-weight:bold;
+           }
+
+      .hasil-err{
+       color:#CC0000;
+       font-size:25px;
+       font-weight:bold,italic;
+           }
+
+      .persen{
+       color:orange;
+       font-size:25px;
+       font-weight:bold;
+           }
+    &lt;/style&gt;
+
+    &lt;h1&gt;Selamat Datang...&lt;/h1&gt;
+     &lt;br/&gt;
+  &lt;h4&gt; Anda sedang berada di :&lt;span class='hasil'&gt; "</span><span class="mf">.</span><span class="nc">BaseClass</span><span class="o">::</span><span class="n">class</span><span class="mf">.</span><span class="s2">"&lt;/span&gt;&lt;/h4&gt;
+  "</span><span class="p">;</span>
+
+   <span class="p">}</span>
+
+<span class="p">}</span>
+
+</code></pre></div></div>
+<p>selanjutnya file : <code class="language-html highlighter-rouge">Add.php</code> atau pertambahan</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">&lt;?php</span>
+<span class="cm">/*
+file : app/Add/Add.php
+pujiermanto(codesyariah - 2019)
+*/</span>
+<span class="kn">namespace</span> <span class="nn">app\Add</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">Add</span> <span class="k">extends</span> <span class="err">\</span><span class="nc">app\BaseClass\BaseClass</span><span class="p">{</span>
+
+  <span class="c1">//Setup calculator method</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="n">getAdd</span><span class="p">(</span><span class="nv">$a</span><span class="p">,</span><span class="nv">$b</span><span class="p">){</span>
+
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">result</span><span class="o">=</span><span class="nv">$a</span> <span class="o">+</span> <span class="nv">$b</span><span class="p">;</span>
+
+    <span class="k">echo</span> <span class="s2">"Sum of </span><span class="si">{</span><span class="nv">$a</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="nv">$b</span><span class="si">}</span><span class="s2">
+    is
+    &lt;span class='hasil'&gt;
+    </span><span class="si">{</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">result</span><span class="si">}</span><span class="s2">&lt;/span&gt;
+    &lt;br&gt;</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Lanjut lagi file selanjutnya yaitu : <code class="language-html highlighter-rouge">Substract.php</code> atau pengurangan</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">&lt;?php</span>
+<span class="cm">/*
+file : app/Substract/Substract.php
+pujiermanto(codesyariah - 2019)
+*/</span>
+<span class="kn">namespace</span> <span class="nn">app\Substract</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">Substract</span> <span class="k">extends</span> <span class="err">\</span><span class="nc">app\BaseClass\BaseClass</span><span class="p">{</span>
+
+  <span class="c1">//Setup calculator method</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="n">getSub</span><span class="p">(</span><span class="nv">$a</span><span class="p">,</span><span class="nv">$b</span><span class="p">){</span>
+
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">result</span><span class="o">=</span><span class="nv">$a</span> <span class="o">-</span> <span class="nv">$b</span><span class="p">;</span>
+    
+    <span class="k">echo</span> <span class="s2">"Substract of </span><span class="si">{</span><span class="nv">$a</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="nv">$b</span><span class="si">}</span><span class="s2">
+    is
+    &lt;span class='hasil'&gt;
+    </span><span class="si">{</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">result</span><span class="si">}</span><span class="s2">&lt;/span&gt;
+    &lt;br&gt;</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Lanjut adalah file : <code class="language-html highlighter-rouge">Multiply.php</code> atau pembagian</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">&lt;?php</span>
+<span class="cm">/*
+file : app/Multiply/Multiply.php
+pujiermanto(codesyariah - 2019)
+*/</span>
+
+<span class="kn">namespace</span> <span class="nn">app\Multiply</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">Multiply</span> <span class="k">extends</span> <span class="err">\</span><span class="nc">app\BaseClass\BaseClass</span><span class="p">{</span>
+
+  <span class="k">public</span> <span class="k">function</span> <span class="n">getMult</span><span class="p">(</span><span class="nv">$a</span><span class="p">,</span><span class="nv">$b</span><span class="p">){</span>
+
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">result</span><span class="o">=</span><span class="nv">$a</span> <span class="o">*</span> <span class="nv">$b</span><span class="p">;</span>
+
+    <span class="k">echo</span> <span class="s2">"Multiply of </span><span class="si">{</span><span class="nv">$a</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="nv">$b</span><span class="si">}</span><span class="s2">
+    is
+    &lt;span class='hasil'&gt;
+    </span><span class="si">{</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">result</span><span class="si">}</span><span class="s2">
+    &lt;/span&gt;
+    &lt;br&gt;</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+
+  <span class="p">}</span>
+
+
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Lanjut lagi untuk file : <code class="language-html highlighter-rouge">Divide.php</code> atau pembagian</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">&lt;?php</span>
+<span class="cm">/*
+file : app/Devide/Devide.php
+pujiermanto(codesyariah - 2019)
+*/</span>
+
+<span class="kn">namespace</span> <span class="nn">app\Divide</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">Divide</span> <span class="k">extends</span> <span class="err">\</span><span class="nc">app\BaseClass\BaseClass</span><span class="p">{</span>
+
+  <span class="k">public</span> <span class="k">function</span> <span class="n">getDiv</span><span class="p">(</span><span class="nv">$a</span><span class="p">,</span><span class="nv">$b</span><span class="p">){</span>
+
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">result</span><span class="o">=</span><span class="nv">$a</span> <span class="o">/</span> <span class="nv">$b</span><span class="p">;</span>
+
+    <span class="k">echo</span> <span class="s2">"Divide of </span><span class="si">{</span><span class="nv">$a</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="nv">$b</span><span class="si">}</span><span class="s2">
+    is
+    &lt;span class='hasil'&gt;
+    </span><span class="si">{</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">result</span><span class="si">}</span><span class="s2">
+    &lt;/span&gt;
+    &lt;br&gt;</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+  <span class="p">}</span>
+
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Selanjutnya lagi adalah file : <code class="language-html highlighter-rouge">Modulus.php</code> atau sisa bagi</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">&lt;?php</span>
+<span class="cm">/*
+file : app/Modulus/Modulus.php
+pujiermanto(codesyariah - 2019)
+*/</span>
+<span class="kn">namespace</span> <span class="nn">app\Modulus</span><span class="p">;</span>
+<span class="kd">class</span> <span class="nc">Modulus</span> <span class="k">extends</span> <span class="err">\</span><span class="nc">app\BaseClass\BaseClass</span><span class="p">{</span>
+
+  <span class="k">public</span> <span class="k">function</span> <span class="n">getMod</span><span class="p">(</span><span class="nv">$a</span><span class="p">,</span><span class="nv">$b</span><span class="p">){</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">result</span><span class="o">=</span><span class="nv">$a</span> <span class="o">%</span> <span class="nv">$b</span><span class="p">;</span>
+
+    <span class="k">echo</span> <span class="s2">"Modulus of </span><span class="si">{</span><span class="nv">$a</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="nv">$b</span><span class="si">}</span><span class="s2"> is &lt;span class='hasil'&gt; </span><span class="si">{</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">result</span><span class="si">}</span><span class="s2"> &lt;/span&gt;&lt;br&gt;"</span><span class="mf">.</span><span class="kc">PHP_EOL</span><span class="p">;</span>
+
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Dan terakhir kita buka file : <code class="language-html highlighter-rouge">GanjilGenap.php</code> Untuk menentukan type suatu bilangan</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">&lt;?php</span>
+<span class="cm">/*
+file : app/GanjilGenap/GanjilGenap.php
+pujiermanto(codesyariah - 2019)
+*/</span>
+<span class="kn">namespace</span> <span class="nn">app\GanjilGenap</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">GanjilGenap</span> <span class="k">extends</span> <span class="err">\</span><span class="nc">app\BaseClass\BaseClass</span><span class="p">{</span>
+
+  <span class="k">public</span> <span class="k">function</span> <span class="n">getGanjilGenap</span><span class="p">(</span><span class="nv">$n</span><span class="o">=</span><span class="mi">11</span><span class="p">){</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">result</span><span class="o">=</span><span class="nv">$n</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">result</span> <span class="o">%</span> <span class="mi">2</span><span class="o">===</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nb">is_integer</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">result</span><span class="p">))</span><span class="o">:</span>
+
+    <span class="k">echo</span> <span class="s2">"&lt;span class='hasil-genap'&gt;</span><span class="si">{</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">result</span><span class="si">}</span><span class="s2">&lt;/span&gt; adalah sebuah integer Bilangan Genap"</span><span class="p">;</span>
+
+    <span class="k">elseif</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">result</span><span class="o">%</span><span class="mi">2</span><span class="o">===</span><span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="nb">is_integer</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">result</span><span class="p">))</span><span class="o">:</span>
+
+    <span class="k">echo</span> <span class="s2">"&lt;span class='hasil-ganjil'&gt;</span><span class="si">{</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">result</span><span class="si">}</span><span class="s2">&lt;/span&gt; adalah sebuah integer Bilangan Ganjil"</span><span class="p">;</span>
+
+    <span class="k">else</span><span class="o">:</span>
+
+    <span class="k">echo</span> <span class="s2">"&lt;span class='hasil-err'&gt;</span><span class="si">{</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">result</span><span class="si">}</span><span class="s2">&lt;/span&gt; is string (Bukan Integer)"</span><span class="p">;</span>
+    <span class="k">endif</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Setelah semua file di direktori <code class="language-html highlighter-rouge">app/</code> sebagai direktori utama untuk menyimpan class aplikasi sederhana kita, lanjut kita buka satu file baru yaitu file : <code class="language-html highlighter-rouge">init.php</code> yang dimana fungsi init ini adalah sebagai jalur untuk memanggil tiap tiap class yang ada di direktori <code class="language-html highlighter-rouge">app/</code>.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">&lt;?php</span> 
+<span class="cm">/*
+file : app/init.php
+pujiermanto(codesyariah - 2019)
+*/</span>
+
+<span class="k">require_once</span> <span class="s1">'BaseClass/BaseClass.php'</span><span class="p">;</span>
+<span class="k">require_once</span> <span class="s1">'Add/Add.php'</span><span class="p">;</span>
+<span class="k">require_once</span> <span class="s1">'Substract/Substract.php'</span><span class="p">;</span>
+<span class="k">require_once</span> <span class="s1">'Multiply/Multiply.php'</span><span class="p">;</span>
+<span class="k">require_once</span> <span class="s1">'Divide/Divide.php'</span><span class="p">;</span>
+<span class="k">require_once</span> <span class="s1">'Modulus/Modulus.php'</span><span class="p">;</span>
+<span class="k">require_once</span> <span class="s1">'GanjilGenap/GanjilGenap.php'</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="err">\</span><span class="nc">app\BaseClass\BaseClass</span><span class="p">;</span>
+<span class="kn">use</span> <span class="err">\</span><span class="nc">app\Add\Add</span><span class="p">;</span>
+<span class="kn">use</span> <span class="err">\</span><span class="nc">app\Substract\Substract</span><span class="p">;</span>
+<span class="kn">use</span> <span class="err">\</span><span class="nc">app\Multiply\Multiply</span><span class="p">;</span>
+<span class="kn">use</span> <span class="err">\</span><span class="nc">app\Divide\Divide</span><span class="p">;</span>
+<span class="kn">use</span> <span class="err">\</span><span class="nc">app\Modulus\Modulus</span><span class="p">;</span>
+<span class="kn">use</span> <span class="err">\</span><span class="nc">app\GanjilGenap\GanjilGenap</span><span class="p">;</span>
+
+<span class="nv">$base</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BaseClass</span><span class="p">;</span>
+
+<span class="nv">$add</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Add</span><span class="p">;</span>
+
+<span class="nv">$sub</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Substract</span><span class="p">;</span>
+
+<span class="nv">$mult</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Multiply</span><span class="p">;</span>
+
+<span class="nv">$div</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Divide</span><span class="p">;</span>
+
+<span class="nv">$mod</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Modulus</span><span class="p">;</span>
+
+<span class="nv">$x</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">GanjilGenap</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Kemudian terakhir kita buka file <code class="language-html highlighter-rouge">index.php</code> di direktori utama kita yaitu direktori <code class="language-html highlighter-rouge">namespace/</code>.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">&lt;?php</span>
+<span class="cm">/*
+file : index.php (di root folder)
+pujiermanto(codesyariah - 2019)
+*/</span>
+
+<span class="k">require_once</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">))</span> <span class="mf">.</span><span class="s1">'/app/init.php'</span><span class="p">;</span>
+
+
+<span class="k">echo</span> <span class="nv">$base</span><span class="o">::</span><span class="nf">sayHallo</span><span class="p">();</span>
+
+<span class="c1">//yuk Bayar zakat</span>
+<span class="c1">// $zakat-&gt;setZakat(3000000,2000000);</span>
+<span class="c1">// $zakat-&gt;getZakat();</span>
+
+<span class="nv">$add</span><span class="o">-&gt;</span><span class="nf">getAdd</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span>
+
+<span class="nv">$sub</span><span class="o">-&gt;</span><span class="nf">getSub</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span>
+
+<span class="nv">$mult</span><span class="o">-&gt;</span><span class="nf">getMult</span><span class="p">(</span><span class="mf">100.55</span><span class="p">,</span><span class="mf">45.01</span><span class="p">);</span>
+
+<span class="nv">$div</span><span class="o">-&gt;</span><span class="nf">getDiv</span><span class="p">(</span><span class="mf">100.5</span><span class="p">,</span><span class="mf">2500.4</span><span class="p">);</span>
+
+<span class="nv">$mod</span><span class="o">-&gt;</span><span class="nf">getMod</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+
+<span class="nv">$x</span><span class="o">-&gt;</span><span class="nf">getGanjilGenap</span><span class="p">(</span><span class="mi">19</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="kesimpulan">Kesimpulan</h3>
+
+<p>Ok saatnya menjabarkan, disini saya akan bahas dari file <code class="language-html highlighter-rouge">init.php</code> di root direktori <code class="language-html highlighter-rouge">app/</code>, file ini berfungsi untuk memanggil tiap tiap class yang akan kita gunakan di file <code class="language-html highlighter-rouge">index.php</code> di root direktori aplikasi kita, selanjutnya file <code class="language-html highlighter-rouge">init.php</code> ini juga menginstansiasi sejak awal dari tiap-tiap class yang akan di deklarasikan nanti di file index.</p>
+
+<p>selanjutnya tiap-tiap class sebagai contoh misalnya saya akan jabarkan class <code class="language-html highlighter-rouge">app\BaseClass</code> : class ini adalah class utama kita coba perhatikan pada bagian namespacenya <code class="language-html highlighter-rouge">namespace  app\BaseClass</code>, namespace tersebut adalah penggunaan namespace dengan indikasi <code class="language-html highlighter-rouge">nama_direktori\nama_class</code> nya, kalian bebas untuk membuat namespace apapun tidak perlu sama dengan yang saya buat, yang penting faham bagaimana algoritma dari fitur namespace ini.</p>
+
+<p>Ok yahh … mudah difahami kan, kalian harus mencobanya langsung di web server kalian, sesuai dengan prinsip pemrogramman yaitu <strong>amati, tiru dan modifikasi</strong>. Mungkin selanjutnya kita akan membahas <code class="language-html highlighter-rouge">Autoloader PSR</code> untuk memudahkan dalam mengelola tiap file yang akan digunakan. Ok ! Sekian dari saya.</p>
+
+<p>saya harap tulisan ini dapat bermanfaat untuk kalian.</p>
+
+<p>Implementasi namespace serupa ada di repository berikut :</p>
+
+<p><a href="https://github.com/codesyariah122/Learn-WebDev/tree/master/Project" target="_blank">Learn WebDev</a></p>
+
+<p><strong>salam</strong></p>
+
+<p><strong><em>Puji Ermanto</em></strong></p>
+
+:ET

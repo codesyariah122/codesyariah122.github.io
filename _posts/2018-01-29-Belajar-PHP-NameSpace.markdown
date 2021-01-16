@@ -7,9 +7,11 @@ image: assets/images/post/namespace-php.jpg
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  
-![php_namespace]({{site.url}}/assets/images/post/php-namespace.jpg)  
 
 {{page.opening}}  
+
+![php_namespace]({{site.url}}/assets/images/post/php-namespace.jpg)  
+
 
 ## Perkenalan dengan NameSPace  
 
@@ -43,27 +45,27 @@ dalam artikel ini saya akan membuat sebuah fungsi aritmatika sederhana dengan ph
 
 selanjutnya buat beberapa direktori baru, diantaranya :  
 
-```
+```bash
 --------------------------------
- namespace/					
---------------------------------	
-	app/					 	
-		BaseClass/			 	
-			BaseClass.php    	
-		Add/				 	
-			Add.php          	
-		Substract/			 	
-			Substract.php    	
-		Multiply/			 	
-			Multiply.php     	
-		Devide/				 	
-			Devide.php       	
-		Modulus/			 	
-			Modulus.php      	
-		GanjilGenap/		 	
-			GanjilGenap.php  
-								
-		init.php             	
+ namespace/         
+--------------------------------  
+  app/            
+    BaseClass/        
+      BaseClass.php     
+    Add/          
+      Add.php           
+    Substract/        
+      Substract.php     
+    Multiply/       
+      Multiply.php      
+    Devide/         
+      Devide.php       
+    Modulus/        
+      Modulus.php      
+    GanjilGenap/      
+      GanjilGenap.php   
+
+    init.php             
 ---------------------------------
 
 index.php
@@ -373,7 +375,8 @@ saya harap tulisan ini dapat bermanfaat untuk kalian.
 
 Implementasi namespace serupa ada di repository berikut : 
 
-<a href="https://github.com/codesyariah122/Learn-WebDev/tree/master/Project" target="_blank">Learn WebDev</a>
+<a href="https://github.com/codesyariah122/Learn-WebDev/tree/master/Project" target="_blank">Learn WebDev</a>  
+
 **salam** 
 
 ***Puji Ermanto***

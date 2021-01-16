@@ -8,7 +8,7 @@ tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  
 
-{page.opening}
+{{page.opening}}  
 
 Melanjutkan seri mengenai laravel sebelumnya, kali ini di artikel ini gout mau membahas  seputar migration di laravel. sebelumnya, apa kabarnya nih para coders ? mudah2an selalu di berkahi nikmat sehat dan nikmat waktu luang.
 
@@ -107,7 +107,7 @@ root@04f8fe1a3732:/var/www/projectku# php artisan make:migration create_employee
 ```  
 disini gout mau buat table untuk menampung data karyawan dengan nama table ***employees***, buka file migration yang baru dibuat tadi yang berada di direktori : ***database/migrations/***. Kurang lebih seperti ini codingannya, otomatis laravel membuatkan 2 buah method yaitu **up()** dan **down()**, fungsi up adalah untuk meregenerate config dalam membuat sebuah table baru di database kita sementara fungsi down untuk mendestroy atau menghapus proses migration yang telah dilakukan yaitu menggunakan tools ***rollback***.  
 
-```
+```php
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -153,7 +153,7 @@ setelah migrasi di eksekusi dengan perintah diatas, makan akan terbentuk sebuah 
 #### Selanjutnya ...  
 Selanjutnya adalah edit table kita, asumsinya kita ingin menambahkan field atau column baru di table tersebut maka kita bisa mengubah code di file migration kita menjadi seperti ini :  
 
-```
+```php
 <?php
 
 use Illuminate\Database\Migrations\Migration;

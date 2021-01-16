@@ -21,7 +21,7 @@ pakai framework lain, atau dengan cara native pun bisa, hanya mungkin sedikit be
 pertama kita siapkan dulu file baru di direktori controllers, untuk itu pastikan kalian sudah memahami framework codeigniter atau object oriented dari PHP. 
 ok langsung saja create new file di direktori controllers save dengan nama ```Chat.php```  
 
-```
+```php
 <?php
 class EmailService extends CI_Controller {	
 	
@@ -45,7 +45,7 @@ kemudian copy script yang ada di samping layar, silahkan di copy.
 
 kemudian kita buka file view yang tadi kita buat di direktori views, yaitu file ```chat.php```, kemudian tempelkan script dari tawkto tadi ke file chat.php  
 
-```
+```javascript
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();

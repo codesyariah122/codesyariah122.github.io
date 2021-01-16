@@ -7,6 +7,9 @@ image: assets/images/post/ruby.png
 tags: [ruby]
 opening: بسم الله الرحمن الرحيم
 ---  
+
+{{page.opening}}  
+
 ![rails2]({{site.url}}/assets/images/post/ruby.png)  
 
 # install ruby di debian 9  

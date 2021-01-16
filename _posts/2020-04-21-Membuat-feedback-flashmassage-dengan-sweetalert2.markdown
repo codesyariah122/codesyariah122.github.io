@@ -22,7 +22,7 @@ kalian bisa langsung meluncur ke link di bawah ini, untuk mendownloadnya dan di 
 
 jadi di tips kali ini saya punya sebuah data dari database yang saya tampilkan dalam sebuah tabel html  
 
-```
+```php
 <table width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
@@ -42,7 +42,7 @@ table diatas kurang lebih tampilannya seperti ini
 ![sweetalert2 js]({{ site.url }}/assets/images/post/test1.jpg)  
 dalam contoh ini saya ingin memberi feedback pada user berupa flash massage untuk user yang akan menghapus data  
 saya ambil bagian yang akan saya pasang sweetalert nya, yaitu di bagian tombol hapus  
-```
+```php
 <td>
 <a href="content/hapusSlider.php?id=1" class="tombol-hapus">Hapus</a>
 </td>
@@ -56,7 +56,7 @@ selanjutnya kita siapkan file javascriptnya kebetulan direktori yang saya gunaka
 buat file baru disini saya beri nama file jquernya dengan nama ```myscript.js```  
 kurang lebih isi code myscript.js adalah sebagai berikut...  
 
-```
+```javascript
 //tombol hapus
 $('.tombol-hapus').on('click', function(e) {
 

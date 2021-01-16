@@ -25,12 +25,14 @@ so untuk developer web dengan skala yang besar dan design yang kompleks mungkin 
 ### Memulai SASS 
 dalam project artikel kali ini gout masih menggunakan ```Node.js``` untuk membuat project web. dalam project kali ini gout mencoba menambahkan module untuk SASS di ```Node.js``` yaitu ```node-sass```.  
 
-```
-install sass
+install sass :  
+
+```bash
+
 npm install node-sass --savev
 ```  
 kemudian buat direktori baru di root direktori project kita dengan nama ```sass```
-```
+```bash
 mkdir -p sass
 chmod 777 sass/.*
 touch sass/index.scss
@@ -48,31 +50,31 @@ sedangkan ```SASS``` tidak familiar, butuh adaptasi lebih lagi dalam mempelajari
 
 #### Selanjutnya  
 setelah membuat direktori ```sass/``` dari diatas, kemudian kita membuat direktori untuk ```css``` gout menyimpan nya di ```assets/css/```
-```
+```bash
 mkdir -p assets/css/
 chmod 777 assets/css/.*
 touch assets/css/styles.css
 ```  
 di SASS kalian tinggal buka satu file saja sebagai target styling, disini gout menggunakan file ```SASS``` di ```sass/_layout.scss```.  sebelumnya buka file ```sass/index.scss```, kemudian import tiap file sass yang akan di configurasi sebagai base styling.
-```
+```css
 //file index.scss
 @import '_color.scss';
 @import '_layout.scss';
 ```  
 kemudian buka file ```sass/_layout.scss```, dan untuk memulai configurasi sass kalian, di sass ada fungsi ```--watch``` , kalian bisa lihat di dokumentasi sass <a href="https://sass-lang.com/guide">Doc(guide) SASS</a>. kita bisa menggunakan ```--watch``` ini untuk memonitor target untuk file ```css``` nya dimana dalam artikel ini file css gout ada di direktori ```assets/css/styles.css```.  
 buka terminal kembali :  
-```
+```bash
 sass --watch sass/index.scss:assets/css/styles.css
 ```  
 ![SASS-3]({{site.url}}/assets/images/post/sass-watch.png)  
 
 kemudian kita buka file ```sass/_color.scss``` dimana file ini kita fungsikan sebagai tempat menyimpan variable karena di ```SASS``` ini kalian bisa menambahkan variable untuk memudahkan format styling kita.  
-```
+```scss
 $heading1: firebrick;
 $heading2: crimson;
 ```  
 setelah itu buka file ```sass/_layout.scss``` sekarang kita bisa gunakan ```variable($)``` dari file ```sass/_color.scss```.  
-```
+```scss
 h1, h2, h3{
 	color: $heading1;
 }  
@@ -82,7 +84,7 @@ h3, h4{
 ```  
 dalam project kali ini gout menggunakan ```Node.js```, di ```Node.js``` sepert ini konfigurasi ```Node.js``` gout :  gout menggunakan file ```server.js```  
 
-```
+```javascript
 //file = server.js
 const http = require('http');
 const fs = require('fs');
@@ -144,7 +146,7 @@ console.log('Server running at http://127.0.0.1:5151/');
 
 kemudian di file ```views/index.html```, berikut isi file script html gout :  
 
-```
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -170,7 +172,7 @@ Bahwa dengan **SASS** ini kalian bisa melakukan apa yang tidak bisa dilakukan **
 ![SASS-6]({{site.url}}/assets/images/post/sass-test-3.png)  
 ![SASS-7]({{site.url}}/assets/images/post/sass-test-4.png)
 
-```
+```css
 // nested sass  
 header{
 	display:flex;

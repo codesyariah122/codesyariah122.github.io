@@ -6,7 +6,10 @@ categories: [ PHP, Laravel, MVC, OOP ]
 image: assets/images/post/blade_laravel/laravel-logo.png
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
----
+---  
+
+{{page.opening}}
+
 ![laravel1]({{site.url}}/assets/images/post/blade_laravel/laravel7.jpg)  
 
 Melanjutkan seri mengenai laravel sebelumnya, kali ini di artikel ini gout mau membahas  seputar routing dan blade templating di laravel7. sebelumnya, apa kabarnya nih para coders ? mudah2an selalu di berkahi nikmat sehat dan nikmat waktu luang.  
@@ -22,13 +25,13 @@ setelah proses pembuatan project dibuat dan local server laravel bisa berjalan d
 # Membuat routing ...  
 di laravel sendiri module untuk menjalankan route ada di file ```routes/web.php``` di file ini lah kita akan menggunakan method get untuk melakukan routing. buka file ```web.php``` :  
 ini adalah route bawaan laravel, default route nya, menggunakan method get dan kemudian mengarahkan view ke view welcome yang ada di file ```resources/views/welcome.blade.php```.
-```
+```php
 Route::get('/', function () {
     return view('welcome', ['title'=>'Home Tutorialku']);
 });
 ```  
 kita bisa menambahkan route baru, contohnya :  
-```
+```php
 Route::get('/home', function () {
     return view('home', ['title'=>'Homepage Tutorialku']);
 });
@@ -57,13 +60,13 @@ file diatas baru berupa html sederhana biasa hanya untuk melihat perubahannya sa
 #### Membuat controller untuk menentukan routing dari controller  
 Selanjutnya adalah mengenai pembuatan controller, di laravel dalam sebuah controller itu kita bisa melakukan passing data dari database, tidak perlu menggunakan model seperti di codeigniter. dalam tutorial kali ini, gout tidak akan membahas mengenai passing data, gout hanya membahas mengenai pembuatan routing, dengan controller di laravel 7 ini.  
 selanjutnya kita ke terminal kembali :  
-```
+```bash
 php artisan make:controller ControllerTutorialku
 ```  
 ***penamaan controller menggunakan ```camel case```***, dari script diatas kita sudah berhasil membuat sebuah controller baru.  
 ![laravel1]({{site.url}}/assets/images/post/blade_laravel/blade-template4.gif)  
 file controller dapat kita akses di direktori ```app/Http/Controllers/``` kemudian buka file : ```ControllerTutorialku.php```, berikut isi code file ```ControllerTutorialku.php``` :  
-```
+```php
 <?php
 
 namespace App\Http\Controllers;
@@ -84,7 +87,7 @@ class ControllerTutorialku extends Controller
 }
 ```  
 Pada script tersebut gout membuat sebuah method baru untuk tiap page yang akan kita routing, di file ```web.php```. kemudian kita akses kembali file ```routes/web.php```, kemudian kita akan merubah nya menjadi seperti ini :  
-```
+```php
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -110,7 +113,7 @@ Route::get('/about', 'ControllerTutorialku@about');
 terlihat perbedaan dari script ```web.php``` di pembahasan sebelumnya, kali ini kita menggunakan controller untuk merouting template kita.
 #### Membuat master template  
 selanjutnya kita akan membuat master template, untuk itu kita perlu membuat satu direktori baru di views kita, kita buat direktori baru di : ```resources/views/``` buat direktori untuk file master template kita gout memberi nama direktorinya dengan nama ```layout```, kemduian di direktroi layout tersebut gout akan buat satu file baru dengan nama ```app.blade.php``` nantinya file ini akan kita jadikan master templatenya, kemudian buka file ```app.blade.php``` copy kan code berikut ini :  
-```
+```php
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -147,7 +150,7 @@ selanjutnya kita akan membuat master template, untuk itu kita perlu membuat satu
   - about.blade.php  
   berikut file ```home.blade.php``` :  
 
-```
+```php
 @extends('layout/app')
 
 @section('header_title', 'Home Page Tutorialku')

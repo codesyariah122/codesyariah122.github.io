@@ -21,7 +21,8 @@ dalam kasus tersebut gout berhadapan dengan table yang terkait dengan table lain
 [stackoverflow](https://stackoverflow.com/questions/14059172/insert-into-2-tables-with-pdo-mysql "Crud data sederhana dengan ajax jquery")  
 dari diskusi di forum tersebut akhirnya solved dengan code yang beberapa kali gout debugging, dan akhirnya fix menjadi seperti ini :  
 
-```
+```php
+<?php
 function addData($data, $table1, $table2){
   $dbh = connect();
   $data = $dataExample;

@@ -1,0 +1,47 @@
+I"8<p>{{page.opening}}</p>
+
+<h1 id="assalamualaikum">Assalamualaikum</h1>
+
+<p>Halo apa kabar para coders ? sudah lama tidak posting, hampir 2 bulan lamanya dan sekarang alhamdulillah bisa nulis lagi di blog ini. Biasa lah gaess, sibuk sama kerjaan jadwal padat 😁 .<br />
+di postingan kali ini gout mau sedikit berbagi pengalaman mengenai penggunaan jquery, seperti yang sudah di ketahui sejak lama jquery merupakan sebuah library javascript yang banyak kegunaannya, kalau kata lagu mah ( cucunya segudang ) 😁, tapi di artikel ini gout tidak akan membahas lagunya, ( ya udah sihhh !!! ).</p>
+
+<p>walaupun sebetulnya dihari ini jquery sudah kalah pamornya oleh library javascript lainnya, tapi buat gout jquery masih tetap di pakai dan gout selalu gagal move on dari jquery. 
+dalam artikel ini gout mau membahas salah satu method dari jquery yakni <code class="language-html highlighter-rouge">last()</code>, penggunaan last ini sendiri adalah untuk mengambil sebuah nilai di akhir sebuah element array, singkat nya kita mau ambil nilai terakhir dari sebuah element di dalam array.</p>
+
+<p>dalam studi kasus ini gout punya sebuah template yang mempunyai navbar, jadi template nya ini adalah sebuah theme wordpress, karena di wordpress untuk menambahkan sebuah menu itu ada di bagian beckend adminnya, nah gimana kalau kita memerlukan tambahan menu baru di luar menu yang sudah kita atur di beckend admin nya. maka dari itu kita memerlukan jquery untuk melakukan dom object element. dengan memasukan element baru, ke dalam element yang sudah ada.</p>
+
+<p>ini gambar dari website yang bagian menu di navigasi nya akan gout manipulasi dengan menambahkan satu object element baru di luar navigasi menu nya.</p>
+
+<p><img src="{{site.url}}/assets/images/post/jquery_last2.png" alt="jquery_last" /></p>
+
+<p>nah dari gambar itu ada bagian menu yang menu terakhirnya yaitu <em>contact</em>, setelah menu <em>contact</em> itu gout mau menambahkan sebuah button ( tombol ), yah gout harus menggunakan jquery untuk menyisipkan element baru di akhir element menu itu.</p>
+
+<p>jadi gout menambahkan script baru dengan code seperti berikut, sebelumnya kita seleksi dulu class di bagian menu, dari navigasi di template tersebut di dapati class untuk menu nya adalah <code class="language-html highlighter-rouge">menu-item</code> sebuah class navbar milik bootstrap. 
+jadi di dalam script code nya seperti ini</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="c1">// assignment ke dalam sebuah object</span>
+<span class="c1">// pakai variable biasa juga bisa, kebetulan disini gout pakai object karena gout bisa menambahkan element-element lainnya</span>
+
+<span class="kd">const</span> <span class="nx">object</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="dl">'</span><span class="s1">menuItem</span><span class="dl">'</span> <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">.menu-item</span><span class="dl">'</span><span class="p">),</span>
+<span class="p">};</span>
+
+<span class="c1">// lakukan proses dom object baru ke dalam navigasi menu yang class nya sudah kita seleksi</span>
+<span class="c1">// menggunakan method last() untuk mendeteksi element terakhir, kemudian dom element terakhir setelahnya dengan method after()</span>
+<span class="nx">object</span><span class="p">.</span><span class="nx">menuItem</span><span class="p">.</span><span class="nx">last</span><span class="p">().</span><span class="nx">after</span><span class="p">(</span>
+    <span class="s2">`
+            &lt;a href="#" class="menu-item btn btn-success tombol"&gt;join us&lt;/a&gt;
+    `</span>
+<span class="p">);</span>
+
+</code></pre></div></div>
+<p>maka hasilnya seperti ini :</p>
+
+<p><img src="{{site.url}}/assets/images/post/jquery_last1.png" alt="jquery_last" /></p>
+
+<p>terlihat bertambah satu buat element baru setelah menu terakhir <em>Contact</em>, dan itu hasil dari dom element dengan jquery.</p>
+
+<p>semoga tulisan gout kali ini bermanfaat, akhir kata gout ucapkan terima kasih.</p>
+
+<p><em>Waassallaam</em></p>
+:ET

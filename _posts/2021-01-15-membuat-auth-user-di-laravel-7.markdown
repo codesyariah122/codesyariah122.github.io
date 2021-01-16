@@ -8,11 +8,9 @@ tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  
 
-![laravel-auth]({{site.url}}/assets/images/post/laravel-auth/laravel-auth.jpg) 
+{{page.opening}}  
 
-
-
-**{page.opening}**  
+![laravel-auth]({{site.url}}assets/images/post/laravel-auth/laravel-auth.jpg)    
 
 Halo brothers' masih tentang laravel, diartikel kali ini gout mau memberikan tips seputar membuat authentication user di laravel.  
 

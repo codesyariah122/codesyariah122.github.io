@@ -31,7 +31,7 @@ gout sih sebenernya gak secara keseluruhan migrasi ke gatsby, yah sekedar memper
 
 ***membuat project pertama gatsby***  
 
-```
+```bash
 //install paket npm gatsby nya 
 npm install -g gatsby-cli@2.4.17  // ini jika ingin beserta versinya
 // kemudian clone repository gatsby untuk staticgen baru kita
@@ -46,7 +46,7 @@ seperti ini susunan direktori dari project gatsby gout :
 
 buka file ```package.json``` difile tersebut semnua dependencies dari applikasi gatsby kita. jika kita ingin menggunakan salah satu dependencies nya tinggal kita import aja ke file ```page``` kita.  contohnya ini, gout mau menggunakan salah satu dependencies yang telah tersedia yaitu ```"gatsby": "^2.24.37",``` . gout mau menggunakan package ```LINK``` untuk templating dan untuk route navigasi di halaman awal. buka file root di direktori ```src/index.js```  kemudian ubah codingan menjadi sepert dibawah ini :  
 
-```
+```javascript
 import React from 'react'
 import { Link } from 'gatsby'
 
@@ -68,7 +68,7 @@ export default IndexPage
 ```  
 di file tersebut terdapat tag ```<layout></layout>``` tag tersebut adalah state yang terhubung dari file lain sebagai templating engine di applikasi kita yang sebelumnya sudah kita tentukan alurnya. buat direktori baru di direktori root layout kita yatu ```src``` kemudian create direktori baru berinama ```components``` kemudian buat file baru di direktori components beri nama ```layout.js```, buka file ```components/layout.js``` kemudian copy code berikut :  
 
-```
+```javascript
 import React from 'react'
 
 import Header from './header'
@@ -97,7 +97,7 @@ file layout.js ini lah sebagai base templating di file tersebut terdapat tag
 * components/header.js
 buka file header.js, kemudian copy code berikut :  
 
-```
+```javascript
 import React from 'react'
 import { Link } from 'gatsby'
 
@@ -136,7 +136,7 @@ export default Header
 
 file header ini adalah sebuah navigasi bar untuk mengubungkan antar halaman di file tersebut juga gout sudah menambah style dan manambah class untuk styling dengan sass (scss), di applikasi ini gout sudah menginstall plugin untuk package sass gatsby :  
 
-```
+```bash
  // install plugin sass
  npm install --save node-sass gatsby-plugin-sass
 ```  
@@ -145,7 +145,7 @@ berikut dokumentasi dari plugin sass gatsby :
 <a href="https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-sass">gatsby-plugin-sass</a>  
 kemudian kita bisa buat file untuk styling kita beri nama ```header.module.scss```  
 
-```
+```css
 .header{
   padding: 1rem 0 3rem;
 }
@@ -180,7 +180,7 @@ kemudian kita bisa buat file untuk styling kita beri nama ```header.module.scss`
 styling diatas masih css standart... kemudian di file header kita tinggal import file css tersebut ```import headerStyles from './header.module.scss'``` untuk menggunakannya kita tinggal menambahkan di setiap tag dengan nama variable yang telah kita definisikan sebelumnya. kita tinggal panggil contohnya di tag ```<header className={headerStyles.header}>``` ```{headerStyle.header}``` ini adalah variable camelcase. yah layaknya react, toh gatsby ini kan dibangun dengan reactJS.  
 kemudian buat file baru lagi untuk styling bagian utama container di project page kita, buat file di direktori ```components``` dengan nama ```layout.module.scss```  kemudian copy code berikut :  
 
-```
+```css
 .container{
   margn: 0 auto;
   max-width: 750px;
@@ -198,7 +198,7 @@ kemudian buat file baru lagi untuk styling bagian utama container di project pag
 file ```layout.module.scss``` diatas sudah kita import di file ```layout.js``` : ```import layoutStyle from './layout.module.scss'``` 
 kemudian buat satu file baru lagi di direktori ```components``` dengan nama ```footer.js``` kemudian copy code berikut :  
 
-```
+```javascript
 import React from 'react'
 
 const Footer = () => {

@@ -8,8 +8,9 @@ tags: [fullstack_developer]
 opening: بسم الله الرحمن الرحيم
 ---  
 
-![hidayah]({{site.url}}/assets/images/post/heroku2.png) 
-**{page.opening}**  
+{{page.opening}}
+
+![heroku1]({{site.url}}/assets/images/post/heroku2.png) 
 
 Apa kabarnya sobat coders semua ? semoga selalu dalam keadaan sehat-sehat semuanya.  
 kali ini gout mau berbagi tips ataupun trick mengenai Node.js salah satu programming language yang sedang berkembang pesat dijagat developer.  
@@ -59,7 +60,7 @@ klik login, untuk melanjutkan autentikasi heroku kalian.
 
 #### Selanjutnya  
 Selanjutnya adalah membuat direktori project baru di mesin lokal atau di desktop kalian  
-```
+```bash
 $ mkdir -p jhony-thunder
 $ chmod -R 777 jhony-thunder/.*
 $ cd jhony-thunder/
@@ -67,32 +68,32 @@ $ cd jhony-thunder/
 <small style="color:crimson;">(Nama project gout adalah **jhony-thunder**)</small>  
 kemudian lakukan initialisasi dan remote untuk repo aplikasi heroku kalian  
 
-```
+```bash
 root@debian:/home/puji122/jhony-thunder/# git init
 root@debian:/home/puji122/jhony-thunder/# heroku git:remote -a jhony-thunder
 ```  
 ![heroku_node1_]({{site.url}}/assets/images/post/heroku/heroku10.png)  
 
 setelah itu buat sebuah file baru
-```
+```bash
 root@debian:/home/puji122/jhony-thunder/# touch app.js 
 ```
 kemudian kita initialisasi package aplikasi Node.js kita
-```
+```bash
 root@debian:/home/puji122/jhony-thunder/# npm init 
 ```  
 isi beberapa opsi yang tersedia, lanjut install nodemon sebagai interpreter untuk menjalankan aplikasi Node.js kita.
-```
+```bash
 root@debian:/home/puji122/jhony-thunder/# npm install nodemon --save
 ```  
 kemudian edit file **package.json**, tambahkan baris berikut didalam object bagian script
-```
+```json
 script{
     "start": "nodemon app.js",
 }
 ```  
 isi file ```package.json``` :  
-```
+```json
 {
   "name": "jhony-thunder",
   "version": "1.0.0",
@@ -111,7 +112,7 @@ isi file ```package.json``` :
 ```
 ok sekarang kalian bisa build aplikasi Node.js seperti biasanya. karena environment developing nya sudah kita siapkan.  
 sebagai contoh kita akan membuat request http sederhana di Node.js, buka code editor visual code, kemudian mulai coding untuk aplikasi sederhana kita.
-```
+```javascript
 const server = require('http')
 const PORT = process.env.PORT || 3000
 const app = server.createServer((req, res) => {
@@ -124,7 +125,7 @@ const app = server.createServer((req, res) => {
 ![heroku_node1_]({{site.url}}/assets/images/post/heroku/heroku10.png)  
 untuk uji coba kita bisa buka terminal di **vscode** dengan menekan shortcutkey (ctrl+`), kemudian jalankan kembali command heroku :  
 
-```
+```bash
 root@debian:/home/puji122/jhony-thunder# heroku local web 
 ```  
 ![heroku_node1_]({{site.url}}/assets/images/post/heroku/heroku13.png)  
@@ -133,7 +134,7 @@ kemudian akses browser kalian sesuai port yang diberikan (localhost:5000) biasan
 
 ## Publish ke heroku  
 Ok setelah berjalan di mesin lokal kita, sekarang waktunya mempublish aplikasi kita, langsung saja buka terminal lagi 
-```
+```bash
 root@debian:/home/puji122/jhony-thunder# git add .
 root@debian:/home/puji122/jhony-thunder# git commit -am "My Application With Heroku"
 root@debian:/home/puji122/jhony-thunder# git push heroku master 

@@ -6,7 +6,9 @@ categories: [ Javascript, JQuery ]
 image: assets/images/post/jquery_scroll.png
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
----
+---  
+
+{{page.opening}}
 
 # Assalamualaikum  
 
@@ -24,7 +26,7 @@ ini script code navigasi sebelumnya:
 
 > ***Oh iya script code dalam artikel ini merupakan project kerjaan gout yang menggunakan wordpress, dalam project tersebut tugas gout adalah membuat sebuah child theme yang di customisasi.***  
 
-```
+```php
 <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-dark">
     <div class="container">
         <a class="navbar-brand" href="<?php echo home_url(); ?>"><?=strtoupper(bloginfo('title'));?></a>
@@ -48,7 +50,7 @@ ini script code navigasi sebelumnya:
 ``` 
 pada navbar tersebut terdapat class ```bg-dark``` yaitu class dari bootstrap, untuk membuatnya transparent kita hapus class ```bg-dark``` nya, sehingga menjadi seperti ini : 
 
-```
+```php
 <!-- class bg-dark telah di hapus -->
 <nav class="navbar navbar-expand-lg navbar-light sticky-top">
     <div class="container">
@@ -73,7 +75,7 @@ pada navbar tersebut terdapat class ```bg-dark``` yaitu class dari bootstrap, un
 ```  
 kemudian kita bisa bikin css untuk transparentnya, seperti ini code css untuk transparent navbar nya :
 
-```
+```css
 .transparent-nav{
     background : rgba(255,255,240, 0.3);
     margin-top: .5rem;
@@ -88,7 +90,7 @@ jadi code jquery berikut menggunakan fitur scroll, karena kita akan membuat effe
 
 Pertama kita buat dulu sebuah object javascript baru untuke lebih memudahkan, melakukan query selector untuk tiap class atau id yang akan di gunakan :  
 
-```
+```javascript
 const object = {
     'menuItem' : $('.menu-item'),
     'navBrand' : $('.navbar-brand'),
@@ -99,7 +101,7 @@ const object = {
 
 Lanjut itu lakukan query selector dari class yang telah di definisikan di atas.  
 
-``` 
+```javascript 
     $(window).on('scroll', function(){
         let isDesktop = window.matchMedia('only screen and (min-width: 992px)').matches;
         if(!isDesktop){
@@ -140,12 +142,12 @@ Lanjut itu lakukan query selector dari class yang telah di definisikan di atas.
 
 dari script diatas gout coba mengaktifkan event ```scroll```, kemudian kita melakukan penambahaan fungsi baru untuk event ```scroll``` ini. setelah event ```scroll``` nya aktif kita assignment sebuah fungsi untuk mendeteksi device yang kita assignment kedalam variable berikut  
 
-```
+```javascript
 let isDesktop = window.matchMedia('only screen and (min-width: 992px)').matches;
 ```  
 setelah itu kita lakukan beberapa seleksi diataranya untuk mendeteksi event ```scroll``` nya :  
 
-```
+```javascript
 if($(window).scrollTop() > 400)
 ```  
 
@@ -160,7 +162,7 @@ ini output console saat di scroll pada tampilan desktop :
 
 karena kita tadi melakukan assignment untuk event scroll nya : 
 
-```
+```javascript
 const scrollTop = $(this).scrollTop();
 console.log("Scroll from Top: " + scrollTop.toString());
 ```  

@@ -25,29 +25,31 @@ sontak saya pun kebingungan dibuatnya alhasil saya mencoba untuk mencari akar da
 
 ok sobat coders, trick nya cukup simple saja. pertama saya buka file configurasi sql library yang berada di direktori berikut.  
 
-```
- /usr/share/phpmyadmin/libraries/sql.lib.php
- ```  
- ok sekarang kita buka dengan code editor andalan kita, apapun itu saya sederhana saja hanya menggunakan nano editor. ok langsung kita mulai.  
+```/usr/share/phpmyadmin/libraries/sql.lib.php``` ok sekarang kita buka dengan code editor andalan kita, apapun itu saya sederhana saja hanya menggunakan nano editor. ok langsung kita mulai.  
 
- ```
- nano /usr/share/phpmyadmin/libraries/sql.lib.php
+```bash 
+nano /usr/share/phpmyadmin/libraries/sql.lib.php
+```  
 
- //kemudian cari code berikut
- //yang terdapat pada line 613
+ kemudian cari code berikut
+ yang terdapat pada line 613
 
- || (count($analyzed_sql_results['select_expr'] == 1)
- ```  
+**(count($analyzed_sql_results['select_expr'] == 1)**  
 
- kemudian ubah menjadi seperti ini  
- ```
+kemudian ubah menjadi seperti ini :  
+
+```php
+ <?php 
+
+
  ((count($analyzed_sql_results['select_expr']) == 1)
- ```  
+ 
+ ```
 
- simple kan hanya sedikit penambahan tanda kurung diawal dan menutupnya sebelum value kondisi programnya. kemudian kita restart webserver nya. 
- kali ini saya menggunakan apache2 , back to basic, malas untuk konfigurasi macem-macem karena kondisi dompet sedang menipis. hehehe biasa tengah bulan
+simple kan hanya sedikit penambahan tanda kurung diawal dan menutupnya sebelum value kondisi programnya. kemudian kita restart webserver nya. 
+kali ini saya menggunakan apache2 , back to basic, malas untuk konfigurasi macem-macem karena kondisi dompet sedang menipis. hehehe biasa tengah bulan
 
-```
+```bash
 systemctl restart apache2.service
 ```  
 

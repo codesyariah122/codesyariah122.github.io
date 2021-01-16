@@ -29,7 +29,7 @@ diartikel membuat pagination ini struktur file masih sama, hanya struktur coding
 
 difile ini gout merubah struktur coding menjadi seperti ini : 
 
-```
+```php
 <style type="text/css">
   .loader{
     width: 150px;
@@ -85,7 +85,7 @@ terlihat struktur codingnya berbeda dari artikel sebelumnya, dan tampilan di vie
 
 Di link diatas adalah file ```MyJs.js``` dari artikel sebelumnya. difile tersebut juga mengalami perubahan yakni di bagian untuk searchData dan satu tambahan yaitu untuk dom paginationnya, berikut perubahan dari file ```MyJs.js``` dari link diatas :  
 
-```
+```javascript
 $('#viewdata').on('keyup', '#keyword', function(){
   $('.loader').show();
   const keyword = $('#keyword').val();
@@ -129,7 +129,7 @@ dua bagian itu saja yang mengalami perubahan, selebihnya masih sama dari artikel
 
 selanjutnya di file root kita ```functions.php``` ada sedikit penambahan di fungsi ```searchData(){}``` seperti ini perubahan di bagian fungsi ```searchData(){}``` tersebut :  
 
-```
+```php
 function searchData($keyword, $limitStart, $limit){
   $query = "SELECT * FROM `product` WHERE 
         `product_code` LIKE '%$keyword' OR
@@ -144,7 +144,7 @@ function searchData($keyword, $limitStart, $limit){
 
 dibagian tersebut terlihat berbeda dari code di artikel sebelumnya, kali ini fungsi tersebut ane tambahkan command sql ```sql LIMIT ``` fungsi limit ini lah yang digunakan dalam membuat fitur pagination dengan ```LIMIT``` data yang akan disajikan akan di batasi sesuai dengan option yang disesuaikan. sehingga di file selanjutnya yaitu file utama untuk domHTML data yakni di file ```product_data.php``` , mengalami perubahan menjadi seperti berikut : 
 
-```
+```php
 <?php
 require_once '../functions.php';
   //echo "?page=".@$_GET['page'];

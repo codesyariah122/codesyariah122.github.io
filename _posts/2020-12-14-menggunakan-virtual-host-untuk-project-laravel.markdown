@@ -8,24 +8,24 @@ tags: [fullstack_developer, BeckEnd]
 opening: بسم الله الرحمن الرحيم
 ---  
 
-![laradock]({{site.url}}/assets/images/post/laravel-nginx.webp)  
+{{page.opening}}
 
-**{page.opening}**
+![laradock]({{site.url}}/assets/images/post/laravel-nginx.webp)  
 
 ### Setup lingkungan kerja project laravel  
 Melanjutkan dari artikel sebelumnya masih membahas mengenai, lingkungan kerja dalam pengembangan project aplikasi menggunakan laravel.  
 diartikel kali ini gout akan sedikit menjelaskan mengenai seting virtualhost **nginx** di laradock yang sebelumnya telah kita jalankan 
 
-```
+```bash
 $ docker-compose up -d nginx mysql phpmyadmin redis workspace
 ```  
 1. Setting hosts ( pengguna linux )  
 langsung aja ketahap pertama yaitu setting host di mesin linux  
-```
+```bash
 $ nano /etc/hosts/
 ```
 Lalu tambahkan virtual domain yang akan kita pakai, misalnya untuk project aplikasi-laravelku yang sebelumnya telah gout persiapkan di artikel sebelumnya, kemudian kita akan assign domain **aplikasi-laravelku.test** maka tambahkan kode ini  
-```
+```bash
 127.0.0.1 aplikasi-laravelku.test
 ```  
 
@@ -33,23 +33,23 @@ Lalu tambahkan virtual domain yang akan kita pakai, misalnya untuk project aplik
     1. Masuk folder laradock/nginx/sites
     2. copy laravel.conf.example menjadi aplikasi-laravelku.conf  
 
-```
+```bash
 cp laravel.conf.example aplikasi-laravelku.conf
 ```  
 3. Edit file aplikasi-laravelku.conf tersebut
     Ubah kode ini  
-```
+```bash
 server_name laravel.test;
 root /var/www/laravel/public;
 ```
 ***Menjadi***  
-```
+```bash
 server_name aplikasi-laravelku.test;
 root /var/www/aplikasi-laravelku/public;
 ```  
 4. Restart laradock container kita
 Masuk ke folder laradock lalu jalankan perintah ini  
-```
+```bash
 $ docker-compose restart nginx
 ```  
 

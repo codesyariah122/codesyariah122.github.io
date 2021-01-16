@@ -1,0 +1,11 @@
+I"
+<p><img src="https://codesyariah122.github.io/assets/images/post/php_time2.png" alt="php_time2" /><br />
+Halo para coders semuanya !<br />
+selamat menjalankan ibadah puasanya, semoga berkah ibadah di bulan ramadhan tahun ini.<br />
+postingan kali akan berhubungan dengan fungsi date dan time di php.</p>
+<h1 id="fungsi-time-pada-php">Fungsi Time Pada PHP</h1>
+<p>Fungsi time() digunakan untuk mengambil waktu sekarang pada komputer server dalam format timestamp. Fungsi ini tidak memiliki argumen.
+Timestamp yang dihasilkan oleh fungsi time() selalu pada waktu UTC (GMT +  0), meskipun konfigurasi zone waktu berubah ubah. Lebih jauh tentang timezone, penetapan format timezone pada PHP bisa dilakukan dengan code berikut
+```c
+date_default_timezone_set(“Asia/Jakarta”);</p>
+:ET

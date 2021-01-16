@@ -24,7 +24,7 @@ Mari kita mulai…
 
 Marker merupakan sebuah objek yang bisa kita buat dengan kode berikut:  
 
-```
+```javascript
 var marker = new google.maps.Marker({
     position: new google.maps.LatLng(-8.5830695,116.3202515),
     map: peta
@@ -38,7 +38,7 @@ Terdapat dua properti penting yang harus diberikan ke marker:
 dalam Contoh kali ini saya akan menyambung dari blog saya sebelumnya mengenai menentukan lokasi berdasarkan ip address : <a href="https://codesyariah122.github.io/php/ip_location2/Menentukan-koordinat-dengan-ip-address/">Di mari</a>  
 
 nah dari script itu seperti berikut 
-```
+```php
 <?php
 if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
     $ip = $_SERVER['HTTP_CLIENT_IP'];
@@ -76,7 +76,7 @@ dan didalam database nya type data untuk nilai latitude dan longitude nya adalah
 ![maps4]({{ site.url }}/assets/images/post/googlemaps4.jpg)  
 
 
-```
+```php
 
 <?php
 //script ini untuk pemanfaatan session jika tidak menggunakan session harap di sesuaikan

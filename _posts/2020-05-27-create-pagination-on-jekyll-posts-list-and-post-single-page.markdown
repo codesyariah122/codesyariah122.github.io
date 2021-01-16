@@ -9,19 +9,19 @@ opening: بسم الله الرحمن الرحيم
 ---  
 open ```_config.yml``` file on root directori :  adding new plugin config.
 
-```
+```ruby
 plugins:
   - jekyll-paginate
 ```  
 at same file on ```_config.yml```, adding pagginate configuration :  
 
-```
+```ruby
 paginate: 6
 paginate_path: /page:num/
 ```  
 
 open gemfile on the root directori :  
-```
+```ruby
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.6"
   gem "jekyll-paginate"
@@ -32,7 +32,7 @@ end
 
 and than open new terminal, and installing plugin :  
 
-```
+```bash
 gem install jekyll-paginate
 ```  
 
@@ -40,7 +40,7 @@ gem install jekyll-paginate
 
 and this is in my layout post list on jekyll : 
 
-```
+```html
 <div class="row justify-content-end">
 	<div class="col-xs-12">
 		

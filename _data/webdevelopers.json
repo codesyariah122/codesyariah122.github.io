@@ -3,8 +3,8 @@
   {
       "name": "Web Development <span style='font-family:Reey Regular;'>Service</span> ",
       "image": "/assets/images/project/codesyariah/story18.jpg",
-      "404_image": "/assets/images/project/codesyariah/story15.jpg",
-      "404_title": "404 <span style='color:crimson; font-family: Reey Regular;'> Not </span> Found <span style='font-family:SpringSakura;'>| && |</span>" ,
+      "err_image": "/assets/images/project/codesyariah/story15.jpg",
+      "err_title": "404 <span style='color:crimson; font-family: Reey Regular;'> Not </span> Found <span style='font-family:SpringSakura;'>| && |</span>" ,
       "tags": "Media digital akan meningkatkan pemasaran dan penjualan produk-produk karya anda, kami <span class='codesyariah'>codesyariah</span> dan team <span style='font-family:SpringSakura;'>|</span> akan merealisasikan ide-ide bisnis anda untuk meningkatkan penjualan produk di bisnis anda. <span style='font-family:SpringSakura;'>|</span>  Kembangkan ide-ide bisnis anda bersama kami, kami akan realisasikan ide anda dengan design memukau, system keamanan dan privacy yang terjaga, karena kualitas terbaik adalah salah satu upaya kami dalam bekerja sama dengan anda",
       "price": "5,000.000 s/d 15,000.000",
       "links": "https://codesyariah122.github.io",
@@ -14,7 +14,7 @@
         "satu" : "/assets/images/project/codesyariah/vector5.gif",
         "dua" : "/assets/images/project/codesyariah/work-work.gif",
         "tiga" : "/assets/images/project/codesyariah/vector1.gif",
-        "404" : "/assets/images/vector4.gif"
+        "err" : "/assets/images/vector4.gif"
       },
       "parallax" : {
         "satu" : {
@@ -36,7 +36,7 @@
       },
       
     "puisi" : {
-        "404" : "Keresahan yang terdampar pada mimpi-mimpi digital ... <br/> tak ada yang aku cari dalam kebisuan <span style='font-family: SpringSakura;'> | & & | </span> <br/> Paradigma dalam <span style='font-family:Reey Regular;'>selasar</span> teknologi <br/> Sampah data <span style='font-family:SpringSakura;'>| & & | </span> merebak dalam dimensi maya <br/> Pekarangan milenial dinodai kesesatan informasi tanpa saksi <br/> <span style='font-family:SpringSakura;'>| & & |</span> karakter bangsa tak lagi dikenali, kekisruhan beri sangsi <br/> kaum negri milenial ini."
+        "err" : "Keresahan yang terdampar pada mimpi-mimpi digital ... <br/> tak ada yang aku cari dalam kebisuan <span style='font-family: SpringSakura;'> | & & | </span> <br/> Paradigma dalam <span style='font-family:Reey Regular;'>selasar</span> teknologi <br/> Sampah data <span style='font-family:SpringSakura;'>| & & | </span> merebak dalam dimensi maya <br/> Pekarangan milenial dinodai kesesatan informasi tanpa saksi <br/> <span style='font-family:SpringSakura;'>| & & |</span> karakter bangsa tak lagi dikenali, kekisruhan beri sangsi <br/> kaum negri milenial ini."
     }
   }
 

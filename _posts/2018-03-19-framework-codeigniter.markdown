@@ -7,6 +7,9 @@ image: assets/images/post/codeigniter.png
 tags: [codeigniter]
 opening: بسم الله الرحمن الرحيم
 ---  
+
+{{page.opening}}  
+
 ![ci3]({{site.url}}/assets/images/post/architecture-codeigniter.png)  
 
 ### Tentang Codeigniter  
@@ -32,7 +35,7 @@ Codeigniter dapat diunduh dengan mudah dari situs resminya yaitu www.codeigniter
 Installasi Codeigniter sangat mudah dan cepat anda hanya tinggal mengekstrak zip yang telah di download di situs www.codeigniter.com, kemudian simpan di direktori root web server anda biasanya terletak di ```/var/www/html``` .  
 Setelah directori COdeigniter di pindahkan ke roow web server sekarang anda bisa mengaksesnya melalui browser : http://localhost/directory_codeigniter_anda  
 
-![ci3]({{site.url}}/public/images/post/Welcome-to-Codeigniter.png).  
+![ci3]({{site.url}}/assets/images/post/Welcome-to-Codeigniter.png).  
 
 Seperti itu tampilan khas dari view welcome codeigniter sebagai halaman starter dari framework Codeigniter.  
 

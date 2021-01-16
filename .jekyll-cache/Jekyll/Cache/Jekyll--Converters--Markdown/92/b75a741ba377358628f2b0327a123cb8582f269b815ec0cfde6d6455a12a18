@@ -1,0 +1,414 @@
+I"‹ˆ<p>{{page.opening}}</p>
+
+<h3 id="gatsby-source-graphql">Gatsby Source Graphql</h3>
+<p>Halo sob â€¦ ini post kedua di tahun 2021 ini, agak delay yah .. maklum sob kondisi belum kondusif, PSBB silih berganti membatasi aktifitas-aktifitas diruang publik, jangan lupa selalu jaga kesehatan kalian frenn.<br />
+Dalam artikel ini gout mau melanjutkan tulisan gout tentang static site generator yang dibuat dengan <code class="language-html highlighter-rouge">React.js</code> yaitu <code class="language-html highlighter-rouge">Gatsby.js</code>. Kali ini akan membagi sedikit tips dari hasil kulik mengulik gout, maklum lah gout ini <strong>otodidak</strong> sejati.</p>
+
+<p>Ok langsung ajah, di artikel ini gout bermaksud untuk membuat sebuah portfolio page atau personal website, dimana di dalam portfolio page tersebut gout mau memamerkan Portfolio yang berupa aktifitas kita dan keaktifan kita sebagai seorang programmer atau developer atau engineer yang senantiasa bersentuhan dengan github at least apapun itu baik itu profile, repository atau apapun segala aktifitas kita di github. Karena github menyediakan api key gratis untuk diakses publik, dan gout coba memanfaatkan fitur api data dari github.</p>
+
+<h3 id="implement">Implement</h3>
+<p>Dalam artikel ini sendiri gout akan implementasi kan di gatsby menggunakan sebuah plugin yang di sediakan oleh gatsby untuk fetching data dari api apapun, dan disini gout mau mengambil data github gout yang berupa profile, repository dan aktifitas di github gout. Yuk lets go â€¦</p>
+
+<p>Buka code editor kita , di asumsikan kalian sudah menginstall <code class="language-html highlighter-rouge">Gatsby.js</code> nya yah.
+jika belum silahkan ke artikel berikut : <a href="https://codesyariah122.github.io/gatsbyjs/react/javascript/membangun-project-staticsite-dengan-gatsby/" target="_blank">Installasi Gatsby</a>, <strong><em>Install yang versi terbaru yah</em></strong>.</p>
+
+<p>Setelah direktori gatsby kita di buka di code editor, kita buka juga terminal(CLI) kita.
+berikut listing directory project gatsby gout.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="syntax"><code>root@debian:/home/puji122/pujiermanto.netlify.app# <span class="nb">ls</span> <span class="nt">-l</span>
+total 952
+<span class="nt">-rw-r--r--</span>    1 puji122 puji122   1294 Jan  3 01:12 backup_for_plugin_github.txt
+<span class="nt">-rw-r--r--</span>    1 puji122 puji122      0 Jan  6 10:00 gatsby-browser.js
+<span class="nt">-rwxrwxrwx</span>    1 root    root      3434 Jan  4 21:04 gatsby-config.js
+<span class="nt">-rw-r--r--</span>    1 puji122 puji122      0 Jan  6 10:00 gatsby-ssr.js
+<span class="nt">-rwxrwxrwx</span>    1 root    root       556 Jan  2 08:13 github-api.js
+<span class="nt">-rwxrwxrwx</span>    1 root    root       675 Jan  2 08:13 LICENSE
+<span class="nt">-rw-r--r--</span>    1 root    root        67 Jan  8 10:48 netlify.toml
+drwxr-xr-x 1440 root    root     45056 Jan  6 11:51 node_modules
+<span class="nt">-rwxrwxrwx</span>    1 root    root      2720 Jan  6 11:45 package.json
+<span class="nt">-rwxrwxrwx</span>    1 root    root    882893 Jan  6 08:50 package-lock.json
+drwxr-xr-x    5 root    root      4096 Jan  8 05:08 public
+<span class="nt">-rwxrwxrwx</span>    1 root    root      3270 Jan  8 11:06 README.md
+drwxrwxrwx    8 root    root      4096 Jan  2 21:56 src
+drwxrwxrwx    2 root    root      4096 Jan  2 08:13 static
+
+</code></pre></div></div>
+<h3 id="install-plugin">Install Plugin</h3>
+
+<p>Selanjutnya kita install pluginnya :</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="syntax"><code>npm <span class="nb">install</span> <span class="nt">--save</span> gatsby-source-graphql dotenv 
+</code></pre></div></div>
+<h4 id="selanjutnya">Selanjutnya</h4>
+<ul>
+  <li>Env
+kemudian kita buat file <strong>Environmentnya</strong>, jika sudah ada maka bisa langsung buka file <code class="language-html highlighter-rouge">.env</code>. Jika belum ada :
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="syntax"><code>root@debian:/home/puji122/pujiermanto.netlify.app# <span class="nb">touch</span> .env.development
+</code></pre></div>    </div>
+    <p>Buka file <code class="language-html highlighter-rouge">.env.development</code> :</p>
+  </li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="nv">GATSBY_PORTFOLIO_GITHUB_TOKEN</span><span class="o">=</span>your_personal_tokens_github
+</code></pre></div></div>
+<ul>
+  <li>Personal access tokens github</li>
+</ul>
+
+<p>kemudian kita buat personal access token di github kita, Bisa akses link berikut : <a href="https://github.com/settings/apps" target="_blank">Personal Access Tokens Github</a>. Klik <code class="language-html highlighter-rouge">Personal access tokens</code>, kemudian <strong>Click button</strong> <code class="language-html highlighter-rouge">Generate new token</code>, Checklist pada bagian <code class="language-html highlighter-rouge">repo</code> dan <code class="language-html highlighter-rouge">user</code>, kemudian beri nama token kalian di bagian <strong><em>Note</em></strong>. Terakhir <strong>Click</strong> <code class="language-html highlighter-rouge">Generate token</code>. Dan kalian bisa mencopy tokennya ke file <code class="language-html highlighter-rouge">.env</code> di bagian <code class="language-html highlighter-rouge">GATSBY_PORTFOLIO_GITHUB_TOKEN=your_token</code>.</p>
+
+<ul>
+  <li>Config gatsby</li>
+</ul>
+
+<p>setelah plugin terinstall, <code class="language-html highlighter-rouge">Personal access tokens</code> telah di buat, lanjut kita buka file <code class="language-html highlighter-rouge">gatsby-config.js</code> yang berada di root directory gatsby kita .<br />
+tambahkan ini :</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">path</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">dotenv</span><span class="dl">'</span><span class="p">).</span><span class="nx">config</span><span class="p">({</span>
+  <span class="na">path</span><span class="p">:</span> <span class="s2">`.env.</span><span class="p">${</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span><span class="p">}</span><span class="s2">`</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="nl">plugins</span><span class="p">:</span> <span class="p">[</span>
+    
+    <span class="p">{</span>
+      <span class="na">resolve</span><span class="p">:</span> <span class="dl">'</span><span class="s1">gatsby-source-graphql</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">options</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">typeName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GitHub</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">fieldName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">github</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://api.github.com/graphql</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">Authorization</span><span class="p">:</span> <span class="s2">`bearer </span><span class="p">${</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">GATSBY_PORTFOLIO_GITHUB_TOKEN</span><span class="p">}</span><span class="s2">`</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="na">fetchOptions</span><span class="p">:</span> <span class="p">{},</span>
+      <span class="p">},</span>
+    <span class="p">},</span>
+
+<span class="p">]</span>
+</code></pre></div></div>
+<p>Setelah itu kita bisa coba untuk fetching menggunakan <code class="language-html highlighter-rouge">GraphQl</code> terlebih dahulu. 
+Sebelumnya kita aktifkan dulu server gatsby nya, kembali ke terminal :</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="syntax"><code>root@debian:/home/puji122/pujiermanto.netlify.app# npm start
+</code></pre></div></div>
+<p>Setelah server gatsby running di localhost:8000, kita bisa buka di browser kita dengan mengakses http://localhost:8000, untuk graphql bisa di akses di <code class="language-html highlighter-rouge">http://localhost:8000/__graphql</code></p>
+
+<div class="embed-responsive embed-responsive-21by9">
+  <iframe class="embed-responsive-item" src="{{site.url}}/assets/images/post/gatsby-source-graphql.mp4"></iframe>
+</div>
+
+<p>Seperti terlihat dari cuplikan diatas plugin <code class="language-html highlighter-rouge">gatsby-source-graphql</code> sudah bisa kita gunakan untuk fetching data github kita.</p>
+
+<h4 id="show-off-your-project-at-github">Show off your project at github</h4>
+
+<p>Selanjutnya adalah kita bisa melakukan fetching data di component gatsby kita, di artikel ini gout mau menampilkan github data gout di halaman depan atau homepage dari portfolio page gatsby gout. Sehingga gout bisa menambahkan sebuah komponen baru untuk data github ini dan ditampilkan langsung di komponen homepagenya.</p>
+
+<p>seperti ini penerapannya di gatsby page gout :</p>
+
+<p>ini component utama gout :</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span>
+<span class="k">import</span> <span class="nx">Layout</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../components/layouts/layout</span><span class="dl">"</span>
+<span class="k">import</span> <span class="dl">'</span><span class="s1">../styles/hero.scss</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">Hero</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./homepage/hero</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">Projects</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./homepage/Projects</span><span class="dl">'</span>
+
+<span class="kd">const</span> <span class="nx">IndexPage</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;&gt;</span>
+        <span class="o">&lt;</span><span class="nx">Layout</span> <span class="nx">title</span><span class="o">=</span><span class="dl">"</span><span class="s2">Unexpected Kernel Mode</span><span class="dl">"</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">section</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">hero</span><span class="dl">"</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">container</span><span class="dl">"</span><span class="o">&gt;</span>
+              <span class="o">&lt;</span><span class="nx">Hero</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">hero</span><span class="dl">"</span><span class="o">/&gt;</span>
+            <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>          <span class="o">&lt;</span><span class="sr">/section</span><span class="err">&gt;
+</span>
+          <span class="c1">// ini untuk gatsby-source-graphql tadi, yang disini difungsikan untuk mengambil data github gout</span>
+          <span class="o">&lt;</span><span class="nx">section</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">project</span><span class="dl">"</span><span class="o">&gt;</span>
+              <span class="o">&lt;</span><span class="nx">Projects</span><span class="o">/&gt;</span>
+          <span class="o">&lt;</span><span class="sr">/section</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/Layout</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">IndexPage</span>
+
+</code></pre></div></div>
+<p>kemudian gout punya satu direktori tambahan untuk component homepage yaitu direktori <code class="language-html highlighter-rouge">homepage/</code>.<br />
+kemudian di direktori component <code class="language-html highlighter-rouge">homepage/</code> buat lagi satu direktori untuk membuat view data github nya buat direktori baru namanya <code class="language-html highlighter-rouge">Projects/</code>, didalam direktori <code class="language-html highlighter-rouge">Projects/</code> buat satu file baru di direktori <code class="language-html highlighter-rouge">Projects/</code> dengan nama <code class="language-html highlighter-rouge">index.jsx</code>, berikut code dari file <code class="language-html highlighter-rouge">homepage/Projects/index.jsx</code> :</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">styled</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">styled-components</span><span class="dl">'</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useStaticQuery</span><span class="p">,</span> <span class="nx">graphql</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">gatsby</span><span class="dl">'</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Container</span><span class="p">,</span> <span class="nx">Card</span><span class="p">,</span> <span class="nx">TitleWrap</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../../../components/common</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">Star</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../../../components/common/Icons/Star</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">Fork</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../../../components/common/Icons/Fork</span><span class="dl">'</span>
+
+
+<span class="kd">const</span> <span class="nx">Projects</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+  <span class="kd">const</span> <span class="nx">Wrapper</span> <span class="o">=</span> <span class="nx">styled</span><span class="p">.</span><span class="nx">div</span><span class="s2">`
+    color: #000;
+    margin-bottom: 2rem;
+  `</span><span class="p">;</span>
+
+  <span class="kd">const</span> <span class="nx">Grid</span> <span class="o">=</span> <span class="nx">styled</span><span class="p">.</span><span class="nx">div</span><span class="s2">`
+    margin-top: 2rem;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 8fr;
+    gap: 1.2rem 1.2rem;
+
+    @media (max-width: 960px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 680px) {
+      grid-template-columns: 1fr;
+    }
+  `</span><span class="p">;</span>
+
+  <span class="kd">const</span> <span class="nx">Item</span> <span class="o">=</span> <span class="nx">styled</span><span class="p">.</span><span class="nx">div</span><span class="s2">`
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.11);
+    text-decoration:none;
+
+    h4 {
+      color: '#212121';
+    }
+
+    p {
+      color: '#707070';
+    }
+  `</span><span class="p">;</span>
+
+  <span class="kd">const</span> <span class="nx">Content</span> <span class="o">=</span> <span class="nx">styled</span><span class="p">.</span><span class="nx">div</span><span class="s2">`
+    padding: 1rem 0;
+    min-height: 160px;
+    &amp;:hover{
+      color: black;
+    }
+  `</span><span class="p">;</span>
+
+  <span class="kd">const</span> <span class="nx">Stats</span> <span class="o">=</span> <span class="nx">styled</span><span class="p">.</span><span class="nx">div</span><span class="s2">`
+    display: flex;
+    align-items: center;
+
+    div {
+      display: flex;
+      &amp;:first-child {
+        margin-right: 0.5rem;
+      }
+
+      img {
+        margin: 0;
+      }
+
+      svg path {
+        fill: '#000';
+      }
+
+      span {
+        color: '#000';
+        margin-left: 0.5rem;
+      }
+    }
+  `</span><span class="p">;</span>
+
+  <span class="kd">const</span> <span class="nx">Languages</span> <span class="o">=</span> <span class="nx">styled</span><span class="p">.</span><span class="nx">div</span><span class="s2">`
+    opacity: 0.5;
+    font-size: 14px;
+  `</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="p">{</span>
+    <span class="na">github</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">viewer</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">repositories</span><span class="p">:</span> <span class="p">{</span> <span class="nx">edges</span> <span class="p">},</span>
+      <span class="p">},</span>
+    <span class="p">},</span>
+  <span class="p">}</span> <span class="o">=</span> <span class="nx">useStaticQuery</span><span class="p">(</span>
+    <span class="nx">graphql</span><span class="s2">`
+      query{
+        github {
+          viewer {
+            repositories(first: 15, orderBy: { field: STARGAZERS, direction: DESC }) {
+              edges {
+                node {
+                  id
+                  name
+                  url
+                  description
+                  createdAt
+                  stargazers {
+                    totalCount
+                  }
+                  forkCount
+                  languages(first: 3) {
+                    nodes {
+                      id,
+                      name
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `</span>
+  <span class="p">);</span>
+
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">Wrapper</span> <span class="k">as</span><span class="o">=</span><span class="p">{</span><span class="nx">Container</span><span class="p">}</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">projects</span><span class="dl">"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">h2</span> <span class="nx">style</span><span class="o">=</span><span class="p">{{</span><span class="na">color</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#000</span><span class="dl">'</span><span class="p">,</span> <span class="na">textAlign</span><span class="p">:</span> <span class="dl">'</span><span class="s1">justify</span><span class="dl">'</span><span class="p">}}</span><span class="o">&gt;</span><span class="nx">My</span> <span class="nx">Projects</span><span class="o">&lt;</span><span class="sr">/h2</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="nx">p</span> <span class="nx">style</span><span class="o">=</span><span class="p">{{</span><span class="na">textIndent</span><span class="p">:</span> <span class="dl">'</span><span class="s1">25px</span><span class="dl">'</span><span class="p">,</span> <span class="na">fontSize</span><span class="p">:</span> <span class="dl">'</span><span class="s1">15px</span><span class="dl">'</span><span class="p">,</span> <span class="na">lineHeight</span><span class="p">:</span> <span class="dl">'</span><span class="s1">37px</span><span class="dl">'</span><span class="p">,</span> <span class="na">textAlign</span><span class="p">:</span> <span class="dl">'</span><span class="s1">justify</span><span class="dl">'</span><span class="p">,</span> <span class="na">width</span><span class="p">:</span><span class="dl">'</span><span class="s1">100%</span><span class="dl">'</span><span class="p">}}</span><span class="o">&gt;</span><span class="nx">Ini</span> <span class="nx">merupakan</span> <span class="nx">dokumentasi</span> <span class="nx">dan</span> <span class="nx">rekam</span> <span class="nx">jejak</span> <span class="nx">pribadi</span> <span class="nx">saya</span> <span class="nx">dalam</span> <span class="nx">proses</span> <span class="nx">mengerjakan</span> <span class="nx">dan</span> <span class="nx">mengembangkan</span> <span class="nx">sebuah</span> <span class="nx">project</span> <span class="nx">yang</span> <span class="nx">saya</span> <span class="nx">kerjakan</span> <span class="nx">beberapa</span> <span class="nx">waktu</span> <span class="nx">sebelumnya</span><span class="p">,</span> <span class="nx">juga</span> <span class="nx">sebagai</span> <span class="nx">media</span> <span class="nx">dokumentasi</span> <span class="nx">dan</span> <span class="nx">modul</span><span class="o">-</span><span class="nx">modul</span> <span class="nx">dalam</span> <span class="nx">mempelajari</span> <span class="nx">dan</span> <span class="nx">memperluas</span> <span class="nx">khazanah</span> <span class="nx">saya</span> <span class="nx">pribadi</span> <span class="nx">dalam</span> <span class="nx">mengembangkan</span> <span class="nx">minat</span> <span class="nx">saya</span> <span class="nx">dalam</span>  <span class="nx">dunia</span> <span class="nx">IT</span> <span class="nx">dan</span> <span class="nx">Pemrograman</span><span class="p">.</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">Grid</span><span class="o">&gt;</span>
+        <span class="p">{</span><span class="nx">edges</span><span class="p">.</span><span class="nx">map</span><span class="p">(({</span> <span class="nx">node</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">(</span>
+          <span class="o">&lt;</span><span class="nx">Item</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">node</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span> <span class="k">as</span><span class="o">=</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span> <span class="nx">href</span><span class="o">=</span><span class="p">{</span><span class="nx">node</span><span class="p">.</span><span class="nx">url</span><span class="p">}</span> <span class="nx">target</span><span class="o">=</span><span class="dl">"</span><span class="s2">_blank</span><span class="dl">"</span> <span class="nx">rel</span><span class="o">=</span><span class="dl">"</span><span class="s2">noopener noreferrer</span><span class="dl">"</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">Card</span><span class="o">&gt;</span>
+              <span class="o">&lt;</span><span class="nx">Content</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">h4</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">node</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h4</span><span class="err">&gt;
+</span>                <span class="o">&lt;</span><span class="nx">h5</span> <span class="nx">style</span><span class="o">=</span><span class="p">{{</span><span class="na">color</span><span class="p">:</span><span class="dl">'</span><span class="s1">grey</span><span class="dl">'</span><span class="p">}}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">node</span><span class="p">.</span><span class="nx">createdAt</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h5</span><span class="err">&gt;
+</span>                <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">node</span><span class="p">.</span><span class="nx">description</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>              <span class="o">&lt;</span><span class="sr">/Content</span><span class="err">&gt;
+</span>              <span class="o">&lt;</span><span class="nx">TitleWrap</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">Stats</span><span class="o">&gt;</span>
+                  <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">Star</span><span class="o">/&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">node</span><span class="p">.</span><span class="nx">stargazers</span><span class="p">.</span><span class="nx">totalCount</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
+</span>                  <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>                  <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">Fork</span><span class="o">/&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">node</span><span class="p">.</span><span class="nx">forkCount</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
+</span>                  <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>                <span class="o">&lt;</span><span class="sr">/Stats</span><span class="err">&gt;
+</span>                <span class="o">&lt;</span><span class="nx">Stats</span><span class="o">&gt;</span>
+                  <span class="o">&lt;</span><span class="nx">Languages</span><span class="o">&gt;</span>
+                    <span class="p">{</span>
+                      <span class="nx">node</span><span class="p">.</span><span class="nx">languages</span><span class="p">.</span><span class="nx">nodes</span><span class="p">.</span><span class="nx">map</span><span class="p">(({</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">name</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">(</span>
+                        <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">id</span><span class="p">}</span><span class="o">&gt;</span>
+                          <span class="p">{</span><span class="nx">name</span><span class="p">}</span>
+                        <span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
+</span>                      <span class="p">))</span>
+                    <span class="p">}</span>
+                  <span class="o">&lt;</span><span class="sr">/Languages</span><span class="err">&gt;
+</span>                <span class="o">&lt;</span><span class="sr">/Stats</span><span class="err">&gt;
+</span>              <span class="o">&lt;</span><span class="sr">/TitleWrap</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="sr">/Card</span><span class="err">&gt;
+</span>          <span class="o">&lt;</span><span class="sr">/Item</span><span class="err">&gt;
+</span>        <span class="p">))}</span>
+      <span class="o">&lt;</span><span class="sr">/Grid</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/Wrapper</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Projects</span>
+
+
+</code></pre></div></div>
+<p>bisa kalian telaah yah code nya, kalau gout hanya mau sedikit <strong>memberi tambahan untuk intinya</strong>, untuk artikel ini akan gout jabarkan intinya yakni :</p>
+
+<ul>
+  <li>Query Github Graphql</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">const</span> <span class="p">{</span>
+    <span class="na">github</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">viewer</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">repositories</span><span class="p">:</span> <span class="p">{</span> <span class="nx">edges</span> <span class="p">},</span>
+      <span class="p">},</span>
+    <span class="p">},</span>
+  <span class="p">}</span> <span class="o">=</span> <span class="nx">useStaticQuery</span><span class="p">(</span>
+    <span class="nx">graphql</span><span class="s2">`
+      query{
+        github {
+          viewer {
+            repositories(first: 15, orderBy: { field: STARGAZERS, direction: DESC }) {
+              edges {
+                node {
+                  id
+                  name
+                  url
+                  description
+                  createdAt
+                  stargazers {
+                    totalCount
+                  }
+                  forkCount
+                  languages(first: 3) {
+                    nodes {
+                      id,
+                      name
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `</span>
+  <span class="p">);</span>
+</code></pre></div></div>
+
+<p><strong>Look at this</strong><br />
+Di code ini kita melakukan query dengan mengambil data dari api github :</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="nx">github</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nl">viewer</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">repositories</span><span class="p">:</span> <span class="p">{</span> <span class="nx">edges</span> <span class="p">},</span>
+      <span class="p">},</span>
+    <span class="p">}</span> <span class="o">=</span> 
+</code></pre></div></div>
+<p>Penggunaanya yakni api github, yang documentasi nya bisa kalian simak dimari :<br />
+<a href="https://docs.github.com/en/free-pro-team@latest/graphql/overview/about-the-graphql-api" target="_blank">Github Api Documentation</a>, dan kalian juga bisa langsung explore graphqlnya github disini : <a href="https://docs.github.com/en/free-pro-team@latest/graphql/overview/explorer" target="_blank">Explorer github graphql</a> lanjut login dengan akun github kalian.<br />
+<strong>seperti ini contohnya :</strong></p>
+<div class="embed-responsive embed-responsive-21by9">
+  <iframe class="embed-responsive-item" src="{{site.url}}/assets/images/post/github-explorer.mp4"></iframe>
+</div>
+
+<ul>
+  <li>Looping data</li>
+</ul>
+
+<p>Kemudian kita looping data nya di bagian view dan dapat diambil data sebagai berikut :</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="p">{</span><span class="nx">edges</span><span class="p">.</span><span class="nx">map</span><span class="p">(({</span> <span class="nx">node</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">(</span>
+  <span class="p">{</span><span class="nx">node</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span>
+  <span class="p">{</span><span class="nx">node</span><span class="p">.</span><span class="nx">url</span><span class="p">}</span>
+  <span class="p">{</span><span class="nx">node</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span>
+  <span class="p">{</span><span class="nx">node</span><span class="p">.</span><span class="nx">description</span><span class="p">}</span>
+  <span class="p">{</span><span class="nx">node</span><span class="p">.</span><span class="nx">stargazers</span><span class="p">.</span><span class="nx">totalCount</span><span class="p">}</span>
+  <span class="p">{</span><span class="nx">node</span><span class="p">.</span><span class="nx">forkCount</span><span class="p">}</span>
+
+  <span class="c1">//dan untuk bagian language lakukan looping kedua :  </span>
+    <span class="p">{</span><span class="nx">node</span><span class="p">.</span><span class="nx">languages</span><span class="p">.</span><span class="nx">nodes</span><span class="p">.</span><span class="nx">map</span><span class="p">(({</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">name</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">(</span>
+        <span class="p">{</span><span class="nx">id</span><span class="p">}</span>
+        <span class="p">{</span><span class="nx">name</span><span class="p">}</span>
+    <span class="p">))}</span>
+<span class="p">))}</span>
+</code></pre></div></div>
+
+<h4 id="component-component-tambahan-lainnya">Component-component tambahan lainnya</h4>
+<p>Untuk component lainnya kalian bisa meluncur langsung ke link repository gout berikut yah :</p>
+
+<p><a href="https://github.com/codesyariah122/pujiermanto.netlify.app/tree/with_new_gatsby/src/components/common" target="_blank">Disini</a>, bisa kalian sesuaikan dan di kostum sesuai selera kalian.<br />
+kesimpulannya gout hanya membagi tips pada bagian query graphqlnya saja yah.</p>
+
+<p><a href="https://pujiermanto.netlify.app/" target="_blank">Demo My Portfolio WIth Github Data</a></p>
+
+<p>Kurang lebihnya mohon di maafkan, semoga tulisan ini bermanfaat. akhir kata gout ucapkan â€¦</p>
+
+<p><strong><em>Wassalaamm</em></strong></p>
+
+<p><strong><em>puji ermanto</em></strong></p>
+
+:ET

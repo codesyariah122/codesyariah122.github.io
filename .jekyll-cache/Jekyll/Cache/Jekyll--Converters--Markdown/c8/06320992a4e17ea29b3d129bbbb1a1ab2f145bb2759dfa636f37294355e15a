@@ -1,0 +1,15 @@
+I"]<p><img src="https://codesyariah122.github.io/assets/images/post/debian9/iwlwifi.jpeg" alt="iwlwifi_missing" /></p>
+
+<p>Notification diatas saya dapatkan di os debian 9 saya ketika awal penginstallan, biasanya hal ini terjadi akibat kita tidak menyertakanannya dalam media bootable<br />
+saat proses penginstallan debian 9 server ini saya menggunakan media USB Bootable sebagai media installasinya.<br />
+setelah proses installasi selesai kita harus menyambungkan device kita ke internet satu-satunya cara melalui media LAN, yah mau gimana lagi harus siap sedia kabel LAN.<br />
+setelah login ke os kita, langsung saja eksekusi command dibawah ini :<br />
+masuk terlebih dahulu ke direktori repository debian 9 di <code class="language-html highlighter-rouge">/etc/apt/</code></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="syntax"><code>root@debian: <span class="nb">cd</span> /etc/apt
+root@debian: <span class="nb">echo</span> <span class="s1">'deb http://httpredir.debian.org/debian/ stretch main contrib non-free'</span> <span class="o">&gt;&gt;</span> /etc/apt/sources.list
+root@debian: apt update <span class="o">&amp;&amp;</span> apt <span class="nb">install </span>firmware-iwlwifi
+root@debian: modprobe <span class="nt">-r</span> iwlwifi <span class="p">;</span> modprobe iwlwifi
+root@debian: reboot
+</code></pre></div></div>
+:ET

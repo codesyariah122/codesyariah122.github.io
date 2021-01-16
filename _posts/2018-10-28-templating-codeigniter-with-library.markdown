@@ -7,6 +7,9 @@ image: assets/images/post/codeigniter3.jpg
 tags: [codeigniter]
 opening: بسم الله الرحمن الرحيم
 ---  
+
+{{page.opening}}  
+
 ![ci3]({{site.url}}/assets/images/post/architecture-codeigniter.png)  
 
 ### Templating Views in Codeiginiter  

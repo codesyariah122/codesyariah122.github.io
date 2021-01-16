@@ -1,0 +1,179 @@
+I"pv<h3 id="crud-dengan-php-ekstensi-pdo-dengan-pemanfaatan-api-jquery-ajax">crud dengan php ekstensi pdo dengan pemanfaatan api jquery ajax</h3>
+
+<p>pada dokumentasi kali ini saya membuat dokumentasi crud data dengan php menggunakan ekstensi pdo dan menggunakan fitur apijquery ajax http request.<br />
+crud adalah program pengolahan data paling basic yang harus di pelajari dalam pemrogramman. ok langsung saja disimak…
+selamat menyimak :</p>
+
+<p><img src="https://raw.githubusercontent.com/codesyariah122/crud-data-with-php-PDO-Jquery-ajax/master/assets/crudAjax.gif" alt="crudAjax" /></p>
+
+<h4 id="ajax-rule">ajax rule</h4>
+<p>setiap request ke database dari client side di redirect ke ajax sebelum di kembalikan ke clientside :<br />
+contoh penerapan ajaxnya :</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="c1">//ketika tombol add di click maka client akan merequest data ke server disini ajax jadi mengambil alih server side</span>
+<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#add</span><span class="dl">'</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+	<span class="c1">//Swal.fire("Hallo world");</span>
+	<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#cruddata</span><span class="dl">'</span><span class="p">).</span><span class="nx">hide</span><span class="p">(</span><span class="dl">'</span><span class="s1">slow</span><span class="dl">'</span><span class="p">).</span><span class="nx">fadeOut</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+	<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#animasi</span><span class="dl">'</span><span class="p">).</span><span class="nx">load</span><span class="p">(</span><span class="dl">'</span><span class="s1">contents/animated.php</span><span class="dl">'</span><span class="p">).</span><span class="nx">fadeIn</span><span class="p">(</span><span class="mi">1500</span><span class="p">);</span>
+	<span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+		<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#cruddata</span><span class="dl">'</span><span class="p">).</span><span class="nx">hide</span><span class="p">().</span><span class="nx">load</span><span class="p">(</span><span class="dl">'</span><span class="s1">contents/add.php</span><span class="dl">'</span><span class="p">).</span><span class="nx">fadeIn</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+		<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#animasi</span><span class="dl">'</span><span class="p">).</span><span class="nx">hide</span><span class="p">(</span><span class="dl">'</span><span class="s1">slow</span><span class="dl">'</span><span class="p">).</span><span class="nx">slideUp</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+	<span class="p">},</span> <span class="mi">2500</span><span class="p">);</span>
+	
+<span class="p">});</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#cruddata</span><span class="dl">'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">#close</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+	<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#animasi</span><span class="dl">'</span><span class="p">).</span><span class="nx">load</span><span class="p">(</span><span class="dl">"</span><span class="s2">contents/animated2.php</span><span class="dl">"</span><span class="p">).</span><span class="nx">fadeIn</span><span class="p">(</span><span class="mi">2500</span><span class="p">);</span>
+	<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#cruddata</span><span class="dl">'</span><span class="p">).</span><span class="nx">hide</span><span class="p">(</span><span class="dl">'</span><span class="s1">slow</span><span class="dl">'</span><span class="p">).</span><span class="nx">slideUp</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+	<span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+		<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#animasi</span><span class="dl">'</span><span class="p">).</span><span class="nx">hide</span><span class="p">(</span><span class="dl">'</span><span class="s1">slow</span><span class="dl">'</span><span class="p">).</span><span class="nx">slideUp</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+	<span class="p">},</span> <span class="mi">3000</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+	<span class="c1">// load view data </span>
+	<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#viewdata</span><span class="dl">'</span><span class="p">).</span><span class="nx">load</span><span class="p">(</span><span class="dl">'</span><span class="s1">contents/view.php</span><span class="dl">'</span><span class="p">).</span><span class="nx">fadeIn</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+
+	<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#cruddata</span><span class="dl">'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">#add</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+		<span class="kd">const</span> <span class="nx">productCode</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#productcode</span><span class="dl">'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+		<span class="kd">const</span> <span class="nx">productName</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#productname</span><span class="dl">'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+		<span class="kd">const</span> <span class="nx">productPrice</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#productprice</span><span class="dl">'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+
+		<span class="k">if</span><span class="p">(</span><span class="nx">productCode</span> <span class="o">==</span> <span class="dl">''</span> <span class="o">||</span> <span class="nx">productName</span> <span class="o">==</span> <span class="dl">''</span> <span class="o">||</span> <span class="nx">productPrice</span> <span class="o">==</span> <span class="dl">''</span><span class="p">){</span>
+			<span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Form data is empty, please try again</span><span class="dl">"</span><span class="p">);</span>
+		<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+			<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+				<span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">contents/add.php?page=add</span><span class="dl">'</span><span class="p">,</span>
+				<span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">post</span><span class="dl">'</span><span class="p">,</span>
+				<span class="na">data</span><span class="p">:</span> <span class="dl">'</span><span class="s1">productcode=</span><span class="dl">'</span><span class="o">+</span><span class="nx">productCode</span><span class="o">+</span><span class="dl">'</span><span class="s1">&amp;productname=</span><span class="dl">'</span><span class="o">+</span><span class="nx">productName</span><span class="o">+</span><span class="dl">'</span><span class="s1">&amp;productprice=</span><span class="dl">'</span><span class="o">+</span><span class="nx">productPrice</span><span class="p">,</span>
+				<span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+					<span class="k">if</span><span class="p">(</span><span class="nx">response</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">success</span><span class="dl">'</span><span class="p">){</span>
+						<span class="nx">Swal</span><span class="p">.</span><span class="nx">fire</span><span class="p">({</span>
+						  <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">New product added</span><span class="dl">'</span><span class="p">,</span>
+						  <span class="na">text</span><span class="p">:</span> <span class="dl">"</span><span class="s2">You product will be saved, product name : </span><span class="dl">"</span><span class="o">+</span><span class="nx">productName</span><span class="p">,</span>
+						  <span class="na">icon</span><span class="p">:</span> <span class="dl">'</span><span class="s1">success</span><span class="dl">'</span><span class="p">,</span>
+						  <span class="na">showCancelButton</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+						  <span class="na">confirmButtonColor</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#808fe6</span><span class="dl">'</span><span class="p">,</span>
+						  <span class="na">cancelButtonColor</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#d33</span><span class="dl">'</span><span class="p">,</span>
+						  <span class="na">confirmButtonText</span><span class="p">:</span> <span class="dl">'</span><span class="s1">View Data Product</span><span class="dl">'</span>
+						<span class="p">}).</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+						  <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+						  	<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#cruddata</span><span class="dl">'</span><span class="p">).</span><span class="nx">hide</span><span class="p">(</span><span class="dl">'</span><span class="s1">slow</span><span class="dl">'</span><span class="p">).</span><span class="nx">fadeOut</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+						  	<span class="nx">Swal</span><span class="p">.</span><span class="nx">fire</span><span class="p">(</span>
+						      <span class="dl">'</span><span class="s1">New product Saved : </span><span class="dl">'</span><span class="o">+</span><span class="nx">productCode</span><span class="p">,</span>
+						      <span class="dl">'</span><span class="s1">Your product data has been saved.</span><span class="dl">'</span><span class="p">,</span>
+						      <span class="dl">'</span><span class="s1">success</span><span class="dl">'</span>
+						    <span class="p">);</span>
+							<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#animasi</span><span class="dl">'</span><span class="p">).</span><span class="nx">load</span><span class="p">(</span><span class="dl">'</span><span class="s1">contents/animated.php</span><span class="dl">'</span><span class="p">).</span><span class="nx">fadeIn</span><span class="p">(</span><span class="mi">2500</span><span class="p">);</span>
+							<span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+								<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#viewdata</span><span class="dl">'</span><span class="p">).</span><span class="nx">load</span><span class="p">(</span><span class="dl">'</span><span class="s1">contents/view.php</span><span class="dl">'</span><span class="p">).</span><span class="nx">fadeIn</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+								<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#animasi</span><span class="dl">'</span><span class="p">).</span><span class="nx">hide</span><span class="p">(</span><span class="dl">'</span><span class="s1">slow</span><span class="dl">'</span><span class="p">).</span><span class="nx">slideUp</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+							<span class="p">},</span> <span class="mi">3000</span><span class="p">);</span>
+						  <span class="p">}</span>
+						<span class="p">});</span>
+
+
+					<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+						<span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Failed add new product</span><span class="dl">"</span><span class="p">);</span>
+					<span class="p">}</span>
+				<span class="p">}</span>
+			<span class="p">});</span>
+		<span class="p">}</span>
+	<span class="p">});</span>
+
+	<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#viewdata</span><span class="dl">'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">.edit</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+		<span class="c1">//ambil attribute id dari table data</span>
+		<span class="kd">const</span> <span class="nx">id</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="dl">'</span><span class="s1">id</span><span class="dl">'</span><span class="p">);</span>
+
+		<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+			<span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">contents/edit.php</span><span class="dl">'</span><span class="p">,</span>
+			<span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">post</span><span class="dl">'</span><span class="p">,</span>
+			<span class="na">data</span><span class="p">:</span> <span class="dl">'</span><span class="s1">id=</span><span class="dl">'</span><span class="o">+</span><span class="nx">id</span><span class="p">,</span>
+			<span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+				<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#cruddata</span><span class="dl">'</span><span class="p">).</span><span class="nx">hide</span><span class="p">().</span><span class="nx">fadeIn</span><span class="p">(</span><span class="mi">1000</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+			<span class="p">}</span>
+		<span class="p">});</span>
+	<span class="p">});</span>
+
+	<span class="c1">//proses edit </span>
+	<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#cruddata</span><span class="dl">'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">#edit</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+		<span class="kd">const</span> <span class="nx">productCode</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#productcode</span><span class="dl">'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+		<span class="kd">const</span> <span class="nx">productName</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#productname</span><span class="dl">'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+		<span class="kd">const</span> <span class="nx">productPrice</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#productprice</span><span class="dl">'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+		<span class="kd">const</span> <span class="nx">productId</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#productid</span><span class="dl">'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+
+		<span class="k">if</span><span class="p">(</span><span class="nx">productCode</span> <span class="o">==</span> <span class="dl">''</span> <span class="o">||</span> <span class="nx">productName</span> <span class="o">==</span> <span class="dl">''</span> <span class="o">||</span> <span class="nx">productPrice</span> <span class="o">==</span> <span class="dl">''</span><span class="p">){</span>
+			<span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">No update !</span><span class="dl">'</span><span class="p">);</span>
+			<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#cruddata</span><span class="dl">'</span><span class="p">).</span><span class="nx">hide</span><span class="p">(</span><span class="dl">'</span><span class="s1">slow</span><span class="dl">'</span><span class="p">).</span><span class="nx">fadeOut</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+		<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+			<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+				<span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">contents/edit.php?page=edit</span><span class="dl">'</span><span class="p">,</span>
+				<span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">post</span><span class="dl">'</span><span class="p">,</span>
+				<span class="na">data</span><span class="p">:</span> <span class="dl">'</span><span class="s1">productcode=</span><span class="dl">'</span><span class="o">+</span><span class="nx">productCode</span><span class="o">+</span><span class="dl">'</span><span class="s1">&amp;productname=</span><span class="dl">'</span><span class="o">+</span><span class="nx">productName</span><span class="o">+</span><span class="dl">'</span><span class="s1">&amp;productprice=</span><span class="dl">'</span><span class="o">+</span><span class="nx">productPrice</span><span class="o">+</span><span class="dl">'</span><span class="s1">&amp;productid=</span><span class="dl">'</span><span class="o">+</span><span class="nx">productId</span><span class="p">,</span>
+				<span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+					<span class="k">if</span><span class="p">(</span><span class="nx">response</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">success</span><span class="dl">'</span><span class="p">){</span>
+						<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#cruddata</span><span class="dl">'</span><span class="p">).</span><span class="nx">hide</span><span class="p">(</span><span class="dl">'</span><span class="s1">slow</span><span class="dl">'</span><span class="p">).</span><span class="nx">fadeOut</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+						<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#animasi</span><span class="dl">'</span><span class="p">).</span><span class="nx">load</span><span class="p">(</span><span class="dl">'</span><span class="s1">contents/animated2.php</span><span class="dl">'</span><span class="p">).</span><span class="nx">fadeIn</span><span class="p">(</span><span class="mi">1500</span><span class="p">);</span>
+						<span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+							<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#viewdata</span><span class="dl">'</span><span class="p">).</span><span class="nx">load</span><span class="p">(</span><span class="dl">'</span><span class="s1">contents/view.php</span><span class="dl">'</span><span class="p">).</span><span class="nx">fadeIn</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+							<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#animasi</span><span class="dl">'</span><span class="p">).</span><span class="nx">hide</span><span class="p">(</span><span class="dl">'</span><span class="s1">slow</span><span class="dl">'</span><span class="p">).</span><span class="nx">slideUp</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+						<span class="p">},</span> <span class="mi">3000</span><span class="p">);</span>
+						
+					<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+						<span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">Failed update</span><span class="dl">'</span><span class="p">);</span>
+					<span class="p">}</span>
+				<span class="p">}</span>
+			<span class="p">});</span>
+		<span class="p">}</span>
+
+	<span class="p">});</span>
+
+	<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#viewdata</span><span class="dl">'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">.del</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+		<span class="kd">const</span> <span class="nx">id</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="dl">'</span><span class="s1">id</span><span class="dl">'</span><span class="p">);</span>
+		<span class="nx">Swal</span><span class="p">.</span><span class="nx">fire</span><span class="p">({</span>
+		  <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Are you sure?</span><span class="dl">'</span><span class="p">,</span>
+		  <span class="na">text</span><span class="p">:</span> <span class="dl">"</span><span class="s2">You won't be able to revert this!</span><span class="dl">"</span><span class="p">,</span>
+		  <span class="na">icon</span><span class="p">:</span> <span class="dl">'</span><span class="s1">warning</span><span class="dl">'</span><span class="p">,</span>
+		  <span class="na">showCancelButton</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+		  <span class="na">confirmButtonColor</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#3085d6</span><span class="dl">'</span><span class="p">,</span>
+		  <span class="na">cancelButtonColor</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#d33</span><span class="dl">'</span><span class="p">,</span>
+		  <span class="na">confirmButtonText</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Yes, delete it!</span><span class="dl">'</span>
+		<span class="p">}).</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+		  <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+		  	<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+				<span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">contents/delete.php?page=del</span><span class="dl">'</span><span class="p">,</span>
+				<span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">post</span><span class="dl">'</span><span class="p">,</span>
+				<span class="na">data</span><span class="p">:</span> <span class="dl">'</span><span class="s1">id=</span><span class="dl">'</span><span class="o">+</span><span class="nx">id</span><span class="p">,</span>
+				<span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+					<span class="k">if</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+						<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#cruddata</span><span class="dl">'</span><span class="p">).</span><span class="nx">hide</span><span class="p">(</span><span class="dl">'</span><span class="s1">slow</span><span class="dl">'</span><span class="p">).</span><span class="nx">fadeOut</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+							<span class="nx">Swal</span><span class="p">.</span><span class="nx">fire</span><span class="p">(</span>
+						      <span class="dl">'</span><span class="s1">Deleted! product data with id : </span><span class="dl">'</span><span class="o">+</span><span class="nx">id</span><span class="p">,</span>
+						      <span class="dl">'</span><span class="s1">Your data has been deleted.</span><span class="dl">'</span><span class="p">,</span>
+						      <span class="dl">'</span><span class="s1">success</span><span class="dl">'</span>
+						    <span class="p">);</span>
+						<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#animasi</span><span class="dl">'</span><span class="p">).</span><span class="nx">load</span><span class="p">(</span><span class="dl">'</span><span class="s1">contents/animated.php</span><span class="dl">'</span><span class="p">).</span><span class="nx">fadeIn</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+						<span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+							<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#animasi</span><span class="dl">'</span><span class="p">).</span><span class="nx">hide</span><span class="p">(</span><span class="dl">'</span><span class="s1">slow</span><span class="dl">'</span><span class="p">).</span><span class="nx">slideUp</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+							<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#viewdata</span><span class="dl">'</span><span class="p">).</span><span class="nx">load</span><span class="p">(</span><span class="dl">'</span><span class="s1">contents/view.php</span><span class="dl">'</span><span class="p">).</span><span class="nx">fadeIn</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+						<span class="p">},</span> <span class="mi">2500</span><span class="p">);</span>   
+
+					<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+						<span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">Failed deleted data</span><span class="dl">'</span><span class="p">);</span>
+					<span class="p">}</span>
+				<span class="p">}</span>
+			<span class="p">});</span>
+
+		  <span class="p">}</span>
+		<span class="p">});</span>
+
+
+	<span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>code diatas adalah api ajax untuk meredirect request data dari client side. masih banyak metode yang bisa di lakukan javascript dalam menangani request method dari client side, tapi dalam dokumentasi kali ini penulis hanya menjabarkan sedikit basicnya saja, mungkin di lain kesempatan, akan penulis ulas kembali secara keseluruhan. 
+ok sekian dulu dirasa penulis cukupkan dokumentasi crud data dengan pdo yang ditangani oleh ajax jquery. terima kasih. 
+salam .
+untuk source code lengkap bisa di download di link berikut : <a href="https://github.com/codesyariah122/crud-data-with-php-PDO-Jquery-ajax/tree/master/assets" title="Crud data sederhana dengan ajax jquery">Source Code =&gt; CrudAjax</a></p>
+:ET

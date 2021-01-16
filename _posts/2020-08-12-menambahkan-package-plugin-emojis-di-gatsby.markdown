@@ -15,7 +15,7 @@ dalam artikel ini sebetulnya pembahasan nya bukan sesuatu yang serius, pembahasa
 #### Gatsby Remark Emojis  
 langsung ajah buka terminal baru atau jika menggunakan ```visual studio code``` bisa langsung aktifkan terminal editornya.  
 langsung kita install package emoji nya : 
-```
+```bash
 npm install --save gatsby-transformer-remark
 npm install --save gatsby-remark-emojis 
 ```   
@@ -23,7 +23,7 @@ cek file ```package.json``` di bagian ```"dependencies"``` jika ada bagian ini `
 
 ***buka file ```gatsby-config.js``` kemudian tambahkan configurasi untuk dependencies ***Gatsby Remark Emojis*** dibawah , seperti ini :  
 
-```
+```javascript
  {
 	    	resolve: 'gatsby-transformer-remark',
 	    	options: {
@@ -58,7 +58,7 @@ cek file ```package.json``` di bagian ```"dependencies"``` jika ada bagian ini `
 
 *buat file baru untuk menangkap nilai emojis ```src/emoji.js```* :  
 
-```  
+```javascript  
 // file emoji.js : 
 import React from 'react'
 
@@ -73,7 +73,7 @@ export default Emoji
 ```  
 *Kemudian buka file ```index.js```:*  
 
-```
+```javascript
 import React from 'react'
 import { Link } from 'gatsby'
 

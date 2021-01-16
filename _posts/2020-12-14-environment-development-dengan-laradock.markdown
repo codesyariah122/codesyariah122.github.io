@@ -8,6 +8,8 @@ tags: [fullstack_developer, BeckEnd]
 opening: بسم الله الرحمن الرحيم
 ---  
 
+{{page.opening}}
+
 ![laradock]({{site.url}}/assets/images/post/laradock2.png)  
 
 ### Lingkungan development dengan Laradock  
@@ -27,7 +29,7 @@ versi Community Edition.
 
 #### Install Docker Compose  
 karena disini kita sebagai pengguna linux maka diperlukan untuk menginstall tools yang satu ini yaitu **Docker Compose**  
-```
+```bash
 $ curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 ```  
 <blockquote>
@@ -36,14 +38,14 @@ terbaru yang tersedia di link ini https://github.com/docker/compose/releases
 </blockquote>  
 
 Selanjutnya buat permision untuk mengijinkan docker-compose tadi menjadi executable  
-```
+```bash
 $ chmod +x /usr/local/bin/docker-compose
 ```  
 cek apakah installasi docker-compose sudah berhasil  
-```
+```bash
 $ docker-compose --version
 ```
-```
+```bash
 $ docker-compose version 1.21.2, build 1719ceb
 ```  
 
@@ -53,14 +55,14 @@ Laradock.
 Oke langsung saja kita eksekusi, seperti biasa buka dulu senjata andalan kita yaitu terminal (CMD) atau (Command Prompt) heheheh.  
 buat direktori baru dengan nama **laravel-projects**  
 
-```
+```bash
 $ mkdir -p laravel-projects
 ```  
 direktori ini akan kita gunakan untuk menaruh setiap project yang akan kita bangun dalam lingkungan laradock ini terkhusus yang menggunakan framework laravel, karena fitur laradock ini lengkap, paket lengkap seperti lamp hanya saja dalam kerangka yang modern.  
 
 ***Lanjut ...***  
 ok lanjut kita akses direktori yang tadi kita buat 
-```
+```bash
 $ cd laravel-projects/
 ```
 jika sudah ada di direktori project kita selanjutnya kita clone package laradock nya dari github  
@@ -69,19 +71,19 @@ $ git clone https://github.com/Laradock/laradock.git
 ```  
 setelah proses ***cloning*** selesai akses direktori ***laradock***
 
-```
+```bash
 $ chmod -R 755 laradock/.*
 $ cd laradock/
 ```
 
 ubah env-example menjadi .env
-```
+```bash
 $ cp env-example .env
 ```  
 
 Kemudian selanjutnya mengaktifkan container untuk laradock  
 
-```
+```bash
 $ docker-compose up -d nginx mysql phpmyadmin redis workspace
 ```  
 dan untuk selanjutnya setiap kali kita akan memulai development kita gunakan perintah diatas untuk mengaktifkan container laradock, Minimal kita perlu menyalakan service nginx, mysql, phpmyadmin dan redis karena kita akan memerlukan ke empat service tersebut.  
@@ -130,12 +132,12 @@ container tidak sedang berjalan.
 
 Lalu build ulang container mysql dengan menjalankan perintah berikut.
 
-```
+```bash
 docker-compose build mysql
 ```  
 Solusi yang lain adalah dengan menggunakan fitur upgrade dari mysql untuk mengatasi masalah ini.
 Caranya, masuk ke container mysql 
-```
+```bash
 $ docker exec -it mysql bash
 
 mysql -u root -p
@@ -158,13 +160,13 @@ Dan sekarang kita masuk ke inti dari artikel ini, yaitu memulai project baru den
 seperti biasa kita buka terminal terlebih dahulu atau jika menggunakan visual studio code bisa gunakan terminal di vscode.  
 
 - Masuk ke folder(direktori) Laradock
-```
+```bash
 $ cd laravel-project/laradock
 ```
 
 - Lalu aktifkan mode workspace laradock  
 
-```
+```bash
 $ docker-compose exec --user=laradock workspace bash
 ```  
 
@@ -180,18 +182,18 @@ menginstall Composer dan tool lain yang kita butuhkan.
 Download Laravel installer menggunakan composer, caranya ketik di terminal perintah berikut.  
 
 
-```
+```bash
 $ composer global require "laravel/installer"
 ```  
 Setelah berhasil menjankan perintah di atas, perintah laravel bisa kita gunakan. Untuk membuat aplikasi laravel baru dengan nama aplikasi-laravelku, jalankan perintah berikut di terminal.  
 
-```
+```bash
 $ laravel new aplikasi-laravelku
 ```  
 
 Setelah berhasil masuk ke direktori aplikasi yang baru saja kita install menggunakan terminal / cmder. Lalu ketik perintah berikut untuk menginstall dependency project kita: 
 
-```
+```bash
 $ composer install
 ```  
 
@@ -199,7 +201,7 @@ Buat Project dengan Composer create-project ~3
 Alternatif lain adalah dengan menggunakan perintah composer create-project di terminal, seperti berikut (ini adalah salah satu cara yang gout biasa pakai ):  
 
 
-```
+```bash
 $ composer create-project laravel/laravel=6.* toko-online --prefer-dist
 ```  
 
@@ -216,12 +218,12 @@ Maka buka file **/laradock/nginx/sites/default.conf** dan pastikan agar root nya
 bernilai /var/www; misalnya seperti ini:
 </blockquote>  
 
-```
+```bash
 root /var/www
 ```  
 jangan lupa restart nginx nya :  
 
-```
+```bash
 $ docker-compose stop nginx
 
 $ docker-compose up -d nginx

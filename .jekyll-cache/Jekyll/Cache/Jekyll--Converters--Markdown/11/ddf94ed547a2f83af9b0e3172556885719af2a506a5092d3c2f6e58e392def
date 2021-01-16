@@ -1,0 +1,315 @@
+I"�c<p>بسم الله الرحمن الرحيم</p>
+
+<p>Halo brothers’ masih tentang laravel, diartikel kali ini gout mau memberikan tips seputar management data di laravel menggunakan <code class="language-html highlighter-rouge">Faker</code> method.</p>
+
+<p>Pertama kalian bisa lihat terlebih dahulu direktori project laravel gout kali ini, seperti ini listing directory project laravel gout :</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="syntax"><code>root@876a9f5bb1a6:/var/www/projectku# <span class="nb">ls</span> <span class="nt">-l</span>
+total 284
+drwxrwxrwx  6 root root   4096 Jan 11 14:50 app
+<span class="nt">-rwxrwxrwx</span>  1 root root   1686 Aug 27  2019 artisan
+drwxrwxrwx  3 root root   4096 Aug 27  2019 bootstrap
+<span class="nt">-rwxrwxrwx</span>  1 root root   1497 Aug 27  2019 composer.json
+<span class="nt">-rwxrwxrwx</span>  1 root root 220225 Jan 10 05:11 composer.lock
+drwxrwxrwx  2 root root   4096 Aug 27  2019 config
+drwxrwxrwx  5 root root   4096 Aug 27  2019 database
+<span class="nt">-rwxrwxrwx</span>  1 root root   1013 Aug 27  2019 package.json
+<span class="nt">-rwxrwxrwx</span>  1 root root   1589 Aug 27  2019 phpunit.xml
+drwxrwxrwx  2 root root   4096 Aug 27  2019 public
+<span class="nt">-rwxrwxrwx</span>  1 root root   3993 Jan 10 09:49 readme.md
+drwxrwxrwx  6 root root   4096 Aug 27  2019 resources
+drwxrwxrwx  2 root root   4096 Aug 27  2019 routes
+<span class="nt">-rwxrwxrwx</span>  1 root root    563 Aug 27  2019 server.php
+drwxrwxrwx  5 root root   4096 Aug 27  2019 storage
+drwxrwxrwx  4 root root   4096 Aug 27  2019 tests
+drwxrwxrwx 38 root root   4096 Jan 10 05:11 vendor
+<span class="nt">-rwxrwxrwx</span>  1 root root    538 Aug 27  2019 webpack.mix.js
+
+</code></pre></div></div>
+
+<h4 id="membuat-seeder">Membuat Seeder</h4>
+
+<p>Sebelum berlanjut ke topik utama yaitu membuat seeder, terlebih dahulu kita akan membuat table baru untuk menampung seeder :<br />
+seperti topik membuat table migration di artikel sebelumnya, kali ini kita akan membuat migration untuk table dengan nama table <code class="language-html highlighter-rouge">employees</code>, kita lakukan migration dari terminal :</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="syntax"><code>root@876a9f5bb1a6:/var/www/projectku# php artisan make:migration create_employees_table
+</code></pre></div></div>
+<p>akan terbentuk file baru di direktori <code class="language-html highlighter-rouge">database/migration/2021_01_13_create_employees_table.php</code>, kita buka file migration employees :</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">&lt;?php</span>
+
+<span class="kn">use</span> <span class="nc">Illuminate\Database\Migrations\Migration</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Illuminate\Database\Schema\Blueprint</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Illuminate\Support\Facades\Schema</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">CreateEmployeesTable</span> <span class="kd">extends</span> <span class="nc">Migration</span>
+<span class="p">{</span>
+	<span class="k">public</span> <span class="k">function</span> <span class="n">up</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nc">Schema</span><span class="o">::</span><span class="nf">create</span><span class="p">(</span><span class="s1">'employees'</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="kt">Blueprint</span> <span class="nv">$table</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$table</span><span class="o">-&gt;</span><span class="nf">bigIncrements</span><span class="p">(</span><span class="s1">'id'</span><span class="p">);</span>
+            <span class="nv">$table</span><span class="o">-&gt;</span><span class="nf">timestamps</span><span class="p">();</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">down</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nc">Schema</span><span class="o">::</span><span class="nf">dropIfExists</span><span class="p">(</span><span class="s1">'employees'</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Kemudian eksekusi code diatas menggunakan artisan lagi, di terminal :</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="syntax"><code>root@876a9f5bb1a6:/var/www/projectku# php artisan migrate
+</code></pre></div></div>
+<p>bisa dilihat di mysql atau di phpmyadmin kalian, akan ada table baru dengan nama table <code class="language-html highlighter-rouge">employees</code> telah terbentuk, tapi kita lupa menambahkan field/column lainnya. Ok kita ubah terlebih dahulu code diatas, untuk menambahkan beberapa field/column baru di table <code class="language-html highlighter-rouge">employees</code> sehingga code tersebut menjadi seperti ini :</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">&lt;?php</span>
+
+<span class="kn">use</span> <span class="nc">Illuminate\Database\Migrations\Migration</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Illuminate\Database\Schema\Blueprint</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Illuminate\Support\Facades\Schema</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">CreateEmployeesTable</span> <span class="kd">extends</span> <span class="nc">Migration</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="nv">$field</span><span class="o">=</span><span class="p">[];</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">new</span><span class="p">(</span><span class="nv">$tableName</span><span class="p">,</span> <span class="nv">$field</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">field</span> <span class="o">=</span> <span class="nv">$field</span><span class="p">;</span>
+        <span class="nc">Schema</span><span class="o">::</span><span class="nf">table</span><span class="p">(</span><span class="nv">$tableName</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="kt">Blueprint</span> <span class="nv">$table</span><span class="p">){</span>
+            <span class="k">foreach</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">field</span> <span class="k">as</span> <span class="nv">$dataField</span><span class="p">)</span><span class="o">:</span>
+                <span class="nv">$table</span><span class="o">-&gt;</span><span class="nf">string</span><span class="p">(</span><span class="nv">$dataField</span><span class="p">);</span>
+            <span class="k">endforeach</span><span class="p">;</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+    <span class="cd">/**
+     * Run the migrations.
+     *
+     * @return void
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">up</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nc">Schema</span><span class="o">::</span><span class="nf">create</span><span class="p">(</span><span class="s1">'employees'</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="kt">Blueprint</span> <span class="nv">$table</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$table</span><span class="o">-&gt;</span><span class="nf">bigIncrements</span><span class="p">(</span><span class="s1">'id'</span><span class="p">);</span>
+            <span class="nv">$table</span><span class="o">-&gt;</span><span class="nf">timestamps</span><span class="p">();</span>
+        <span class="p">});</span>
+
+         <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nc">Schema</span><span class="o">::</span><span class="nf">hasColumn</span><span class="p">(</span><span class="s1">'employees'</span><span class="p">,</span> <span class="s1">'name'</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nc">Schema</span><span class="o">::</span><span class="nf">hasColumn</span><span class="p">(</span><span class="s1">'employees'</span><span class="p">,</span> <span class="s1">'email'</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nc">Schema</span><span class="o">::</span><span class="nf">hasColumn</span><span class="p">(</span><span class="s1">'employees'</span><span class="p">,</span> <span class="s1">'jobdesk'</span><span class="p">)){</span>
+            <span class="nv">$tableName</span> <span class="o">=</span> <span class="s1">'employees'</span><span class="p">;</span>
+            <span class="nv">$dataField</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="s2">"name"</span><span class="p">,</span>
+                <span class="s2">"email"</span><span class="p">,</span>
+                <span class="s2">"jobdesk"</span>
+            <span class="p">];</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="k">new</span><span class="p">(</span><span class="nv">$tableName</span><span class="p">,</span> <span class="nv">$dataField</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="cd">/**
+     * Reverse the migrations.
+     *
+     * @return void
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">down</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nc">Schema</span><span class="o">::</span><span class="nf">dropIfExists</span><span class="p">(</span><span class="s1">'employees'</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+<p>Kemudian jalankan kembali :</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="syntax"><code>root@876a9f5bb1a6:/var/www/projectku# php artisan migrate
+</code></pre></div></div>
+<p>atau :</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="syntax"><code>root@876a9f5bb1a6:/var/www/projectku# php artisan migrate:fresh
+</code></pre></div></div>
+<p>jika berhasil maka akan terbentuk field/column baru di table <code class="language-html highlighter-rouge">employees</code>. Tapi jika belum berhasil bisa diulang proses diatas dengan menambahkan key <code class="language-html highlighter-rouge">refresh</code> atau :</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="syntax"><code>root@876a9f5bb1a6:/var/www/projectku# php artisan migrate:refresh
+</code></pre></div></div>
+
+<p>Ok Sekarang kita akan memulai seeder untuk table <code class="language-html highlighter-rouge">employees</code></p>
+<ul>
+  <li>
+    <p>Apa itu Seeder ?</p>
+
+    <p>Apa itu seeding? Seeding jika diartikan secara harfiah bermakna memberi benih. Dalam konteks pengembangan aplikasi, Seeding adalah memberikan data awal ke database. Hal ini biasanya dilakukan saat
+  pengembangan terutama jika kita ingin menguji apakah fitur tertentu telah berjalan sesuai ekspektasi
+  menggunakan live data.
+  Kita bisa saja memberikan data awal secara manual dengan melakukan insert melalui DBMS, akan tetapi
+  bayangkan jika kita akan menguji 100 data atau lebih, tentu akan sangat membosankan dan memakan waktu
+  jika kita lakukan Seeding secara manual. Cara yang lebih pintar adalah dengan memanfaatkan fitur Seeding
+  di Laravel.</p>
+  </li>
+  <li>
+    <p>Membuat Seeder :<br />
+  Lanjut, kita buat terlebih dahulu file seeder untuk tabel tertentu. Misalnya, kita akan menguji fitur product list, itu berarti kita ingin menyiapkan data products terlebih dahulu ke database. Data ini hanyalah data dummy. Untuk membuat file seeder kita jalankan perintah berikut :</p>
+  </li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="syntax"><code>root@876a9f5bb1a6:/var/www/projectku# php artisan make:seeder EmployeesSeederTable
+</code></pre></div></div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="syntax"><code>Setelah kita jalankan perintah di atas, maka sebuah file ```app/database/seeds/EmployeesSeederTable.php``` Seperti ini isi file seedernya :  
+</code></pre></div></div>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">&lt;?php</span>
+
+<span class="kn">use</span> <span class="nc">Illuminate\Database\Seeder</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Faker\Factory</span> <span class="k">as</span> <span class="nc">Faker</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">EmployeesSeederTable</span> <span class="kd">extends</span> <span class="nc">Seeder</span>
+<span class="p">{</span>
+    <span class="cd">/**
+     * Run the database seeds.
+     *
+     * @return void
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">run</span><span class="p">()</span>
+    <span class="p">{</span>
+    	<span class="c1">//</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Penjelasan kode:</strong> 
+	&gt; Kode di atas merupakan class seeder dengan nama ProductTableSeeder. Class tersebut memiliki satu method bernama run(). Pada method inilah kita akan menulis kode untuk mengisi data dummy untuk table products. Kita melakukan insert menggunakan Query Builder. Selanjutnya, kita akan coba insert data ke tabel employees. Maka kita tuliskan Query Builder kita pada method run() seperti ini:  Sebelumnya, kita juga bisa menggunakan model untuk proses Query Builder nya, kita buat dulu model baru :</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="syntax"><code>root@876a9f5bb1a6:/var/www/projectku# php artisan make:model Employee
+</code></pre></div></div>
+<p>Kemudian buka file model dan edit menjadi seperti ini :</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">&lt;?php</span>
+
+<span class="kn">namespace</span> <span class="nn">App</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nc">Illuminate\Database\Eloquent\Model</span><span class="p">;</span>
+<span class="kn">use</span> <span class="no">Illuminate\Support\Facades\DB</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">Employee</span> <span class="kd">extends</span> <span class="nc">Model</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">create</span><span class="p">(</span><span class="nv">$table</span><span class="p">,</span> <span class="nv">$data</span><span class="p">)</span>
+    <span class="p">{</span>
+    	<span class="no">DB</span><span class="o">::</span><span class="nf">table</span><span class="p">(</span><span class="nv">$table</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">insert</span><span class="p">([</span>
+    		<span class="nv">$data</span>
+    	<span class="p">]);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+<p>selanjutnya kita buka kembali file <code class="language-html highlighter-rouge">database/seeds/EmployeeSeederTable.php</code>, edit code nya menjadi seperti ini :</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">&lt;?php</span>
+
+<span class="kn">use</span> <span class="nc">App\Employee</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Illuminate\Database\Seeder</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Faker\Factory</span> <span class="k">as</span> <span class="nc">Faker</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">EmployeesSeederTable</span> <span class="kd">extends</span> <span class="nc">Seeder</span>
+<span class="p">{</span>
+    <span class="cd">/**
+     * Run the database seeds.
+     *
+     * @return void
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">run</span><span class="p">()</span>
+    <span class="p">{</span>
+    	<span class="nv">$employee</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Employee</span><span class="p">;</span>
+        <span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'Puji Ermanto'</span><span class="p">,</span>
+            <span class="s1">'email'</span> <span class="o">=&gt;</span> <span class="s1">'pujiermanto@gmail.com'</span><span class="p">,</span>
+            <span class="s1">'jobdesk'</span> <span class="o">=&gt;</span> <span class="s1">'Frontend Dev'</span>
+        <span class="p">];</span>
+
+        <span class="nv">$employee</span><span class="o">-&gt;</span><span class="nf">create</span><span class="p">(</span><span class="s1">'employees'</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Kemudian jalankan kembali seeder di terminal :</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="syntax"><code>root@876a9f5bb1a6:/var/www/projectku# php artisan db:seed <span class="nt">--class</span><span class="o">=</span>EmployeesSeederTable
+Database seeding completed successfully.
+root@876a9f5bb1a6:/var/www/projectku# 
+</code></pre></div></div>
+<p>Coba cek di mysql atau phpmyadmin kalian maka akan terbentuk data baru, sesuai dengan data yang telah dibuat di file seeder tadi.</p>
+
+<blockquote>
+  <p>bisa lihat cuplikan berikut:</p>
+</blockquote>
+
+<div class="embed-responsive embed-responsive-21by9">
+  <iframe class="embed-responsive-item" src="https://codesyariah122.github.io/assets/images/post/db-seed.mp4"></iframe>
+</div>
+
+<h3 id="dummy-data-dengan-faker">Dummy Data dengan Faker</h3>
+
+<p>Sedikit berbeda dengan seeding namun mempunyai metodelogi yang kurang lebih sama yah, faker sendiri di fungsikan dengan tujuan untuk membuat demonstration data selama proses development. Yaa karena selama proses development ini kita butuh sebuah demonstration apakah aplikasi yang kita buat untuk pengolahan data bisa berjalan dengan baik atau tidak.</p>
+
+<p>Ok langsung ajah kita eksekusi menggunakan Faker.<br />
+Masih menggunakan file yang sama yaitu file <code class="language-html highlighter-rouge">database/seeds/EmployeesSeederTable.php</code>, Kita hanya menambahkan method Query Builder langsung di file seedernya sehingga code seeder tersebut menjadi seperti berikut :</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">&lt;?php</span>
+
+<span class="kn">use</span> <span class="nc">App\Employee</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Illuminate\Database\Seeder</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Faker\Factory</span> <span class="k">as</span> <span class="nc">Faker</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">EmployeesSeederTable</span> <span class="kd">extends</span> <span class="nc">Seeder</span>
+<span class="p">{</span>
+    <span class="cd">/**
+     * Run the database seeds.
+     *
+     * @return void
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">run</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$faker</span> <span class="o">=</span> <span class="nc">Faker</span><span class="o">::</span><span class="nf">create</span><span class="p">(</span><span class="s1">'App\Employees'</span><span class="p">);</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="nv">$i</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span> <span class="nv">$i</span><span class="o">&lt;=</span><span class="mi">20</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">){</span>
+        	<span class="no">DB</span><span class="o">::</span><span class="nf">table</span><span class="p">(</span><span class="s1">'employees'</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">insert</span><span class="p">([</span>
+                <span class="s1">'created_at'</span><span class="o">=&gt;</span> <span class="nv">$faker</span><span class="o">-&gt;</span><span class="nb">date</span><span class="p">(</span><span class="nv">$format</span><span class="o">=</span><span class="s1">'Y-m-d'</span><span class="p">,</span> <span class="nv">$timezone</span><span class="o">=</span><span class="s1">'Asia/Jakarta'</span><span class="p">)</span><span class="mf">.</span><span class="s1">' | '</span><span class="mf">.</span><span class="nv">$faker</span><span class="o">-&gt;</span><span class="nb">time</span><span class="p">(</span><span class="nv">$format</span><span class="o">=</span><span class="s1">'H:i:s'</span><span class="p">,</span> <span class="nv">$timezone</span><span class="o">=</span><span class="s1">'Asia/Jakarta'</span><span class="p">),</span>
+                <span class="s1">'updated_at'</span><span class="o">=&gt;</span> <span class="nv">$faker</span><span class="o">-&gt;</span><span class="nb">date</span><span class="p">(</span><span class="nv">$format</span><span class="o">=</span><span class="s1">'Y-m-d'</span><span class="p">,</span> <span class="nv">$timezone</span><span class="o">=</span><span class="s1">'Asia/Jakarta'</span><span class="p">)</span><span class="mf">.</span><span class="s1">' | '</span><span class="mf">.</span><span class="nv">$faker</span><span class="o">-&gt;</span><span class="nb">time</span><span class="p">(</span><span class="nv">$format</span><span class="o">=</span><span class="s1">'H:i:s'</span><span class="p">,</span> <span class="nv">$timezone</span><span class="o">=</span><span class="s1">'Asia/Jakarta'</span><span class="p">),</span>
+        		<span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="nv">$faker</span><span class="o">-&gt;</span><span class="nf">name</span><span class="p">(</span><span class="nv">$gender</span><span class="o">=</span><span class="s1">'male'</span><span class="p">),</span>
+        		<span class="s1">'email'</span> <span class="o">=&gt;</span> <span class="nv">$faker</span><span class="o">-&gt;</span><span class="nf">email</span><span class="p">(),</span>
+        		<span class="s1">'jobdesk'</span> <span class="o">=&gt;</span> <span class="nv">$faker</span><span class="o">-&gt;</span><span class="nf">jobTitle</span><span class="p">()</span>
+        	<span class="p">]);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>coba kita perhatikan code diatas, dimana laravel menyediakan fasilitas untuk membuat uji coba data yaitu di fungsi dengan namespace ini : <code class="language-html highlighter-rouge">use Faker\Factory as Faker;</code>.<br />
+kemudian kita assignment fakernya di variable : <code class="language-html highlighter-rouge">$faker = Faker::create('App\Employees');</code>, kemudian kita looping sebuah data yang isinya adalah Query Builder untuk mengirim data ke table <code class="language-html highlighter-rouge">employees</code>.</p>
+
+<p>coba kita jalankan kembali seeder nya di terminal :</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="syntax"><code>root@876a9f5bb1a6:/var/www/projectku# php artisan db:seed <span class="nt">--class</span><span class="o">=</span>EmployeesSeederTable
+Database seeding completed successfully.
+root@876a9f5bb1a6:/var/www/projectku# 
+</code></pre></div></div>
+<blockquote>
+  <p>lihat dicuplikan berikut ini:</p>
+</blockquote>
+
+<div class="embed-responsive embed-responsive-21by9">
+  <iframe class="embed-responsive-item" src="https://codesyariah122.github.io/assets/images/post/db-faker.mp4"></iframe>
+</div>
+
+<p>Mudah bukan, keren dong pastinya pakai framework <code class="language-html highlighter-rouge">laravel</code> ini dimana proses development kita untuk membuat sebuah aplikasi menjadi lebih cepat dalam proses developmentnya, dan itu meringkas waktu sekali, sangat memudahkan para pengembang dan programmer khususnya web developer.</p>
+
+<p>Mudah-mudahan bermanfaat dari artikel gout ini yah, jika ada pertanyaan seputar artikel ini, silahkan berkomentar dengan baik di kolom komentar yang tersedia.</p>
+
+<p>ok sekian dulu dari saya untuk artikel kali ini, nanti kita lanjutkan lagi artikel mengenai laravel di artikel selanjutnya…. see the next articles</p>
+
+<p>bye :)</p>
+
+<p><strong><em>Salam</em></strong></p>
+
+<p><strong>Puji Ermanto</strong></p>
+:ET

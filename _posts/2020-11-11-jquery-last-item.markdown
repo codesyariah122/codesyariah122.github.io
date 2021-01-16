@@ -6,7 +6,10 @@ categories: [ Javascript, JQuery ]
 image: assets/images/post/jquery_last1.png
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
----
+---  
+
+{{page.opening}}
+
 
 # Assalamualaikum  
 
@@ -27,7 +30,7 @@ nah dari gambar itu ada bagian menu yang menu terakhirnya yaitu *contact*, setel
 jadi gout menambahkan script baru dengan code seperti berikut, sebelumnya kita seleksi dulu class di bagian menu, dari navigasi di template tersebut di dapati class untuk menu nya adalah ```menu-item``` sebuah class navbar milik bootstrap. 
 jadi di dalam script code nya seperti ini 
 
-``` 
+```javascript 
 // assignment ke dalam sebuah object
 // pakai variable biasa juga bisa, kebetulan disini gout pakai object karena gout bisa menambahkan element-element lainnya
 

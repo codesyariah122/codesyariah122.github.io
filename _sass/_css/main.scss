@@ -497,9 +497,10 @@ mark,
   color: #6c757d; }
 
 code {
-  font-size: 87.5%;
-  color: #ff0266;
-  word-break: break-word; }
+    font-size: 87.5%;
+    color: #ff0266;
+    word-break: break-word; 
+  }
   a > code {
     color: inherit; }
 
@@ -515,11 +516,14 @@ kbd {
     font-weight: 700; }
 
 pre {    
-    background: #eee;
+    // background: #eee;
+    background: #rgba(0, 0, 0, 0.7);
     padding: 5px;
     font-size:14px;
-  display: block;
-  color: #212529; }
+    display: block;
+  // color: #212529; 
+    color: #FFF8DC;
+  }
   pre code {
     font-size: inherit;
     color: inherit;
