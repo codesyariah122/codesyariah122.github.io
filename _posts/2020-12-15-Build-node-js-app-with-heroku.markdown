@@ -8,8 +8,8 @@ tags: [fullstack_developer]
 opening: بسم الله الرحمن الرحيم
 ---  
 
-![heroku1]({{site.url}}/assets/images/post/heroku2.png) 
-**Assalamuallaikumm**...  
+![hidayah]({{site.url}}/assets/images/post/heroku2.png) 
+**{page.opening}**  
 
 Apa kabarnya sobat coders semua ? semoga selalu dalam keadaan sehat-sehat semuanya.  
 kali ini gout mau berbagi tips ataupun trick mengenai Node.js salah satu programming language yang sedang berkembang pesat dijagat developer.  

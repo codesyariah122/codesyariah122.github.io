@@ -8,7 +8,9 @@ tags: [Blog]
 opening: بسم الله الرحمن الرحيم
 ---  
 
-![heroku1]({{site.url}}/assets/images/post/doa2.jpg) 
+![taubat]({{site.url}}/assets/images/post/doa2.jpg)  
+
+**{page.opening}**  
 
 ## ANTARA ISTIGHFAR, TAUBAT DAN TAUHID  
 Dalam banyak dalil, kita melihat Allah ta’ala menggandengkan antara perintah untuk beristighfar dan bertaubat. 

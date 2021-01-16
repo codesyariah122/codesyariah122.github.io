@@ -195,9 +195,9 @@ vector: "/assets/images/final2.gif"
                 <h4 class="font-weight-bold spanborder">Posts by <span v-html="message"></span></h4>
                 <br>
                     {% assign posts = site.posts | where:"author","puji" %}
-                    {% for post in posts %}
-                    {% include main-loop-card.html %}
-                    {% endfor %}
+            {% for post in posts %}
+              {% include components/main-loop-card.html %}
+            {% endfor %}
             </div>
            
         </div>

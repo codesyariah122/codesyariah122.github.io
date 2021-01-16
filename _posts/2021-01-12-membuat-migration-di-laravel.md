@@ -6,7 +6,9 @@ categories: [ PHP, Laravel, MVC, OOP ]
 image: assets/images/post/laravel-migration.jpg
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
---- 
+---  
+
+{page.opening}
 
 Melanjutkan seri mengenai laravel sebelumnya, kali ini di artikel ini gout mau membahas  seputar migration di laravel. sebelumnya, apa kabarnya nih para coders ? mudah2an selalu di berkahi nikmat sehat dan nikmat waktu luang.
 

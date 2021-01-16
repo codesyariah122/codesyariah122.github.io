@@ -9,7 +9,7 @@ opening: بسم الله الرحمن الرحيم
 ---  
 
 
-Assalamualaikumm...  
+**{page.opening}** 
 
 Halo brothers' masih tentang laravel, diartikel kali ini gout mau memberikan tips seputar management data di laravel menggunakan ```Faker``` method.  
 

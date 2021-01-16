@@ -8,7 +8,9 @@ tags: [Blog]
 opening: بسم الله الرحمن الرحيم
 ---  
 
-![heroku1]({{site.url}}/assets/images/post/hidayah2.jpg) 
+![hidayah]({{site.url}}/assets/images/post/hidayah2.jpg) 
+
+**{page.opening}**
 
 # HIDAYAH ADALAH SEBAIK-BAIK NIKMAT ALLAH TA’ALA
 

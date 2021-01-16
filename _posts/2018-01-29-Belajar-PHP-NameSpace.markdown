@@ -9,6 +9,8 @@ opening: بسم الله الرحمن الرحيم
 ---  
 ![php_namespace]({{site.url}}/assets/images/post/php-namespace.jpg)  
 
+{{page.opening}}  
+
 ## Perkenalan dengan NameSPace  
 
 Halo gaess apa kabarnya kalian semua ? Semoga baik-baik selalu yah gaes.  

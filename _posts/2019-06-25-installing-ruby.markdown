@@ -3,11 +3,11 @@ layout: post
 title:  "installing ruby"
 author: puji
 categories: [Ruby]
-image: /public/images/post/ruby.png
+image: assets/images/post/ruby.png
 tags: [ruby]
 opening: بسم الله الرحمن الرحيم
 ---  
-![rails2]({{site.url}}/public/images/post/ruby.png)  
+![rails2]({{site.url}}/assets/images/post/ruby.png)  
 
 # install ruby di debian 9  
 

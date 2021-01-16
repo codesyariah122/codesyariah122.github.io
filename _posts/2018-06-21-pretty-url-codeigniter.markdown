@@ -3,11 +3,12 @@ layout: post
 title:  "Pretty Url Di Codeigniter"
 author: puji
 categories: [PHP, MVC, Codeigniter]
-image: /public/images/post/prety-url.jpg
+image: assets/images/post/prety-url.jpg
 tags: [codeigniter]
 opening: بسم الله الرحمن الرحيم
 ---  
 
+{{page.opening}}  
 
 ### Pretty Url  
 Apa itu Pretty Url ?  

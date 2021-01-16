@@ -8,6 +8,7 @@ tags: [Blog]
 opening: بسم الله الرحمن الرحيم
 ---
 
+{{page.opening}}  
 
    Dalam judul ini yang dimaksud adalah hidup itu hakikatnya
 dagang dan ada dagang yang tak kunjung rugi,   hal ini kita simak

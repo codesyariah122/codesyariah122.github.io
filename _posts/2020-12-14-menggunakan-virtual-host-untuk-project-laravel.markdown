@@ -10,6 +10,8 @@ opening: بسم الله الرحمن الرحيم
 
 ![laradock]({{site.url}}/assets/images/post/laravel-nginx.webp)  
 
+**{page.opening}**
+
 ### Setup lingkungan kerja project laravel  
 Melanjutkan dari artikel sebelumnya masih membahas mengenai, lingkungan kerja dalam pengembangan project aplikasi menggunakan laravel.  
 diartikel kali ini gout akan sedikit menjelaskan mengenai seting virtualhost **nginx** di laradock yang sebelumnya telah kita jalankan 

@@ -8,6 +8,8 @@ tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  
 
+{page.opening}
+
 Hallo bro ... artikel kali bertema tentang framework laravel, ini hanya sedikit pengalaman gout dalam melakukan pengembangan aplikasi web dengan framework laravel dengan Environment developmentnya menggunakan **laradock**.  
 Dalam proses development kali ini gout menjumpai sebuah masalah yang lumayan sedikit mengganggu, mungkin untuk yang baru pertama kali menggunakan laravel dan Vue sebagai frontendnya.
 

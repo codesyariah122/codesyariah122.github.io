@@ -8,6 +8,8 @@ tags: [fullstack_developer]
 opening: بسم الله الرحمن الرحيم
 ---  
 
+{page.opening}
+
 
 ### Gatsby Source Graphql   
 Halo sob ... ini post kedua di tahun 2021 ini, agak delay yah .. maklum sob kondisi belum kondusif, PSBB silih berganti membatasi aktifitas-aktifitas diruang publik, jangan lupa selalu jaga kesehatan kalian frenn.  

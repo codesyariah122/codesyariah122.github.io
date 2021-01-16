@@ -3,11 +3,11 @@ layout: post
 title:  "Framework Codeigniter"
 author: puji
 categories: [PHP, MVC, Codeigniter]
-image: /public/images/post/codeigniter.png
+image: assets/images/post/codeigniter.png
 tags: [codeigniter]
 opening: بسم الله الرحمن الرحيم
 ---  
-![ci3]({{site.url}}/public/images/post/architecture-codeigniter.png)  
+![ci3]({{site.url}}/assets/images/post/architecture-codeigniter.png)  
 
 ### Tentang Codeigniter  
 
