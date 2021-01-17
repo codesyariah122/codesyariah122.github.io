@@ -19,9 +19,6 @@ mailchimp-list: 'http://eepurl.com/gEvV-f'
 
 feedburner: 'https://feedburner.google.com/fb/a/mailverify'
 
-
-
-
 collections:
   - projects
   - myrooms
@@ -86,4 +83,4 @@ kramdown:
 paginate: 10
 
 # Exclude metadata and development time dependencies (like Grunt plugins)
-exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules]
+exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules, .jekyll-cache]
