@@ -4,7 +4,7 @@ contact: WebDevelopment
 blockquote: "Jalan Sukses Selalu Terbuka"
 layout: default
 type: project
-permalink: "/project/"
+permalink: project/
 image: /assets/images/project/master-bg1.jpg
 parallax: /assets/images/project/parallax1.jpg
 parallax-tags: "Untuk informasi lebih lanjut <span style='font-family:SpringSakura;color:crimson;font-weight:bold;'>| &nbsp; </span> anda bisa menghubungi kami melalui kontak dibawah ini"
