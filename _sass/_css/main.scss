@@ -4,6 +4,26 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+ @font-face {
+      font-family: 'SpringSakura';
+      font-style: normal;
+      font-weight: normal;
+      src: local('SpringSakura'), url('https://github.com/codesyariah122/kerjaan-syoobe/blob/main/for_page/fonts/SpringSakura-3z1m8.otf') format('otf');
+  }
+
+  @font-face {
+      font-family: 'Reey Regular';
+      font-style: normal;
+      font-weight: normal;
+      src: local('Reey Regular'), url('https://github.com/codesyariah122/kerjaan-syoobe/blob/main/for_page/fonts/Reey-Regular.woff') format('woff');
+  }
+
+  @font-face {
+      font-family: 'Lemon/Milk Regular';
+      font-style: normal;
+      font-weight: normal;
+      src: local('https://github.com/codesyariah122/kerjaan-syoobe/blob/main/for_page/fonts/Lemon__Milk%20400.otf') format('otf');
+  } 
 :root {
   --blue: #7832e2;
   --indigo: #502c6c;
@@ -3311,6 +3331,9 @@ input[type="button"].btn-block {
     text-decoration: none; }
   .nav-link.disabled {
     color: #6c757d; }
+.active {
+  color: rgb(0,0,0, 0.9);
+}
 
 .nav-tabs {
   border-bottom: 1px solid #dee2e6; }
@@ -3374,6 +3397,7 @@ input[type="button"].btn-block {
     justify-content: space-between; }
 
 .navbar-brand {
+  font-family: 'Dancing Script', cursive;
   color:mediumseagreen!important;
   display: inline-block;
   padding-top: 0.68rem;
@@ -3383,7 +3407,9 @@ input[type="button"].btn-block {
   line-height: inherit;
   white-space: nowrap; }
   .navbar-brand:hover, .navbar-brand:focus {
-    text-decoration: none; }
+    text-decoration: none; 
+
+  }
 
 .navbar-nav {
   display: flex;

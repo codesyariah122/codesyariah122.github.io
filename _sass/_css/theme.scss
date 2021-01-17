@@ -3,6 +3,26 @@
  * Mundana Jekyll Theme (https://www.wowthemes.net/mundana-jekyll-theme/)
  * Modifi By: Puji Ermanto at codesyariah
  */
+ @font-face {
+      font-family: 'SpringSakura';
+      font-style: normal;
+      font-weight: normal;
+      src: local('SpringSakura'), url('https://github.com/codesyariah122/kerjaan-syoobe/blob/main/for_page/fonts/SpringSakura-3z1m8.otf') format('otf');
+  }
+
+  @font-face {
+      font-family: 'Reey Regular';
+      font-style: normal;
+      font-weight: normal;
+      src: local('Reey Regular'), url('https://github.com/codesyariah122/kerjaan-syoobe/blob/main/for_page/fonts/Reey-Regular.woff') format('woff');
+  }
+
+  @font-face {
+      font-family: 'Lemon/Milk Regular';
+      font-style: normal;
+      font-weight: normal;
+      src: local('https://github.com/codesyariah122/kerjaan-syoobe/blob/main/for_page/fonts/Lemon__Milk%20400.otf') format('otf');
+  } 
 $link: #03a87c;
 $overflow: hidden;
 $padding-top-body: 69.75px;
@@ -253,6 +273,7 @@ a.text-dark:hover {
 	color:#fff !important;
 }
 .navbar-brand {
+	font-family: 'Dancing Script', cursive;
 	margin-right:2rem;
 	font-size:1.55rem;
     font-family:"cursive";

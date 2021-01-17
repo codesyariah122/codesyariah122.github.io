@@ -1,6 +1,0 @@
-I"u<p><img src="https://codesyariah122.github.io/assets/images/post/explode_telp1.png" alt="explode" /><br />
-Halo para coders semuanya !<br />
-selamat menjalankan ibadah puasanya, semoga berkah ibadah di bulan ramadhan tahun ini.<br />
-postingan kali akan berhubungan dengan string di PHP. ok langsung saja kita eksekusi.<br />
-dalam postingan ini asumsikan saya memiliki data di table seperti di gambar diatas tadi, nilai dari field nomor telpon diatas beruba varchar. jadi penginputan nomor telepon di lakukan saat user mengedit informasi profile nya. pada saat update, kita sertakan insert phone ke database ke field phone.</p>
-:ET

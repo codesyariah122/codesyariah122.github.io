@@ -1,0 +1,14 @@
+- label: "Home"
+  link: "/"
+
+- label: "Projects"
+  link: "/project"
+
+- label: "Myrooms"
+  link: "/myrooms"
+
+- label: "Authors"
+  link: "/authors"
+
+- label: "Contact"
+  link: "/contact"

@@ -16,24 +16,25 @@
     <!-- card myroom -->
     {% seo %}
 
-    {% include components/mailchimp.html %}
-
-    {% include components/links.html %}
-
     <!-- ======= Start Tracking Jekyll========== -->
     {% include components/tracking-footer.html %}
     
     {% include components/tracking-header.html %}
     <!-- ======== End Tracking Jekyll=========== -->
+
+    {% include components/mailchimp.html %}
+
+    {% include components/links.html %}
    
     </head>
 
     <body class="{% if page.url == '/' %}homefirstpage{% endif %}">
     
+
     <!-- Navbar -->
     <nav id="MagicMenu" class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="{{ site.url }}"><strong>{{site.name}}</strong></a>
+        <a class="navbar-brand" href="{{ site.url }}" style="font-family: 'Dancing Script', cursive;"><strong>{{site.name}}</strong></a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>

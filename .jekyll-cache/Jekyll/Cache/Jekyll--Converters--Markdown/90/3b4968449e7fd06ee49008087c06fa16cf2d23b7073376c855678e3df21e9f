@@ -1,0 +1,118 @@
+I"n2<p>بسم الله الرحمن الرحيم</p>
+
+<p><img src="http://localhost:4000/assets/images/post/es6.png" alt="es6-1" /></p>
+<h3 id="ecmascript-6">EcmaScript 6</h3>
+<p>Dalam judul kali ini gout berbagi kisah keluh dan kesah, mengenai ecma script, terkhusus dalam judul kali ini yakni mengenai penggunaan module ecmascript6 di nodejs.<br />
+pertama tama gout akan mengucapkan selamat datang bagi para pembaca gout dari alam lain. entah itu alam gaib atau alam sutra ataupun alam semesta. baiklah gout langsung bahas ke topik utama kali ini.</p>
+
+<h4 id="menggunakan-module-esm-dan-mjs">menggunakan module esm dan mjs</h4>
+<p>Menarik sekali bagi gout membahas mengenai ecmascript6 yang sedang di gandrungi oleh para developer, dalam artikel ini gout hanya membahas dari sisi pengguna saja.<br />
+sebelum menggunakan module import-export ini, kita install dulu package ecmascript6 nya. nama packagenya adalah <code class="language-html highlighter-rouge">esm</code> dan <code class="language-html highlighter-rouge">mjs</code>, supaya nanti kita bisa menggunakan module dari ecmascript6 ini. package <code class="language-html highlighter-rouge">mjs</code> ini mungkin akan disertakan bagi yang menggunakan Node.js versi 12 sedangkan versi terakhirnya yaitu versi 14 gout rasa tidak perlu package <code class="language-html highlighter-rouge">mjs</code> ini yah. ok langsung saja kita buka code editor kita.<br />
+<strong><em>Install package</em></strong><br />
+buka code editor nya dulu, dalam artikel kali ini gout menggunakan <code class="language-html highlighter-rouge">visual studio code</code> kita buat direktori baru, misalnya disini gout memberi nama direktori <code class="language-html highlighter-rouge">ES6Module/</code>, langsung ajah kita drag ke code editor kita.<br />
+seperti ini susunan direktori nya :<br />
+<img src="http://localhost:4000/assets/images/post/dir-ES6.png" alt="es6-2" /><br />
+pertama-tama kita lakukan initialisasi package nya terlebih dahulu. dengan execute di terminal VSCODE :</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="syntax"><code>npm init
+<span class="c">### Kemudian isikan beberapa opsi yang tersedia</span>
+</code></pre></div></div>
+<p>sehingga menghasilkan satu buah file baru di direktori project ES6 kita, dengan nama <code class="language-html highlighter-rouge">package.json</code>.
+kemudian selanjutnya kita kembali ke terminal lagi, untuk menginstall package yang diperlukan :</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="syntax"><code>npm <span class="nb">install</span> <span class="nt">--save-dev</span> esm mjs
+</code></pre></div></div>
+<p>sekarang di <code class="language-html highlighter-rouge">package.json</code> ada nama package baru yang terinstall :<br />
+<img src="http://localhost:4000/assets/images/post/package-ES6.png" alt="es6-3" /><br />
+sekarang berarti package <code class="language-html highlighter-rouge">ecmascript6</code> nya bisa kita gunakan di file project kita, buat sebuah direktori baru dengan nama <code class="language-html highlighter-rouge">lib/</code> di direktori lib ini kita buat satu buah file baru dengan nama <code class="language-html highlighter-rouge">module.mjs</code> formatnya(ekstensinya) adalah <code class="language-html highlighter-rouge">.mjs</code>. file ini nanti akan kita gunakan untuk menyimpan beberapa module yang akan kita eksport ke file lain. kemduian di root direktori nya kita buat file baru dengan nama : <code class="language-html highlighter-rouge">app.js</code>. berikut script dari file <code class="language-html highlighter-rouge">lib/module.mjs</code> dan file <code class="language-html highlighter-rouge">app.mjs</code> :</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="c1">// file : lib/module.mjs</span>
+<span class="c1">// export function add(a, b) {</span>
+<span class="c1">//     let n = a + b</span>
+<span class="c1">//     return `${a} + ${b} = ${n}`</span>
+<span class="c1">// }</span>
+<span class="c1">// export function dist(a, b) {</span>
+<span class="c1">//     let n = a - b</span>
+<span class="c1">//     return `${a} - ${b} = ${n}`</span>
+<span class="c1">// }</span>
+<span class="kd">const</span> <span class="nx">sayHai</span> <span class="o">=</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`halo, </span><span class="p">${</span><span class="nx">string</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="kd">const</span> <span class="nx">agogo</span> <span class="o">=</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">string</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="kd">const</span> <span class="nx">halo</span> <span class="o">=</span> <span class="p">(</span><span class="nx">user</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">user</span>
+<span class="p">}</span>
+<span class="k">export</span> <span class="p">{</span> <span class="nx">sayHai</span><span class="p">,</span> <span class="nx">agogo</span><span class="p">,</span> <span class="nx">halo</span> <span class="p">}</span>
+</code></pre></div></div>
+<p>kalian bisa coba bagian yang gout beri comment itu, untuk membedakan opsi penggunaan module export di ecmascript6 ini. dan kemduian file selanjutnya :</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="c1">// file : app.mjs</span>
+<span class="c1">// import { add, dist } from './lib/module'</span>
+
+<span class="c1">// console.log(add(19, 12))</span>
+
+<span class="c1">// console.log(dist(18, 7))</span>
+
+<span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">MyModule</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./lib/module.mjs</span><span class="dl">'</span>
+<span class="nx">MyModule</span><span class="p">.</span><span class="nx">sayHai</span><span class="p">(</span><span class="dl">'</span><span class="s1">Lagi apa bro ? </span><span class="dl">'</span><span class="p">)</span>
+<span class="nx">MyModule</span><span class="p">.</span><span class="nx">agogo</span><span class="p">(</span><span class="dl">'</span><span class="s1">Lagi nyalip bis di tikungan arcamanik ! </span><span class="dl">'</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">MyModule</span><span class="p">.</span><span class="nx">halo</span><span class="p">(</span><span class="dl">'</span><span class="s1">Puji122</span><span class="dl">'</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">span</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">span</span><span class="dl">'</span><span class="p">)</span>
+<span class="nx">span</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">mouseenter</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">span</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">MyModule</span><span class="p">.</span><span class="nx">halo</span><span class="p">(</span><span class="dl">'</span><span class="s1">Puji122</span><span class="dl">'</span><span class="p">)</span>
+    <span class="nx">span</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">rgb(211, 0.1, 111)</span><span class="dl">"</span>
+<span class="p">})</span>
+<span class="nx">span</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">mouseleave</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">span</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">EcmaScript6</span><span class="dl">'</span>
+    <span class="nx">span</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">crimson</span><span class="dl">'</span>
+<span class="p">})</span>
+</code></pre></div></div>
+<p>begitu juga di file <code class="language-html highlighter-rouge">app.mjs</code> kalian bisa mencupa opsi yang gout beri komentar.<br />
+selanjutnya untuk menjalankannya, seperti biasa kita menggunakan perintah <code class="language-html highlighter-rouge">node</code> tetap dengan penambahan beberapa opsi seperti berikut:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="c"># terminal</span>
+node <span class="nt">-r</span> esm app.mjs
+</code></pre></div></div>
+<p>seperti ini hasilnya :<br />
+<img src="http://localhost:4000/assets/images/post/module-es6-run.png" alt="es6-4" /><br />
+kemudian kita coba di opsi yang di comment:</p>
+
+<p>file <code class="language-html highlighter-rouge">app.mjs</code><br />
+<img src="http://localhost:4000/assets/images/post/module-es6-run2.png" alt="es6-5" /></p>
+
+<p>file <code class="language-html highlighter-rouge">lib/module.mjs</code><br />
+<img src="http://localhost:4000/assets/images/post/module-es6-run3.png" alt="es6-6" /></p>
+
+<h4 id="penggunaan-package-mjs-di-script-html">Penggunaan package mjs di script HTML</h4>
+<p>Nah bagaimana mengenai penggunaan module <code class="language-html highlighter-rouge">.mjs</code> ini di tag script html:<br />
+caranya sama ajah, seperti html biasa html:5 kemudian kita panggil module nya dengan tag <code class="language-html highlighter-rouge"><span class="nt">&lt;script&gt;&lt;/script&gt;</span></code>, tapi kali ini ada perubahan di element <code class="language-html highlighter-rouge">type</code> nya, sehinggai file html kita menjadi seperti ini, perbedaanya di bagian tag <code class="language-html highlighter-rouge"><span class="nt">&lt;script&gt;</span></code> kita menggunakan element type dengan nilai <code class="language-html highlighter-rouge">module</code> :</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="syntax"><code># file : index.html
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Test Module<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+
+<span class="nt">&lt;body&gt;</span>
+
+    <span class="nt">&lt;h1&gt;</span>Halo I'm Using <span class="nt">&lt;span&gt;</span>EcmaScript6<span class="nt">&lt;/span&gt;&lt;/h1&gt;</span>
+
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"module"</span> <span class="na">src=</span><span class="s">"app.mjs"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+<p>file diatas hanya html sederhana biasa, hanya sebagai contoh penggunaan module ecmascript6. 
+untuk sourcecode nya ada di link berikut:<br />
+<a href="https://github.com/codesyariah122/NodeJS_basic/tree/master/modernJS/ES6">ES6 Module</a></p>
+
+<p>ok cukup sekian dulu mengenai <code class="language-html highlighter-rouge">Module esm dam mjs</code> di artikel ini, di lain waktu kita explore yang baru-baru lagi dari ecmascript6 ini.</p>
+
+<p>akhir kata gout ucapkan …</p>
+
+<p>wassalaam</p>
+
+<p><strong><em>Puji Ermanto</em></strong></p>
+
+:ET

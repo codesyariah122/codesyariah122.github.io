@@ -1,0 +1,175 @@
+I"�@<p>بسم الله الرحمن الرحيم</p>
+
+<p><img src="http://localhost:4000/assets/images/post/blade_laravel/laravel7.jpg" alt="laravel1" /></p>
+
+<p>Melanjutkan seri mengenai laravel sebelumnya, kali ini di artikel ini gout mau membahas  seputar routing dan blade templating di laravel7. sebelumnya, apa kabarnya nih para coders ? mudah2an selalu di berkahi nikmat sehat dan nikmat waktu luang.</p>
+<h3 id="routing-di-laravel7">Routing di laravel7</h3>
+<p>Dalam perkembangan framework-framework modern dengan konsep, MVC sudah sangat tidak asing lagi membahas perihal routing management di sebuah framework modern, termasuk laravel, yang menurut gout sih masih menjadi framework web terbaik dari bahasa php.<br />
+Routing ini lah sebagai rule yang menentukan alur proces templating di applikasi yang kita bangun dengan sebuah framework dalam artikel ini yang gout khususkan hanyalah framework laravel.<br />
+dengan routing ini kita bisa menentukan sendiri view mana yang akan digunakan saat user merequest sebuah halaman di web application kita.<br />
+dari artikel sebelumnya kita sudah menginstall laravel, dan kemudian menjalankan local server laravel dengan <code class="language-html highlighter-rouge">php artisan serve</code>.<br />
+<img src="http://localhost:4000/assets/images/post/blade_laravel/blade-template1.gif" alt="laravel1" />
+<img src="http://localhost:4000/assets/images/post/blade_laravel/blade-template2.gif" alt="laravel1" />
+setelah proses pembuatan project dibuat dan local server laravel bisa berjalan dengan baik, maka kita lanjutkan ke langkah selanjutnya mengenai:</p>
+
+<h1 id="membuat-routing-">Membuat routing …</h1>
+<p>di laravel sendiri module untuk menjalankan route ada di file <code class="language-html highlighter-rouge">routes/web.php</code> di file ini lah kita akan menggunakan method get untuk melakukan routing. buka file <code class="language-html highlighter-rouge">web.php</code> :<br />
+ini adalah route bawaan laravel, default route nya, menggunakan method get dan kemudian mengarahkan view ke view welcome yang ada di file <code class="language-html highlighter-rouge">resources/views/welcome.blade.php</code>.</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="nc">Route</span><span class="o">::</span><span class="nf">get</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nf">view</span><span class="p">(</span><span class="s1">'welcome'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'title'</span><span class="o">=&gt;</span><span class="s1">'Home Tutorialku'</span><span class="p">]);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+<p>kita bisa menambahkan route baru, contohnya :</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="nc">Route</span><span class="o">::</span><span class="nf">get</span><span class="p">(</span><span class="s1">'/home'</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nf">view</span><span class="p">(</span><span class="s1">'home'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'title'</span><span class="o">=&gt;</span><span class="s1">'Homepage Tutorialku'</span><span class="p">]);</span>
+<span class="p">});</span>
+<span class="nc">Route</span><span class="o">::</span><span class="nf">get</span><span class="p">(</span><span class="s1">'/about'</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nf">view</span><span class="p">(</span><span class="s1">'about'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'title'</span><span class="o">=&gt;</span><span class="s1">'Aboutpage Tutorialku'</span><span class="p">]);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+<p>buat juga views nya untuk route diatas, buka direktori <code class="language-html highlighter-rouge">resource/</code> kemudian masuk ke direktori <code class="language-html highlighter-rouge">views/</code> buat dua file baru antara lain :</p>
+<ul>
+  <li>home.blade.php</li>
+  <li>about.blade.php<br />
+berikut isi file <code class="language-html highlighter-rouge">home.blade.php</code> :</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="nt">&lt;h2&gt;</span>Homepage Tutorialku<span class="nt">&lt;/h2&gt;</span>
+</code></pre></div></div>
+
+<p>selanjutnya file <code class="language-html highlighter-rouge">about.blade.php</code> :</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="nt">&lt;h4&gt;</span>Aboutpage Tutorialku<span class="nt">&lt;/h4&gt;</span>
+</code></pre></div></div>
+
+<p>file diatas baru berupa html sederhana biasa hanya untuk melihat perubahannya saja, kemudian buka kembali di browser dan akses route tersebut :<br />
+<img src="http://localhost:4000/assets/images/post/blade_laravel/blade-template3.gif" alt="laravel1" /></p>
+
+<h4 id="membuat-controller-untuk-menentukan-routing-dari-controller">Membuat controller untuk menentukan routing dari controller</h4>
+<p>Selanjutnya adalah mengenai pembuatan controller, di laravel dalam sebuah controller itu kita bisa melakukan passing data dari database, tidak perlu menggunakan model seperti di codeigniter. dalam tutorial kali ini, gout tidak akan membahas mengenai passing data, gout hanya membahas mengenai pembuatan routing, dengan controller di laravel 7 ini.<br />
+selanjutnya kita ke terminal kembali :</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="syntax"><code>php artisan make:controller ControllerTutorialku
+</code></pre></div></div>
+<p><strong><em>penamaan controller menggunakan <code class="language-html highlighter-rouge">camel case</code></em></strong>, dari script diatas kita sudah berhasil membuat sebuah controller baru.<br />
+<img src="http://localhost:4000/assets/images/post/blade_laravel/blade-template4.gif" alt="laravel1" /><br />
+file controller dapat kita akses di direktori <code class="language-html highlighter-rouge">app/Http/Controllers/</code> kemudian buka file : <code class="language-html highlighter-rouge">ControllerTutorialku.php</code>, berikut isi code file <code class="language-html highlighter-rouge">ControllerTutorialku.php</code> :</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">&lt;?php</span>
+
+<span class="kn">namespace</span> <span class="nn">App\Http\Controllers</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nc">Illuminate\Http\Request</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">ControllerTutorialku</span> <span class="kd">extends</span> <span class="nc">Controller</span>
+<span class="p">{</span>
+    <span class="c1">//</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">home</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="nf">view</span><span class="p">(</span><span class="s1">'home'</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">about</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="nf">view</span><span class="p">(</span><span class="s1">'about'</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Pada script tersebut gout membuat sebuah method baru untuk tiap page yang akan kita routing, di file <code class="language-html highlighter-rouge">web.php</code>. kemudian kita akses kembali file <code class="language-html highlighter-rouge">routes/web.php</code>, kemudian kita akan merubah nya menjadi seperti ini :</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">&lt;?php</span>
+
+<span class="kn">use</span> <span class="nc">Illuminate\Support\Facades\Route</span><span class="p">;</span>
+
+<span class="cm">/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/</span>
+
+<span class="nc">Route</span><span class="o">::</span><span class="nf">get</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nf">view</span><span class="p">(</span><span class="s1">'welcome'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'title'</span><span class="o">=&gt;</span><span class="s1">'Home Tutorialku'</span><span class="p">]);</span>
+<span class="p">});</span>
+
+<span class="nc">Route</span><span class="o">::</span><span class="nf">get</span><span class="p">(</span><span class="s1">'/home'</span><span class="p">,</span> <span class="s1">'ControllerTutorialku@home'</span><span class="p">);</span>
+<span class="nc">Route</span><span class="o">::</span><span class="nf">get</span><span class="p">(</span><span class="s1">'/about'</span><span class="p">,</span> <span class="s1">'ControllerTutorialku@about'</span><span class="p">);</span>
+</code></pre></div></div>
+<p>terlihat perbedaan dari script <code class="language-html highlighter-rouge">web.php</code> di pembahasan sebelumnya, kali ini kita menggunakan controller untuk merouting template kita.</p>
+<h4 id="membuat-master-template">Membuat master template</h4>
+<p>selanjutnya kita akan membuat master template, untuk itu kita perlu membuat satu direktori baru di views kita, kita buat direktori baru di : <code class="language-html highlighter-rouge">resources/views/</code> buat direktori untuk file master template kita gout memberi nama direktorinya dengan nama <code class="language-html highlighter-rouge">layout</code>, kemduian di direktroi layout tersebut gout akan buat satu file baru dengan nama <code class="language-html highlighter-rouge">app.blade.php</code> nantinya file ini akan kita jadikan master templatenya, kemudian buka file <code class="language-html highlighter-rouge">app.blade.php</code> copy kan code berikut ini :</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;title&gt;</span>@yield('header_title')<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+
+
+ <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col mt-3"</span><span class="nt">&gt;</span>
+        @yield('header_title')
+     <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+  
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col"</span><span class="nt">&gt;</span>
+        @yield('content')
+     <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+ <span class="nt">&lt;/div&gt;</span>
+  
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+  <span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+<p>gout menggunakan bootstrap4 sebagai template master ini, di file tersebut kita melakukan modularisasi template, untuk memudahkan dalam memaintenance aplikasi kita dari sisi frontend. file selanjutnya adalah file :</p>
+<ul>
+  <li>home.blade.php</li>
+  <li>about.blade.php<br />
+  berikut file <code class="language-html highlighter-rouge">home.blade.php</code> :</li>
+</ul>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="o">@</span><span class="k">extends</span><span class="p">(</span><span class="s1">'layout/app'</span><span class="p">)</span>
+
+<span class="o">@</span><span class="nf">section</span><span class="p">(</span><span class="s1">'header_title'</span><span class="p">,</span> <span class="s1">'Home Page Tutorialku'</span><span class="p">)</span>
+
+<span class="o">@</span><span class="nf">section</span><span class="p">(</span><span class="s1">'content'</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="nc">HomePage</span> <span class="nc">Tutorialku</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+<span class="o">@</span><span class="n">endsection</span>
+</code></pre></div></div>
+<p>dan selanjutnya file <code class="language-html highlighter-rouge">about.blade.php</code> :</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="syntax"><code>@extends('layout/app')
+
+@section('header_title', 'About Tutorialku')
+
+@section('content')
+<span class="nt">&lt;h2&gt;</span>About Tutorialku<span class="nt">&lt;/h2&gt;</span>
+@endsection
+</code></pre></div></div>
+<p><img src="http://localhost:4000/assets/images/post/blade_laravel/blade-template6.gif" alt="laravel1" /></p>
+
+<p>ada beberapa bagian dari template file diatas,</p>
+<ul>
+  <li><code class="language-html highlighter-rouge">@extends()</code>
+  extends ini maksudnya kita mengambil bagian dari master template kita yang ada di file <code class="language-html highlighter-rouge">layout/app.blade.php</code>.</li>
+  <li><code class="language-html highlighter-rouge">@section()</code>
+  ini juga merupakan bagian dari blade template engine dari laravel, karena di file <code class="language-html highlighter-rouge">layout/app.blade.php</code> ini kita melakukan blade templating di bagian ini <code class="language-html highlighter-rouge">@yield('header_title')</code> sehingga pada file selanjutnya kita bisa menggunakan blade <code class="language-html highlighter-rouge">@section</code>.
+untuk lebih jelasnya mengenai blade templating bisa di akses di link dibawah ini :<br />
+<a href="https://laravel.com/docs/7.x/blade">Laravel 7 Blade Template Engine</a></li>
+</ul>
+
+<p><strong><em>di artikel Selanjutnya :</em></strong> gout mungkin akan membahas beberapa konfigurasi, mengenai migration dan query builder di laravel7 ini.</p>
+
+<p>ok sekian dulu dari saya.</p>
+
+<p><strong><em>Salam</em></strong></p>
+
+<p><strong>Puji Ermanto</strong></p>
+:ET

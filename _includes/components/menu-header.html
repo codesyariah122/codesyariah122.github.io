@@ -1,17 +1,8 @@
 <!--  Replace menu links here -->
+{% for item in site.data.menus %}
 
-<li class="nav-item">
-<a class="nav-link" href="{{site.url}}">Home</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="{{site.url}}/project">Projects</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="{{site.url}}/myrooms">My Room</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="{{site.url}}/authors">Authors</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="{{site.url}}/contact">Contact</a>
-</li>
+	<li class="nav-item {% if item.link == page.url %} active {% endif %">
+		<a class="nav-link" href="{{item.link}}">{{item.label}}</a>
+	</li>
+
+{% endfor %}

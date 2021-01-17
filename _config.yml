@@ -19,6 +19,9 @@ mailchimp-list: 'http://eepurl.com/gEvV-f'
 
 feedburner: 'https://feedburner.google.com/fb/a/mailverify'
 
+
+
+
 collections:
   - projects
   - myrooms

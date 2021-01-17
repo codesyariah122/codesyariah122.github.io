@@ -1,0 +1,27 @@
+I"]	<p>konfigurasi static ip ubuntu server Bionic(18.04)  kini sudah berbeda dibandingkan dengan Ubuntu Server 16.04 ke bawah.<br />
+Versi Ubuntu sebelumnya, konfigurasi dilakukan dengan memodifikasi file /etc/network/interfaces.<br />
+Di Ubuntu 18.04 file konfigurasi IP address di direktori /etc/netplan/ secara default file konfigurasi ubuntu server saya adalah 01-netcfg.yaml coba teman-teman list dengan perintah ls di ubuntu kalian.<br />
+<img src="http://localhost:4000/assets/images/post/bionic/Untitled1.jpg" alt="untitled1" /><br />
+ls<br />
+<img src="http://localhost:4000/assets/images/post/bionic/Untitled2.jpg" alt="untitled2" /><br />
+kemudian teman-teman buka file 01-netcfg.yaml dengan editor favorit kalian, secara default sudah ada konfigurasinya seperti ini<br />
+<img src="http://localhost:4000/assets/images/post/bionic/Untitled3.jpg" alt="untitled3" /><br />
+<img src="http://localhost:4000/assets/images/post/bionic/Untitled4.jpg" alt="untitled4" /><br />
+kemudian teman teman insert dengan menggunakan keywoard <strong>(i)</strong> karena disini saya menggunakan editor <em>(vi)</em> lalu set konfigurasi default tadi sesuai jaringan di local network teman-teman<br />
+<img src="http://localhost:4000/assets/images/post/bionic/Untitled5.jpg" alt="untitled5" /></p>
+
+<p><strong>Keterangan:</strong></p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="syntax"><code>- enp0s3: nama network interface, cara mengecek namanya pakai perintah ip addr.
+- addresses: IP address yang diberikan dengan subnet /24 (255.255.255.0).
+- nameservers – addresess: IP address untuk dns resolver, di sini memakai DNS dari Google.
+- dhcp4: diisi dengan no jika tidak memakai DHCP. Jika memakai DHCP, semua IP address tidak usah dimasukkan.
+</code></pre></div></div>
+
+<p>kemudian keluar editor dan save Mengaktifkan konfigurasi IP address yang baru saja dibuat dengan mengetikan perintah <strong>netplan apply</strong>.  sesuaikan dengan network card dan jaringan lokal teman-teman.<br />
+<img src="http://localhost:4000/assets/images/post/bionic/Untitled8.jpg" alt="untitled8" /><br />
+<img src="http://localhost:4000/assets/images/post/bionic/Untitled6.jpg" alt="untitled6" /><br />
+aktifkan opsi debug dengan perintah <strong>netplan –debug apply</strong><br />
+<img src="http://localhost:4000/assets/images/post/bionic/Untitled7.jpg" alt="untitled7" /></p>
+
+:ET

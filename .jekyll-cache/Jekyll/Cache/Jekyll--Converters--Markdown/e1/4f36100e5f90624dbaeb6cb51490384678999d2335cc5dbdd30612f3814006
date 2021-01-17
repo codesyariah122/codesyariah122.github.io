@@ -1,0 +1,372 @@
+I" 4<style type="text/css">
+  @font-face {
+    font-family: 'SpringSakura';
+    font-style: normal;
+    font-weight: normal;
+    src: local('SpringSakura'), url('https://github.com/codesyariah122/kerjaan-syoobe/blob/main/for_page/fonts/SpringSakura-3z1m8.otf') format('otf');
+}
+
+@font-face {
+    font-family: 'Reey Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Reey Regular'), url('https://github.com/codesyariah122/kerjaan-syoobe/blob/main/for_page/fonts/Reey-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Lemon/Milk Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('https://github.com/codesyariah122/kerjaan-syoobe/blob/main/for_page/fonts/Lemon__Milk%20400.otf') format('otf');
+}
+
+    /* all parallax top and bottom */
+    .parallax{
+      min-height: 500px; 
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin:0;
+    }
+    .caption {
+        background:rgba(255,255,255,0.4);
+        /* clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); */
+        position: absolute;
+        left: 21rem;
+        margin-top: 7rem;
+        width: 50%;
+        text-align: center;
+        color: #000;
+    }
+    .caption h2 {
+        color: white;
+        font-family: 'Poiret One', cursive;font-weight:bold;
+        text-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+        margin-bottom: .9rem;
+    }
+    .caption a{
+        font-size: 18px;
+    }
+    
+    /* wave */
+    .box-wave {
+        width: 350px;
+        height: 500px;
+        border-radius: 5px;
+        box-shadow: 0 2px 30px rgba(black, .2);
+        background: lighten(#f0f4c3, 10%);
+        position: relative;
+        overflow: hidden;
+        transform: translate3d(0, 0, 0);
+      }
+      
+      .wave {
+        opacity: .4;
+        position: absolute;
+        top: 3%;
+        left: 50%;
+        background: #0af;
+        width: 500px;
+        height: 500px;
+        margin-left: -250px;
+        margin-top: -250px;
+        transform-origin: 50% 48%;
+        border-radius: 43%;
+        animation: drift 3000ms infinite linear;
+      }
+      
+      .wave.-three {
+        animation: drift 5000ms infinite linear;
+      }
+      
+      .wave.-two {
+        animation: drift 7000ms infinite linear;
+        opacity: .1;
+        background: yellow;
+      }
+      
+      .box-wave:after {
+        content: '';
+        display: block;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(#e8a, 1), rgba(#def, 0) 80%, rgba(white, .5));
+        z-index: -1;
+        transform: translate3d(0, 0, 0);
+      }
+      
+      .title-wave {
+        position: absolute;
+        left: 1rem;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+        line-height: 300px;
+        text-align: left;
+        transform: translate3d(0, 0, 0);
+        color: white;
+        font-weight: bold;;
+        text-transform: uppercase;
+        font-family: 'Poiret One', cursive;
+        letter-spacing: .4em;
+        font-size: 14px;
+        text-shadow: 0 1px 0 rgba(black, .1);
+      }
+      .titl-wave a{
+          margin-left: 2rem;
+      }
+    
+    @keyframes drift {
+      from { transform: rotate(0deg); }
+      from { transform: rotate(360deg); }
+    }
+    
+    
+    @media only screen and (max-device-width: 812px) {
+      .parallax {
+          background-attachment: scroll;
+      }
+      .caption {
+          position: absolute;
+          left: 0;
+          margin-top: 2rem;
+          width: 100%;
+          text-align: center;
+          color: #000;
+      }
+      .caption h2 {
+          color: white;
+          font-family: 'Poiret One', cursive;font-weight:bold;
+          text-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+          margin-bottom: .9rem;
+          font-size:14px;
+      }
+      .caption a{
+          font-size: 12px;
+      }
+    
+      .waves {
+              height: 40px;
+              min-height: 40px;
+        }
+    }
+    </style>
+
+<div id="contentApp">
+{% assign assets = site.data.author_assets[page.assets] %}
+{% assign news = site.data.api_pages[page.api] %}
+{% assign WebDevelopment = site.data.webdevelopers[page.contact] %}
+    <div class="jumbotron jumbotron-fluid jumbotron-content" style="background-image:url('{{site.url}}{{assets.images.satu}}');">
+        <div class="container">
+          <div class="row">
+            <div class="d-flex justify-content-center">
+                <div class="col-md-12">
+                    <h1 class="display-4 text-right" v-html="titleHeader" style="margin-left:8rem;margin-top:9rem;"></h1>
+                    <h3 class="blockquote-footer text-danger" style="font-family: Reey Regular;font-size:31px;" v-html="blockquoteHeader"></h3>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <h1 class="underline mt-2 mb-2"></h1> 
+
+      <div class="container">
+          <h4 style="font-size:45px; margin-top:5rem;" class="mb-5 font-weight-bold spanborder text-center text-success" v-html="title1"><span>Hallo World</span></h4>
+          {% assign author = site.data.authors[page.author] %}
+              <div class="row gap-y listrecent listrecent listauthor">
+              {% for author in site.data.authors %}
+                  <div class="col-lg-6 mb-4">
+                    <div class="p-4 border rounded">
+                      <div class="row">
+                    <div class="col-md-3 mb-4 mb-md-0">
+                      <img alt="{{ author[1].nama_lengkap }}" src="{{site.url}}{{ author[1].avatar }}" class="rounded-circle" height="80" width="80" />
+                    </div>
+                    <div class="col-md-9">
+                      <a href="{{site.url}}/{{author[1].type}}/{{ author[1].links | slugify }}">
+                      <h4 class="text-dark mb-0"> {{ author[1].nama_lengkap }} </h4>
+                      <small class="d-inline-block mt-1 mb-3 font-weight-normal">(View Posts)</small>
+                      <div class="excerpt">{{ author[1].bio }}</div>
+                      </a>
+                      <div class="icon-block mt-3 d-flex justify-content-between">  
+                      <div>
+                      <a target="_blank" href="{{ author[1].twitter }}"><i class="fab fa-twitter text-info" aria-hidden="true"></i></a>  &nbsp;
+                      <a target="_blank" href="{{ author[1].situs }}"><i class="fa fa-globe text-success" aria-hidden="true"></i></a> &nbsp;
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+              {% endfor %}
+          </div>
+      </div>
+
+<h1 class="underline mb-2 mt-2"></h1>
+
+      <div class="parallax" style="background-image: url('{{site.url}}{{assets.parallax.satu}}');
+      ">
+
+        <div class="caption">
+          <br /><br />
+          <h2 v-html="tagsParallax1"></h2>
+            <a href="https://wa.me/{{WebDevelopment.whatsapp}}?text=Hai%20kak%20saya%20membutuhkan%20jasa%20web%20development" class="btn btn-primary text-white">whatsap</a>
+            <a href="https://instagram.com/{{WebDevelopment.instagram}}" class="btn btn-primary text-white">Instagram</a>
+          <br /><br />
+        </div>
+
+      </div>  
+
+<h1 class="underline mb-2 mt-2"></h1>
+
+      <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-xs-12 col-sm-12">
+                <div class="polaroid">
+                  <img v-bind:src="imageVectorCard" class="img-responsive mt-3" width="800" height="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                  <div class="polaroid-body">
+                    <h2>{{assets.card-text.satu}}</h2>
+                  </div>	
+                </div>
+      
+            </div>
+        </div>
+      </div>
+
+<h1 class="underline mb-2 mt-2"></h1>
+
+      <div class="parallax" style="background-image: url('{{site.url}}{{assets.parallax.dua}}');
+      ">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="box-wave">
+                  <div class="wave -one"></div>
+                  <div class="wave -two"></div>
+                  <div class="wave -three"></div>
+                  <div class="title-wave">
+                    <h5 v-html="tagsParallax2" stye="font-size: 21px;">parallax2-tags</h5>
+                  </div>
+                </div>
+                  <br /><br />
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-12 col-xs-12 col-sm-12">
+            <div style="width: 100%; height: auto !important; clear: both; text-align: center;" class="google-auto-placed"></div>
+            <div id="mys-wrapper" class="mys-wrapper"></div>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <!-- container on panel-body -->
+                <div class="container">
+                  <!-- row content1 -->
+                  <div class="row">
+                    <div class="col-md-4">
+                        <img v-bind:src="imageCardApi1" alt="" class="float-left img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" />
+                      </div>
+                      <div class="col-md-6 ml-2 mt-2">
+                        <h1 class="text-center">
+                          {{news.title}} <br />
+                        </h1>
+                        <hr />
+                          <p v-html="tagsApi" class="ml-2">.</p>
+                          <br />
+                          <img v-bind:src="cardVectorApi2" alt="" />
+                      </div>
+      
+                  </div>
+                  <!-- row content1 end -->
+                  <br />
+                  <h1 class="underline text-center mt-2 mb-4"></h1>
+                  <!-- row content2 -->
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-xs-12 col-sm-12">
+                            <h1 class="text-center">Pilih Media</h1>
+                            <div class="input-group mb-3">
+                              <select class="custom-select" id="select-news">
+                                  <!-- <option selected>Choose...</option> -->                       
+                              </select>
+                              <div class="input-group-append">
+                                  <button id="enter" class="btn btn-dark">Choose</button>
+                              </div>
+                          </div>
+                        </div>
+
+                         <hr />
+                          
+                          <div id="err">
+                              <div class="col-12 col-xs-12 col-sm-12">
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <strong>Wooopssshhh!!!</strong> <span class="text-center">Pilih nama media online nya dulu bro</span>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                              </div>
+                          </div>
+                    </div>
+                  <!-- row content2 end -->
+
+
+                  <div class="row" id="news-list">
+
+                  </div>
+                  
+                  <h1 class="underline mb-2 mt-2"></h1>
+                  
+                  <br />
+
+                  <div id="your-location">
+                    <!-- <div class="map">
+                      <div id="googleMap" style="width:100%;height:380px;"></div>
+                    </div> -->
+                  </div>
+                  <div id="map" style="width:100%;height:380px;"></div>
+                
+              </div>
+            </div>
+          </div>
+      
+        </div>
+      </div>
+      
+    </div>
+
+    <br />
+    <br />
+    <hr />
+    <div class="parallax" style="background-image: url('{{site.url}}{{assets.parallax.tiga}}');">
+
+      <div class="caption">
+        <br /><br />
+        <h2>{{assets.parallax-text.tiga}}</h2>
+          <h4 style="font-family:Reey Regular;">Bijaklah dalam menyebarkan informasi digital</h4>
+        <br /><br />
+      </div>
+
+    </div>  
+
+</div>
+
+<script type="text/javascript">
+    const obj = {
+        'title' : `{{page.title}} <span style="font-family:Reey Regular;color:crimson;">List</span>`,
+        'titleHeader' : '{{page.header}}',
+        'blockquoteHeader' : '{{page.blockquote}}',
+        'cardVector' : '{{site.url}}{{assets.vector.satu}}',
+        'cardVector2' : '{{site.url}}{{assets.vector.dua}}',
+        'cardVector3' : '{{site.url}}{{assets.vector.tiga}}',
+        'tagsParallax1' : '{{assets.parallax-text.satu}}',
+        'tagsParallax2' : '{{assets.parallax-text.dua}}',
+        'tagsApi' : '{{news.tags}}',
+    };
+</script>
+
+:ET

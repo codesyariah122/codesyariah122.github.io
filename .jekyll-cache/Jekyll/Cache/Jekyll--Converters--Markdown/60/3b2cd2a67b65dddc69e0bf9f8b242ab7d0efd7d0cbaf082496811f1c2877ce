@@ -1,0 +1,22 @@
+I"Ý<p>hai sobat coders, bagaimana kabarnya ? semoga baik baik selalu. 
+kali ini saya akan berbagi tips, cara install font di os linux, kebetulan distro linux yang saya gunakan adalah debian versi 9 dengan nama distribusi debian 9 stretch.</p>
+
+<p>ok langsung saja kita eksekusi, karena ada keperluan dalam penambahan font untuk sedikit project yang saya kerjakan dan dengan itu saya harus menginstall font-font yang saya perlukan.</p>
+
+<p>pertama download dulu font yang kalian butuhkan, saya biasanya download dari google fonts, atau font.google, setelah font nya di download lanjut di ekstract, kemudian buat folder baru di direktori <code class="language-html highlighter-rouge">/home</code> saya menamakan direktori nya <code class="language-html highlighter-rouge">.font/</code> .font ini adalah direktori yang bersifat hidden, jadi tidak terlihat di direktori aslinya. untuk membuka direktori atau file yang di hidden tekan <code class="language-html highlighter-rouge">ctrl+h</code> atau klik kanan pada direktori dan pilih show hidden file.</p>
+
+<p>setelah direktori .font/ dibuat lanjut, lanjut dengan mencopy atau memindahkan semua file font yang tadi kita ekstract format font <code class="language-html highlighter-rouge">.ttf</code> biasanya yang saya gunakan. 
+<img src="http://localhost:4000/assets/images/post/font2.jpg" alt="maps1" /><br />
+kemudian masuk ke direktori .font/, lihat hasil copy atau moving file font yang tadi kita lakukan. 
+<img src="http://localhost:4000/assets/images/post/font3.jpg" alt="maps1" /></p>
+
+<p><img src="http://localhost:4000/assets/images/post/font4.jpg" alt="maps1" /></p>
+
+<p>lanjut eksekusi command berikut</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="syntax"><code>fc-cache <span class="nt">-f</span> <span class="nt">-v</span>
+</code></pre></div></div>
+<p>secara otomatis system akan melakukan installasi font ke system linux kita.</p>
+
+<p><img src="http://localhost:4000/assets/images/post/font5.jpg" alt="maps1" /></p>
+
+:ET

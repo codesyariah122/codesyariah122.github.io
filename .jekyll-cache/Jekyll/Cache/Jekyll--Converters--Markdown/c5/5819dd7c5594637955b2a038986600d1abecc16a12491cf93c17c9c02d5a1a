@@ -1,0 +1,150 @@
+I"�%<p>بسم الله الرحمن الرحيم</p>
+
+<p><img src="http://localhost:4000/assets/images/post/autoload-php.jpg" alt="php_namespace" /></p>
+
+<h2 id="mengenal-fitur-autoload-php">Mengenal fitur Autoload PHP</h2>
+
+<p>Halo gaess apa kabarnya kalian semua ? Semoga baik-baik selalu yah gaes.<br />
+Di artikel kali ini saya akan melanjutkan, artikel sebelumnya yaitu mengenai <strong>namespace</strong> di PHP7.<br />
+dari artikel sebelumnya itu kita sudah mempunyai kerangka program sederhana menggunakan OOP konsep dan menggunakan fitur namespace, ya diartikel ini saya akan melanjutkan code script yang sama dengan menambahkan sebuah fitur magic dari laravel untuk mempersingkat proses pengembangan aplikasi atau program yang kita bangun menggunakan konsep OOP PHP.</p>
+
+<p>diartikel sebelumnya kurang lebih susunan direktori untuk aplikasi sederhana saya masih seperti ini belum ada penambahan yah :</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="nt">--------------------------------</span>
+ namespace/					
+<span class="nt">--------------------------------</span>	
+	app/					 	
+		BaseClass/			 	
+			BaseClass.php    	
+		Add/				 	
+			Add.php          	
+		Substract/			 	
+			Substract.php    	
+		Multiply/			 	
+			Multiply.php     	
+		Devide/				 	
+			Devide.php       
+		Modulus/			 	
+			Modulus.php      
+		GanjilGenap/		 	
+			GanjilGenap.php  	
+
+		init.php             
+<span class="nt">---------------------------------</span>
+
+index.php
+
+</code></pre></div></div>
+<p>dari susunan  direktori tersebut terdapat sebuah file yang difungsikan sebagai tunnel atau jalur yang akan menghubungkan kita dengan tiap-tiap class yang berada di direktori aplikasi kita yaitu direktori <code class="language-html highlighter-rouge">app/</code> :</p>
+
+<p>berikut isi file <code class="language-html highlighter-rouge">app/init.php</code> :</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">&lt;?php</span> 
+<span class="cm">/*
+file : app/init.php
+pujiermanto(codesyariah - 2019)
+*/</span>
+
+<span class="k">require_once</span> <span class="s1">'BaseClass/BaseClass.php'</span><span class="p">;</span>
+<span class="k">require_once</span> <span class="s1">'Add/Add.php'</span><span class="p">;</span>
+<span class="k">require_once</span> <span class="s1">'Substract/Substract.php'</span><span class="p">;</span>
+<span class="k">require_once</span> <span class="s1">'Multiply/Multiply.php'</span><span class="p">;</span>
+<span class="k">require_once</span> <span class="s1">'Divide/Divide.php'</span><span class="p">;</span>
+<span class="k">require_once</span> <span class="s1">'Modulus/Modulus.php'</span><span class="p">;</span>
+<span class="k">require_once</span> <span class="s1">'GanjilGenap/GanjilGenap.php'</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="err">\</span><span class="nc">app\BaseClass\BaseClass</span><span class="p">;</span>
+<span class="kn">use</span> <span class="err">\</span><span class="nc">app\Add\Add</span><span class="p">;</span>
+<span class="kn">use</span> <span class="err">\</span><span class="nc">app\Substract\Substract</span><span class="p">;</span>
+<span class="kn">use</span> <span class="err">\</span><span class="nc">app\Multiply\Multiply</span><span class="p">;</span>
+<span class="kn">use</span> <span class="err">\</span><span class="nc">app\Divide\Divide</span><span class="p">;</span>
+<span class="kn">use</span> <span class="err">\</span><span class="nc">app\Modulus\Modulus</span><span class="p">;</span>
+<span class="kn">use</span> <span class="err">\</span><span class="nc">app\GanjilGenap\GanjilGenap</span><span class="p">;</span>
+
+<span class="nv">$base</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BaseClass</span><span class="p">;</span>
+
+<span class="nv">$add</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Add</span><span class="p">;</span>
+
+<span class="nv">$sub</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Substract</span><span class="p">;</span>
+
+<span class="nv">$mult</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Multiply</span><span class="p">;</span>
+
+<span class="nv">$div</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Divide</span><span class="p">;</span>
+
+<span class="nv">$mod</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Modulus</span><span class="p">;</span>
+
+<span class="nv">$x</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">GanjilGenap</span><span class="p">;</span>
+
+</code></pre></div></div>
+
+<p>Terdapat fungsi <code class="language-html highlighter-rouge">require_once</code> yang berulang-ulang kali di lakukan di file <code class="language-html highlighter-rouge">init.php</code> tersebut, sangat menyita waktu kan jika kita mempunya class yang lebih banyak lagi, maka dari itu kita gunakan salah satu magic tools php yang sangat keren fungsinya yaitu <code class="language-html highlighter-rouge">autoload</code> <code class="language-html highlighter-rouge">spl_autoload_register()</code>.</p>
+
+<h4 id="membuat-autoload">Membuat autoload</h4>
+<p>Itulah kegunaan dari autoload di PHP ini, keren kan PHP, hehehe.<br />
+Ok langsung ajah, kita kembali lagi ke codeeditor kesayangan kita, kemudian buka file <code class="language-html highlighter-rouge">app/init.php</code>.<br />
+Kemudian ubah code nya menjadi seperti ini :</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">&lt;?php</span>
+<span class="cm">/*
+file : app/init.php
+pujiermanto(codesyariah - 2019)
+*/</span>
+
+<span class="nb">spl_autoload_register</span><span class="p">(</span><span class="k">function</span><span class="p">(</span><span class="nv">$class</span><span class="p">){</span>
+
+  <span class="nv">$class</span><span class="o">=</span><span class="nb">explode</span><span class="p">(</span><span class="s1">'\\'</span><span class="p">,</span><span class="nv">$class</span><span class="p">);</span>
+
+  <span class="c1">// echo "&lt;pre&gt;";</span>
+  <span class="c1">// var_dump($class);</span>
+  <span class="c1">// echo "&lt;/pre&gt;";</span>
+
+  <span class="nv">$class</span><span class="o">=</span><span class="nb">end</span><span class="p">(</span><span class="nv">$class</span><span class="p">);</span>
+
+  <span class="k">if</span><span class="p">(</span><span class="nv">$class</span><span class="p">){</span>
+      <span class="k">require_once</span> <span class="nv">$class</span><span class="mf">.</span><span class="s1">'/'</span><span class="mf">.</span><span class="nv">$class</span><span class="mf">.</span><span class="s1">'.php'</span><span class="p">;</span>
+  <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+      <span class="k">echo</span> <span class="s2">"&lt;h1&gt;Sory class tidak tersedia&lt;/h1&gt;"</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="p">});</span>
+
+
+<span class="kn">use</span> <span class="err">\</span><span class="nc">app\BaseClass\BaseClass</span><span class="p">;</span>
+<span class="kn">use</span> <span class="err">\</span><span class="nc">app\Add\Add</span><span class="p">;</span>
+<span class="kn">use</span> <span class="err">\</span><span class="nc">app\Substract\Substract</span><span class="p">;</span>
+<span class="kn">use</span> <span class="err">\</span><span class="nc">app\Multiply\Multiply</span><span class="p">;</span>
+<span class="kn">use</span> <span class="err">\</span><span class="nc">app\Divide\Divide</span><span class="p">;</span>
+<span class="kn">use</span> <span class="err">\</span><span class="nc">app\Modulus\Modulus</span><span class="p">;</span>
+<span class="kn">use</span> <span class="err">\</span><span class="nc">app\GanjilGenap\GanjilGenap</span><span class="p">;</span>
+
+<span class="nv">$base</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BaseClass</span><span class="p">;</span>
+
+<span class="nv">$add</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Add</span><span class="p">;</span>
+
+<span class="nv">$sub</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Substract</span><span class="p">;</span>
+
+<span class="nv">$mult</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Multiply</span><span class="p">;</span>
+
+<span class="nv">$div</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Divide</span><span class="p">;</span>
+
+<span class="nv">$mod</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Modulus</span><span class="p">;</span>
+
+<span class="nv">$x</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">GanjilGenap</span><span class="p">;</span>
+
+</code></pre></div></div>
+<p>Silahkan dicoba di web browser kalian masing-mas
+ing, jika ada kesalahan jangan malu untuk bertanya, inshaallah saya akan senang hati membantu.</p>
+
+<p>Ok yahh … mudah difahami kan, kalian harus mencobanya langsung di web server kalian, sesuai dengan prinsip pemrogramman yaitu <strong>amati, tiru dan modifikasi</strong>.<br />
+Ok ! Sekian dari saya.</p>
+
+<p>saya harap tulisan ini dapat bermanfaat untuk kalian.</p>
+
+<p>Implementasi namespace serupa ada di repository berikut :</p>
+
+<p><a href="https://github.com/codesyariah122/Learn-WebDev/tree/master/Project" target="_blank">Learn WebDev</a>
+<strong>salam</strong></p>
+
+<p><strong><em>Puji Ermanto</em></strong></p>
+
+:ET
