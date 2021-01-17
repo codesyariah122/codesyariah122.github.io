@@ -3332,12 +3332,15 @@ input[type="button"].btn-block {
   .nav-link.disabled {
     color: #6c757d; }
 .active {
-  color: rgb(0,0,0, 0.9);
+  color: rgb(34,139,34, 0.9);
 }
 
 .nav-tabs {
   border-bottom: 1px solid #dee2e6; }
   .nav-tabs .nav-item {
+    .active {
+      color: rgb(34,139,34, 0.9);
+    }
     margin-bottom: -1px; }
   .nav-tabs .nav-link {
     border: 1px solid transparent;

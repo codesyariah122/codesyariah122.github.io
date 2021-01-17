@@ -4600,7 +4600,7 @@ input[type=button].btn-block {
 }
 
 .active {
-  color: mediumseagreen;
+  color: rgba(34, 139, 34, 0.9);
 }
 
 .nav-tabs {
@@ -4609,6 +4609,9 @@ input[type=button].btn-block {
 
 .nav-tabs .nav-item {
   margin-bottom: -1px;
+}
+.nav-tabs .nav-item .active {
+  color: rgba(34, 139, 34, 0.9);
 }
 
 .nav-tabs .nav-link {
@@ -12569,4 +12572,4 @@ html {
   }
 }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=main.scss.map */
