@@ -1,0 +1,26 @@
+I"�<p><img src="https://codesyariah122.github.io/assets/images/post/debian9/IMG_20200201_005436.jpg" alt="gnome-login" /></p>
+
+<p>permasalahan login menggunakan user root di debian 9 stretch, ini adalah masalah autentikasi login di gdm-password, gdm adalah gnome display manager<br />
+karena disini saya menggunakan lingkungan desktop gnome. dan permasalahan nya terdapat pada configurasi gdm-password, yang terletak di direktori</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="syntax"><code>/etc/pam.d/
+</code></pre></div></div>
+<p><img src="https://codesyariah122.github.io/assets/images/post/debian9/gdm-password.png" alt="gdm-password" /><br />
+dari script yang saya highlight itulah masalah ini terjadi, sehingga saya tidak bisa login menggunakan user root. dimana user ini merupakan user dengan<br />
+tingkat level paling atas. dan untuk mengatasi ini saya coba uncomment (#) script yang saya highlight di gambar di file <code class="language-html highlighter-rouge">/etc/pam.d/gdm-password</code><br />
+<img src="https://codesyariah122.github.io/assets/images/post/debian9/gdm-password_2.png" alt="gdm-password" /></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="syntax"><code>auth   required        pam_succeed_if.so user <span class="o">!=</span> root quiet_success
+</code></pre></div></div>
+<p>setelah itu saya coba kembali untuk login dengan user root dan akhirnya bisa ….<br />
+<img src="https://codesyariah122.github.io/assets/images/post/debian9/login-root.png" alt="gnome_login" /><br />
+<img src="https://codesyariah122.github.io/assets/images/post/debian9/login-root_1.jpg" alt="gnome_login_root" /> 
+<img src="https://codesyariah122.github.io/assets/images/post/debian9/login-root_2.jpg" alt="gnome_login_root" /><br />
+oke fix trouble kali ini .<br />
+salam…</p>
+
+<details><summary>Penulis</summary>
+  <h1>pujiermanto</h1>
+  <img src="https://codesyariah122.github.io/assets/images/post/debian9/2020-02-26-132527.jpg" />
+</details>
+
+:ET
