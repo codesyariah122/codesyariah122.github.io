@@ -161,7 +161,7 @@ Ok Sekarang kita akan memulai seeder untuk table ```employees```
 	di Laravel.
 
 - Membuat Seeder :  
-	Lanjut, kita buat terlebih dahulu file seeder untuk tabel tertentu. Misalnya, kita akan menguji fitur product list, itu berarti kita ingin menyiapkan data products terlebih dahulu ke database. Data ini hanyalah data dummy. Untuk membuat file seeder kita jalankan perintah berikut :  
+	Lanjut, kita buat terlebih dahulu file seeder untuk tabel tertentu. Misalnya, kita akan menguji fitur list employee, itu berarti kita ingin menyiapkan data employees terlebih dahulu ke database. Data ini hanyalah data dummy. Untuk membuat file seeder kita jalankan perintah berikut :  
 
 ```bash
 root@876a9f5bb1a6:/var/www/projectku# php artisan make:seeder EmployeesSeederTable

@@ -1,14 +1,15 @@
 ## codesyariah122.github.io
 
-<p style='color:mediumspringgreen;'>
 Hai Kami Codesyariah Blog...<br/>
-<span style='color:lightseagreen;'>Blog ini ditujukan untuk menyimpan catatan-catatan artikel pribadi seputar tips, trick, tutorial<br/>
+> Blog ini ditujukan untuk menyimpan catatan-catatan artikel pribadi seputar tips, trick, tutorial<br/>
 atau apapun yang bertujuan menambah khazanah informasi publik terutama publik awam seperti kami.<br/>
 kami selalu berusaha menyajikan informasi yang khas, terbaru dan inshaAllah dari sumber-sumber yang kredibel.<br/>
-Ikuti terus perjalanan catatan kami hanya di blog codesyariah.
-</p>
+Ikuti terus perjalanan catatan kami hanya di blog codesyariah.  
+
+[![](http://img.youtube.com/vi/qNy6xlVBKrg/0.jpg)](http://www.youtube.com/watch?v=qNy6xlVBKrg "")  
+
 <details>
-<summary style='color:DodgerBlue;'>
+<summary>
 About Codesyariah Founder
 </summary>  
 <img src="https://codesyariah122.github.io/IMG_20191224_051041.jpg" width="170" height="150"/><br/>
