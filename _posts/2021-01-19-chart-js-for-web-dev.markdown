@@ -12,7 +12,8 @@ opening: بسم الله الرحمن الرحيم
 
 ![chartjs]({{site.url}}/assets/images/post/chartjs/chartjs-tutsplus.jpg)    
 
-Hallo bro-bro semuanya, semoga dalam keadaan sehat-sehat bro. Sekali lagi gout pribadi sebagai generasi milenial yang kaleng-kaleng, turut berduka pada saudara-saudara gout yang mengalami musibah di daerah-daerah Indonesia, Semoga kalian semua saudara-saudara gout diberikan kelapangan hati, ketabahan, kekuatan fisik dan pikiran untuk melewati cobaan dari Allah Subhanaahu Wataa Allaa. Selalu ada hikmah di balik bencana, Allah tidak diam dan Allah akan memberi rezeki pada siapapun yang ia kehendaki, dan hidayah adalah sebaik-baik rezeki.  
+Hallo bro-bro semuanya, semoga dalam keadaan sehat-sehat bro. Sekali lagi gout pribadi sebagai generasi milenial yang kaleng-kaleng, turut berduka pada saudara-saudara gout yang mengalami musibah di daerah-daerah Indonesia, Semoga kalian semua saudara-saudara gout diberikan kelapangan hati, ketabahan, kekuatan fisik dan pikiran untuk melewati cobaan dari Allah Subhanaahu Wataa Allaa. Selalu ada hikmah di balik bencana, Allah tidak diam dan Allah akan memberi rezeki pada siapapun yang ia kehendaki, dan hidayah adalah sebaik-baik rezeki. 
+> Jangan lupa doanya bro-bro semua untuk saudara-saudara kita yang terdampak bencana dan donasi kalian di kanal-kanal donasi yang ada di sekitar kalian sumbangkan sedikit, walaupun sedikit mungkin mereka amat membutuhkan  
 
 ### Membuat grafik data Chart.js  
 
