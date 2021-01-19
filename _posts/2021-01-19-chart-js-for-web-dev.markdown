@@ -169,6 +169,8 @@ kemudian buat kembali direktori ```csss/``` buat satu file baru di direktori ini
 
 5. Lanjut lagi sebagai penentu kita buat direktori ```js/``` dan buat beberapa file diantaranya :  
 
+file ini gout maksudkan untuk memudahkan dalam membaca code-code dalam mengembangkan aplikasi dan untuk maintenance kedepannya, jika aplikasi ini berkembang kedepannya, dan supaya code terlihat lebih rapih selain mudah di baca juga, code nya hanya berupa seleksi class yang akan dilakukan manipulasi DOM(document data object).
+
 ```javascript
 // file : assets/js/MyObj.js
 const ObjData = {
@@ -191,6 +193,8 @@ const ObjData = {
 	},
 }
 ```  
+
+selanjutnya kita lakukan DOM untuk object class yang telah diseleksi tadi untuk menyisipkan element data option ke select input di file html ```components/select-data.html```.  
 
 ```javascript
 // file : assets/js/MyScript.js
@@ -225,6 +229,7 @@ $(document).ready(function(){
 
 });
 ```  
+Code berikut adalah code yang berisi method atau fungsi yang berupa ```arroy_function``` dan berisi beberapa fungsi untuk menjalankan tools chart.js nya  
 
 ```javascript
 // file : assets/js/MyChart.js
@@ -308,6 +313,8 @@ const ageChart = (labels, dataChartAge) => {
 }
 ```  
 
+lanjut lagi code berikut adalah code yang berfungsi menangani method chart.js diatas yang akan menampilkan element data graphik berupa baris (line chart) yang telah di tentukan datanya dalam parameter fungsi ```covidChart(parameter)```  
+
 ```javascript
 // file : assets/js/chart-line.js
 $(document).ready(function(){
@@ -390,6 +397,8 @@ $(document).ready(function(){
 });
 ```  
 
+selanjutnya code berikut juga masih menjalankan method di file ```MyChart.js``` di code ini method yang akan dijalankan adalah ```genderChart(parameter)``` data sudah di tentukan dalam parameter methodnya, method ini akan menjalankan tools chart.js berupa pie chart, chart dalam bentuk lingkaran data.  
+
 ```javascript
 // file : assets/js/gender-chart.js
 $(document).ready(function(){
@@ -425,6 +434,8 @@ $(document).ready(function(){
 	});
 });
 ```  
+
+data selanjutnya masih difungsikan untuk memanggil method dari file ```MyChart.js``` dan akan menjalankan graphic pie chart yang telah ditentukan datanya dalam parameter method ```ageChart(parameter)```.
 
 ```javascript
 // file : assets/js/age-chart.js
@@ -469,6 +480,18 @@ $(document).ready(function(){
 
 });
 ```  
+
+> tiap parameter data yang dijalankan pada method-method tersebut diambil dari api data yang sudah di assignment ke dalam rangkaian object, link api data nya sudah ada di file ```MyObj.js``` yakni di object berikut :  
+
+```javascript
+const ObjData = {
+	'api': {
+		'proxy' : "https://cors-anywhere.herokuapp.com/",
+    	'covid' : "https://data.covid19.go.id/public/api/",
+	},
+}  
+```  
+> lihat kembali code ```MyObj.js```  
 
 Ok jika sudah semua, kita langsung uji coba di browser akses web server kita dan direktori aplikasi http://localhost/dataCovid/. Jika berjalan seperti ini :  
 
