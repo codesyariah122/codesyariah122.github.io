@@ -50,7 +50,7 @@ OK langsung kita mulai coding, buka code editor, dan siapkan beberapa file dan d
 1. buat direktori utama (dataCovid) kalian bebas mau pakai nama apapun dan buka direktori tersebut di code editor.  
 
 2. buat file baru di root direktori tersebut, dengan nama ```index.html``` , berikut codingan dari file ```index.html``` :  
-```html
+```php
 <!DOCTYPE html>
 <html>
 <head>
@@ -125,10 +125,8 @@ Dari file diatas terlihat bahwa aplikasi kita di artikel kali ini menggunakan fr
 
 3. Lanjut buat direktori baru dengan nama ```components/```, buat kembali beberapa file baru di direktori ```component/```. antara lain :  
 
-```html
-<!-- 
-file: components/select-data.html
- -->
+```php
+//file: components/select-data.html
 
  <div class="input-group">
   <select class="custom-select" id="select-provinsi" aria-label="Example select with button addon">
@@ -140,10 +138,9 @@ file: components/select-data.html
 </div>
 ```  
 
-```html
-<!-- 
-file: components/loading-html
- -->
+```php
+// file: components/loading-html
+
 <img src="assets/img/loader.gif" class="img-responsive" width="500" height="150">
 ```  
 
