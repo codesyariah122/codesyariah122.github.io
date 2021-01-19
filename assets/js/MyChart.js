@@ -75,7 +75,7 @@ const covidChart = (last_date, labels, label, dataCovid) => {
             }]
         },
         options: {
-            responsive: true,
+            responsive: false,
             maintainAspectRatio: false
         }
     });

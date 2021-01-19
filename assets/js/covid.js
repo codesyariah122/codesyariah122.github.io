@@ -42,24 +42,30 @@ $(document).ready(function(){
                     const name_prov = result.key;
 
                     const labels = [`Kasus : ${result.jumlah_kasus}`, `Dirawat : ${result.jumlah_dirawat}`, `Meninggal : ${result.jumlah_meninggal}`, `Sembuh : ${result.jumlah_sembuh}`];
+                    
                     const resData = {
                         'kasus': result.jumlah_kasus,
                         'dirawat': result.jumlah_dirawat,
                         'meninggal': result.jumlah_meninggal, 
                         'sembuh': result.jumlah_sembuh
-                    };
-                    const dataCovid = [resData.kasus, resData.dirawat, resData.meninggal, resData.sembuh];
+                    };                    
+                    
+//                     const dataCovid = [resData.kasus, resData.dirawat, resData.meninggal, resData.sembuh];
 
+                    const dataCovid = Object.keys(resData).map((key)=>resData[key]);
+//                     const labels = Object.keys(resData).map((key)=>key);
+
+                    const objData = Object.entries(resData);                    
+                    
                     // console.log(result); 
                     // data.MyChart.show();
                     
                     data.ResultExp.append(`
                         <div class="col-md-6">
                             <ul style="list-style:none;">
-                                <li>${labels[0]}</li>
-                                <li>${labels[1]}</li>
-                                <li>${labels[2]}</li>
-                                <li>${labels[3]}</li>
+                                ${objData.map((data) => (
+                                    `<li>${data}</li>`
+                                )).join('')}
                                 <li class="mt-2">
                                 <b>Lihat Berdasarkan : </b>     
                                 <button class="mt-2 btn btn-primary btn-sm" data-id="${provinsi.idProv}" id="gender">Gender</button> <button class="mt-2 btn btn-danger btn-sm" data-id="${provinsi.idProv}" id="usia">Usia</button></li>
@@ -86,21 +92,21 @@ $(document).ready(function(){
             dataType: 'json',
             data: dataGender.idGender,
             success: function(res){
-                const berdasarkanGender = res.list_data[dataGender.idGender].jenis_kelamin;
+               const setFirst = res.list_data[dataGender.idGender].jenis_kelamin;
+                const gender = Object.keys(setFirst).map((key) => [key, setFirst[key]]);
+                const count = Object.keys(setFirst).map((key) => [key, setFirst[key]]);
 
-                const labels = [
-                    `${berdasarkanGender[0].key}`,
-                    `${berdasarkanGender[1].key}`,
+                
+                const genderData = [
+                    gender[0][1].key,
+                    gender[1][1].key
                 ];
-
-                const dataChartGender = [      
-                    berdasarkanGender[1].doc_count,               
-                    berdasarkanGender[0].doc_count
+                const genderCount = [
+                    count[0][1].doc_count,
+                    count[1][1].doc_count,
                 ];
-
-                // data.genderChart.show();
-                genderChart(labels, dataChartGender);
-            }
+                
+                genderChart(genderData, genderCount);            }
         });
     });
 
@@ -116,26 +122,28 @@ $(document).ready(function(){
             dataType: 'json',
             data: dataUsia.idUsia,
             success: function(res){
-                const berdasarkanUsia = res.list_data[dataUsia.idUsia].kelompok_umur;
-                console.log(berdasarkanUsia);
-                const labels = [
-                    `${berdasarkanUsia[0].key}`,
-                    `${berdasarkanUsia[1].key}`,
-                    `${berdasarkanUsia[2].key}`,
-                    `${berdasarkanUsia[3].key}`,
-                    `${berdasarkanUsia[4].key}`,
-                    `${berdasarkanUsia[5].key}`,
+                const setFirst = res.list_data[dataUsia.idUsia].kelompok_umur;
+                const age = Object.keys(setFirst).map((key) => [key, setFirst[key]]);
+                const count = Object.keys(setFirst).map((key) => [key, setFirst[key]]);
+
+                const ageData = [
+                    age[0][1].key,
+                    age[1][1].key,
+                    age[2][1].key,
+                    age[3][1].key,
+                    age[4][1].key,
+                    age[5][1].key
                 ];
-                const dataChartUsia = [
-                    berdasarkanUsia[0].doc_count,
-                    berdasarkanUsia[1].doc_count,
-                    berdasarkanUsia[2].doc_count,
-                    berdasarkanUsia[3].doc_count,
-                    berdasarkanUsia[4].doc_count,
-                    berdasarkanUsia[5].doc_count
+                const ageCount = [
+                    age[0][1].doc_count,
+                    age[1][1].doc_count,
+                    age[2][1].doc_count,
+                    age[3][1].doc_count,
+                    age[4][1].doc_count,
+                    age[5][1].doc_count
                 ];
-                // data.usiaChart.show();
-                usiaChart(labels, dataChartUsia);
+
+                ageChart(ageData, ageCount);
             }
         });
     
