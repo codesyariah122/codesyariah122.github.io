@@ -26,7 +26,8 @@ Sebagai contoh saja tentunya dan sekalian biar kita tetap update perkembangan te
 
 ### Praktek  
 Ok tanpa berlama-lama lagi langsung ajah gout tulis beberapa bagian codingannya, dalam artikel kali ini susunan direktori nya adalah seperti ini :  
-```bash
+
+```
 root@debian:/var/www/html/dataCovid# ls -l
 total 12
 drwxr-xr-x 6 puji122 puji122 4096 Jan 19 06:45 assets
@@ -35,7 +36,9 @@ drwxr-xr-x 2 puji122 puji122 4096 Jan 19 17:22 components
 root@debian:/var/www/html/dataCovid# 
 
 ```  
-ada beberapa bagian dalam direktori ```dataCovid```, dan kali ini gout tidak menggunakan backend programming melainkan pure ```html, javascript(jquery)``` diantaranya :  
+
+ada beberapa bagian dalam direktori ```dataCovid/```, dan kali ini gout tidak menggunakan backend programming melainkan pure ```html, javascript(jquery)``` diantaranya :  
+
 - file index.html  
 	Seperti index pada umumnya ini merupakan file utama yang menjalankan aplikasi program.
 - direktori assets :  
@@ -43,13 +46,15 @@ ada beberapa bagian dalam direktori ```dataCovid```, dan kali ini gout tidak men
 - direktori component :  
 	direktori ini adalah berisi file file component yang akan di load ke dalam file utama aplikasi kita yaitu di file ```index.html```  
 
+
 #### Start The Game  
 
 OK langsung kita mulai coding, buka code editor, dan siapkan beberapa file dan direktori seperti di listing direktori di atas :  
 
 1. buat direktori utama (dataCovid) kalian bebas mau pakai nama apapun dan buka direktori tersebut di code editor.  
 
-2. buat file baru di root direktori tersebut, dengan nama ```index.html``` , berikut codingan dari file ```index.html``` :  
+2. buat file baru di root direktori tersebut, dengan nama index.html , berikut codingan dari file index.html :  
+
 ```php
 <!DOCTYPE html>
 <html>
@@ -121,6 +126,7 @@ OK langsung kita mulai coding, buka code editor, dan siapkan beberapa file dan d
 </body>
 </html>
 ```  
+
 Dari file diatas terlihat bahwa aplikasi kita di artikel kali ini menggunakan framework front end ```bootstrap-4.5```. Kemudian juga tentunya link sumber untuk tools ```chart.js``` nya.  
 
 3. Lanjut buat direktori baru dengan nama ```components/```, buat kembali beberapa file baru di direktori ```component/```. antara lain :  
@@ -463,6 +469,7 @@ $(document).ready(function(){
 
 });
 ```  
+
 Ok jika sudah semua, kita langsung uji coba di browser akses web server kita dan direktori aplikasi http://localhost/dataCovid/. Jika berjalan seperti ini :  
 
 <div class="embed-responsive embed-responsive-21by9">

@@ -123,7 +123,8 @@ const app = server.createServer((req, res) => {
 })
 ```  
 ![heroku_node1_]({{site.url}}/assets/images/post/heroku/heroku10.png)  
-untuk uji coba kita bisa buka terminal di **vscode** dengan menekan shortcutkey (ctrl+`), kemudian jalankan kembali command heroku :  
+untuk uji coba kita bisa buka terminal di **vscode** dengan menekan shortcutkey (ctrl+), kemudian jalankan kembali command heroku :  
+
 
 ```bash
 root@debian:/home/puji122/jhony-thunder# heroku local web 
