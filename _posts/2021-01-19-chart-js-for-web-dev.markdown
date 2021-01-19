@@ -10,7 +10,7 @@ opening: بسم الله الرحمن الرحيم
 
 {{page.opening}}  
 
-![laravel-auth]({{site.url}}assets/images/post/chartjs/chartjs-tutsplus.jpg)    
+![chartjs]({{site.url}}assets/images/post/chartjs/chartjs-tutsplus.jpg)    
 
 Hallo bro-bro semuanya, semoga dalam keadaan sehat-sehat bro. Sekali lagi gout pribadi sebagai generasi milenial yang kaleng-kaleng, turut berduka pada saudara-saudara gout yang mengalami musibah di daerah-daerah Indonesia, Semoga kalian semua saudara-saudara gout diberikan kelapangan hati, ketabahan, kekuatan fisik dan pikiran untuk melewati cobaan dari Allah Subhanaahu Wataa Allaa. Selalu ada hikmah di balik bencana, Allah tidak diam dan Allah akan memberi rezeki pada siapapun yang ia kehendaki, dan hidayah adalah sebaik-baik rezeki.  
 
