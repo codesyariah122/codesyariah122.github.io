@@ -127,7 +127,7 @@ OK langsung kita mulai coding, buka code editor, dan siapkan beberapa file dan d
 </html>
 ```  
 
-Dari file diatas terlihat bahwa aplikasi kita di artikel kali ini menggunakan framework front end ```bootstrap-4.5```. Kemudian juga tentunya link sumber untuk tools ```chart.js``` nya.  
+Dari file diatas terlihat bahwa aplikasi kita di artikel kali ini menggunakan framework front end ```bootstrap-4.5```. Kemudian juga tentunya link sumber untuk tools ```chart.js``` nya. dan berikut documentation dari ```chart.js``` : <a href="https://www.chartjs.org/docs/latest/general/options.html" target="_blank">Chart JS</a>.  
 
 3. Lanjut buat direktori baru dengan nama ```components/```, buat kembali beberapa file baru di direktori ```component/```. antara lain :  
 
