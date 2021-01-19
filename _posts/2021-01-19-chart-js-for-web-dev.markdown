@@ -230,7 +230,7 @@ $(document).ready(function(){
 
 });
 ```  
-Code berikut adalah code yang berisi method atau fungsi yang berupa ```arroy_function``` dan berisi beberapa fungsi untuk menjalankan tools chart.js nya  
+Code berikut adalah code yang berisi method atau fungsi yang berupa ```arrow_function``` dan berisi beberapa fungsi untuk menjalankan tools chart.js nya  
 
 ```javascript
 // file : assets/js/MyChart.js
