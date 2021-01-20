@@ -143,7 +143,7 @@ $(document).ready(function(){
                     age[5][1].doc_count
                 ];
 
-                ageChart(ageData, ageCount);
+                usiaChart(ageData, ageCount);
             }
         });
     
