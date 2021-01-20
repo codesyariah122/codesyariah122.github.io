@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Create pagination on jekyll posts list and post single page"
+title:  "Install Jekyll static site generator"
 author: puji
 categories: [ Jekyll, ruby ]
 image: assets/images/post/jekyll.png

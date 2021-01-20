@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Create pagination on jekyll posts list and post single page"
+title:  "Looping data with liquid jekyll"
 author: puji
 categories: [ Jekyll, ruby ]
 image: assets/images/post/jekyll-liquid.png
