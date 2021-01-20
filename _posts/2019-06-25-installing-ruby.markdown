@@ -22,25 +22,19 @@ Dalam tutorial ini kami akan menunjukkan kepada Anda tiga cara berbeda untuk men
 Cara termudah untuk menginstal Ruby di sistem Debian Anda adalah melalui apt package manager. Pada saat penulisan, versi di repositori Debian adalah 2.3.3 yang mana akan segera EOL (End of Life).  
 Untuk menginstal Ruby dari repositori default Debian, ikuti langkah-langkah ini:  
 1 . perbarui index paket :  
-
-```bash
-$ apt update
-$ apt install git curl libssl-dev libreadline-dev zlib1g-dev autoconf bison build-essential libyaml-dev libreadline-dev libncurses5-dev libffi-dev libgdbm-dev
-```  
-
+```
+apt update
+apt install git curl libssl-dev libreadline-dev zlib1g-dev autoconf bison build-essential libyaml-dev libreadline-dev libncurses5-dev libffi-dev libgdbm-dev
+```
 2. install ruby dengan mengetik :  
-
-```bash
-$ apt install ruby-full
+```
+apt install ruby-full
 ```  
-
-3. cek versi ruby :  
-
-```bash
-$ ruby --version
+3. cek versi ruby : 
+```
+ruby --version
 ```  
-
-outputnya adalah seperti ini  
+outputnya adalah seperti ini 
 
 ```
 ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-linux]
@@ -52,14 +46,14 @@ Rbenv adalah alat manajemen versi Ruby yang memungkinkan Anda untuk dengan mudah
 Untuk menginstal Ruby menggunakan skrip Rbenv, ikuti langkah-langkah ini: 
 1. Pertama, perbarui indeks paket dan install paket yang diperukan oleh ruby-build untuk membangun ruby dari sumber :  
 
-```bash
-$ apt update
-$ apt install git curl libssl-dev libreadline-dev zlib1g-dev autoconf bison build-essential libyaml-dev libreadline-dev libncurses5-dev libffi-dev libgdbm-dev
+```
+apt update
+apt install git curl libssl-dev libreadline-dev zlib1g-dev autoconf bison build-essential libyaml-dev libreadline-dev libncurses5-dev libffi-dev libgdbm-dev
 ```  
 2. Selanjutnya, jalankan perintah curl berikut untuk menginstall rbenv dan ruby-build :  
 
-```bash
-$ curl -sL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-installer | bash -
+```
+curl -sL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-installer | bash -
 
 ```  
 
@@ -67,31 +61,31 @@ Script akan mengkloning repositori rbenv dan ruby-build dari GitHub ke direktori
 3. Tambahkan $HOME/.rbenv/bin ke sistem PATH.
 Jika Anda menggunakan Bash, jalankan:  
 
-```bash
-$ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
-$ echo 'eval "$(rbenv init -)"' >> ~/.bashrc
-$ source ~/.bashrc
+```
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+source ~/.bashrc
 ```  
 
 Jika Anda menggunakanZsh, jalankan:  
 
-```bash
-$ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
-$ echo 'eval "$(rbenv init -)"' >> ~/.zshrc
-$ source ~/.zshrc
+```
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
+echo 'eval "$(rbenv init -)"' >> ~/.zshrc
+source ~/.zshrc
 ```  
 
 4. Install ruby versi stabil terbaru dan tetapkan sebagai versi default dengan :  
 
-```bash
-$ rbenv install 2.5.1
-$ rbenv global 2.5.1
+```
+rbenv install 2.5.1
+rbenv global 2.5.1
 ```  
 
 Untuk melihat daftar semua versi Ruby yang tersedia, Anda dapat menggunakan: ```rbenv install -l```  
 Verifikasi bahwa Ruby telah diinstal dengan benar dengan mencetak nomor versi:  
 
-```bash
+```
 ruby --version
 ```  
 
