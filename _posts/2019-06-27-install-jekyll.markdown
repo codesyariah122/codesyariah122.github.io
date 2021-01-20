@@ -135,85 +135,19 @@ File tersebut hanya berisi ```front matter``` , untuk mengassignment beberapa de
 
 Sekarang kita buat file untuk layout tersebut, dimana di file tersebut layout yang akan digunakan adalah ```layout: home```, buat file baru di direktori ```_layouts/``` buat file dengan nama ```home.html```.  
 Dalam file html tersebut kalian bisa mengisi nya langsung dengan script html atau kalian bisa membuat modularisasi layout lagi, dalam contoh ini saya menggunakan metode modularisasi layout agar aplikasi kita terlihat lebih flexible dan lebih mudah di maintain, berikut isi dari file ```layout/home.html``` :  
+<a href="http://rouge.jneen.net/v3.26.0/liquid/LS0tCmxheW91dDogaW5kZXgKLS0tCnslIGluY2x1ZGUgaG9tZS5odG1sICV9">home.html</a>  
 
-```html
----
-layout: index
----
-{% include home.html %}
-```  
 di file tersebut saya menjalankan metode modularisasi layout dengan format template liquid menggunakan salah satu library nya yaiut ```{% include %}``` library ini di gunakan ketika kita akan mengambil file lainnya untuk di compile di template tersebut, dan kita akan membuat file baru lagi di direktori ```_includes/home.html``` :  
 
-```html
-<form action="{{ site.url }}" method="get">
-  <label for="search-box">Search</label>
-  <input type="text" id="search-box" name="query"><br/>
-  <button type="submit">Search</button>&nbsp;&nbsp;<button type="reset">Reset</button>
-</form><br/>
-<ul id="search-results"></ul>
-<hr><br/>
+<a href="https://raw.githubusercontent.com/codesyariah122/codesyariah122-github-io-repo/master/_includes/home.html">home.html</a>  
 
-     {% assign quote = site.data.quotes[page.quote] %}
-             <blockquote class="header-quote">
-               {{quote.quotes1}} 
-          </blockquote>
 
-        <blockquote class="header-quote"> 
-            {{quote.quotes2}} 
-      </blockquote>
-
-   <br/>
-
-      <ul class="post-list">
-      {% for blogku in site.posts %}
-      <li>
-        {% assign date_format = site.minima.date_format | default: "%d %B %Y" %}
-        <h3 style='margin-bottom:-7px;'>
-          <a class="post-link" href="{{ blogku.url | relative_url }}">
-            {{ blogku.title | markdownify }}
-          </a>
-        </h3>
-        <span class="post-meta">{{ blogku.date | date: date_format }} </span> 
-       
-        <br/>
-        
-          {% if site.show_excerpts %}
-             {{ blogku.excerpt | strip_html | truncatewords:15 | markdownify }}
-          <a href="{{blogku.url}}" class="meta-post"><b style='color:coral;'>Read More</b></a><br/>
- 
-          {% else %}
-        
-        <a href="{{site.url}}" class="meta-post"><b style='color:coral;'>No More</b></a><br/>
-          {% endif %}
-         
-      </li>
-
-      {% endfor %}
-
-    </ul>
-
-<div class="pagination">
-  {% if paginator.previous_page %}
-    <a class="pagination-item newer"
-       href="{{ site.url }}/{% if paginator.page > 2 %}page{{paginator.previous_page}}{% endif %}">
-       <i class="fa fa-arrow-left"></i> Newer
-   </a>
-  {% endif %}
-
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.url }}/page{{paginator.next_page}}">
-        Older <i class="fa fa-arrow-right"></i>
-    </a>
-  {% endif %}
-</div>
-<br/>
-<hr>
-
-```  
 Di file tersebut terdapat beberapa tag dari liquid templating jekyll sebagai sarana yang memudahkan kita melakukan fetching data di static site jekyll, dalam artikel selanjutnya mungkin kita akan membahas mengenai ```liquid templating```. Sebagai bahan belajar, saya sertakan link repository dari contoh static site jekyll yang saya buat :  
 
 <a href="https://github.com/codesyariah122/codesyariah122-github-io-repo" target="_blank"> Link Repo Jekyll saya</a>  
 
+
+### Membuat Post Baru  
 
 Ada beberapa konfigurasi untuk menangani static site jekyll ini dari mulai yang minimal config sampai yang complex config, tergantung kalian mau mengembangkannya sampai mana, eksplorasikan ide kalian. yang terpenting buat saya adalah konfigurasi di bagian ```baseurl``` atau ```url``` yang akan sering di gunakan di tiap page yang akan kita buat di static site jekyll ini. Berikut documentasi jekyll untuk mengatur bagian ```_config.yml``` : <a href="https://jekyllrb.com/docs/configuration/" target="_blank"> Config Jekyll Docs</a>  
 

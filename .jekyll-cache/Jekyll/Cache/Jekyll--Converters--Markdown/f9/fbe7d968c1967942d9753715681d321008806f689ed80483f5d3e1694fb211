@@ -1,5 +1,0 @@
-I"3<h3 id="apa-itu-graphql">Apa itu graphQL</h3>
-<p>GraphQL adalah sebuah konsep baru dalam  membangun api. GraphQL (Query Language) yang di develop oleh <code class="language-html highlighter-rouge">facebook</code>.<br />
-di implementasikan pada sisi server. Meskipun sebuah query language graphQL ini tidak secara langsung berhubungan dengan database server, dengan kata lain GraphQL ini tidak terbatas untuk database tertentu di platform tertentu, baik itu <code class="language-html highlighter-rouge">SQL</code> ataupun <code class="language-html highlighter-rouge">noSQL</code>.<br />
-posisi GraphQL ini berada di sisi client dan server yang berhubungan / mengakses suatu API. Salah satu tujuan pengembangan bahasa query ini adalah untuk memudahkan komunikasi data antara beckend dan frontend / mobile aplikasi.</p>
-:ET
