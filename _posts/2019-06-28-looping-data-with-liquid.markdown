@@ -42,7 +42,7 @@ file : ```_layout/home.html```
 
 Sekarang akan kita manfaatkan untuk mencetak dati dari file ```_config.yml``` dan kita akan menambahkan data baru di ```front matter``` file ```home.html``` , dan kita bisa lakukan nya seperti ini :  
 
-```html
+```markdown
 ---
 layout: index
 nama: Puji Ermanto
@@ -93,7 +93,7 @@ file tersebut berisi beberapa deskripsi data untuk membuat sebuah navigasi bar a
 
 file : ```_includes/home.html```  
 
-```html
+```markdown
 ---
 layout: index
 nama: Puji Ermanto
