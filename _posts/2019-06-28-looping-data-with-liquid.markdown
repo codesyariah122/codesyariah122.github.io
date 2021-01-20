@@ -42,33 +42,10 @@ file : ```_layout/home.html```
 
 Sekarang akan kita manfaatkan untuk mencetak dati dari file ```_config.yml``` dan kita akan menambahkan data baru di ```front matter``` file ```home.html``` , dan kita bisa lakukan nya seperti ini :  
 
-<pre>
-```html
----
-layout: index
-nama: Puji Ermanto
-email: puji122_bandung@gmail.com
-jobdesk: Frontend Developer
----
-{% include home.html %}
+<a href="http://rouge.jneen.net/v3.26.0/markdown/LS0tCmxheW91dDogaW5kZXgKbmFtYTogUHVqaSBFcm1hbnRvCmVtYWlsOiBwdWppMTIyX2JhbmR1bmdAZ21haWwuY29tCmpvYmRlc2s6IEZyb250ZW5kIERldmVsb3BlcgotLS0KeyUgaW5jbHVkZSBob21lLmh0bWwgJX0KCjxoND4gRGF0YSBkYXJpIGZpbGUgX2NvbmZpZy55bWwgOiA8L2g0Pgo8dWw-Cgk8bGk-TmFtYSA6IHt7c2l0ZS5hdXRob3J9fSA8L2xpPgoJPGxpPkVtYWlsIDoge3tzaXRlLmVtYWlsfX0gPC9saT4KCTxsaT5Kb2JkZXNrIDoge3tzaXRlLmpvYmRlc2t9fSA8L2xpPgo8L3VsPgoKPGg1PkRhbiBpbmkgZGF0YSBkYXJpIHBhZ2UgaG9tZS5odG1sKGZpbGUgaW5pIHNlbmRpcmkpPC9oNT4KPHVsPgoJPGxpPk5hbWEgOiB7e3BhZ2UuYXV0aG9yfX0gPC9saT4KCTxsaT5FbWFpbCA6IHt7cGFnZS5lbWFpbH19IDwvbGk-Cgk8bGk-Sm9iZGVzayA6IHt7cGFnZS5qb2JkZXNrfX0gPC9saT4KPC91bD4">home.html</a>  
 
-<h4> Data dari file _config.yml : </h4>
-<ul>
-	<li>Nama : {{site.author}} </li>
-	<li>Email : {{site.email}} </li>
-	<li>Jobdesk : {{site.jobdesk}} </li>
-</ul>
 
-<h5>Dan ini data dari page home.html(file ini sendiri)</h5>
-<ul>
-	<li>Nama : {{page.author}} </li>
-	<li>Email : {{page.email}} </li>
-	<li>Jobdesk : {{page.jobdesk}} </li>
-</ul>
-```  
-</pre>
-
-terlihat sedikit perbedaannya bukan, untuk mencetak sebuah data dari file lain seperti file ```_config.yml``` kita membutuhkan sebuah key ```{{site}}``` sedangkan untuk mencetak data dari page itu sendiri kita tinggal menggunakan key ```{{page}}```. Mudah bukan menggunakan liquid ini, simple yah mudah di fahami sekalipun oleh awam seperti saya.  
+Terlihat sedikit perbedaannya bukan, untuk mencetak sebuah data dari file lain seperti file ```_config.yml``` kita membutuhkan sebuah key ```{{site}}``` sedangkan untuk mencetak data dari page itu sendiri kita tinggal menggunakan key ```{{page}}```. Mudah bukan menggunakan liquid ini, simple yah mudah di fahami sekalipun oleh awam seperti saya.  
 
 **Contoh lagi :**  
 
@@ -96,28 +73,7 @@ file tersebut berisi beberapa deskripsi data untuk membuat sebuah navigasi bar a
 
 file : ```_includes/home.html```  
 
-<pre>
-```html
----
-layout: index
-nama: Puji Ermanto
-email: puji122_bandung@gmail.com
-jobdesk: Frontend Developer
----  
-
-{% include home.html %}
-
-
-{% assign menus = site.data.menus %}
-
-<ul>
-	{% for menu in menus %}
-	<li><a href="{{menu.link}}">{{menu.label}}</a></li>
-	{% endfor %}
-</ul>
-
-```  
-</pre>
+<a href="http://rouge.jneen.net/v3.26.0/markdown/LS0tCmxheW91dDogaW5kZXgKbmFtYTogUHVqaSBFcm1hbnRvCmVtYWlsOiBwdWppMTIyX2JhbmR1bmdAZ21haWwuY29tCmpvYmRlc2s6IEZyb250ZW5kIERldmVsb3BlcgotLS0gIAoKeyUgaW5jbHVkZSBob21lLmh0bWwgJX0KCgp7JSBhc3NpZ24gbWVudXMgPSBzaXRlLmRhdGEubWVudXMgJX0KCjx1bD4KCXslIGZvciBtZW51IGluIG1lbnVzICV9Cgk8bGk-PGEgaHJlZj0ie3ttZW51Lmxpbmt9fSI-e3ttZW51LmxhYmVsfX08L2E-PC9saT4KCXslIGVuZGZvciAlfQo8L3VsPg">home.html</a>  
 
 Dari file diatas akan saya jelaskan sedikit, di file tersebut terdapat tag ```{% assign %}``` tag ini disediakan jekyl sebagai sarana menampung sebuah nilai jika dalam javascript sama dengan ```let```, ```const``` atau ```var``` key tersebut berguna untuk menampung sebuah nilai baru.  
 kemudian selanjutnya liquid juga menyediakan tag untuk looping sebuah data kita bisa melakukannya untuk sebuah perulangan data yang lebih efisiensi dalam pengembangan sebuah aplikasi. Tag tersebut bisa kita lihat di bagian ```{% for %} {% endfor %}```. 
