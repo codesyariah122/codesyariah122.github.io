@@ -42,7 +42,8 @@ file : ```_layout/home.html```
 
 Sekarang akan kita manfaatkan untuk mencetak dati dari file ```_config.yml``` dan kita akan menambahkan data baru di ```front matter``` file ```home.html``` , dan kita bisa lakukan nya seperti ini :  
 
-```markdown
+<pre>
+```html
 ---
 layout: index
 nama: Puji Ermanto
@@ -65,6 +66,8 @@ jobdesk: Frontend Developer
 	<li>Jobdesk : {{page.jobdesk}} </li>
 </ul>
 ```  
+</pre>
+
 terlihat sedikit perbedaannya bukan, untuk mencetak sebuah data dari file lain seperti file ```_config.yml``` kita membutuhkan sebuah key ```{{site}}``` sedangkan untuk mencetak data dari page itu sendiri kita tinggal menggunakan key ```{{page}}```. Mudah bukan menggunakan liquid ini, simple yah mudah di fahami sekalipun oleh awam seperti saya.  
 
 **Contoh lagi :**  
@@ -93,7 +96,8 @@ file tersebut berisi beberapa deskripsi data untuk membuat sebuah navigasi bar a
 
 file : ```_includes/home.html```  
 
-```markdown
+<pre>
+```html
 ---
 layout: index
 nama: Puji Ermanto
@@ -113,6 +117,8 @@ jobdesk: Frontend Developer
 </ul>
 
 ```  
+</pre>
+
 Dari file diatas akan saya jelaskan sedikit, di file tersebut terdapat tag ```{% assign %}``` tag ini disediakan jekyl sebagai sarana menampung sebuah nilai jika dalam javascript sama dengan ```let```, ```const``` atau ```var``` key tersebut berguna untuk menampung sebuah nilai baru.  
 kemudian selanjutnya liquid juga menyediakan tag untuk looping sebuah data kita bisa melakukannya untuk sebuah perulangan data yang lebih efisiensi dalam pengembangan sebuah aplikasi. Tag tersebut bisa kita lihat di bagian ```{% for %} {% endfor %}```. 
 Berikut adalah link documentation liquid jekyll : <a href="https://jekyllrb.com/docs/liquid/">Liquid Docs</a>.  
