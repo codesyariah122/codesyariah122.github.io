@@ -96,4 +96,4 @@ and this is in my layout post list on jekyll :
 	
 		</div>
 	  </div>
-```
+```  
