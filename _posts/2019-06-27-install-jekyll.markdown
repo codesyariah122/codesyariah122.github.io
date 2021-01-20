@@ -137,7 +137,7 @@ Sekarang kita buat file untuk layout tersebut, dimana di file tersebut layout ya
 Dalam file html tersebut kalian bisa mengisi nya langsung dengan script html atau kalian bisa membuat modularisasi layout lagi, dalam contoh ini saya menggunakan metode modularisasi layout agar aplikasi kita terlihat lebih flexible dan lebih mudah di maintain, berikut isi dari file ```layout/home.html``` :  
 <a href="http://rouge.jneen.net/v3.26.0/liquid/LS0tCmxheW91dDogaW5kZXgKLS0tCnslIGluY2x1ZGUgaG9tZS5odG1sICV9">home.html</a>  
 
-di file tersebut saya menjalankan metode modularisasi layout dengan format template liquid menggunakan salah satu library nya yaiut ```{% include %}``` library ini di gunakan ketika kita akan mengambil file lainnya untuk di compile di template tersebut, dan kita akan membuat file baru lagi di direktori ```_includes/home.html``` :  
+di file tersebut saya menjalankan metode modularisasi layout dengan format template liquid menggunakan salah satu library nya yaiut ```% include %``` library ini di gunakan ketika kita akan mengambil file lainnya untuk di compile di template tersebut, dan kita akan membuat file baru lagi di direktori ```_includes/home.html``` :  
 
 <a href="https://raw.githubusercontent.com/codesyariah122/codesyariah122-github-io-repo/master/_includes/home.html">home.html</a>  
 
