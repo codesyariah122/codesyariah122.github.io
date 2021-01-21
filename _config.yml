@@ -27,7 +27,8 @@ collections:
   - webdevs
 
 include: ["_pages"]
-permalink: /:categories/:title/
+permalink: /:title/
+# permalink: /:categories/:title/
 
 # Plugins
 plugins:
