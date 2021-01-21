@@ -6,7 +6,6 @@ atau apapun yang bertujuan menambah khazanah informasi publik terutama publik aw
 kami selalu berusaha menyajikan informasi yang khas, terbaru dan inshaAllah dari sumber-sumber yang kredibel.<br/>
 Ikuti terus perjalanan catatan kami hanya di blog codesyariah.  
 
-[![](http://img.youtube.com/vi/qNy6xlVBKrg/0.jpg)](http://www.youtube.com/watch?v=qNy6xlVBKrg "")  
 
 <details>
 <summary>

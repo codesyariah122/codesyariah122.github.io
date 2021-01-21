@@ -69,48 +69,59 @@ OK langsung kita mulai coding, buka code editor, dan siapkan beberapa file dan d
 </head>
 <body>
 
-	<div class="container">
+<div class="container">
+	<div class="col-md-12 mt-5">
+		
+		<div class="row justify-content-center">
+				<div class="col-md-4 select-data">
+					<h5>Update Data Covid / Provinsi</h5>
 
-		<div class="row">
-			<div class="col-md-6 mt-5 select-data">
-				<h1>Update Data Covid / Provinsi</h1>
+					<div class="select"></div>
+					<div id="loading-select"></div>
 
-				<div class="select"></div>
-
-				<div class="result-error mt-2">
-					<div class="alert alert-danger" role="alert">
-					 Pilih provinsi yang tersedia. Terlebih dahulu !
+					<div class="result-error mt-2">
+						<div class="alert alert-danger" role="alert">
+						 Pilih provinsi yang tersedia. Terlebih dahulu !
+						</div>
 					</div>
 				</div>
 
-				  	<div class="row">
-		                <div class="col-md-12 col-xs-12 col-sm-12 mt-3 mb-3">
-		                	<div id="loading"></div>
-		                	<!-- chart line -->
-							<canvas id="chart-line"></canvas>
-						</div>
-					</div>
 
-					<div class="row">
-						<div class="col-md-4">
-							<div class="card mb-5" style="width: 18rem;">
-							  <div class="card-body"></div>
-							</div>
-						</div>
-
-						<div class="col-md-8 ml-auto">
-							<!-- chart pie -->
-							<canvas id="chart-pie-gender"></canvas>
-							<canvas id="chart-pie-age"></canvas>
-						</div>
+				<div class="col-md-4">
+					<div class="polaroid">
+						<img src="assets/img/covid1.jpg" class="img-responsive ml-5">
+						<p>
+							Ingat selalu pesan Ibu
+						</p>
 					</div>
+				</div>
 			</div>
 
-			<div class="col-md-4 mt-2">
-				<img src="assets/img/covid1.jpg" class="img-responsive">
+			<div class="row">
+		        <div class="col-md-12 col-xs-12 col-sm-12 mt-3 mb-3">
+		           	<div id="loading-line"></div>
+		             <!-- chart line -->
+					<canvas id="chart-line"></canvas>
+				</div>
 			</div>
-		</div>
+
+			<div class="row">
+				<div class="col-md-4">
+					<div class="card mb-5" style="width: 18rem;">
+					<div class="card-body"></div>
+					</div>
+				</div>
+
+				<div class="col-md-8 ml-auto">
+					<!-- chart pie -->
+					<canvas id="chart-pie-gender"></canvas>
+					
+					<canvas id="chart-pie-age"></canvas>
+				</div>
+			</div>
+				
 	</div>
+</div>
 
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -124,6 +135,7 @@ OK langsung kita mulai coding, buka code editor, dan siapkan beberapa file dan d
 <script type="text/javascript" src="assets/js/gender-chart.js"></script>
 <script type="text/javascript" src="assets/js/age-chart.js"></script>
 <script type="text/javascript" src="assets/js/MyChart.js"></script>
+
 </body>
 </html>
 ```  
@@ -148,7 +160,7 @@ Dari file diatas terlihat bahwa aplikasi kita di artikel kali ini menggunakan fr
 ```php
 // file: components/loading-html
 
-<img src="assets/img/loader.gif" class="img-responsive" width="500" height="150">
+<img src="assets/img/loader.gif" class="img-responsive" width="400" height="250">
 ```  
 
 4. Lanjut buat direktori ```assets/``` kemudian buat kembali beberapa direktori di dalam direktori ```assets/``` antara lain :  
@@ -158,13 +170,51 @@ direktori ```img/``` berikut link untuk image yang dibutuhkan : <a href="https:/
 kemudian buat kembali direktori ```csss/``` buat satu file baru di direktori ini :  
 
 ```css
-/* file: assets/css/style.css*/
+@font-face {
+    font-family: 'Reey Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Reey Regular'), url('../fonts/Reey-Regular.woff') format('woff');
+}
+
+
 .select-data h1{
 	margin-top: 1rem;
 }
-#loading{
+#loading-select{
 	margin-top: -4rem;
-	margin-left: -4rem;
+	margin-left: -9rem;
+}
+
+#loading-line{
+	margin-top: -4rem;
+	margin-left: -9rem;
+}
+
+
+.polaroid{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important;
+    color: rgb(255,228,181);
+    position: relative;
+    margin-bottom: 5rem;
+    margin-top:1rem;
+}
+
+.polaroid img{
+	width: 250px;
+	height: 200px;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+}
+
+.polaroid p{
+    color: black;
+    text-indent: 0px;
+    margin-top:1.5rem;
+    font-weight: 400;
+    text-align:justify;
+    font-family: 'Reey Regular';
 }
 ```  
 
@@ -203,7 +253,7 @@ $(document).ready(function(){
 	ObjData.select.load('components/select-data.html');	
 	ObjData.errors.hide();
 	ObjData.card.hide();
-	ObjData.loading.hide();
+	ObjData.loadingSelect.show('slow').fadeIn(1000);
 
 	const data = ObjData.dataCovid;
 	
@@ -216,21 +266,22 @@ $(document).ready(function(){
 			const dataProvinsi = res.list_data;
 			const result = Object.keys(dataProvinsi).map((key) => [dataProvinsi[key].key]);
 
-			// sisipkan element baru untuk option dengan value default (0)
 			$('#select-provinsi').append(`
 				<option selected>Choose...</option>
 			`);
-
-			// sisipkan element baru untuk option dari data hasil request ajax yang berupa data nama provinsi di Indonesia
 			result.map((data, key) => (
 				$('#select-provinsi').append(`
 					<option value="${key}">${data}</option>
 				`)
 			));
+		},
+		complete: function(){
+			ObjData.loadingSelect.hide('slow').slideUp(1000);
 		}
 	});
 
 });
+
 ```  
 Lanjut Code berikutnya ialah code yang berisi method atau fungsi yang berupa ```arrow_function``` dan berisi beberapa fungsi untuk menjalankan tools chart.js nya  
 
@@ -240,7 +291,7 @@ const covidChart = (last_date, labels, label, dataCovid) => {
     const ctx = document.getElementById('chart-line').getContext('2d');
     if(window.bar != undefined) 
     window.bar.destroy(); 
-	
+  
     window.bar  = new Chart(ctx, {
         type: 'line',
         data: {
@@ -330,12 +381,12 @@ $(document).ready(function(){
 			ObjData.chartGender.hide();
 			ObjData.chartAge.hide();
 		}else{
+			ObjData.loadingLine.show('slow').load('components/loading.html').fadeIn(1000);
 			$('.card-body').html('');			
 			$('#select-provinsi').val('Choose...');
 
 			ObjData.errors.hide('slow').slideUp(1000);
 			ObjData.card.hide('slow').slideUp(1000);
-			ObjData.loading.show('slow').load('components/loading.html').fadeIn(1000);
 
 			$.ajax({
 				url: `${ObjData.api.proxy}${ObjData.api.covid}${ObjData.dataCovid}`,
@@ -345,17 +396,14 @@ $(document).ready(function(){
 				success: (res)=> {
 					genderChart('', '');
 					ageChart('', '');
-					ObjData.loading.hide('slow').slideUp(1000);
 					ObjData.card.show('slow').fadeIn(1000);
 
-					// seleksi untuk data awal hasil dari request ajax
 					const last_date = res.last_date;
 					const setFirst = res.list_data[dataProv];
 					const provName = setFirst.key;
 
 					document.querySelector('#title').append(provName);
 
-					// lanjut lagi seleksi untuk menampung data dari seleksi pertama
 					 const resData = {
                         'Kasus': setFirst.jumlah_kasus,
                         'Dirawat': setFirst.jumlah_dirawat,
@@ -365,8 +413,8 @@ $(document).ready(function(){
 
                     const dataCovid = Object.keys(resData).map((key)=>resData[key]);
 
-
                     // const labels = Object.keys(resData).map((key)=>key);
+
                     const labels = [
                     	`Kasus : ${setFirst.jumlah_kasus}`, 
                     	`Dirawat : ${setFirst.jumlah_dirawat}`, 
@@ -391,6 +439,8 @@ $(document).ready(function(){
 
 					covidChart(last_date, labels, provName, dataCovid);
 
+				}, complete: function(){
+					ObjData.loadingLine.hide('slow').slideUp(1000);
 				}
 			});
 
@@ -398,6 +448,7 @@ $(document).ready(function(){
 
 	});
 });
+
 ```  
 
 selanjutnya code berikut juga masih menjalankan method di file ```MyChart.js``` di code ini method yang akan dijalankan adalah ```genderChart(parameter)``` data sudah di tentukan dalam parameter methodnya, method ini akan menjalankan tools chart.js berupa pie chart, chart dalam bentuk lingkaran data.  
