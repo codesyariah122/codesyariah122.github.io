@@ -169,8 +169,7 @@ kemudian buat kembali direktori ```csss/``` buat satu file baru di direktori ini
 ```  
 
 5. Lanjut lagi sebagai penentu kita buat direktori ```js/``` dan buat beberapa file diantaranya :  
-
-file ini gout maksudkan untuk memudahkan dalam membaca code-code dalam mengembangkan aplikasi dan untuk maintenance kedepannya, jika aplikasi ini berkembang kedepannya, dan supaya code terlihat lebih rapih selain mudah di baca juga, code nya hanya berupa seleksi class yang akan dilakukan manipulasi DOM(document data object).
+file : ```js/MyObjs.js``` file ini gout maksudkan untuk memudahkan dalam membaca code-code dalam mengembangkan aplikasi dan untuk maintenance kedepannya, jika aplikasi ini berkembang kedepannya, dan supaya code terlihat lebih rapih selain mudah di baca juga, code nya hanya berupa seleksi class yang akan dilakukan manipulasi DOM(document object model).
 
 ```javascript
 // file : assets/js/MyObj.js
@@ -217,9 +216,12 @@ $(document).ready(function(){
 			const dataProvinsi = res.list_data;
 			const result = Object.keys(dataProvinsi).map((key) => [dataProvinsi[key].key]);
 
+			// sisipkan element baru untuk option dengan value default (0)
 			$('#select-provinsi').append(`
 				<option selected>Choose...</option>
 			`);
+
+			// sisipkan element baru untuk option dari data hasil request ajax yang berupa data nama provinsi di Indonesia
 			result.map((data, key) => (
 				$('#select-provinsi').append(`
 					<option value="${key}">${data}</option>
@@ -230,7 +232,7 @@ $(document).ready(function(){
 
 });
 ```  
-Code berikut adalah code yang berisi method atau fungsi yang berupa ```arrow_function``` dan berisi beberapa fungsi untuk menjalankan tools chart.js nya  
+Lanjut Code berikutnya ialah code yang berisi method atau fungsi yang berupa ```arrow_function``` dan berisi beberapa fungsi untuk menjalankan tools chart.js nya  
 
 ```javascript
 // file : assets/js/MyChart.js
@@ -239,8 +241,6 @@ const covidChart = (last_date, labels, label, dataCovid) => {
     if(window.bar != undefined) 
     window.bar.destroy(); 
 	
-	ctx.height=500;
-
     window.bar  = new Chart(ctx, {
         type: 'line',
         data: {
@@ -314,7 +314,7 @@ const ageChart = (labels, dataChartAge) => {
 }
 ```  
 
-lanjut lagi code berikut adalah code yang berfungsi menangani method chart.js diatas yang akan menampilkan element data graphik berupa baris (line chart) yang telah di tentukan datanya dalam parameter fungsi ```covidChart(parameter)```  
+lanjut lagi code berikut adalah code yang berfungsi untuk menjalankan method chart.js diatas yang akan menampilkan element data graphic berupa baris (line chart) yang telah di tentukan datanya dalam parameter fungsi ```covidChart(parameter)```  
 
 ```javascript
 // file : assets/js/chart-line.js
@@ -348,12 +348,14 @@ $(document).ready(function(){
 					ObjData.loading.hide('slow').slideUp(1000);
 					ObjData.card.show('slow').fadeIn(1000);
 
+					// seleksi untuk data awal hasil dari request ajax
 					const last_date = res.last_date;
 					const setFirst = res.list_data[dataProv];
 					const provName = setFirst.key;
 
 					document.querySelector('#title').append(provName);
 
+					// lanjut lagi seleksi untuk menampung data dari seleksi pertama
 					 const resData = {
                         'Kasus': setFirst.jumlah_kasus,
                         'Dirawat': setFirst.jumlah_dirawat,
@@ -363,8 +365,8 @@ $(document).ready(function(){
 
                     const dataCovid = Object.keys(resData).map((key)=>resData[key]);
 
-                    // const labels = Object.keys(resData).map((key)=>key);
 
+                    // const labels = Object.keys(resData).map((key)=>key);
                     const labels = [
                     	`Kasus : ${setFirst.jumlah_kasus}`, 
                     	`Dirawat : ${setFirst.jumlah_dirawat}`, 
