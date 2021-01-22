@@ -4,6 +4,8 @@
 
       <div class="col-12 col-xs-12 col-sm-12">
         <h1 class="text-success text-center" style="font-family:Reey Regular;">Sang Pembeda</h1>
+        <p class="mb-2">Baca Quran Online</p>
+
         <h4 class="text-center">Pilih Surah Quran</h4>
         <div class="input-group mb-3">
           <select class="custom-select" id="select-surah" name="surah">
@@ -14,22 +16,21 @@
             </div>
         </div>
       </div>
+
       <div class="col-md-12 col-xs-12 col-sm-12">
-        <div style="width: 100%;" class="table-responsive">
-            <table id="myTable" class="hover table table-striped table-bordered" style="width:100%">
-              <thead>
-                  <tr>
-                      <th>Name</th>
-                      <th>Number Surah</th>
-                      <th>Number Ayah</th>
-                      <th>Type</th>
-                      <th>Place</th>
-                      <th>Recitations</th>
-                      <th>Verses</th>
-                  </tr>
-              </thead>
-              <tbody id="result"> </tbody>	
-            </table>
+        <div class="hasil"></div>
+        <div class="view-ayat"></div>
+
+        <nav aria-label="Page navigation example">
+            <ul class="pagination"></ul>
+        </nav>
+
+        <div class="loader">
+            <img src="{{site.url}}/assets/images/myroom/loader.gif">
+        </div>
+
+        <div class="loader2">
+            <img src="{{site.url}}/assets/images/myroom/loading2.gif">
         </div>
       </div>
 
