@@ -11,10 +11,21 @@ Ikuti terus perjalanan catatan kami hanya di blog codesyariah.
 <summary>
 About Codesyariah Founder
 </summary>  
-<img src="https://raw.githubusercontent.com/codesyariah122/codesyariah122.github.io/master/uji.jpg" width="170" height="150"/><br/>
-<a href="https://id.linkedin.com/in/puji-ermanto-1b619782">
-Puji Ermanto As Founder Codesyariah
+<img src="https://raw.githubusercontent.com/codesyariah122/codesyariah122.github.io/master/puji.jpeg" width="170" height="150"/><br/>
+
+<input type="checkbox" id="linkedin" name="linkedin" value="Linkedin">
+<label for="linkedin">
+<a href="https://id.linkedin.com/in/puji-ermanto-1b619782" target="_blank">
+Puji Ermanto Linkedin
 </a>
+</label>
+<br/>
+<input type="checkbox" id="portfolio" name="portfolio" value="Portfolio">
+<label for="portfolio">
+<a href="https://pujiermanto.vercel.app" target="_blank">
+Puji Ermanto Portfolio
+</a>
+</label>
 </details>  
 
 Codesyariah dibangun dengan Static Site Generator dari ruby yaitu ```jekyll ruby```  

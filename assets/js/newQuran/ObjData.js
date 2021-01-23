@@ -6,6 +6,7 @@ const ObjData = {
 	'pilihSurah': $('#pilih-surah'),
 	'loader': $('.loader'),
 	'loaderDua': $('.loader2'),
+	'Error': $('.error'),
 	'Pagination': $('.pagination'),
 	'Next': $('#next'),
 	'Prev': $('#prev'),

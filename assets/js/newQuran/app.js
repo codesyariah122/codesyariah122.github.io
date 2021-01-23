@@ -1,14 +1,18 @@
 const quran = (req, data) => {
 	ObjData.loader.show('slow').fadeIn(1000);
 	ObjData.hasil.html('');
+	ObjData.Error.html('');
 	ObjData.ViewAyat.html('');
 	ObjData.Pagination.html('');
+
 	$.ajax({
 		url: `${req}${data}`,
 		type: 'get',
 		dataType: 'json',
 		data: data,
 		success: function(res){
+			ObjData.selectSurah.val('choose');
+
 			const namaArb = res.data.name.long;
 			const namaId = res.data.name.transliteration.id;
 			const tafsir = res.data.tafsir.id;

@@ -9,7 +9,10 @@ $(document).ready(function(){
 
 		if(surahData == 'choose' || surahData == ''){
 			ObjData.hasil.html('');
-			ObjData.hasil.append(`
+			ObjData.ViewAyat.html('');
+			ObjData.Pagination.html('');
+			
+			ObjData.Error.append(`
 				<div class="alert alert-warning" role="alert">
 				  Pilih Nama Surah Terlebih Dahulu
 				</div>
