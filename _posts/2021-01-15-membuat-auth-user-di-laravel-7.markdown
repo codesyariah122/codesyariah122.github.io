@@ -129,6 +129,28 @@ Setelah selesai buat auth, compile javascript dan terakhir migration table user 
 
 sudah terbentuk tampilan baru bukan, terdapat link ```login``` dan ```register``` untuk kebutuhan user authentication di aplikasi laravel kalian. Begitu mudahnya membangun aplikasi di laravel ini.  
 
+#### Membuat halaman auth menjadi halaman awal  
+Kita bisa mengubah halaman auth ini untuk menjadi halaman awal aplikasi laravel kita menggunakan fungsi route laravel, caranya seperti ini :  
+buka file ```routes/web.php``` :  
+
+```php
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', function(){
+	return view('auth.login');
+});
+```  
+Mengubah view welcome menjadi view auth.  
+
+<div class="embed-responsive embed-responsive-21by9">
+  <iframe class="embed-responsive-item" src="{{site.url}}/assets/images/post/laravel-auth/larashop-auth.mp4"></iframe>
+</div>  
+
+Aplikasi laravel gout dalam video diatas di akses melalui link http://larashop.com, karena sebelumnya gout sudah membuat virtual host untuk aplikasi laravel gout, mengenai pembuatan virtual host pernah gout bahas di artikel sebelumnya yaitu di link berikut :  
+<a href="https://codesyariah122.github.io/menggunakan-virtual-host-untuk-project-laravel/" target="_blank">Virtualisasi Host di nginx/laradock</a>  
+
 Gout cukupkan sampai disini artikel kali ini, dirasa semua sudah cukup step-stepnya, jika ada pertanyaan silahkan tinggalkan di kolom komentar yang tersedia di bawah.  
 
 Mudah-mudahan bermanfaat dari artikel gout ini yah.

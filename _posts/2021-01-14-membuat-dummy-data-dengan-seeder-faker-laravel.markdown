@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Membuat Dummy Data menggunakan Seeder & Faker"
+title:  "Insert Data dengan Seeder dan Membuat Dummy Data menggunakan Faker di Laravel"
 author: puji
 categories: [ PHP, Laravel, MVC, OOP ]
 image: assets/images/post/laravel-seeder.jpg

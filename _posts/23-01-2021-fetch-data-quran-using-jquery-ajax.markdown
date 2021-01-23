@@ -27,6 +27,7 @@ beliau menyediakan server data yang bisa kita manfaatkan di aplikasi kita, bagi 
 
 #### Fetchin data quran-api  
 Kita akan menggunakan data tersebut untuk membuat ```quran-online``` sederhana di aplikasi web yang akan kita kembangkan di artikel ini, langsung yuk kita ke codingannya.  
+Gout sendiri bermaksud membuat quran versi online ini supaya gout tidak lupa untuk tetap membaca quran dimanapun dalam segala keterbatasan, sehingga hal itu mendorong gout untuk mendigitalisasikan quran.  
 
 ***Susunan Direktori***  
 kurang lebih susunan direktori dari aplikasi ini adalah sebagai berikut :  
