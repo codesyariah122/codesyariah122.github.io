@@ -53,7 +53,7 @@ const viewAyat = (req, numberSurah) => {
 				<p>${SetFirst.text.transliteration.en}</p>
 
 					<audio controls>
-						<source src="${SetFirst.audio.secondary}" type="audio/mp3">
+						<source src="${SetFirst.audio.primary}" type="audio/mp3">
 					</audio>
 
 				<blockquote class="mb-5">${SetFirst.translation.id}</blockquote>
@@ -96,6 +96,7 @@ const ReadAyat = (res, totalAyat, numberSurah, ayat) => {
 			const disableTab = (SetFirst.number.inSurah == 1) ? 'tabindex="-1" aria-disabled="true"' : '';
 			const SetTotal = SetFirst.surah.numberOfVerses;
 			const NextData = (SetFirst.number.inSurah >= SetTotal) ? 1 : SetFirst.number.inSurah + 1;
+			const DisableNext = (SetFirst.number.inSurah >= SetTotal) ? 'disabled' : '';
 			const PrevData = (SetFirst.number.inSurah != 1) ? SetFirst.number.inSurah - 1 : '';
 
 			// console.log(SetFirst);
@@ -111,14 +112,14 @@ const ReadAyat = (res, totalAyat, numberSurah, ayat) => {
 				<p>${SetFirst.text.transliteration.en}</p>
 
 					<audio controls>
-						<source src="${SetFirst.audio.secondary}" type="audio/mp3">
+						<source src="${SetFirst.audio.secondary[0]}" type="audio/mp3">
 					</audio>
 
 				<blockquote class="mb-5">${SetFirst.translation.id}</blockquote>
 			`)
 
 			ObjData.Pagination.append(`
-				<li class="page-item">
+				<li class="page-item ${DisableNext}">
 					<a class="page-link" data-total="${SetTotal}" data-surah="${numberSurah}" data-ayat="${NextData}" id="next">Next</a>
 				</li>
 			`)
