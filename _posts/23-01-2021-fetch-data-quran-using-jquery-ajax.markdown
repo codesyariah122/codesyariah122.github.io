@@ -435,6 +435,7 @@ $(document).ready(function(){
 		const surahData = ObjData.selectSurah.val();
 
 		if(surahData == 'choose' || surahData == ''){
+			ObjData.Error.html('');
 			ObjData.hasil.html('');
 			ObjData.ViewAyat.html('');
 			ObjData.Pagination.html('');
