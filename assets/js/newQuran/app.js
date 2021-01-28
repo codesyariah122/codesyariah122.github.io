@@ -18,8 +18,8 @@ const quran = (req, data) => {
 			const tafsir = res.data.tafsir.id;
 
 			ObjData.hasil.append(`
-				<h2>${namaArb} | ${namaId}</h2>
-				<blockquote>${tafsir}</blockquote>
+				<h2>${namaArb} | Surah ${namaId}</h2>
+				<blockquote class="text-justify">${tafsir}</blockquote>
 				<button id="view-ayat" class="btn btn-outline-primary" data-id=${data}>View Ayat</button>
 				</div>
 			`)
@@ -53,14 +53,14 @@ const viewAyat = (req, numberSurah) => {
 			`);
 
 			ObjData.ViewAyat.append(`
-				<h4>${SetFirst.text.arab} . <span class="number-ayat">${SetFirst.number.inSurah}</span></h4>
+				<h1>${SetFirst.text.arab} . <span class="number-ayat">${SetFirst.number.inSurah}</span></h1>
 				<p>${SetFirst.text.transliteration.en}</p>
 
 					<audio controls>
 						<source src="${SetFirst.audio.primary}" type="audio/mp3">
 					</audio>
 
-				<blockquote class="mb-5">${SetFirst.translation.id}</blockquote>
+				<blockquote class="mb-5"> - ${SetFirst.translation.id}</blockquote>
 			`)
 				
 
@@ -112,14 +112,14 @@ const ReadAyat = (res, totalAyat, numberSurah, ayat) => {
 			`);
 
 			ObjData.ViewAyat.append(`
-				<h4>${SetFirst.text.arab} . <span class="number-ayat">${SetFirst.number.inSurah}</span></h4>
+				<h1>${SetFirst.text.arab} . <span class="number-ayat">${SetFirst.number.inSurah}</span></h1>
 				<p>${SetFirst.text.transliteration.en}</p>
 
 					<audio controls>
 						<source src="${SetFirst.audio.secondary[0]}" type="audio/mp3">
 					</audio>
 
-				<blockquote class="mb-5">${SetFirst.translation.id}</blockquote>
+				<blockquote class="mb-5">- ${SetFirst.translation.id}</blockquote>
 			`)
 
 			ObjData.Pagination.append(`

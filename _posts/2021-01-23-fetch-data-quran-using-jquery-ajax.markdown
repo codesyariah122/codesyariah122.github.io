@@ -179,39 +179,35 @@ Cusss ... langsung buka code editor kalian, kemudian buka file ```index.html``` 
 Kemudian buka file css di direktori ```assets/css/app.css``` copy code berikut :  
 
 ```css
-input{
-	width: 20% !important;
-}
-
 .loader{
-	margin-top: -3rem;
-	margin-left: -9rem;
+  margin-top: -3rem;
+  margin-left: -9rem;
 }
 .loader img{
-	width: 400px;
-	height: 250px;
+  width: 400px;
+  height: 250px;
 }
 
 .loader2{
-	margin-top: 3rem;
-	margin-left: 3rem;	
+  margin-top: 3rem;
+  margin-left: 3rem;  
 }
 
 .loader2 img{
-	width: 80px;
-	height: 50px;
+  width: 80px;
+  height: 50px;
 }
 
 .pagination{
-	margin-top: -2rem;
+  margin-top: -2rem;
 }
 
 .disabled{
-	cursor: crosshair;
+  cursor: not-allowed !important;
 }
 
 .page-item{
-	cursor: pointer;
+  cursor: pointer;
 }
 
 ```  
@@ -301,9 +297,11 @@ const viewAyat = (req, numberSurah) => {
 			ObjData.ViewAyat.append(`
 				<h4>${SetFirst.text.arab} . <span class="number-ayat">${SetFirst.number.inSurah}</span></h4>
 				<p>${SetFirst.text.transliteration.en}</p>
+
 					<audio controls>
 						<source src="${SetFirst.audio.primary}" type="audio/mp3">
 					</audio>
+
 				<blockquote class="mb-5">${SetFirst.translation.id}</blockquote>
 			`)
 				
@@ -358,9 +356,11 @@ const ReadAyat = (res, totalAyat, numberSurah, ayat) => {
 			ObjData.ViewAyat.append(`
 				<h4>${SetFirst.text.arab} . <span class="number-ayat">${SetFirst.number.inSurah}</span></h4>
 				<p>${SetFirst.text.transliteration.en}</p>
+
 					<audio controls>
 						<source src="${SetFirst.audio.secondary[0]}" type="audio/mp3">
 					</audio>
+
 				<blockquote class="mb-5">${SetFirst.translation.id}</blockquote>
 			`)
 
@@ -403,7 +403,7 @@ const SelectSurah = (req, data) => {
 
 ```  
 **Sedikit penjelasan**  
-Dari file ```app.js``` tersebut kita menjalankan library ajax untuk mengambil sebuah data yang telah ditentukan di dalam parameter tiap-tiap methodnya, dan kita akan melakukan DOM(Document Object Model) untuk menyeleksi dan memanipulasi beberapa element html di file ```index.html``` beberapa ```DOM``` tersebut diantaranya :  
+Dari file ```app.js``` tersebut kita menjalankan library ajax untuk mengambil sebuah data yang telah ditentukan di dalam parameter tiap-tiap methodnya, dan kita akan melakukan DOM(Document Object Model) untuk menyeleksi dan memanipulasi beberapa element html di file ```index.html``` menggunakan method dari jQuerY yaitu ```append()```, fungsi ```append()``` ini berfungsi untuk melakukan ```DOM``` dengan menyisipkan element baru ke dalam sebuah element html tersebut diantaranya element html yang akan di manipulasi adalah :  
 
 - Select Input  
 	kita akan melakukan manupulasi untuk tag ```<option>``` di tag ```<select>``` tersebut dan mengirimkan data hasil dari ajax.  
@@ -435,8 +435,8 @@ $(document).ready(function(){
 	ObjData.pilihSurah.on('click', function(){
 		const surahData = ObjData.selectSurah.val();
 
+		ObjData.Error.html('');
 		if(surahData == 'choose' || surahData == ''){
-			ObjData.Error.html('');
 			ObjData.hasil.html('');
 			ObjData.ViewAyat.html('');
 			ObjData.Pagination.html('');

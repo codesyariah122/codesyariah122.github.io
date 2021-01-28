@@ -1,0 +1,201 @@
+/* img{
+  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+}
+a:hover{
+  color: coral;
+} */
+@font-face {
+  font-family: "SpringSakura";
+  src: local("SpringSakura"), url("{{site.url}}/assets/fonts/SpringSakura-3z1m8.woff") format("woff");
+}
+@font-face {
+  font-family: "Reey Regular";
+  src: local("Reey Regular"), url("{{site.url}}/assets/fonts/Reey-Regular.woff") format("woff");
+}
+/* jumbotron */
+.jumbotron-content {
+  /* background-size: cover;
+  height: 540px; */
+  text-align: center;
+  position: relative;
+  background-color: #17234E;
+  margin-top: -5rem;
+  margin-bottom: 0;
+  min-height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  position: relative;
+}
+
+.jumbotron-content .container {
+  z-index: 1;
+  position: relative;
+}
+
+.jumbotron-content::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  position: absolute;
+  bottom: 0;
+  margin-left: -0.7rem;
+}
+
+.jumbotron-content .display-4 {
+  color: white;
+  margin-top: 5px;
+  font-weight: 200;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  margin-bottom: 30px;
+  font-family: "Poppins", sans-serif;
+}
+
+.jumbotron-content .display-4 span {
+  font-weight: 500;
+  color: tomato;
+}
+
+.jumbotron-content p {
+  font-weight: 500;
+  font-size: 35px;
+  color: #FFFFF0;
+  font-family: "Poiret One", cursive;
+  font-weight: bold;
+}
+
+/* info-panel */
+.info-panel {
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  margin-top: -100px;
+  background-color: white;
+  padding: 30px;
+}
+
+.info-panel img {
+  height: 95px;
+  width: 100px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.info-panel h4 {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.info-panel p {
+  font-size: 12px;
+  color: #ACACAC;
+  margin-top: -5px;
+  font-weight: 200;
+}
+
+/* polaroid1 */
+.polaroid {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+  color: moccasin;
+  position: relative;
+  margin-bottom: 5rem;
+  margin-top: 2rem;
+}
+
+.polaroid-body h2 {
+  padding: 25px;
+  color: black;
+  font-family: "Poiret One", cursive;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.polaroid p {
+  color: black;
+  text-indent: 0px;
+  margin-top: 1.5rem;
+  font-weight: 400;
+  text-align: justify;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.codesyariah {
+  text-transform: uppercase;
+  font-family: "Lemon/Milk Regular";
+  color: tomato;
+}
+
+.underline:after {
+  content: "";
+  display: block;
+  margin: auto;
+  position: relative;
+  margin-bottom: 2rem;
+  margin-top: 0.8rem;
+  width: 100px;
+  height: 2px;
+  background: #ff634e;
+}
+
+/* pannel bootstrap */
+.panel {
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  margin-top: -5rem;
+  padding: 12px;
+  background-color: white;
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: justify-content-center;
+  width: 100%;
+}
+
+.panel-body {
+  margin-top: 1rem;
+}
+
+.panel-body h1 {
+  font-family: "Poiret One", cursive;
+  font-weight: 800;
+  text-align: center;
+  font-size: 35px;
+}
+
+.panel-body p {
+  font-size: 14px;
+  text-align: justify;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-indent: 65px;
+}
+
+.panel img {
+  border-radius: 50%;
+}
+
+/* end pannel */
+@media only screen and (max-device-width: 812px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+
+  .caption {
+    position: absolute;
+    left: 0;
+    margin-top: 2rem;
+    width: 100%;
+    text-align: center;
+    color: #000;
+  }
+
+  .waves {
+    height: 40px;
+    min-height: 40px;
+  }
+}
+
+/*# sourceMappingURL=new-css-for-contents.css.map */

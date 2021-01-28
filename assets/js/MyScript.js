@@ -16,7 +16,7 @@ $(document).ready(function(){
 	$('.day-text').hide();
 	$(window).scroll(function(){
 		if($(this).scrollTop() > 300){
-			console.log("down");
+			// console.log("down");
 			$('.mode-label').css({
 				'position':'fixed',
 				'display': 'inline-block',
@@ -34,7 +34,7 @@ $(document).ready(function(){
 				'transform': 'rotate(90deg)'
 			})
 		}else{
-			console.log("top");
+			// console.log("top");
 			$('.mode-label').css({
 				'position': '',
 				'display':'',

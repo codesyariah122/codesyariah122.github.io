@@ -1,14 +1,14 @@
 window.addEventListener("DOMContentLoaded", function() {
   
     // get the form elements defined in your form HTML above
-    const fullName = document.getElementById('fullname').value;
-    var form = document.getElementById("my-form");
-    var button = document.getElementById("my-form-button");
-    var status = document.getElementById("my-form-status");
+    let fullName = document.getElementById('fullname').value;
+    let form = document.getElementById("my-form");
+    let button = document.getElementById("my-form-button");
+    let status = document.getElementById("my-form-status");
     
     // Success and Error functions for after the form is submitted
     
-    function success() {
+    const success = () => {
       form.reset();
       button.style = "display: none ";
       status.innerHTML = `
@@ -21,7 +21,7 @@ window.addEventListener("DOMContentLoaded", function() {
       `;
     }
 
-    function error() {
+    const error = () => {
       status.innerHTML = `
         <div class="alert alert-warning alert-dismissible fade show" role="alert">
             <strong>Ooopss ! ada kesalahan saat proses pengiriman data.

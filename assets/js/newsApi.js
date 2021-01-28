@@ -1,13 +1,13 @@
 {/* <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15843.02469076354!2d${result.lng}!3d${result.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1605683044978!5m2!1sid!2sid" width="900" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe> */}
 
-function ipAddr(){
+function ipAddr(url, success, error){
     $.getJSON(`${baseAPI.ip}`, function(e) {
         // $('#show-ip').text(e.ip);
         const dataIp = {
             'host' : e.ip
         };
         $.ajax({
-            url: `${baseAPI.proxy}${baseAPI.geo}`,
+            url: `${baseAPI.proxy}${url}`,
             type: 'get',
             data: dataIp,
             success: function(res){
@@ -38,7 +38,11 @@ function ipAddr(){
     });
 }
 
-ipAddr();
+ipAddr(baseAPI.geo, results =>{
+    console.log("results success")
+}, ()=>{
+    console.log("results errror")
+});
 
 let map;
 function initMap() {
@@ -79,26 +83,46 @@ function initMap() {
   
 //   google.maps.event.addDomListener(window, 'load', initialize);
 
-const newsApi = (data) => {
+const getNewsMedia = (data, success, error) => {
 
     $.ajax({
-        url: `${baseAPI.proxy}${baseAPI.news}`,
+        url: `${baseAPI.news}`,
         type: 'get',
         dataType: 'json',
         data: data,
-        success: function(res){
+        success: (res)=>{
             let news = res['articles'];
-            for(let i = 0; i <= news.length-1; i++){
-                let id = i;
-                let media = news[i]['source']['name'];
-                // console.log(media);
+            news.map((key, index) => {
                 $('#select-news').append(`
-                    <option id="pilih" value="${id}">${media}</option>
-                `);
-            }
+                    <option id="pilih" value="${index}">${key['source']['name']}</option>
+                `)
+            })  
+        }, complete: () => {
+            $('#select-news').append(`
+                <option id="tunggu" value="tunggu">Tunggu...</option>
+            `)
         }
     });
 }
+
+
+
+// const getNewsMedia = (url, success, error) => {
+//     let xhr = new XMLHttpRequest()
+
+//     xhr.onreadystatechange = () => {
+//         if(xhr.readySate === 4){
+//             if(xhr.status === 200){
+//                 success(xhr.response)
+//             }else if(xhr.status === 404) {
+//                 error()
+//             }
+//         }
+//     }
+
+//     xhr.open('get', url)
+//     xhr.send()
+// }
 
 $(document).ready(function(){
     // apiKey list
@@ -110,11 +134,17 @@ $(document).ready(function(){
     };
 
     $('#err').hide();
+
     $('#select-news').append(`
         <option value="choose" selected>Choose...</option>
     `);
     
-    newsApi(dataApiNews);
+    getNewsMedia(dataApiNews, results => {
+        console.log(results)
+    }, () => {
+        console.log("Error Results");
+    });
+
 
     $('#enter').on('click', function(){
         $('#news-list').html('');

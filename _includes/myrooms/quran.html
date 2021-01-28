@@ -23,7 +23,7 @@
 }
 
 .disabled{
-  cursor: crosshair;
+  cursor: not-allowed !important;
 }
 
 .page-item{
@@ -49,26 +49,30 @@
             </div>
         </div>
       </div>
+      
+      <div class="error"></div>
 
-      <div class="col-md-12 col-xs-12 col-sm-12">
-        
-        <div class="loader">
-            <img src="{{site.url}}/assets/images/myroom/loader.gif">
-        </div>
+      <div class="row justify-content-center">
+                
+                <div class="col-md-12">
+                    <div class="loader">
+                        <img src="{{site.url}}/assets/images/myroom/loader.gif">
+                    </div>
+                    
+                        <div class="hasil mt-5"></div>
 
-        <div class="hasil"></div>
-        
-        <div class="loader2">
-            <img src="{{site.url}}/assets/images/myroom/loading2.gif">
-        </div>
-        
-        <div class="view-ayat"></div>
+                        <div class="loader2">
+                            <img src="{{site.url}}/assets/images/myroom/loading2.gif">
+                        </div>
 
-        <div class="error"></div>
+                    <center>
+                        <div class="view-ayat mt-5"></div>
 
-        <nav aria-label="Page navigation example mb-3">
-            <ul class="pagination"></ul>
-        </nav>
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center"></ul>
+                        </nav>
+                    </center>
+                </div>
 
       </div>
 
@@ -93,7 +97,7 @@
                   <small id="result-time" class="mt-2 text-danger text-center"></small>
                 <ul class="list-group list-group-flush" id="waktu-adzan">
                 </ul>            
-            </div>	
+            </div>  
         </div>
       </div>
 
@@ -117,7 +121,7 @@
             <img src="{{site.url}}{{myroom.vector.tiga}}" alt="" class="img-responsive mt-3">
               <div class="polaroid-body">
                   <h2>{{myroom.tags.tiga}}.</h2>
-              </div>	
+              </div>  
           </div>
         </div>
     </div>

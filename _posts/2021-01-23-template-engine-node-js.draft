@@ -1,0 +1,11 @@
+---
+layout: post
+title:  "Template Engine Node.js"
+author: puji
+categories: [ NodeJS, Javascript ]
+image: assets/images/post/nodemon.png
+tags: [fullstack_developer]
+opening: بسم الله الرحمن الرحيم
+---  
+
+![nodeJS_webserver]({{site.url}}/assets/images/post/nodejs-part2.png)  

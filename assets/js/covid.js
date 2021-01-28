@@ -2,13 +2,22 @@ data.MyChart.html('');
 data.resultError.hide();
 
 $(document).ready(function(){
+    const covid = {
+        'url': baseAPI.covid,
+        'data': "prov.json",
+    };
+
     data.ResultExp.html('');
     
     data.SelectProvinsi.append(`
         <option value="choose">Choose ... </option>
     `);
 
-    kawalCovid();
+    kawalCovid(covid.url, covid.data, results => {
+        console.log(results)
+    }, () => {
+        console.log("error result")
+    });
 
     data.PilihProvinsi.on('click', () => {
         data.MyChart.html('');

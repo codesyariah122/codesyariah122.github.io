@@ -1,6 +1,15 @@
-const today = 'today.json';
-const city = Cookies.get('city');
+const dataShalat = {
+	"url": baseAPI.shalat,
+    "city": Cookies.get('city'),
+    "today": "today.json"
+ };
 
-document.querySelector('#kota').innerHTML=`Waktu Shalat : <b>${city}</b>`;
+document.querySelector('#kota').innerHTML=`Waktu Shalat : <b class="text-primary">${dataShalat.city}</b>`;
 
-jadwalShalat(today, city);
+
+jadwalShalat(dataShalat.url, dataShalat.today, dataShalat.city, results => {
+	console.log("Success results")
+}, ()=>{
+	console.log("error results")
+});
+

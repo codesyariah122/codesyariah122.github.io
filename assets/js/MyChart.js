@@ -1,21 +1,23 @@
-const kawalCovid = ()=>{
-    const covid = {
-        'data': "prov.json",
-    };
-
+const kawalCovid = (url, data, success, error) => {
     $.ajax({
-        url: `${baseAPI.proxy}${baseAPI.covid}${covid.data}`,
+        url: `${baseAPI.proxy}${url}${data}`,
         type: 'get',
         dataType: 'json',
-        data: covid.data,
+        data: data,
         success: function(res){
             const dataCovid = res.list_data;
-            console.log(dataCovid);
-            for(let i = 0; i <= dataCovid.length; i++){
+             // for(let i = 0; i <= dataCovid.length; i++){
+            //     $('#select-provinsi').append(`
+            //         <option value="${i}">${dataCovid[i]['key']}</option>
+            //     `);
+            // }
+            dataCovid.map((key, index) => {
                 $('#select-provinsi').append(`
-                    <option value="${i}">${dataCovid[i]['key']}</option>
-                `);
-            }
+                    <option value="${index}">${key.key}</option>
+                `)
+            })
+        }, complete: function() {
+            console.log("Loading ... ")
         }
     });
 }
@@ -75,7 +77,7 @@ const covidChart = (last_date, labels, label, dataCovid) => {
             }]
         },
         options: {
-            responsive: false,
+            responsive: true,
             maintainAspectRatio: false
         }
     });
