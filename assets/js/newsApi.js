@@ -86,7 +86,7 @@ function initMap() {
 const getNewsMedia = (data, success, error) => {
 
     $.ajax({
-        url: `${baseAPI.news}`,
+        url: `${baseAPI.proxy}${baseAPI.news}`,
         type: 'get',
         dataType: 'json',
         data: data,
@@ -98,9 +98,7 @@ const getNewsMedia = (data, success, error) => {
                 `)
             })  
         }, complete: () => {
-            $('#select-news').append(`
-                <option id="tunggu" value="tunggu">Tunggu...</option>
-            `)
+            console.log("Complete Success")
         }
     });
 }
@@ -138,11 +136,13 @@ $(document).ready(function(){
     $('#select-news').append(`
         <option value="choose" selected>Choose...</option>
     `);
-    
+                                                                                                                                                                                                                                                                                                                                                                                                                                                            
     getNewsMedia(dataApiNews, results => {
         console.log(results)
     }, () => {
-        console.log("Error Results");
+        $('#select-news').append(`
+            <option value="choose" selected>Loading...</option>
+        `);
     });
 
 
