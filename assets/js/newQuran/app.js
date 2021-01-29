@@ -5,13 +5,13 @@ const SelectSurah = async(url) => {
 }
 
 const ViewSurah = async(proxy, url, req) => {
-	let resp = await fetch(`${proxy}${url}/surah/${req}`)
+	let resp = await fetch(`${proxy}${url}${req}`)
 	let data = await resp.json()
 	return data
 }
 
 const ViewAyat = async(proxy, url, req) => {
-	let resp = await fetch(`${proxy}${url}/surah/${req}`)
+	let resp = await fetch(`${proxy}${url}${req}`)
 	let data = await resp.json()
 	return data
 }
