@@ -17,7 +17,7 @@ const Realip = (url, success, err) => {
 
 
 const getLocation = async (proxy, url, req) => {
-    let resp = await fetch(`${proxy}${url}${req}`)
+    let resp = await fetch(`${proxy}${url}?host=${req}`)
     let result = await resp.json()
     return result
 }
@@ -40,8 +40,6 @@ function initMap() {
   });
 
 }
-
-
 
 const NewsMedia = async(proxy, url, req, key) => {
     let resp = await fetch (`${proxy}${url}?country=${req}&apiKey=${key}`)
