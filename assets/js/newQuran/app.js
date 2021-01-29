@@ -16,11 +16,11 @@ const ViewAyat = async(proxy, url, req) => {
 	return data
 }
 
-const ReadAyat = (url, key, data, id, success, error) => {
+const ReadAyat = (url,  data, id, success, error) => {
 	
 	let xhr = new XMLHttpRequest()
 
-	xhr.open('GET', `${url}${key}/${data}/${id}`, true)
+	xhr.open('GET', `${url}${data}/${id}`, true)
 	
 	xhr.onload = () => {
 		if(xhr.readyState === 4) {
