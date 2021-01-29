@@ -119,7 +119,7 @@ $(document).ready(function(){
 
 				ObjData.Pagination.append(`
 					<li class="page-item ${disabled}">
-				      <a class="page-link" ${disableTab} id="prev" data-total="${SetTotal}" data-surah="${numberSurah}" data-ayat="${PrevData}">Previous</a>
+				      <a class="page-link" ${disableTab} id="prev" data-total="${SetTotal}" data-surah="${surah}" data-ayat="${PrevData}">Previous</a>
 				    </li>
 				`);
 
@@ -136,12 +136,12 @@ $(document).ready(function(){
 
 				ObjData.Pagination.append(`
 					<li class="page-item ${DisableNext}">
-						<a class="page-link" data-total="${SetTotal}" data-surah="${numberSurah}" data-ayat="${NextData}" id="next">Next</a>
+						<a class="page-link" data-total="${SetTotal}" data-surah="${surah}" data-ayat="${NextData}" id="next">Next</a>
 					</li>
 				`)
 
-		}, () => {
-			console.log("Results Error")
+		}, (err) => {
+			console.log("Results Error", err)
 		})
 
 	});
@@ -167,7 +167,7 @@ $(document).ready(function(){
 
 				ObjData.Pagination.append(`
 					<li class="page-item ${disabled}">
-				      <a class="page-link" ${disableTab} id="prev" data-total="${SetTotal}" data-surah="${numberSurah}" data-ayat="${PrevData}">Previous</a>
+				      <a class="page-link" ${disableTab} id="prev" data-total="${SetTotal}" data-surah="${surah}" data-ayat="${PrevData}">Previous</a>
 				    </li>
 				`);
 
@@ -184,12 +184,12 @@ $(document).ready(function(){
 
 				ObjData.Pagination.append(`
 					<li class="page-item ${DisableNext}">
-						<a class="page-link" data-total="${SetTotal}" data-surah="${numberSurah}" data-ayat="${NextData}" id="next">Next</a>
+						<a class="page-link" data-total="${SetTotal}" data-surah="${surah}" data-ayat="${NextData}" id="next">Next</a>
 					</li>
 				`)
 
-		}, () => {
-			console.log("Results Error")
+		}, (err) => {
+			console.log("Results Error", err)
 		})
 
 	})
