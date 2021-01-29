@@ -1,17 +1,8 @@
 Realip(data.baseAPI.ip, results=>{
     let data = {
         ip: JSON.parse(results),
-        url: {
-            proxy: 'https://cors-anywhere.herokuapp.com/',
-            geo: 'https://tools.keycdn.com/geo.json?host='
-        }
     }
-
-    console.log(data.ip.ip)
-
     Cookies.set('ip', data.ip.ip, {expires: 30})
-    // getLocation(data.url.proxy, data.url.geo, data.ip);
-
 } , () => {
     console.log("Error results")
 })
@@ -45,14 +36,7 @@ getLocation(data.baseAPI.proxy, data.baseAPI.geo, objdata)
     `)
 })
 
-
-
-
-
-
-
-
-
+// start read news
 $(document).ready(function(){
     // apiKey list
     // 5effd68f01ce47589b435b22ebdb06b9
@@ -90,7 +74,7 @@ $(document).ready(function(){
             $('#err').show('slow').fadeIn(1000);
         }else{
             $('#err').hide('slow').slideUp(1000);
-            
+
             GetNews(data.baseAPI.proxy, data.baseAPI.news, data.apiNews.country, data.apiNews.apiKey)
             .then(res => {
                 $('#select-news').val('choose')
