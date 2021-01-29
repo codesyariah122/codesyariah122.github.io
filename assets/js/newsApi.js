@@ -1,4 +1,5 @@
-Realip(data.baseAPI.ip, results=>{
+
+Realip(baseAPI.ip, results=>{
     let data = {
         ip: JSON.parse(results),
     }
