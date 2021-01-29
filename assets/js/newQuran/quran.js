@@ -2,7 +2,7 @@ $(document).ready(function(){
 	ObjData.loader.hide();
 	ObjData.loaderDua.hide();
 	
-	SelectSurah(ObjData.api, ObjData.prop)
+	SelectSurah(ObjData.api.quran, ObjData.prop)
 	.then(res=>{
 		const DataSurah = res.data
 		const option = ObjData.selectElementFetch.createOptionElement
@@ -33,7 +33,7 @@ $(document).ready(function(){
 			ObjData.selectSurah.val('choose')
 			ObjData.Error.html('')
 
-			ViewSurah(ObjData.api.proxy, ObjData.url, surahData)
+			ViewSurah(ObjData.api.proxy, ObjData.api.quran, surahData)
 			.then(res => {
 			const resData = res.data
 			// console.log(resObjData)
@@ -58,7 +58,7 @@ $(document).ready(function(){
 		const numberSurah = $(this).data('id');
 		$(this).hide('slow').fadeOut(1000);
 
-		ViewAyat(ObjData.baseAPI.proxy, ObjData.url, numberSurah)
+		ViewAyat(ObjData.api.proxy, ObjData.api.quran, numberSurah)
 		.then(res => {
 			const SetFirst = res.data.verses[0]
 			const SetTotal = SetFirst.numberOfVerses
@@ -98,7 +98,7 @@ $(document).ready(function(){
 		const ayat = $(this).data('ayat');
 		const TotalAyat = $(this).data('total');
 
-		ReadAyat(ObjData.api.quran,'surah', surah, ayat, results => {
+		ReadAyat(ObjData.api.quran, surah, ayat, results => {
 
 			const res= JSON.parse(results)
 			const SetFirst = res.data
@@ -146,7 +146,7 @@ $(document).ready(function(){
 		const ayat = $(this).data('ayat');
 		const TotalAyat = $(this).data('total');
 
-		ReadAyat(ObjData.api.quran,'surah', surah, ayat, results => {
+		ReadAyat(ObjData.api.quran, surah, ayat, results => {
 
 			const res= JSON.parse(results)
 			const SetFirst = res.data
