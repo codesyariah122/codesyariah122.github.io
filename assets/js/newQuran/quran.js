@@ -1,6 +1,9 @@
 $(document).ready(function(){
 	ObjData.loader.hide();
 	ObjData.loaderDua.hide();
+	ObjData.selectSurah.append(`
+		<option value="choose">choose ...</option>
+	`)
 	
 	SelectSurah(ObjData.api.quran)
 	.then(res=>{
