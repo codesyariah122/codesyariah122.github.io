@@ -35,6 +35,8 @@ getLocation(baseAPI.proxy, baseAPI.geo, objdata)
         </h5>
         <h6 class="text-danger">Your Ip Address : ${result.ip}</h6>
     `)
+}).catch(err=>{
+    console.log('Something when wrong', err)
 })
 
 // start read news
@@ -62,6 +64,8 @@ $(document).ready(function(){
                 <option id="pilih" value="${index}">${key.source.name}</option>
             `)
         })
+    }).catch(err=>{
+        console.log('Something when wrong', err)
     })
 
 
@@ -95,6 +99,8 @@ $(document).ready(function(){
                             </div> 
                     </div>
                 `)
+            }).catch(err=>{
+                 console.log('Something when wrong', err)
             })
         }
     });
