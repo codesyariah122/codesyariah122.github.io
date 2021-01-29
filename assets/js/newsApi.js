@@ -76,7 +76,7 @@ $(document).ready(function(){
         }else{
             $('#err').hide('slow').slideUp(1000);
 
-            GetNews(data.baseAPI.proxy, data.baseAPI.news, data.apiNews.country, data.apiNews.apiKey)
+            GetNews(baseAPI.proxy, baseAPI.news, dataApiNews.country, datApiNews.apiKey)
             .then(res => {
                 $('#select-news').val('choose')
                 const getNews = res.articles[newsSelect]
