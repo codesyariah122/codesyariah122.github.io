@@ -9,7 +9,7 @@ $(document).ready(function(){
 		const select = ObjData.selectElementFetch.selectorId
 
 		DataSurah.forEach(result => {
-			ObjData.select.surah.append(`
+			ObjData.selectSurah.append(`
 				<option value="${result.number}">${result.name.transliteration.id}</option>
 			`)
 		})
@@ -43,7 +43,7 @@ $(document).ready(function(){
 				tafsir: resData.tafsir.id
 			}
 
-			ObjData.result.viewSurah.append(`
+			ObjData.hasil.append(`
 				<h2>${allData.namaArb} | Surah ${allData.namaId}</h2>
 				<blockquote class="text-justify">${allData.tafsir}</blockquote>
 				<button id="view-ayat" class="btn btn-outline-primary" data-id="${surahData}">View Ayat</button>
@@ -65,13 +65,13 @@ $(document).ready(function(){
 			const disable = SetFirst.number.inSurah == 1 ? 'disabled' : ''
 			const disableTab = SetFirst.number.inSurah == 1 ? 'tabindex="-1" aria-disabled="true"' : ''
 
-			ObjData.result.pagination.append(`
+			ObjData.Pagination.append(`
 				<li class="page-item ${disable}"> 
 					<a class="page-link" ${disableTab} id="prev">Previous</a>
 				</li>
 			`)
 
-			ObjData.result.viewAyat.append(`
+			ObjData.viewAyat.append(`
 				<h1>${SetFirst.text.arab} . <span class="number-ayat">${SetFirst.number.inSurah}</span></h1>
 				<p>${SetFirst.text.transliteration.en}</p>
 
@@ -82,7 +82,7 @@ $(document).ready(function(){
 					<blockquote class="mb-5"> - ${SetFirst.translation.id}</blockquote>
 			`)
 
-			ObjData.result.pagination.append(`
+			ObjData.Pagination.append(`
 				<li class="page-item">
 					<a class="page-link" data-total="${SetTotal}" data-surah="${idAyat}" data-ayat="${SetFirst.number.inSurah + 1}" id="next">Next</a>
 				</li>
