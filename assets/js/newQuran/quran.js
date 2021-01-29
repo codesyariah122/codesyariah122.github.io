@@ -31,7 +31,7 @@ $(document).ready(function(){
 			`).fadeIn(1000);
 		}else{
 			ObjData.selectSurah.val('choose')
-			ObjData.error.html('')
+			ObjData.Error.html('')
 
 			ViewSurah(ObjData.api.proxy, ObjData.url, surahData)
 			.then(res => {
