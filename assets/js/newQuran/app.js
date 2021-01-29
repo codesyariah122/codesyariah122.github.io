@@ -1,5 +1,5 @@
-const SelectSurah = async(url, req) => {
-	let resp = await fetch(`${url}${req}`)
+const SelectSurah = async(url) => {
+	let resp = await fetch(`${url}`)
 	let result = await resp.json()
 	return result
 }
