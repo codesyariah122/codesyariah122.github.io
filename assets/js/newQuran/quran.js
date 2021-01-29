@@ -2,7 +2,7 @@ $(document).ready(function(){
 	ObjData.loader.hide();
 	ObjData.loaderDua.hide();
 	
-	SelectSurah(ObjData.api.quran, ObjData.prop)
+	SelectSurah(ObjData.api.quran)
 	.then(res=>{
 		const DataSurah = res.data
 		const option = ObjData.selectElementFetch.createOptionElement
