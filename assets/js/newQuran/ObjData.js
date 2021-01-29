@@ -10,6 +10,11 @@ const ObjData = {
 	'Pagination': $('.pagination'),
 	'Next': $('#next'),
 	'Prev': $('#prev'),
+	'prop': 'surah',
+	'selectElementFetch': {
+		'selectorId': document.getElementById('select-surah'),
+		'createOptionElement': document.createElement('option'),
+	},
 	'api': {
 		'proxy': 'https://cors-anywhere.herokuapp.com/',
 		'quran': 'https://api.quran.sutanlab.id/surah/',
