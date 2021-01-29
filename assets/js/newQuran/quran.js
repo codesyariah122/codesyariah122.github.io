@@ -13,6 +13,8 @@ $(document).ready(function(){
 				<option value="${result.number}">${result.name.transliteration.id}</option>
 			`)
 		})
+	}).catch(err => {
+		console.log("Error fetch ", err)
 	})
 	
 	ObjData.pilihSurah.on('click', function(){
