@@ -9,7 +9,7 @@ Realip(baseAPI.ip, results=>{
 })
 
 
-getLocation(data.baseAPI.proxy, data.baseAPI.geo, objdata)
+getLocation(baseAPI.proxy, baseAPI.geo, objdata)
 .then(res => {
     const start = res.data.geo
 
@@ -49,7 +49,7 @@ $(document).ready(function(){
 
     $('#err').hide();
                                                                                                                                                                                                                                                                                                                                                                                                                              
-    NewsMedia(data.baseAPI.proxy, data.baseAPI.news, data.apiNews.country, data.apiNews.apiKey)
+    NewsMedia(baseAPI.proxy, baseAPI.news, dataApiNews.country, dataApiNews.apiKey)
     .then(res => {
         // console.log(res)
         const resNews = res.articles
