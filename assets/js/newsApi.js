@@ -8,7 +8,7 @@ Realip(baseAPI.ip, results=>{
     console.log("Error results")
 })
 
-
+const objdata = Cookies.get('ip')
 getLocation(baseAPI.proxy, baseAPI.geo, objdata)
 .then(res => {
     const start = res.data.geo
