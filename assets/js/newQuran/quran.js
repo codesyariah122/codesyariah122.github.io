@@ -21,6 +21,11 @@ $(document).ready(function(){
 	})
 	
 	ObjData.pilihSurah.on('click', function(){
+		ObjData.hasil.html('');
+		ObjData.ViewAyat.html('');
+		ObjData.Pagination.html('');
+		ObjData.loaderDua.show('slow').fadeIn(1000);
+		
 		const surahData = ObjData.selectSurah.val();
 
 		if(surahData == 'choose' || surahData == ''){
@@ -35,6 +40,7 @@ $(document).ready(function(){
 				</div>
 			`).fadeIn(1000);
 		}else{
+			ObjData.loaderDua.hide('slow').slideUp(1000);
 			ObjData.selectSurah.val('choose')
 			ObjData.Error.html('')
 
@@ -60,6 +66,7 @@ $(document).ready(function(){
 	});
 
 	ObjData.hasil.on('click', '#view-ayat', function(){
+		
 		const numberSurah = $(this).data('id');
 		$(this).hide('slow').fadeOut(1000);
 
@@ -108,7 +115,8 @@ $(document).ready(function(){
 		const TotalAyat = $(this).data('total');
 		
 		ReadAyat(ObjData.api.quran, surah, ayat, results => {
-
+			ObjData.loaderDua.hide('slow').slideUp(1000);
+			
 			const res= JSON.parse(results)
 			const SetFirst = res.data
 			// console.log(SetFirst)
@@ -160,6 +168,7 @@ $(document).ready(function(){
 		const TotalAyat = $(this).data('total');
 
 		ReadAyat(ObjData.api.quran, surah, ayat, results => {
+			ObjData.loaderDua.hide('slow').slideUp(1000);
 
 			const res= JSON.parse(results)
 			const SetFirst = res.data
