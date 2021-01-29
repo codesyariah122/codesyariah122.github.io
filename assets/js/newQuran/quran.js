@@ -99,10 +99,14 @@ $(document).ready(function(){
 	});
 
 	ObjData.Pagination.on('click', '#next', function(){
+		ObjData.ViewAyat.html('');
+		ObjData.Pagination.html('');
+		ObjData.loaderDua.show('slow').fadeIn(1000);
+		
 		const surah = $(this).data('surah');
 		const ayat = $(this).data('ayat');
 		const TotalAyat = $(this).data('total');
-
+		
 		ReadAyat(ObjData.api.quran, surah, ayat, results => {
 
 			const res= JSON.parse(results)
@@ -147,6 +151,10 @@ $(document).ready(function(){
 	});
 
 	ObjData.Pagination.on('click', '#prev', function(){
+		ObjData.ViewAyat.html('');
+		ObjData.Pagination.html('');
+		ObjData.loaderDua.show('slow').fadeIn(1000);
+		
 		const surah = $(this).data('surah');
 		const ayat = $(this).data('ayat');
 		const TotalAyat = $(this).data('total');
