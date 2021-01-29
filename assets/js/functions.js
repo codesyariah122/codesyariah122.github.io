@@ -40,3 +40,17 @@ function initMap() {
   });
 
 }
+
+
+
+const NewsMedia = async(proxy, url, req, key) => {
+    let resp = await fetch (`${proxy}${url}?country=${req}&apiKey=${key}`)
+    let result = await resp.json()
+    return result
+}
+
+const GetNews = async(proxy, url, req, key) => {
+    let resp = await fetch(`${proxy}${url}?country=${req}&apiKey=${key}`)
+    let result = await resp.json()
+    return result
+}

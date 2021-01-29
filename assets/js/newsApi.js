@@ -47,25 +47,7 @@ getLocation(data.baseAPI.proxy, data.baseAPI.geo, objdata)
 
 
 
-const getNewsMedia = (data, success, error) => {
 
-    $.ajax({
-        url: `${baseAPI.proxy}${baseAPI.news}`,
-        type: 'get',
-        dataType: 'json',
-        data: data,
-        success: (res)=>{
-            let news = res['articles'];
-            news.map((key, index) => {
-                $('#select-news').append(`
-                    <option id="pilih" value="${index}">${key['source']['name']}</option>
-                `)
-            })  
-        }, complete: () => {
-            console.log("Complete Success")
-        }
-    });
-}
 
 
 
@@ -81,18 +63,22 @@ $(document).ready(function(){
     };
 
     $('#err').hide();
-
-    $('#select-news').append(`
-        <option value="choose" selected>Choose...</option>
-    `);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-    getNewsMedia(dataApiNews, results => {
-        console.log(results)
-    }, () => {
+                                                                                                                                                                                                                                                                                                                                                                                                                             
+    NewsMedia(data.baseAPI.proxy, data.baseAPI.news, data.apiNews.country, data.apiNews.apiKey)
+    .then(res => {
+        // console.log(res)
+        const resNews = res.articles
         $('#select-news').append(`
-            <option value="choose" selected>Loading...</option>
-        `);
-    });
+            <option value="choose">Choose ... </option>
+        `)
+
+        resNews.map((key, index) => {
+            $('#select-news').append(`
+                <option id="pilih" value="${index}">${key.source.name}</option>
+            `)
+        })
+    })
+
 
 
     $('#enter').on('click', function(){
@@ -104,36 +90,27 @@ $(document).ready(function(){
             $('#err').show('slow').fadeIn(1000);
         }else{
             $('#err').hide('slow').slideUp(1000);
-            $.ajax({
-                url: `${baseAPI.proxy}${baseAPI.news}`,
-                type: 'get',
-                dataType: 'json',
-                data:dataApiNews,
-                success: function(res){
-                    if(res){
-                        $('#select-news').val('choose');
-                        let getNews = res['articles'][newsSelect];
-                        // console.log(getNews);
-                        $('#news-list').append(`
-                            <div class="row mt-2 mb-2">
-                                <div class="col-md-6">
-                                    <div class="card mb-5 mt-2">
-                                        <img src="${getNews.urlToImage}" class="card-img-top float-left img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;" alt="...">
-                                            <div class="card-body">
-                                            <h5 class="card-title">${getNews.title}</h5>
-                                            <h6 class="card-subtitle mb-2 text-muted">${getNews.publishedAt}</h6>
-                                            <p>
-                                                ${getNews.content}
-                                            </p>
-                                            <a href="${getNews.url}" class="card-link see-detail" data-id="${getNews}" target="_blank">See Detail</a>
-                                            </div>
-                                    </div>
-                                </div>
-                            </div>
-                        `);
-                    }
-                }
-            });
+            
+            GetNews(data.baseAPI.proxy, data.baseAPI.news, data.apiNews.country, data.apiNews.apiKey)
+            .then(res => {
+                $('#select-news').val('choose')
+                const getNews = res.articles[newsSelect]
+                $('#news-list').append(`
+                    <div class="mt-2 mb-2">
+                        <div class="card mb-5 mt-2">
+
+                            <img src="${getNews.urlToImage}" class="card-img-top float-left img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important; color: rgba(255, 228, 181); border-radius: 0%;" alt="${getNews.title}">
+                            <div class="card-body">
+                                <h5 class="card-title">${getNews.title}</h5>
+
+                                <h6 class="card-subtitle mb-2 text-muted">${getNews.publishAt}</h6>
+
+                                <p>${getNews.content}</p>
+                                <a href="${getNews.url}" class="card-link see-detail" data-id="${newsSelect}" target="_blank">See Detail</a>
+                            </div> 
+                    </div>
+                `)
+            })
         }
     });
 
