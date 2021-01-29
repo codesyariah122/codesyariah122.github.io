@@ -14,7 +14,7 @@
     <!-- adding image thumbnail hover -->
 
         <a href="{{site.url}}{{latest_post.url}}">
-        <div class="topfirstimage" style="background-image: url({% if latest_post.image contains "://" %}{{ latest_post.image }}{% else %} {{site.url}}/{{ latest_post.image}}{% endif %}); height: 200px;    background-size: cover;    background-repeat: no-repeat;"></div>
+        <div class="topfirstimage" style="background-image: url({% if latest_post.image contains "://" %}{{ latest_post.image }}{% else %} {{site.url}}/{{ latest_post.image}}{% endif %}); height: 200px;    background-size: cover; background-repeat: no-repeat;"></div>
         </a>
 
             <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
@@ -157,6 +157,9 @@
     <div class="row mb-5 mt-3">
         <!-- content1 -->
         <div class="col-md-12 col-xs-12 col-sm-12">
+            
+            <div id="your-location"></div>
+
             <br>
             <h1 class="underline text-center mt-2 mb-4"></h1>
             <div class="row justify-content-center">
