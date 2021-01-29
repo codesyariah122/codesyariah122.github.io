@@ -89,7 +89,7 @@ $(document).ready(function(){
 
 			ObjData.Pagination.append(`
 				<li class="page-item">
-					<a class="page-link" data-total="${SetTotal}" data-surah="${idAyat}" data-ayat="${SetFirst.number.inSurah + 1}" id="next">Next</a>
+					<a class="page-link" data-total="${SetTotal}" data-surah="${numberSurah}" data-ayat="${SetFirst.number.inSurah + 1}" id="next">Next</a>
 				</li>
 			`)
 		}).catch(err=>{
