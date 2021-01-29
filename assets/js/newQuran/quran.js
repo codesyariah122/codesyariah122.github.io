@@ -76,7 +76,7 @@ $(document).ready(function(){
 				</li>
 			`)
 
-			ObjData.viewAyat.append(`
+			ObjData.ViewAyat.append(`
 				<h1>${SetFirst.text.arab} . <span class="number-ayat">${SetFirst.number.inSurah}</span></h1>
 				<p>${SetFirst.text.transliteration.en}</p>
 
