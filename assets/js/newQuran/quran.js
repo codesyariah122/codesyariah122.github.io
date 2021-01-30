@@ -207,7 +207,7 @@ $(document).ready(function(){
 
 				ObjData.Pagination.append(`
 					<li class="page-item ${disabled}">
-			      			<a class="page-link" aria-label="Previous" id="prev" data-total="${SetTotal}" data-surah="${numberSurah}" data-ayat="${FirstData}">
+			      			<a class="page-link" aria-label="Previous" id="prev" data-total="${SetTotal}" data-surah="${surah}" data-ayat="${FirstData}">
 			        			<span aria-hidden="true">&laquo;</span>
 			      			</a>
 			    		</li>
