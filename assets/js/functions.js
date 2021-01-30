@@ -23,7 +23,7 @@ const LookUp = async(data, success, err) => {
 
 		const newEl = document.createElement('div')
 		newEl.className = 'card mt-5 mb-2'
-		newEl.setAttribute('style', 'width: 18rem;')
+		newEl.setAttribute('style', 'width: 25rem;')
 		newEl.innerHTML = `
 			  <ul class="list-group list-group-flush">
 			    <li class="list-group-item">Your ip address = <b> ${res.query} </b></li>
@@ -32,7 +32,7 @@ const LookUp = async(data, success, err) => {
 			    <li class="list-group-item">City = <b>${res.city}</b></li>
 			  </ul>
 		`
-		document.querySelector('#result').appendChild(newEl)
+		document.querySelector('#your-location').appendChild(newEl)
 
 	}).catch(err => {
 		console.log(`Error results : ${err}`)
