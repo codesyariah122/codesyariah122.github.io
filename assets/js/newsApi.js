@@ -5,70 +5,93 @@ LookUp("json", res => {
 	console.log("Error fetch, ", err)
 })
 
-// start read news
-$(document).ready(function(){
-    // apiKey list
-    // 5effd68f01ce47589b435b22ebdb06b9
-    // 0cd9904ea4d44b4385e69e554073be4b
-    const dataApiNews = {
-        'country' : Cookies.get('country_code'),
-        'apiKey' : '5effd68f01ce47589b435b22ebdb06b9'
-    };
+// Reading Updates
+const Code = Cookies.get('code');
+const param = {
+	url: 'https://newsapi.org/v2/top-headlines/?',
+	country: `country=${Code}`,
+	apiKey: 'apiKey=5effd68f01ce47589b435b22ebdb06b9'
+}
 
-    $('#err').hide();
-                                                                                                                                                                                                                                                                                                                                                                                                                             
-    NewsMedia(baseAPI.proxy, baseAPI.news, dataApiNews.country, dataApiNews.apiKey)
-    .then(res => {
-        // console.log(res)
-        const resNews = res.articles
-        $('#select-news').append(`
-            <option value="choose">Choose ... </option>
-        `)
-
-        resNews.map((key, index) => {
-            $('#select-news').append(`
-                <option id="pilih" value="${index}">${key.source.name}</option>
-            `)
-        })
-    }).catch(err=>{
-        console.log('Something when wrong', err)
-    })
+// console.log("Start")
+const newEl = document.createElement('option')
+newEl.setAttribute('value', 'choose')
+newEl.textContent = 'Choose ... '
+document.querySelector('#select-news').appendChild(newEl)
 
 
 
-    $('#enter').on('click', function(){
-        $('#news-list').html('');
+NewsMedia(param.url, param.country, param.apiKey, res => {
+	const ResultsData = JSON.parse(res)
+	// console.log("Results success : ", ResultsData)
+	const Medias = ResultsData.articles
 
-        const newsSelect = $('#select-news').val();
+	Medias.map((key, index) => {
+		const name = Medias[index].source.name
+		const newEl = document.createElement('option')
+		newEl.setAttribute('value', index)
+		newEl.textContent = name
+		document.querySelector('#select-news').appendChild(newEl)
+	})
+}, (err) => {
+	console.log("Results Error : ", err)
+})
+// console.log("Finish")
 
-        if(newsSelect === 'choose' || newsSelect === ''){
-            $('#err').show('slow').fadeIn(1000);
-        }else{
-            $('#err').hide('slow').slideUp(1000);
+document.querySelector('#loader').style.visibility="hidden"
+document.querySelector('#enter').addEventListener('click', (e) => {
+	e.preventDefault()
 
-            GetNews(baseAPI.proxy, baseAPI.news, dataApiNews.country, dataApiNews.apiKey)
-            .then(res => {
-                $('#select-news').val('choose')
-                const getNews = res.articles[newsSelect]
-                $('#news-list').append(`
-                    <div class="mt-2 mb-2">
-                        <div class="card mb-5 mt-2">
+	document.querySelector('#error').innerHTML=''
+	document.querySelector('#news-list').innerHTML=''
 
-                            <img src="${getNews.urlToImage}" class="card-img-top float-left img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important; color: rgba(255, 228, 181); border-radius: 0%;" alt="${getNews.title}">
-                            <div class="card-body">
-                                <h5 class="card-title">${getNews.title}</h5>
+	const NewsValue = document.querySelector('#select-news').value
 
-                                <h6 class="card-subtitle mb-2 text-muted">${getNews.publishAt}</h6>
+	if(NewsValue == 'choose' || NewsValue == null) {
+		const errEl = document.createElement('div')
+		errEl.className = "alert alert-warning"
+		errEl.setAttribute('role', 'alert')
+		errEl.textContent = 'Pilih Media Online Terlebih dahulu'
+		document.querySelector('#loader').style.visibility="visible"
+		setTimeout(()=>{
+			document.querySelector('#error').appendChild(errEl)
+			document.querySelector('#loader').style.visibility="hidden"
+		}, 1500)
 
-                                <p>${getNews.content}</p>
-                                <a href="${getNews.url}" class="card-link see-detail" data-id="${newsSelect}" target="_blank">See Detail</a>
-                            </div> 
-                    </div>
-                `)
-            }).catch(err=>{
-                 console.log('Something when wrong', err)
-            })
-        }
-    });
+	}else {
+		document.querySelector('#select-news').value='choose'
+		document.querySelector('#loader').style.visibility="visible"
 
-});
+		NewsMedia(param.url, param.country, param.apiKey, res => {
+			const start = JSON.parse(res)
+			const GetNews = start.articles[NewsValue]
+
+			const newEl = document.createElement('div')
+			newEl.className = 'card mt-5 mb-2'
+			newEl.setAttribute('style', 'width: 80%;')
+			newEl.innerHTML = `
+				<img src="${GetNews.urlToImage}" class="card-img-top" alt="${GetNews.source.name}">
+				<div class="card-body">
+					<h5 class="card-title">${GetNews.title}</h5>
+					<small class="text-info">
+						${GetNews.publishedAt} | ${GetNews.author}
+					</small>
+					
+					<p class="card-text">${GetNews.description}.</p>
+						    
+					<a id="read-news" onClick="ReadNews(${NewsValue})" data-news="${NewsValue}" class="btn btn-primary read-news" data-toggle="modal" data-target="#newsModal">Lanjut Baca</a>
+				</div>
+			`
+
+
+			setTimeout(()=>{
+				document.querySelector('#news-list').appendChild(newEl)
+
+				document.querySelector('#loader').style.visibility="hidden"
+			}, 2500)
+
+		}, (err) => {
+			console.log("Results Error : ", err)
+		})
+	}
+})
