@@ -18,6 +18,7 @@ const LookUp = async(data, success, err) => {
 
 		Cookies.set('code', res.countryCode, {expires: 30})
 		Cookies.set('country', res.country, {expires: 30})
+		Cookies.set('city', res.city, {expires: 30})
 		Cookies.set('lat', res.lat, {expires: 30})
 		Cookies.set('lng', res.lon, {expires: 30})
 
