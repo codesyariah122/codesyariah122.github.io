@@ -1,25 +1,42 @@
-const Realip = (url, success, err) => {
-    let req = new XMLHttpRequest()
-    req.open('GET', url, true);
+const getLocation = async(data) => {
+	let req = await fetch(`http://ip-api.com/json/${data}`)
+	let res = await req.json()
 
-    req.onload = () => {
-        if(req.readyState === 4) {
-            if(req.status === 200){
-                success(req.response);
-            }else if(req.status === 404){
-                err();
-            }
-        }
-    }
-
-    req.send();
+	return res
 }
 
+const LookUp = async(data, success, err) => {
+	const req = await fetch(`https://api.ipify.org/?format=${data}`)
+	const res = await req.json()
 
-const getLocation = async (proxy, url, req) => {
-    let resp = await fetch(`${proxy}${url}?host=${req}`)
-    let result = await resp.json()
-    return result
+	const ip = res.ip
+
+	getLocation(ip).then(res => {
+		
+		console.log('Response success : ', res)
+
+		Cookies.set('code', res.countryCode, {expires: 30})
+		Cookies.set('country', res.country, {expires: 30})
+		Cookies.set('lat', res.lat, {expires: 30})
+		Cookies.set('lng', res.lon, {expires: 30})
+
+		const newEl = document.createElement('div')
+		newEl.className = 'card mt-5 mb-2'
+		newEl.setAttribute('style', 'width: 18rem;')
+		newEl.innerHTML = `
+			  <ul class="list-group list-group-flush">
+			    <li class="list-group-item">Your ip address = <b> ${res.query} </b></li>
+			    <li class="list-group-item">Country = <b>${res.country}</b> <img src="https://www.countryflags.io/${res.countryCode}/shiny/64.png" class="img-responsive circle"> </li>
+			    <li class="list-group-item">Region Name = <b>${res.regionName}</b></li>
+			    <li class="list-group-item">City = <b>${res.city}</b></li>
+			  </ul>
+		`
+		document.querySelector('#your-location').appendChild(newEl)
+
+	}).catch(err => {
+		console.log(`Error results : ${err}`)
+	})
+
 }
 
 
