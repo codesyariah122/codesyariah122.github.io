@@ -1,42 +1,8 @@
 
-Realip(baseAPI.ip, results=>{
-    let data = {
-        ip: JSON.parse(results),
-    }
-    Cookies.set('ip', data.ip.ip, {expires: 30})
-} , () => {
-    console.log("Error results")
-})
-
-const objdata = Cookies.get('ip')
-getLocation(baseAPI.proxy, baseAPI.geo, objdata)
-.then(res => {
-    const start = res.data.geo
-
-    const result = {
-        'ip': start.host,
-        'isp': start.isp,
-        'country': start.country_name,
-        'country_code': start.country_code,
-        'region': start.region_name,
-        'city': start.city,
-        'lat' : start.latitude,
-        'lng' : start.longitude
-    };
-    Cookies.set('lat', result.lat, {expires: 1})
-    Cookies.set('lng', result.lng, {expires: 1})
-    Cookies.set('city', result.city, {expires: 30})
-    Cookies.set('country_code', result.country_code, {expires: 30})
-
-    $('#your-location').append(`
-        <h5 class="text-primary">Your Location : 
-            <img src="https://newsapi.org/images/flags/${result.country_code}.svg" width="20" height="50" style="background: rgba(0, 0, 0, 0.8);"/>
-            | ${result.city} - ${result.region}
-        </h5>
-        <h6 class="text-danger">Your Ip Address : ${result.ip}</h6>
-    `)
-}).catch(err=>{
-    console.log('Something when wrong', err)
+LookUp("json", res => {
+	console.log("Success fetch ", res)
+}, (err) => {
+	console.log("Error fetch, ", err)
 })
 
 // start read news
