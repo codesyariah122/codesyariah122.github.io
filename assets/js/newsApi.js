@@ -1,7 +1,7 @@
 // Reading Updates
 const Code = Cookies.get('code');
 const param = {
-	url: 'https://newsapi.org/v2/top-headlines/?',
+	url: 'https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines/?',
 	country: `country=${Code}`,
 	apiKey: 'apiKey=5effd68f01ce47589b435b22ebdb06b9'
 }
