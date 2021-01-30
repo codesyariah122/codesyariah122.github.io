@@ -1,13 +1,13 @@
 // Ip location and geographic
 const getLocation = async(data) => {
-	let req = await fetch(`http://ip-api.com/json/${data}`)
+	let req = await fetch(`https://cors-anywhere.herokuapp.com/http://ip-api.com/json/${data}`)
 	let res = await req.json()
 
 	return res
 }
 
 const LookUp = async(data, success, err) => {
-	const req = await fetch(`https://api.ipify.org/?format=${data}`)
+	const req = await fetch(`https://cors-anywhere.herokuapp.com/https://api.ipify.org/?format=${data}`)
 	const res = await req.json()
 
 	const ip = res.ip
