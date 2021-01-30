@@ -121,15 +121,27 @@ $(document).ready(function(){
 			const SetFirst = res.data
 			// console.log(SetFirst)
 			const disabled = (SetFirst.number.inSurah == 1) ? 'disabled' : '';
-				const disableTab = (SetFirst.number.inSurah == 1) ? 'tabindex="-1" aria-disabled="true"' : '';
-				const SetTotal = SetFirst.surah.numberOfVerses;
-				const NextData = (SetFirst.number.inSurah >= SetTotal) ? 1 : SetFirst.number.inSurah + 1;
-				const DisableNext = (SetFirst.number.inSurah >= SetTotal) ? 'disabled' : '';
-				const PrevData = (SetFirst.number.inSurah != 1) ? SetFirst.number.inSurah - 1 : '';
+			const disableTab = (SetFirst.number.inSurah == 1) ? 'tabindex="-1" aria-disabled="true"' : '';
+			const SetTotal = SetFirst.surah.numberOfVerses;
+			const NextData = (SetFirst.number.inSurah >= SetTotal) ? 1 : SetFirst.number.inSurah + 1;
+			const DisableNext = (SetFirst.number.inSurah >= SetTotal) ? 'disabled' : '';
+			const PrevData = (SetFirst.number.inSurah != 1) ? SetFirst.number.inSurah - 1 : '';
+				
+			const ActiveData = SetFirst.number.inSurah
+	
+			const FirstData = (SetFirst.number.inSurah > 1) ? (ActiveData + 1) - ActiveData : '';
+
+			const LastData = (SetFirst.number.inSurah > 1) ? (ActiveData - ActiveData)+SetTotal : '';
 
 				// console.log(SetFirst);
 
 				ObjData.Pagination.append(`
+					<li class="page-item ${disabled}">
+				      		<a class="page-link" aria-label="Previous" id="prev" data-total="${SetTotal}" data-surah="${surah}" data-ayat="${FirstData}">
+						<span aria-hidden="true">&laquo;</span>
+				      		</a>
+				    	</li>
+
 					<li class="page-item ${disabled}">
 				      <a class="page-link" ${disableTab} id="prev" data-total="${SetTotal}" data-surah="${surah}" data-ayat="${PrevData}">Previous</a>
 				    </li>
@@ -150,6 +162,12 @@ $(document).ready(function(){
 					<li class="page-item ${DisableNext}">
 						<a class="page-link" data-total="${SetTotal}" data-surah="${surah}" data-ayat="${NextData}" id="next">Next</a>
 					</li>
+					
+					<li class="page-item ${DisableNext}">
+			      			<a class="page-link" aria-label="Next" id="next" data-total="${SetTotal}" data-surah="${surah}" data-ayat="${LastData}">
+			        			<span aria-hidden="true">&raquo;</span>
+			      			</a>
+			    		</li>
 				`)
 
 		}, (err) => {
@@ -174,15 +192,26 @@ $(document).ready(function(){
 			const SetFirst = res.data
 			// console.log(SetFirst)
 			const disabled = (SetFirst.number.inSurah == 1) ? 'disabled' : '';
-				const disableTab = (SetFirst.number.inSurah == 1) ? 'tabindex="-1" aria-disabled="true"' : '';
-				const SetTotal = SetFirst.surah.numberOfVerses;
-				const NextData = (SetFirst.number.inSurah >= SetTotal) ? 1 : SetFirst.number.inSurah + 1;
-				const DisableNext = (SetFirst.number.inSurah >= SetTotal) ? 'disabled' : '';
-				const PrevData = (SetFirst.number.inSurah != 1) ? SetFirst.number.inSurah - 1 : '';
+			const disableTab = (SetFirst.number.inSurah == 1) ? 'tabindex="-1" aria-disabled="true"' : '';
+			const SetTotal = SetFirst.surah.numberOfVerses;
+			const NextData = (SetFirst.number.inSurah >= SetTotal) ? 1 : SetFirst.number.inSurah + 1;
+			const DisableNext = (SetFirst.number.inSurah >= SetTotal) ? 'disabled' : '';
+			const PrevData = (SetFirst.number.inSurah != 1) ? SetFirst.number.inSurah - 1 : '';
+			
+			const ActiveData = SetFirst.number.inSurah
+	
+			const FirstData = (SetFirst.number.inSurah > 1) ? (ActiveData + 1) - ActiveData : '';
 
-				// console.log(SetFirst);
+			const LastData = (SetFirst.number.inSurah > 1) ? (ActiveData - ActiveData)+SetTotal : '';
+			// console.log(SetFirst);
 
 				ObjData.Pagination.append(`
+					<li class="page-item ${disabled}">
+			      			<a class="page-link" aria-label="Previous" id="prev" data-total="${SetTotal}" data-surah="${numberSurah}" data-ayat="${FirstData}">
+			        			<span aria-hidden="true">&laquo;</span>
+			      			</a>
+			    		</li>
+
 					<li class="page-item ${disabled}">
 				      <a class="page-link" ${disableTab} id="prev" data-total="${SetTotal}" data-surah="${surah}" data-ayat="${PrevData}">Previous</a>
 				    </li>
@@ -203,6 +232,13 @@ $(document).ready(function(){
 					<li class="page-item ${DisableNext}">
 						<a class="page-link" data-total="${SetTotal}" data-surah="${surah}" data-ayat="${NextData}" id="next">Next</a>
 					</li>
+					
+					<li class="page-item ${DisableNext}">
+					      <a class="page-link" aria-label="Next" id="next" data-total="${SetTotal}" data-surah="${numberSurah}" data-ayat="${LastData}">
+						<span aria-hidden="true">&raquo;</span>
+					      </a>
+					</li>
+					
 				`)
 
 		}, (err) => {
