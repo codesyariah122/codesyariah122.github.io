@@ -123,9 +123,9 @@ const ViewAyat = (data, id) => {
 
 				<blockquote class="mb-2 text-success"> - ${Indexes.translation.id}</blockquote>
 
-				<br/><br/>
+				<br/>
 
-				<div class="mt-3 text-xs-center">
+				<div class="mt-2 text-xs-center">
 					<nav aria-label="Page navigation example">
 	                    <ul class="pagination justify-content-center">
 	                    	<li class="page-item ${Disabled}">
