@@ -1,6 +1,6 @@
 // Ip location and geographic
 const getLocation = async(data) => {
-	let req = await fetch(`https://cors-anywhere.herokuapp.com/http://ip-api.com/json/${data}`)
+	let req = await fetch(`https://cors-anywhere.herokuapp.com/http://ip-api.com/${data}`)
 	let res = await req.json()
 
 	return res
@@ -41,7 +41,7 @@ const LookUp = async(data, success, err) => {
 
 }
 
-const initMap => (map) {
+function initMap(map) {
     const lat = parseFloat(Cookies.get('lat'));
     const lng = parseFloat(Cookies.get('lng'));
     // alert(typeof lat);
@@ -56,6 +56,7 @@ const initMap => (map) {
   });
 
 }
+
 
 // Reading news
 const NewsMedia = (url, param, apiKey, success, err) => {

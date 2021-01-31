@@ -123,9 +123,9 @@ const ViewAyat = (data, id) => {
 
 				<blockquote class="mb-2 text-success"> - ${Indexes.translation.id}</blockquote>
 
-				<br/>
+				<br/><br/>
 
-				<div class="text-xs-center">
+				<div class="mt-3 text-xs-center">
 					<nav aria-label="Page navigation example">
 	                    <ul class="pagination justify-content-center">
 	                    	<li class="page-item ${Disabled}">
@@ -208,7 +208,9 @@ const NextAyat = (surah, ayat) => {
 
 				<blockquote class="mb-2 text-success"> - ${Indexes.translation.id}</blockquote>
 
-				<div class="text-xs-center">
+				<br/>
+
+				<div class="mt-2 text-xs-center">
 					<nav aria-label="Page navigation example">
 	                    <ul class="pagination justify-content-center">
 
@@ -286,7 +288,9 @@ const LastAyat = (surah, ayat) => {
 
 				<blockquote class="mb-2 text-success"> - ${Indexes.translation.id}</blockquote>
 
-				<div class="text-xs-center">
+				<br/>
+
+				<div class="mt-2 text-xs-center">
 					<nav aria-label="Page navigation example">
 	                    <ul class="pagination justify-content-center">
 
@@ -365,7 +369,9 @@ const PrevAyat = (surah, ayat) => {
 
 				<blockquote class="mb-2 text-success"> - ${Indexes.translation.id}</blockquote>
 
-				<div class="text-xs-center">
+				<br/>
+
+				<div class="mt-2 text-xs-center">
 					<nav aria-label="Page navigation example">
 	                    <ul class="pagination justify-content-center">
 
@@ -443,8 +449,10 @@ const FirstAyat = (surah, ayat) => {
 				</audio>
 
 				<blockquote class="mb-2 text-success"> - ${Indexes.translation.id}</blockquote>
+				
+				<br/>
 
-				<div class="text-xs-center">
+				<div class="mt-2 text-xs-center">
 					<nav aria-label="Page navigation example">
 	                    <ul class="pagination justify-content-center">
 

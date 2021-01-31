@@ -5,5 +5,6 @@ LookUp("json", res => {
 })
 
 // Google map
-initMap('')
 
+let map = ''
+initMap(map)
