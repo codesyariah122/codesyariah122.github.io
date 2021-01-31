@@ -1,4 +1,7 @@
 <style type="text/css">
+html {
+  scroll-behavior: smooth;
+}
 .loader{
   margin-top: -3rem;
   margin-left: -9rem;
@@ -33,48 +36,42 @@
 
 
   <div class="container">
+
     <div class="row justify-content-center">
 
       <div class="col-12 col-xs-12 col-sm-12">
-        <h1 class="text-success text-center" style="font-family:Reey Regular;">Sang Pembeda</h1>
-        <p class="mt-2 mb-2 text-primary text-center">Baca Quran Online</p>
+          <h1 class="text-success text-center" style="font-family:Reey Regular;">Sang Pembeda</h1>
+          <p class="mt-2 mb-2 text-primary text-center">Baca Quran Online</p>
 
-        <h4 class="text-center">Pilih Surah Quran</h4>
-        <div class="input-group mb-3">
-          <select class="custom-select" id="select-surah" name="surah">
-              <!-- <option selected>Choose...</option> -->                       
-          </select>
-            <div class="input-group-append">
-                <button id="pilih-surah" class="btn btn-dark">Enter</button>
-            </div>
-        </div>
-      </div>
-      
-      <div class="error"></div>
-
-      <div class="row justify-content-center">
-                
-                <div class="col-md-12">
-                    <div class="loader">
-                        <img src="{{site.url}}/assets/images/myroom/loader.gif">
-                    </div>
+          <h4 class="text-center">Pilih Surah Quran</h4>
+          
+          <div class="input-group mb-3">
+              <select class="custom-select" id="select-surah" name="surah" style="width:80%;">          
+              </select>
+                            
+              <div class="input-group-append">
+                  <button id="enter" class="btn btn-dark">Enter</button>
+              </div>
                     
-                        <div class="hasil mt-5"></div>
+              <div id="loader">
+                  <img src="assets/img/loading2.gif" class="img-responsive" width="70" height="30">
+              </div>
+          </div>
 
-                        <div class="loader2">
-                            <img src="{{site.url}}/assets/images/myroom/loading2.gif">
-                        </div>
+          <div id="error"></div>    
 
-                    <center>
-                        <div class="view-ayat mt-5"></div>
-
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-center"></ul>
-                        </nav>
-                    </center>
-                </div>
+          <div class="card">
+              <div class="card-header">
+                  Featured
+              </div>
+              
+              <div class="card-body">      
+                  <div class="view-ayat"></div>
+              </div>
+          </div>
 
       </div>
+
 
       <div style="width: 100%; height: auto !important; clear: both; text-align: center;" class="google-auto-placed">
       </div>
