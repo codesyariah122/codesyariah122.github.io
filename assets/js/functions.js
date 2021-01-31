@@ -1,6 +1,6 @@
 // Ip location and geographic
 const getLocation = async(data) => {
-	let req = await fetch(`https://cors-anywhere.herokuapp.com/http://ip-api.com/${data}`)
+	let req = await fetch(`https://cors-anywhere.herokuapp.com/http://ip-api.com/json/${data}`)
 	let res = await req.json()
 
 	return res
@@ -38,22 +38,6 @@ const LookUp = async(data, success, err) => {
 	}).catch(err => {
 		console.log(`Error results : ${err}`)
 	})
-
-}
-
-function initMap(map) {
-    const lat = parseFloat(Cookies.get('lat'));
-    const lng = parseFloat(Cookies.get('lng'));
-    // alert(typeof lat);
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: lat, lng: lng },
-    zoom: 7,
-  });
-
-  marker = new google.maps.Marker({
-      position: new google.maps.LatLng(lat, lng),
-      map: map
-  });
 
 }
 
