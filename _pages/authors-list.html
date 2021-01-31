@@ -278,58 +278,80 @@ contact: WebDevelopment
                   <br>
                   <h1 class="underline text-center mt-2 mb-4"></h1>
                   <!-- row content2 -->
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-xs-12 col-sm-12">
-                            <h1 class="text-center">Pilih Media</h1>
-                            <div class="input-group mb-3">
-                              <select class="custom-select" id="select-news">
-                                  <!-- <option selected>Choose...</option> -->                       
-                              </select>
-                              <div class="input-group-append">
-                                  <button id="enter" class="btn btn-dark">Choose</button>
-                              </div>
-                          </div>
+            <div class="row justify-content-center">
+                <div class="col-12 col-xs-12 col-sm-12">
+                         
+                    <div id="your-location"></div>
+                    
+                    <h1 class="text-center">Update Berita</h1>
+                            
+                    <div class="input-group mb-3">
+                        <select class="custom-select" id="select-news">
+                            <!-- <option selected>Choose...</option> --> 
+                        </select>
+                        
+                        <div class="input-group-append">
+                            <button id="enter" class="btn btn-dark">Choose</button>
                         </div>
-
-                         <hr>
-                          
-                          <div id="err">
-                              <div class="col-12 col-xs-12 col-sm-12">
-                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                <strong>Wooopssshhh!!!</strong> <span class="text-center">Pilih nama media online nya dulu bro</span>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                </div>
-                              </div>
-                          </div>
+                        
+                        <div id="loader">
+                          <img src="{{site.url}}/assets/images/loading2.gif" class="img-responsive" width="70" height="30">
+                        </div>         
                     </div>
-                  <!-- row content2 end -->
-
-
-                  <div class="row" id="news-list">
-
+                    
+                    <!-- results news -->
+                   <div id="error"></div>
+                   <div id="news-list"></div>
+                    
+                </div>
+          
+                <hr>
+                
+           <!-- Modal read news -->
+            <div class="modal fade" id="newsModal" tabindex="-1" data-backdrop="static" data-keyboard="false" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
                   </div>
-                  
-                  <h1 class="underline mb-2 mt-2"></h1>
-                  
-                  <br>
 
-                  <div id="your-location">
+                  <div class="modal-body">
+                    
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+               
+            </div>
+            <!-- row content2 end -->
+
+            <h1 class="underline mb-2 mt-2"></h1>
+                  
                     <!-- <div class="map">
                       <div id="googleMap" style="width:100%;height:380px;"></div>
                     </div> -->
-                  </div>
-                  <div id="map" style="width:100%;height:380px;"></div>
-                
-              </div>
-            </div>
-          </div>
-      
+        <!-- end panel conteiner -->
         </div>
+            
+        <div id="map" style="width:100%;height:380px;"></div>
+        <!-- end panel-body -->
       </div>
-      
+      <!-- end panel -->
+      </div>
+
+      </div>
     </div>
+  </div>
+      
+  <!-- end content app vue -->
+</div>
 
     <br>
     <br>
