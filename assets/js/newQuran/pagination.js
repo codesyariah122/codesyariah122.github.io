@@ -74,8 +74,10 @@ const NextAyat = (surah, ayat) => {
 					<source src="${Indexes.audio.primary}" type="audio/mp3">
 				</audio>
 
-				<blockquote class="mb-2 text-success"> - ${Indexes.translation.id}</blockquote>
-
+				<blockquote class="mb-3 text-success"> - ${Indexes.translation.id}</blockquote>
+				
+				<br/>
+				
 				<div class="text-xs-center">
 					<nav aria-label="Page navigation example mb-2">
 	                    <ul class="pagination justify-content-center">
@@ -184,7 +186,9 @@ const LastAyat = (surah, ayat) => {
 					<source src="${Indexes.audio.primary}" type="audio/mp3">
 				</audio>
 
-				<blockquote class="mb-2 text-success"> - ${Indexes.translation.id}</blockquote>
+				<blockquote class="mb-3 text-success"> - ${Indexes.translation.id}</blockquote>
+				
+				<br/>
 
 				<div class="text-xs-center">
 					<nav aria-label="Page navigation example mb-2">
@@ -298,8 +302,10 @@ const PrevAyat = (surah, ayat) => {
 					<source src="${Indexes.audio.primary}" type="audio/mp3">
 				</audio>
 
-				<blockquote class="mb-2 text-success"> - ${Indexes.translation.id}</blockquote>
+				<blockquote class="mb-3 text-success"> - ${Indexes.translation.id}</blockquote>
 
+				<br/>
+				
 				<div class="text-xs-center">
 					<nav aria-label="Page navigation example mb-2">
 	                    <ul class="pagination justify-content-center">
@@ -410,7 +416,9 @@ const FirstAyat = (surah, ayat) => {
 					<source src="${Indexes.audio.primary}" type="audio/mp3">
 				</audio>
 
-				<blockquote class="mb-2 text-success"> - ${Indexes.translation.id}</blockquote>
+				<blockquote class="mb-3 text-success"> - ${Indexes.translation.id}</blockquote>
+
+				<br/>
 
 				<div class="text-xs-center">
 					<nav aria-label="Page navigation example mb-2">

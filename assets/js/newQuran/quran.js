@@ -127,7 +127,8 @@ document.querySelector('#enter-quran').addEventListener('click', () => {
 			headerEl.textContent = `${DataSurah.surah.name.long} | Surah ${DataSurah.surah.name.transliteration.id} `
 			bodyEl.innerHTML = `
 				<h5 class="card-title">${DataSurah.surah.name.transliteration.id} (${DataSurah.surah.name.translation.id})</h5>
-                <p class="card-text">${DataSurah.surah.tafsir.id}</p>
+                <p class="card-text mb-3">${DataSurah.surah.tafsir.id}</p>
+                <br/>
 			`
 
 			setTimeout(() => {
@@ -163,12 +164,12 @@ document.querySelector('#enter-quran').addEventListener('click', () => {
 					<source src="${DataSurah.audio.primary}" type="audio/mp3">
 				</audio>
 
-				<blockquote class="mb-2 text-success"> - ${DataSurah.translation.id}</blockquote>
+				<blockquote class="mb-3 text-success"> - ${DataSurah.translation.id}</blockquote>
 
 				<br/>
 
 				<div class="text-xs-center">
-					<nav aria-label="Page navigation example mt-2 mb-3">
+					<nav aria-label="Page navigation example mb-3">
 	                    <ul class="pagination justify-content-center">
 	                    	<li class="page-item ${Disabled}">
 						      <a class="page-link" aria-label="Previous" id="prev" data-total="${TotalAyat}" data-surah="${surah}" data-ayat="${FirstData}" onClick="FirstAyat(${surah}, ${FirstData})">
