@@ -11,6 +11,7 @@ url: 'https://codesyariah122.github.io'
 portfolio: 'https://pujiermanto.netlify.app'
 disqus: 'codesyariah122-github-io'
 email: 'pujiermanto@hotmail.com'
+recaptcha: '6LdmmkcaAAAAAGWv4kDLlsVOCzwI0B4fvlVC8soo'
 repositories: 
     repo1:
       url: https://github.com/codesyariah122/codesyariah122-github-io-repo.git
