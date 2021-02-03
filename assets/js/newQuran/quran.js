@@ -1,45 +1,76 @@
-const NullOptions = document.createElement('option')
-	NullOptions.setAttribute('value', 'choose')
-	NullOptions.textContent = 'Choose ... '
-	document.querySelector('#select-surah').appendChild(NullOptions)
-
-const QuranApi = {
-	proxy: 'https://cors-anywhere.herokuapp.com/',
-	url: 'https://api.quran.sutanlab.id/',
-	req: 'surah'
-}
-
-// DOM Select input data surah
-SelectSurah(QuranApi.proxy, QuranApi.url, QuranApi.req)
-.then(res => {
-	const SurahDatas = res.data
-	// console.log(SurahDatas)
-
-	SurahDatas.map(key => {
-		const optEl = document.createElement('option')
-		optEl.setAttribute('value', key.number)
-		optEl.textContent = key.name.transliteration.id
-		document.querySelector('#select-surah').appendChild(optEl)
-	})
-}).catch(err => {
-	console.log(`Error results : ${err}`)
-})
-
-
 document.querySelector('#loader').style.visibility="hidden"
 document.querySelector('.card').style.visibility="hidden"
 document.querySelector('.card-header').innerHTML=''
 
+let NullOptionsSurah = document.createElement('option')
+	NullOptionsSurah.setAttribute('value', 'choose')
+	NullOptionsSurah.textContent = 'Choose ... '
+	document.querySelector('#select-surah').appendChild(NullOptionsSurah)
 
-// view surah
-document.querySelector('#enter').addEventListener('click', function () {
+let NullOptionsAyat = document.createElement('option')
+	NullOptionsAyat.setAttribute('value', 'pilih-ayat')
+	NullOptionsAyat.textContent='Pilih Ayat'
+	document.querySelector('#select-ayat').appendChild(NullOptionsAyat)
+
+const QuranApi = {
+	proxy: 'https://cors-anywhere.herokuapp.com/',
+	url: 'https://api.quran.sutanlab.id/',
+	req: 'surah/'
+}
+
+const SelectSurah = new AlQuran(QuranApi.proxy, QuranApi.url, QuranApi.req)
+
+// console.log(SelectSurah.proxy)
+
+
+SelectSurah.getSelectSurah()
+.then(res => {
+	// console.log(res)
+	const Surah = res.data 
+
+	Surah.map(key => {
+		let optEl = document.createElement('option')
+		optEl.setAttribute('value', key.number)
+		optEl.textContent=key.name.transliteration.id
+		document.querySelector('#select-surah').appendChild(optEl)
+	})
+}).catch(err => console.log('Error results : ', err))
+
+
+document.querySelector('#select-surah').addEventListener('change', () => {
+	document.querySelector('#loader').style.visibility="visible"
+	document.querySelector('#select-ayat').innerHTML=''
+	document.querySelector('#select-ayat').appendChild(NullOptionsAyat)
+	document.querySelector('#error').innerHTML=''
+
+	const surah = document.querySelector('#select-surah').value
+	const SelectAyat = new AlQuran(QuranApi.proxy, QuranApi.url, QuranApi.req, surah)
+
+	SelectAyat.getSelectAyat()
+	.then( res => {
+		const AyatDatas = res.data.verses
+		AyatDatas.map(key => {
+			const optEl = document.createElement('option')
+			optEl.setAttribute('value', key.number.inSurah)
+			optEl.textContent=`Ayat - ${key.number.inSurah}`
+			document.querySelector('#select-ayat').appendChild(optEl)
+		})
+	document.querySelector('#loader').style.visibility="hidden"
+	}).catch(err => console.log(`Results error : ${err}`))
+
+})
+
+
+document.querySelector('#enter').addEventListener('click', () => {
 	document.querySelector('#error').innerHTML=''
 	document.querySelector('.card-header').innerHTML=''
 	document.querySelector('.card-body').innerHTML=''
+	document.querySelector('.card').style.visibility="hidden"
 
-	const NumberSUrah = document.querySelector('#select-surah').value
+	const surah = document.querySelector('#select-surah').value
+	const ayat = document.querySelector('#select-ayat').value
 
-	if(NumberSUrah == 'choose' || NumberSUrah == null){
+	if(surah == 'choose'){
 		const errEl = document.createElement('div')
 		errEl.className = 'alert alert-danger'
 		errEl.setAttribute('role', 'alert')
@@ -49,18 +80,17 @@ document.querySelector('#enter').addEventListener('click', function () {
 			document.querySelector('#error').appendChild(errEl)
 			document.querySelector('#loader').style.visibility="hidden"
 		}, 1500)
-	}else{
-		document.querySelector('.card').style.visibility="hidden"
-		document.querySelector('#select-surah').value='choose'
-
+	}else if(ayat === 'pilih-ayat'){
 		document.querySelector('#loader').style.visibility="visible"
 
-		ViewSurah(QuranApi.proxy, QuranApi.url, NumberSUrah)
+		const GetAyat = new AlQuran(QuranApi.proxy, QuranApi.url, QuranApi.req, surah)
+
+		GetAyat.getSelectAyat()
 		.then(res => {
+
 			// console.log("Success results : ", res)
 			const ViewSurah = res.data
-			// console.log(ViewSurah)
-
+			
 			const headerEl = document.createElement('h4')
 			const bodyEl = document.createElement('div')
 			headerEl.textContent = `${ViewSurah.name.long} | Surah ${ViewSurah.name.transliteration.id} `
@@ -72,76 +102,88 @@ document.querySelector('#enter').addEventListener('click', function () {
 
 			setTimeout(() => {
 				document.querySelector('.card').style.visibility="visible"
-			
 				document.querySelector('.card-header').appendChild(headerEl)
 				document.querySelector('.card-body').appendChild(bodyEl)
 				document.querySelector('#loader').style.visibility="hidden"
 			}, 1500)
 
-		}).catch(err => {
-			console.log("Error results : ", err)
-		})
+		}).catch(err => console.log(`Error results : ${err}`))
+	
+	}else{
+		document.querySelector('#loader').style.visibility="visible"
 
-	}
-})
+		const GetSurahAyat = new AlQuran(QuranApi.proxy, QuranApi.url, QuranApi.req, surah, ayat)
 
-// View Ayat
-const ViewAyat = (data, id) => {
-	const NumberSurah = data
-	const NumberAyat = id
+		GetSurahAyat.getSurahAyat()
+		.then( res => {
+			const DataSurah = res.data
+			const DataAyat = res.data.text 
+			console.log(DataSurah)
 
-	ReadAyat(QuranApi.proxy, QuranApi.url,QuranApi.req, NumberSurah, NumberAyat, res => {
-		
-		document.querySelector('#view-ayat').style.visibility="hidden"
+			const headerEl = document.createElement('h4')
+			const bodyEl = document.createElement('div')
+			const rowEl = document.createElement('div')
+			
+			headerEl.textContent = `${DataSurah.surah.name.long} | Surah ${DataSurah.surah.name.transliteration.id} `
+			bodyEl.innerHTML = `
+				<h5 class="card-title">${DataSurah.surah.name.transliteration.id} (${DataSurah.surah.name.translation.id})</h5>
+                <p class="card-text">${DataSurah.surah.tafsir.id}</p>
+			`
 
-		const DataAyat = JSON.parse(res)
+			setTimeout(() => {
+				document.querySelector('.card').style.visibility="visible"
+				document.querySelector('.card-header').appendChild(headerEl)
+				document.querySelector('.card-body').appendChild(bodyEl)
+				document.querySelector('#loader').style.visibility="hidden"
+			}, 1500)
 
-		const Indexes = DataAyat.data
-		// console.log(Indexes)
+			console.log(typeof DataSurah.surah.preBismillah)
 
-		const TotalAyat = Indexes.surah.numberOfVerses
-		const Disabled = Indexes.number.inSurah == 1 ? 'disabled' : ''
-		const DisableTab = Indexes.number.inSurah == 1 ? 'tabindex="-1" aria-disabled="true"' : ''
-		const DisableNext = Indexes.number.inSurah >= TotalAyat ? 'disabled' : '';
-		const ActiveData = Indexes.number.inSurah
-		const FirstData = Indexes.number.inSurah == 1 ? (ActiveData + 1) - ActiveData : '';
-		const LastData = Indexes.number.inSurah == 1 ? (ActiveData - ActiveData)+TotalAyat : '';
-		const rowEl = document.createElement('div')
+			const TotalAyat = DataSurah.surah.numberOfVerses
+			const Disabled = DataSurah.number.inSurah == 1 ? 'disabled' : ''
+			const DisableTab = DataSurah.number.inSurah == 1 ? 'tabindex="-1" aria-disabled="true"' : ''
+			const DisableNext = DataSurah.number.inSurah >= TotalAyat ? 'disabled' : ''
+			const ActiveData = DataSurah.number.inSurah
+			const NextData = (DataSurah.number.inSurah >= TotalAyat) ? 1 : DataSurah.number.inSurah + 1
+			const PrevData = (DataSurah.number.inSurah != 1) ? DataSurah.number.inSurah - 1 : '';
+			const FirstData = DataSurah.number.inSurah == 1 ? (ActiveData + 1) - ActiveData : ''
+			const LastData = DataSurah.number.inSurah == 1 ? (ActiveData - ActiveData)+TotalAyat : ''
+			const PreBismillah = DataSurah.surah.PreBismillah ? `<h2 class="mb-5"> - ${DataSurah.surah.preBismillah.text.arab}</h2>` : '' 
 
-		// console.log(`Data active : ${ActiveData}, Number Surah : ${LastData}`)
+			// console.log(PreBismillah)
 
-		// Row Element
-		rowEl.className = 'row justify-content-center'
-		rowEl.innerHTML = `
-			<div class="col-12 col-xs-12 col-sm-12 text-center">
-							<h2>${Indexes.text.arab} &nbsp; <span class="number-ayat">${Indexes.number.inSurah}</span> </h2>
-				<h5>${Indexes.text.transliteration.en}</h5>
+			rowEl.className='row justify-content-center'
+			rowEl.innerHTML = `
+				<div class="col-12 col-xs-12 col-sm-12 text-center">
+				<h2>${PreBismillah}</h2>
+							<h2>${DataSurah.text.arab} &nbsp; <span class="number-ayat">${DataSurah.number.inSurah}</span> </h2>
+				<h5>${DataSurah.text.transliteration.en}</h5>
 
 				<audio controls>
-					<source src="${Indexes.audio.primary}" type="audio/mp3">
+					<source src="${DataSurah.audio.primary}" type="audio/mp3">
 				</audio>
 
-				<blockquote class="mb-2 text-success"> - ${Indexes.translation.id}</blockquote>
+				<blockquote class="mb-2 text-success"> - ${DataSurah.translation.id}</blockquote>
 
 				<br/>
 
-				<div class="mt-2 text-xs-center">
+				<div class="text-xs-center">
 					<nav aria-label="Page navigation example">
 	                    <ul class="pagination justify-content-center">
 	                    	<li class="page-item ${Disabled}">
-						      <a class="page-link" aria-label="Previous" id="prev" data-total="${TotalAyat}" data-surah="${NumberSurah}" data-ayat="${FirstData}">
+						      <a class="page-link" aria-label="Previous" id="prev" data-total="${TotalAyat}" data-surah="${surah}" data-ayat="${FirstData}" onClick="FirstAyat(${surah}, ${FirstData})">
 						        <span aria-hidden="true">&laquo;</span>
 						      </a>
 						    </li>
 	                    	<li class="page-item ${Disabled}"> 
-								<a class="page-link" ${DisableTab} id="prev">Previous</a>
+								<a class="page-link" ${DisableTab} id="prev" onClick="PrevAyat(${surah}, ${PrevData})">Previous</a>
 							</li>
 
 							<li class="page-item">
-								<a class="page-link" data-total="${TotalAyat}" data-surah="${NumberSurah}" onClick="NextAyat(${NumberSurah}, ${Indexes.number.inSurah + 1})" id="next">Next</a>
+								<a class="page-link" id="next" data-total="${TotalAyat}" data-surah="${surah}" data-next="${surah}, ${DataSurah.number.inSurah + 1}" onClick="NextAyat(${surah}, ${DataSurah.number.inSurah + 1})" id="next">Next</a>
 							</li>
 							<li class="page-item ${DisableNext}">
-						      <a class="page-link" aria-label="Next" id="next" data-total="${TotalAyat}" data-surah="${NumberSurah}" data-ayat="${LastData}" onClick="LastAyat(${NumberSurah}, ${LastData})">
+						      <a class="page-link" aria-label="Next" id="next" data-total="${TotalAyat}" data-surah="${surah}" data-ayat="${LastData}" onClick="LastAyat(${surah}, ${LastData})">
 						        <span aria-hidden="true">&raquo;</span>
 						      </a>
 						    </li>
@@ -149,340 +191,12 @@ const ViewAyat = (data, id) => {
 	                </nav>
 	            </div>
 			</div>
-		`
-
-		document.querySelector('.card-body').appendChild(rowEl).children
-		
-		// const viewAyat = document.querySelector('.card-body')
-		// console.log(viewAyat.children)
-
-	}, (err) => {
-		console.log("Error results : ", err)
-	})
-}
-
-
-const NextAyat = (surah, ayat) => {
-
-	const Next = document.querySelector('.card-body').children
-		for(let i = 1; i < Next.length; i++){
-			Next[i].innerHTML=''
-		}
-
-
-	const DataSurah = surah
-	const next = ayat
-
-	ReadAyat(QuranApi.proxy, QuranApi.url, QuranApi.req, DataSurah, next, res => {
-
-		const ReadAyat = JSON.parse(res)
-
-		const Indexes = ReadAyat.data
-		// console.log(Indexes)
-
-		const Disabled = (Indexes.number.inSurah == 1) ? 'disabled' : ''
-		const DisableTab = (Indexes.number.inSurah == 1) ? 'tabindex="-1" aria-disabled="true"' : ''
-		const TotalAyat = Indexes.surah.numberOfVerses
-		const NextData = (Indexes.number.inSurah >= TotalAyat) ? 1 : Indexes.number.inSurah + 1;
-		const DisableNext = (Indexes.number.inSurah >= TotalAyat) ? 'disabled' : '';
-		const PrevData = (Indexes.number.inSurah != 1) ? Indexes.number.inSurah - 1 : '';
-
-		const ActiveData = Indexes.number.inSurah
-			
-
-		const FirstData = Indexes.number.inSurah > 1 ? (ActiveData + 1) - ActiveData : '';
-
-		const LastData = Indexes.number.inSurah > 1 ? (ActiveData - ActiveData)+TotalAyat : '';
-
-		const rowEl = document.createElement('div')
-		// Row Element
-		rowEl.className = 'row justify-content-center'
-		rowEl.innerHTML = `
-			<div class="col-12 col-xs-12 col-sm-12 text-center">
-							<h2>${Indexes.text.arab} &nbsp; <span class="number-ayat">${Indexes.number.inSurah}</span> </h2>
-				<h5>${Indexes.text.transliteration.en}</h5>
-
-				<audio controls>
-					<source src="${Indexes.audio.primary}" type="audio/mp3">
-				</audio>
-
-				<blockquote class="mb-2 text-success"> - ${Indexes.translation.id}</blockquote>
-
-				<br/>
-
-				<div class="mt-2 text-xs-center">
-					<nav aria-label="Page navigation example">
-	                    <ul class="pagination justify-content-center">
-
-	                    	<li class="page-item ${Disabled}">
-						      <a class="page-link" aria-label="Previous" id="prev" data-total="${TotalAyat}" data-surah="${DataSurah}" data-ayat="${FirstData}" onClick="FirstAyat(${DataSurah}, ${FirstData})">
-						        <span aria-hidden="true">&laquo;</span>
-						      </a>
-						    </li>
-	                    	<li class="page-item ${Disabled}">
-						      <a class="page-link" ${DisableTab} id="prev" data-total="${TotalAyat}" data-surah="${DataSurah}" data-ayat="${PrevData}" onClick="PrevAyat(${DataSurah}, ${PrevData})">Previous</a>
-						    </li>
-
-						    <li class="page-item ${DisableNext}">
-								<a class="page-link" data-total="${TotalAyat}" data-surah="${DataSurah}" data-ayat="${NextData}" id="next" onClick="NextAyat(${DataSurah}, ${NextData})">Next</a>
-							</li>
-							<li class="page-item ${DisableNext}">
-						      <a class="page-link" aria-label="Next" id="next" data-total="${TotalAyat}" data-surah="${DataSurah}" data-ayat="${LastData}" onClick="LastAyat(${DataSurah}, ${LastData})">
-						        <span aria-hidden="true">&raquo;</span>
-						      </a>
-						    </li>
-
-	                    </ul>
-	                </nav>
-	            </div>
-			</div>
-		`
-		document.querySelector('.card-body').appendChild(rowEl).children
-
-	}, (err) => {
-		console.log("Error results : ", err)
-	})
-}
-
-const LastAyat = (surah, ayat) => {
-	const Next = document.querySelector('.card-body').children
-		for(let i = 1; i < Next.length; i++){
-			Next[i].innerHTML=''
-		}
-
-	const DataSurah = surah
-	const last = ayat
-
-		ReadAyat(QuranApi.proxy, QuranApi.url, QuranApi.req, DataSurah, last, res => {
-
-		const ReadAyat = JSON.parse(res)
-
-		const Indexes = ReadAyat.data
-		// console.log(Indexes)
-
-		const Disabled = (Indexes.number.inSurah == 1) ? 'disabled' : ''
-		const DisableTab = (Indexes.number.inSurah == 1) ? 'tabindex="-1" aria-disabled="true"' : ''
-		const TotalAyat = Indexes.surah.numberOfVerses
-		const NextData = (Indexes.number.inSurah >= TotalAyat) ? 1 : Indexes.number.inSurah + 1;
-		const DisableNext = (Indexes.number.inSurah >= TotalAyat) ? 'disabled' : '';
-		const PrevData = (Indexes.number.inSurah != 1) ? Indexes.number.inSurah - 1 : '';
-
-		const ActiveData = Indexes.number.inSurah
-			
-
-		const FirstData = Indexes.number.inSurah > 1 ? (ActiveData + 1) - ActiveData : '';
-
-		const LastData = Indexes.number.inSurah > 1 ? (ActiveData - ActiveData)+TotalAyat : '';
-
-		const rowEl = document.createElement('div')
-		// Row Element
-		rowEl.className = 'row justify-content-center'
-		rowEl.innerHTML = `
-			<div class="col-12 col-xs-12 col-sm-12 text-center">
-							<h2>${Indexes.text.arab} &nbsp; <span class="number-ayat">${Indexes.number.inSurah}</span> </h2>
-				<h5>${Indexes.text.transliteration.en}</h5>
-
-				<audio controls>
-					<source src="${Indexes.audio.primary}" type="audio/mp3">
-				</audio>
-
-				<blockquote class="mb-2 text-success"> - ${Indexes.translation.id}</blockquote>
-
-				<br/>
-
-				<div class="mt-2 text-xs-center">
-					<nav aria-label="Page navigation example">
-	                    <ul class="pagination justify-content-center">
-
-	                    	<li class="page-item ${Disabled}">
-						      <a class="page-link" aria-label="Previous" id="prev" data-total="${TotalAyat}" data-surah="${DataSurah}" data-ayat="${FirstData}" onCLick="FirstAyat(${DataSurah}, ${FirstData})">
-						        <span aria-hidden="true">&laquo;</span>
-						      </a>
-						    </li>
-	                    	<li class="page-item ${Disabled}">
-						      <a class="page-link" ${DisableTab} id="prev" data-total="${TotalAyat}" data-surah="${DataSurah}" data-ayat="${PrevData}" onClick="PrevAyat(${DataSurah}, ${PrevData})">Previous</a>
-						    </li>
-
-						    <li class="page-item ${DisableNext}">
-								<a class="page-link" data-total="${TotalAyat}" data-surah="${DataSurah}" data-ayat="${NextData}" id="next" onClick="NextAyat(${DataSurah}, ${NextData})">Next</a>
-							</li>
-							<li class="page-item ${DisableNext}">
-						      <a class="page-link" aria-label="Next" id="next" data-total="${TotalAyat}" data-surah="${DataSurah}" data-ayat="${LastData}" onClick="LastAyat(${DataSurah}, ${LastData})">
-						        <span aria-hidden="true">&raquo;</span>
-						      </a>
-						    </li>
-
-	                    </ul>
-	                </nav>
-	            </div>
-			</div>
-		`
-		document.querySelector('.card-body').appendChild(rowEl).children
-
-	}, (err) => {
-		console.log("Error results : ", err)
-	})
-
-}
-
-const PrevAyat = (surah, ayat) => {
-	const Next = document.querySelector('.card-body').children
-		for(let i = 1; i < Next.length; i++){
-			Next[i].innerHTML=''
-		}
-
-	const DataSurah = surah
-	const prev = ayat
-
-	ReadAyat(QuranApi.proxy, QuranApi.url, QuranApi.req, DataSurah, prev, res => {
-
-		const ReadAyat = JSON.parse(res)
-
-		const Indexes = ReadAyat.data
-		// console.log(Indexes)
-
-		const Disabled = (Indexes.number.inSurah == 1) ? 'disabled' : ''
-		const DisableTab = (Indexes.number.inSurah == 1) ? 'tabindex="-1" aria-disabled="true"' : ''
-		const TotalAyat = Indexes.surah.numberOfVerses
-		const NextData = (Indexes.number.inSurah >= TotalAyat) ? 1 : Indexes.number.inSurah + 1;
-		const DisableNext = (Indexes.number.inSurah >= TotalAyat) ? 'disabled' : '';
-		const PrevData = (Indexes.number.inSurah != 1) ? Indexes.number.inSurah - 1 : '';
-
-		const ActiveData = Indexes.number.inSurah
-			
-
-		const FirstData = Indexes.number.inSurah > 1 ? (ActiveData + 1) - ActiveData : '';
-
-		const LastData = Indexes.number.inSurah > 1 ? (ActiveData - ActiveData)+TotalAyat : '';
-
-		const rowEl = document.createElement('div')
-		// Row Element
-		rowEl.className = 'row justify-content-center'
-		rowEl.innerHTML = `
-			<div class="col-12 col-xs-12 col-sm-12 text-center">
-							<h2>${Indexes.text.arab} &nbsp; <span class="number-ayat">${Indexes.number.inSurah}</span> </h2>
-				<h5>${Indexes.text.transliteration.en}</h5>
-
-				<audio controls>
-					<source src="${Indexes.audio.primary}" type="audio/mp3">
-				</audio>
-
-				<blockquote class="mb-2 text-success"> - ${Indexes.translation.id}</blockquote>
-
-				<br/>
-
-				<div class="mt-2 text-xs-center">
-					<nav aria-label="Page navigation example">
-	                    <ul class="pagination justify-content-center">
-
-	                    	<li class="page-item ${Disabled}">
-						      <a class="page-link" aria-label="Previous" id="prev" data-total="${TotalAyat}" data-surah="${DataSurah}" data-ayat="${FirstData}" onClick="FirstAyat(${DataSurah}, ${FirstData})">
-						        <span aria-hidden="true">&laquo;</span>
-						      </a>
-						    </li>
-	                    	<li class="page-item ${Disabled}">
-						      <a class="page-link" ${DisableTab} id="prev" data-total="${TotalAyat}" data-surah="${DataSurah}" data-ayat="${PrevData}" onClick="PrevAyat(${DataSurah}, ${PrevData})">Previous</a>
-						    </li>
-
-						    <li class="page-item ${DisableNext}">
-								<a class="page-link" data-total="${TotalAyat}" data-surah="${DataSurah}" data-ayat="${NextData}" id="next" onClick="NextAyat(${DataSurah}, ${NextData})">Next</a>
-							</li>
-							<li class="page-item ${DisableNext}">
-						      <a class="page-link" aria-label="Next" id="next" data-total="${TotalAyat}" data-surah="${DataSurah}" data-ayat="${LastData}" onClick="LastAyat(${DataSurah}, ${LastData})">
-						        <span aria-hidden="true">&raquo;</span>
-						      </a>
-						    </li>
-
-	                    </ul>
-	                </nav>
-	            </div>
-			</div>
-		`
-		document.querySelector('.card-body').appendChild(rowEl).children
-
-	}, (err) => {
-		console.log("Error results : ", err)
-	})
-
-}
-
-const FirstAyat = (surah, ayat) => {
-	const Next = document.querySelector('.card-body').children
-		for(let i = 1; i < Next.length; i++){
-			Next[i].innerHTML=''
-		}
-
-	const DataSurah = surah
-	const last = ayat
-
-	ReadAyat(QuranApi.proxy, QuranApi.url, QuranApi.req, DataSurah, last, res => {
-
-		const ReadAyat = JSON.parse(res)
-
-		const Indexes = ReadAyat.data
-		// console.log(Indexes)
-
-		const Disabled = (Indexes.number.inSurah == 1) ? 'disabled' : ''
-		const DisableTab = (Indexes.number.inSurah == 1) ? 'tabindex="-1" aria-disabled="true"' : ''
-		const TotalAyat = Indexes.surah.numberOfVerses
-		const NextData = (Indexes.number.inSurah >= TotalAyat) ? 1 : Indexes.number.inSurah + 1;
-		const DisableNext = (Indexes.number.inSurah >= TotalAyat) ? 'disabled' : '';
-		const PrevData = (Indexes.number.inSurah != 1) ? Indexes.number.inSurah - 1 : '';
-
-		const ActiveData = Indexes.number.inSurah
-			
-
-		const FirstData = Indexes.number.inSurah > 1 ? (ActiveData + 1) - ActiveData : '';
-
-		const LastData = Indexes.number.inSurah == 1 ? (ActiveData - ActiveData)+TotalAyat : '';
-
-		const rowEl = document.createElement('div')
-		// Row Element
-		rowEl.className = 'row justify-content-center'
-		rowEl.innerHTML = `
-			<div class="col-12 col-xs-12 col-sm-12 text-center">
-							<h2>${Indexes.text.arab} &nbsp; <span class="number-ayat">${Indexes.number.inSurah}</span> </h2>
-				<h5>${Indexes.text.transliteration.en}</h5>
-
-				<audio controls>
-					<source src="${Indexes.audio.primary}" type="audio/mp3">
-				</audio>
-
-				<blockquote class="mb-2 text-success"> - ${Indexes.translation.id}</blockquote>
-				
-				<br/>
-
-				<div class="mt-2 text-xs-center">
-					<nav aria-label="Page navigation example">
-	                    <ul class="pagination justify-content-center">
-
-	                    	<li class="page-item ${Disabled}">
-						      <a class="page-link" aria-label="Previous" id="prev" data-total="${TotalAyat}" data-surah="${DataSurah}" data-ayat="${FirstData}" onClick>
-						        <span aria-hidden="true">&laquo;</span>
-						      </a>
-						    </li>
-	                    	<li class="page-item ${Disabled}">
-						      <a class="page-link" ${DisableTab} id="prev" data-total="${TotalAyat}" data-surah="${DataSurah}" data-ayat="${PrevData}" onClick="PrevAyat(${DataSurah}, ${PrevData})">Previous</a>
-						    </li>
-
-						    <li class="page-item ${DisableNext}">
-								<a class="page-link" data-total="${TotalAyat}" data-surah="${DataSurah}" data-ayat="${NextData}" id="next" onClick="NextAyat(${DataSurah}, ${NextData})">Next</a>
-							</li>
-							<li class="page-item ${DisableNext}">
-						      <a class="page-link" aria-label="Next" id="next" data-total="${TotalAyat}" data-surah="${DataSurah}" data-ayat="${LastData}" onClick="LastAyat(${DataSurah}, ${LastData})">
-						        <span aria-hidden="true">&raquo;</span>
-						      </a>
-						    </li>
-
-	                    </ul>
-	                </nav>
-	            </div>
-			</div>
-		`
-		document.querySelector('.card-body').appendChild(rowEl).children
-
-	}, (err) => {
-		console.log("Error results : ", err)
-	})
-
-}
+			`
+			document.querySelector('.card-body').appendChild(rowEl)
+
+		}).catch(err => {
+			console.log(`Results errors : ${err}`)
+		})
+	}
+
+})
