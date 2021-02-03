@@ -1,6 +1,6 @@
 document.querySelector('#loader').style.visibility="hidden"
-document.querySelector('.card').style.visibility="hidden"
-document.querySelector('.card-header').innerHTML=''
+document.querySelector('.card-quran').style.visibility="hidden"
+document.querySelector('.header-quran').innerHTML=''
 
 let NullOptionsSurah = document.createElement('option')
 	NullOptionsSurah.setAttribute('value', 'choose')
@@ -41,7 +41,7 @@ document.querySelector('#select-surah').addEventListener('change', () => {
 	document.querySelector('#loader').style.visibility="visible"
 	document.querySelector('#select-ayat').innerHTML=''
 	document.querySelector('#select-ayat').appendChild(NullOptionsAyat)
-	document.querySelector('#error').innerHTML=''
+	document.querySelector('#error-quran').innerHTML=''
 
 	const surah = document.querySelector('#select-surah').value
 	const SelectAyat = new AlQuran(QuranApi.proxy, QuranApi.url, QuranApi.req, surah)
@@ -61,11 +61,11 @@ document.querySelector('#select-surah').addEventListener('change', () => {
 })
 
 
-document.querySelector('#enter').addEventListener('click', () => {
-	document.querySelector('#error').innerHTML=''
-	document.querySelector('.card-header').innerHTML=''
-	document.querySelector('.card-body').innerHTML=''
-	document.querySelector('.card').style.visibility="hidden"
+document.querySelector('#enter-quran').addEventListener('click', () => {
+	document.querySelector('#error-quran').innerHTML=''
+	document.querySelector('.header-quran').innerHTML=''
+	document.querySelector('.quran-body').innerHTML=''
+	document.querySelector('.card-quran').style.visibility="hidden"
 
 	const surah = document.querySelector('#select-surah').value
 	const ayat = document.querySelector('#select-ayat').value
@@ -77,7 +77,7 @@ document.querySelector('#enter').addEventListener('click', () => {
 		errEl.textContent = 'Pilih Surah Terlebih dahulu'
 		document.querySelector('#loader').style.visibility="visible"
 		setTimeout(()=>{
-			document.querySelector('#error').appendChild(errEl)
+			document.querySelector('#error-quran').appendChild(errEl)
 			document.querySelector('#loader').style.visibility="hidden"
 		}, 1500)
 	}else if(ayat === 'pilih-ayat'){
@@ -101,9 +101,9 @@ document.querySelector('#enter').addEventListener('click', () => {
 			`
 
 			setTimeout(() => {
-				document.querySelector('.card').style.visibility="visible"
-				document.querySelector('.card-header').appendChild(headerEl)
-				document.querySelector('.card-body').appendChild(bodyEl)
+				document.querySelector('.card-quran').style.visibility="visible"
+				document.querySelector('.header-quran').appendChild(headerEl)
+				document.querySelector('.quran-body').appendChild(bodyEl)
 				document.querySelector('#loader').style.visibility="hidden"
 			}, 1500)
 
@@ -131,9 +131,9 @@ document.querySelector('#enter').addEventListener('click', () => {
 			`
 
 			setTimeout(() => {
-				document.querySelector('.card').style.visibility="visible"
-				document.querySelector('.card-header').appendChild(headerEl)
-				document.querySelector('.card-body').appendChild(bodyEl)
+				document.querySelector('.card-quran').style.visibility="visible"
+				document.querySelector('.header-quran').appendChild(headerEl)
+				document.querySelector('.quran-body').appendChild(bodyEl)
 				document.querySelector('#loader').style.visibility="hidden"
 			}, 1500)
 
@@ -192,7 +192,7 @@ document.querySelector('#enter').addEventListener('click', () => {
 	            </div>
 			</div>
 			`
-			document.querySelector('.card-body').appendChild(rowEl)
+			document.querySelector('.card-quran-body').appendChild(rowEl)
 
 		}).catch(err => {
 			console.log(`Results errors : ${err}`)

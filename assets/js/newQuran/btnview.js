@@ -1,9 +1,9 @@
 const ViewAyat = (surah, ayat) => {
 	// console.log(`Dari view surah : Surah - ${surah}, Ayat - ${ayat}`)
 	document.querySelector('#loader').style.visibility="visible"
-	document.querySelector('.card-header').innerHTML=''
-	document.querySelector('.card-body').innerHTML=''
-	document.querySelector('.card').style.visibility="hidden"	
+	document.querySelector('.header-quran').innerHTML=''
+	document.querySelector('.body-quran').innerHTML=''
+	document.querySelector('.card-quran').style.visibility="hidden"	
 
 	const GetAyatView = new AlQuran(QuranApi.proxy, QuranApi.url, QuranApi.req, surah, ayat)
 
@@ -67,7 +67,7 @@ const ViewAyat = (surah, ayat) => {
 	            </div>
 			</div>
 		`
-		document.querySelector('.card-body').appendChild(rowEl).children
+		document.querySelector('.body-quran').appendChild(rowEl).children
 	}).catch(err => {
 		console.log('Results error : ', err)
 	})
@@ -90,16 +90,16 @@ const ViewAyat = (surah, ayat) => {
 			`
 
 			setTimeout(() => {
-				document.querySelector('.card').style.visibility="visible"
-				document.querySelector('.card-header').appendChild(headerEl)
-				document.querySelector('.card-body').appendChild(bodyEl)
+				document.querySelector('.card-quran').style.visibility="visible"
+				document.querySelector('.header-quran').appendChild(headerEl)
+				document.querySelector('.body-quran').appendChild(bodyEl)
 				document.querySelector('#loader').style.visibility="hidden"
 			}, 1500)
 	}).catch(err => {
 		console.log('Results error : ', err)
 	})
 
-	const viewReadAyat = document.querySelector('.card-body').children
+	const viewReadAyat = document.querySelector('.body-quran').children
 	for(let i = 0; i < viewReadAyat.length; i++){
 		viewReadAyat[i].innerHTML=''
 	}

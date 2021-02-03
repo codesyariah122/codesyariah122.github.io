@@ -1,8 +1,8 @@
 const NextAyat = (surah, ayat) => {
 	document.querySelector('#loader').style.visibility="visible"
-	document.querySelector('.card-header').innerHTML=''
-	document.querySelector('.card-body').innerHTML=''
-	document.querySelector('.card').style.visibility="hidden"
+	document.querySelector('.header-quran').innerHTML=''
+	document.querySelector('.quran-body').innerHTML=''
+	document.querySelector('.card-quran').style.visibility="hidden"
 	
 	const ayatNext = new AlQuran(QuranApi.proxy, QuranApi.url, QuranApi.req, surah, ayat)
 
@@ -23,9 +23,9 @@ const NextAyat = (surah, ayat) => {
 			`
 
 			setTimeout(() => {
-				document.querySelector('.card').style.visibility="visible"
-				document.querySelector('.card-header').appendChild(headerEl)
-				document.querySelector('.card-body').appendChild(bodyEl)
+				document.querySelector('.card-quran').style.visibility="visible"
+				document.querySelector('.header-quran').appendChild(headerEl)
+				document.querySelector('.quran-body').appendChild(bodyEl)
 				document.querySelector('#loader').style.visibility="hidden"
 			}, 1500)
 
@@ -33,7 +33,7 @@ const NextAyat = (surah, ayat) => {
 		console.log('Results errors : ', err)
 	})
 
-	const Next = document.querySelector('.card-body').children
+	const Next = document.querySelector('.quran-body').children
 	for(let i = 0; i < Next.length; i++){
 		Next[i].innerHTML=''
 	}
@@ -102,7 +102,7 @@ const NextAyat = (surah, ayat) => {
 	            </div>
 			</div>
 		`
-		document.querySelector('.card-body').appendChild(rowEl).children
+		document.querySelector('.quran-body').appendChild(rowEl).children
 
 	}, (err) => {
 		console.log('Results errors : ', err)
@@ -111,9 +111,9 @@ const NextAyat = (surah, ayat) => {
 
 const LastAyat = (surah, ayat) => {
 	document.querySelector('#loader').style.visibility="visible"
-	document.querySelector('.card-header').innerHTML=''
-	document.querySelector('.card-body').innerHTML=''
-	document.querySelector('.card').style.visibility="hidden"
+	document.querySelector('.header-quran').innerHTML=''
+	document.querySelector('.quran-body').innerHTML=''
+	document.querySelector('.card-quran-quran').style.visibility="hidden"
 	
 	const ayatLast = new AlQuran(QuranApi.proxy, QuranApi.url, QuranApi.req, surah, ayat)
 
@@ -133,9 +133,9 @@ const LastAyat = (surah, ayat) => {
 			`
 
 			setTimeout(() => {
-				document.querySelector('.card').style.visibility="visible"
-				document.querySelector('.card-header').appendChild(headerEl)
-				document.querySelector('.card-body').appendChild(bodyEl)
+				document.querySelector('.card-quran-quran').style.visibility="visible"
+				document.querySelector('.header-quran').appendChild(headerEl)
+				document.querySelector('.quran-body').appendChild(bodyEl)
 				document.querySelector('#loader').style.visibility="hidden"
 			}, 1500)
 
@@ -143,7 +143,7 @@ const LastAyat = (surah, ayat) => {
 		console.log('Results errors : ', err)
 	})
 
-	const Last = document.querySelector('.card-body').children
+	const Last = document.querySelector('.quran-body').children
 	for(let i = 0; i < Last.length; i++){
 		Last[i].innerHTML=''
 	}
@@ -211,7 +211,7 @@ const LastAyat = (surah, ayat) => {
 	            </div>
 			</div>
 		`
-		document.querySelector('.card-body').appendChild(rowEl).children
+		document.querySelector('.quran-body').appendChild(rowEl).children
 
 	}, (err) => {
 		console.log('Results errors : ', err)
@@ -223,9 +223,9 @@ const PrevAyat = (surah, ayat) => {
 	// console.log(`Dari method PrevAyat() : Surah - ${surah}, Ayat - ${ayat}`)
 
 	document.querySelector('#loader').style.visibility="visible"
-	document.querySelector('.card-header').innerHTML=''
-	document.querySelector('.card-body').innerHTML=''
-	document.querySelector('.card').style.visibility="hidden"
+	document.querySelector('.header-quran').innerHTML=''
+	document.querySelector('.quran-body').innerHTML=''
+	document.querySelector('.card-quran').style.visibility="hidden"
 	
 	const ayatPrev = new AlQuran(QuranApi.proxy, QuranApi.url, QuranApi.req, surah, ayat)
 
@@ -245,9 +245,9 @@ const PrevAyat = (surah, ayat) => {
 			`
 
 			setTimeout(() => {
-				document.querySelector('.card').style.visibility="visible"
-				document.querySelector('.card-header').appendChild(headerEl)
-				document.querySelector('.card-body').appendChild(bodyEl)
+				document.querySelector('.card-quran').style.visibility="visible"
+				document.querySelector('.header-quran').appendChild(headerEl)
+				document.querySelector('.quran-body').appendChild(bodyEl)
 				document.querySelector('#loader').style.visibility="hidden"
 			}, 1500)
 
@@ -255,7 +255,7 @@ const PrevAyat = (surah, ayat) => {
 		console.log('Results errors : ', err)
 	})
 
-	const Prev = document.querySelector('.card-body').children
+	const Prev = document.querySelector('.quran-body').children
 	for(let i = 0; i < Prev.length; i++){
 		Prev[i].innerHTML=''
 	}
@@ -324,7 +324,7 @@ const PrevAyat = (surah, ayat) => {
 	            </div>
 			</div>
 		`
-		document.querySelector('.card-body').appendChild(rowEl).children
+		document.querySelector('.quran-body').appendChild(rowEl).children
 
 	}, (err) => {
 		console.log('Results errors : ', err)
@@ -334,9 +334,9 @@ const PrevAyat = (surah, ayat) => {
 const FirstAyat = (surah, ayat) => {
 	// console.log(`Dari button first ayat : Surah - ${surah}, AYat - ${ayat}`)
 	document.querySelector('#loader').style.visibility="visible"
-	document.querySelector('.card-header').innerHTML=''
-	document.querySelector('.card-body').innerHTML=''
-	document.querySelector('.card').style.visibility="hidden"
+	document.querySelector('.header-quran').innerHTML=''
+	document.querySelector('.quran-body').innerHTML=''
+	document.querySelector('.card-quran').style.visibility="hidden"
 	
 	const ayatFirst = new AlQuran(QuranApi.proxy, QuranApi.url, QuranApi.req, surah, ayat)
 
@@ -356,9 +356,9 @@ const FirstAyat = (surah, ayat) => {
 			`
 
 			setTimeout(() => {
-				document.querySelector('.card').style.visibility="visible"
-				document.querySelector('.card-header').appendChild(headerEl)
-				document.querySelector('.card-body').appendChild(bodyEl)
+				document.querySelector('.card-quran').style.visibility="visible"
+				document.querySelector('.header-quran').appendChild(headerEl)
+				document.querySelector('.quran-body').appendChild(bodyEl)
 				document.querySelector('#loader').style.visibility="hidden"
 			}, 1500)
 
@@ -366,7 +366,7 @@ const FirstAyat = (surah, ayat) => {
 		console.log('Results errors : ', err)
 	})
 
-	const First = document.querySelector('.card-body').children
+	const First = document.querySelector('.quran-body').children
 	for(let i = 0; i < First.length; i++){
 		First[i].innerHTML=''
 	}
@@ -435,7 +435,7 @@ const FirstAyat = (surah, ayat) => {
 	            </div>
 			</div>
 		`
-		document.querySelector('.card-body').appendChild(rowEl).children
+		document.querySelector('.quran-body').appendChild(rowEl).children
 
 	}, (err) => {
 		console.log('Results errors : ', err)
