@@ -97,7 +97,7 @@ document.querySelector('#enter-quran').addEventListener('click', () => {
 			bodyEl.innerHTML = `
 				<h5 class="card-title">${ViewSurah.name.transliteration.id} (${ViewSurah.name.translation.id})</h5>
                 <p class="card-text">${ViewSurah.tafsir.id}</p>
-                <a class="btn btn-primary" id="view-ayat" onClick="ViewAyat(${ViewSurah.number}, ${ViewSurah.verses[0].number.inSurah})">View Ayat</a>
+                <a class="btn btn-outline-success" id="view-ayat" onClick="ViewAyat(${ViewSurah.number}, ${ViewSurah.verses[0].number.inSurah})">View Ayat</a>
 			`
 
 			setTimeout(() => {
@@ -168,7 +168,7 @@ document.querySelector('#enter-quran').addEventListener('click', () => {
 				<br/>
 
 				<div class="text-xs-center">
-					<nav aria-label="Page navigation example">
+					<nav aria-label="Page navigation example mt-2 mb-3">
 	                    <ul class="pagination justify-content-center">
 	                    	<li class="page-item ${Disabled}">
 						      <a class="page-link" aria-label="Previous" id="prev" data-total="${TotalAyat}" data-surah="${surah}" data-ayat="${FirstData}" onClick="FirstAyat(${surah}, ${FirstData})">

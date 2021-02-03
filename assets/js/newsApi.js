@@ -42,7 +42,7 @@ document.querySelector('#enter').addEventListener('click', (e) => {
 
 	if(NewsValue == 'choose' || NewsValue == null) {
 		const errEl = document.createElement('div')
-		errEl.className = "alert alert-warning"
+		errEl.className = "alert alert-danger"
 		errEl.setAttribute('role', 'alert')
 		errEl.textContent = 'Pilih Media Online Terlebih dahulu'
 		document.querySelector('#loader').style.visibility="visible"

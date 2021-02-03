@@ -41,7 +41,7 @@ const ViewAyat = (surah, ayat) => {
 				<blockquote class="mb-2 text-success"> - ${Indexes.translation.id}</blockquote>
 
 				<div class="text-xs-center">
-					<nav aria-label="Page navigation example">
+					<nav aria-label="Page navigation example mt-3 mb-2">
 	                    <ul class="pagination justify-content-center">
 
 	                    	<li class="page-item ${Disabled}">
