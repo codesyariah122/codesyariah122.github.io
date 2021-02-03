@@ -192,7 +192,7 @@ document.querySelector('#enter-quran').addEventListener('click', () => {
 	            </div>
 			</div>
 			`
-			document.querySelector('.card-quran-body').appendChild(rowEl)
+			document.querySelector('.quran-body').appendChild(rowEl)
 
 		}).catch(err => {
 			console.log(`Results errors : ${err}`)
