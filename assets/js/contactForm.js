@@ -39,10 +39,9 @@ window.addEventListener("DOMContentLoaded", function() {
       const fullName = document.getElementById('fullname').value;
       const email = document.getElementById('email').value;
       const regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-      const captcha = document.getElementById('recaptcha-anchor').getAttribute('aria-checked')
-
+      
       var data = new FormData(form);
-      if(email !== '' && captcha !== 'false'){
+      if(email !== ''){
         if(!regex.test(email)){
             Swal.fire({
                 title: 'Maaf, Format Email Tidak Valid.',
@@ -77,7 +76,7 @@ window.addEventListener("DOMContentLoaded", function() {
         }
       }else{
           Swal.fire({
-            title: 'Maaf, Contact form belum di isi dengan benar Dan harap di checklist bagian captcha demi kemanan informasi anda.',
+            title: 'Maaf, Contact form belum di isi dengan benar.',
             width: 600,
             padding: '3em',
             background: `#fff url(${obj.validationBackdrop}author5.jpg)`,
