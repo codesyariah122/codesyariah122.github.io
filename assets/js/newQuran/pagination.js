@@ -19,7 +19,8 @@ const NextAyat = (surah, ayat) => {
 			headerEl.textContent = `${ViewSurah.name.long} | Surah ${ViewSurah.name.transliteration.id} `
 			bodyEl.innerHTML = `
 				<h5 class="card-title">${ViewSurah.name.transliteration.id} (${ViewSurah.name.translation.id})</h5>
-                <p class="card-text">${ViewSurah.tafsir.id}</p>
+                <p class="card-text mb-3">${ViewSurah.tafsir.id}</p>
+                <br/>
 			`
 
 			setTimeout(() => {
@@ -76,7 +77,7 @@ const NextAyat = (surah, ayat) => {
 				<blockquote class="mb-2 text-success"> - ${Indexes.translation.id}</blockquote>
 
 				<div class="text-xs-center">
-					<nav aria-label="Page navigation example mt-5 mb-2">
+					<nav aria-label="Page navigation example mb-2">
 	                    <ul class="pagination justify-content-center">
 
 	                    	<li class="page-item ${Disabled}">
@@ -129,7 +130,8 @@ const LastAyat = (surah, ayat) => {
 			headerEl.textContent = `${ViewSurah.name.long} | Surah ${ViewSurah.name.transliteration.id} `
 			bodyEl.innerHTML = `
 				<h5 class="card-title">${ViewSurah.name.transliteration.id} (${ViewSurah.name.translation.id})</h5>
-                <p class="card-text">${ViewSurah.tafsir.id}</p>
+                <p class="card-text mb-3">${ViewSurah.tafsir.id}</p>
+                <br/>
 			`
 
 			setTimeout(() => {
@@ -185,7 +187,7 @@ const LastAyat = (surah, ayat) => {
 				<blockquote class="mb-2 text-success"> - ${Indexes.translation.id}</blockquote>
 
 				<div class="text-xs-center">
-					<nav aria-label="Page navigation example mt-5 mb-2">
+					<nav aria-label="Page navigation example mb-2">
 	                    <ul class="pagination justify-content-center">
 
 	                    	<li class="page-item ${Disabled}">
@@ -241,7 +243,8 @@ const PrevAyat = (surah, ayat) => {
 			headerEl.textContent = `${ViewSurah.name.long} | Surah ${ViewSurah.name.transliteration.id} `
 			bodyEl.innerHTML = `
 				<h5 class="card-title">${ViewSurah.name.transliteration.id} (${ViewSurah.name.translation.id})</h5>
-                <p class="card-text">${ViewSurah.tafsir.id}</p>
+                <p class="card-text mb-3">${ViewSurah.tafsir.id}</p>
+                <br/>
 			`
 
 			setTimeout(() => {
@@ -298,7 +301,7 @@ const PrevAyat = (surah, ayat) => {
 				<blockquote class="mb-2 text-success"> - ${Indexes.translation.id}</blockquote>
 
 				<div class="text-xs-center">
-					<nav aria-label="Page navigation example mt-5 mb-2">
+					<nav aria-label="Page navigation example mb-2">
 	                    <ul class="pagination justify-content-center">
 
 	                    	<li class="page-item ${Disabled}">
@@ -352,7 +355,8 @@ const FirstAyat = (surah, ayat) => {
 			headerEl.textContent = `${ViewSurah.name.long} | Surah ${ViewSurah.name.transliteration.id} `
 			bodyEl.innerHTML = `
 				<h5 class="card-title">${ViewSurah.name.transliteration.id} (${ViewSurah.name.translation.id})</h5>
-                <p class="card-text">${ViewSurah.tafsir.id}</p>
+                <p class="card-text mb-3">${ViewSurah.tafsir.id}</p>
+                <br/>
 			`
 
 			setTimeout(() => {
@@ -409,7 +413,7 @@ const FirstAyat = (surah, ayat) => {
 				<blockquote class="mb-2 text-success"> - ${Indexes.translation.id}</blockquote>
 
 				<div class="text-xs-center">
-					<nav aria-label="Page navigation example mt-5 mb-2">
+					<nav aria-label="Page navigation example mb-2">
 	                    <ul class="pagination justify-content-center">
 
 	                    	<li class="page-item ${Disabled}">
