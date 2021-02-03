@@ -38,7 +38,10 @@ const ViewAyat = (surah, ayat) => {
 					<source src="${Indexes.audio.primary}" type="audio/mp3">
 				</audio>
 
-				<blockquote class="mb-2 text-success"> - ${Indexes.translation.id}</blockquote>
+				<blockquote class="mb-3 text-success"> - ${Indexes.translation.id}</blockquote>
+				
+				<br/>
+				
 
 				<div class="text-xs-center">
 					<nav aria-label="Page navigation example mt-3 mb-2">
