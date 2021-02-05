@@ -116,8 +116,9 @@ function QuranCard(s)  {
 			        	<audio controls>
 							<source src="${s.audio.primary}" type="audio/mp3">
 						</audio>
+						<br/>
 
-						<div class="text-xs-center mt-2">
+						<div class="text-xs-center mt-3">
 							<nav aria-label="Page navigation example">
 							  <ul class="pagination justify-content-center">
 

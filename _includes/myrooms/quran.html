@@ -54,75 +54,61 @@ font-family: 'AlQalam';
 
   <div class="container">
 
-   <div class="row justify-content-center">
+    <div class="row justify-content-center">
 
-        <div class="col-md-12">
-             <div class="container">
-                <div class="row justify-content-center">
+        <div class="col-12 col-xs-12 col-sm-12">
 
-                    <div class="col-12 col-xs-12 col-sm-12">
+              <h1 class="text-success text-center" style="font-family:Reey Regular;">Sang Pembeda</h1>
 
-                      <h1 class="text-success text-center" style="font-family:Reey Regular;">Sang Pembeda</h1>
+              <p class="mt-2 mb-2 text-primary text-center">Baca Quran Online</p>
 
-                        <p class="mt-2 mb-2 text-primary text-center">Baca Quran Online</p>
+              <h4 class="text-center">Pilih Surah Quran</h4>
 
-                        <h4 class="text-center">Pilih Surah Quran</h4>
-
-                          <hr>     
-                        <div class="row">
-                            <div class="col-md-4">
-                                <!-- input surah -->
-                                    <div class="input-group mb-3">
-                                    <select class="custom-select" id="select-surah" name="surah" style="width:50%;">  
-                                    </select>
+              <hr>     
+          <div class="row">
+              <div class="col-md-4">
+              <!-- input surah -->
+                  <div class="input-group mb-3">
+                      <select class="custom-select" id="select-surah" name="surah" style="width:50%;">  
+                      </select>
                                     
-                                </div>
-                            </div>
-
-                                <!-- input ayat -->
-                                <div class="col-md-4">
-                                    <div class="input-group mb-3">
-                                    <select class="custom-select" id="select-ayat" name="ayat" style="width:30%;">  
-                                    </select> 
-                                    <div class="input-group-append">
-                                        <button id="enter-quran" class="btn btn-dark btn-sm">Enter</button>
-                                    </div>
-                                    </div>
-
-                                </div>
-
-                                <!-- loader -->
-
-                                <div class="col-md-3">
-                                    
-                                    <div id="loader">
-                                        <img src="img/loading2.gif" class="img-responsive" width="70" height="30">
-                                    </div>
-
-                                </div>
-
-
-                            </div>
-
-                        </div>                
-
-                        <div id="error-quran" style="width: 85%; margin-left: -.7rem;"></div>    
-
-                    </div>
-
-            <div id="quran-list"></div>
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content tafsir-modal">
-                  
-                </div>
+                  </div>
               </div>
+              
+              <!-- input ayat -->
+              <div class="col-md-4">
+                  <div class="input-group mb-3">
+                      <select class="custom-select" id="select-ayat" name="ayat" style="width:30%;">  
+                      </select> 
+                      
+                      <div class="input-group-append">
+                          <button id="enter-quran" class="btn btn-dark btn-sm">Enter</button>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- loader -->
+              <div class="col-md-3">
+                                    
+                  <div id="loader">
+                      <img src="img/loading2.gif" class="img-responsive" width="70" height="30">
+                  </div>
+              </div>
+
             </div>
 
-        </div>
+      </div>                
 
+      <div id="error-quran" style="width: 85%; margin-left: -.7rem;"></div>   
+      <div id="quran-list"></div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content tafsir-modal">
+                  
+              </div>
+          </div>
       </div>
 
   <h1 class="underline mb-3 mt-3"></h1>
