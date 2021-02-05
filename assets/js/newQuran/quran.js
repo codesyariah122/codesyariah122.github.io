@@ -1,203 +1,168 @@
-document.querySelector('#loader').style.visibility="hidden"
-document.querySelector('.card-quran').style.visibility="hidden"
-document.querySelector('.header-quran').innerHTML=''
-
-let NullOptionsSurah = document.createElement('option')
-	NullOptionsSurah.setAttribute('value', 'choose')
-	NullOptionsSurah.textContent = 'Choose ... '
-	document.querySelector('#select-surah').appendChild(NullOptionsSurah)
-
-let NullOptionsAyat = document.createElement('option')
-	NullOptionsAyat.setAttribute('value', 'pilih-ayat')
-	NullOptionsAyat.textContent='Pilih Ayat'
-	document.querySelector('#select-ayat').appendChild(NullOptionsAyat)
-
-const QuranApi = {
-	proxy: 'https://cors-anywhere.herokuapp.com/',
-	url: 'https://api.quran.sutanlab.id/',
-	req: 'surah/'
+const api = {
+	url: 'https://api.quran.sutanlab.id/surah/'
 }
 
-const SelectSurah = new AlQuran(QuranApi.proxy, QuranApi.url, QuranApi.req)
+const Loader = document.querySelector('#loader')
+const enterQuran = document.querySelector('#enter-quran')
+const NextAyat = document.querySelector('.next')
+const PrevAyat = document.querySelector('.prev')
+const errorQuran = document.querySelector('#error-quran')
+const selectSurah = document.querySelector('#select-surah')
+const selectAyat = document.querySelector('#select-ayat')
+const optSurahEl = document.createElement('option')
+const optAyatEl = document.createElement('option')
+const optErrEl = document.createElement('option')
 
-// console.log(SelectSurah.proxy)
+optSurahEl.setAttribute('value', '')
+optSurahEl.textContent='choose ... '
+optAyatEl.setAttribute('value', 1)
+optAyatEl.textContent='Pilih Ayat'
+optErrEl.className='alert alert-danger'
+optErrEl.setAttribute('role', 'alert')
+optErrEl.textContent='Pilih surah terlebih dahulu ... '
 
+selectSurah.appendChild(optSurahEl)
+selectAyat.appendChild(optAyatEl)
 
-SelectSurah.getSelectSurah()
-.then(res => {
-	// console.log(res)
-	const Surah = res.data 
+Loader.style.visibility="hidden"
+errorQuran.style.visibility="visible"
 
-	Surah.map(key => {
-		let optEl = document.createElement('option')
-		optEl.setAttribute('value', key.number)
-		optEl.textContent=key.name.transliteration.id
-		document.querySelector('#select-surah').appendChild(optEl)
-	})
-}).catch(err => console.log('Error results : ', err))
+setSurah(api.url)
 
-
-document.querySelector('#select-surah').addEventListener('change', () => {
-	document.querySelector('#loader').style.visibility="visible"
-	document.querySelector('#select-ayat').innerHTML=''
-	document.querySelector('#select-ayat').appendChild(NullOptionsAyat)
-	document.querySelector('#error-quran').innerHTML=''
-
-	const surah = document.querySelector('#select-surah').value
-	const SelectAyat = new AlQuran(QuranApi.proxy, QuranApi.url, QuranApi.req, surah)
-
-	SelectAyat.getSelectAyat()
-	.then( res => {
-		const AyatDatas = res.data.verses
-		AyatDatas.map(key => {
-			const optEl = document.createElement('option')
-			optEl.setAttribute('value', key.number.inSurah)
-			optEl.textContent=`Ayat - ${key.number.inSurah}`
-			document.querySelector('#select-ayat').appendChild(optEl)
-		})
-	document.querySelector('#loader').style.visibility="hidden"
-	}).catch(err => console.log(`Results error : ${err}`))
-
+.then(response => response.json())
+.then(response => {
+	const Data = response.data 
+	OptSurah(Data)
 })
 
 
-document.querySelector('#enter-quran').addEventListener('click', () => {
-	document.querySelector('#error-quran').innerHTML=''
-	document.querySelector('.header-quran').innerHTML=''
-	document.querySelector('.quran-body').innerHTML=''
-	document.querySelector('.card-quran').style.visibility="hidden"
+selectSurah.addEventListener('change', function(e){
+	Loader.style.visibility="visible"
+	errorQuran.innerHTML=''
+	selectAyat.innerHTML = ''
+	selectAyat.appendChild(optAyatEl)
 
-	const surah = document.querySelector('#select-surah').value
-	const ayat = document.querySelector('#select-ayat').value
-
-	if(surah == 'choose'){
-		const errEl = document.createElement('div')
-		errEl.className = 'alert alert-danger'
-		errEl.setAttribute('role', 'alert')
-		errEl.textContent = 'Pilih Surah Terlebih dahulu'
-		document.querySelector('#loader').style.visibility="visible"
-		setTimeout(()=>{
-			document.querySelector('#error-quran').appendChild(errEl)
-			document.querySelector('#loader').style.visibility="hidden"
-		}, 1500)
-	}else if(ayat === 'pilih-ayat'){
-		document.querySelector('#loader').style.visibility="visible"
-
-		const GetAyat = new AlQuran(QuranApi.proxy, QuranApi.url, QuranApi.req, surah)
-
-		GetAyat.getSelectAyat()
-		.then(res => {
-
-			// console.log("Success results : ", res)
-			const ViewSurah = res.data
-			
-			const headerEl = document.createElement('h4')
-			const bodyEl = document.createElement('div')
-			headerEl.textContent = `${ViewSurah.name.long} | Surah ${ViewSurah.name.transliteration.id} `
-			bodyEl.innerHTML = `
-				<h5 class="card-title">${ViewSurah.name.transliteration.id} (${ViewSurah.name.translation.id})</h5>
-                <p class="card-text">${ViewSurah.tafsir.id}</p>
-                <a class="btn btn-outline-success" id="view-ayat" onClick="ViewAyat(${ViewSurah.number}, ${ViewSurah.verses[0].number.inSurah})">View Ayat</a>
-			`
-
-			setTimeout(() => {
-				document.querySelector('.card-quran').style.visibility="visible"
-				document.querySelector('.header-quran').appendChild(headerEl)
-				document.querySelector('.quran-body').appendChild(bodyEl)
-				document.querySelector('#loader').style.visibility="hidden"
+	const surah = this.value
+	if(surah !== ''){
+		setAyat(api.url, surah)
+		.finally(() => {
+			setTimeout(function(){
+				Loader.style.visibility="hidden"			
 			}, 1500)
-
-		}).catch(err => console.log(`Error results : ${err}`))
-	
+		})
+		.then(response => response.json())
+		.then(response => {
+			// console.log(response)
+			const Data = response.data .verses
+			OptAyat(Data)
+		})
 	}else{
-		document.querySelector('#loader').style.visibility="visible"
+		setTimeout(function(){
+			Loader.style.visibility="hidden"
+		}, 500)
+	}
+})
 
-		const GetSurahAyat = new AlQuran(QuranApi.proxy, QuranApi.url, QuranApi.req, surah, ayat)
+enterQuran.addEventListener('click', function() {
+	Loader.style.visibility="visible"
+	errorQuran.style.visibility="visible"
+	const surah = selectSurah.value
+	const ayat = selectAyat.value
 
-		GetSurahAyat.getSurahAyat()
+	if(surah === '' ) {
+		setTimeout(function(){
+			errorQuran.appendChild(optErrEl)
+			Loader.style.visibility="hidden"
+		}, 500)
+	}else{
+		getQuran(api.url, surah, ayat)
+		.finally(() => {
+			setTimeout(function(){
+				Loader.style.visibility="hidden"
+			}, 1000)
+		})
+		.then( res => res.json())
 		.then( res => {
-			const DataSurah = res.data
-			const DataAyat = res.data.text 
-			console.log(DataSurah)
-
-			const headerEl = document.createElement('h4')
-			const bodyEl = document.createElement('div')
-			const rowEl = document.createElement('div')
-			
-			headerEl.textContent = `${DataSurah.surah.name.long} | Surah ${DataSurah.surah.name.transliteration.id} `
-			bodyEl.innerHTML = `
-				<h5 class="card-title">${DataSurah.surah.name.transliteration.id} (${DataSurah.surah.name.translation.id})</h5>
-                <p class="card-text mb-3">${DataSurah.surah.tafsir.id}</p>
-                <br/>
-			`
-
-			setTimeout(() => {
-				document.querySelector('.card-quran').style.visibility="visible"
-				document.querySelector('.header-quran').appendChild(headerEl)
-				document.querySelector('.quran-body').appendChild(bodyEl)
-				document.querySelector('#loader').style.visibility="hidden"
-			}, 1500)
-
-			console.log(typeof DataSurah.surah.preBismillah)
-
-			const TotalAyat = DataSurah.surah.numberOfVerses
-			const Disabled = DataSurah.number.inSurah == 1 ? 'disabled' : ''
-			const DisableTab = DataSurah.number.inSurah == 1 ? 'tabindex="-1" aria-disabled="true"' : ''
-			const DisableNext = DataSurah.number.inSurah >= TotalAyat ? 'disabled' : ''
-			const ActiveData = DataSurah.number.inSurah
-			const NextData = (DataSurah.number.inSurah >= TotalAyat) ? 1 : DataSurah.number.inSurah + 1
-			const PrevData = (DataSurah.number.inSurah != 1) ? DataSurah.number.inSurah - 1 : '';
-			const FirstData = DataSurah.number.inSurah == 1 ? (ActiveData + 1) - ActiveData : ''
-			const LastData = DataSurah.number.inSurah == 1 ? (ActiveData - ActiveData)+TotalAyat : ''
-			const PreBismillah = DataSurah.surah.PreBismillah ? `<h2 class="mb-5"> - ${DataSurah.surah.preBismillah.text.arab}</h2>` : '' 
-
-			// console.log(PreBismillah)
-
-			rowEl.className='row justify-content-center'
-			rowEl.innerHTML = `
-				<div class="col-12 col-xs-12 col-sm-12 text-center">
-				<h2>${PreBismillah}</h2>
-							<h2>${DataSurah.text.arab} &nbsp; <span class="number-ayat">${DataSurah.number.inSurah}</span> </h2>
-				<h5>${DataSurah.text.transliteration.en}</h5>
-
-				<audio controls>
-					<source src="${DataSurah.audio.primary}" type="audio/mp3">
-				</audio>
-
-				<blockquote class="mb-3 text-success"> - ${DataSurah.translation.id}</blockquote>
-
-				<br/>
-
-				<div class="text-xs-center">
-					<nav aria-label="Page navigation example mb-3">
-	                    <ul class="pagination justify-content-center">
-	                    	<li class="page-item ${Disabled}">
-						      <a class="page-link" aria-label="Previous" id="prev" data-total="${TotalAyat}" data-surah="${surah}" data-ayat="${FirstData}" onClick="FirstAyat(${surah}, ${FirstData})">
-						        <span aria-hidden="true">&laquo;</span>
-						      </a>
-						    </li>
-	                    	<li class="page-item ${Disabled}"> 
-								<a class="page-link" ${DisableTab} id="prev" onClick="PrevAyat(${surah}, ${PrevData})">Previous</a>
-							</li>
-
-							<li class="page-item">
-								<a class="page-link" id="next" data-total="${TotalAyat}" data-surah="${surah}" data-next="${surah}, ${DataSurah.number.inSurah + 1}" onClick="NextAyat(${surah}, ${DataSurah.number.inSurah + 1})" id="next">Next</a>
-							</li>
-							<li class="page-item ${DisableNext}">
-						      <a class="page-link" aria-label="Next" id="next" data-total="${TotalAyat}" data-surah="${surah}" data-ayat="${LastData}" onClick="LastAyat(${surah}, ${LastData})">
-						        <span aria-hidden="true">&raquo;</span>
-						      </a>
-						    </li>
-	                    </ul>
-	                </nav>
-	            </div>
-			</div>
-			`
-			document.querySelector('.quran-body').appendChild(rowEl)
-
-		}).catch(err => {
-			console.log(`Results errors : ${err}`)
+			const Data = res.data
+			ViewSurah(Data)
 		})
 	}
+	
+})
 
+
+
+document.addEventListener('click', function(e){
+	if(e.target.classList.contains('next')){
+		const surah = e.target.dataset.surah
+		const next = e.target.dataset.ayat
+
+		getQuran(api.url, surah, next)
+		.finally(() => {
+			setTimeout(function(){
+				Loader.style.visibility="hidden"
+			}, 1000)
+		})
+		.then( res => res.json())
+		.then( res => {
+			const Data = res.data
+			ViewSurah(Data)
+		})	
+	}else if(e.target.classList.contains('last')){
+		const surah = e.target.dataset.surah
+		const last = e.target.dataset.ayat
+		console.log(last)
+		getQuran(api.url, surah, last)
+		.finally(() => {
+			setTimeout(function(){
+				Loader.style.visibility="hidden"
+			}, 1000)
+		})
+		.then( res => res.json())
+		.then( res => {
+			const Data = res.data
+			ViewSurah(Data)
+		})	
+		// .catch((err) => console.log('Results error : ', err))
+	}else if(e.target.classList.contains('prev')){
+		const surah = e.target.dataset.surah
+		const prev = e.target.dataset.ayat
+		getQuran(api.url, surah, prev)
+		.finally(() => {
+			setTimeout(function(){
+				Loader.style.visibility="hidden"
+			}, 1000)
+		})
+		.then( res => res.json())
+		.then( res => {
+			const Data = res.data
+			ViewSurah(Data)
+		})	
+		// .catch((err) => console.log('Results error : ', err))
+	}else if(e.target.classList.contains('first')){
+		const surah = e.target.dataset.surah
+		const first = e.target.dataset.ayat
+		getQuran(api.url, surah, first)
+		.finally(() => {
+			setTimeout(function(){
+				Loader.style.visibility="hidden"
+			}, 1000)
+		})
+		.then( res => res.json())
+		.then( res => {
+			// console.log(res)
+			const Data = res.data
+			ViewSurah(Data)
+		})	
+		// .catch((err) => console.log('Results error : ', err))
+	}else if(e.target.classList.contains('tafsir-surah')){
+		const surah = e.target.dataset.surah
+		Literation(api.url, surah)
+		.then( res => res.json())
+		.then( res => {
+			const Data = res.data
+			ViewLiteration(Data)
+		})
+		.catch((err) => console.log('Results error : ', err))
+	}
 })

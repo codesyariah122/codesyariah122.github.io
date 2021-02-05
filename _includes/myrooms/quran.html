@@ -1,6 +1,23 @@
 <style type="text/css">
-html {
-  scroll-behavior: smooth;
+.ayat h1 h2 h3 {
+  font-size: 35px !important;
+  font-family: 'AlQalam';
+}
+
+.circle-number {
+font-family: 'AlQalam';
+  background: rgba(0, 0, 0, 0.7);
+  font-size: 1.7rem !important;
+  border-radius: 0.8em;
+  -moz-border-radius: 0.8em;
+  -webkit-border-radius: 0.8em;
+  color: #ffffff;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1.5em;
+  margin-right: 5px;
+  text-align: center;
+  width: 1.6em; 
 }
 .loader{
   margin-top: -3rem;
@@ -37,77 +54,76 @@ html {
 
   <div class="container">
 
-    <div class="row justify-content-center">
+   <div class="row justify-content-center">
 
-            <div class="col-12 col-xs-12 col-sm-12">
-                
-              <h1 class="text-success text-center" style="font-family:Reey Regular;">Sang Pembeda</h1>
+        <div class="col-md-12">
+             <div class="container">
+                <div class="row justify-content-center">
 
-              <p class="mt-2 mb-2 text-primary text-center">Baca Quran Online</p>
+                    <div class="col-12 col-xs-12 col-sm-12">
 
-              <h4 class="text-center">Pilih Surah Quran</h4>
+                      <h1 class="text-success text-center" style="font-family:Reey Regular;">Sang Pembeda</h1>
 
-                <hr>    
-                
-                <div class="row justify-content-center ml-3">
-                    <div class="col-md-6">
-                        <!-- input surah -->
-                            <div class="input-group mb-3">
-                            <select class="custom-select" id="select-surah" name="surah" style="width:50%;">
-                                      <!-- <option selected>Choose...</option> -->          
-                            </select>
-                            
-                        </div>
+                        <p class="mt-2 mb-2 text-primary text-center">Baca Quran Online</p>
+
+                        <h4 class="text-center">Pilih Surah Quran</h4>
+
+                          <hr>     
+                        <div class="row">
+                            <div class="col-md-4">
+                                <!-- input surah -->
+                                    <div class="input-group mb-3">
+                                    <select class="custom-select" id="select-surah" name="surah" style="width:50%;">  
+                                    </select>
+                                    
+                                </div>
+                            </div>
+
+                                <!-- input ayat -->
+                                <div class="col-md-4">
+                                    <div class="input-group mb-3">
+                                    <select class="custom-select" id="select-ayat" name="ayat" style="width:30%;">  
+                                    </select> 
+                                    <div class="input-group-append">
+                                        <button id="enter-quran" class="btn btn-dark btn-sm">Enter</button>
+                                    </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- loader -->
+
+                                <div class="col-md-3">
+                                    
+                                    <div id="loader">
+                                        <img src="img/loading2.gif" class="img-responsive" width="70" height="30">
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>                
+
+                        <div id="error-quran" style="width: 85%; margin-left: -.7rem;"></div>    
+
                     </div>
 
-                        <!-- input ayat -->
-                        <div class="col-md-3">
-                            
-                            <div class="input-group mb-3">
-                            <select class="custom-select" id="select-ayat" name="ayat" style="width:30%;">
-                                      <!-- <option selected>Choose...</option> -->          
-                            </select>
-                                    
-                            <div class="input-group-append">
-                                <button id="enter-quran" class="btn btn-dark btn-sm">Enter</button>
-                            </div>
-                            </div>
+            <div id="quran-list"></div>
 
-                        </div>
-
-                        <!-- loader -->
-
-                        <div class="col-md-2">
-                            
-                            <div id="loader">
-                                <img src="{{site.url}}/assets/images/loading2.gif" class="img-responsive" width="70" height="30">
-                            </div>
-
-                        </div>
-
-                </div>  
-
-              <div id="error-quran" style="width: 85%; margin-left: -.7rem;"></div>    
-
-                <div class="card card-quran">
-                  <div class="card-header header-quran">
-                    Featured
-                  </div>
-                  <div class="card-body quran-body">
-
-                    <div id="view-surah"></div>
-                    
-                    <div id="view-ayat"></div>
-
-                  </div>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content tafsir-modal">
+                  
                 </div>
+              </div>
+            </div>
 
+        </div>
 
-      <div style="width: 100%; height: auto !important; clear: both; text-align: center;" class="google-auto-placed">
       </div>
-
-    </div>
-  </div>
 
   <h1 class="underline mb-3 mt-3"></h1>
 
