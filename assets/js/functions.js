@@ -5,8 +5,8 @@ const setIP = async(url) => {
 }
 
 
-const geoLocation = async(url, data) => {
-	const req = await fetch(`${url}${data}`)
+const geoLocation = async(url, data, param) => {
+	const req = await fetch(`${url}${data}${param}`)
 	return req
 }
 
@@ -17,11 +17,11 @@ const getResult = (Data) => {
 	resEl.setAttribute('style', 'width: 18rem;')
 	resEl.innerHTML = `
 		<ul class="list-group list-group-flush">
-			<li class="list-group-item">Your ip address = <b> ${Data.query} </b></li>
-			<li class="list-group-item">Country = <b>${Data.country}</b> 
-				<img src="https://www.countryflags.io/${Data.countryCode}/shiny/64.png" class="img-responsive circle">
+			<li class="list-group-item">Your ip address = <b> ${Data.ip} </b></li>
+			<li class="list-group-item">Country = <b>${Data.country_name}</b> 
+				<img src="https://www.countryflags.io/${Data.country_code}/shiny/64.png" class="img-responsive circle">
 			</li>
-			<li class="list-group-item">Region Name = <b>${Data.regionName}</b></li>
+			<li class="list-group-item">Region Name = <b>${Data.region}</b></li>
 			<li class="list-group-item">City = <b>${Data.city}</b></li>
 		</ul>
 	`

@@ -4,7 +4,8 @@ let ip = getCookie('ip_addr')
 
 const api = {
 	ip: 'https://api.ipify.org/?format=json',
-	geo: 'https://cors-anywhere.herokuapp.com/http://ip-api.com/json/',
+	geo: 'https://ipapi.co/',
+	// geo: 'http://ip-api.com/json/',
 	button: document.querySelector('#lookup'),
 	loader: document.querySelector('#loader'),
 	error: document.querySelector('#error'),
@@ -28,7 +29,7 @@ setIP(api.ip)
 })
 
 if(code !== ''){
-	geoLocation(api.geo, ip)
+	geoLocation(api.geo, ip, '/json')
 	.finally(()=>{
 		api.button.style.display="none"
 	})
@@ -40,7 +41,7 @@ if(code !== ''){
 }else{
 	api.button.addEventListener('click', function(){
 		console.log(ip)
-		geoLocation(api.geo, ip)
+		geoLocation(api.geo, ip, '/json')
 		.finally(() => {
 			setTimeout(function(){
 				api.button.style.visibility="hidden"
@@ -50,10 +51,10 @@ if(code !== ''){
 		.then(res => res.json())
 		.then( res => {
 			getResult(res)
-			setCookie('code', res.countryCode, 1)
-			setCookie('country', res.country, 1)
-			setCookie('lat', res.lat, 1)
-			setCookie('lng', res.lon, 1)
+			setCookie('code', res.country_code, 1)
+			setCookie('country', res.country_name, 1)
+			setCookie('lat', res.latitude, 1)
+			setCookie('lng', res.longitude, 1)
 		})
 	})
 }
