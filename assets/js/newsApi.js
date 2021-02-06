@@ -9,9 +9,9 @@ const api = {
 	button: document.querySelector('#lookup'),
 	loader: document.querySelector('#loader'),
 	error: document.querySelector('#error'),
-	alertLocation: document.querySelector('#alert-location'),
+	alertLocation: document.querySelector('.alert-location'),
 	news: {
-		url: 'https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines/?',
+		url: 'https://newsapi.org/v2/top-headlines/?',
 		code: `country=${code}&`,
 		key: 'apiKey=5effd68f01ce47589b435b22ebdb06b9',
 		select: document.querySelector('#select-news'),
@@ -76,6 +76,7 @@ NewsMedia(api.news.url, api.news.code, api.news.key)
 })
 .then( res => res.json())
 .then( res => {
+	console.log(res)
 	SelectList(res.articles)
 })
 
