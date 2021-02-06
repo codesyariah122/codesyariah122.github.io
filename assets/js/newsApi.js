@@ -1,90 +1,97 @@
-// Reading Updates
-const Code = Cookies.get('code');
-const param = {
-	url: 'https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines/?',
-	country: `country=${Code}`,
-	apiKey: 'apiKey=5effd68f01ce47589b435b22ebdb06b9'
+// geo location ip address
+setIP(apiNews.ip)
+.then( res => res.json())
+.then(res => {
+	setCookie('ip_addr', res.ip, 1)
+})
+
+if(code !== ''){
+	geoLocation(apiNews.geo, ip)
+	.finally(()=>{
+		apiNews.button.style.display="none"
+	})
+	.then(res => res.json())
+	.then(res => {
+		getResult(res)
+	})
+
+}else{
+	apiNews.button.addEventListener('click', function(){
+		console.log(ip)
+		geoLocation(apiNews.geo, ip)
+		.finally(() => {
+			setTimeout(function(){
+				apiNews.button.style.visibility="hidden"
+				location.reload()
+			}, 1500)
+		})
+		.then(res => res.json())
+		.then( res => {
+			getResult(res)
+			setCookie('code', res.countryCode, 1)
+			setCookie('country', res.country, 1)
+			setCookie('lat', res.lat, 1)
+			setCookie('lng', res.lon, 1)
+		})
+	})
 }
 
-// console.log("Start")
-const newEl = document.createElement('option')
-newEl.setAttribute('value', 'choose')
-newEl.textContent = 'Choose ... '
-document.querySelector('#select-news').appendChild(newEl)
+// news
+const NullOptionEl = document.createElement('option')
+NullOptionEl.setAttribute('value', '')
+NullOptionEl.textContent='Pilih Media'
+apiNews.news.select.appendChild(NullOptionEl)
 
-
-
-NewsMedia(param.url, param.country, param.apiKey, res => {
-	const ResultsData = JSON.parse(res)
-	// console.log("Results success : ", ResultsData)
-	const Medias = ResultsData.articles
-
-	Medias.map((key, index) => {
-		const name = Medias[index].source.name
-		const newEl = document.createElement('option')
-		newEl.setAttribute('value', index)
-		newEl.textContent = name
-		document.querySelector('#select-news').appendChild(newEl)
-	})
-}, (err) => {
-	console.log("Results Error : ", err)
+apiNews.loader.style.visibility="visible"
+NewsMedia(apiNews.news.url, apiNews.news.code, apiNews.news.key)
+.finally(() => {
+	setTimeout(function(){
+		apiNews.loader.style.visibility="hidden"
+	}, 1500)
 })
-// console.log("Finish")
+.then( res => res.json())
+.then( res => {
+	SelectList(res.articles)
+})
 
-document.querySelector('#loader').style.visibility="hidden"
-document.querySelector('#enter').addEventListener('click', (e) => {
-	e.preventDefault()
-
-	document.querySelector('#error').innerHTML=''
-	document.querySelector('#news-list').innerHTML=''
-
-	const NewsValue = document.querySelector('#select-news').value
-
-	if(NewsValue == 'choose' || NewsValue == null) {
+apiNews.news.button.addEventListener('click', function(){
+	apiNews.error.innerHTML=''
+	const mediaValue = apiNews.news.select.value
+	if(mediaValue === '' || mediaValue === undefined){
 		const errEl = document.createElement('div')
-		errEl.className = "alert alert-danger"
+		errEl.className='alert alert-danger'
 		errEl.setAttribute('role', 'alert')
-		errEl.textContent = 'Pilih Media Online Terlebih dahulu'
-		document.querySelector('#loader').style.visibility="visible"
-		setTimeout(()=>{
-			document.querySelector('#error').appendChild(errEl)
-			document.querySelector('#loader').style.visibility="hidden"
+		errEl.textContent='Pilih media digital news terlebih dahulu'
+
+		apiNews.loader.style.visibility="visible"
+		setTimeout(function(){
+			apiNews.loader.style.visibility="hidden"
+			apiNews.error.appendChild(errEl)
+		}, 1000)
+	}else{
+		apiNews.loader.style.visibility="visible"
+		NewsMedia(apiNews.news.url, apiNews.news.code, apiNews.news.key)
+		.finally(() => {
+			apiNews.loader.style.visibility="hidden"
+			apiNews.error.style.visibility="hidden"
 		}, 1500)
+		.then( res => res.json())
+		.then( res => {
+			const DataMedia = res.articles[mediaValue]
+			NewsCard(DataMedia)
+		})
+	}
+})
 
-	}else {
-		document.querySelector('#select-news').value='choose'
-		document.querySelector('#loader').style.visibility="visible"
-
-		NewsMedia(param.url, param.country, param.apiKey, res => {
-			const start = JSON.parse(res)
-			const GetNews = start.articles[NewsValue]
-
-			const newEl = document.createElement('div')
-			newEl.className = 'card mt-5 mb-2'
-			newEl.setAttribute('style', 'width: 80%;')
-			newEl.innerHTML = `
-				<img src="${GetNews.urlToImage}" class="card-img-top" alt="${GetNews.source.name}">
-				<div class="card-body">
-					<h5 class="card-title">${GetNews.title}</h5>
-					<small class="text-info">
-						${GetNews.publishedAt} | ${GetNews.author}
-					</small>
-					
-					<p class="card-text">${GetNews.description}.</p>
-						    
-					<a id="read-news" onClick="ReadNews(${NewsValue})" data-news="${NewsValue}" class="btn btn-primary read-news" data-toggle="modal" data-target="#newsModal">Lanjut Baca</a>
-				</div>
-			`
-
-
-			setTimeout(()=>{
-				document.querySelector('#news-list').appendChild(newEl)
-
-				document.querySelector('#loader').style.visibility="hidden"
-			}, 2500)
-
-		}, (err) => {
-			console.log("Results Error : ", err)
+document.addEventListener('click', function(e){
+	const Detail = e.target.classList.contains('news-detail')
+	if(Detail){
+		const newsId = e.target.dataset.newsid
+		NewsMedia(apiNews.news.url, apiNews.news.code, apiNews.news.key)
+		.then( res => res.json())
+		.then(res => {
+			const NewsDetail = res.articles[newsId]
+			NewsCardDetail(NewsDetail)
 		})
 	}
 })

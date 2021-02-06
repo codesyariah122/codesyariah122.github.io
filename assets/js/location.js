@@ -1,10 +1,4 @@
-const api = {
-  ip: 'https://api.ipify.org/?format=json',
-  geo: 'http://ip-api.com/json/',
-  button: document.querySelector('#lookup'),
-}
-
-setIP(api.ip)
+setIP(apiLocation.ip)
 .then( res => res.json())
 .then(res => {
   setCookie('ip_addr', res.ip, 1)
@@ -21,9 +15,9 @@ if(code !== ''){
     lng: getCookie('lng')
   }
 
-  geoLocation(api.geo, ip)
+  geoLocation(apiLocation.geo, ip)
   .finally(()=>{
-    api.button.style.display="none"
+    apiLocation.button.style.display="none"
   })
   .then(res => res.json())
   .then(res => {
@@ -31,12 +25,12 @@ if(code !== ''){
   })
 
 }else{
-  api.button.addEventListener('click', function(){
+  apiLocation.button.addEventListener('click', function(){
     console.log(ip)
-    geoLocation(api.geo, ip)
+    geoLocation(apiLocation.geo, ip)
     .finally(() => {
       setTimeout(function(){
-        api.button.style.visibility="hidden"
+        apiLocation.button.style.visibility="hidden"
       }, 1000)
     })
     .then(res => res.json())
@@ -50,7 +44,6 @@ if(code !== ''){
   })
 }
 
-// geoLocation(api.geo, document.cookie('ip_addr'))
 
 // Google map
 let map=''
