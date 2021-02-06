@@ -53,7 +53,7 @@ if(code !== ''){
 			setTimeout(function(){
 				apiNews.button.style.visibility="hidden"
 				apiNews.alertLocation.style.visibility="hidden"
-				// location.reload()
+				location.reload()
 			}, 1500)
 		})
 		.then(res => res.json())
