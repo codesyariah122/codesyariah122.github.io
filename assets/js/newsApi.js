@@ -1,22 +1,13 @@
+
 let code = getCookie('code')
 let ip = getCookie('ip_addr')
 
-const apiLocation = {
-  ip: 'https://api.ipify.org/?format=json',
-  geo: 'http://ip-api.com/json/',
-  button: document.querySelector('#lookup'),
-  geo: {
-  	result: document.querySelector('#your-location')
-  }
-}
-
-const apiNews = {
+const api = {
 	ip: 'https://api.ipify.org/?format=json',
 	geo: 'http://ip-api.com/json/',
 	button: document.querySelector('#lookup'),
 	loader: document.querySelector('#loader'),
 	error: document.querySelector('#error'),
-	alertLocation: document.querySelector('.alert-location'),
 	news: {
 		url: 'https://newsapi.org/v2/top-headlines/?',
 		code: `country=${code}&`,
@@ -28,33 +19,31 @@ const apiNews = {
 	}
 }
 
+
 // geo location ip address
-setIP(apiNews.ip)
+setIP(api.ip)
 .then( res => res.json())
 .then(res => {
 	setCookie('ip_addr', res.ip, 1)
 })
 
 if(code !== ''){
-	geoLocation(apiNews.geo, ip)
+	geoLocation(api.geo, ip)
 	.finally(()=>{
-		apiNews.button.style.display="none"
-		apiNews.alertLocation.style.display="none"
+		api.button.style.display="none"
 	})
 	.then(res => res.json())
 	.then(res => {
 		getResult(res)
 	})
-	.catch(err => console.log('Error results : ', err))
 
 }else{
-	apiNews.button.addEventListener('click', function(){
+	api.button.addEventListener('click', function(){
 		console.log(ip)
-		geoLocation(apiNews.geo, ip)
+		geoLocation(api.geo, ip)
 		.finally(() => {
 			setTimeout(function(){
-				apiNews.button.style.visibility="hidden"
-				apiNews.alertLocation.style.visibility="hidden"
+				api.button.style.visibility="hidden"
 				location.reload()
 			}, 1500)
 		})
@@ -73,13 +62,13 @@ if(code !== ''){
 const NullOptionEl = document.createElement('option')
 NullOptionEl.setAttribute('value', '')
 NullOptionEl.textContent='Pilih Media'
-apiNews.news.select.appendChild(NullOptionEl)
+api.news.select.appendChild(NullOptionEl)
 
-apiNews.loader.style.visibility="visible"
-NewsMedia(apiNews.news.url, apiNews.news.code, apiNews.news.key)
+api.loader.style.visibility="visible"
+NewsMedia(api.news.url, api.news.code, api.news.key)
 .finally(() => {
 	setTimeout(function(){
-		apiNews.loader.style.visibility="hidden"
+		api.loader.style.visibility="hidden"
 	}, 1500)
 })
 .then( res => res.json())
@@ -87,26 +76,26 @@ NewsMedia(apiNews.news.url, apiNews.news.code, apiNews.news.key)
 	SelectList(res.articles)
 })
 
-apiNews.news.button.addEventListener('click', function(){
-	apiNews.error.innerHTML=''
-	const mediaValue = apiNews.news.select.value
+api.news.button.addEventListener('click', function(){
+	api.error.innerHTML=''
+	const mediaValue = api.news.select.value
 	if(mediaValue === '' || mediaValue === undefined){
 		const errEl = document.createElement('div')
 		errEl.className='alert alert-danger'
 		errEl.setAttribute('role', 'alert')
 		errEl.textContent='Pilih media digital news terlebih dahulu'
 
-		apiNews.loader.style.visibility="visible"
+		api.loader.style.visibility="visible"
 		setTimeout(function(){
-			apiNews.loader.style.visibility="hidden"
-			apiNews.error.appendChild(errEl)
+			api.loader.style.visibility="hidden"
+			api.error.appendChild(errEl)
 		}, 1000)
 	}else{
-		apiNews.loader.style.visibility="visible"
-		NewsMedia(apiNews.news.url, apiNews.news.code, apiNews.news.key)
+		api.loader.style.visibility="visible"
+		NewsMedia(api.news.url, api.news.code, api.news.key)
 		.finally(() => {
-			apiNews.loader.style.visibility="hidden"
-			apiNews.error.style.visibility="hidden"
+			api.loader.style.visibility="hidden"
+			api.error.style.visibility="hidden"
 		}, 1500)
 		.then( res => res.json())
 		.then( res => {
@@ -120,7 +109,7 @@ document.addEventListener('click', function(e){
 	const Detail = e.target.classList.contains('news-detail')
 	if(Detail){
 		const newsId = e.target.dataset.newsid
-		NewsMedia(apiNews.news.url, apiNews.news.code, apiNews.news.key)
+		NewsMedia(api.news.url, api.news.code, api.news.key)
 		.then( res => res.json())
 		.then(res => {
 			const NewsDetail = res.articles[newsId]

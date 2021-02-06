@@ -25,9 +25,8 @@ const getResult = (Data) => {
 			<li class="list-group-item">City = <b>${Data.city}</b></li>
 		</ul>
 	`
-	document.querySelector('#your-location').appendChild(resEl)
+	document.querySelector('#result').appendChild(resEl)
 }
-
 
 // news
 const NewsMedia = async(url, param, key) => {
@@ -106,7 +105,8 @@ function DetailForNews(n) {
 	`
 }
 
-// cookie
+
+// cookie browser
 function setCookie(cname, cvalue, exdays){
 	let date = new Date()
 	date.setTime(date.getTime() + (exdays * 24 * 60 * 60 * 1000))
@@ -123,24 +123,5 @@ function getCookie(cname) {
 		if (c.indexOf(name)==0) return c.substring(name.length,c.length);
 	}
 	return "";
-}
-
-
-// Google map
-let map=''
-function initMap(map) {
-    const lat = parseFloat(Cookies.get('lat'));
-    const lng = parseFloat(Cookies.get('lng'));
-    // alert(typeof lat);
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: lat, lng: lng },
-    zoom: 7,
-  });
-
-  marker = new google.maps.Marker({
-      position: new google.maps.LatLng(lat, lng),
-      map: map
-  });
-
 }
 
