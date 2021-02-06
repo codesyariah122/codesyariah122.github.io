@@ -12,7 +12,7 @@ const apiLocation = {
 
 const apiNews = {
 	ip: 'https://api.ipify.org/?format=json',
-	geo: 'https://cors-anywhere.herokuapp.com/http://ip-api.com/json/',
+	geo: 'http://ip-api.com/json/',
 	button: document.querySelector('#lookup'),
 	loader: document.querySelector('#loader'),
 	error: document.querySelector('#error'),
