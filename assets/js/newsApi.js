@@ -1,12 +1,22 @@
 let code = getCookie('code')
 let ip = getCookie('ip_addr')
 
+const apiLocation = {
+  ip: 'https://api.ipify.org/?format=json',
+  geo: 'http://ip-api.com/json/',
+  button: document.querySelector('#lookup'),
+  geo: {
+  	result: document.querySelector('#your-location')
+  }
+}
+
 const apiNews = {
 	ip: 'https://api.ipify.org/?format=json',
 	geo: 'http://ip-api.com/json/',
 	button: document.querySelector('#lookup'),
 	loader: document.querySelector('#loader'),
 	error: document.querySelector('#error'),
+	alertLocation: document.querySelector('.alert-location'),
 	news: {
 		url: 'https://newsapi.org/v2/top-headlines/?',
 		code: `country=${code}&`,
@@ -42,6 +52,7 @@ if(code !== ''){
 		.finally(() => {
 			setTimeout(function(){
 				apiNews.button.style.visibility="hidden"
+				apiNews.alertLocation.style.visibility="hidden"
 				location.reload()
 			}, 1500)
 		})
