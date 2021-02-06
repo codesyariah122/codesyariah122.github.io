@@ -126,7 +126,7 @@ function showJadwalShalat(Key) {
 		document.querySelector('#waktu-adzan').appendChild(liEl)
 		console.log(`${key} : ${index}`)
 	})
-	
+}
 
 // cookie browser
 function setCookie(cname, cvalue, exdays){
