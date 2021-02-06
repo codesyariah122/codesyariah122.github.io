@@ -105,6 +105,28 @@ function DetailForNews(n) {
 	`
 }
 
+// jadwal shalat
+const jadwalShalat = async(url, data) => {
+	const req = await fetch(`${url}${data}`)
+	return req
+}
+
+function showJadwalShalat(Key) {
+	// console.log(Key)
+	const city = Key[0].city
+	const data = Key[1].data.date
+	const adzan = Object.entries(Key[1].data.times)
+
+	Data.kota.innerHTML=city
+	Data.tgl.innerHTML=`${data.gregorian} | ${data.hijri}`
+
+	adzan.forEach(([key, index]) => {
+		const liEl = document.createElement('li')
+		liEl.textContent=`${key} : ${index}`
+		document.querySelector('#waktu-adzan').appendChild(liEl)
+		console.log(`${key} : ${index}`)
+	})
+	
 
 // cookie browser
 function setCookie(cname, cvalue, exdays){

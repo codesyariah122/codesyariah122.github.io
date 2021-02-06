@@ -38,6 +38,7 @@ if(code !== ''){
       getResult(res)
       setCookie('code', res.countryCode, 1)
       setCookie('country', res.country, 1)
+      setCookie('city', res.city, 1)
       setCookie('lat', res.lat, 1)
       setCookie('lng', res.lon, 1)
     })
