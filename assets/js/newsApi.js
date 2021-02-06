@@ -30,6 +30,7 @@ setIP(api.ip)
 })
 
 if(code !== ''){
+	api.alertLocation.style.visibility="hidden"
 	geoLocation(api.geo, ip, '/json')
 	.finally(()=>{
 		api.button.style.display="none"
@@ -40,6 +41,7 @@ if(code !== ''){
 	})
 
 }else{
+	api.alertLocation.style.visibility="visible"
 	api.button.addEventListener('click', function(){
 		console.log(ip)
 		geoLocation(api.geo, ip, '/json')
