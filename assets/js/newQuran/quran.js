@@ -1,4 +1,4 @@
-const api = {
+const apiQuran = {
 	url: 'https://api.quran.sutanlab.id/surah/'
 }
 
@@ -27,7 +27,7 @@ selectAyat.appendChild(optAyatEl)
 Loader.style.visibility="hidden"
 errorQuran.style.visibility="visible"
 
-setSurah(api.url)
+setSurah(apiQuran.url)
 
 .then(response => response.json())
 .then(response => {
@@ -44,7 +44,7 @@ selectSurah.addEventListener('change', function(e){
 
 	const surah = this.value
 	if(surah !== ''){
-		setAyat(api.url, surah)
+		setAyat(apiQuran.url, surah)
 		.finally(() => {
 			setTimeout(function(){
 				Loader.style.visibility="hidden"			
@@ -75,7 +75,7 @@ enterQuran.addEventListener('click', function() {
 			Loader.style.visibility="hidden"
 		}, 500)
 	}else{
-		getQuran(api.url, surah, ayat)
+		getQuran(apiQuran.url, surah, ayat)
 		.finally(() => {
 			setTimeout(function(){
 				Loader.style.visibility="hidden"
@@ -97,7 +97,7 @@ document.addEventListener('click', function(e){
 		const surah = e.target.dataset.surah
 		const next = e.target.dataset.ayat
 
-		getQuran(api.url, surah, next)
+		getQuran(apiQuran.url, surah, next)
 		.finally(() => {
 			setTimeout(function(){
 				Loader.style.visibility="hidden"
@@ -112,7 +112,7 @@ document.addEventListener('click', function(e){
 		const surah = e.target.dataset.surah
 		const last = e.target.dataset.ayat
 		console.log(last)
-		getQuran(api.url, surah, last)
+		getQuran(apiQuran.url, surah, last)
 		.finally(() => {
 			setTimeout(function(){
 				Loader.style.visibility="hidden"
@@ -127,7 +127,7 @@ document.addEventListener('click', function(e){
 	}else if(e.target.classList.contains('prev')){
 		const surah = e.target.dataset.surah
 		const prev = e.target.dataset.ayat
-		getQuran(api.url, surah, prev)
+		getQuran(apiQuran.url, surah, prev)
 		.finally(() => {
 			setTimeout(function(){
 				Loader.style.visibility="hidden"
@@ -142,7 +142,7 @@ document.addEventListener('click', function(e){
 	}else if(e.target.classList.contains('first')){
 		const surah = e.target.dataset.surah
 		const first = e.target.dataset.ayat
-		getQuran(api.url, surah, first)
+		getQuran(apiQuran.url, surah, first)
 		.finally(() => {
 			setTimeout(function(){
 				Loader.style.visibility="hidden"
@@ -157,7 +157,7 @@ document.addEventListener('click', function(e){
 		// .catch((err) => console.log('Results error : ', err))
 	}else if(e.target.classList.contains('tafsir-surah')){
 		const surah = e.target.dataset.surah
-		Literation(api.url, surah)
+		Literation(apiQuran.url, surah)
 		.then( res => res.json())
 		.then( res => {
 			const Data = res.data
