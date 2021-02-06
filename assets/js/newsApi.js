@@ -4,7 +4,7 @@ let ip = getCookie('ip_addr')
 
 const api = {
 	ip: 'https://api.ipify.org/?format=json',
-	geo: 'http://ip-api.com/json/',
+	geo: 'https://cors-anywhere.herokuapp.com/http://ip-api.com/json/',
 	button: document.querySelector('#lookup'),
 	loader: document.querySelector('#loader'),
 	error: document.querySelector('#error'),
