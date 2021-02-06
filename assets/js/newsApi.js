@@ -9,8 +9,9 @@ const api = {
 	button: document.querySelector('#lookup'),
 	loader: document.querySelector('#loader'),
 	error: document.querySelector('#error'),
+	alertLocation: document.querySelector('#alert-location'),
 	news: {
-		url: 'https://newsapi.org/v2/top-headlines/?',
+		url: 'https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines/?',
 		code: `country=${code}&`,
 		key: 'apiKey=5effd68f01ce47589b435b22ebdb06b9',
 		select: document.querySelector('#select-news'),
@@ -45,6 +46,7 @@ if(code !== ''){
 		.finally(() => {
 			setTimeout(function(){
 				api.button.style.visibility="hidden"
+				api.alertLocation.style.visibility="hidden"
 				location.reload()
 			}, 1500)
 		})
