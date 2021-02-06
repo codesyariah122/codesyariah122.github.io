@@ -36,7 +36,7 @@ setSurah(apiQuran.url)
 })
 
 
-selectSurah.addEventListener('change', function(e){
+selectSurah.addEventListener('change', function(){
 	Loader.style.visibility="visible"
 	errorQuran.innerHTML=''
 	selectAyat.innerHTML = ''
