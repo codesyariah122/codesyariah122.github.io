@@ -45,6 +45,7 @@ if(code !== ''){
 	.then(res => {
 		getResult(res)
 	})
+	.catch(err => console.log('Error results : ', err))
 
 }else{
 	apiNews.button.addEventListener('click', function(){
