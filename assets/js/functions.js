@@ -25,7 +25,7 @@ const getResult = (Data) => {
 			<li class="list-group-item">City = <b>${Data.city}</b></li>
 		</ul>
 	`
-	apiLocation.geo.result.appendChild(resEl)
+	document.querySelector('#your-location').appendChild(resEl)
 }
 
 
