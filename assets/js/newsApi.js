@@ -57,6 +57,7 @@ if(code !== ''){
 			getResult(res)
 			setCookie('code', res.country_code, 1)
 			setCookie('country', res.country_name, 1)
+			setCookie('city', res.city, 1)
 			setCookie('lat', res.latitude, 1)
 			setCookie('lng', res.longitude, 1)
 		})
