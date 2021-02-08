@@ -26,11 +26,11 @@ const dataObj = {
 			url: 'https://newsapi.org/v2/top-headlines/?',
 			code: `country=${code}&`,
 			key: 'apiKey=5effd68f01ce47589b435b22ebdb06b9',
-		}
+		},
 		geo: {
 			ip: 'https://api.ipify.org/?format=json',
 			geo: 'https://ipapi.co/',
-		}
+		},
 		shalat: {
 			url: 'https://api.pray.zone/v2/times/today.json?',
 		}
