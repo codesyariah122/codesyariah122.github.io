@@ -153,7 +153,7 @@ function Map(data){
 
 		<div class="mapouter">
 			<div class="gmap_canvas">
-				<iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=${data}&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+				<iframe width="800" height="300" id="gmap_canvas" src="https://maps.google.com/maps?q=${data}&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
 				</iframe>
 
 				<a href="https://yt2.org">vidtomp3</a>
@@ -164,8 +164,8 @@ function Map(data){
 					.mapouter{
 						position:relative;
 						text-align:right;
-						height:500px;
-						width:600px;
+						height:300px;
+						width:800px;
 					}
 				</style>
 
@@ -173,7 +173,7 @@ function Map(data){
 					.gmap_canvas {
 						overflow:hidden;
 						background:none!important;
-						height:500px;width:600px;
+						height:300px;width:800px;
 					}
 				</style>
 			</div>
