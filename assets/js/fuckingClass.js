@@ -8,7 +8,8 @@ const dataObj = {
 		button: document.querySelector('#lookup'),
 		loader: document.querySelector('#loader'),
 		error: document.querySelector('#error'),
-		alertLocation: document.querySelector('.alert-location')
+		alertLocation: document.querySelector('.alert-location'),
+		map: document.querySelector('#map')
 	},
 	shalat: {
 		kota: document.querySelector('#kota'),
@@ -80,6 +81,9 @@ if(code !== ''){
 	})
 }
 
+// google maps
+dataObj.lookup.map.innerHTML=Map(city)
+
 // news
 const NullOptionEl = document.createElement('option')
 NullOptionEl.setAttribute('value', '')
@@ -140,6 +144,7 @@ document.addEventListener('click', function(e){
 		})
 	}
 })
+
 
 
 
