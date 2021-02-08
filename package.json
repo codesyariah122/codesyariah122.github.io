@@ -1,0 +1,20 @@
+{
+  "name": "codesyariah122.github.io",
+  "version": "1.0.0",
+  "description": "Hai Kami Codesyariah Blog...<br/> > Blog ini ditujukan untuk menyimpan catatan-catatan artikel pribadi seputar tips, trick, tutorial<br/> atau apapun yang bertujuan menambah khazanah informasi publik terutama publik awam seperti kami.<br/> kami selalu berusaha menyajikan informasi yang khas, terbaru dan inshaAllah dari sumber-sumber yang kredibel.<br/> Ikuti terus perjalanan catatan kami hanya di blog codesyariah.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codesyariah122/codesyariah122.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codesyariah122/codesyariah122.github.io/issues"
+  },
+  "homepage": "https://github.com/codesyariah122/codesyariah122.github.io#readme"
+}

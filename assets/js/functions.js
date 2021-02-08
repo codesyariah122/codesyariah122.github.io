@@ -42,16 +42,16 @@ const SelectList = (Data) => {
 }
 
 const NewsCard = (Data) => {
-	const idNews = api.news.select.value
+	const idNews = dataObj.news.select.value
 	let card=''
 	card += cardForNews(Data, idNews)
-	api.news.card.innerHTML=card
+	dataObj.news.card.innerHTML=card
 }
 
 const NewsCardDetail = (Data) => {
 	let card = ''
 	card += DetailForNews(Data)
-	api.news.modal.innerHTML=card
+	dataObj.news.modal.innerHTML=card
 }
 
 function selectForNews(key, index){
@@ -117,15 +117,15 @@ function showJadwalShalat(Key) {
 	const data = Key[1].data.date
 	const adzan = Object.entries(Key[1].data.times)
 
-	Data.kota.innerHTML=city
-	Data.tgl.innerHTML=`${data.gregorian} | ${data.hijri}`
+	dataObj.shalat.kota.innerHTML=city
+	dataObj.shalat.tgl.innerHTML=`${data.gregorian} | ${data.hijri}`
 
 	adzan.forEach(([key, index]) => {
 		const liEl = document.createElement('li')
+		liEl.className='text-dark ml-3'
 		liEl.textContent=`${key} : ${index}`
 		document.querySelector('#waktu-adzan').appendChild(liEl)
-		console.log(`${key} : ${index}`)
-	})
+		console.log(`${key} : ${index}`) })
 }
 
 // cookie browser
