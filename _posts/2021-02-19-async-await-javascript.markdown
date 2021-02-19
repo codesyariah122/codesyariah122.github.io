@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Javascript Promise"
+title:  "async await javascript"
 author: puji
 categories: [ Javascript, VanillaJS ]
 image: assets/images/post/async-await/async-javascript.jpg
