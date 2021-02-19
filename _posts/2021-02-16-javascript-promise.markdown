@@ -10,7 +10,7 @@ opening: بسم الله الرحمن الرحيم
 
 {{page.opening}}  
 
-![quran]({{site.url}}/assets/images/post/promise/promise.png)    
+![promise]({{site.url}}/assets/images/post/promise/promise.png)    
 
 
 Assalamuallaaikum,  
@@ -87,6 +87,8 @@ const data = {
 
 Start(data.user, data.email, data.method)
 ```  
+di javascript method itu sendiri merupakan bagian dari object, sehingga kita bisa melakukan pemanggilan method dari sebuah object.  
+
 ```shell
 root@debian:/home/puji122/MyNodeApp/lat-js/promise# node .
 
@@ -97,11 +99,44 @@ root@debian:/home/puji122/MyNodeApp/lat-js/promise# node .
 Memanggil method callback
 
 ```  
-itulah sekilas tentang callback pada penggunannya bisa dalam proses asynchronous seperti request ajax.  
-#### Kembali ke promise  
-Dalam promise juga biasa digunakan saat penggunaan metode request data selain ajax ada lagi metode untuk melakukan request data dari client ke server yaitu ```fetch()```, penggunaan fetch lebih mudah dibaca dibandingkan dengan ajax di vanilla javascript.  
-***Contoh penggunaan Promise untuk fetch data***  
+itulah sekilas tentang callback pada penggunannya dalam proses asynchronous seperti request ajax.  
 
+#### Kembali ke promise  
+Di dalam promise biasa juga digunakan saat penggunaan metode request data seperti ajax, penggunaan fetch lebih mudah dibaca dibandingkan dengan ajax di vanilla javascript.  
+
+```javascript
+const getUsers = function(url) {
+  return 
+    new Promise(function(resolve, reject) {
+    let req = new XMLHttpRequest()
+    req.open('GET', url)
+
+    req.onload = () => {
+      if(req.readyState === 4){
+        if(req.status === 200){
+          resolve(JSON.parse(req.response))
+        }else if(req.status === 404){
+          reject(Error(req.status))
+        }
+      }
+    }
+
+    req.onerror = () =>{
+      reject(Error("Network error"))
+    }
+
+    req.send()
+  })
+} 
+
+
+getUsers('http://localhost:5000/api/users')
+.then((response) => {
+  console.log(response)
+}, (err) => console.log('Fetch data error : ',err))
+
+```  
+Berikut penggunaan ajax request dengan library fetch lebih simple dibandingkan dengan ajax biasa :  
 ```javascript
 import fetch from 'node-fetch'
 
@@ -172,85 +207,49 @@ loading ...
 }
 
 ```  
-penggunaan fetch jadi mempersingkat penulisan code dalam menjalankan ajax request, bandingkan dengan menggunakan vanilla javascript, kalo kalian akrab dengan penggunaan ajax di jquery, kurang lebih ringkasnya sama dengan jquery, dan di artikel-artikel gout sebelumnya gout banyak menggunakan jquery sebagai library javascript, karena tuntutan pekerjaan yang mengharuskan proses development dengan cepat.  
-
-Kalian bisa menambahkan finally untuk menambahkan proses visual pada proses fetch data.  
-seperti itulah penggunaan promise dalam menangani request ajax menggunakan fetch.  
-
-bisa dibandingkan dengan proses ajax di vanilla javascript, seperti ini :  
+### Menggunakan promise all  
+Disatu kala kita bisa saja mempunyai banyak pemrosesan data di aplikasi kita dari pada kita mengulang proses promise berulang kali kita bisa menggunakan promise all untuk menjalankan semua pemrosesan tersebut dalam waktu bersamaan :  
 
 ```javascript
-import XMLHttpRequest from 'xhr2'
+import fetch from 'node-fetch'
 
-const getUsers = (url, success, error) => {
-	let req = new XMLHttpRequest()
-	req.open('GET', url)
+const Product = new Promise ( resolve => {
+  const data = [
+      {name: "VueJS Hoodie", price: "150000"},
+      {name: "ReactJS tshirt", price: "120000"}
+    ]
+  resolve(
+    data
+  )
+})
 
-	req.onload = () => {
-		if(req.readyState === 4){
-			if(req.status === 200){
-				success(req.response)
-			}else if(req.status === 404){
-				error()
-			}
-		}
-	}
+const Users = new Promise( resolve => {
+  resolve(
+    fetch('http://localhost:5000/api/users')
+  )
+})
 
-	req.onerror = (err) =>{
-		console.log(err)
-	}
+Users
+.then(res => res.json())
+.then(res => {
+  console.log(res)
+})
 
-	req.send()
-}
-
-getUsers('http://localhost:5000/api/users', res => {
-	const data = JSON.parse(res)
-	console.log(data)
-}, (err) => console.log(err))
+Product
+.then(res => {
+  console.log(res)
+})
 ```  
+Dari kode diatas kita punya dua promise berbeda dan kita akan berulang kali menjalankan promise tersebut, dengan adanya promise all kita bisa menjalankan sekaligus kedua promise tersebut :  
 
-Outputnya kurang lebih sama :  
-
-```shell
-root@debian:/home/puji122/MyNodeApp/lat-js/promise# node index.mjs
-{
-  data: [
-    {
-      fullname: 'amelia wijayanti',
-      email: 'amel_@mail.com',
-      id: '602de79c25fad930c50268d6'
-    },
-    {
-      fullname: 'd supardi',
-      email: 'd_@mail.com',
-      id: '602de7ce25fad930c50268d7'
-    },
-    {
-      email: 'idris_@mail.com',
-      fullname: 'idris maman',
-      id: '602dee493217aa3265e7e4c3'
-    },
-    {
-      fullname: 'rachel goswel',
-      email: 'rachel_@mail.com',
-      id: '602deefb3217aa3265e7e4c4'
-    },
-    {
-      email: 'ton_@mail.com',
-      fullname: 'anton jetnov',
-      id: '602def403217aa3265e7e4c5'
-    },
-    {
-      fullname: 's mariton',
-      email: 'marit_@mail.com',
-      id: '602df0403217aa3265e7e4c9'
-    }
-  ]
-}
-
-```  
-Bisa dibandingkan menggunakan ajax seperti diatas sedikit lebih panjang dalam proses penulisan kode. dibandingkan kode sebelumnya menggunakan method ```fetch()```.
-
+```javascript
+Promise.all([Product, Users])
+.then(res => {
+  const [Product, Users] = res
+  console.log(Product)
+  console.log(Users)
+})
+```
 
 Mudah-mudahan bermanfaat dari artikel gout ini yah.
 
