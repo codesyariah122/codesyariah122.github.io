@@ -39,7 +39,6 @@ const dataObj = {
 	}
 }
 
-
 // geo location ip address
 setIP(dataObj.api.geo.ip)
 .then( res => res.json())
