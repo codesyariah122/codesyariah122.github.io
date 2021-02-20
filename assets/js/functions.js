@@ -1,12 +1,12 @@
 // geo location
-const setIP = async(url) => {
-	const req = await fetch(url)
+const setIP = async(proxy, url) => {
+	const req = await fetch(`${proxy}${url}`)
 	return req
 }
 
 
-const geoLocation = async(url, data, param) => {
-	const req = await fetch(`${url}${data}${param}`)
+const geoLocation = async(proxy, url, data, param) => {
+	const req = await fetch(`${proxy}${url}${data}${param}`)
 	return req
 }
 
@@ -29,8 +29,8 @@ const getResult = (Data) => {
 }
 
 // news
-const NewsMedia = async(url, param, key) => {
-	const req = await fetch(`${url}${param}${key}`)
+const NewsMedia = async(proxy, url, param, key) => {
+	const req = await fetch(`${proxy}${url}${param}${key}`)
 	return req
 }
 
@@ -106,7 +106,7 @@ function DetailForNews(n) {
 }
 
 // jadwal shalat
-const jadwalShalat = async(url, data) => {
+const jadwalShalat = async(proxy, url, data) => {
 	const req = await fetch(`${url}${data}`)
 	return req
 }

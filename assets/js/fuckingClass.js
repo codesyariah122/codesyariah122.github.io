@@ -23,6 +23,7 @@ const dataObj = {
 		modal: document.querySelector('.modal-body')
 	},
 	api: {
+		proxy:'https://cors-anywhere.herokuapp.com/',
 		news: {
 			url: 'https://newsapi.org/v2/top-headlines/?',
 			code: `country=${code}&`,
@@ -40,7 +41,7 @@ const dataObj = {
 
 
 // geo location ip address
-setIP(dataObj.api.geo.ip)
+setIP(dataObj.api.proxy, dataObj.api.geo.ip)
 .then( res => res.json())
 .then(res => {
 	setCookie('ip_addr', res.ip, 1)
@@ -61,7 +62,7 @@ if(code !== ''){
 	dataObj.lookup.alertLocation.style.visibility="visible"
 	dataObj.lookup.button.addEventListener('click', function(){
 		// console.log(ip)
-		geoLocation(dataObj.api.geo.geo, ip, '/json')
+		geoLocation(dataObj.api.proxy, dataObj.api.geo.geo, ip, '/json')
 		.finally(() => {
 			setTimeout(function(){
 				dataObj.lookup.button.style.visibility="hidden"
@@ -91,7 +92,7 @@ NullOptionEl.textContent='Pilih Media'
 dataObj.news.select.appendChild(NullOptionEl)
 
 dataObj.lookup.loader.style.visibility="visible"
-NewsMedia(dataObj.api.news.url, dataObj.api.news.code, dataObj.api.news.key)
+NewsMedia(dataObj.api.proxy, dataObj.api.news.url, dataObj.api.news.code, dataObj.api.news.key)
 .finally(() => {
 	setTimeout(function(){
 		dataObj.lookup.loader.style.visibility="hidden"
@@ -136,7 +137,7 @@ document.addEventListener('click', function(e){
 	const Detail = e.target.classList.contains('news-detail')
 	if(Detail){
 		const newsId = e.target.dataset.newsid
-		NewsMedia(dataObj.api.news.url, dataObj.api.news.code, dataObj.api.news.key)
+		NewsMedia(dataObj.api.proxy, dataObj.api.news.url, dataObj.api.news.code, dataObj.api.news.key)
 		.then( res => res.json())
 		.then(res => {
 			const NewsDetail = res.articles[newsId]
@@ -149,7 +150,7 @@ document.addEventListener('click', function(e){
 
 
 // jadwalShalat
-jadwalShalat(dataObj.api.shalat.url, `city=${city}`)
+jadwalShalat(dataObj.api.proxy, dataObj.api.shalat.url, `city=${city}`)
 .then( res => res.json())
 .then( res => {const dataShalat = [
         {city: city},
