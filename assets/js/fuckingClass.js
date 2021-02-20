@@ -41,7 +41,7 @@ const dataObj = {
 
 
 // geo location ip address
-setIP(dataObj.api.proxy, dataObj.api.geo.ip)
+setIP(dataObj.api.geo.ip)
 .then( res => res.json())
 .then(res => {
 	setCookie('ip_addr', res.ip, 1)
@@ -62,7 +62,7 @@ if(code !== ''){
 	dataObj.lookup.alertLocation.style.visibility="visible"
 	dataObj.lookup.button.addEventListener('click', function(){
 		// console.log(ip)
-		geoLocation(dataObj.api.proxy, dataObj.api.geo.geo, ip, '/json')
+		geoLocation(dataObj.api.geo.geo, ip, '/json')
 		.finally(() => {
 			setTimeout(function(){
 				dataObj.lookup.button.style.visibility="hidden"
