@@ -1,12 +1,12 @@
 // geo location
 const setIP = async( url) => {
-	const req = await fetch(`${proxy}${url}`)
+	const req = await fetch(`${url}`)
 	return req
 }
 
 
 const geoLocation = async(url, data, param) => {
-	const req = await fetch(`${proxy}${url}${data}${param}`)
+	const req = await fetch(`${url}${data}${param}`)
 	return req
 }
 
