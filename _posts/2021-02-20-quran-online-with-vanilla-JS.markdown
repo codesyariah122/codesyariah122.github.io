@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "async await javascript"
+title:  "Membuat quran online versi Vanilla JS"
 author: puji
 categories: [ Javascript, VanillaJS ]
 image: assets/images/post/quran-vanilla-JS/QuranMajeed-Android-hand_0.jpg
