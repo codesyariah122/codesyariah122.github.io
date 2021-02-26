@@ -74,7 +74,7 @@ seperti inilah tampilan graphql dengan package user interface playground:
 lakukan query diataranya untuk binding data dan melakukan slug untuk data di page posts nanti yang akan kita buat di bagian selanjutnya : 
 gout melakukan beberapa query sepert dibawah ini, tambahkan query di box sebelah kiti : 
 
-```javascript
+```text
 // query untuk metadata
 query{
   site{
@@ -113,7 +113,6 @@ query{
 }
 
 // get single slug posts tamplate
-
 query (
   $slug: String!
 ){
