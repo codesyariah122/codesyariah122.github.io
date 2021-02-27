@@ -283,11 +283,20 @@ export const getDataById = async(req, res) => {
 export const getDataByPenulis = async(req, res) => {
 	const penulis = req.params.penulis
 	try{
-		const books = BookData.find({"penulis": { $regex: `.*${penulis}.*`}}, function(err, data){
+		const books = await BookData.find({"penulis": {$regex: `.*${penulis}.*`}}, (err, result) => {
+		
+			if(result.length === 0) {
 				res.status(200).json({
-					data: data
+					data: `${penulis} data buku belum tersedia`
 				})
-			})
+			}else{			
+				res.status(200).json({
+					data: result
+				}) 
+			}
+			
+				
+		})
 	}catch(err){
 		res.status(404).json({
 			message: err.message
