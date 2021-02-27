@@ -177,7 +177,7 @@ file package.json :
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "start": "nodemon --experimental-json-modules server.js"
+    "start": "nodemon --experimental-json-modules app.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
