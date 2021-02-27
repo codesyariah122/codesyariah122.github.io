@@ -132,6 +132,7 @@ const port = process.env.PORT
 
 Server(port)
 ```  
+
 selanjutnya kita buka file-file yang berada di direktori ```src/``` :  
 pertama-tama kita buka file ```src/index.js``` :  
 
@@ -140,10 +141,12 @@ import Server from './server.js'
 
 export {Server}
 ```  
+
 setelah itu kita configurasi file file lain di direktori ```src/```  
 
 2. file ```src/server.js```  
 Berikut isi file server.js :  
+
 ```javascript
 import {Listen} from './listen.js'
 
@@ -154,6 +157,7 @@ const Server = (port) => {
 }
 export default Server
 ```  
+
 3. file ```src/listen.js```  
 Berikut isi file nya :  
 
