@@ -167,6 +167,30 @@ Selanjutnya yang akan kita ubah adalah file ```src/config.js``` di file ini kita
 root@debian:/home/puji122/rest-api# yarn add mongoose@5.11.15
 ```  
 
+file package.json : 
+
+```json
+{
+  "name": "the-rest",
+  "version": "1.0.0",
+  "main": "server.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon --experimental-json-modules server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "5.11.15",
+    "nodemon": "^2.0.7"
+  }
+}
+
+```
+
 selanjutnya kita bisa membuka file ```src/config.js``` dan tambahkan code berikut :  
 
 ```javascript
