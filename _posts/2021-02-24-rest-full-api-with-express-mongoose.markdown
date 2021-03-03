@@ -252,16 +252,18 @@ di pembahasan sebelumnya kita sudah membuat document baru beserta collections da
 Setelah file ```src/model.js``` kita akan mengubah code untuk file ```src/controller.js```, kita ubah code di file tersebut menjadi seperti ini :  
 
 ```javascript
-import BookData from './model.js'
+import BookData from '../models/index.js'
 import mongoose from 'mongoose'
 
-export const getAllData = async(req, res) => {
+export const getData = async(req, res) => {
 	try{
 		const books = await BookData.find()
-		res.status(200).json(books)
-	}catch(error){
+		res.status(200).json({
+			data: books
+		})
+	}catch(err){
 		res.status(404).json({
-			message: error.message
+			message: err.message
 		})
 	}
 }
@@ -303,6 +305,7 @@ export const getDataByPenulis = async(req, res) => {
 		})
 	}
 }
+
 
 export const createBooks = async(req, res) => {
 	const bookdata = req.body
