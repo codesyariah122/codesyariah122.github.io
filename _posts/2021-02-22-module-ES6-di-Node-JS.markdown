@@ -28,7 +28,7 @@ kita bisa mengubah syntax diatas menjadi seperti ini :
 ```javascript
 import express from 'express'
 import cors from 'cors'
-import path, {dirnam} from 'path'
+import path, {dirname} from 'path'
 import {fileURLToPath} from 'url'
 ```  
 untuk menggunakan module-module yang terdefinisi, masih sama seperti syntax NodeJS sebelumnya :  
@@ -42,14 +42,14 @@ app.use(cors())
 Tapi sebelum kalian menjalankan aplikasi NodeJS kalian, kalian harus menambahkan key berikut saat menjalankan perintah start aplikasi :  
 
 ```bash
-nodemon --experimental-module
+nodemon --experimental-modules
 ```  
 Untuk menggunakannya dalam package aplikasi, kalian bisa menambahkan key tersebut ke file ```package.json``` :  
 
 ```json
 "type": "module",
 "scripts" : {
-  "start": "nodemon --experimental-module-json fileaplikasikalian.js"
+  "start": "nodemon --experimental-json-modules fileaplikasikalian.js"
 }
 ```  
 field ```fileaplikasikalian.js``` bisa diganti dengan nama file utama kalian, biasanya file utama itu adalah : ```index.js``` ```app.js``` atau ```server.js```  
