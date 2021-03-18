@@ -1,6 +1,11 @@
-let code = getCookie('code')
+// geo location ip address
+setIP(dataObj.api.geo.ip)
+.then( res => res.json())
+.then(res => {
+	setCookie('ip_addr', res.ip, 1)
+})
+
 let ip = getCookie('ip_addr')
-let city = getCookie('city')
 
 const dataObj = {
 	// geo: 'http://ip-api.com/json/',
@@ -39,12 +44,9 @@ const dataObj = {
 	}
 }
 
-// geo location ip address
-setIP(dataObj.api.geo.ip)
-.then( res => res.json())
-.then(res => {
-	setCookie('ip_addr', res.ip, 1)
-})
+
+let code = getCookie('code')
+let city = getCookie('city')
 
 if(code !== ''){
 	dataObj.lookup.alertLocation.style.visibility="hidden"
@@ -79,81 +81,84 @@ if(code !== ''){
 			setCookie('lng', res.longitude, 1)
 		})
 	})
-}
 
-// google maps
-dataObj.lookup.map.innerHTML=Map(city)
 
-// news
-const NullOptionEl = document.createElement('option')
-NullOptionEl.setAttribute('value', '')
-NullOptionEl.textContent='Pilih Media'
-dataObj.news.select.appendChild(NullOptionEl)
+	// google maps
+	dataObj.lookup.map.innerHTML=Map(city)
 
-dataObj.lookup.loader.style.visibility="visible"
-NewsMedia(dataObj.api.proxy, dataObj.api.news.url, dataObj.api.news.code, dataObj.api.news.key)
-.finally(() => {
-	setTimeout(function(){
-		dataObj.lookup.loader.style.visibility="hidden"
-	}, 1500)
-})
-.then( res => res.json())
-.then( res => {
-	console.log(res)
-	SelectList(res.articles)
-})
+	// news
+	const NullOptionEl = document.createElement('option')
+	NullOptionEl.setAttribute('value', '')
+	NullOptionEl.textContent='Pilih Media'
+	dataObj.news.select.appendChild(NullOptionEl)
 
-dataObj.news.button.addEventListener('click', function(){
-	dataObj.lookup.error.innerHTML=''
-	const mediaValue = dataObj.news.select.value
-	if(mediaValue === '' || mediaValue === undefined){
-		const errEl = document.createElement('div')
-		errEl.className='alert alert-danger'
-		errEl.setAttribute('role', 'alert')
-		errEl.textContent='Pilih media digital news terlebih dahulu'
-
-		dataObj.lookup.loader.style.visibility="visible"
+	dataObj.lookup.loader.style.visibility="visible"
+	NewsMedia(dataObj.api.proxy, dataObj.api.news.url, dataObj.api.news.code, dataObj.api.news.key)
+	.finally(() => {
 		setTimeout(function(){
 			dataObj.lookup.loader.style.visibility="hidden"
-			dataObj.lookup.error.appendChild(errEl)
-		}, 1000)
-	}else{
-		dataObj.lookup.loader.style.visibility="visible"
-		NewsMedia(dataObj.api.news.url, dataObj.api.news.code, dataObj.api.news.key)
-		.finally(() => {
-			dataObj.lookup.loader.style.visibility="hidden"
-			dataObj.lookup.error.style.visibility="hidden"
 		}, 1500)
-		.then( res => res.json())
-		.then( res => {
-			const DataMedia = res.articles[mediaValue]
-			NewsCard(DataMedia)
-		})
-	}
-})
+	})
+	.then( res => res.json())
+	.then( res => {
+		console.log(res)
+		SelectList(res.articles)
+	})
 
-document.addEventListener('click', function(e){
-	const Detail = e.target.classList.contains('news-detail')
-	if(Detail){
-		const newsId = e.target.dataset.newsid
-		NewsMedia(dataObj.api.proxy, dataObj.api.news.url, dataObj.api.news.code, dataObj.api.news.key)
-		.then( res => res.json())
-		.then(res => {
-			const NewsDetail = res.articles[newsId]
-			NewsCardDetail(NewsDetail)
-		})
-	}
-})
+	dataObj.news.button.addEventListener('click', function(){
+		dataObj.lookup.error.innerHTML=''
+		const mediaValue = dataObj.news.select.value
+		if(mediaValue === '' || mediaValue === undefined){
+			const errEl = document.createElement('div')
+			errEl.className='alert alert-danger'
+			errEl.setAttribute('role', 'alert')
+			errEl.textContent='Pilih media digital news terlebih dahulu'
+
+			dataObj.lookup.loader.style.visibility="visible"
+			setTimeout(function(){
+				dataObj.lookup.loader.style.visibility="hidden"
+				dataObj.lookup.error.appendChild(errEl)
+			}, 1000)
+		}else{
+			dataObj.lookup.loader.style.visibility="visible"
+			NewsMedia(dataObj.api.news.url, dataObj.api.news.code, dataObj.api.news.key)
+			.finally(() => {
+				dataObj.lookup.loader.style.visibility="hidden"
+				dataObj.lookup.error.style.visibility="hidden"
+			}, 1500)
+			.then( res => res.json())
+			.then( res => {
+				const DataMedia = res.articles[mediaValue]
+				NewsCard(DataMedia)
+			})
+		}
+	})
+
+	document.addEventListener('click', function(e){
+		const Detail = e.target.classList.contains('news-detail')
+		if(Detail){
+			const newsId = e.target.dataset.newsid
+			NewsMedia(dataObj.api.proxy, dataObj.api.news.url, dataObj.api.news.code, dataObj.api.news.key)
+			.then( res => res.json())
+			.then(res => {
+				const NewsDetail = res.articles[newsId]
+				NewsCardDetail(NewsDetail)
+			})
+		}
+	})
 
 
 
 
-// jadwalShalat
-jadwalShalat(dataObj.api.proxy, dataObj.api.shalat.url, `city=${city}`)
-.then( res => res.json())
-.then( res => {const dataShalat = [
-        {city: city},
-        {data: res.results.datetime[0]}
-    ]
-    showJadwalShalat(dataShalat)
-})
+	// jadwalShalat
+	jadwalShalat(dataObj.api.proxy, dataObj.api.shalat.url, `city=${city}`)
+	.then( res => res.json())
+	.then( res => {const dataShalat = [
+	        {city: city},
+	        {data: res.results.datetime[0]}
+	    ]
+	    showJadwalShalat(dataShalat)
+	})
+
+
+}
