@@ -134,7 +134,7 @@ function setCookie(cname, cvalue, exdays){
 	date.setTime(date.getTime() + (exdays * 24 * 60 * 60 * 1000))
 	let expires = `Expires=${date.toGMTString()}`
 
-	document.cookie=`${cname}=${cvalue};${expires};`
+	document.cookie=`${cname}=${cvalue};${expires}`;
 }
 
 function getCookie(cname) {

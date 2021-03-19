@@ -1,11 +1,3 @@
-// geo location ip address
-setIP(dataObj.api.geo.ip)
-.then( res => res.json())
-.then(res => {
-	setCookie('ip_addr', res.ip, 1)
-})
-
-let ip = getCookie('ip_addr')
 
 const dataObj = {
 	// geo: 'http://ip-api.com/json/',
@@ -45,10 +37,18 @@ const dataObj = {
 }
 
 
+// geo location ip address
+setIP(dataObj.api.geo.ip)
+.then( res => res.json())
+.then(res => {
+	setCookie('ip_addr', res.ip, 1)
+})
+
+let ip = getCookie('ip_addr')
 let code = getCookie('code')
 let city = getCookie('city')
 
-if(code !== ''){
+if(code){
 	dataObj.lookup.alertLocation.style.visibility="hidden"
 	geoLocation(dataObj.api.geo.geo, ip, '/json')
 	.finally(()=>{

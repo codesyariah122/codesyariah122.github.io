@@ -153,50 +153,116 @@
 
 
 <!-- Update berita cuy -->
-<div class="container">
-    <div class="row mb-5 mt-3">
-        <!-- content1 -->
-        <div class="col-md-12 col-xs-12 col-sm-12">
-            
-            <br>
-            
-            <h1 class="underline text-center mt-2 mb-4"></h1>
-            
-            <div class="row justify-content-center">
-                <div class="col-12 col-xs-12 col-sm-12">
-                   <button class="btn btn-info" id="lookup">Check Lokasi Anda</button>
-                    <small class="text-danger blockquote-footer alert-location">
-                        Untuk mendapat berita terupdate click tombol <b>Check Lokasi</b> diatas
-                    </small>
+<div class="row justify-content-center mt-5">
+        <div id="ip">
 
+            <div class="col-md-4">
+                <ul class="list-group list-group-flush">
+                    <div v-if="location.code">
+                        <li class="list-group-item">Your IP Address : {{ip}} </li>
+                        <li class="list-group-item">Country Code : <b>{{location.code}} </b></li>
+                        <li class="list-group-item">Country : <b>{{location.country}}</b></li>
+                        <li class="list-group-item">Province &amp; City : <b> {{location.provinsi}} | {{location.city}}</b> </li>
+                        <li class="list-group-item">
+                            <img :src="location.flags"/> 
+                        </li>
+                    </div>
+                </ul>
+            </div>
 
-                    <div id="result"></div>
-                    
-                    <h1 class="text-center">Update Berita</h1>    
-                    <div class="input-group mb-3">
-                        <select class="custom-select" id="select-news">
-                            <!-- <option selected>Choose...</option> --> 
-                        </select>
-                        
-                        <div class="input-group-append">
-                            <button id="enter-news" class="btn btn-dark">Choose</button>
+            <div class="col-md-6 mt-3 mb-5">
+                <div v-if="location.city">
+                    <div  style="width:100%;height:380px;">
+                        <div class="mapouter">
+                            <div class="gmap_canvas">
+                                <iframe width="800" height="300" id="gmap_canvas" :src="location.map" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                                </iframe>
+
+                                <br>
+
+                                <style>
+                                    .mapouter{
+                                        position:relative;
+                                        text-align:right;
+                                        height:300px;
+                                        width:800px;
+                                    }
+                                </style>
+
+                                <style>
+                                    .gmap_canvas {
+                                        overflow:hidden;
+                                        background:none!important;
+                                        height:300px;width:800px;
+                                    }
+                                </style>
+                            </div>
                         </div>
+                        
+                    </div>
+                </div>
+            </div>
 
-                        <div id="loader">
-                          <img src="{{site.url}}/assets/images/loading2.gif" class="img-responsive" width="70" height="30">
+        </div>
+    </div>
+
+
+        <div class="row justify-content-center">
+            <div class="col-12 col-xs-12 col-sm-12 mt-5">
+                
+                <div id="boxNews">
+                    <button v-show="show" v-on:click="setLocation" class="btn btn-info" id="lookup">Check Lokasi Anda</button>
+                    <small v-show="show" class="text-danger blockquote-footer alert-location">
+                        {{caption_button}}
+                    </small>
+                   
+                    <h1 class="text-center">{{title}}</h1>    
+                        <div class="input-group mb-3">
+                            <select @change="onChange($event)" name="news-list" class="custom-select" id="select-news">
+                                <option v-for="(list, index) in lists" :value="index">
+                                    {{(index == 0) ? list.author : list.author}}
+                                </option>
+                                <!-- <option selected>Choose...</option> --> 
+                            </select>
+                                        
+                        <!-- <div class="input-group-append">
+                            <button id="enter-news" class="btn btn-dark" @click="clickNews($event)">Choose</button>
+                        </div> -->
+
+                        <div v-show="show" id="loader">
+                            <img src="{{site.url}}assets/images/loading2.gif" class="img-responsive" width="70" height="30">
                         </div>       
                     </div>
-                    
-                    <!-- results news -->
-                   <div id="error"></div>
+                            
+                <!-- results news -->
+                <!-- <div id="error"></div> -->
 
-                    <div id="news-list"></div>
-                    
+                <div id="news-list">
+                    <div class="card mb-3" style="max-width: 100%;">
+                      <div class="row no-gutters">
+                        <div class="col-md-4">
+                          <img :src="news.urlToImage" class="card-img" :alt="source.name">
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title">{{news.title}}</h5>
+                            <p class="card-text">{{news.description}}.</p>
+                            <p class="card-text">
+                                <small class="text-info">{{source.name}} | {{news.author}}</small><br/>
+                                <small class="text-muted">{{news.publishedAt}}</small>
+                            </p>
+                            <a :href="news.url" class="btn btn-primary news-detail" data-toggle="modal" data-target="#staticBackdrop" :data-newsid="mediaValue">Read More</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                 </div>
-                
-          <div id="map" style="width:100%;height:380px;"></div>
-                  <!-- Modal -->
-            <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <!-- <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -213,18 +279,8 @@
                   </div>
                 </div>
               </div>
-            </div>
-
-
-                <hr>
-    
-               
-            </div>
-            
+            </div> -->
         </div>
-
-    </div>
-
-</div>
+                
 
 <!-- end berita -->
