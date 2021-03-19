@@ -45,7 +45,7 @@ let newsBox = new Vue({
 				this.location.country=res.country_name
 				this.location.map = `https://maps.google.com/maps?q=${res.city}&t=&z=13&ie=UTF8&iwloc=&output=embed`
 
-				fetch(`https://newsapi.org/v2/top-headlines/?country=${res.country}&apiKey=5effd68f01ce47589b435b22ebdb06b9`)
+				fetch(`https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines/?country=${res.country}&apiKey=5effd68f01ce47589b435b22ebdb06b9`)
 				.then(res => res.json())
 				.then(res => {
 					this.lists = res.articles
@@ -59,7 +59,7 @@ let newsBox = new Vue({
 
 		onChange(e, code){
 			this.mediaValue  = e.target.value
-			fetch(`https://newsapi.org/v2/top-headlines/?country=${code}&apiKey=5effd68f01ce47589b435b22ebdb06b9`)
+			fetch(`https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines/?country=${code}&apiKey=5effd68f01ce47589b435b22ebdb06b9`)
 			.then(res => res.json())
 			.then(res => {
 				this.news = res.articles[this.mediaValue]
