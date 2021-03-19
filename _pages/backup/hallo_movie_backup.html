@@ -227,90 +227,55 @@ product: hallomovie
               <br>
               <h1 class="text-center">Pilih Aplikasi Dibawah</h1>
               <h1 class="underline text-center mt-2 mb-4"></h1>
-                
+                <div class="col-md-12 col-xs-12 col-sm-12">
+                    <h1>
+                      <button class="btn btn-success btn-lg text-white" id="show-search">Movie Search (IMDB)</button> &nbsp;
+                      <button class="btn btn-danger btn-lg text-white" id="show-review">Movie Review (NYTIMES)</button>
+                    </h1>
+                </div>
+              <!-- row content2 -->
+                <div class="row justify-content-center">
+                    <div id="movie-search">
+                        <div class="col-12 col-xs-12 col-sm-12">
+                          <i class="far fa-window-close fa-2x fa-fw" id="close-search"></i>
+                          <h1 class="text-center">Search Movie</h1>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Movie title search .. " id="search-input">
+                                <div class="input-group-append">
+                                  <button class="btn btn-dark" type="button" id="search-button">Button</button>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="row justify-content-center">   
+                    <div id="movie-review">
+                      <div class="col-12 col-xs-12 col-sm-12">
+                        <i class="far fa-window-close fa-2x fa-fw" id="close-review"></i>
+                        <h1 class="text-center">Review Movie</h1>
+                          <div class="input-group mb-3">
+                              <input type="text" class="form-control" placeholder="Movie title search .. " id="search-review">
+                              <div class="input-group-append">
+                                <button class="btn btn-dark" type="button" id="review-button">Button</button>
+                              </div>
+                            </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row justify-content-center">
+                    <hr>
+                    <div class="col-12">
+                      <div class="row" id="movie-list">
+                      </div>  
+                    </div>                
+                  </div>
               <!-- row content2 end -->
               
               <h1 class="underline mb-2 mt-2"></h1>
               
               <br>
-
-              <div id="movie">
-
-                <div class="row justify-content-center">
-                  <div class="col-12">
-                    <h1>{{title.header}}</h1>     
-                  </div>
-
-                  <div class="col-8">
-                    <label for="basic-url">Cari Film : </label>
-                  <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="basic-addon3">{{form.keyword}}</span>
-                    </div>
-                    <input type="text" name="movie" class="form-control" id="basic-url" aria-describedby="basic-addon3" autofocus="on" autocomplete @keyup="getMovie($event)">
-                  </div>
-                  </div>
-                </div>
-
-                <div class="row justify-content-center">
-                  <div class="col-md-4" v-for="(list, index) in movie.lists">
-                    
-                    <div class="card" style="width: 18rem;">
-                    <img :src="list.Poster" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">{{list.Title}}</h5>
-                      <p class="card-text">Type : {{list.Type}} | Year : {{list.Year}}</p>
-                      <a @click="getDetail(list.imdbID)" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">Go somewhere</a>
-                    </div>
-                  </div>
-
-                  </div>
-
-                  <!-- Modal -->
-                <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-
-                        <div class="card mb-3" style="max-width: 1000px;">
-                      <div class="row justify-content-center">
-                        <div class="col-md-12">
-                          <img :src="movie.details.Poster" alt="..." width="300px">
-                        </div>
-                        <div class="col-12">
-                          <div class="card-body">
-                            <h5 class="card-title">{{movie.details.Title}}</h5>
-                            <p class="card-text text-info">{{movie.details.Genre}} | {{movie.details.Country}}</p>
-                            <p class="card-text">{{movie.details.Plot}}.</p>
-
-                            <p class="card-text text-primary">
-                              <b>Writer : </b> {{movie.details.Writer}}
-                            </p>
-
-                            <p class="card-text"><small class="text-muted">Released : {{movie.details.Released}}</small></p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Understood</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                </div>
-
-              </div>
             
           </div>
         </div>
@@ -321,3 +286,4 @@ product: hallomovie
   
 </div>
 
+{% include modal.html %}
