@@ -47,7 +47,7 @@ Kemudian setelah proses install selesai, kita buka file package.json, dan kita u
   Selanjutnya kita siapkan module module yang akan kita perlukan di reactJS kita.  
   untuk lebih detailnya bisa di akses di link dibawah ini :  
 
-  repository link react-crud with dummy data :  
+  repository link react-crud :  
 <a href="https://github.com/codesyariah122/youtube-chanel-codesyariah/tree/react-with-express">React Hooks</a>
 
 
