@@ -8,6 +8,8 @@ tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  
 
+{{page.opening}}
+
 #### Berbicara tentang lifecycle  
 Sekilas tentang hook di react js, Apa itu hook ???  
 Hook adalah sebuah fitur di react js versi 16.8 yang menurut gout sendiri adalah wow, bukan wokwow yah.  
@@ -99,6 +101,9 @@ const ListUsers = props => {
 }
 export default ListUsers
 ```  
+
+repository link react-crud with dummy data :  
+<a href="https://github.com/codesyariah122/youtube-chanel-codesyariah/tree/react">React Hooks</a>
 
 Ok sekian dulu artikel gout kali ini, semoga bermanfaat .
 
