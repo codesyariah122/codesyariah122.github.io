@@ -159,7 +159,7 @@ Silakan sesuaikan IP address, interface, dan network dengan environment masing-m
 
 ---
 
-# 1. Menyiapkan MikroTik CHR di VirtualBox
+## 1. Menyiapkan MikroTik CHR di VirtualBox
 
 Pertama pastikan MikroTik CHR sudah berhasil dijalankan melalui VirtualBox.
 
@@ -183,7 +183,7 @@ Yang paling penting adalah CHR dapat berjalan dan mempunyai interface yang akan 
 
 ---
 
-# 2. Memeriksa Interface MikroTik
+## 2. Memeriksa Interface MikroTik
 
 Setelah CHR berhasil boot, login ke RouterOS melalui terminal atau WinBox.
 
@@ -215,7 +215,7 @@ Menentukan interface yang benar penting karena PPPoE Server harus berjalan pada 
 
 ---
 
-# 3. Mengatur IP Management CHR Server
+## 3. Mengatur IP Management CHR Server
 
 Agar router dapat diakses dari komputer host dan nantinya dari aplikasi Laravel, CHR Server membutuhkan IP management.
 
@@ -249,7 +249,7 @@ IP management ini nantinya juga akan kita gunakan ketika Laravel mulai berkomuni
 
 ---
 
-# 4. Membuat IP Pool PPPoE
+## 4. Membuat IP Pool PPPoE
 
 Setelah interface dan IP management siap, berikutnya kita menyediakan range IP untuk PPPoE Client.
 
@@ -296,7 +296,7 @@ pppoe-pool
 
 ---
 
-# 5. Membuat PPP Profile
+## 5. Membuat PPP Profile
 
 Selanjutnya kita membuat PPP Profile.
 
@@ -344,7 +344,7 @@ PPP Profile
 
 ---
 
-# 6. Membuat PPPoE Server
+## 6. Membuat PPPoE Server
 
 Sekarang masuk ke bagian utama.
 
@@ -401,7 +401,7 @@ Tetapi kita masih membutuhkan akun untuk melakukan autentikasi.
 
 ---
 
-# 7. Membuat PPP Secret
+## 7. Membuat PPP Secret
 
 Untuk lab sederhana, akun PPPoE dapat dibuat melalui **PPP Secret**.
 
@@ -447,7 +447,7 @@ Jangan gunakan credential sederhana seperti ini untuk jaringan production.
 
 ---
 
-# 8. PPP Secret dan PPP Active Itu Berbeda
+## 8. PPP Secret dan PPP Active Itu Berbeda
 
 Ini merupakan konsep penting sebelum melakukan pengujian.
 
@@ -499,7 +499,7 @@ belum akan menampilkan session `testclient`.
 
 ---
 
-# 9. Menguji PPPoE Server dengan CHR Client
+## 9. Menguji PPPoE Server dengan CHR Client
 
 Konfigurasi server sebenarnya sudah selesai.
 
@@ -540,7 +540,7 @@ Pada bagian ini CHR Client hanya digunakan untuk membuktikan bahwa konfigurasi s
 
 ---
 
-# 10. PPPoE Client Berhasil Terkoneksi
+## 10. PPPoE Client Berhasil Terkoneksi
 
 Setelah interface PPPoE pada CHR Client dikonfigurasi menggunakan akun:
 
@@ -578,7 +578,7 @@ Tetapi kita masih bisa membuktikannya dari sisi server.
 
 ---
 
-# 11. Membuktikan Session dari CHR Server
+## 11. Membuktikan Session dari CHR Server
 
 Kembali ke CHR Server.
 
@@ -630,7 +630,7 @@ Dengan demikian PPPoE Server yang kita buat benar-benar berfungsi.
 
 ---
 
-# 12. Kenapa `/ppp active` Penting untuk Aplikasi Billing?
+## 12. Kenapa `/ppp active` Penting untuk Aplikasi Billing?
 
 Nah, bagian ini yang nantinya akan menghubungkan eksperimen networking dengan development.
 
@@ -702,7 +702,7 @@ Itulah alasan `/ppp active` akan menjadi salah satu bagian penting pada artikel 
 
 ---
 
-# 13. Command Troubleshooting
+## 13. Command Troubleshooting
 
 Jika konfigurasi tidak bekerja sesuai harapan, periksa satu per satu.
 
@@ -776,7 +776,7 @@ PPP Active?
 
 ---
 
-# 14. Kondisi Akhir Lab
+## 14. Kondisi Akhir Lab
 
 Sampai tahap ini lab kita sudah menjadi:
 
@@ -808,7 +808,7 @@ Kita juga sudah membuktikan koneksi secara **end-to-end**.
 
 ---
 
-# 15. Catatan Keamanan
+## 15. Catatan Keamanan
 
 Karena artikel ini menggunakan environment lab, beberapa konfigurasi sengaja dibuat sederhana agar mudah dipahami.
 
