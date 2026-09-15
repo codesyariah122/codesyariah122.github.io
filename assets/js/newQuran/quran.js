@@ -76,9 +76,28 @@
     audioState = null;
   }
 
+  function syncActiveVerse(scrollIntoView = false) {
+    if (!audioState) return;
+    const ayat = visibleVerses[audioState.index]?.number.inSurah;
+    output.querySelectorAll('.quran-verse').forEach(verse => {
+      const isActive = verse.id === `ayat-${ayat}`;
+      verse.classList.toggle('is-playing', isActive && !audioState.audio.paused);
+      const button = verse.querySelector('.quran-play');
+      if (!button) return;
+      button.classList.toggle('is-active', isActive && !audioState.audio.paused);
+      button.innerHTML = isActive && !audioState.audio.paused ? '<i class="fas fa-pause"></i>' : '<i class="fas fa-play"></i>';
+      button.setAttribute('aria-label', isActive && !audioState.audio.paused ? `Jeda ayat ${ayat}` : `Putar ayat ${verse.id.replace('ayat-', '')}`);
+    });
+    if (scrollIntoView) requestAnimationFrame(() => document.getElementById(`ayat-${ayat}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' }));
+  }
+
   function startAudio(ayat) {
     const index = visibleVerses.findIndex(verse => verse.number.inSurah === Number(ayat));
     if (index === -1) return;
+    if (audioState && visibleVerses[audioState.index]?.number.inSurah === Number(ayat)) {
+      audioState.audio.paused ? audioState.audio.play().catch(() => {}) : audioState.audio.pause();
+      return;
+    }
     stopAudio();
     const player = document.createElement('section');
     player.className = 'quran-audio-player';
@@ -95,7 +114,7 @@
 
     const setTrack = (nextIndex, autoplay = true) => {
       if (!audioState) return;
-      audioState.index = (nextIndex + visibleVerses.length) % visibleVerses.length;
+      audioState.index = Math.min(Math.max(nextIndex, 0), visibleVerses.length - 1);
       audioState.sourceIndex = 0;
       const verse = visibleVerses[audioState.index];
       const sources = audioSourcesFor(verse);
@@ -104,14 +123,15 @@
       if (!sources.length) { status.textContent = 'Audio untuk ayat ini belum tersedia.'; return; }
       audio.src = sources[0];
       audio.load();
+      syncActiveVerse(true);
       if (autoplay) audio.play().catch(() => { status.textContent = 'Tekan tombol putar untuk memulai audio.'; });
     };
 
     audio.addEventListener('loadedmetadata', () => { range.max = Math.floor(audio.duration || 0); duration.textContent = formatTime(audio.duration); status.textContent = 'Mishary Alafasy · kualitas 128 kbps'; });
     audio.addEventListener('timeupdate', () => { range.value = Math.floor(audio.currentTime || 0); current.textContent = formatTime(audio.currentTime); });
-    audio.addEventListener('play', () => { toggle.innerHTML = '<i class="fas fa-pause"></i>'; toggle.setAttribute('aria-label', 'Jeda audio'); });
-    audio.addEventListener('pause', () => { toggle.innerHTML = '<i class="fas fa-play"></i>'; toggle.setAttribute('aria-label', 'Putar audio'); });
-    audio.addEventListener('ended', () => setTrack(audioState.index + 1));
+    audio.addEventListener('play', () => { toggle.innerHTML = '<i class="fas fa-pause"></i>'; toggle.setAttribute('aria-label', 'Jeda audio'); syncActiveVerse(); });
+    audio.addEventListener('pause', () => { toggle.innerHTML = '<i class="fas fa-play"></i>'; toggle.setAttribute('aria-label', 'Putar audio'); syncActiveVerse(); });
+    audio.addEventListener('ended', () => { if (!audioState) return; if (audioState.index < visibleVerses.length - 1) setTrack(audioState.index + 1); else { status.textContent = 'Playlist ayat pada halaman ini telah selesai.'; syncActiveVerse(); } });
     audio.addEventListener('error', () => {
       if (!audioState) return;
       const sources = audioSourcesFor(visibleVerses[audioState.index]);
@@ -123,8 +143,8 @@
       const action = event.target.closest('[data-quran-audio-action]')?.dataset.quranAudioAction;
       if (!action || !audioState) return;
       if (action === 'toggle') audio.paused ? audio.play().catch(() => { status.textContent = 'Browser memerlukan interaksi untuk memulai audio.'; }) : audio.pause();
-      if (action === 'previous') setTrack(audioState.index - 1);
-      if (action === 'next') setTrack(audioState.index + 1);
+      if (action === 'previous' && audioState.index > 0) setTrack(audioState.index - 1);
+      if (action === 'next' && audioState.index < visibleVerses.length - 1) setTrack(audioState.index + 1);
     });
     range.addEventListener('input', () => { audio.currentTime = Number(range.value); });
     setTrack(index);
