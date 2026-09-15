@@ -3,7 +3,7 @@
   <div class="container">
     <div class="quran-intro"><p><span></span> Quran digital</p><h1 id="quran-title">Baca dengan tenang.<br><em>Pahami lebih dalam.</em></h1><div class="quran-local-status"><i class="fas fa-check-circle"></i> Data Quran tersedia secara lokal</div></div>
     <div class="quran-reader-shell">
-      <div class="quran-controls"><div class="quran-search"><i class="fas fa-search"></i><input id="quran-search" type="search" placeholder="Cari nama surah, misalnya Al-Baqarah" autocomplete="off"></div><select id="select-surah" aria-label="Pilih surah"></select><button id="enter-quran" type="button">Buka surah <i class="fas fa-arrow-right"></i></button></div>
+      <div class="quran-controls"><div class="quran-search"><i class="fas fa-search"></i><input id="quran-search" type="search" placeholder="Cari nama surah, misalnya Al-Baqarah" autocomplete="off" aria-autocomplete="list" aria-controls="quran-suggestions"><div id="quran-suggestions" class="quran-suggestions" role="listbox" hidden></div></div><select id="select-surah" aria-label="Pilih surah"></select><select id="select-ayat" aria-label="Pilih nomor ayat" hidden disabled></select><button id="enter-quran" type="button">Buka surah <i class="fas fa-arrow-right"></i></button></div>
       <div id="quran-state" class="quran-state">Menyiapkan mushaf digital…</div>
       <div id="quran-list" aria-live="polite"></div>
     </div>
