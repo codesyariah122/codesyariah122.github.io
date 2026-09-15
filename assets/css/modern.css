@@ -10,3 +10,5 @@ html,body{min-height:100%}body{min-height:100vh;display:flex;flex-direction:colu
 .cs-page-frame{display:flex;flex:1 0 auto;flex-direction:column;min-height:100vh;min-height:100dvh;width:100%}.cs-page-frame>.cs-site-content{flex:1 0 auto}.cs-page-frame>.cs-footer{flex:0 0 auto;margin-top:auto}
 /* AdSense may reserve a bottom anchor area; let it continue the footer surface. */
 html{background:#f2faf7}
+/* Keep that reserved anchor area visually continuous with the shared footer. */
+body{background:#f2faf7}
