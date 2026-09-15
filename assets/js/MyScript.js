@@ -20,6 +20,13 @@
 
   const article = document.querySelector('[data-reader-article]');
   const toc = document.querySelector('[data-reader-toc]');
+  const opening = article?.querySelector('p:first-child');
+  if (opening && /[\u0600-\u06FF]/.test(opening.textContent)) {
+    article.classList.add('has-arabic-opening');
+    opening.classList.add('reader-arabic-opening');
+    opening.setAttribute('dir', 'rtl');
+    opening.setAttribute('lang', 'ar');
+  }
   if (article && toc) {
     const headings = [...article.querySelectorAll('h2, h3')];
     if (headings.length) {
