@@ -1,174 +1,49 @@
-const myAudio = document.querySelector('#myAudio');
-function playAudio(){
-	myAudio.play();
-}
+(() => {
+  const key = 'codesyariah-reader-theme';
+  const root = document.body;
+  const toggle = document.querySelector('[data-reader-theme]');
+  const applyTheme = (dark) => {
+    root.classList.toggle('reader-dark', dark);
+    if (!toggle) return;
+    toggle.setAttribute('aria-pressed', String(dark));
+    toggle.setAttribute('aria-label', dark ? 'Aktifkan mode terang' : 'Aktifkan mode gelap');
+    toggle.querySelector('i').className = dark ? 'far fa-sun' : 'far fa-moon';
+    toggle.querySelector('span').textContent = dark ? 'Mode terang' : 'Mode gelap';
+  };
+  const saved = localStorage.getItem(key);
+  if (saved) applyTheme(saved === 'dark');
+  toggle?.addEventListener('click', () => {
+    const dark = !root.classList.contains('reader-dark');
+    localStorage.setItem(key, dark ? 'dark' : 'light');
+    applyTheme(dark);
+  });
 
-function pauseAudio(){
-	myAudio.pause()
-}
-	
-$('.mode-label').css({
-	'font-size': '37px'
-})
-
-$(document).ready(function(){
-// 	$('myAudio').removeAttr('autoplay');
-	$('.day-text').hide();
-	$(window).scroll(function(){
-		if($(this).scrollTop() > 300){
-			// console.log("down");
-			$('.mode-label').css({
-				'position':'fixed',
-				'display': 'inline-block',
-				'margin-top': '7rem',
-				'margin-left': '-3.7rem',
-				'font-size': '37px',
-				'z-index': '1'
-			})
-			$('#text-mode').css({
-				'position':'fixed',
-				'display': 'inline-block',
-				'margin-top': '11rem',
-				'margin-left': '-3.5rem',
-				'z-index':'1',
-				'transform': 'rotate(90deg)'
-			})
-		}else{
-			// console.log("top");
-			$('.mode-label').css({
-				'position': '',
-				'display':'',
-				'margin-top':'',
-				'margin-left': '',
-				'font-size': '37px',
-				'z-index':'1'
-			})
-			$('#text-mode').css({
-				'position':'',
-				'display': '',
-				'margin-top': '',
-				'margin-left': '',
-				'z-index':'1',
-				'transform': ''
-			})
-			$('.mode-label').show('slow').fadeIn(1000);
-		}
-	})
-	
-	$('#night-mode').hide();
-
-	$('input[type=checkbox][name=day]').on('click',  function(){
-
-		$('.day-text').show('slow');
-		$('.night-text').hide('slow');
-
-		$('#myAudio').attr('autoplay');
-		$('#myAudio').attr('loop', 'true');
-		
-		playAudio();
-			
-		Swal.fire({
-			position: 'top-end',
-		  	icon: 'success',
-		  	title: 'Good Night',
-		  	html: '<h1>🌒</h1>',
-		  	showConfirmButton: false,
-		  	timer: 1500
-		});
-
-
-		const dayMode = $(this).attr('id');
-
-		$('#day-mode').hide('slow').slideUp(1000);
-
-		$('#night-mode').show('slow').fadeIn(1000);
-		$('body').attr('data-theme', 'dark');
-		$('nav').removeClass('bg-white');
-		$('nav').addClass('bg-dark');
-
-		$('#anjing').css({
-			'color': 'mediumseagreen!important'
-		});
-		$('.nav-link').css({
-			'color': '#FFFACD',
-		})
-		$(".nav-link").hover(function(e) { 
-   			 $(this).css("background-color",e.type === "mouseenter"?"#FECD0F":"transparent") 
-		})
-
-		$('.jumbotron').removeClass('bg-white');
-		$('.jumbotron').addClass('bg-dark');
-		$('.article-headline').css({
-			'color':'#FFFACD',
-		})
-
-		$('footer').removeClass('bg-white');
-		$('footer').addClass('bg-dark');
-		$('span').css({
-			'color': '#FFFACD',
-		})
-		$('a').css('color','#FFFACD');
-	
-		$('input[name=day]').prop('checked', false);
-	})
-
-	$('input[type=checkbox][name=night]').on('click',  function(){
-		$('.night-text').show('slow');
-		$('.night-text').css({
-			'color': '#FFEACD'
-		});
-
-		$('#text-mode').show('slow');
-
-		$('.day-text').hide('slow');
-
-		$('#myAudio').removeAttr('autoplay');
-		$('#myAudio').removeAttr('loop');
-		pauseAudio();
-		
-		Swal.fire({
-			position: 'top-end',
-		  	icon: 'success',
-		  	title: 'Good Morning',
-		  	html: '<h1>🌤</h1>',
-		  	showConfirmButton: false,
-		  	timer: 1500
-		});
-
-		const nightMode = $(this).attr('id');
-		$('#night-mode').hide('slow').slideUp(1000);
-		$('#day-mode').show('slow').fadeIn(1000);
-
-		$('body').attr('data-theme', 'day');
-		$('nav').removeClass('bg-dark');
-		$('nav').addClass('bg-white');
-
-
-		$('#anjing').css({
-			'color':'mediumseagreen!important'
-		});
-		$('.nav-link').css({
-			'color': '#FFFACD',
-		})
-		$(".nav-link").hover(function(e) { 
-   			$(this).css("background-color",e.type === "mouseenter"?"lemonchiffon":"transparent") 
-		})
-
-
-		$('.jumbotron').removeClass('bg-dark');
-		$('.jumbotron').addClass('bg-white');
-		$('.article-headline').css({
-			'color':'#000',
-		})
-
-		$('footer').removeClass('bg-dark');
-		$('footer').addClass('bg-white');
-		$('span').css({
-			'color': '#000',
-		})
-		$('a').css('color','#000');
-
-		$('input[name=night]').prop('checked', false);
-	})
-
-})
+  const article = document.querySelector('[data-reader-article]');
+  const toc = document.querySelector('[data-reader-toc]');
+  if (article && toc) {
+    const headings = [...article.querySelectorAll('h2, h3')];
+    if (headings.length) {
+      const list = toc.querySelector('ol');
+      headings.forEach((heading, index) => {
+        const id = heading.id || `section-${index + 1}`;
+        heading.id = id;
+        const item = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = `#${id}`;
+        link.textContent = heading.textContent;
+        if (heading.tagName === 'H3') link.style.paddingLeft = '.65rem';
+        item.appendChild(link); list.appendChild(item);
+      });
+      toc.hidden = false;
+    }
+  }
+  const progress = document.querySelector('[data-reader-progress]');
+  const updateProgress = () => {
+    if (!progress || !article) return;
+    const total = Math.max(article.offsetHeight - window.innerHeight * .45, 1);
+    const passed = Math.max(0, window.scrollY - article.offsetTop + window.innerHeight * .15);
+    progress.style.width = `${Math.min(100, (passed / total) * 100)}%`;
+  };
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+})();
