@@ -144,27 +144,15 @@ contact: WebDevelopment
               min-height: 40px;
         }
     }
-    </style>
+</style>
+<link rel="stylesheet" href="{{site.url}}/assets/css/people-pages.css">
 
 
 <div id="contentApp">
 {% assign assets = site.data.author_assets[page.assets] %}
 {% assign news = site.data.api_pages[page.api] %}
 {% assign WebDevelopment = site.data.webdevelopers[page.contact] %}
-    <div class="jumbotron jumbotron-fluid jumbotron-content" style="background-image:url('{{site.url}}{{assets.images.satu}}');">
-        <div class="container">
-          <div class="row">
-            <div class="d-flex justify-content-center">
-                <div class="col-md-12">
-                    <h1 class="display-4 text-right" v-html="titleHeader" style="margin-left:8rem;margin-top:9rem;"></h1>
-                    <h3 class="blockquote-footer text-danger" style="font-family: Reey Regular;font-size:31px;" v-html="blockquoteHeader"></h3>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <h1 class="underline mt-2 mb-2"></h1> 
+    <section class="people-hero"><div class="container people-hero-inner"><div><p class="people-eyebrow">The people behind the work</p><h1>Ide yang baik tumbuh dari <em>orang yang terus belajar.</em></h1><p>Kenali penulis, engineer, dan kontributor yang merangkai catatan, pengalaman, serta eksperimen digital di CodeSyariah.</p></div><div class="people-hero-art" aria-hidden="true"><div class="people-grid"></div><div class="people-note"><i class="fas fa-users"></i><span>CODE SYARIAH</span><strong>People<br>&amp; perspectives.</strong></div></div></div></section>
 
       <div class="container">
           <h4 style="font-size:45px; margin-top:5rem;" class="mb-5 font-weight-bold spanborder text-center text-success" v-html="title1"><span>Hallo World</span></h4>
@@ -172,7 +160,7 @@ contact: WebDevelopment
               <div class="row gap-y listrecent listrecent listauthor">
               {% for author in site.data.authors %}
                   <div class="col-lg-6 mb-4">
-                    <div class="p-4 border rounded">
+                    <div class="people-card">
                       <div class="row">
                     <div class="col-md-3 mb-4 mb-md-0">
                       <img alt="{{ author[1].nama_lengkap }}" src="{{site.url}}{{ author[1].avatar }}" class="rounded-circle" height="80" width="80">

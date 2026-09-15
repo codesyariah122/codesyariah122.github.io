@@ -142,22 +142,11 @@ card-tags: "Halo <i class='fas fa-cookie-bite fa-fw' style='color:burlywood;'></
               min-height: 40px;
         }
     }
-    </style>
+</style>
+<link rel="stylesheet" href="{{site.url}}/assets/css/people-pages.css">
 <div id="contentApp">
-    <div class="jumbotron jumbotron-fluid jumbotron-content" style="background-image:url('{{site.url}}{{page.image}}');margin-top:-11rem;">
-        <div class="container">
-          <div class="row">
-            <div class="d-flex justify-content-center">
-                <div class="col-md-12">
-                    <h1 class="display-4 text-right" v-html="titleHeaderContact" style="margin-left:8rem;margin-top:9rem;"></h1>
-                    <h3 class="blockquote-footer text-danger" style="font-family: Reey Regular;font-size:31px;" v-html="blockquoteHeader"></h3>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-<h1 class="underline mt-2 mb-2"></h1>
+    <section class="people-hero"><div class="container people-hero-inner"><div><p class="people-eyebrow">Start a conversation</p><h1>Punya masalah yang perlu <em>dibuat lebih jelas?</em></h1><p>Ceritakan konteks, target, atau ide awal Anda. Kami akan membantu memetakan langkah digital yang paling masuk akal untuk dikerjakan.</p></div><div class="people-hero-art" aria-hidden="true"><div class="people-grid"></div><div class="people-note"><i class="far fa-paper-plane"></i><span>CONTACT / HELLO</span><strong>Bring the idea.<br>We'll shape it.</strong></div></div></div></section>
+<section class="contact-intro">
        <!-- container -->
     <div class="container">
       <!-- info panel -->
@@ -199,8 +188,8 @@ card-tags: "Halo <i class='fas fa-cookie-bite fa-fw' style='color:burlywood;'></
 
  <h1 class="underline mt-2 mb-2"></h1> 
       
-    <div class="container">
-        <div class="alert alert-success" role="alert">
+    <div class="container contact-form-shell">
+        <div class="alert" role="alert">
             Silahkan isi form contact dibawah dengan lengkap dan benar
           </div>
               <div class="d-flex justify-content-center">
@@ -241,6 +230,7 @@ card-tags: "Halo <i class='fas fa-cookie-bite fa-fw' style='color:burlywood;'></
                   </div>    
               </div>
           </div>
+</section>
 
 </div>
 <!-- <form action="https://formspree.io/{{site.email}}" method="POST">
