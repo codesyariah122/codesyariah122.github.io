@@ -71,7 +71,8 @@ kemudian kita buat personal access token di github kita, Bisa akses link berikut
 setelah plugin terinstall, ```Personal access tokens``` telah di buat, lanjut kita buka file ```gatsby-config.js``` yang berada di root directory gatsby kita .  
 tambahkan ini :  
 
-```javascript
+  {% raw %}
+  ```javascript
 const path = require('path');
 
 require('dotenv').config({
@@ -94,7 +95,8 @@ plugins: [
     },
 
 ]
-```  
+  ```
+  {% endraw %}
 Setelah itu kita bisa coba untuk fetching menggunakan ```GraphQl``` terlebih dahulu. 
 Sebelumnya kita aktifkan dulu server gatsby nya, kembali ke terminal :  
 
@@ -150,6 +152,7 @@ export default IndexPage
 kemudian gout punya satu direktori tambahan untuk component homepage yaitu direktori ```homepage/```.  
 kemudian di direktori component ```homepage/``` buat lagi satu direktori untuk membuat view data github nya buat direktori baru namanya ```Projects/```, didalam direktori ```Projects/``` buat satu file baru di direktori ```Projects/``` dengan nama ```index.jsx```, berikut code dari file ```homepage/Projects/index.jsx``` :  
 
+{% raw %}
 ```javascript
 import React from 'react'
 import styled from 'styled-components'
@@ -324,7 +327,8 @@ const {
 export default Projects
 
 
-```  
+```
+{% endraw %}
 bisa kalian telaah yah code nya, kalau gout hanya mau sedikit **memberi tambahan untuk intinya**, untuk artikel ini akan gout jabarkan intinya yakni :  
 
 - Query Github Graphql  
@@ -420,4 +424,3 @@ Kurang lebihnya mohon di maafkan, semoga tulisan ini bermanfaat. akhir kata gout
 ***Wassalaamm***
 
 ***puji ermanto***  
-

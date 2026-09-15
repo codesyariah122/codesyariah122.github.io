@@ -1,337 +1,39 @@
+<link rel="stylesheet" href="{{site.url}}/assets/css/projects.css">
 
-<style type="text/css">
-  /* all parallax top and bottom */
-  .parallax{
-    min-height: 500px; 
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin:0;
-  }
-  .caption {
-      background:rgba(255,255,255,0.4);
-      /* clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); */
-      position: absolute;
-      left: 21rem;
-      margin-top: 7rem;
-      width: 50%;
-      text-align: center;
-      color: #000;
-  }
-  .caption h2 {
-      color: white;
-      font-family: 'Poiret One', cursive;font-weight:bold;
-      text-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
-      margin-bottom: .9rem;
-  }
-  .caption a{
-      font-size: 18px;
-  }
-  
-  /* wave */
-  .box-wave {
-      width: 350px;
-      height: 500px;
-      border-radius: 5px;
-      box-shadow: 0 2px 30px rgba(black, .2);
-      background: lighten(#f0f4c3, 10%);
-      position: relative;
-      overflow: hidden;
-      transform: translate3d(0, 0, 0);
-    }
-    
-    .wave {
-      opacity: .4;
-      position: absolute;
-      top: 3%;
-      left: 50%;
-      background: #0af;
-      width: 500px;
-      height: 500px;
-      margin-left: -250px;
-      margin-top: -250px;
-      transform-origin: 50% 48%;
-      border-radius: 43%;
-      animation: drift 3000ms infinite linear;
-    }
-    
-    .wave.-three {
-      animation: drift 5000ms infinite linear;
-    }
-    
-    .wave.-two {
-      animation: drift 7000ms infinite linear;
-      opacity: .1;
-      background: yellow;
-    }
-    
-    .box-wave:after {
-      content: '';
-      display: block;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to bottom, rgba(#e8a, 1), rgba(#def, 0) 80%, rgba(white, .5));
-      z-index: -1;
-      transform: translate3d(0, 0, 0);
-    }
-    
-    .title-wave {
-      position: absolute;
-      left: 1rem;
-      top: 0;
-      width: 100%;
-      z-index: 1;
-      line-height: 300px;
-      text-align: left;
-      transform: translate3d(0, 0, 0);
-      color: white;
-      font-weight: bold;;
-      text-transform: uppercase;
-      font-family: 'Poiret One', cursive;
-      letter-spacing: .4em;
-      font-size: 14px;
-      text-shadow: 0 1px 0 rgba(black, .1);
-    }
-    .titl-wave a{
-        margin-left: 2rem;
-    }
-  
-  @keyframes drift {
-    from { transform: rotate(0deg); }
-    from { transform: rotate(360deg); }
-  }
-  
-  
-  @media only screen and (max-device-width: 812px) {
-    .parallax {
-        background-attachment: scroll;
-    }
-    .caption {
-        position: absolute;
-        left: 0;
-        margin-top: 2rem;
-        width: 100%;
-        text-align: center;
-        color: #000;
-    }
-    .caption h2 {
-        color: white;
-        font-family: 'Poiret One', cursive;font-weight:bold;
-        text-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
-        margin-bottom: .9rem;
-        font-size:14px;
-    }
-    .caption a{
-        font-size: 12px;
-    }
-  
-    .waves {
-            height: 40px;
-            min-height: 40px;
-      }
-  }
-  </style>
-
-
-
-{% assign WebDevelopment = site.data.webdevelopers[page.contact] %}
-
-  <div class="jumbotron jumbotron-fluid jumbotron-content" style="background-image:url('{{site.url}}{{page.image}}');">
-    <div class="container">
-      <div class="row">
-        <div class="d-flex justify-content-end">
-            <div class="col-md-6 col-xs-12 col-sm-12">
-                <h1 class="display-4 text-right" style="margin-left:8rem;margin-top:9rem;">{{page.title}}</h1>
-                <h3 class="blockquote-footer text-danger" style="font-family: Reey Regular;font-size:31px;" v-html="blockquoteHeader">{{page.blockquote}}</h3>
-            </div>
-        </div>
-      </div>
+<section class="projects-showcase" aria-labelledby="projects-title">
+  <div class="projects-orb one"></div><div class="projects-orb two"></div>
+  <div class="container projects-shell"><div class="projects-hero">
+    <div class="projects-hero-copy">
+      <p class="projects-eyebrow"><span></span> Selected work / 2026</p>
+      <h1 id="projects-title">Digital experiences built to make people <em>look twice.</em></h1>
+      <p class="projects-lede">Bukan sekadar tampilan. Ini adalah beberapa produk, website, dan tools yang kami rancang agar bisnis terlihat lebih siap, alur kerja lebih ringan, dan orang terdorong untuk mengeksplorasi lebih jauh.</p>
+      <div class="projects-actions"><a class="projects-button primary" href="#works">Jelajahi karya <i class="fas fa-arrow-down"></i></a><a class="projects-button ghost" href="https://codesyariah-webdev.vercel.app/" target="_blank" rel="noopener">Kunjungi Webdev <i class="fas fa-external-link-alt"></i></a></div>
+      <div class="projects-proof"><div><strong>Build</strong><span>Website & web app</span></div><div><strong>Fix</strong><span>System & workflow</span></div><div><strong>Deploy</strong><span>Ready to launch</span></div></div>
     </div>
+    <div class="projects-hero-visual" aria-hidden="true"><div class="projects-grid"></div><div class="projects-terminal"><div class="terminal-bar"><span></span><span></span><span></span><b>codesyariah / live</b></div><p><i>$</i> build something memorable</p><p><i>✓</i> strategy aligned</p><p><i>✓</i> experience crafted</p><p><i>✓</i> ready to launch<span class="caret">_</span></p></div><div class="projects-float top">01 <span>PROBLEM<br>SOLVED</span></div><div class="projects-float bottom"><b></b> service.status <strong>ONLINE</strong></div></div>
+  </div></div>
+</section>
+
+<section class="projects-work" id="works" aria-labelledby="works-title"><div class="container">
+  <div class="projects-heading"><div><p class="projects-eyebrow dark"><span></span> Project library</p><h2 id="works-title">Yang kami bangun bersama ide yang berani.</h2></div><p>Setiap project dimulai dari masalah yang nyata, lalu diterjemahkan menjadi pengalaman digital yang jelas, cepat, dan terasa hidup.</p></div>
+  <div class="projects-card-grid">
+    <article class="projects-card featured"><div class="projects-preview webdev"><div class="browser"><span></span><span></span><span></span><small>codesyariah-webdev.vercel.app</small></div><img src="{{site.url}}/assets/images/project/codesyariah/webdev.jpeg" alt="Preview Codesyariah Webdevelopment" loading="lazy"></div><div class="projects-card-body"><div class="projects-card-meta"><span>01 / Live website</span><span class="status">● Online</span></div><h3>Codesyariah<br>Webdevelopment</h3><p>Company profile yang menjelaskan layanan, kapabilitas, produk digital, dan jalur konsultasi dengan bahasa yang mudah dipahami calon klien.</p><div class="projects-tags"><span>Company profile</span><span>Conversion</span><span>SEO</span></div><a href="https://codesyariah-webdev.vercel.app/" target="_blank" rel="noopener" class="projects-link">Lihat website live <i class="fas fa-external-link-alt"></i></a></div></article>
+    <article class="projects-card"><div class="projects-preview pulse"><div class="dash-top"><span>WP Agency Site Pulse</span><b>Healthy</b></div><div class="dash-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="dash-stat"><strong>99.9%</strong><span>Site health</span><b>+12%</b></div><div class="dash-chart"><span></span><span></span><span></span><span></span><span></span><span></span></div></div><div class="projects-card-body"><div class="projects-card-meta"><span>02 / Digital product</span><span class="status">● Released</span></div><h3>WP Agency<br>Site Pulse</h3><p>Plugin monitoring WordPress untuk health snapshot, report, lisensi subscription, dan workflow agency yang lebih terukur.</p><div class="projects-tags"><span>WordPress</span><span>Monitoring</span><span>SaaS</span></div><a href="https://codesyariah-webdev.vercel.app/" target="_blank" rel="noopener" class="projects-link">Eksplorasi produk <i class="fas fa-external-link-alt"></i></a></div></article>
+    <article class="projects-card"><div class="projects-preview cli"><p><span>devcore</span> init <b>my-project</b></p><p class="muted">✔ Laravel preset loaded</p><p class="muted">✔ WordPress tools ready</p><p class="success">✓ Workflow automated</p><div>&gt;_</div></div><div class="projects-card-body"><div class="projects-card-meta"><span>03 / Open source</span><span class="status">● PyPI</span></div><h3>DevCore<br>CLI</h3><p>Automation CLI untuk mempercepat setup project WordPress dan Laravel, membuat workflow developer lebih konsisten dan minim langkah manual.</p><div class="projects-tags"><span>Python</span><span>CLI</span><span>Automation</span></div><a href="https://pypi.org/project/devcore-cli/" target="_blank" rel="noopener" class="projects-link">Lihat di PyPI <i class="fas fa-external-link-alt"></i></a></div></article>
   </div>
-
-  <h1 class="underline mt-3 mb-2"></h1>  
-
-  <div class="container">
-    <div class="row justify-content-center">
-      <div style="width: 100%; height: auto !important; clear: both; text-align: center;" class="google-auto-placed">
-      </div>
-        <div class="col-md-6 col-xs-12 col-sm-12">
-            <div class="polaroid">
-              <img src="{{site.url}}{{page.vector1}}" alt="" class="img-responsive mt-3">
-                <div class="polaroid-body">
-                    <h2>{{page.tags1}}.</h2>
-                </div>	
-            </div>
-        </div>
-    </div>
+  <div class="projects-more-heading"><p class="projects-eyebrow dark"><span></span> More builds</p><h3>Client systems, business platforms, and tools.</h3><p>Daftar ini merangkum project yang kami kerjakan bersama. Case study dan preview visual akan terus dilengkapi seiring dokumentasi tiap project dirapikan.</p></div>
+  <div class="projects-mini-grid">
+    <article class="projects-mini"><span>04</span><i class="fas fa-layer-group"></i><h4>Wangun Techno</h4><p>Kolaborasi pengembangan solusi digital dan sistem yang disiapkan sesuai kebutuhan operasional.</p><div><b>Client project</b><b>Web system</b></div></article>
+    <article class="projects-mini"><span>05</span><i class="fas fa-users-cog"></i><h4>SBA CRM</h4><p>CRM dan dashboard operasional untuk membantu alur data, user, serta pekerjaan tim lebih terarah.</p><div><b>CRM</b><b>Dashboard</b></div></article>
+    <article class="projects-mini"><span>06</span><i class="fas fa-wifi"></i><h4>Billing WiFi Mikrotik</h4><p>Sistem billing dan pengelolaan layanan internet untuk workflow pembayaran yang lebih praktis.</p><div><b>Billing</b><b>Mikrotik</b></div></article>
+    <article class="projects-mini"><span>07</span><i class="fas fa-server"></i><h4>VPS Management</h4><p>Workspace manajemen server dan project untuk memudahkan pemantauan infrastruktur.</p><div><b>VPS</b><b>Infrastructure</b></div></article>
+    <article class="projects-mini"><span>08</span><i class="fas fa-building"></i><h4>Limasraga</h4><p>Modernisasi website company profile dengan tema WordPress yang lebih relevan untuk brand.</p><div><b>WordPress</b><b>Company profile</b></div></article>
+    <article class="projects-mini"><span>09</span><i class="fas fa-calendar-check"></i><h4>LaNadiya Booking</h4><p>Platform booking dan admin untuk mengelola operasional villa, voucher, dan publikasi konten.</p><div><b>Booking</b><b>Admin panel</b></div></article>
+    <article class="projects-mini"><span>10</span><i class="fas fa-file-invoice-dollar"></i><h4>Payroll System</h4><p>Sistem payroll dengan import data, histori bulanan, dan distribusi dokumen untuk karyawan.</p><div><b>Payroll</b><b>Automation</b></div></article>
+    <article class="projects-mini"><span>11</span><i class="fas fa-file-signature"></i><h4>Suratku SaaS</h4><p>Konsep SaaS generator surat formal untuk kebutuhan individu maupun operasional perusahaan.</p><div><b>SaaS</b><b>Document tool</b></div></article>
+    <article class="projects-mini"><span>12</span><i class="fas fa-chart-line"></i><h4>ERP MSI</h4><p>Pengembangan API ERP dan pembaruan kontrol role untuk akses data yang lebih terstruktur.</p><div><b>ERP</b><b>API</b></div></article>
+    <article class="projects-mini"><span>13</span><i class="fas fa-terminal"></i><h4>GClone CLI</h4><p>Tooling command line untuk meningkatkan workflow, setup, dan pengelolaan project developer.</p><div><b>CLI</b><b>Developer tools</b></div></article>
   </div>
+</div></section>
 
-  <h1 class="underline mb-2 mt-2"></h1>
-
-<div class="parallax" style="background-image: url('{{site.url}}{{page.parallax}}');
-">
-
-  <div class="caption">
-    <br/><br/>
-    <h2> {{page.parallax-tags}} : </h2>
-      <a href="https://wa.me/{{WebDevelopment.whatsapp}}?text=Hai%20kak%20saya%20membutuhkan%20jasa%20web%20development" class="btn btn-primary text-white">whatsap</a>
-      <a href="https://instagram.com/{{WebDevelopment.instagram}}" class="btn btn-primary text-white">Instagram</a>
-    <br/><br/>
-  </div>
-
-</div>
-
-
-<div class="container">
-  
-  <div style="width: 100%; height: auto !important; clear: both; text-align: center;" class="google-auto-placed">
-  </div>
-
-    <div class="row justify-content-center">
-  
-      <div class="col-md-12 col-xs-12 col-sm-12">
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <!-- container on panel-body -->
-            <div class="container">
-              <!-- row content1 -->
-              <div class="row">
-                <div class="col-md-4 col-xs-12 col-sm-12">
-                  <img v-bind:src="imageVectorCard" src="{{site.url}}{{page.vector2}}" alt="" class="float-left img-responsive"  width="800" height="400" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;"/>
-                </div>
-                <div class="col-md-6 col-xs-12 col-sm-12 ml-2 mt-2">
-                  <h1 class="underline text-center">
-                    {{page.title}}
-                  </h1>
-                    <p class="ml-2">
-                      {{page.tags2}}
-                    </p>
-                    <img src="{{site.url}}{{page.vector3}}" alt="">
-                </div>
-                <!-- <div class="row justify-content-end">
-                  <img src="{{site.url}}/assets/images/project/codesyariah/vector4.gif" alt="">
-                </div> -->
-              </div>
-              <!-- row content1 end -->
-              <br>
-              <h1 class="underline mb-5 mt-2"></h1>
-
-                    <div class="container">
-                        <h1 class="text-center mt-2 mb-3">
-                            List Project <span style="font-family:Reey Regular;color:crimson;">{{site.name}}</span>
-                        </h1>
-                        
-                            <div class="d-flex justify-content-center">
-                                <div class="row">
-                                    {% for data in site.projects %}
-                                        {% assign ProjectData = site.data.projects[data.data] %}             
-                                            <div class="col-md-4 col-xs-12 col-sm-12">
-                                                <div class="card-pricing">
-                                                    <a class="img-card-pricing" href="{{site.url}}/{{ data.img_path }}"  data-toggle="lightbox" data-gallery="projects">
-                                                            <img src="{{ data.img_path }}" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important; color: rgb(255,228,181);border-radius:0%;"/>
-                                                    </a>
-                                                    
-                                                    <div class="card-content-pricing">
-                                                        <h4 class="card-title">{{data.title}}</h4>                              
-                                                                <blockquote class="blockquote-footer" style='color:lightskyblue;'>
-                                                                    {{ data.tagline }}
-                                                                </blockquote>
-                                                                <p class="">
-                                                                    {{ data.content | strip_html | strip_newlines | truncate: 156 }}
-                                                                </p>
-                                                    </div>
-                                                    
-                                                    <div class="card-read-more-pricing">
-                                                        <a href="{{site.url}}/{{page.type}}/{{ ProjectData.links | slugify }}" class="btn btn-link btn-block">
-                                                            Lihat Project
-                                                        </a>
-                                                    </div>
-                                
-                                                </div>
-                                            </div>                
-                                    {% endfor %}           
-                            </div>
-                        </div>
-
-                    </div>
-
-              </div>
-
-            <!-- end container panel-body -->
-          </div>
-        </div>
-      </div>
-  
-    </div>
-   
-  </div>
-  
-  <br>
-  
-  
-
-<!-- <section class="wrapper-pricing">
-    <div class="container-fostrap">
-           
-       <div>
-            <img src="{{site.url}}/{{site.favicon}}" class="fostrap-logo"/>
-            <h1 class="heading">
-                Welcome in MyProject
-            </h1>
-        </div><br/><br/>
-
-        <div class="content-pricing">
-            <div class="container">
-                <div class="row">
-
-{% for data in site.projects %}
-       {% assign ProjectData = site.data.projects[data.data] %}
-
-
-                    <div class="col-md-4 col-xs-12 col-sm-4">
-                        <div class="card-pricing">
-
-                            <a class="img-card-pricing" href="{{site.url}}/{{ data.img_path }}">
-                            <img src="{{ data.img_path }}" />
-                          </a>
-                            <div class="card-content-pricing">
-                            <h4 class="card-title">{{data.title}}</h4>
-                                                           
-                                <blockquote style='color:lightskyblue;'>
-                                    {{ data.tagline }}
-                                </blockquote>
-
-                                <p class="">
-                                    {{ data.content | strip_html | strip_newlines | truncate: 156 }}
-                                </p>
-
-                            </div>
-                            <div class="card-read-more-pricing">
-                                <a href="{{site.url}}/project-{{ ProjectData.links | slugify }}" class="btn btn-link btn-block">
-                                    Read More
-                                </a>
-                            </div>
-
-                        </div>
-                    </div> <br/>                 
-{% endfor %}         
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
-
-
-<script type="text/javascript">
-  const obj = {
-      'sayHeloGif' : '{{page.sayHeloGif}}',
-      'titleHeader' : '{{page.header}}',
-      'blockquoteHeader' : '{{page.blockquote}}',
-      'cardVector' : '{{site.url}}{{page.vector}}',
-      'tagsParallax' : '{{page.parallax-tags}} ',
-  };
-</script>
+<section class="projects-cta"><div class="container"><div><p class="projects-eyebrow"><span></span> Your next move</p><h2>Punya ide yang belum punya bentuk?</h2><p>Ceritakan target bisnis atau masalahnya. Kami bantu mengubahnya menjadi jalur digital yang masuk akal untuk dibangun.</p></div><a class="projects-button primary" href="https://wa.me/6288222668778?text=Halo%20Codesyariah%2C%20saya%20ingin%20konsultasi%20project." target="_blank" rel="noopener">Mulai konsultasi <i class="fab fa-whatsapp"></i></a></div></section>

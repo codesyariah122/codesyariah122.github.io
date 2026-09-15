@@ -8,11 +8,11 @@ description: "Coffee again Script again."
 
 <!-- Now the rest of the posts with the usual loop but with an offset:4 on the first page so we can skeep the first 4 posts displayed above -->
 
-<div class="row mt-3">
+<div class="row mt-3 cs-story-grid">
 
     <div class="col-md-8 main-loop">
 
-        <h4 class="font-weight-bold spanborder"><span>All Stories</span></h4>
+        <div class="cs-feed-heading"><span>Latest knowledge</span><h4>All Stories</h4></div>
 
 
         {% for post in paginator.posts %}
