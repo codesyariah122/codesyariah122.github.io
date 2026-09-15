@@ -1,168 +1,52 @@
-const apiQuran = {
-	url: 'https://api.quran.sutanlab.id/surah/'
-}
+(() => {
+  const source = '/assets/data/quran.json';
+  const select = document.querySelector('#select-surah');
+  const search = document.querySelector('#quran-search');
+  const open = document.querySelector('#enter-quran');
+  const state = document.querySelector('#quran-state');
+  const output = document.querySelector('#quran-list');
+  if (!select || !search || !open || !state || !output) return;
 
-const Loader = document.querySelector('#loader')
-const enterQuran = document.querySelector('#enter-quran')
-const NextAyat = document.querySelector('.next')
-const PrevAyat = document.querySelector('.prev')
-const errorQuran = document.querySelector('#error-quran')
-const selectSurah = document.querySelector('#select-surah')
-const selectAyat = document.querySelector('#select-ayat')
-const optSurahEl = document.createElement('option')
-const optAyatEl = document.createElement('option')
-const optErrEl = document.createElement('option')
+  let surahs = [];
+  const esc = value => String(value || '').replace(/[&<>'"]/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));
+  const getSurah = number => surahs.find(item => item.number === Number(number));
+  const progressKey = 'codesyariah-quran-reading-v1';
+  let progress = (() => { try { return JSON.parse(localStorage.getItem(progressKey)) || {}; } catch (_) { return {}; } })();
+  const entryFor = number => progress[number] || (progress[number] = { pages: [], verses: [] });
+  const persist = () => { try { localStorage.setItem(progressKey, JSON.stringify(progress)); } catch (_) {} };
+  const markPageRead = (surah, page) => { const entry = entryFor(surah); if (!entry.pages.includes(page)) { entry.pages.push(page); persist(); } return entry.pages.includes(page); };
+  const toggleVerseBookmark = (surah, verse) => { const entry = entryFor(surah); const index = entry.verses.indexOf(verse); index === -1 ? entry.verses.push(verse) : entry.verses.splice(index, 1); persist(); return entry.verses.includes(verse); };
 
-optSurahEl.setAttribute('value', '')
-optSurahEl.textContent='choose ... '
-optAyatEl.setAttribute('value', 1)
-optAyatEl.textContent='Pilih Ayat'
-optErrEl.className='alert alert-danger'
-optErrEl.setAttribute('role', 'alert')
-optErrEl.textContent='Pilih surah terlebih dahulu ... '
+  function populate(query = '') {
+    const term = query.trim().toLocaleLowerCase('id');
+    const items = surahs.filter(surah => !term || [surah.number, surah.name.transliteration.id, surah.name.translation.id, surah.name.short].join(' ').toLocaleLowerCase('id').includes(term));
+    select.innerHTML = '<option value="">Pilih surah dari 114 surah</option>' + items.map(surah => `<option value="${surah.number}">${surah.number}. ${esc(surah.name.transliteration.id)} — ${esc(surah.name.translation.id)}</option>`).join('');
+  }
 
-selectSurah.appendChild(optSurahEl)
-selectAyat.appendChild(optAyatEl)
+  const versesPerPage = 10;
+  function render(surah, requestedPage = 1) {
+    if (!surah) return;
+    const totalPages = Math.ceil(surah.verses.length / versesPerPage);
+    const page = Math.min(Math.max(Number(requestedPage), 1), totalPages);
+    const start = (page - 1) * versesPerPage;
+    const verses = surah.verses.slice(start, start + versesPerPage);
+    const pageRead = markPageRead(surah.number, page);
+    const bookmarkCount = entryFor(surah.number).verses.length;
+    const pager = `<nav class="quran-pager" aria-label="Navigasi ayat"><button class="quran-reader-page" data-surah="${surah.number}" data-page="${page - 1}" ${page === 1 ? 'disabled' : ''}><i class="fas fa-arrow-left"></i> Sebelumnya</button><span>Ayat ${start + 1}–${Math.min(start + versesPerPage, surah.numberOfVerses)} dari ${surah.numberOfVerses}<small>Halaman ${page} / ${totalPages} · ${pageRead ? '✓ sudah dibaca' : ''}</small></span><button class="quran-reader-page" data-surah="${surah.number}" data-page="${page + 1}" ${page === totalPages ? 'disabled' : ''}>Selanjutnya <i class="fas fa-arrow-right"></i></button></nav>`;
+    const bismillah = surah.preBismillah && surah.preBismillah.text ? `<p class="quran-bismillah" lang="ar">${esc(surah.preBismillah.text.arab)}</p>` : '';
+    const complete = page === totalPages ? `<aside class="quran-complete"><i class="fas fa-book-reader"></i><div><span>Alhamdulillah</span><h3>Anda telah menyelesaikan Surah ${esc(surah.name.transliteration.id)}.</h3><p>Semoga bacaan ini membawa ketenangan dan kebaikan.</p></div><button type="button" class="quran-clear"><i class="fas fa-check"></i> Selesai & rapikan view</button></aside>` : '';
+    output.innerHTML = `<article class="quran-surah quran-page-turn"><header><div><span>Surah ${surah.number} · ${surah.numberOfVerses} ayat · ${bookmarkCount} bookmark</span><h2 lang="ar">${esc(surah.name.long)}</h2><h3>${esc(surah.name.transliteration.id)} <small>— ${esc(surah.name.translation.id)}</small></h3></div><button class="quran-tafsir" data-tafsir="${surah.number}" type="button">Tentang surah <i class="fas fa-book-open"></i></button></header>${bismillah}${pager}<div class="quran-verses">${verses.map(verse => { const saved = entryFor(surah.number).verses.includes(verse.number.inSurah); return `<article class="quran-verse" id="ayat-${verse.number.inSurah}"><div class="quran-verse-meta"><span>${verse.number.inSurah}</span><button type="button" class="quran-play" data-audio="${esc(verse.audio.primary)}" aria-label="Putar ayat ${verse.number.inSurah}"><i class="fas fa-play"></i></button><button type="button" class="quran-bookmark ${saved ? 'is-saved' : ''}" data-surah="${surah.number}" data-ayat="${verse.number.inSurah}" data-page="${page}" aria-label="${saved ? 'Hapus bookmark' : 'Simpan bookmark'} ayat ${verse.number.inSurah}"><i class="${saved ? 'fas' : 'far'} fa-bookmark"></i></button></div><p class="quran-arabic" lang="ar" dir="rtl">${esc(verse.text.arab)}</p><p class="quran-latin">${esc(verse.text.transliteration.en)}</p><p class="quran-translation">${esc(verse.translation.id)}</p><details><summary>Tafsir ringkas</summary><p>${esc(verse.tafsir && verse.tafsir.id ? verse.tafsir.id.short : 'Tafsir belum tersedia.')}</p></details></article>`; }).join('')}</div>${pager}${complete}</article>`;
+    state.textContent = `${surah.name.transliteration.id}: ayat ${start + 1}–${Math.min(start + versesPerPage, surah.numberOfVerses)} dari ${surah.numberOfVerses}.`;
+    output.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 
-Loader.style.visibility="hidden"
-errorQuran.style.visibility="visible"
+  function showTafsir(surah) {
+    output.insertAdjacentHTML('afterbegin', `<aside class="quran-tafsir-panel"><button type="button" class="quran-close" aria-label="Tutup">×</button><span>Pengantar surah</span><h3>${esc(surah.name.transliteration.id)} — ${esc(surah.name.translation.id)}</h3><p>${esc(surah.tafsir.id)}</p><small>${esc(surah.revelation.id)} · ${surah.numberOfVerses} ayat</small></aside>`);
+  }
 
-setSurah(apiQuran.url)
-
-.then(response => response.json())
-.then(response => {
-	const Data = response.data 
-	OptSurah(Data)
-})
-
-
-selectSurah.addEventListener('change', function(){
-	Loader.style.visibility="visible"
-	errorQuran.innerHTML=''
-	selectAyat.innerHTML = ''
-	selectAyat.appendChild(optAyatEl)
-
-	const surah = this.value
-	if(surah !== ''){
-		setAyat(apiQuran.url, surah)
-		.finally(() => {
-			setTimeout(function(){
-				Loader.style.visibility="hidden"			
-			}, 1500)
-		})
-		.then(response => response.json())
-		.then(response => {
-			// console.log(response)
-			const Data = response.data .verses
-			OptAyat(Data)
-		})
-	}else{
-		setTimeout(function(){
-			Loader.style.visibility="hidden"
-		}, 500)
-	}
-})
-
-enterQuran.addEventListener('click', function() {
-	Loader.style.visibility="visible"
-	errorQuran.style.visibility="visible"
-	const surah = selectSurah.value
-	const ayat = selectAyat.value
-
-	if(surah === '' ) {
-		setTimeout(function(){
-			errorQuran.appendChild(optErrEl)
-			Loader.style.visibility="hidden"
-		}, 500)
-	}else{
-		getQuran(apiQuran.url, surah, ayat)
-		.finally(() => {
-			setTimeout(function(){
-				Loader.style.visibility="hidden"
-			}, 1000)
-		})
-		.then( res => res.json())
-		.then( res => {
-			const Data = res.data
-			ViewSurah(Data)
-		})
-	}
-	
-})
-
-
-
-document.addEventListener('click', function(e){
-	if(e.target.classList.contains('next')){
-		const surah = e.target.dataset.surah
-		const next = e.target.dataset.ayat
-
-		getQuran(apiQuran.url, surah, next)
-		.finally(() => {
-			setTimeout(function(){
-				Loader.style.visibility="hidden"
-			}, 1000)
-		})
-		.then( res => res.json())
-		.then( res => {
-			const Data = res.data
-			ViewSurah(Data)
-		})	
-	}else if(e.target.classList.contains('last')){
-		const surah = e.target.dataset.surah
-		const last = e.target.dataset.ayat
-		console.log(last)
-		getQuran(apiQuran.url, surah, last)
-		.finally(() => {
-			setTimeout(function(){
-				Loader.style.visibility="hidden"
-			}, 1000)
-		})
-		.then( res => res.json())
-		.then( res => {
-			const Data = res.data
-			ViewSurah(Data)
-		})	
-		// .catch((err) => console.log('Results error : ', err))
-	}else if(e.target.classList.contains('prev')){
-		const surah = e.target.dataset.surah
-		const prev = e.target.dataset.ayat
-		getQuran(apiQuran.url, surah, prev)
-		.finally(() => {
-			setTimeout(function(){
-				Loader.style.visibility="hidden"
-			}, 1000)
-		})
-		.then( res => res.json())
-		.then( res => {
-			const Data = res.data
-			ViewSurah(Data)
-		})	
-		// .catch((err) => console.log('Results error : ', err))
-	}else if(e.target.classList.contains('first')){
-		const surah = e.target.dataset.surah
-		const first = e.target.dataset.ayat
-		getQuran(apiQuran.url, surah, first)
-		.finally(() => {
-			setTimeout(function(){
-				Loader.style.visibility="hidden"
-			}, 1000)
-		})
-		.then( res => res.json())
-		.then( res => {
-			// console.log(res)
-			const Data = res.data
-			ViewSurah(Data)
-		})	
-		// .catch((err) => console.log('Results error : ', err))
-	}else if(e.target.classList.contains('tafsir-surah')){
-		const surah = e.target.dataset.surah
-		Literation(apiQuran.url, surah)
-		.then( res => res.json())
-		.then( res => {
-			const Data = res.data
-			ViewLiteration(Data)
-		})
-		.catch((err) => console.log('Results error : ', err))
-	}
-})
+  fetch(source).then(response => { if (!response.ok) throw new Error('File Quran tidak dapat dimuat'); return response.json(); }).then(payload => { surahs = payload.data || []; populate(); state.textContent = '114 surah siap dibaca dari data lokal.'; }).catch(error => { state.classList.add('is-error'); state.textContent = `${error.message}. Coba muat ulang halaman.`; });
+  search.addEventListener('input', () => populate(search.value));
+  open.addEventListener('click', () => render(getSurah(select.value)));
+  select.addEventListener('change', () => { if (select.value) render(getSurah(select.value)); });
+  output.addEventListener('click', event => { const pageButton = event.target.closest('.quran-reader-page'); if (pageButton && !pageButton.disabled) render(getSurah(pageButton.dataset.surah), pageButton.dataset.page); const bookmark = event.target.closest('.quran-bookmark'); if (bookmark) { toggleVerseBookmark(Number(bookmark.dataset.surah), Number(bookmark.dataset.ayat)); render(getSurah(bookmark.dataset.surah), bookmark.dataset.page); } const play = event.target.closest('.quran-play'); if (play) { document.querySelectorAll('.quran-audio').forEach(audio => audio.remove()); const audio = document.createElement('audio'); audio.className = 'quran-audio'; audio.src = play.dataset.audio; audio.controls = true; audio.autoplay = true; play.closest('.quran-verse').appendChild(audio); } const tafsir = event.target.closest('.quran-tafsir'); if (tafsir) showTafsir(getSurah(tafsir.dataset.tafsir)); if (event.target.closest('.quran-close')) event.target.closest('.quran-tafsir-panel').remove(); if (event.target.closest('.quran-clear')) { output.innerHTML = ''; select.value = ''; search.value = ''; populate(); state.textContent = 'Reader telah dirapikan. Pilih surah lain untuk melanjutkan.'; document.querySelector('.quran-reader-shell').scrollIntoView({ behavior: 'smooth', block: 'start' }); } });
+})();

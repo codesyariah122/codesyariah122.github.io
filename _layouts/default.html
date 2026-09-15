@@ -32,9 +32,9 @@
     
 
     <!-- Navbar -->
-    <nav id="MagicMenu" class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top">
+    <nav id="MagicMenu" class="topnav navbar navbar-expand-lg navbar-light fixed-top cs-nav">
     <div class="container">
-        <a class="navbar-brand" href="{{ site.url }}" style="font-family: 'Dancing Script', cursive;"><strong>{{site.name}}</strong></a>
+        <a class="navbar-brand cs-brand" href="{{ site.url }}"><span class="cs-brand-mark">&lt;/&gt;</span><strong>{{site.name}}</strong></a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -54,14 +54,14 @@
     </div>
 
     <!-- Content -->
-    <main role="main" class="site-content">
+    <main role="main" class="site-content cs-site-content">
         {{ content }}
     </main>
 
     
 
     <!-- Footer -->
-    <footer class="bg-white border-top p-3 text-muted small">
+    <footer class="cs-footer p-3 small">
         <div class="container">
         <div class="row align-items-center justify-content-between">
             <div>

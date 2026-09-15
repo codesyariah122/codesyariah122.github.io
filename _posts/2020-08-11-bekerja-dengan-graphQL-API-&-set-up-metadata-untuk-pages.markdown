@@ -208,6 +208,7 @@ selanjutnya ..... mulailah untuk membaca dokumentasinya, karena dalam artikel ka
 
   kemudian buka file ```gatsby-node.js``` copy baris code berikut :  
 
+  {% raw %}
   ```javascript
       const path = require('path')
 
@@ -291,7 +292,8 @@ selanjutnya ..... mulailah untuk membaca dokumentasinya, karena dalam artikel ka
       }
 
       export default Blog
-  ```  
+  ```
+  {% endraw %}
 * kemudian setup dibagian ```gatsby-config.js```
   buka kembali file ```gatsby-config.js``` di direktori root applikasi gatsbyJS kita :  
   kemudian ubah baris script nya menjadi sepert dibawah ini :  
@@ -332,4 +334,3 @@ selanjutnya ..... mulailah untuk membaca dokumentasinya, karena dalam artikel ka
 waasalamm....
 
 ***puji ermanto***  
-
