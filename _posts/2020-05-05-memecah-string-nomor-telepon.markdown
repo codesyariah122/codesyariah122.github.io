@@ -3,7 +3,11 @@ layout: post
 title:  "Explode string nomor telepon dari query database"
 author: puji
 categories: [ PHP, explode ]
-image: assets/images/post/explode_telp.png
+image: assets/images/social/memecah-string-nomor-telepon-share.jpg
+hero_image: assets/images/post/explode_telp.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  

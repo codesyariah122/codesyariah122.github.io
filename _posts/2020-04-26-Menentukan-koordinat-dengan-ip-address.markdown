@@ -3,7 +3,11 @@ layout: post
 title:  "Mendapatkan koordinat google melalui ip address"
 author: puji
 categories: [ PHP, ip_location2 ]
-image: assets/images/post/ip-location.png
+image: assets/images/social/menentukan-koordinat-dengan-ip-address-share.jpg
+hero_image: assets/images/post/ip-location.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  

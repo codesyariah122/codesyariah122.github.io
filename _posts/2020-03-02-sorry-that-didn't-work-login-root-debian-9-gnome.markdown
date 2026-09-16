@@ -3,7 +3,11 @@ layout: post
 title:  "sorry that didn't work login root debian 9 gnome"
 author: puji
 categories: [ linux, server ]
-image: assets/images/post/debian9/IMG_20200201_005454.jpg
+image: assets/images/social/sorry-that-didn-t-work-login-root-debian-9-gnome-share.jpg
+hero_image: assets/images/post/debian9/IMG_20200201_005454.jpg
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [sysadmin]
 opening: بسم الله الرحمن الرحيم
 ---  

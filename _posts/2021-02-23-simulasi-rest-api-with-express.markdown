@@ -3,7 +3,11 @@ layout: post
 title:  "Simulasi Rest Api menggunakan ExpressJS"
 author: puji
 categories: [ Javascript, NodeJS, ExpressJS ]
-image: assets/images/post/express.jpg
+image: assets/images/social/simulasi-rest-api-with-express-share.jpg
+hero_image: assets/images/post/express.jpg
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  

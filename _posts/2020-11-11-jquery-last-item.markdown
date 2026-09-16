@@ -3,7 +3,11 @@ layout: post
 title:  "Penggunaan jQuery last untuk mengambil element terakhir"
 author: puji
 categories: [ Javascript, JQuery ]
-image: assets/images/post/jquery_last1.png
+image: assets/images/social/jquery-last-item-share.jpg
+hero_image: assets/images/post/jquery_last1.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  

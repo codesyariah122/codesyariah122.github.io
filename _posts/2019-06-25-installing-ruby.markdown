@@ -3,7 +3,11 @@ layout: post
 title:  "installing ruby"
 author: puji
 categories: [Ruby]
-image: assets/images/post/ruby.png
+image: assets/images/social/installing-ruby-share.jpg
+hero_image: assets/images/post/ruby.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [ruby]
 opening: بسم الله الرحمن الرحيم
 ---  

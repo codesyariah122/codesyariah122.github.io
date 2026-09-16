@@ -3,7 +3,11 @@ layout: post
 title:  "Mutiara Hikmah"
 author: puji
 categories: [ KajianIslam, Sunnah  ]
-image: assets/images/post/mutiara-hikmah.jpeg
+image: assets/images/social/mutiara-hikmah-share.jpg
+hero_image: assets/images/post/mutiara-hikmah.jpeg
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [Blog]
 opening: بسم الله الرحمن الرحيم
 ---

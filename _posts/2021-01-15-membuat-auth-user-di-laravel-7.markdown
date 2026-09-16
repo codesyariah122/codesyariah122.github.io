@@ -3,7 +3,11 @@ layout: post
 title:  "Mudahnya membuat user authentication di laravel"
 author: puji
 categories: [ PHP, Laravel, MVC, OOP ]
-image: assets/images/post/laravel-auth/laravel-vue-auth.png
+image: assets/images/social/membuat-auth-user-di-laravel-7-share.jpg
+hero_image: assets/images/post/laravel-auth/laravel-vue-auth.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  

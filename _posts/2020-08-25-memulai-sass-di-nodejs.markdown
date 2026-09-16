@@ -3,7 +3,11 @@ layout: post
 title:  "Memulai SASS di NodeJS"
 author: puji
 categories: [ NodeJS, SASS ]
-image: assets/images/post/sass.png
+image: assets/images/social/memulai-sass-di-nodejs-share.jpg
+hero_image: assets/images/post/sass.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [fullstack_developer]
 opening: بسم الله الرحمن الرحيم
 ---  

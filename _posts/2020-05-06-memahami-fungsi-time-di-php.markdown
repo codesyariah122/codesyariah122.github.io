@@ -3,7 +3,11 @@ layout: post
 title:  "Memahami fungsi time di php"
 author: puji
 categories: [ PHP, Date And Time ]
-image: assets/images/post/php_time.jpg
+image: assets/images/social/memahami-fungsi-time-di-php-share.jpg
+hero_image: assets/images/post/php_time.jpg
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  

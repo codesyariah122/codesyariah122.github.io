@@ -3,7 +3,11 @@ layout: post
 title:  "Install Visual Studio Code di debian 9 stretch"
 author: puji
 categories: [ mysql-server, phpmyadmin ]
-image: assets/images/post/visual_code1.png
+image: assets/images/social/install-visual-studio-code-debian9-stretch-share.jpg
+hero_image: assets/images/post/visual_code1.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  

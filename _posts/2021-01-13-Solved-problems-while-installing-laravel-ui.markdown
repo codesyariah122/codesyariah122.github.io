@@ -3,7 +3,11 @@ layout: post
 title:  "Solved Error Install laravel/ui"
 author: puji
 categories: [ PHP, Laravel, MVC, OOP ]
-image: assets/images/post/larvel-ui-vue.jpg
+image: assets/images/social/solved-problems-while-installing-laravel-ui-share.jpg
+hero_image: assets/images/post/larvel-ui-vue.jpg
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  

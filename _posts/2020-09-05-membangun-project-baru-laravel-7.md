@@ -3,7 +3,11 @@ layout: post
 title:  "Membangun project baru laravel 7"
 author: puji
 categories: [ PHP, Laravel, MVC, OOP ]
-image: assets/images/post/laravel7_0.jpg
+image: assets/images/social/membangun-project-baru-laravel-7-share.jpg
+hero_image: assets/images/post/laravel7_0.jpg
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  

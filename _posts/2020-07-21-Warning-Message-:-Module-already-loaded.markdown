@@ -3,7 +3,11 @@ layout: post
 title:  "Warning Message: Module already loaded"
 author: puji
 categories: [ php, codeigniter ]
-image: assets/images/post/error_php_codeigniter.png
+image: assets/images/social/warning-message-module-already-loaded-share.jpg
+hero_image: assets/images/post/error_php_codeigniter.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [webdeveloper]
 opening: بسم الله الرحمن الرحيم
 ---  

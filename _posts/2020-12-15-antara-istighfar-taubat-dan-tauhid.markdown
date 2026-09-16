@@ -3,7 +3,11 @@ layout: post
 title:  "Antara Istighfar, Taubat dan Tauhid"
 author: puji
 categories: [ KajianIslam, Sunnah ]
-image: assets/images/post/doa.jpg
+image: assets/images/social/antara-istighfar-taubat-dan-tauhid-share.jpg
+hero_image: assets/images/post/doa.jpg
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [Blog]
 opening: بسم الله الرحمن الرحيم
 ---  

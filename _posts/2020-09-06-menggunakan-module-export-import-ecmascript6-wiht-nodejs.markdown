@@ -3,7 +3,11 @@ layout: post
 title:  "Menggunakan module import - export ecmascript6 di Node.js"
 author: puji
 categories: [ NodeJS, Javascript ]
-image: assets/images/post/import-export.png
+image: assets/images/social/menggunakan-module-export-import-ecmascript6-wiht-nodejs-share.jpg
+hero_image: assets/images/post/import-export.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [fullstack_developer]
 opening: بسم الله الرحمن الرحيم
 ---  

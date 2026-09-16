@@ -3,7 +3,11 @@ layout: post
 title:  "Mengaktifkan script npm start dengan nodemon"
 author: puji
 categories: [ NodeJS, Javascript ]
-image: assets/images/post/nodemon.png
+image: assets/images/social/mengaktifkan-script-npm-start-dengan-nodemon-share.jpg
+hero_image: assets/images/post/nodemon.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [fullstack_developer]
 opening: بسم الله الرحمن الرحيم
 ---  

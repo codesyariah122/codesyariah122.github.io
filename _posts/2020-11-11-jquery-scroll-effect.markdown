@@ -3,7 +3,11 @@ layout: post
 title:  "Bermain dengan jQuery Scrolling Effect"
 author: puji
 categories: [ Javascript, JQuery ]
-image: assets/images/post/jquery_scroll.png
+image: assets/images/social/jquery-scroll-effect-share.jpg
+hero_image: assets/images/post/jquery_scroll.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  

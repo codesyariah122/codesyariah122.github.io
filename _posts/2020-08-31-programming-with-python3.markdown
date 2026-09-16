@@ -3,7 +3,11 @@ layout: post
 title:  "Belajar programming dengan python"
 author: puji
 categories: [ Python, programmer ]
-image: assets/images/post/python2.png
+image: assets/images/social/programming-with-python3-share.jpg
+hero_image: assets/images/post/python2.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [python]
 opening: بسم الله الرحمن الرحيم
 ---  

@@ -3,7 +3,11 @@ layout: post
 title:  "Build Node.js app with Heroku"
 author: puji
 categories: [ NodeJS, Javascript ]
-image: assets/images/post/heroku.png
+image: assets/images/social/build-node-js-app-with-heroku-share.jpg
+hero_image: assets/images/post/heroku.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [fullstack_developer]
 opening: بسم الله الرحمن الرحيم
 ---  

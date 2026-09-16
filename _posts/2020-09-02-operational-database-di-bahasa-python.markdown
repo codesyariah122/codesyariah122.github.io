@@ -3,7 +3,11 @@ layout: post
 title:  "Operational database di bahasa python dengan module mysql connector"
 author: puji
 categories: [ Python, programmer ]
-image: assets/images/post/python/pythonDB.png
+image: assets/images/social/operational-database-di-bahasa-python-share.jpg
+hero_image: assets/images/post/python/pythonDB.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [python]
 opening: بسم الله الرحمن الرحيم
 ---  

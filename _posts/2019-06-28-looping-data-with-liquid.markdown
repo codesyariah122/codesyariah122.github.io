@@ -3,7 +3,11 @@ layout: post
 title:  "Looping data with liquid jekyll"
 author: puji
 categories: [ Jekyll, ruby ]
-image: assets/images/post/jekyll-liquid.png
+image: assets/images/social/looping-data-with-liquid-share.jpg
+hero_image: assets/images/post/jekyll-liquid.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [jekyll]
 opening: بسم الله الرحمن الرحيم
 ---  

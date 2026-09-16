@@ -3,7 +3,11 @@ layout: post
 title:  "Menambahkan package plugin emojis di gatsby"
 author: puji
 categories: [ GatsbyJS, React, Javascript ]
-image: assets/images/post/gatsby-remark-emojis.png
+image: assets/images/social/menambahkan-package-plugin-emojis-di-gatsby-share.jpg
+hero_image: assets/images/post/gatsby-remark-emojis.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [fullstack_developer]
 opening: بسم الله الرحمن الرحيم
 ---  

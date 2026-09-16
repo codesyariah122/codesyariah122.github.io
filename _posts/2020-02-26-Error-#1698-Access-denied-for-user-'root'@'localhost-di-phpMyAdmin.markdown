@@ -3,7 +3,11 @@ layout: post
 title:  "Error #1698 Access denied for user 'root'@'localhost di phpMyAdmin"
 author: puji
 categories: [ linux, server ]
-image: assets/images/post/nginx/err.png
+image: assets/images/social/error-1698-access-denied-for-user-root-localhost-di-phpmyadmin-share.jpg
+hero_image: assets/images/post/nginx/err.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [sysadmin]
 opening: بسم الله الرحمن الرحيم
 ---

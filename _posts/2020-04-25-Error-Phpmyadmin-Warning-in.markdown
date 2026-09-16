@@ -3,7 +3,11 @@ layout: post
 title:  "Error Phpmyadmin Warning in ./libraries/sql.lib.php#613 count(): Parameter must be an array or an object that implements Countable"
 author: puji
 categories: [ mysql-server, phpmyadmin ]
-image: assets/images/post/phpmyadmin/a.png
+image: assets/images/social/error-phpmyadmin-warning-in-share.jpg
+hero_image: assets/images/post/phpmyadmin/a.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  

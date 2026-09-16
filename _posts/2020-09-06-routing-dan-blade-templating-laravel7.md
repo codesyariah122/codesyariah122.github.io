@@ -3,7 +3,11 @@ layout: post
 title:  "Routing dan blade templating laravel 7"
 author: puji
 categories: [ PHP, Laravel, MVC, OOP ]
-image: assets/images/post/blade_laravel/laravel-logo.png
+image: assets/images/social/routing-dan-blade-templating-laravel7-share.jpg
+hero_image: assets/images/post/blade_laravel/laravel-logo.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  

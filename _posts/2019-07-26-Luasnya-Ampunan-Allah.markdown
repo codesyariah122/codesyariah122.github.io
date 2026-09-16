@@ -3,7 +3,11 @@ layout: post
 title: "Luasnya Ampunan Allah SWT"
 author: puji
 categories: [KajianIslam, Sunnah, Blog]
-image: assets/images/post/ampunan.jpeg
+image: assets/images/social/luasnya-ampunan-allah-share.jpg
+hero_image: assets/images/post/ampunan.jpeg
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [Blog]
 opening: بسم الله الرحمن الرحيم
 ---  

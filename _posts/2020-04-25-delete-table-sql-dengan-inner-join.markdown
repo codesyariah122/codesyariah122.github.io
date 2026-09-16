@@ -3,7 +3,11 @@ layout: post
 title:  "Delete table database dari 2 table yang berbeda dengan 1 query inner join"
 author: puji
 categories: [ mysql-server, phpmyadmin ]
-image: assets/images/post/1.jpg
+image: assets/images/social/delete-table-sql-dengan-inner-join-share.jpg
+hero_image: assets/images/post/1.jpg
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  

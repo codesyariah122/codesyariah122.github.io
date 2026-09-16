@@ -3,7 +3,11 @@ layout: post
 title:  "Menjalankan dua query berbeda dalam satu statement menggunakan PDOExtention"
 author: puji
 categories: [ php, ajax, jquery ]
-image: assets/images/post/pdo.png
+image: assets/images/social/menjalankan-dua-query-berbeda-dalam-satu-statement-menggunakan-pdoextention-share.jpg
+hero_image: assets/images/post/pdo.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [webdeveloper]
 opening: بسم الله الرحمن الرحيم
 ---  

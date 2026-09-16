@@ -3,7 +3,11 @@ layout: post
 title:  "Fetch data Quran Menggunakan library ajax di jQuerY"
 author: puji
 categories: [ Javascript, ChartJS, JQuery ]
-image: assets/images/post/quran-online/JQ-AJAX.jpg
+image: assets/images/social/fetch-data-quran-using-jquery-ajax-share.jpg
+hero_image: assets/images/post/quran-online/JQ-AJAX.jpg
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  

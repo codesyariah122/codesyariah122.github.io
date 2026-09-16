@@ -3,7 +3,11 @@ layout: post
 title:  "Pretty Url Di Codeigniter"
 author: puji
 categories: [PHP, MVC, Codeigniter]
-image: assets/images/post/prety-url.jpg
+image: assets/images/social/pretty-url-codeigniter-share.jpg
+hero_image: assets/images/post/prety-url.jpg
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [codeigniter]
 opening: بسم الله الرحمن الرحيم
 ---  

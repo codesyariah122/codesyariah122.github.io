@@ -3,7 +3,11 @@ layout: post
 title:  "Pengenalan dan installasi Node.js sebagai beckend di javascript"
 author: puji
 categories: [ NodeJS, Javascript ]
-image: assets/images/post/nodejs-part2.png
+image: assets/images/social/pengenalan-dan-installasi-node-js-share.jpg
+hero_image: assets/images/post/nodejs-part2.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [fullstack_developer]
 opening: بسم الله الرحمن الرحيم
 ---  

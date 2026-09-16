@@ -3,7 +3,11 @@ layout: post
 title:  "Menggunakan plugin tailwind css dan plugin postcss untuk styling di gatsbyJS"
 author: puji
 categories: [ GatsbyJS, React, Javascript, tailwindcss ]
-image: assets/images/post/tailwindcss.png
+image: assets/images/social/menggunakan-tailwind-css-di-gatsbyjs-menggunakan-plugin-postcss-share.jpg
+hero_image: assets/images/post/tailwindcss.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [fullstack_developer]
 opening: بسم الله الرحمن الرحيم
 ---  

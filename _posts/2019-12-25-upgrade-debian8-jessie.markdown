@@ -3,7 +3,11 @@ layout: post
 title:  "upgrade debian 8 jessie"
 author: puji
 categories: [ linux, server ]
-image: assets/images/post/debian9/Screenshot from 2020-02-24 19-20-15.png
+image: assets/images/social/upgrade-debian8-jessie-share.jpg
+hero_image: assets/images/post/debian9/Screenshot from 2020-02-24 19-20-15.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [sysadmin]
 opening: بسم الله الرحمن الرحيم
 ---  

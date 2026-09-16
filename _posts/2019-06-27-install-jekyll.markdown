@@ -3,7 +3,11 @@ layout: post
 title:  "Install Jekyll static site generator"
 author: puji
 categories: [ Jekyll, ruby ]
-image: assets/images/post/jekyll.png
+image: assets/images/social/install-jekyll-share.jpg
+hero_image: assets/images/post/jekyll.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [jekyll]
 opening: بسم الله الرحمن الرحيم
 ---  

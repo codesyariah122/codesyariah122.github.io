@@ -3,7 +3,11 @@ layout: post
 title:  "Hal-hal keren yang dapat kalian lakukan dengan editor Markdown"
 author: puji
 categories: [ Jekyll, Blog, tutorial ]
-image: assets/images/post/photo-1.jpeg
+image: assets/images/social/powerfull-things-markdown-editor-share.jpg
+hero_image: assets/images/post/photo-1.jpeg
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [featured , Blog]
 ---
 

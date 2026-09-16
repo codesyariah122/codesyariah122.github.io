@@ -3,7 +3,11 @@ layout: post
 title:  "membuat system polling dengan metode request ajax jquery PHP PDO"
 author: puji
 categories: [ php, mysql ]
-image: assets/images/post/system_polling1.png
+image: assets/images/social/membuat-system-polling-dengan-metode-request-ajax-jquery-php-pdo-share.jpg
+hero_image: assets/images/post/system_polling1.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [webdeveloper]
 opening: بسم الله الرحمن الرحيم
 ---  

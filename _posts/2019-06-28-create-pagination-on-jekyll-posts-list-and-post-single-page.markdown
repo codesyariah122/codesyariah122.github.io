@@ -3,7 +3,11 @@ layout: post
 title:  "Create pagination on jekyll posts list and post single page"
 author: puji
 categories: [ Jekyll, ruby ]
-image: assets/images/post/jekyll_pagination.png
+image: assets/images/social/create-pagination-on-jekyll-posts-list-and-post-single-page-share.jpg
+hero_image: assets/images/post/jekyll_pagination.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [jekyll]
 opening: بسم الله الرحمن الرحيم
 ---  

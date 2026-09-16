@@ -3,7 +3,11 @@ layout: post
 title:  "Kirim Email multiple attachment dengan menggunakan library phpmailer di codeigniter"
 author: puji
 categories: [ phpmailer, Codeigniter ]
-image: assets/images/post/phpmailer.png
+image: assets/images/social/kirim-email-multiple-attachment-dengan-library-phpmailer-di-codeigniter-share.jpg
+hero_image: assets/images/post/phpmailer.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---

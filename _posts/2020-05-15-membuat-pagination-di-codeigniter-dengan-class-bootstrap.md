@@ -3,7 +3,11 @@ layout: post
 title:  "Membuat pagination di codeigniter dengan tambahan class bootstrap"
 author: puji
 categories: [ PHP, Date And Time ]
-image: assets/images/post/pagination.png
+image: assets/images/social/membuat-pagination-di-codeigniter-dengan-class-bootstrap-share.jpg
+hero_image: assets/images/post/pagination.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  

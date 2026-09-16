@@ -3,7 +3,11 @@ layout: post
 title:  "Berbicara hook dan lifecycle"
 author: puji
 categories: [ Javascript, NodeJS, ReactJS ]
-image: assets/images/post/react-hooks.png
+image: assets/images/social/berbicara-hook-dan-lifecycle-share.jpg
+hero_image: assets/images/post/react-hooks.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  

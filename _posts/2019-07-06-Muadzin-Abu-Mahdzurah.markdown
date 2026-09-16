@@ -3,7 +3,11 @@ layout: post
 title:  "Muadzin Abu Mahdzurah"
 author: puji
 categories: [ KajianIslam, Sunnah  ]
-image: assets/images/post/abu-mahdzurah.jpeg
+image: assets/images/social/muadzin-abu-mahdzurah-share.jpg
+hero_image: assets/images/post/abu-mahdzurah.jpeg
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [sticky, Blog]
 opening: بسم الله الرحمن الرحيم
 summary: "Kisah Abu Mahdzurah, pemuda Quraisy yang awalnya menirukan adzan lalu mendapat bimbingan langsung dari Rasulullah ﷺ hingga menjadi muadzin di Masjid al-Haram."

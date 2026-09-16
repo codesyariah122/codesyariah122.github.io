@@ -3,7 +3,11 @@ layout: post
 title:  "Membuat feedback flashmassage dengan sweetalert2"
 author: puji
 categories: [ nativephp, vanilla javascript ]
-image: assets/images/post/alert_1.png
+image: assets/images/social/membuat-feedback-flashmassage-dengan-sweetalert2-share.jpg
+hero_image: assets/images/post/alert_1.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  

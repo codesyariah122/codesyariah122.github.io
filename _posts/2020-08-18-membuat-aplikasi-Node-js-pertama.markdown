@@ -3,7 +3,11 @@ layout: post
 title:  "Membuat aplikasi NodeJS pertama"
 author: puji
 categories: [ NodeJS, Javascript ]
-image: assets/images/post/repl-node.jpe
+image: assets/images/social/membuat-aplikasi-node-js-pertama-share.jpg
+hero_image: assets/images/post/repl-node.jpe
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [fullstack_developer]
 opening: بسم الله الرحمن الرحيم
 ---  

@@ -3,7 +3,11 @@ layout: post
 title: "Cara Membuat PPPoE Server MikroTik CHR di VirtualBox"
 author: "puji"
 categories: [MikroTik, Networking]
-image: assets/images/post/mikrotik-pppoe-server/cover.png
+image: assets/images/social/cara-membuat-pppoe-server-mikrotik-chr-di-virtualbox-share.jpg
+hero_image: assets/images/post/mikrotik-pppoe-server/cover.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [mikrotik, routeros, pppoe, chr, virtualbox, networking]
 opening: بسم الله الرحمن الرحيم
 ---

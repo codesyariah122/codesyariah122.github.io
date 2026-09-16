@@ -3,7 +3,11 @@ layout: post
 title:  "Gairah Budaya Membaca"
 author: puji
 categories: [ blog, writer ]
-image: assets/images/post/baca.jpeg
+image: assets/images/social/gairah-budaya-membaca-share.jpg
+hero_image: assets/images/post/baca.jpeg
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [Blog]
 ---
 

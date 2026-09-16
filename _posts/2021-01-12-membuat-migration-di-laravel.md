@@ -3,7 +3,11 @@ layout: post
 title:  "Membuat Migration di Laravel"
 author: puji
 categories: [ PHP, Laravel, MVC, OOP ]
-image: assets/images/post/laravel-migration.jpg
+image: assets/images/social/membuat-migration-di-laravel-share.jpg
+hero_image: assets/images/post/laravel-migration.jpg
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  

@@ -3,7 +3,11 @@ layout: post
 title:  "Templating Views di Codeigniter menggunakan file library"
 author: puji
 categories: [PHP, MVC, Codeigniter]
-image: assets/images/post/codeigniter3.jpg
+image: assets/images/social/templating-codeigniter-with-library-share.jpg
+hero_image: assets/images/post/codeigniter3.jpg
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [codeigniter]
 opening: بسم الله الرحمن الرحيم
 ---  

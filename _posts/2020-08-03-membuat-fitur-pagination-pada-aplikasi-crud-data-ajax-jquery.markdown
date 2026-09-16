@@ -3,7 +3,11 @@ layout: post
 title:  "Membuat fitur pagination pada aplikasi crud data ajax jquery"
 author: puji
 categories: [ php, ajax, jquery ]
-image: assets/images/post/pagination-explanation.png
+image: assets/images/social/membuat-fitur-pagination-pada-aplikasi-crud-data-ajax-jquery-share.jpg
+hero_image: assets/images/post/pagination-explanation.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [webdeveloper]
 opening: بسم الله الرحمن الرحيم
 ---  

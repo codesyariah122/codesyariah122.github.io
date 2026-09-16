@@ -3,7 +3,11 @@ layout: post
 title:  "hidup adalah ilmu dan hidup dengan ilmu"
 author: amel
 categories: [ blog,story ]
-image: assets/images/post/ilustrasi-mencari-ilmu.jpg
+image: assets/images/social/hidup-adalah-ilmu-share.jpg
+hero_image: assets/images/post/ilustrasi-mencari-ilmu.jpg
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [blog]
 opening: بسم الله الرحمن الرحيم
 ---  

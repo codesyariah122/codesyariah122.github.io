@@ -3,7 +3,11 @@ layout: post
 title:  "Belajar namespace PHP - OOP"
 author: puji
 categories: [ PHP, OOP, namespace ]
-image: assets/images/post/namespace-php.jpg
+image: assets/images/social/belajar-php-namespace-share.jpg
+hero_image: assets/images/post/namespace-php.jpg
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  

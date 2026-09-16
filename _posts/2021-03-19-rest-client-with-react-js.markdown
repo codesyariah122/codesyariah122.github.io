@@ -3,7 +3,11 @@ layout: post
 title: "Restclient With ReactJS"
 author: "puji"
 categories: [ Javascript, NodeJS, ReactJS ]
-image: assets/images/post/artwork-react.jpeg
+image: assets/images/social/rest-client-with-react-js-share.jpg
+hero_image: assets/images/post/artwork-react.jpeg
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  

@@ -3,7 +3,11 @@ layout: post
 title:  "Environment Development Laravel With Laradock"
 author: puji
 categories: [ PHP, Laravel, Composer, Git, Docker ]
-image: assets/images/post/laradock.jpg
+image: assets/images/social/environment-development-dengan-laradock-share.jpg
+hero_image: assets/images/post/laradock.jpg
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [fullstack_developer, BeckEnd]
 opening: بسم الله الرحمن الرحيم
 ---  

@@ -3,7 +3,11 @@ layout: post
 title:  "Bekerja dengan graphQL API untuk query metadata page"
 author: puji
 categories: [ GatsbyJS, React, Javascript ]
-image: assets/images/post/graphQL-base.png
+image: assets/images/social/bekerja-dengan-graphql-api-set-up-metadata-untuk-pages-share.jpg
+hero_image: assets/images/post/graphQL-base.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [fullstack_developer]
 opening: بسم الله الرحمن الرحيم
 ---  

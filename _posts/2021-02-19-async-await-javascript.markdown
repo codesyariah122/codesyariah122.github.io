@@ -3,7 +3,11 @@ layout: post
 title:  "async await javascript"
 author: puji
 categories: [ Javascript, VanillaJS ]
-image: assets/images/post/async-await/async-javascript.jpg
+image: assets/images/social/async-await-javascript-share.jpg
+hero_image: assets/images/post/async-await/async-javascript.jpg
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  

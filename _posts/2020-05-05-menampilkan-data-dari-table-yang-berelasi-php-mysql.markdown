@@ -3,7 +3,11 @@ layout: post
 title:  "Menampilkan data dari relasi 2 table di php"
 author: puji
 categories: [ PHP, mysql_database ]
-image: assets/images/post/relasi/relasi8.png
+image: assets/images/social/menampilkan-data-dari-table-yang-berelasi-php-mysql-share.jpg
+hero_image: assets/images/post/relasi/relasi8.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  

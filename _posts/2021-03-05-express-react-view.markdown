@@ -3,7 +3,11 @@ layout: post
 title:  "Template Engine Express React Views"
 author: puji
 categories: [ Javascript, NodeJS, ExpressJS ]
-image: assets/images/post/react.png
+image: assets/images/social/express-react-view-share.jpg
+hero_image: assets/images/post/react.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  

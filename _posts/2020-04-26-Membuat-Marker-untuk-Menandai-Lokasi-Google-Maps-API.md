@@ -3,7 +3,11 @@ layout: post
 title:  "Membuat Marker untuk Menandai Lokasi Google Maps API"
 author: amel
 categories: [ javascript, API ]
-image: assets/images/post/googlemaps2.jpg
+image: assets/images/social/membuat-marker-untuk-menandai-lokasi-google-maps-api-share.jpg
+hero_image: assets/images/post/googlemaps2.jpg
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [Webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  

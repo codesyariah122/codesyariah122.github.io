@@ -3,7 +3,11 @@ layout: post
 title:  "Ajax Request Menggunakan Fetch"
 author: puji
 categories: [ Javascript, VanillaJS ]
-image: assets/images/post/fetch.png
+image: assets/images/social/menjalankan-request-ajax-dengan-fetch-share.jpg
+hero_image: assets/images/post/fetch.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  

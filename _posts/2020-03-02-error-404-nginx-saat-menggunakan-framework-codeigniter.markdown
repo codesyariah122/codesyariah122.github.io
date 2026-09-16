@@ -3,7 +3,11 @@ layout: post
 title:  "Error 404 nginx saat menggunakan codeigniter"
 author: puji
 categories: [ linux, server ]
-image: assets/images/post/nginx/nginx_404.png
+image: assets/images/social/error-404-nginx-saat-menggunakan-framework-codeigniter-share.jpg
+hero_image: assets/images/post/nginx/nginx_404.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [sysadmin]
 opening: بسم الله الرحمن الرحيم
 ---  

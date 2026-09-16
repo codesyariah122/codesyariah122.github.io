@@ -3,7 +3,11 @@ layout: post
 title:  "Fetching data github api with Gatsby Source Graphql"
 author: puji
 categories: [ GatsbyJS, React, Javascript ]
-image: assets/images/post/github-gatsby.png
+image: assets/images/social/fetching-data-api-github-dengan-gatsby-share.jpg
+hero_image: assets/images/post/github-gatsby.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [fullstack_developer]
 opening: بسم الله الرحمن الرحيم
 ---  

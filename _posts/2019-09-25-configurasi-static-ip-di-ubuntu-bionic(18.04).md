@@ -3,7 +3,11 @@ layout: post
 title:  "Konfigurasi Static IP Ubuntu Bionic(18.04)"
 author: puji
 categories: [ Technologies, Server  ]
-image: assets/images/post/bionic/bionic.jpg
+image: assets/images/social/configurasi-static-ip-di-ubuntu-bionic-18-04--share.jpg
+hero_image: assets/images/post/bionic/bionic.jpg
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [ServerAdministrator]
 opening: بسم الله الرحمن الرحيم
 ---

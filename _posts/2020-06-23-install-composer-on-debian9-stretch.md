@@ -3,7 +3,11 @@ layout: post
 title:  "Install composer on debian 9 stretch"
 author: puji
 categories: [ PHP, Composer ]
-image: assets/images/post/composer.png
+image: assets/images/social/install-composer-on-debian9-stretch-share.jpg
+hero_image: assets/images/post/composer.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [webdevelopment]
 opening: بسم الله الرحمن الرحيم
 ---  

@@ -3,7 +3,11 @@ layout: post
 title:  "Install fonts di linux"
 author: puji
 categories: [ Linux, debian ]
-image: assets/images/post/font1.jpg
+image: assets/images/social/install-font-di-linux-share.jpg
+hero_image: assets/images/post/font1.jpg
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [server]
 opening: بسم الله الرحمن الرحيم
 ---  
