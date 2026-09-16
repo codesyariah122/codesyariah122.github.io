@@ -2,9 +2,17 @@
 
 <script>
 $(function() {
-    $("#lunrsearchresults").on('click', '#btnx', function () {
-        $('#lunrsearchresults').hide( 1000 );
-        $( "body" ).removeClass( "modal-open" );
+    $('#lunrsearchresults').on('click', '[data-search-close]', function () {
+        closeLunrSearch();
+    }).on('click', '[data-search-overlay]', function (event) {
+        if (event.target === this) closeLunrSearch();
+    }).on('submit', '[data-search-form]', function (event) {
+        event.preventDefault();
+        lunr_search(this.querySelector('input').value);
+    });
+
+    $(document).on('keydown', function (event) {
+        if (event.key === 'Escape') closeLunrSearch();
     });
 });
 
@@ -38,39 +46,67 @@ var idx = lunr(function () {
 
 
 
-function lunr_search(term) {
-    $('#lunrsearchresults').show( 1000 );
-    $( "body" ).addClass( "modal-open" );
+function escapeSearchHtml(value) {
+    return String(value || '').replace(/[&<>'"]/g, function (character) {
+        return {'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[character];
+    });
+}
 
-    document.getElementById('lunrsearchresults').innerHTML = '<div id="resultsmodal" class="modal fade show d-block"  tabindex="-1" role="dialog" aria-labelledby="resultsmodal"> <div class="modal-dialog shadow-lg" role="document"> <div class="modal-content"> <div class="modal-header" id="modtit"> <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close"> &times; </button> </div> <div class="modal-body"> <ul class="mb-0"> </ul>    </div> <div class="modal-footer"><button id="btnx" type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button></div></div> </div></div>';
-    if(term) {
-        document.getElementById('modtit').innerHTML = "<h5 class='modal-title'>Search results for '" + term + "'</h5>" + document.getElementById('modtit').innerHTML;
-        //put results on the screen.
-        var results = idx.search(term);
-        if(results.length>0){
-            //console.log(idx.search(term));
-            //if results
-            for (var i = 0; i < results.length; i++) {
-                // more statements
-                var ref = results[i]['ref'];
-                var url = documents[ref]['url'];
-                var title = documents[ref]['title'];
-                var body = documents[ref]['body'].substring(0,160)+'...';
-                document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML = document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML + "<li class='lunrsearchresult'><a href='" + url + "'><span class='title'>" + title + "</span><br /><small><span class='body'>"+ body +"</span><br /><span class='url'>"+ url +"</span></small></a></li>";
-            }
-        } else {
-            document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML = "<li class='lunrsearchresult'>Sorry, no results found. Close & try a different search!</li>";
+function cleanSearchText(value) {
+    return String(value || '')
+        .replace(/\{\{[^}]+\}\}/g, '')
+        .replace(/\s+/g, ' ')
+        .replace(/^\d{4}\/\d{2}\/\d{2}\s*-\s*/, '')
+        .trim();
+}
+
+function closeLunrSearch() {
+    var container = document.getElementById('lunrsearchresults');
+    if (!container || !container.innerHTML) return;
+    container.innerHTML = '';
+    container.style.display = 'none';
+    document.body.classList.remove('modal-open');
+}
+
+function lunr_search(term) {
+    term = cleanSearchText(term);
+    if (!term) return false;
+
+    var results = [];
+    try {
+        results = idx.search(term);
+    } catch (error) {
+        try {
+            results = idx.search(term.replace(/[^a-zA-Z0-9\s-]/g, '').split(/\s+/).join(' '));
+        } catch (fallbackError) {
+            results = [];
         }
     }
+
+    var visibleResults = results.slice(0, 8);
+    var items = visibleResults.map(function (result) {
+        var documentItem = documents[result.ref];
+        var title = cleanSearchText(documentItem.title) || 'Artikel CodeSyariah';
+        var body = cleanSearchText(documentItem.body);
+        var excerpt = body.length > 154 ? body.substring(0, 154).replace(/\s+\S*$/, '') + '…' : body;
+        return '<li class="lunrsearchresult"><a href="' + escapeSearchHtml(documentItem.url) + '"><span class="search-result-icon"><i class="fas fa-file-alt" aria-hidden="true"></i></span><span class="search-result-copy"><strong>' + escapeSearchHtml(title) + '</strong><small>' + escapeSearchHtml(excerpt || 'Buka catatan lengkap di CodeSyariah.') + '</small></span><i class="fas fa-external-link-alt search-result-arrow" aria-hidden="true"></i></a></li>';
+    }).join('');
+
+    if (!items) {
+        items = '<li class="lunrsearch-empty"><i class="fas fa-search" aria-hidden="true"></i><strong>Belum ada hasil yang cocok.</strong><span>Coba gunakan kata kunci yang lebih umum atau singkat.</span></li>';
+    }
+
+    var summary = visibleResults.length ? visibleResults.length + ' hasil ditemukan' + (results.length > visibleResults.length ? ' · menampilkan 8 teratas' : '') : 'Tidak ada hasil';
+    var container = document.getElementById('lunrsearchresults');
+    container.innerHTML = '<div class="lunr-search-overlay" data-search-overlay><section class="lunr-search-dialog" role="dialog" aria-modal="true" aria-labelledby="lunr-search-title"><header><div><span class="lunr-search-eyebrow"><i class="fas fa-bolt" aria-hidden="true"></i> CodeSyariah search</span><h2 id="lunr-search-title">Temukan catatan yang Anda butuhkan.</h2></div><button type="button" class="lunr-search-close" data-search-close aria-label="Tutup pencarian"><i class="fas fa-times" aria-hidden="true"></i></button></header><form class="lunr-search-form" data-search-form><i class="fas fa-search" aria-hidden="true"></i><input type="search" value="' + escapeSearchHtml(term) + '" aria-label="Kata kunci pencarian" autocomplete="off"><button type="submit">Cari</button></form><div class="lunr-search-summary"><span>Hasil untuk <b>“' + escapeSearchHtml(term) + '”</b></span><small>' + summary + '</small></div><ul class="lunr-search-list">' + items + '</ul><footer><span><kbd>Esc</kbd> untuk menutup</span><button type="button" data-search-close>Tutup</button></footer></section></div>';
+    container.style.display = 'block';
+    document.body.classList.add('modal-open');
+    window.setTimeout(function () { var field = container.querySelector('input'); if (field) field.focus(); }, 20);
     return false;
 }
 </script>
 <style>
-    .lunrsearchresult .title {color: #d9230f;}
-    .lunrsearchresult .url {color: silver;}
-    .lunrsearchresult a {display: block; color: #777;}
-    .lunrsearchresult a:hover, .lunrsearchresult a:focus {text-decoration: none;}
-    .lunrsearchresult a:hover .title {text-decoration: underline;}
+    #lunrsearchresults{position:fixed;z-index:1200;inset:0;display:none}.lunr-search-overlay{display:flex;align-items:flex-start;justify-content:center;min-height:100%;padding:clamp(1rem,8vh,5rem) 1rem;background:rgba(3,37,31,.52);backdrop-filter:blur(12px)}.lunr-search-dialog{width:min(720px,100%);max-height:min(760px,84vh);overflow:hidden;border:1px solid rgba(188,238,221,.8);border-radius:24px;background:rgba(255,255,255,.98);box-shadow:0 28px 80px rgba(3,37,31,.3);animation:lunr-search-in .22s ease both}.lunr-search-dialog header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:1.5rem 1.5rem .95rem}.lunr-search-eyebrow{display:block;margin-bottom:.4rem;color:#159277;font:800 .65rem/1.3 'Open Sans',sans-serif;letter-spacing:.12em;text-transform:uppercase}.lunr-search-eyebrow i{margin-right:.35rem}.lunr-search-dialog h2{margin:0;color:#104b40;font:800 clamp(1.25rem,3vw,1.72rem)/1.15 'Poppins',sans-serif;letter-spacing:-.04em}.lunr-search-close{display:grid;flex:0 0 auto;place-items:center;width:38px;height:38px;border:0;border-radius:12px;background:#edf8f4;color:#176653;font-size:1.1rem;cursor:pointer}.lunr-search-close:hover{background:#159277;color:#fff}.lunr-search-form{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:.7rem;margin:0 1.5rem;padding:.45rem .45rem .45rem 1rem;border:1px solid #cde9df;border-radius:15px;background:#f7fcfa}.lunr-search-form>i{color:#159277}.lunr-search-form input{width:100%;min-width:0;border:0;outline:0;background:transparent;color:#164d43;font:600 .92rem 'Open Sans',sans-serif}.lunr-search-form button,.lunr-search-dialog footer button{border:0;border-radius:10px;background:#159277;color:#fff;font:800 .73rem 'Open Sans',sans-serif;cursor:pointer}.lunr-search-form button{padding:.65rem .9rem}.lunr-search-summary{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 1.5rem .8rem;color:#52746a;font:600 .72rem 'Open Sans',sans-serif}.lunr-search-summary b{color:#104b40}.lunr-search-summary small{color:#819b93;font:700 .62rem 'Open Sans',sans-serif}.lunr-search-list{max-height:410px;overflow:auto;margin:0;padding:0 .8rem 1rem;list-style:none}.lunrsearchresult{margin:.25rem 0}.lunrsearchresult a{display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:.85rem;align-items:center;padding:.85rem;border:1px solid transparent;border-radius:14px;color:inherit;text-decoration:none}.lunrsearchresult a:hover,.lunrsearchresult a:focus{border-color:#c9eee0;background:#f1fbf7;outline:0}.search-result-icon{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:#e4f7f0;color:#159277}.search-result-copy{min-width:0}.search-result-copy strong{display:block;overflow:hidden;color:#124d42;font:800 .9rem/1.35 'Poppins',sans-serif;text-overflow:ellipsis;white-space:nowrap}.search-result-copy small{display:-webkit-box;overflow:hidden;margin-top:.22rem;color:#718b83;font:400 .72rem/1.5 'Open Sans',sans-serif;-webkit-box-orient:vertical;-webkit-line-clamp:2}.search-result-arrow{color:#159277;font-size:.7rem}.lunr-search-empty{display:flex;flex-direction:column;align-items:center;gap:.55rem;padding:2.4rem 1rem;text-align:center;color:#6e8b82}.lunr-search-empty>i{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:#e6f8f1;color:#159277}.lunr-search-empty strong{color:#184d43;font:800 .9rem 'Poppins',sans-serif}.lunr-search-empty span{font:400 .74rem 'Open Sans',sans-serif}.lunr-search-dialog footer{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 1.5rem;border-top:1px solid #def0e9;color:#78948b;font:600 .65rem 'Open Sans',sans-serif}.lunr-search-dialog footer button{padding:.62rem .9rem}.lunr-search-dialog kbd{padding:.16rem .35rem;border:1px solid #cde5dc;border-radius:4px;background:#f4faf7;color:#3e6b5e;font:700 .6rem 'Open Sans',sans-serif}@keyframes lunr-search-in{from{opacity:0;transform:translateY(-10px) scale(.98)}to{opacity:1;transform:none}}@media(max-width:650px){.lunr-search-overlay{align-items:flex-end;padding:.6rem}.lunr-search-dialog{max-height:calc(100vh - 1.2rem);border-radius:20px}.lunr-search-dialog header{padding:1.2rem 1.1rem .85rem}.lunr-search-form{margin:0 1.1rem}.lunr-search-summary{padding:1rem 1.1rem .7rem}.lunr-search-summary small{display:none}.lunr-search-list{max-height:calc(100vh - 300px);padding:0 .55rem .7rem}.lunrsearchresult a{grid-template-columns:36px minmax(0,1fr);padding:.75rem}.search-result-icon{width:36px;height:36px}.search-result-arrow{display:none}.lunr-search-dialog footer{padding:.85rem 1.1rem}.lunr-search-dialog footer span{display:none}}
 </style>
 
 
