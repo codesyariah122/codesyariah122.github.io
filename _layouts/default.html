@@ -15,6 +15,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- card myroom -->
     {% seo %}
+    {% if page.og_image_width and page.og_image_height %}
+    <meta property="og:image:width" content="{{ page.og_image_width }}">
+    <meta property="og:image:height" content="{{ page.og_image_height }}">
+    {% endif %}
+    {% if page.og_image_type %}<meta property="og:image:type" content="{{ page.og_image_type }}">{% endif %}
 
     <!-- ======= Start Tracking Jekyll========== -->
     {% include components/tracking-footer.html %}

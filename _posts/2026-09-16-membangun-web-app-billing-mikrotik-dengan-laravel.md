@@ -3,7 +3,11 @@ layout: post
 title: "Membangun Web App Billing MikroTik dengan Laravel"
 author: "puji"
 categories: [Laravel, MikroTik, Networking]
-image: assets/images/post/mikrotik-isp-billing/dashboard-preview.png
+image: assets/images/post/mikrotik-isp-billing/dashboard-social.jpg
+hero_image: assets/images/post/mikrotik-isp-billing/dashboard-preview.png
+og_image_width: 1200
+og_image_height: 630
+og_image_type: image/jpeg
 tags: [laravel, mikrotik, routeros, pppoe, isp, billing, dashboard]
 opening: بسم الله الرحمن الرحيم
 ---
