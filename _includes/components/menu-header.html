@@ -1,8 +1,15 @@
 <!--  Replace menu links here -->
 {% for item in site.data.menus %}
+    {% assign menu_icon = 'fa-home' %}
+    {% case item.label %}
+        {% when 'Projects' %}{% assign menu_icon = 'fa-layer-group' %}
+        {% when 'Myrooms' %}{% assign menu_icon = 'fa-compass' %}
+        {% when 'Authors' %}{% assign menu_icon = 'fa-pen-nib' %}
+        {% when 'Contact' %}{% assign menu_icon = 'fa-paper-plane' %}
+    {% endcase %}
 
 	<li class="nav-item {% if item.link == page.url %} active {% endif %}">
-		<a class="nav-link" href="{{item.link}}">{{item.label}}</a>
+		<a class="nav-link" href="{{item.link}}"><i class="fas {{ menu_icon }} cs-mobile-nav-icon" aria-hidden="true"></i><span>{{item.label}}</span><i class="fas fa-arrow-right cs-mobile-nav-arrow" aria-hidden="true"></i></a>
 	</li>
 
 {% endfor %}
