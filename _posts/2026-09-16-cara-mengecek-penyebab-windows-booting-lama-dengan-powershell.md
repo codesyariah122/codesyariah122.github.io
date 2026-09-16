@@ -3,7 +3,7 @@ layout: post
 title: "Cara Mengecek Penyebab Windows Booting Lama dengan PowerShell"
 author: "puji"
 categories: [Windows, Troubleshooting]
-image: assets/images/post/windows-booting-lama-powershell/cover.png
+image: assets/images/post/windows-booting-lama-powershell/cover-og.jpg
 tags: [windows, powershell, troubleshooting, booting, performance, event-viewer]
 opening: بسم الله الرحمن الرحيم
 ---
