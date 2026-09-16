@@ -22,17 +22,11 @@ Targetnya adalah mengetahui:
 
 ```text
 Berapa lama Windows melakukan boot?
-
         ↓
-
 Bagian mana yang membutuhkan waktu lama?
-
         ↓
-
 Apakah ada aplikasi atau service yang memperlambat startup?
-
         ↓
-
 Apakah perlu melakukan pemeriksaan lebih lanjut?
 ```
 
@@ -109,6 +103,12 @@ Jika muncul User Account Control, pilih:
 ```text
 Yes
 ```
+
+### Membuka PowerShell sebagai Administrator
+
+![Membuka Windows PowerShell sebagai Administrator]({{ site.url }}/assets/images/post/windows-booting-lama-powershell/01-powershell-administrator.png)
+
+*Gambar 1. Membuka Windows PowerShell menggunakan opsi Run as administrator.*
 
 Setelah PowerShell terbuka, prompt biasanya terlihat seperti:
 
@@ -199,6 +199,12 @@ PostBootSec      : 82.1
 PNPInitSec       : 2.5
 ExplorerInitSec  : 10.0
 ```
+
+### Contoh Output Event ID 100
+
+![Contoh hasil Event ID 100 Windows melalui PowerShell]({{ site.url }}/assets/images/post/windows-booting-lama-powershell/02-event-id-100-output.png)
+
+*Gambar 2. Contoh hasil pembacaan informasi performa boot Windows dari Event ID 100 menggunakan PowerShell.*
 
 Angka pada komputer Anda tentu bisa berbeda.
 
@@ -427,9 +433,15 @@ Misalnya kita mendapatkan:
 BootTimeSec      : 114.6
 MainPathBootSec  : 32.5
 PostBootSec      : 82.1
-PNPInitSec       : 2.5
+PNPInitSec        : 2.5
 ExplorerInitSec  : 10.0
 ```
+
+### Analisis Performa Boot Windows
+
+![Analisis waktu boot Windows dari hasil PowerShell]({{ site.url }}/assets/images/post/windows-booting-lama-powershell/04-boot-performance-analysis.png)
+
+*Gambar 3. Contoh analisis BootTime, MainPath, PostBoot, PNP, dan Explorer untuk mempersempit penyebab Windows booting lama.*
 
 Kita bisa mulai membuat peta pemeriksaan:
 
@@ -503,6 +515,7 @@ TimeCreated : 9/13/2026 9:22:22 AM
 Id          : 101
 
 Message:
+
 This application took longer than usual to start up,
 resulting in a performance degradation in the
 system startup process.
@@ -512,6 +525,12 @@ Friendly Name    : Windows PowerShell
 Total Time       : 12240ms
 Degradation Time : 7240ms
 ```
+
+### Contoh Event ID 101
+
+![Contoh Event ID 101 aplikasi startup Windows]({{ site.url }}/assets/images/post/windows-booting-lama-powershell/05-startup-event-101.png)
+
+*Gambar 4. Contoh Event ID 101 yang mencatat aplikasi yang membutuhkan waktu lebih lama selama periode startup Windows.*
 
 Dari sini kita mendapatkan informasi tambahan mengenai proses yang dianggap Windows membutuhkan waktu lebih lama saat startup.
 
@@ -537,11 +556,8 @@ Setelah desktop muncul:
 
 ```text
 Jangan langsung buka browser
-
 Jangan langsung buka PowerShell
-
 Jangan buka aplikasi berat
-
 Jangan menjalankan update
 
 Tunggu sekitar 2–3 menit
@@ -615,6 +631,12 @@ Diagnostics-Performance
     ▼
 Operational
 ```
+
+### Diagnostics-Performance di Event Viewer
+
+![Diagnostics Performance Operational pada Windows Event Viewer]({{ site.url }}/assets/images/post/windows-booting-lama-powershell/03-event-viewer-diagnostics-performance.png)
+
+*Gambar 5. Lokasi Diagnostics-Performance → Operational pada Windows Event Viewer untuk melihat event performa startup.*
 
 Di sini kita bisa melihat event seperti:
 
@@ -729,9 +751,9 @@ Select-Object Number, FriendlyName, SerialNumber, HealthStatus, OperationalStatu
 Contoh:
 
 ```text
-Number : 0
-FriendlyName : WDC WD5000AZLX
-HealthStatus : Healthy
+Number            : 0
+FriendlyName      : WDC WD5000AZLX
+HealthStatus      : Healthy
 OperationalStatus : Online
 ```
 
@@ -801,33 +823,19 @@ Saat troubleshooting Windows, hindari pola seperti:
 
 ```text
 Windows lambat
-
      ↓
-
 Disable 15 services
-
      ↓
-
 Uninstall banyak aplikasi
-
      ↓
-
 Update semua driver
-
      ↓
-
 Jalankan registry cleaner
-
      ↓
-
 CHKDSK /r
-
      ↓
-
 Masih lambat
-
      ↓
-
 Tidak tahu perubahan mana yang berpengaruh
 ```
 
