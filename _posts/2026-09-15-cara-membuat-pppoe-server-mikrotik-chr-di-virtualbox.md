@@ -31,7 +31,7 @@ Part 1
 PPPoE Server MikroTik CHR
         ↓
 Part 2
-PPPoE Client MikroTik CHR
+Fondasi Web App Billing ISP
         ↓
 Part 3
 Laravel + RouterOS API
@@ -91,7 +91,7 @@ MikroTik CHR Server
 
 Setelah selesai, kita akan melakukan pengujian menggunakan CHR kedua sebagai PPPoE Client.
 
-Konfigurasi lengkap client akan dibahas pada **Part 2**.
+Konfigurasi lengkap client akan dicatat pada artikel lab terpisah. Pada seri utama ini, langkah berikutnya adalah menyiapkan fondasi aplikasi billing sebelum Laravel mulai berkomunikasi dengan RouterOS.
 
 ---
 
@@ -532,9 +532,7 @@ Topologi sekarang:
         └──────────────────────┘
 ```
 
-Konfigurasi CHR Client secara lengkap **tidak dibahas pada artikel ini**.
-
-Itu akan menjadi pembahasan **Part 2**.
+Konfigurasi CHR Client secara lengkap **tidak dibahas pada artikel ini**. CHR kedua di bagian ini hanya digunakan sebagai perangkat pengujian agar server dapat dibuktikan bekerja end-to-end.
 
 Pada bagian ini CHR Client hanya digunakan untuk membuktikan bahwa konfigurasi server yang baru kita buat benar-benar bekerja.
 
@@ -887,20 +885,20 @@ Artinya pondasi jaringan untuk eksperimen berikutnya sudah tersedia.
 
 Pada **Part 2** kita akan membahas:
 
-## Cara Membuat PPPoE Client MikroTik CHR di VirtualBox untuk Simulasi Pelanggan
+## Membangun Web App Billing MikroTik dengan Laravel
 
-Di sana kita akan membahas secara detail bagaimana CHR kedua dikonfigurasi hingga mempunyai:
+Di sana kita akan menyusun dashboard, data pelanggan, paket layanan, akun PPPoE, dan data tagihan sebagai pondasi sebelum Laravel mengakses RouterOS API.
 
 ```text
-pppoe-out1
+Laravel Web App
       │
-      ├── service
-      ├── username
-      ├── password
-      └── status connected
+      ├── Pelanggan
+      ├── Paket layanan
+      ├── Akun PPPoE
+      └── Tagihan
 ```
 
-Kemudian setelah sisi server dan client selesai, pada **Part 3** kita mulai masuk ke development:
+Kemudian pada **Part 3** kita mulai masuk ke integrasi:
 
 ```text
 Laravel
