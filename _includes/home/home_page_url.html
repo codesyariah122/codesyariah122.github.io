@@ -130,21 +130,17 @@
 <!-- Sticky - add sticky tag to the post you want to highlight here - tags: [sticky] -->
 {% for post in site.posts %}
 {% if post.tags contains "sticky" %}
-<div class="jumbotron jumbotron-fluid jumbotron-home pt-0 pb-0 mt-3 mb-2rem bg-lightblue position-relative">
-    <div class="pl-4 pr-0 h-100 tofront">
-        <div class="row justify-content-between">
-            <div class="col-md-6 pt-6 pb-6 pr-lg-4 align-self-center">
-                <h1 class="mb-3">{{post.title}}</h1>
-                <p class="mb-3 lead">
-                    {{ post.excerpt | strip_html | strip_newlines | truncate: 136 }}
-                </p>
-                <a href="{{site.url}}{{post.url}}" class="btn btn-dark">Read More</a>
-            </div>
-            <div class="col-md-6 d-none d-md-block pr-0" style="background-size:cover;background-image:url({{site.url}}/{{ post.image }});">
-            </div>
-        </div>
+{% assign headline_excerpt = post.summary | default: post.excerpt %}
+<section class="cs-headline" aria-labelledby="headline-{{ post.id | slugify }}">
+    <a class="cs-headline-media" href="{{site.url}}{{post.url}}" aria-label="Baca {{ post.title }}"{% if post.image %} style="background-image:url('{% if post.image contains '://' %}{{ post.image }}{% else %}{{ site.url }}/{{ post.image }}{% endif %}')"{% endif %}></a>
+    <div class="cs-headline-copy">
+        <div class="cs-headline-kicker"><span><i class="fas fa-star"></i> Headline pilihan</span><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %B %Y' }}</time></div>
+        <div class="cs-headline-categories">{% for category in post.categories %}<a href="{{site.url}}/categories.html#{{ category | downcase }}">{{ category }}</a>{% endfor %}</div>
+        <h2 id="headline-{{ post.id | slugify }}"><a href="{{site.url}}{{post.url}}">{{ post.title }}</a></h2>
+        <p>{{ headline_excerpt | strip_html | strip_newlines | truncate: 210 }}</p>
+        <a href="{{site.url}}{{post.url}}" class="cs-headline-cta">Baca selengkapnya <i class="fas fa-arrow-right"></i></a>
     </div>
-</div>
+</section>
 {% endif %}
 {% endfor %}
 

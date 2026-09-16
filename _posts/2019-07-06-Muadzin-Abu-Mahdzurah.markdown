@@ -6,6 +6,7 @@ categories: [ KajianIslam, Sunnah  ]
 image: assets/images/post/abu-mahdzurah.jpeg
 tags: [sticky, Blog]
 opening: بسم الله الرحمن الرحيم
+summary: "Kisah Abu Mahdzurah, pemuda Quraisy yang awalnya menirukan adzan lalu mendapat bimbingan langsung dari Rasulullah ﷺ hingga menjadi muadzin di Masjid al-Haram."
 ---  
 
 {{page.opening}}  
