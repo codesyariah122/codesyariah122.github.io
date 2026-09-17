@@ -8565,3 +8565,84 @@ html {
     align-self: baseline !important; }
   .align-self-xl-stretch {
     align-self: stretch !important; } }
+
+/* =========================================
+   Responsive Pagination
+   ========================================= */
+
+.cs-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  padding-left: 0;
+  margin: 1.5rem 0;
+}
+
+.cs-pagination .page-item {
+  margin: 0;
+}
+
+.cs-pagination .page-link {
+  margin-left: 0;
+}
+
+.cs-pagination-mobile {
+  display: none !important;
+}
+
+@media (max-width: 575.98px) {
+  .cs-pagination-desktop {
+    display: none !important;
+  }
+
+  .cs-pagination-mobile {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  .cs-pagination-mobile-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 78px;
+    padding: 0.55rem 0.7rem;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #03a87c;
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .cs-pagination-mobile-btn:hover {
+    color: #025d45;
+    background-color: #e9ecef;
+    text-decoration: none;
+  }
+
+  .cs-pagination-mobile-btn.disabled {
+    color: #6c757d;
+    background-color: #fff;
+    pointer-events: none;
+    opacity: 0.65;
+  }
+
+  .cs-pagination-mobile-info {
+    flex: 1;
+    font-size: 13px;
+    font-weight: 600;
+    color: #6c757d;
+    text-align: center;
+    white-space: nowrap;
+  }
+}
