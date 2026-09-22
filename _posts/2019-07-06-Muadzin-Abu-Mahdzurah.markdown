@@ -1,132 +1,206 @@
 ---
 layout: post
-title:  "Muadzin Abu Mahdzurah"
-author: puji
-categories: [ KajianIslam, Sunnah  ]
+title: "Kisah Abu Mahdzurah, Muadzin Rasulullah di Masjidil Haram"
+author: "puji"
+categories: [KajianIslam, Sunnah]
 image: assets/images/social/muadzin-abu-mahdzurah-share.jpg
 hero_image: assets/images/post/abu-mahdzurah.jpeg
 og_image_width: 1200
 og_image_height: 630
 og_image_type: image/jpeg
-tags: [sticky, Blog]
+tags: [abu-mahdzurah, muadzin, adzan, sunnah, hadits, sirah]
 opening: بسم الله الرحمن الرحيم
-summary: "Kisah Abu Mahdzurah, pemuda Quraisy yang awalnya menirukan adzan lalu mendapat bimbingan langsung dari Rasulullah ﷺ hingga menjadi muadzin di Masjid al-Haram."
----  
+summary: "Kisah Abu Mahdzurah, pemuda Quraisy yang kemudian menjadi muadzin Rasulullah ﷺ di Makkah, serta riwayat beliau tentang tata cara adzan."
+---
 
-{{page.opening}}  
+{{ page.opening }}
 
-### Kisah Muadzin Rasulullah (Abu Mahdzurah)  
+## Kisah Abu Mahdzurah, Muadzin Rasulullah ﷺ di Makkah
 
-Namanya adalah Aus bin Mughirah al-Jumahi. Rasulullah ﷺ memerintahkannya untuk mengumandangkan adzan di Mekah
-sekembalinya beliau dari Hunain.
-Ketika Mekah berhasil ditaklukkan kaum muslimin, Rasulullah ﷺ memerintahkan Bilal untuk mengumandangkan adzan
-dari atas Ka’bah.
+Abu Mahdzurah radhiyallahu 'anhu merupakan salah seorang sahabat yang dikenal sebagai **muadzin Rasulullah ﷺ di Makkah**.
 
-Sebagian pemuda Quraisy, yang masih belum lapang dada menerima Islam, menirukan suara Bilal.
-Mereka marah dan bermaksud mengejeknya. Sampai salah seorang pemuda yang bernama Abu Mahdzurah al-Jumahi pun
-meniru-niru adzan Bilal.
+Namanya mungkin tidak sepopuler Bilal bin Rabah radhiyallahu 'anhu. Namun, kisah Abu Mahdzurah memiliki tempat penting dalam pembahasan tentang adzan karena sejumlah riwayat mengenai tata cara adzan diriwayatkan langsung darinya.
 
-Abu Mahdzurah, pemuda 16 tahun, termasuk orang Quraisy yang paling merdu suaranya. Saat ia mengangkat suara
-mengumandangkan adzan dengan maksud ejekan, Rasulullah ﷺ mendengarnya. Nabi memanggilnya dan mendudukkannya
-di hadapan beliau. Abu Mahdzurah menyangka inilah akhir riwayat hidupnya karena ulahnya itu. Tapi,
-Rasulullah ﷺ malah mengusap dada dan ubun-ubun pemuda itu dengan tangan beliau yang mulia. Abu Mahdzurah mengatakan,
-“Demi Allah, hatiku terasa dipenuhi keimanan dan keyakinan. Dan aku meyakini bahwa ia adalah utusan Allah.”
+Menariknya, perjalanan Abu Mahdzurah tidak bermula sebagai seorang muadzin.
 
-<blockquote>
-(as-Suhaili dalam ar-Raudh al-Unfu Juz: 7 Hal: 239).
-</blockquote>
+Ia pernah berada di antara para pemuda yang mendengar adzan kaum muslimin. Kemudian Rasulullah ﷺ mendengar suaranya dan memanggilnya.
 
-Setelah Abu Mahdzurah beriman, Rasulullah ﷺ mengajarinya adzan.
-Jadilah ia orang pertama yang mengumandakan adzan setelah Rasulullah meninggalkan Mekah menuju Madinah.
-Ia terus menjadi muadzin di Masjid al-Haram hingga akhir hayatnya. Kemudian dilanjutkan oleh keturan-keturunannya hingga waktu yang lama.
-Ada yang mengatakan hingga masa Imam asy-Syafi’i.
+Dari pertemuan tersebut, Abu Mahdzurah kemudian mendapatkan pengajaran langsung mengenai tata cara adzan.
 
-<br/>
+Kisahnya menunjukkan sebuah perubahan yang sangat besar: dari seorang pemuda Quraisy menjadi seseorang yang dipercaya mengumandangkan panggilan shalat di Makkah.
 
-## Lafadz adzan dari Hadist Abu Mahdzurah
-*    *    *
+---
 
-__Lafadz adzan__ sejumlah 17 kalimat yaitu :
-* 2 takbir
-* 2 syahadatain diulang dua kali = 8 kalimat,
-* 2 hayya ‘ala as shalat
-* 2 hayya alal falah
-* 2 takbir
-* 1 kalimat tauhid
+## Siapa Abu Mahdzurah?
 
-Inilah adzan menurut Imam Malik, dan dasarnya ialah
-hadits Abu Mahdzurah:
+Abu Mahdzurah adalah kunyah seorang sahabat dari Quraisy yang kemudian dikenal sebagai muadzin di Makkah.
 
-عَنْ أَبِي مَحْذُورَةَ أَنَّ نَبِيَّ اللَّهِ عَلَّمَهُ هَذَا الْأَذَانَ اللَّهُ أَكْبَرُ اللَّهُ أَكْبَرُ أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ أَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ أَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ ثُمَّ يَعُودُ فَيَقُولُ أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ أَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ أَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ حَيَّ عَلَى الصَّلَاةِ مَرَّتَيْنِ حَيَّ عَلَى الْفَلَاحِ مَرَّتَيْنِ زَادَ إِسْحَقُ اللَّهُ أَكْبَرُ اللَّهُ أَكْبَرُ لَا إِلَهَ إِلَّا اللَّهُ
+Dalam literatur terdapat perbedaan mengenai nama asli beliau. Karena itu, daripada memastikan satu nama sebagai satu-satunya pendapat, lebih aman menyebut beliau dengan nama yang paling masyhur dalam kitab-kitab hadis:
 
-Dari Abu Mahdzurah, bahwa Nabi Shallallahu ‘alaihi wa sallam mengajarinya adzan dengan:
+**Abu Mahdzurah radhiyallahu 'anhu.**
 
-” اللَّهُ أَكْبَرُ اللَّهُ أَكْبَرُ . أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ
-أَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ أَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ ”
+Beliau meriwayatkan sejumlah hadis yang berkaitan dengan adzan dan iqamah.
 
-Kemudian mengulang, lalu membaca:
+Salah satu riwayat yang terkenal menyebutkan bahwa Rasulullah ﷺ mengajarkan kepadanya tata cara adzan secara langsung.
 
-” أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ . أَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ أَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ ”
-” حَيَّ عَلَى الصَّلَاةِ ” (dua kali)
+---
 
-Dan (membaca) حَيَّ عَلَى الْفَلَاحِ dua kali.
+## Rasulullah ﷺ Mengajarkan Adzan kepada Abu Mahdzurah
 
-Ishaq menambahkan bacaan: [4]
+Salah satu hal terpenting dari kisah Abu Mahdzurah adalah bahwa tata cara adzan yang beliau riwayatkan bukan sekadar kebiasaan yang berkembang kemudian.
 
-اللَّهُ أَكْبَرُ اللَّهُ أَكْبَرُ لَا إِلَهَ إِلَّا اللَّهُ
+Abu Mahdzurah sendiri meriwayatkan bahwa Rasulullah ﷺ mengajarkan kepadanya adzan.
 
-__Lafadznya 19 kalimat__ yaitu :
-* 4 takbir
-* 2 syahadatain dengan tarji (diulang dua kali = 8 kalimat)
-* 2 hayya ‘ala as shalat
-* 2 hayya alal falah
-* 2 takbir dan 1 kalimat tauhid.
+Dalam salah satu riwayat disebutkan:
 
-Inilah yang dijadikan pedoman dalam madzhab Syafi’i.
-Dalilnya ialah hadits Abu Mahdzurah :
+> Rasulullah ﷺ mengajarkan kepadanya adzan dengan sembilan belas kalimat dan iqamah dengan tujuh belas kalimat.
 
-أَنَّ النَّبِيَّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ عَلَّمَهُ الْأَذَانَ تِسْعَ عَشْرَةَ كَلِمَةً وَالْإِقَامَةَ سَبْعَ عَشْرَةَ كَلِمَةً
+Riwayat mengenai hal ini terdapat antara lain dalam:
 
-Nabi Shallallahu ‘alaihi wa sallam mengajarinya adzan 19 kalimat dan iqamah 17 kalimat.[5]
+- Sunan Abi Dawud no. 502
+- Jami' at-Tirmidzi no. 192
+- Sunan an-Nasa'i no. 630
+- Sunan Ibnu Majah no. 709
 
-Hal ini dijelaskan dalam riwayat lain dari Abu Mahdzurah, ia berkata:
+Riwayat-riwayat tersebut menjadi salah satu dasar penting dalam pembahasan fikih mengenai tata cara adzan.
 
-قُلْتُ يَا رَسُولَ اللَّهِ عَلِّمْنِي سُنَّةَ الْأَذَانِ فَمَسَحَ مُقَدَّمَ رَأْسِي وَقَالَ تَقُولُ اللَّهُ أَكْبَرُ اللَّهُ أَكْبَرُ اللَّهُ أَكْبَرُ اللَّهُ أَكْبَرُ تَرْفَعُ بِهَا صَوْتَكَ ثُمَّ تَقُولُ أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ أَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ أَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ تَخْفِضُ بِهَا صَوْتَكَ ثُمَّ تَرْفَعُ صَوْتَكَ بِالشَّهَادَةِ أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ أَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ أَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ حَيَّ عَلَى الصَّلَاةِ حَيَّ عَلَى الصَّلَاةِ حَيَّ عَلَى الْفَلَاحِ حَيَّ عَلَى الْفَلَاحِ فَإِنْ كَانَ صَلَاةُ الصُّبْحِ قُلْتَ الصَّلَاةُ خَيْرٌ مِنْ النَّوْمِ الصَّلَاةُ خَيْرٌ مِنْ النَّوْمِ اللَّهُ أَكْبَرُ اللَّهُ أَكْبَرُ لَا إِلَهَ إِلَّا اللَّهُ
+---
 
-Aku berkata: “Wahai Rasulullah. Ajarilah aku sunnah adzan.” Lalu Beliau memegang bagian depan kepalaku dan berkata: “Ucapkanlah dengan suara perlahan
+## Adzan Abu Mahdzurah dan Tarji'
 
-” اللَّهُ أَكْبَرُ اللَّهُ أَكْبَرُ اللَّهُ أَكْبَرُ اللَّهُ أَكْبَرُ . أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ
-أَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ أَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ ”
+Salah satu ciri yang terkenal dari riwayat Abu Mahdzurah adalah adanya **tarji' (الترجيع)**.
 
-Kemudian keraskanlah suaramu dalam membaca syahadat:
+Apa itu tarji' dalam adzan?
 
-” أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ .
-أَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ أَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ .حَيَّ عَلَى الصَّلَاةِ حَيَّ عَلَى الصَّلَاةِ. حَيَّ عَلَى الْفَلَاحِ حَيَّ عَلَى الْفَلَاحِ ”
+Secara sederhana, tarji' adalah mengucapkan dua kalimat syahadat dengan suara yang lebih rendah terlebih dahulu, kemudian mengulanginya kembali dengan suara yang lebih keras.
 
-Jika shalat Subuh, katakanlah :
+Urutannya secara ringkas menjadi:
 
-” الصَّلَاةُ خَيْرٌ مِنْ النَّوْمِ الصَّلَاةُ خَيْرٌ مِنْ النَّوْمِ ”
+1. Takbir.
+2. Dua kalimat syahadat dengan suara lebih rendah.
+3. Dua kalimat syahadat diulang dengan suara lebih keras.
+4. Hayya 'alash-shalah.
+5. Hayya 'alal-falah.
+6. Takbir.
+7. La ilaha illallah.
 
-Lalu :[6]
+Dengan susunan tersebut, terdapat riwayat yang menghitung lafaz adzan Abu Mahdzurah sebanyak **19 kalimat**.
 
-” اللَّهُ أَكْبَرُ اللَّهُ أَكْبَرُ لَا إِلَهَ إِلَّا اللَّه ”
+---
 
-Ibnu Abdil Bar mengatakan: “Ahmad, Ishaq, Dawud dan Ibnu Jarir berpendapat, ini termasuk khilaf yang mubah,
-karena takbir yang empat pertama atau dibuat dua kali, atau dengan tarji’ dalam syahadat atau tidak, iqamah
-dibuat dua-dua atau satu-satu semuanya kecuali قَدْ قَامَتِ الصَّلاَةُ . semuanya boleh.[7]
+## Hadis Adzan 19 Kalimat
 
-***
+Abu Mahdzurah radhiyallahu 'anhu meriwayatkan:
 
-   beberapa faidah (manfaat):
-* Menjaga Sunnah dalam berbagai sisinya.
-* Mempermudah para mukallaf.
-* Kehadiran hati (membuat khusyu`) dan tidak bosan.
-* Menjaga dan memelihara syariat.[8]
+> Nabi ﷺ mengajarinya adzan sembilan belas kalimat dan iqamah tujuh belas kalimat.
 
->Read more https://almanhaj.or.id/3080-adzan-dan-iqamah-1.html
+Dalam riwayat tersebut, adzan dimulai dengan empat kali takbir, kemudian syahadat, pengulangan syahadat (tarji'), hayya 'alash-shalah, hayya 'alal-falah, dua kali takbir, kemudian ditutup dengan kalimat tauhid.
 
-   >– Hadits Abu Mahdzurah z2, ia mengabarkan,
-bahwa Nabi n mengajarinya mengucapkan: الصَّلاَةُ خَيْرٌ مِنَ النَّوْمِ، الصَّلاَةُ خَيْرٌ مِنَ النَّوْمِ
-pada adzan yang awal dari subuh. Haditsnya diriwayatkan oleh Ath-Thahawi (no. 809),
-Al-Imam Al-Albani berkata, “Sanadnya jayyid.”
-(Ats-Tsamar, 1/131)
+Riwayat ini dapat ditemukan dalam beberapa kitab hadis, di antaranya Sunan Abi Dawud, Jami' at-Tirmidzi, Sunan an-Nasa'i, dan Sunan Ibnu Majah.
+
+Karena itu, pembahasan mengenai adzan Abu Mahdzurah tidak hanya berkaitan dengan sejarah seorang muadzin, tetapi juga menjadi bagian dari pembahasan fikih mengenai sifat adzan.
+
+---
+
+## Mengapa Ada Perbedaan Jumlah Lafaz Adzan?
+
+Pembaca mungkin menemukan keterangan mengenai jumlah lafaz adzan yang berbeda dalam pembahasan fikih.
+
+Salah satu penyebabnya adalah adanya beberapa riwayat mengenai tata cara adzan.
+
+Dalam riwayat Abu Mahdzurah terdapat **tarji'**, yaitu pengulangan dua kalimat syahadat.
+
+Karena pengulangan tersebut, jumlah lafaz yang dihitung menjadi lebih banyak.
+
+Perbedaan tata cara yang bersumber dari riwayat-riwayat hadis inilah yang kemudian dibahas oleh para ulama dalam kitab-kitab fikih.
+
+Karena itu, pembahasan ini sebaiknya tidak dipahami sekadar sebagai persoalan "mana yang benar dan mana yang salah", tetapi sebagai bagian dari pembahasan ulama terhadap beberapa riwayat mengenai sifat adzan.
+
+---
+
+## Adzan Subuh dan "Ash-Shalatu Khairum Minan Naum"
+
+Dalam riwayat Abu Mahdzurah juga terdapat pembahasan mengenai tambahan lafaz pada adzan Subuh:
+
+**الصَّلَاةُ خَيْرٌ مِنَ النَّوْمِ**
+
+*Ash-shalatu khairum minan naum.*
+
+Artinya:
+
+**"Shalat lebih baik daripada tidur."**
+
+Lafaz tersebut dikenal sebagai **tatswib** dalam adzan Subuh.
+
+Hal ini juga menunjukkan pentingnya riwayat Abu Mahdzurah dalam pembahasan mengenai tata cara adzan.
+
+---
+
+## Abu Mahdzurah Menjadi Muadzin di Makkah
+
+Setelah mendapatkan pengajaran dari Rasulullah ﷺ, Abu Mahdzurah dikenal sebagai muadzin di Makkah.
+
+Inilah salah satu bagian yang menarik dari perjalanan hidup beliau.
+
+Seseorang yang pada awal kisahnya belum dikenal sebagai penyeru kaum muslimin kemudian mendapatkan bimbingan langsung dari Rasulullah ﷺ dan dipercaya menjalankan salah satu syiar Islam yang sangat dikenal: **adzan**.
+
+Riwayat mengenai Abu Mahdzurah kemudian terus dipelajari oleh generasi setelahnya karena darinya terdapat penjelasan mengenai tata cara adzan.
+
+---
+
+## Pelajaran dari Kisah Abu Mahdzurah
+
+Ada beberapa pelajaran yang dapat kita renungkan dari kisah Abu Mahdzurah.
+
+### 1. Hidayah dapat mengubah seseorang
+
+Keadaan seseorang hari ini tidak selalu menggambarkan bagaimana keadaannya di kemudian hari.
+
+Kisah Abu Mahdzurah mengingatkan bahwa seseorang dapat berubah setelah mendapatkan hidayah dan bimbingan.
+
+### 2. Rasulullah ﷺ mendidik manusia dengan hikmah
+
+Pertemuan Abu Mahdzurah dengan Rasulullah ﷺ berakhir bukan sekadar dengan teguran.
+
+Beliau justru mendapatkan pengajaran mengenai adzan dan kemudian dikenal sebagai muadzin.
+
+### 3. Sunnah sampai kepada kita melalui para sahabat
+
+Detail tata cara ibadah yang kita pelajari hari ini sampai kepada generasi berikutnya melalui riwayat para sahabat.
+
+Abu Mahdzurah merupakan salah seorang sahabat yang meriwayatkan tata cara adzan yang diajarkan Rasulullah ﷺ.
+
+### 4. Perbedaan riwayat perlu dipahami dengan ilmu
+
+Dalam masalah fikih, terkadang terdapat lebih dari satu riwayat yang menjadi pembahasan para ulama.
+
+Karena itu, perbedaan dalam beberapa rincian tata cara ibadah sebaiknya dipelajari melalui sumber hadis dan penjelasan ulama, bukan sekadar dipertentangkan.
+
+---
+
+## Kesimpulan
+
+Abu Mahdzurah radhiyallahu 'anhu adalah salah seorang sahabat yang memiliki peran penting dalam sejarah adzan.
+
+Rasulullah ﷺ mengajarkan kepadanya tata cara adzan, dan riwayatnya kemudian menjadi salah satu rujukan penting dalam pembahasan fikih mengenai adzan dan iqamah.
+
+Salah satu riwayat yang paling dikenal darinya adalah adzan **19 kalimat** dan iqamah **17 kalimat**, termasuk adanya tarji' pada dua kalimat syahadat.
+
+Kisah Abu Mahdzurah juga memberikan pelajaran bahwa perjalanan seseorang dapat berubah sepenuhnya ketika Allah memberikan hidayah kepadanya.
+
+Dari seorang pemuda Quraisy, Abu Mahdzurah kemudian dikenal dalam sejarah Islam sebagai salah seorang **muadzin Rasulullah ﷺ di Makkah**.
+
+Wallahu a'lam.
+
+---
+
+## Referensi Hadis
+
+Beberapa riwayat yang dapat digunakan untuk mempelajari lebih lanjut tentang adzan Abu Mahdzurah:
+
+- **Sunan Abi Dawud no. 502** — riwayat adzan 19 kalimat dan iqamah 17 kalimat.
+- **Jami' at-Tirmidzi no. 192** — riwayat Abu Mahdzurah mengenai adzan dan iqamah.
+- **Sunan an-Nasa'i no. 630** — pembahasan jumlah lafaz adzan.
+- **Sunan Ibnu Majah no. 709** — pembahasan tarji' dalam adzan.
+
+Artikel ini merupakan pembaruan dari tulisan yang pertama kali diterbitkan pada 2019. Pembaruan dilakukan untuk memperjelas struktur tulisan dan menambahkan rujukan hadis.
