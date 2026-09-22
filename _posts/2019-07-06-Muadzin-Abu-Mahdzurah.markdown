@@ -8,7 +8,7 @@ hero_image: assets/images/post/abu-mahdzurah.jpeg
 og_image_width: 1200
 og_image_height: 630
 og_image_type: image/jpeg
-tags: [abu-mahdzurah, muadzin, adzan, sunnah, hadits, sirah]
+tags: [sticky, blog, abu-mahdzurah, muadzin, adzan, sunnah, hadits, sirah]
 opening: بسم الله الرحمن الرحيم
 summary: "Kisah Abu Mahdzurah, pemuda Quraisy yang kemudian menjadi muadzin Rasulullah ﷺ di Makkah, serta riwayat beliau tentang tata cara adzan."
 ---
