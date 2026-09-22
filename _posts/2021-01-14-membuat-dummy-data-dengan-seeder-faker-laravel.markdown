@@ -1,56 +1,100 @@
 ---
 layout: post
-title:  "Insert Data dengan Seeder dan Membuat Dummy Data menggunakan Faker di Laravel"
-author: puji
-categories: [ PHP, Laravel, MVC, OOP ]
+title: "Cara Membuat Dummy Data dengan Seeder dan Faker di Laravel"
+author: "puji"
+categories: [PHP, Laravel]
 image: assets/images/social/membuat-dummy-data-dengan-seeder-faker-laravel-share.jpg
 hero_image: assets/images/post/laravel-seeder.jpg
 og_image_width: 1200
 og_image_height: 630
 og_image_type: image/jpeg
-tags: [webdevelopment]
+tags: [laravel, seeder, faker, dummy-data, database, eloquent, php]
 opening: بسم الله الرحمن الرحيم
----  
+summary: "Tutorial membuat dummy data di Laravel menggunakan database seeder dan Faker, mulai dari migration, model, seeder, hingga menjalankan php artisan db:seed."
+---
 
-{{page.opening}}  
+{{ page.opening }}
 
-Halo brothers' masih tentang laravel, diartikel kali ini gout mau memberikan tips seputar management data di laravel menggunakan ```Faker``` method.  
+## Cara Membuat Dummy Data dengan Seeder dan Faker di Laravel
 
-Pertama kalian bisa lihat terlebih dahulu direktori project laravel gout kali ini, seperti ini listing directory project laravel gout :  
+Saat mengembangkan aplikasi Laravel, kita sering membutuhkan banyak data untuk menguji halaman tabel, pagination, pencarian, filter, API, dashboard, atau fitur lainnya.
+
+Memasukkan puluhan bahkan ratusan data secara manual tentu tidak efisien.
+
+Laravel menyediakan **database seeder**, sedangkan data dummy dapat dibuat menggunakan **Faker**.
+
+Pada tutorial ini kita akan membuat data dummy `employees` dengan alur:
+
+1. Membuat migration tabel `employees`.
+2. Membuat model `Employee`.
+3. Membuat database seeder.
+4. Menggunakan Faker untuk menghasilkan data dummy.
+5. Menjalankan seeder dengan Artisan.
+6. Memeriksa data yang berhasil dibuat.
+
+> Artikel ini merupakan pembaruan dari tutorial yang pertama kali saya tulis ketika masih menggunakan struktur Laravel versi lama. Contoh di bawah diperbarui agar lebih mudah diterapkan pada Laravel modern.
+
+---
+
+## Apa Itu Seeder di Laravel?
+
+**Seeder** adalah fitur Laravel untuk memasukkan data ke database melalui kode.
+
+Seeder sangat berguna ketika kita membutuhkan data awal atau data pengujian selama proses development.
+
+Misalnya kita sedang membuat halaman daftar karyawan.
+
+Daripada memasukkan 50 karyawan satu per satu melalui phpMyAdmin atau form aplikasi, kita dapat meminta Laravel membuat data tersebut secara otomatis.
+
+Perintah Artisan yang umum digunakan adalah:
 
 ```bash
-root@876a9f5bb1a6:/var/www/projectku# ls -l
-total 284
-drwxrwxrwx  6 root root   4096 Jan 11 14:50 app
--rwxrwxrwx  1 root root   1686 Aug 27  2019 artisan
-drwxrwxrwx  3 root root   4096 Aug 27  2019 bootstrap
--rwxrwxrwx  1 root root   1497 Aug 27  2019 composer.json
--rwxrwxrwx  1 root root 220225 Jan 10 05:11 composer.lock
-drwxrwxrwx  2 root root   4096 Aug 27  2019 config
-drwxrwxrwx  5 root root   4096 Aug 27  2019 database
--rwxrwxrwx  1 root root   1013 Aug 27  2019 package.json
--rwxrwxrwx  1 root root   1589 Aug 27  2019 phpunit.xml
-drwxrwxrwx  2 root root   4096 Aug 27  2019 public
--rwxrwxrwx  1 root root   3993 Jan 10 09:49 readme.md
-drwxrwxrwx  6 root root   4096 Aug 27  2019 resources
-drwxrwxrwx  2 root root   4096 Aug 27  2019 routes
--rwxrwxrwx  1 root root    563 Aug 27  2019 server.php
-drwxrwxrwx  5 root root   4096 Aug 27  2019 storage
-drwxrwxrwx  4 root root   4096 Aug 27  2019 tests
-drwxrwxrwx 38 root root   4096 Jan 10 05:11 vendor
--rwxrwxrwx  1 root root    538 Aug 27  2019 webpack.mix.js
+php artisan db:seed
+```
 
-```  
-
-#### Membuat Seeder  
-
-Sebelum berlanjut ke topik utama yaitu membuat seeder, terlebih dahulu kita akan membuat table baru untuk menampung seeder :  
-seperti topik membuat table migration di artikel sebelumnya, kali ini kita akan membuat migration untuk table dengan nama table ```employees```, kita lakukan migration dari terminal :  
+Kita juga dapat menjalankan seeder tertentu:
 
 ```bash
-root@876a9f5bb1a6:/var/www/projectku# php artisan make:migration create_employees_table
-```  
-akan terbentuk file baru di direktori ```database/migration/2021_01_13_create_employees_table.php```, kita buka file migration employees :  
+php artisan db:seed --class=EmployeeSeeder
+```
+
+---
+
+## Apa Itu Faker?
+
+**Faker** adalah library yang dapat menghasilkan data palsu atau dummy secara otomatis.
+
+Contohnya:
+
+```text
+Nama      : Ahmad Hidayat
+Email     : ahmad@example.com
+Pekerjaan : Software Developer
+```
+
+Dengan Faker, kita tidak perlu menulis data pengujian satu per satu.
+
+Kita dapat menghasilkan puluhan atau ratusan data dengan kombinasi Seeder dan Faker.
+
+---
+
+## 1. Membuat Migration Employees
+
+Pertama kita buat migration untuk tabel `employees`.
+
+Jalankan:
+
+```bash
+php artisan make:migration create_employees_table
+```
+
+Laravel akan membuat file migration di:
+
+```text
+database/migrations/
+```
+
+Buka file tersebut kemudian buat struktur tabel seperti berikut:
 
 ```php
 <?php
@@ -59,278 +103,588 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEmployeesTable extends Migration
+return new class extends Migration
 {
-	public function up()
+    public function up(): void
     {
         Schema::create('employees', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->string('jobdesk')->nullable();
             $table->timestamps();
         });
     }
 
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('employees');
     }
-}
-```  
+};
+```
 
-Kemudian eksekusi code diatas menggunakan artisan lagi, di terminal :  
+Kemudian jalankan migration:
 
 ```bash
-root@876a9f5bb1a6:/var/www/projectku# php artisan migrate
-```  
-bisa dilihat di mysql atau di phpmyadmin kalian, akan ada table baru dengan nama table ```employees``` telah terbentuk, tapi kita lupa menambahkan field/column lainnya. Ok kita ubah terlebih dahulu code diatas, untuk menambahkan beberapa field/column baru di table ```employees``` sehingga code tersebut menjadi seperti ini :  
+php artisan migrate
+```
+
+Sekarang tabel:
+
+```text
+employees
+```
+
+akan tersedia di database.
+
+Strukturnya kurang lebih:
+
+```text
+id
+name
+email
+jobdesk
+created_at
+updated_at
+```
+
+---
+
+## 2. Membuat Model Employee
+
+Selanjutnya buat model:
+
+```bash
+php artisan make:model Employee
+```
+
+Model akan dibuat pada:
+
+```text
+app/Models/Employee.php
+```
+
+Contohnya:
 
 ```php
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
-
-class CreateEmployeesTable extends Migration
-{
-    protected $field=[];
-
-    public function new($tableName, $field)
-    {
-        $this->field = $field;
-        Schema::table($tableName, function(Blueprint $table){
-            foreach($this->field as $dataField):
-                $table->string($dataField);
-            endforeach;
-        });
-    }
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('employees', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
-        });
-
-         if(!Schema::hasColumn('employees', 'name') && !Schema::hasColumn('employees', 'email') && !Schema::hasColumn('employees', 'jobdesk')){
-            $tableName = 'employees';
-            $dataField = [
-                "name",
-                "email",
-                "jobdesk"
-            ];
-            $this->new($tableName, $dataField);
-        }
-    }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('employees');
-    }
-}
-
-```  
-Kemudian jalankan kembali :  
-```bash
-root@876a9f5bb1a6:/var/www/projectku# php artisan migrate
-```  
-atau :  
-
-```bash
-root@876a9f5bb1a6:/var/www/projectku# php artisan migrate:fresh
-```  
-jika berhasil maka akan terbentuk field/column baru di table ```employees```. Tapi jika belum berhasil bisa diulang proses diatas dengan menambahkan key ```refresh``` atau :  
-
-```bash
-root@876a9f5bb1a6:/var/www/projectku# php artisan migrate:refresh
-```  
-
-Ok Sekarang kita akan memulai seeder untuk table ```employees```  
-- Apa itu Seeder ?  
-	
-	Apa itu seeding? Seeding jika diartikan secara harfiah bermakna memberi benih. Dalam konteks pengembangan aplikasi, Seeding adalah memberikan data awal ke database. Hal ini biasanya dilakukan saat
-	pengembangan terutama jika kita ingin menguji apakah fitur tertentu telah berjalan sesuai ekspektasi
-	menggunakan live data.
-	Kita bisa saja memberikan data awal secara manual dengan melakukan insert melalui DBMS, akan tetapi
-	bayangkan jika kita akan menguji 100 data atau lebih, tentu akan sangat membosankan dan memakan waktu
-	jika kita lakukan Seeding secara manual. Cara yang lebih pintar adalah dengan memanfaatkan fitur Seeding
-	di Laravel.
-
-- Membuat Seeder :  
-	Lanjut, kita buat terlebih dahulu file seeder untuk tabel tertentu. Misalnya, kita akan menguji fitur list employee, itu berarti kita ingin menyiapkan data employees terlebih dahulu ke database. Data ini hanyalah data dummy. Untuk membuat file seeder kita jalankan perintah berikut :  
-
-```bash
-root@876a9f5bb1a6:/var/www/projectku# php artisan make:seeder EmployeesSeederTable
-```  
-
-	Setelah kita jalankan perintah di atas, maka sebuah file ```app/database/seeds/EmployeesSeederTable.php``` Seperti ini isi file seedernya :  
-
-```php
-<?php
-
-use Illuminate\Database\Seeder;
-use Faker\Factory as Faker;
-
-class EmployeesSeederTable extends Seeder
-{
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
-    {
-    	//
-    }
-
-}
-```  
-
-**Penjelasan kode:** 
-	> Kode di atas merupakan class seeder dengan nama ProductTableSeeder. Class tersebut memiliki satu method bernama run(). Pada method inilah kita akan menulis kode untuk mengisi data dummy untuk table products. Kita melakukan insert menggunakan Query Builder. Selanjutnya, kita akan coba insert data ke tabel employees. Maka kita tuliskan Query Builder kita pada method run() seperti ini:  Sebelumnya, kita juga bisa menggunakan model untuk proses Query Builder nya, kita buat dulu model baru :  
-
-```bash
-root@876a9f5bb1a6:/var/www/projectku# php artisan make:model Employee
-```  
-Kemudian buka file model dan edit menjadi seperti ini :  
-
-```php
-<?php
-
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\DB;
 
 class Employee extends Model
 {
-    public function create($table, $data)
-    {
-    	DB::table($table)->insert([
-    		$data
-    	]);
-    }
+    protected $fillable = [
+        'name',
+        'email',
+        'jobdesk',
+    ];
 }
+```
 
-```  
-selanjutnya kita buka kembali file ```database/seeds/EmployeeSeederTable.php```, edit code nya menjadi seperti ini :  
+Model `Employee` akan kita gunakan untuk memasukkan data dari seeder ke tabel `employees`.
 
-```php
-<?php
+---
 
-use App\Employee;
-use Illuminate\Database\Seeder;
-use Faker\Factory as Faker;
+## 3. Membuat Seeder Laravel
 
-class EmployeesSeederTable extends Seeder
-{
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
-    {
-    	$employee = new Employee;
-        $data = [
-            'name' => 'Puji Ermanto',
-            'email' => 'pujiermanto@gmail.com',
-            'jobdesk' => 'Frontend Dev'
-        ];
-
-        $employee->create('employees', $data);
-    }
-
-}
-```  
-Kemudian jalankan kembali seeder di terminal :  
+Sekarang buat seeder:
 
 ```bash
-root@876a9f5bb1a6:/var/www/projectku# php artisan db:seed --class=EmployeesSeederTable
-Database seeding completed successfully.
-root@876a9f5bb1a6:/var/www/projectku# 
-```  
-Coba cek di mysql atau phpmyadmin kalian maka akan terbentuk data baru, sesuai dengan data yang telah dibuat di file seeder tadi.  
+php artisan make:seeder EmployeeSeeder
+```
 
->bisa lihat cuplikan berikut:  
+Pada Laravel modern, file tersebut akan dibuat di:
 
-<div class="embed-responsive embed-responsive-21by9">
-  <iframe class="embed-responsive-item" src="{{site.url}}/assets/images/post/db-seed.mp4"></iframe>
-</div>
+```text
+database/seeders/EmployeeSeeder.php
+```
 
-
-### Dummy Data dengan Faker  
-
-Sedikit berbeda dengan seeding namun mempunyai metodelogi yang kurang lebih sama yah, faker sendiri di fungsikan dengan tujuan untuk membuat demonstration data selama proses development. Yaa karena selama proses development ini kita butuh sebuah demonstration apakah aplikasi yang kita buat untuk pengolahan data bisa berjalan dengan baik atau tidak.  
-
-Ok langsung ajah kita eksekusi menggunakan Faker.  
-Masih menggunakan file yang sama yaitu file ```database/seeds/EmployeesSeederTable.php```, Kita hanya menambahkan method Query Builder langsung di file seedernya sehingga code seeder tersebut menjadi seperti berikut :  
+Struktur awalnya kurang lebih:
 
 ```php
 <?php
 
-use App\Employee;
+namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
-use Faker\Factory as Faker;
 
-class EmployeesSeederTable extends Seeder
+class EmployeeSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
+    public function run(): void
     {
-        $faker = Faker::create('App\Employees');
+        //
+    }
+}
+```
 
-        for($i=2; $i<=20; $i++){
-        	DB::table('employees')->insert([
-                'created_at'=> $faker->date($format='Y-m-d', $timezone='Asia/Jakarta').' | '.$faker->time($format='H:i:s', $timezone='Asia/Jakarta'),
-                'updated_at'=> $faker->date($format='Y-m-d', $timezone='Asia/Jakarta').' | '.$faker->time($format='H:i:s', $timezone='Asia/Jakarta'),
-        		'name' => $faker->name($gender='male'),
-        		'email' => $faker->email(),
-        		'jobdesk' => $faker->jobTitle()
-        	]);
+---
+
+## 4. Insert Data Menggunakan Seeder
+
+Sebelum menggunakan Faker, kita dapat mencoba memasukkan satu data terlebih dahulu.
+
+Ubah `EmployeeSeeder.php` menjadi:
+
+```php
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Employee;
+use Illuminate\Database\Seeder;
+
+class EmployeeSeeder extends Seeder
+{
+    public function run(): void
+    {
+        Employee::create([
+            'name' => 'Puji Ermanto',
+            'email' => 'pujiermanto@example.com',
+            'jobdesk' => 'Web Developer',
+        ]);
+    }
+}
+```
+
+Kemudian jalankan:
+
+```bash
+php artisan db:seed --class=EmployeeSeeder
+```
+
+Jika berhasil, Laravel akan menjalankan proses database seeding.
+
+Sekarang periksa tabel:
+
+```text
+employees
+```
+
+Data yang kita masukkan melalui seeder seharusnya sudah tersedia.
+
+---
+
+## 5. Membuat Dummy Data Menggunakan Faker
+
+Satu data tentu belum cukup untuk menguji aplikasi.
+
+Sekarang kita gunakan Faker.
+
+Ubah method `run()` menjadi:
+
+```php
+public function run(): void
+{
+    $faker = fake('id_ID');
+
+    for ($i = 0; $i < 20; $i++) {
+        Employee::create([
+            'name' => $faker->name(),
+            'email' => $faker->unique()->safeEmail(),
+            'jobdesk' => $faker->jobTitle(),
+        ]);
+    }
+}
+```
+
+Jangan lupa import model:
+
+```php
+use App\Models\Employee;
+```
+
+Sehingga file lengkapnya menjadi:
+
+```php
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Employee;
+use Illuminate\Database\Seeder;
+
+class EmployeeSeeder extends Seeder
+{
+    public function run(): void
+    {
+        $faker = fake('id_ID');
+
+        for ($i = 0; $i < 20; $i++) {
+            Employee::create([
+                'name' => $faker->name(),
+                'email' => $faker->unique()->safeEmail(),
+                'jobdesk' => $faker->jobTitle(),
+            ]);
         }
     }
-
 }
-```  
+```
 
-coba kita perhatikan code diatas, dimana laravel menyediakan fasilitas untuk membuat uji coba data yaitu di fungsi dengan namespace ini : ```use Faker\Factory as Faker;```.  
-kemudian kita assignment fakernya di variable : ```$faker = Faker::create('App\Employees');```, kemudian kita looping sebuah data yang isinya adalah Query Builder untuk mengirim data ke table ```employees```.
-
-coba kita jalankan kembali seeder nya di terminal :  
+Kemudian jalankan:
 
 ```bash
-root@876a9f5bb1a6:/var/www/projectku# php artisan db:seed --class=EmployeesSeederTable
-Database seeding completed successfully.
-root@876a9f5bb1a6:/var/www/projectku# 
-```  
-> lihat dicuplikan berikut ini:  
+php artisan db:seed --class=EmployeeSeeder
+```
 
-<div class="embed-responsive embed-responsive-21by9">
-  <iframe class="embed-responsive-item" src="{{site.url}}/assets/images/post/db-faker.mp4"></iframe>
-</div>  
+Laravel akan membuat 20 employee dengan data yang berbeda-beda.
 
-Mudah bukan, keren dong pastinya pakai framework ```laravel``` ini dimana proses development kita untuk membuat sebuah aplikasi menjadi lebih cepat dalam proses developmentnya, dan itu meringkas waktu sekali, sangat memudahkan para pengembang dan programmer khususnya web developer.  
+Contohnya:
 
-Mudah-mudahan bermanfaat dari artikel gout ini yah, jika ada pertanyaan seputar artikel ini, silahkan berkomentar dengan baik di kolom komentar yang tersedia.
+```text
++----+----------------------+-----------------------------+----------------------+
+| id | name                 | email                       | jobdesk              |
++----+----------------------+-----------------------------+----------------------+
+| 1  | Ahmad Hidayat        | ahmad@example.com           | Software Developer   |
+| 2  | Budi Santoso         | budi@example.com            | System Administrator |
+| 3  | Rizky Pratama        | rizky@example.com           | Web Developer        |
++----+----------------------+-----------------------------+----------------------+
+```
 
-ok sekian dulu dari saya untuk artikel kali ini, nanti kita lanjutkan lagi artikel mengenai laravel di artikel selanjutnya.... see the next articles 
+Data tersebut hanya contoh. Faker akan menghasilkan data yang berbeda ketika seeder dijalankan.
 
-bye :) 
+---
 
+## 6. Menjalankan Seeder dari DatabaseSeeder
 
-***Salam***
+Selain menjalankan `EmployeeSeeder` secara langsung, kita dapat mendaftarkannya di:
 
-**Puji Ermanto**
+```text
+database/seeders/DatabaseSeeder.php
+```
+
+Contohnya:
+
+```php
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+
+class DatabaseSeeder extends Seeder
+{
+    public function run(): void
+    {
+        $this->call([
+            EmployeeSeeder::class,
+        ]);
+    }
+}
+```
+
+Sekarang cukup jalankan:
+
+```bash
+php artisan db:seed
+```
+
+Laravel akan menjalankan seeder yang sudah didaftarkan.
+
+---
+
+## 7. Menggunakan migrate:fresh --seed
+
+Saat development, ada satu perintah yang sangat praktis:
+
+```bash
+php artisan migrate:fresh --seed
+```
+
+Perintah tersebut akan:
+
+```text
+hapus seluruh tabel
+        ↓
+jalankan migration
+        ↓
+buat tabel kembali
+        ↓
+jalankan database seeder
+```
+
+Ini sangat membantu ketika kita ingin mengembalikan database development ke kondisi awal.
+
+> **Perhatian:** `migrate:fresh` menghapus seluruh tabel pada database yang digunakan. Jangan menjalankannya sembarangan pada database production.
+
+---
+
+## 8. Seeder dengan Query Builder
+
+Selain Eloquent, data juga dapat dimasukkan menggunakan Query Builder.
+
+Contohnya:
+
+```php
+use Illuminate\Support\Facades\DB;
+
+public function run(): void
+{
+    $faker = fake('id_ID');
+
+    for ($i = 0; $i < 20; $i++) {
+        DB::table('employees')->insert([
+            'name' => $faker->name(),
+            'email' => $faker->unique()->safeEmail(),
+            'jobdesk' => $faker->jobTitle(),
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+    }
+}
+```
+
+Untuk kasus sederhana, baik Eloquent maupun Query Builder dapat digunakan.
+
+---
+
+## 9. Cara yang Lebih Rapi: Menggunakan Factory
+
+Untuk aplikasi Laravel yang lebih besar, saya lebih menyarankan menggunakan **Model Factory**.
+
+Buat factory:
+
+```bash
+php artisan make:factory EmployeeFactory --model=Employee
+```
+
+Kemudian isi factory:
+
+```php
+<?php
+
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+class EmployeeFactory extends Factory
+{
+    public function definition(): array
+    {
+        return [
+            'name' => fake('id_ID')->name(),
+            'email' => fake()->unique()->safeEmail(),
+            'jobdesk' => fake()->jobTitle(),
+        ];
+    }
+}
+```
+
+Model `Employee` menggunakan trait:
+
+```php
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+class Employee extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'email',
+        'jobdesk',
+    ];
+}
+```
+
+Kemudian pada seeder:
+
+```php
+Employee::factory()
+    ->count(50)
+    ->create();
+```
+
+Dengan cara ini kita dapat membuat:
+
+```text
+50 employee
+100 employee
+1.000 employee
+```
+
+tanpa menulis looping manual.
+
+---
+
+## Seeder vs Factory di Laravel
+
+Keduanya berhubungan dengan pembuatan data, tetapi mempunyai tanggung jawab yang sedikit berbeda.
+
+**Seeder** mengatur data apa yang perlu dimasukkan ke database.
+
+Contohnya:
+
+```php
+$this->call([
+    EmployeeSeeder::class,
+]);
+```
+
+Sedangkan **Factory** mendefinisikan bagaimana sebuah model dummy dibuat.
+
+Contohnya:
+
+```php
+Employee::factory()
+    ->count(100)
+    ->create();
+```
+
+Karena itu, keduanya sering digunakan bersama.
+
+Alurnya menjadi:
+
+```text
+DatabaseSeeder
+      ↓
+EmployeeSeeder
+      ↓
+EmployeeFactory
+      ↓
+Faker
+      ↓
+employees table
+```
+
+---
+
+## Contoh DatabaseSeeder untuk Banyak Data
+
+Misalnya aplikasi mempunyai employee dan user.
+
+Kita dapat membuat:
+
+```php
+public function run(): void
+{
+    User::factory()
+        ->count(10)
+        ->create();
+
+    Employee::factory()
+        ->count(50)
+        ->create();
+}
+```
+
+Kemudian:
+
+```bash
+php artisan migrate:fresh --seed
+```
+
+Database development langsung mempunyai data yang cukup untuk menguji aplikasi.
+
+---
+
+## Error yang Sering Terjadi Saat Menggunakan Seeder
+
+### Class Seeder Tidak Ditemukan
+
+Pastikan namespace-nya:
+
+```php
+namespace Database\Seeders;
+```
+
+dan jalankan:
+
+```bash
+composer dump-autoload
+```
+
+kemudian:
+
+```bash
+php artisan db:seed
+```
+
+### Duplicate Entry pada Email
+
+Jika kolom `email` menggunakan unique index, Faker juga sebaiknya menggunakan:
+
+```php
+$faker->unique()->safeEmail()
+```
+
+atau:
+
+```php
+fake()->unique()->safeEmail()
+```
+
+### Data Seeder Terus Bertambah
+
+Jika:
+
+```bash
+php artisan db:seed
+```
+
+dijalankan berkali-kali, seeder dapat memasukkan data tambahan setiap kali dijalankan.
+
+Untuk database development yang boleh dihapus, kita dapat menggunakan:
+
+```bash
+php artisan migrate:fresh --seed
+```
+
+Tetapi sekali lagi, jangan gunakan `migrate:fresh` pada database production yang berisi data penting.
+
+---
+
+## Kesimpulan
+
+Laravel Seeder dan Faker sangat membantu ketika kita membutuhkan data pengujian selama proses development.
+
+Dengan kombinasi:
+
+```text
+Migration
+   ↓
+Model
+   ↓
+Factory
+   ↓
+Faker
+   ↓
+Seeder
+   ↓
+Database
+```
+
+kita dapat membuat puluhan bahkan ratusan data dummy hanya dengan beberapa baris kode.
+
+Perintah yang paling sering digunakan antara lain:
+
+```bash
+php artisan make:seeder EmployeeSeeder
+php artisan db:seed
+php artisan db:seed --class=EmployeeSeeder
+php artisan migrate:fresh --seed
+```
+
+Untuk project sederhana kita dapat menggunakan Faker langsung di dalam seeder.
+
+Sedangkan untuk project yang lebih besar, penggunaan **Factory + Seeder** biasanya menghasilkan struktur yang lebih mudah dipelihara.
+
+Semoga tutorial ini membantu memahami cara membuat **dummy data menggunakan Seeder dan Faker di Laravel**.
+
+---
+
+## Artikel Laravel Lainnya
+
+Kalau sedang belajar Laravel, beberapa pembahasan lain di blog ini juga dapat digunakan sebagai lanjutan.
+
+- Pelajari migration dan pengelolaan database Laravel.
+- Pelajari Eloquent untuk mengelola data menggunakan model.
+- Pelajari pagination ketika jumlah dummy data sudah cukup banyak.
+- Pelajari pembuatan API Laravel untuk menampilkan data tersebut.
+
+Saya juga sedang menulis seri implementasi Laravel dan MikroTik berdasarkan proses pengembangan aplikasi yang saya kerjakan, mulai dari koneksi RouterOS API hingga provisioning dan monitoring PPPoE.
+
+---
+
+*Artikel ini pertama kali ditulis menggunakan struktur Laravel versi lama dan kemudian diperbarui agar contoh Seeder, Faker, Factory, namespace, dan struktur direktorinya lebih relevan untuk Laravel modern.*

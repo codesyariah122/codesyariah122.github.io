@@ -1,131 +1,650 @@
 ---
 layout: post
-title:  "Membuat Marker untuk Menandai Lokasi Google Maps API"
-author: amel
-categories: [ javascript, API ]
+title: "Cara Membuat Marker dan Menandai Lokasi di Google Maps JavaScript API"
+author: "amel"
+categories: [Javascript, API]
 image: assets/images/social/membuat-marker-untuk-menandai-lokasi-google-maps-api-share.jpg
 hero_image: assets/images/post/googlemaps2.jpg
 og_image_width: 1200
 og_image_height: 630
 og_image_type: image/jpeg
-tags: [Webdevelopment]
+tags: [google-maps, google-maps-api, javascript, marker, latitude, longitude, geolocation]
 opening: بسم الله الرحمن الرحيم
----  
+summary: "Tutorial membuat marker untuk menandai titik lokasi berdasarkan latitude dan longitude menggunakan Google Maps JavaScript API."
+---
+
 ![maps1]({{ site.url }}/assets/images/post/googlemaps2.jpg)  
 
-# menentukan titik google maps  
-Marker sering digunakan untuk menandai sebuah lokasi. Biasanya sering digunakan dalam membuat aplikasi Geolocation.
+{{ page.opening }}
 
-Pada kesempatan ini, kita akan belajar membuat marker di Google Maps dan melakukan beberapa modifikasi.
+## Cara Membuat Marker dan Menandai Lokasi di Google Maps JavaScript API
 
-Kamu bisa menggunakan contoh kode sebelumnya untuk uji coba.
+Marker atau penanda lokasi merupakan salah satu fitur yang paling sering digunakan ketika membuat aplikasi berbasis peta.
 
-Sudah siap?
+Contohnya untuk menampilkan:
 
-Mari kita mulai…  
+- lokasi kantor,
+- alamat pelanggan,
+- lokasi toko,
+- posisi properti,
+- titik pengiriman,
+- lokasi pengguna,
+- atau koordinat yang tersimpan di database.
 
-# Mengenal Objek Marker
+Pada tutorial ini kita akan membuat **marker di Google Maps menggunakan JavaScript** berdasarkan nilai **latitude dan longitude**.
 
-Marker merupakan sebuah objek yang bisa kita buat dengan kode berikut:  
+Alur sederhananya:
+
+```text
+Latitude + Longitude
+        ↓
+Google Maps JavaScript API
+        ↓
+Membuat Map
+        ↓
+Membuat Marker
+        ↓
+Menampilkan Titik Lokasi
+```
+
+> Artikel ini merupakan pembaruan dari tutorial lama di blog ini. Implementasi Google Maps JavaScript API terus berkembang, sehingga contoh lama diperbarui agar konsep dan strukturnya lebih mudah diterapkan pada project modern.
+
+---
+
+## Apa Itu Marker di Google Maps?
+
+**Marker** adalah penanda visual yang ditempatkan pada koordinat tertentu di dalam peta.
+
+Misalnya kita mempunyai koordinat:
+
+```text
+Latitude  : -6.9175
+Longitude : 107.6191
+```
+
+Koordinat tersebut dapat digunakan untuk menentukan posisi pada Google Maps.
+
+Secara konsep:
+
+```text
+latitude + longitude
+        ↓
+      position
+        ↓
+      marker
+        ↓
+   tampil di map
+```
+
+Jadi untuk membuat sebuah marker, minimal kita membutuhkan **latitude**, **longitude**, dan objek peta tempat marker tersebut ditampilkan.
+
+---
+
+## Latitude dan Longitude
+
+Sebelum membuat marker, kita perlu memahami dua nilai utama yang digunakan untuk menentukan posisi.
+
+### Latitude
+
+Latitude atau garis lintang menentukan posisi utara dan selatan.
+
+Contoh:
 
 ```javascript
-var marker = new google.maps.Marker({
-    position: new google.maps.LatLng(-8.5830695,116.3202515),
-    map: peta
-});
+const latitude = -6.9175;
 ```
-Terdapat dua properti penting yang harus diberikan ke marker:
 
-  1. **position** adalah posisi koordinat latitude dan longitude marker pada peta.
-  2. **map** objek dari peta (Google Map).  
+### Longitude
 
-dalam Contoh kali ini saya akan menyambung dari blog saya sebelumnya mengenai menentukan lokasi berdasarkan ip address : <a href="https://codesyariah122.github.io/php/ip_location2/Menentukan-koordinat-dengan-ip-address/">Di mari</a>  
+Longitude atau garis bujur menentukan posisi timur dan barat.
 
-nah dari script itu seperti berikut 
-```php
-<?php
-if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
-    $ip = $_SERVER['HTTP_CLIENT_IP'];
-    
-} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-    $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-} else {
-    $ip = $_SERVER['REMOTE_ADDR'];
+Contoh:
+
+```javascript
+const longitude = 107.6191;
+```
+
+Kemudian keduanya dapat digabungkan menjadi objek koordinat:
+
+```javascript
+const position = {
+    lat: -6.9175,
+    lng: 107.6191
+};
+```
+
+Objek `position` inilah yang nantinya digunakan untuk menentukan pusat peta dan posisi marker.
+
+---
+
+## Persiapan Google Maps JavaScript API
+
+Untuk menggunakan Google Maps JavaScript API pada aplikasi web, kita membutuhkan **API key** dari Google Maps Platform.
+
+Secara umum prosesnya adalah:
+
+1. Membuat atau memilih project di Google Cloud.
+2. Mengaktifkan Maps JavaScript API.
+3. Membuat API key.
+4. Membatasi penggunaan API key sesuai website yang menggunakannya.
+5. Memuat Google Maps JavaScript API pada halaman aplikasi.
+
+Jangan menaruh API key yang tidak dibatasi pada repository publik.
+
+Untuk aplikasi website, sebaiknya batasi key menggunakan **HTTP referrer restrictions** dan hanya izinkan domain yang memang membutuhkan Google Maps.
+
+---
+
+## Menyiapkan Container Google Maps
+
+Pertama buat elemen HTML yang akan digunakan sebagai tempat menampilkan peta.
+
+```html
+<div id="map"></div>
+```
+
+Kemudian berikan tinggi pada container tersebut:
+
+```html
+<style>
+    #map {
+        width: 100%;
+        height: 450px;
+    }
+</style>
+```
+
+Tanpa tinggi yang jelas, container peta dapat terlihat kosong meskipun JavaScript sudah berjalan.
+
+---
+
+## Membuat Google Maps
+
+Sekarang kita buat fungsi untuk menginisialisasi peta.
+
+```javascript
+async function initMap() {
+    const position = {
+        lat: -6.9175,
+        lng: 107.6191
+    };
+
+    const { Map } = await google.maps.importLibrary("maps");
+
+    const map = new Map(document.getElementById("map"), {
+        center: position,
+        zoom: 15,
+        mapId: "DEMO_MAP_ID"
+    });
 }
-echo password_hash($ip, PASSWORD_DEFAULT)."<br/>";
-//Kemudian
-$url = "https://tools.keycdn.com/geo.json?host=$ip";
-$dt = file_get_contents($url);
-$dt = json_decode($dt, true);
-$lat = $dt['data']['geo']['latitude'];
-$lng = $dt['data']['geo']['longitude'];
-$regional = $dt['data']['geo']['region_name'];
-$city_name = $dt['data']['geo']['city'];
-
-$location = $city_name ."-". $regional;
-
-echo "<h1>".$location."</h1>";
-
 ```
-dari script diatas saya kembangkan, saya menggunakan script diatas dengan asumsi data lokasi yang akan saya ambil untuk di kirim ke **database**, mungkin algoritma teman-teman lain lagi.  
 
-table database saya seperti ini, dalam contoh ini saya menamakan table nya dengan nama table user  
+Pada contoh tersebut:
 
-![maps2]({{ site.url }}/assets/images/post/googlemaps1.jpg)  
+```javascript
+center: position
+```
 
-saya akan mengirimkan nilai latitude dan longitude untuk dimanfaatkan dalam pembuatan API googlemaps kali ini.  
-jadi script lengkapnya menjadi seperti ini :  
-dan didalam database nya type data untuk nilai latitude dan longitude nya adalah type **FLOAT** , seperti berikut struktur type data nya.  
-![maps3]({{ site.url }}/assets/images/post/googlemaps3.jpg)  
-![maps4]({{ site.url }}/assets/images/post/googlemaps4.jpg)  
+menentukan titik tengah peta.
 
+Sedangkan:
+
+```javascript
+zoom: 15
+```
+
+menentukan tingkat pembesaran peta.
+
+Semakin besar nilai `zoom`, semakin dekat tampilan peta terhadap lokasi.
+
+---
+
+## Membuat Marker Google Maps
+
+Setelah map tersedia, kita dapat menambahkan marker.
+
+Pada implementasi Google Maps JavaScript API modern, kita dapat menggunakan **AdvancedMarkerElement**.
+
+Contohnya:
+
+```javascript
+async function initMap() {
+    const position = {
+        lat: -6.9175,
+        lng: 107.6191
+    };
+
+    const { Map } = await google.maps.importLibrary("maps");
+    const { AdvancedMarkerElement } =
+        await google.maps.importLibrary("marker");
+
+    const map = new Map(document.getElementById("map"), {
+        center: position,
+        zoom: 15,
+        mapId: "DEMO_MAP_ID"
+    });
+
+    const marker = new AdvancedMarkerElement({
+        map: map,
+        position: position,
+        title: "Lokasi Saya"
+    });
+}
+```
+
+Bagian terpentingnya adalah:
+
+```javascript
+position: position
+```
+
+yang menentukan koordinat marker.
+
+Sedangkan:
+
+```javascript
+map: map
+```
+
+menentukan bahwa marker tersebut akan ditampilkan pada objek Google Maps yang baru saja kita buat.
+
+---
+
+## Contoh Lengkap Google Maps dengan Marker
+
+Berikut contoh sederhana dalam satu halaman HTML:
+
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Google Maps Marker</title>
+
+    <style>
+        #map {
+            width: 100%;
+            height: 450px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Lokasi pada Google Maps</h1>
+
+    <div id="map"></div>
+
+    <script>
+        async function initMap() {
+            const position = {
+                lat: -6.9175,
+                lng: 107.6191
+            };
+
+            const { Map } =
+                await google.maps.importLibrary("maps");
+
+            const { AdvancedMarkerElement } =
+                await google.maps.importLibrary("marker");
+
+            const map = new Map(
+                document.getElementById("map"),
+                {
+                    center: position,
+                    zoom: 15,
+                    mapId: "DEMO_MAP_ID"
+                }
+            );
+
+            new AdvancedMarkerElement({
+                map: map,
+                position: position,
+                title: "Lokasi Saya"
+            });
+        }
+    </script>
+
+    <script
+        async
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&loading=async&callback=initMap">
+    </script>
+
+</body>
+</html>
+```
+
+Ganti:
+
+```text
+YOUR_API_KEY
+```
+
+dengan API key Google Maps milik project yang digunakan.
+
+---
+
+## Mengambil Latitude dan Longitude dari Database
+
+Pada aplikasi sebenarnya, koordinat biasanya tidak ditulis langsung di JavaScript.
+
+Data dapat berasal dari database.
+
+Misalnya tabel `users` mempunyai:
+
+```text
+id
+name
+latitude
+longitude
+```
+
+Contoh datanya:
+
+```text
+1 | User A | -6.9175 | 107.6191
+```
+
+Data tersebut kemudian diambil dari backend dan dikirim ke halaman.
+
+Contoh sederhana menggunakan PHP:
 
 ```php
-
 <?php
-//script ini untuk pemanfaatan session jika tidak menggunakan session harap di sesuaikan
 
-if(isset($_SESSION['login'])):
-//jika dalam penggunaan query silahkan disesuaikan dengan kebutuhan
-//untuk query insertnya disesuaikan
-
-$data=query("SELECT * FROM user INNER JOIN profile ON user.id_profile=profile.id_profile WHERE username = '$username'");
-
-endif;
-$nologin=query("SELECT * FROM user, profile WHERE user.id_profile=profile.id_profile AND username = '$userOwner'"); 
+$latitude = (float) $user['latitude'];
+$longitude = (float) $user['longitude'];
 
 ?>
+```
 
-<script src="http://maps.googleapis.com/maps/api/js"></script> <!-- api dari google maps -->
-<script>
-function initialize() {
-  var propertiPeta = {
-    center:new google.maps.LatLng(<?php if(isset($_SESSION['login'])):echo $data[0]['lat'].",".$data[0]['lng']; else: echo $nologin[0]['lat'].",".$nologin[0]['lng']; endif;?> ),
-    zoom:9,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  
-  var peta = new google.maps.Map(document.getElementById("googleMap"), propertiPeta);
-  
-  // membuat Marker
-  var marker=new google.maps.Marker({
-      position: new google.maps.LatLng(<?php if(isset($_SESSION['login'])):echo $data[0]['lat'].",".$data[0]['lng']; else: echo $nologin[0]['lat'].",".$nologin[0]['lng']; endif;?> ),
-      map: peta
-  });
+Kemudian nilainya dapat digunakan pada JavaScript:
 
+```javascript
+const position = {
+    lat: <?= json_encode($latitude) ?>,
+    lng: <?= json_encode($longitude) ?>
+};
+```
+
+Dengan demikian marker akan mengikuti koordinat yang tersimpan di database.
+
+---
+
+## Jangan Masukkan Data Database Langsung Tanpa Validasi
+
+Pada implementasi nyata, nilai latitude dan longitude harus divalidasi terlebih dahulu.
+
+Latitude berada pada rentang:
+
+```text
+-90 sampai 90
+```
+
+sedangkan longitude:
+
+```text
+-180 sampai 180
+```
+
+Contoh sederhana:
+
+```php
+$latitude = filter_var(
+    $user['latitude'],
+    FILTER_VALIDATE_FLOAT
+);
+
+$longitude = filter_var(
+    $user['longitude'],
+    FILTER_VALIDATE_FLOAT
+);
+```
+
+Selain validasi format, aplikasi juga perlu memastikan koordinat memang berasal dari record yang boleh dilihat oleh pengguna tersebut.
+
+---
+
+## Tipe Data Latitude dan Longitude di Database
+
+Pada artikel lama saya menggunakan tipe `FLOAT`.
+
+Untuk aplikasi yang membutuhkan penyimpanan koordinat secara lebih konsisten, kita dapat mempertimbangkan tipe **DECIMAL**.
+
+Contohnya:
+
+```sql
+latitude  DECIMAL(10, 7)
+longitude DECIMAL(10, 7)
+```
+
+Contoh data:
+
+```text
+-6.9175000
+107.6191000
+```
+
+Pada Laravel migration, misalnya:
+
+```php
+$table->decimal('latitude', 10, 7);
+$table->decimal('longitude', 10, 7);
+```
+
+Pemilihan tipe data tetap perlu disesuaikan dengan kebutuhan dan database yang digunakan.
+
+---
+
+## Menampilkan Banyak Marker
+
+Kita juga dapat menampilkan lebih dari satu lokasi.
+
+Misalnya kita mempunyai:
+
+```javascript
+const locations = [
+    {
+        name: "Lokasi A",
+        lat: -6.9175,
+        lng: 107.6191
+    },
+    {
+        name: "Lokasi B",
+        lat: -6.9147,
+        lng: 107.6098
+    },
+    {
+        name: "Lokasi C",
+        lat: -6.9218,
+        lng: 107.6041
+    }
+];
+```
+
+Kemudian lakukan looping:
+
+```javascript
+locations.forEach((location) => {
+    new AdvancedMarkerElement({
+        map: map,
+        position: {
+            lat: location.lat,
+            lng: location.lng
+        },
+        title: location.name
+    });
+});
+```
+
+Sekarang setiap koordinat mempunyai marker masing-masing.
+
+Konsep ini dapat digunakan untuk aplikasi seperti:
+
+```text
+Lokasi cabang
+Lokasi pelanggan
+Lokasi teknisi
+Lokasi properti
+Lokasi pengiriman
+Lokasi perangkat
+```
+
+---
+
+## Menampilkan Nama Lokasi pada Marker
+
+Properti:
+
+```javascript
+title: "Lokasi Saya"
+```
+
+dapat digunakan untuk memberikan informasi dasar pada marker.
+
+Untuk informasi yang lebih lengkap, Google Maps juga menyediakan mekanisme untuk membuat konten interaktif seperti info window.
+
+Contohnya, marker dapat dikembangkan agar menampilkan:
+
+```text
+Nama lokasi
+Alamat
+Nomor telepon
+Status
+Informasi lainnya
+```
+
+ketika pengguna berinteraksi dengan titik tersebut.
+
+---
+
+## Bagaimana Jika Koordinat Berasal dari IP Address?
+
+Pada versi lama artikel ini saya menggunakan informasi IP address sebagai salah satu cara memperoleh perkiraan lokasi.
+
+Hal tersebut perlu dipahami dengan benar.
+
+**Lokasi berdasarkan IP bukan lokasi GPS yang presisi.**
+
+IP geolocation biasanya hanya memberikan perkiraan wilayah berdasarkan jaringan yang digunakan.
+
+Karena itu, jika aplikasi membutuhkan posisi perangkat yang lebih akurat, pertimbangkan menggunakan **Geolocation API browser** dengan izin pengguna.
+
+Contoh:
+
+```javascript
+navigator.geolocation.getCurrentPosition(
+    (position) => {
+        console.log(position.coords.latitude);
+        console.log(position.coords.longitude);
+    },
+    (error) => {
+        console.error(error);
+    }
+);
+```
+
+Browser akan meminta izin pengguna sebelum memberikan lokasi.
+
+---
+
+## Marker Tidak Muncul? Cek Beberapa Hal Ini
+
+Jika peta tampil tetapi marker tidak terlihat, periksa:
+
+### 1. Latitude dan longitude
+
+Pastikan nilainya berupa angka:
+
+```javascript
+console.log(position);
+```
+
+### 2. Maps JavaScript API
+
+Pastikan API yang diperlukan sudah aktif pada Google Cloud project.
+
+### 3. API key
+
+Periksa apakah API key valid dan restriction-nya sesuai domain yang digunakan.
+
+### 4. Container peta
+
+Pastikan elemen:
+
+```html
+<div id="map"></div>
+```
+
+mempunyai tinggi.
+
+Contohnya:
+
+```css
+#map {
+    height: 450px;
 }
+```
 
-// event jendela di-load  
-google.maps.event.addDomListener(window, 'load', initialize);
-</script>
+### 5. Browser console
 
-  <h1>Titik lokasi google maps anda : </h1>
+Buka Developer Tools dan periksa Console untuk melihat error dari Google Maps JavaScript API atau JavaScript aplikasi.
 
-  <div class="map">
-        <div id="googleMap" style="width:100%;height:380px;"></div>
-  </div>
-```  
-ok sobat coders untuk script diatas disesuaikan saja dengan kondisi, struktur dan algoritma teman teman coders semuanya. dirasa cukup tips kali ini, selamat menjalankan ibadah puasa ramadhan. 
-**salam**
+---
 
+## Marker Lama dan Advanced Marker
+
+Jika menemukan tutorial Google Maps lama, kita sering melihat kode seperti:
+
+```javascript
+new google.maps.Marker({
+    position: position,
+    map: map
+});
+```
+
+Kode tersebut banyak digunakan pada implementasi Google Maps sebelumnya.
+
+Pada dokumentasi Google Maps JavaScript API yang lebih baru, Google menyediakan **Advanced Markers** untuk implementasi marker modern.
+
+Karena itu, ketika membuat project baru sebaiknya periksa dokumentasi Google Maps terbaru dan gunakan API yang direkomendasikan untuk versi yang digunakan project.
+
+---
+
+## Kesimpulan
+
+Untuk menandai sebuah lokasi di Google Maps, konsep dasarnya sebenarnya sederhana:
+
+```text
+Koordinat
+(latitude + longitude)
+        ↓
+Google Maps
+        ↓
+Marker
+        ↓
+Lokasi tampil pada peta
+```
+
+Pada aplikasi nyata, koordinat tersebut dapat berasal dari database, API, input pengguna, GPS browser, atau sumber data lainnya.
+
+Yang penting adalah memahami bahwa marker membutuhkan **posisi koordinat yang valid** dan objek Google Maps tempat marker ditampilkan.
+
+Dengan konsep dasar tersebut kita dapat mengembangkan fitur yang lebih kompleks seperti:
+
+- banyak marker,
+- info window,
+- lokasi pelanggan,
+- pencarian lokasi,
+- tracking perangkat,
+- lokasi cabang,
+- integrasi database,
+- hingga aplikasi geolocation.
+
+Semoga tutorial ini membantu memahami cara **membuat marker dan menentukan titik lokasi menggunakan Google Maps JavaScript API**.
+
+---
+
+*Artikel ini merupakan pembaruan dari tutorial lama mengenai Google Maps API. Contoh diperbarui karena implementasi Google Maps JavaScript API telah berkembang sejak artikel pertama diterbitkan.*
 
