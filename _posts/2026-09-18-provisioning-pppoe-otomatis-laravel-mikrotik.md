@@ -32,18 +32,31 @@ Pada tulisan ini saya akan mencatat bagaimana saya menyusun alur provisioning PP
 
 ## Seri Laravel + MikroTik ISP Billing
 
-Tulisan ini merupakan **Part 4** dari seri Laravel + MikroTik yang sedang saya kerjakan.
+Tulisan ini merupakan **Part 4** dari seri Laravel + MikroTik ISP Billing yang sedang saya bangun dan uji menggunakan Laravel, MikroTik CHR, dan client PPPoE pada environment lab.
 
 1. [Cara Membuat PPPoE Server MikroTik CHR di VirtualBox](/cara-membuat-pppoe-server-mikrotik-chr-di-virtualbox/)
+
 2. [Membangun Web App Billing MikroTik dengan Laravel](/membangun-web-app-billing-mikrotik-dengan-laravel/)
+
 3. [Cara Menghubungkan Laravel ke MikroTik RouterOS API](/cara-menghubungkan-laravel-ke-mikrotik-routeros-api/)
+
 4. **Provisioning PPPoE Otomatis dari Laravel ke MikroTik RouterOS**
-5. Monitoring PPPoE Online / Offline dari Laravel
-6. Suspend dan Reactivate Pelanggan
-7. Monitoring Traffic PPPoE
-8. Invoice dan Pembayaran
-9. Notifikasi WhatsApp
-10. Persiapan Production
+
+5. [Monitoring PPPoE Online / Offline dari Laravel](/monitoring-pppoe-online-offline-dari-laravel/)
+
+6. Simulasi Client PPPoE MikroTik dan Monitoring Realtime dari Laravel
+
+7. Suspend dan Reactivate Pelanggan PPPoE dari Laravel
+
+8. Monitoring Traffic dan Penggunaan Bandwidth PPPoE
+
+9. Invoice dan Pembayaran Pelanggan
+
+10. Otomatisasi Isolir Pelanggan Berdasarkan Tagihan
+
+11. Notifikasi WhatsApp
+
+12. Persiapan Production
 
 Pada Part 3 kita berhenti pada kondisi:
 
@@ -1589,10 +1602,10 @@ Pada Part berikutnya saya akan melanjutkan ke **monitoring PPPoE online dan offl
 
 ## Lanjut ke Part Berikutnya
 
-Seri berikutnya:
+Lanjutkan ke:
 
-**Part 5 — Monitoring PPPoE Online / Offline dari Laravel**
+**[Part 5 — Monitoring PPPoE Online / Offline dari Laravel](/monitoring-pppoe-online-offline-dari-laravel/)**
 
-Pada bagian tersebut kita akan mulai menyinkronkan session PPPoE dari RouterOS ke database aplikasi sehingga status pelanggan dapat dipantau dari dashboard Laravel.
+Pada bagian tersebut saya melanjutkan implementasi dengan membaca session PPPoE aktif dari RouterOS dan menyinkronkan status koneksi ke aplikasi Laravel, sehingga client yang sedang online dapat dipantau dari dashboard billing.
 
 Wallahu a'lam.
