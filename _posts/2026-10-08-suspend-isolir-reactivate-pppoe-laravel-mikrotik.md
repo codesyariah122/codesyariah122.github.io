@@ -133,9 +133,11 @@ Admin membuka detail pelanggan
        Verifikasi dan Catat Hasil
 ```
 
-![Dialog konfirmasi isolir subscription pada aplikasi GNET Billing]({{ '/assets/images/post/laravel-mikrotik-pppoe-suspend/01-konfirmasi-isolir.png' | relative_url }})
+<div style="position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:12px;background:#111;">
+  <iframe src="https://www.youtube-nocookie.com/embed/hfJmLlZr_ZU" title="Demo isolir user paket PPPoE pada GNET Billing" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe>
+</div>
 
-*Gambar 1. Tempatkan screenshot asli dialog konfirmasi isolir dari video pengujian. Jangan menggunakan ilustrasi sebagai bukti perubahan router.*
+*Video 1 — Demonstrasi isolir user paket PPPoE dari aplikasi GNET Billing.*
 
 Dialog konfirmasi penting karena tindakan ini dapat mengganggu konektivitas pelanggan. Endpoint-nya juga harus dilindungi authorization; menyembunyikan tombol pada frontend saja tidak cukup.
 
@@ -326,9 +328,7 @@ Untuk kasus konflik atau hasil yang tidak pasti, operasi juga dapat ditandai `ne
 
 Dari bahan pengujian yang tersedia, Billing Monitor menampilkan session PPPoE client `router-cimaung` dengan alamat IP `10.10.10.254` dan uptime. Informasi ini membantu mencatat keadaan session sebelum atau sesudah tindakan isolir.
 
-![Monitoring session PPPoE pada GNET Billing]({{ '/assets/images/post/laravel-mikrotik-pppoe-suspend/02-billing-monitor.png' | relative_url }})
-
-*Gambar 2. Tempatkan screenshot asli Billing Monitor yang memperlihatkan session uji.*
+Untuk bagian ini, verifikasi tetap mengacu pada data session dan status aktual di Billing Monitor. Video demonstrasi alur isolir tersedia pada bagian sebelumnya.
 
 Untuk membuktikan isolir, saya perlu membandingkan beberapa kondisi:
 
@@ -352,9 +352,7 @@ ping google.com -t
 
 Perintah ini dapat membantu mengamati perubahan konektivitas selama pengujian. Namun hasil ping saja tidak cukup untuk menyimpulkan semua aturan isolir sudah bekerja.
 
-![Pengujian konektivitas client Windows pada VirtualBox]({{ '/assets/images/post/laravel-mikrotik-pppoe-suspend/03-client-windows-ping.png' | relative_url }})
-
-*Gambar 3. Tempatkan frame asli dari video pengujian client Windows.*
+Rekaman demonstrasi konfirmasi isolir dan pembayaran disertakan pada bagian berikutnya. Pengujian ping tetap perlu dilakukan dan dicatat secara terpisah untuk memverifikasi konektivitas.
 
 Idealnya pengujian mencakup DNS, ping ke IP publik, akses HTTP/HTTPS, dan akses ke halaman pemberitahuan isolir jika memang disediakan.
 
@@ -373,6 +371,20 @@ Hasil aktual setiap tahap perlu dicatat dari pengujian, bukan diasumsikan dari t
 ---
 
 ## Konfirmasi Pembayaran dan Reactivate
+
+Berikut dua video demonstrasi lanjutan mengenai konfirmasi isolir dan pembayaran pengguna. Video memperlihatkan alur penggunaan aplikasi; detail keberhasilan sinkronisasi RouterOS dan pemulihan koneksi tetap perlu diperiksa melalui pengujian.
+
+### Video Part 1 — Konfirmasi Isolir dan Pembayaran
+
+<div style="position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:12px;background:#111;">
+  <iframe src="https://www.youtube-nocookie.com/embed/zwWIkgT2Ghc" title="Konfirmasi isolir dan pembayaran user PPPoE Part 1" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe>
+</div>
+
+### Video Part 2 — Konfirmasi Isolir dan Pembayaran
+
+<div style="position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:12px;background:#111;">
+  <iframe src="https://www.youtube-nocookie.com/embed/TpVUT8hzG7E" title="Konfirmasi isolir dan pembayaran user PPPoE Part 2" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe>
+</div>
 
 Ketika pelanggan sudah membayar, aplikasi perlu menentukan apakah layanan boleh dipulihkan.
 
